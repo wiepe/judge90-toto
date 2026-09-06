@@ -1,16 +1,23 @@
-# JUDGE 90
-Jリーグ/toto向け勝敗予想ダッシュボードのプロトタイプ。
+# JUDGE 90 v0.3
 
-## 最終構成
-1. fixtures collector: toto対象試合取得
-2. stats collector: 順位・直近成績・ホーム/アウェイ・対戦成績
-3. context collector: 天候・欠場・出場停止・予想スタメン
-4. prediction engine: 1/0/2確率 + 信頼度
-5. portfolio optimizer: 予算別のシングル/ダブル/トリプル提案
-6. weekly automation: GitHub Actions / cronで更新
+Jリーグ × toto向け勝敗予想ダッシュボード。
 
-## データモデル
-`data/predictions.json` に試合ごとの確率、根拠、信頼度を保存し、UIはそのJSONを読む方式にする。
+## v0.3で追加
+- `JUDGE SCORE v1`：説明可能な重み付き予測エンジン
+- 1 / 0 / 2 の確率生成
+- 信頼度・不確実性・波乱注意
+- シングル / ダブル / トリプル判定
+- 予算ではなく「不確実性」から保険を配分するポートフォリオ表示
+- GitHub Actions による毎週更新の土台
+
+## 現在のデータ
+`data/fixtures.json` と `data/team_metrics.json` はエンジン検証用のデモデータです。
+次フェーズで公式・利用可能なデータソースに接続します。
+
+## 実行
+```bash
+node scripts/predict.mjs
+```
 
 ## 重要
-自動データ取得先は利用規約・robots.txt・公式APIの有無を確認してから実装すること。
+予測モデルは検証・改善が必要です。現時点では実データでのバックテスト前です。

@@ -1,1 +1,117 @@
-{"updated_at":null,"matches":[]}
+{
+  "updated_at": "2026-09-06T09:58:51.672Z",
+  "mode": "DEMO",
+  "model": {
+    "name": "JUDGE SCORE v1",
+    "version": "0.3",
+    "note": "説明可能な重み付きモデル。実データ接続前の検証用。"
+  },
+  "matches": [
+    {
+      "id": 1,
+      "competition": "J1",
+      "date": "2026-09-12",
+      "home": "鹿島",
+      "away": "浦和",
+      "venue": "ホームスタジアム",
+      "probabilities": {
+        "home": 47.5,
+        "draw": 31.3,
+        "away": 21.2
+      },
+      "pick": "1",
+      "confidence": 31,
+      "recommendation": "triple",
+      "upset": false,
+      "factors": [
+        "直近フォーム：鹿島が優勢",
+        "総合チーム強度：鹿島が上",
+        "浦和：主力コンディションに減点要素"
+      ],
+      "diagnostics": {
+        "strength_diff": 15.7,
+        "margin": 16.2,
+        "entropy": 95
+      }
+    },
+    {
+      "id": 2,
+      "competition": "J1",
+      "date": "2026-09-12",
+      "home": "柏",
+      "away": "横浜FM",
+      "venue": "ホームスタジアム",
+      "probabilities": {
+        "home": 42.8,
+        "draw": 32.1,
+        "away": 25.2
+      },
+      "pick": "1",
+      "confidence": 27,
+      "recommendation": "triple",
+      "upset": false,
+      "factors": [
+        "直近フォーム：柏が優勢",
+        "横浜FM：主力コンディションに減点要素"
+      ],
+      "diagnostics": {
+        "strength_diff": 10.1,
+        "margin": 10.7,
+        "entropy": 98
+      }
+    },
+    {
+      "id": 3,
+      "competition": "J1",
+      "date": "2026-09-13",
+      "home": "神戸",
+      "away": "長崎",
+      "venue": "ホームスタジアム",
+      "probabilities": {
+        "home": 51.1,
+        "draw": 30.7,
+        "away": 18.2
+      },
+      "pick": "1",
+      "confidence": 35,
+      "recommendation": "triple",
+      "upset": false,
+      "factors": [
+        "直近フォーム：神戸が優勢",
+        "総合チーム強度：神戸が上"
+      ],
+      "diagnostics": {
+        "strength_diff": 20.8,
+        "margin": 20.4,
+        "entropy": 92
+      }
+    },
+    {
+      "id": 4,
+      "competition": "J1",
+      "date": "2026-09-13",
+      "home": "名古屋",
+      "away": "町田",
+      "venue": "ホームスタジアム",
+      "probabilities": {
+        "home": 26.3,
+        "draw": 32.3,
+        "away": 41.4
+      },
+      "pick": "2",
+      "confidence": 26,
+      "recommendation": "triple",
+      "upset": false,
+      "factors": [
+        "直近フォーム：町田が優勢",
+        "総合チーム強度：町田が上",
+        "名古屋：主力コンディションに減点要素"
+      ],
+      "diagnostics": {
+        "strength_diff": -8.6,
+        "margin": 9.1,
+        "entropy": 98
+      }
+    }
+  ]
+}
