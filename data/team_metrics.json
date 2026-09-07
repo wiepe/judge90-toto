@@ -1,1 +1,55 @@
 
+[
+  {
+    "team": "ホームA",
+    "rank": 2,
+    "points": 45,
+    "played": 20,
+    "wins": 14,
+    "draws": 3,
+    "losses": 3,
+    "goals_for": 38,
+    "goals_against": 18,
+    "recent_form": ["W", "W", "D", "W", "W"],
+    "home_strength": 0.82
+  },
+  {
+    "team": "アウェイA",
+    "rank": 8,
+    "points": 29,
+    "played": 20,
+    "wins": 8,
+    "draws": 5,
+    "losses": 7,
+    "goals_for": 25,
+    "goals_against": 27,
+    "recent_form": ["L", "W", "D", "L", "W"],
+    "away_strength": 0.48
+  },
+  {
+    "team": "ホームB",
+    "rank": 5,
+    "points": 35,
+    "played": 20,
+    "wins": 10,
+    "draws": 5,
+    "losses": 5,
+    "goals_for": 30,
+    "goals_against": 22,
+    "recent_form": ["W", "D", "W", "L", "W"],
+    "home_strength": 0.68
+  },
+  {
+    "team": "アウェイB",
+    "rank": 4,
+    "points": 37,
+    "played": 20,
+    "wins": 11,
+    "draws": 4,
+    "losses": 5,
+    "goals_for": 33,
+    "goals_against": 24,
+    "recent_form": ["W", "W", "L", "D", "W"],
+    "away_strength": 0.72
+  }
+]
