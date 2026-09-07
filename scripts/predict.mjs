@@ -1,11 +1,9 @@
-
 import fs from "node:fs";
 
-// ================================
-// JUDGE 90 Prediction Engine v1
-// ================================
+// =================================
+// JUDGE 90 Prediction Engine v1.1
+// =================================
 
-// データ読み込み
 const fixturesData = JSON.parse(
   fs.readFileSync("data/fixtures.json", "utf8")
 );
@@ -15,13 +13,7 @@ const teams = JSON.parse(
 );
 
 
-// ================================
 // 直近フォームを数値化
-// W = 勝ち
-// D = 引き分け
-// L = 負け
-// ================================
-
 function calculateForm(form) {
   const points = {
     W: 1,
@@ -30,7 +22,7 @@ function calculateForm(form) {
   };
 
   const total = form.reduce(
-    (sum, result) => sum + points[result],
+    (sum, result) => sum + (points[result] ?? 0),
     0
   );
 
@@ -38,14 +30,10 @@ function calculateForm(form) {
 }
 
 
-// ================================
 // チーム総合スコア
-// ================================
-
 function calculateTeamScore(team, isHome) {
 
-  const winRate =
-    team.wins / team.played;
+  const winRate = team.wins / team.played;
 
   const goalDifference =
     (team.goals_for - team.goals_against) /
@@ -73,10 +61,7 @@ function calculateTeamScore(team, isHome) {
 }
 
 
-// ================================
 // 試合予測
-// ================================
-
 function predictMatch(match) {
 
   const home = teams[match.home];
@@ -103,22 +88,18 @@ function predictMatch(match) {
     adjustedHomeScore - awayScore;
 
 
-  // ================================
-  // 勝敗確率計算
-  // ================================
-
+  // 勝敗確率
   let homeWin =
     45 + difference * 2;
 
   let awayWin =
     30 - difference * 2;
 
-  // 実力差が小さいほど引き分け増加
   let draw =
     25 - Math.abs(difference) * 0.5;
 
 
-  // 最低値
+  // 最低確率
   homeWin = Math.max(homeWin, 5);
   awayWin = Math.max(awayWin, 5);
   draw = Math.max(draw, 10);
@@ -129,30 +110,16 @@ function predictMatch(match) {
     homeWin + draw + awayWin;
 
   homeWin =
-    (homeWin / total) * 100;
+    Number(((homeWin / total) * 100).toFixed(1));
 
   draw =
-    (draw / total) * 100;
+    Number(((draw / total) * 100).toFixed(1));
 
   awayWin =
-    (awayWin / total) * 100;
+    Number(((awayWin / total) * 100).toFixed(1));
 
 
-  // 小数点1桁
-  homeWin =
-    Number(homeWin.toFixed(1));
-
-  draw =
-    Number(draw.toFixed(1));
-
-  awayWin =
-    Number(awayWin.toFixed(1));
-
-
-  // ================================
-  // 最終予想
-  // ================================
-
+  // 予想順位
   const probabilities = {
     "1": homeWin,
     "0": draw,
@@ -173,28 +140,89 @@ function predictMatch(match) {
     );
 
 
-  // ================================
   // toto買い方判定
-  // ================================
-
   let recommendation;
 
   if (
     confidence >= 20 &&
     sorted[0][1] >= 55
   ) {
-    recommendation = "SINGLE";
+    recommendation = "single";
   }
 
   else if (
     confidence >= 10
   ) {
-    recommendation = "DOUBLE";
+    recommendation = "double";
   }
 
   else {
-    recommendation = "TRIPLE";
+    recommendation = "triple";
   }
+
+
+  // 分析コメント
+  const factors = [];
+
+  if (home.form && away.form) {
+    // placeholder
+  }
+
+  if (home.rank < away.rank) {
+    factors.push(
+      `リーグ順位：${match.home}が上位`
+    );
+  } else if (away.rank < home.rank) {
+    factors.push(
+      `リーグ順位：${match.away}が上位`
+    );
+  }
+
+  const homeForm =
+    calculateForm(home.recent_form);
+
+  const awayForm =
+    calculateForm(away.recent_form);
+
+  if (homeForm - awayForm >= 0.2) {
+    factors.push(
+      `直近フォーム：${match.home}が優勢`
+    );
+  } else if (awayForm - homeForm >= 0.2) {
+    factors.push(
+      `直近フォーム：${match.away}が優勢`
+    );
+  } else {
+    factors.push(
+      "直近フォームは拮抗"
+    );
+  }
+
+  if (home.injury_risk >= 0.14) {
+    factors.push(
+      `${match.home}：選手コンディションに注意`
+    );
+  }
+
+  if (away.injury_risk >= 0.14) {
+    factors.push(
+      `${match.away}：選手コンディションに注意`
+    );
+  }
+
+  if (Math.abs(difference) < 3) {
+    factors.push(
+      "戦力差が小さく、引き分けも警戒"
+    );
+  }
+
+  // 波乱注意
+  const upset =
+    confidence < 10 ||
+    (
+      prediction !== "1" &&
+      Math.abs(difference) < 5
+    );
 
 
   return {
@@ -216,7 +244,11 @@ function predictMatch(match) {
 
     recommendation,
 
-    analysis: {
+    upset,
+
+    factors,
+
+    diagnostics: {
       homeScore:
         Number(adjustedHomeScore.toFixed(2)),
       awayScore:
@@ -228,35 +260,41 @@ function predictMatch(match) {
 }
 
 
-// ================================
 // 全試合予測
-// ================================
-
 const predictions =
   fixturesData.matches
     .map(predictMatch)
     .filter(Boolean);
 
 
-// ================================
 // predictions.json生成
-// ================================
-
 const output = {
-  generatedAt:
+
+  updated_at:
     new Date().toISOString(),
 
-  model:
-    "JUDGE SCORE v1",
+  mode:
+    "TEST",
+
+  model: {
+    name:
+      "JUDGE SCORE v1.1",
+    version:
+      "1.1",
+    note:
+      "順位・勝率・得失点差・直近フォーム・ホームアウェイ適性を加味した説明可能モデル"
+  },
 
   matches:
     predictions
 };
 
+
 fs.writeFileSync(
   "predictions.json",
   JSON.stringify(output, null, 2)
 );
+
 
 console.log(
   `Generated ${predictions.length} predictions`
