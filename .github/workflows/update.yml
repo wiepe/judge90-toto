@@ -1,7 +1,9 @@
 name: Update JUDGE 90 Predictions
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:on:
+  schedule:
+    - cron: "0 23 * * 5"
 
 permissions:
   contents: write
