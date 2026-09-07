@@ -1,33 +1,5 @@
-
-[
-  {
-    "team": "ホームA",
-    "rank": 2,
-    "points": 45,
-    "played": 20,
-    "wins": 14,
-    "draws": 3,
-    "losses": 3,
-    "goals_for": 38,
-    "goals_against": 18,
-    "recent_form": ["W", "W", "D", "W", "W"],
-    "home_strength": 0.82
-  },
-  {
-    "team": "アウェイA",
-    "rank": 8,
-    "points": 29,
-    "played": 20,
-    "wins": 8,
-    "draws": 5,
-    "losses": 7,
-    "goals_for": 25,
-    "goals_against": 27,
-    "recent_form": ["L", "W", "D", "L", "W"],
-    "away_strength": 0.48
-  },
-  {
-    "team": "ホームB",
+{
+  "浦和レッズ": {
     "rank": 5,
     "points": 35,
     "played": 20,
@@ -37,10 +9,39 @@
     "goals_for": 30,
     "goals_against": 22,
     "recent_form": ["W", "D", "W", "L", "W"],
-    "home_strength": 0.68
+    "home_strength": 0.68,
+    "away_strength": 0.58,
+    "injury_risk": 0.10
   },
-  {
-    "team": "アウェイB",
+  "鹿島アントラーズ": {
+    "rank": 2,
+    "points": 45,
+    "played": 20,
+    "wins": 14,
+    "draws": 3,
+    "losses": 3,
+    "goals_for": 38,
+    "goals_against": 18,
+    "recent_form": ["W", "W", "D", "W", "W"],
+    "home_strength": 0.82,
+    "away_strength": 0.75,
+    "injury_risk": 0.08
+  },
+  "FC東京": {
+    "rank": 8,
+    "points": 29,
+    "played": 20,
+    "wins": 8,
+    "draws": 5,
+    "losses": 7,
+    "goals_for": 25,
+    "goals_against": 27,
+    "recent_form": ["L", "W", "D", "L", "W"],
+    "home_strength": 0.62,
+    "away_strength": 0.48,
+    "injury_risk": 0.12
+  },
+  "川崎フロンターレ": {
     "rank": 4,
     "points": 37,
     "played": 20,
@@ -50,6 +51,36 @@
     "goals_for": 33,
     "goals_against": 24,
     "recent_form": ["W", "W", "L", "D", "W"],
-    "away_strength": 0.72
+    "home_strength": 0.76,
+    "away_strength": 0.72,
+    "injury_risk": 0.15
+  },
+  "横浜F・マリノス": {
+    "rank": 6,
+    "points": 33,
+    "played": 20,
+    "wins": 9,
+    "draws": 6,
+    "losses": 5,
+    "goals_for": 35,
+    "goals_against": 28,
+    "recent_form": ["W", "L", "W", "D", "W"],
+    "home_strength": 0.74,
+    "away_strength": 0.62,
+    "injury_risk": 0.11
+  },
+  "サンフレッチェ広島": {
+    "rank": 1,
+    "points": 48,
+    "played": 20,
+    "wins": 15,
+    "draws": 3,
+    "losses": 2,
+    "goals_for": 40,
+    "goals_against": 17,
+    "recent_form": ["W", "W", "W", "D", "W"],
+    "home_strength": 0.85,
+    "away_strength": 0.78,
+    "injury_risk": 0.07
   }
-]
+}
