@@ -1,116 +1,86 @@
 {
-  "updated_at": "2026-09-06T09:58:51.672Z",
-  "mode": "DEMO",
+  "updated_at": "2026-09-07T11:41:14.598Z",
+  "mode": "TEST",
   "model": {
-    "name": "JUDGE SCORE v1",
-    "version": "0.3",
-    "note": "説明可能な重み付きモデル。実データ接続前の検証用。"
+    "name": "JUDGE SCORE v1.1",
+    "version": "1.1",
+    "note": "順位・勝率・得失点差・直近フォーム・ホームアウェイ適性を加味した説明可能モデル"
   },
   "matches": [
     {
       "id": 1,
-      "competition": "J1",
+      "competition": "J1リーグ",
       "date": "2026-09-12",
-      "home": "鹿島",
-      "away": "浦和",
-      "venue": "ホームスタジアム",
+      "home": "浦和レッズ",
+      "away": "鹿島アントラーズ",
+      "prediction": "2",
       "probabilities": {
-        "home": 47.5,
-        "draw": 31.3,
-        "away": 21.2
+        "home": 17.5,
+        "draw": 19.2,
+        "away": 63.4
       },
-      "pick": "1",
-      "confidence": 31,
-      "recommendation": "triple",
+      "confidence": 44,
+      "recommendation": "single",
       "upset": false,
       "factors": [
-        "直近フォーム：鹿島が優勢",
-        "総合チーム強度：鹿島が上",
-        "浦和：主力コンディションに減点要素"
+        "リーグ順位：鹿島アントラーズが上位",
+        "直近フォーム：鹿島アントラーズが優勢"
       ],
       "diagnostics": {
-        "strength_diff": 15.7,
-        "margin": 16.2,
-        "entropy": 95
+        "homeScore": 51.3,
+        "awayScore": 65.7,
+        "difference": -14.4
       }
     },
     {
       "id": 2,
-      "competition": "J1",
+      "competition": "J1リーグ",
       "date": "2026-09-12",
-      "home": "柏",
-      "away": "横浜FM",
-      "venue": "ホームスタジアム",
+      "home": "FC東京",
+      "away": "川崎フロンターレ",
+      "prediction": "2",
       "probabilities": {
-        "home": 42.8,
-        "draw": 32.1,
-        "away": 25.2
+        "home": 21.1,
+        "draw": 20,
+        "away": 58.9
       },
-      "pick": "1",
-      "confidence": 27,
-      "recommendation": "triple",
+      "confidence": 38,
+      "recommendation": "single",
       "upset": false,
       "factors": [
-        "直近フォーム：柏が優勢",
-        "横浜FM：主力コンディションに減点要素"
+        "リーグ順位：川崎フロンターレが上位",
+        "直近フォームは拮抗",
+        "川崎フロンターレ：選手コンディションに注意"
       ],
       "diagnostics": {
-        "strength_diff": 10.1,
-        "margin": 10.7,
-        "entropy": 98
+        "homeScore": 37.9,
+        "awayScore": 50.5,
+        "difference": -12.6
       }
     },
     {
       "id": 3,
-      "competition": "J1",
+      "competition": "J1リーグ",
       "date": "2026-09-13",
-      "home": "神戸",
-      "away": "長崎",
-      "venue": "ホームスタジアム",
+      "home": "横浜F・マリノス",
+      "away": "サンフレッチェ広島",
+      "prediction": "2",
       "probabilities": {
-        "home": 51.1,
-        "draw": 30.7,
-        "away": 18.2
+        "home": 8.6,
+        "draw": 17.3,
+        "away": 74.1
       },
-      "pick": "1",
-      "confidence": 35,
-      "recommendation": "triple",
+      "confidence": 57,
+      "recommendation": "single",
       "upset": false,
       "factors": [
-        "直近フォーム：神戸が優勢",
-        "総合チーム強度：神戸が上"
+        "リーグ順位：サンフレッチェ広島が上位",
+        "直近フォーム：サンフレッチェ広島が優勢"
       ],
       "diagnostics": {
-        "strength_diff": 20.8,
-        "margin": 20.4,
-        "entropy": 92
-      }
-    },
-    {
-      "id": 4,
-      "competition": "J1",
-      "date": "2026-09-13",
-      "home": "名古屋",
-      "away": "町田",
-      "venue": "ホームスタジアム",
-      "probabilities": {
-        "home": 26.3,
-        "draw": 32.3,
-        "away": 41.4
-      },
-      "pick": "2",
-      "confidence": 26,
-      "recommendation": "triple",
-      "upset": false,
-      "factors": [
-        "直近フォーム：町田が優勢",
-        "総合チーム強度：町田が上",
-        "名古屋：主力コンディションに減点要素"
-      ],
-      "diagnostics": {
-        "strength_diff": -8.6,
-        "margin": 9.1,
-        "entropy": 98
+        "homeScore": 50.5,
+        "awayScore": 69.1,
+        "difference": -18.6
       }
     }
   ]
