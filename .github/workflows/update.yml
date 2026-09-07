@@ -1,7 +1,7 @@
 name: Update JUDGE 90 Predictions
 
-on:
-  workflow_dispatch:
+"on":
+  workflow_dispatch: {}
   schedule:
     - cron: "0 23 * * 5"
 
@@ -25,12 +25,12 @@ jobs:
         run: node scripts/predict.mjs
 
       - name: Commit predictions
+        run: node scripts/predict.mjs
+
+      - name: Commit predictions to repository
         run: |
           git config user.name "judge90-bot"
           git config user.email "actions@github.com"
-
           git add predictions.json
-
           git diff --cached --quiet || git commit -m "Update JUDGE 90 predictions"
-
           git push
