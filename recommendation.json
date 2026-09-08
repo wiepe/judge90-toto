@@ -1,0 +1,115 @@
+{
+  "generated_at": "2026-09-08T04:44:00.417Z",
+  "engine": {
+    "name": "JUDGE 90 Betting Strategy Engine",
+    "version": "1.0"
+  },
+  "toto": {
+    "round": "TEST-001",
+    "type": "toto",
+    "deadline": "2026-09-12T13:00:00+09:00"
+  },
+  "summary": {
+    "matches": 3,
+    "combinations": 1,
+    "price": 100,
+    "strategy": "堅実型：高信頼度の本命を中心に購入"
+  },
+  "selections": [
+    {
+      "number": 1,
+      "home": "浦和レッズ",
+      "away": "鹿島アントラーズ",
+      "selections": [
+        "2"
+      ],
+      "confidence": 44,
+      "recommendation": "single",
+      "upset": false,
+      "probabilities": [
+        {
+          "mark": "2",
+          "probability": 63.4
+        },
+        {
+          "mark": "0",
+          "probability": 19.2
+        },
+        {
+          "mark": "1",
+          "probability": 17.5
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "home": "FC東京",
+      "away": "川崎フロンターレ",
+      "selections": [
+        "2"
+      ],
+      "confidence": 38,
+      "recommendation": "single",
+      "upset": false,
+      "probabilities": [
+        {
+          "mark": "2",
+          "probability": 58.9
+        },
+        {
+          "mark": "1",
+          "probability": 21.1
+        },
+        {
+          "mark": "0",
+          "probability": 20
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "home": "横浜F・マリノス",
+      "away": "サンフレッチェ広島",
+      "selections": [
+        "2"
+      ],
+      "confidence": 57,
+      "recommendation": "single",
+      "upset": false,
+      "probabilities": [
+        {
+          "mark": "2",
+          "probability": 74.1
+        },
+        {
+          "mark": "0",
+          "probability": 17.3
+        },
+        {
+          "mark": "1",
+          "probability": 8.6
+        }
+      ]
+    }
+  ],
+  "confidence_ranking": [
+    {
+      "rank": 1,
+      "number": 3,
+      "match": "横浜F・マリノス vs サンフレッチェ広島",
+      "confidence": 57
+    },
+    {
+      "rank": 2,
+      "number": 1,
+      "match": "浦和レッズ vs 鹿島アントラーズ",
+      "confidence": 44
+    },
+    {
+      "rank": 3,
+      "number": 2,
+      "match": "FC東京 vs 川崎フロンターレ",
+      "confidence": 38
+    }
+  ]
+}
