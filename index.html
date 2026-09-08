@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>JUDGE 90 | J.LEAGUE × toto Predictor</title>
 
 <style>
@@ -17,30 +16,23 @@
   --accent:#5eead4;
   --yellow:#fbbf24;
   --red:#fb7185;
-  --blue:#7dd3fc;
+  --blue:#7dd3fc
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
-  background:
-    radial-gradient(circle at 50% -20%,#182747 0,#090d18 45%);
+  background:radial-gradient(circle at 50% -20%,#182747 0,#090d18 45%);
   color:var(--text);
-  font-family:
-    system-ui,
-    -apple-system,
-    "Noto Sans JP",
-    sans-serif;
+  font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif
 }
 
 .wrap{
   max-width:1050px;
   margin:auto;
   padding-left:18px;
-  padding-right:18px;
+  padding-right:18px
 }
 
 header{
@@ -49,92 +41,75 @@ header{
   backdrop-filter:blur(12px);
   position:sticky;
   top:0;
-  z-index:5;
+  z-index:5
 }
 
 .head{
   height:70px;
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:space-between
 }
 
 .brand{
   font-size:24px;
   font-weight:950;
-  letter-spacing:.09em;
+  letter-spacing:.09em
 }
 
-.brand span{
-  color:var(--accent);
-}
+.brand span{color:var(--accent)}
 
 .tag{
   font-size:11px;
   letter-spacing:.15em;
   color:var(--accent);
-  font-weight:800;
+  font-weight:800
 }
 
-.hero{
-  padding:34px 0 22px;
-}
+.hero{padding:34px 0 22px}
 
 .hero h1{
   font-size:clamp(25px,5vw,42px);
-  margin:5px 0 8px;
+  margin:5px 0 8px
 }
 
 .sub{
   color:var(--muted);
-  line-height:1.6;
+  line-height:1.6
 }
 
-.round-box{
-  margin-top:18px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.pill{
+.demo{
+  margin-top:14px;
   display:inline-block;
-  border:1px solid var(--line);
-  background:#111a2a;
-  padding:8px 12px;
+  border:1px solid #6b5b20;
+  background:#2a2411;
+  color:#fde68a;
   border-radius:999px;
-  font-size:12px;
-}
-
-.pill.accent{
-  color:var(--accent);
-  border-color:#256b68;
+  padding:7px 12px;
+  font-size:12px
 }
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
-  margin:22px 0;
+  margin:22px 0
 }
 
 .stat{
-  background:
-    linear-gradient(145deg,#131d31,#0f1626);
+  background:linear-gradient(145deg,#131d31,#0f1626);
   border:1px solid var(--line);
   border-radius:16px;
-  padding:15px;
+  padding:15px
 }
 
-.stat b{
-  font-size:26px;
-}
+.stat b{font-size:26px}
 
 .controls{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin:12px 0 16px;
+  margin:12px 0 16px
 }
 
 .btn{
@@ -142,47 +117,45 @@ header{
   color:var(--text);
   border:1px solid var(--line);
   padding:9px 13px;
-  border-radius:999px;
+  border-radius:999px
 }
 
 .btn.active{
   border-color:var(--accent);
   color:var(--accent);
-  box-shadow:
-    0 0 0 1px #5eead422;
+  box-shadow:0 0 0 1px #5eead422
 }
 
 .match{
-  background:
-    linear-gradient(145deg,#121a2b,#0e1422);
+  background:linear-gradient(145deg,#121a2b,#0e1422);
   border:1px solid var(--line);
   border-radius:18px;
   padding:18px;
-  margin:12px 0;
+  margin:12px 0
 }
 
 .top{
   display:flex;
   justify-content:space-between;
   gap:12px;
-  align-items:flex-start;
+  align-items:flex-start
 }
 
 .meta{
   color:var(--muted);
   font-size:12px;
-  margin-bottom:7px;
+  margin-bottom:7px
 }
 
 .teams{
   font-size:20px;
-  font-weight:850;
+  font-weight:850
 }
 
 .vs{
   color:var(--muted);
   font-size:14px;
-  margin:0 8px;
+  margin:0 8px
 }
 
 .badge{
@@ -191,14 +164,14 @@ header{
   background:#10192a;
   padding:7px 10px;
   border-radius:999px;
-  font-size:12px;
+  font-size:12px
 }
 
 .probgrid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:8px;
-  margin:16px 0 12px;
+  margin:16px 0 12px
 }
 
 .prob{
@@ -206,12 +179,12 @@ header{
   border-radius:12px;
   padding:10px;
   text-align:center;
-  border:1px solid #202b40;
+  border:1px solid #202b40
 }
 
 .prob b{
   font-size:22px;
-  display:block;
+  display:block
 }
 
 .bar{
@@ -219,49 +192,12 @@ header{
   background:#1c2940;
   border-radius:99px;
   margin-top:7px;
-  overflow:hidden;
+  overflow:hidden
 }
 
 .fill{
   height:100%;
-  background:var(--accent);
-}
-
-.selection-box{
-  margin-top:14px;
-  padding:12px;
-  background:#0a1020;
-  border:1px solid #263a55;
-  border-radius:12px;
-}
-
-.selection-title{
-  font-size:11px;
-  color:var(--muted);
-  margin-bottom:6px;
-}
-
-.selection-marks{
-  display:flex;
-  gap:7px;
-}
-
-.mark{
-  width:34px;
-  height:34px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:8px;
-  background:#172238;
-  border:1px solid #30405e;
-  font-weight:900;
-}
-
-.mark.active{
-  background:#174943;
-  border-color:var(--accent);
-  color:var(--accent);
+  background:var(--accent)
 }
 
 .factors{
@@ -269,123 +205,65 @@ header{
   padding-top:12px;
   color:var(--muted);
   font-size:13px;
-  line-height:1.8;
-  margin-top:14px;
+  line-height:1.8
 }
 
 .bottom{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-top:13px;
+  margin-top:13px
 }
 
-.rec.single{
-  color:var(--accent);
-}
-
-.rec.double{
-  color:var(--yellow);
-}
-
-.rec.triple{
-  color:var(--red);
-}
+.rec.single{color:var(--accent)}
+.rec.double{color:var(--yellow)}
+.rec.triple{color:var(--red)}
 
 .analysis{
   font-size:12px;
-  color:var(--blue);
+  color:var(--blue)
 }
 
 .panel{
-  background:
-    linear-gradient(135deg,#16223a,#0f1728);
+  background:linear-gradient(135deg,#16223a,#0f1728);
   border:1px solid #2b3b5c;
   border-radius:20px;
   padding:20px;
-  margin:24px 0;
+  margin:24px 0 42px
 }
 
-.panel h2{
-  margin:0 0 6px;
-}
+.panel h2{margin:0 0 6px}
 
-.buy-summary{
+.plans{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
-  margin-top:18px;
+  margin-top:14px
 }
 
-.buy-item{
+.plan{
   background:#0b1220;
   border:1px solid var(--line);
   border-radius:14px;
-  padding:15px;
+  padding:14px
 }
 
-.buy-item b{
+.plan b{
   display:block;
-  font-size:24px;
-  margin-top:6px;
+  margin-top:7px
 }
 
-.ranking{
-  margin-top:14px;
-}
-
-.rank-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 0;
-  border-bottom:1px solid var(--line);
-}
-
-.rank-item:last-child{
-  border-bottom:none;
-}
-
-.rank-num{
-  color:var(--accent);
-  font-weight:900;
-  margin-right:8px;
-}
-
-.rank-confidence{
-  color:var(--yellow);
-  font-weight:900;
-}
-
-footer{
-  text-align:center;
-  color:var(--muted);
-  font-size:11px;
-  padding:20px 0 40px;
+.small{
+  font-size:12px;
+  color:var(--muted)
 }
 
 @media(max-width:650px){
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .buy-summary{
-    grid-template-columns:1fr;
-  }
-
-  .teams{
-    font-size:17px;
-  }
-
-  .top{
-    align-items:flex-start;
-  }
-
-  .badge{
-    font-size:11px;
-  }
-
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .plans{grid-template-columns:1fr}
+  .teams{font-size:17px}
+  .top{align-items:flex-start}
+  .badge{font-size:11px}
 }
 </style>
 </head>
@@ -394,442 +272,191 @@ footer{
 
 <header>
   <div class="wrap head">
-
     <div>
-      <div class="tag">
-        EXPLAINABLE FOOTBALL PREDICTION
-      </div>
-
-      <div class="brand">
-        JUDGE <span>90</span>
-      </div>
+      <div class="tag">EXPLAINABLE FOOTBALL PREDICTION</div>
+      <div class="brand">JUDGE <span>90</span></div>
     </div>
-
     <div id="updated" class="small"></div>
-
   </div>
 </header>
-
 
 <main class="wrap">
 
 <section class="hero">
-
-  <div class="tag">
-    WEEKLY MATCH INTELLIGENCE
-  </div>
-
-  <h1>
-    予想ではなく、<br>
-    「どこで迷うべきか」を。
-  </h1>
-
+  <div class="tag">WEEKLY MATCH INTELLIGENCE</div>
+  <h1>予想ではなく、<br>「どこで迷うべきか」を。</h1>
   <div class="sub">
-    Jリーグを分析し、totoでは限られたダブル・トリプルを
-    「不確実な試合」に集中させる。
+    Jリーグ全試合を分析し、totoでは限られたダブル・トリプルを「不確実な試合」に集中させる。
   </div>
-
-  <div class="round-box">
-
-    <div class="pill accent" id="round">
-      toto -
-    </div>
-
-    <div class="pill" id="deadline">
-      締切 -
-    </div>
-
-  </div>
-
+  <div id="mode"></div>
 </section>
 
-
 <section class="stats">
-
   <div class="stat">
-    <span class="small">シングル候補</span>
-    <br>
+    <span class="small">シングル候補</span><br>
     <b id="safe">-</b>
   </div>
 
   <div class="stat">
-    <span class="small">ダブル候補</span>
-    <br>
+    <span class="small">ダブル候補</span><br>
     <b id="double">-</b>
   </div>
 
   <div class="stat">
-    <span class="small">波乱注意</span>
-    <br>
+    <span class="small">波乱注意</span><br>
     <b id="upset">-</b>
   </div>
 
   <div class="stat">
-    <span class="small">平均信頼度</span>
-    <br>
+    <span class="small">平均信頼度</span><br>
     <b id="avg">-</b>
   </div>
-
 </section>
 
-
 <div class="controls">
-
-  <button
-    class="btn active"
-    data-filter="all">
-    すべて
-  </button>
-
-  <button
-    class="btn"
-    data-filter="single">
-    シングル
-  </button>
-
-  <button
-    class="btn"
-    data-filter="double">
-    ダブル
-  </button>
-
-  <button
-    class="btn"
-    data-filter="triple">
-    トリプル
-  </button>
-
-  <button
-    class="btn"
-    data-filter="upset">
-    波乱注意
-  </button>
-
+  <button class="btn active" data-filter="all">すべて</button>
+  <button class="btn" data-filter="single">シングル</button>
+  <button class="btn" data-filter="double">ダブル</button>
+  <button class="btn" data-filter="triple">トリプル</button>
+  <button class="btn" data-filter="upset">波乱注意</button>
 </div>
-
 
 <div id="matches"></div>
 
-
 <section class="panel">
+  <div class="tag">PORTFOLIO OPTIMIZER</div>
 
-  <div class="tag">
-    PORTFOLIO OPTIMIZER
+  <h2>💰 おすすめの買い方</h2>
+
+  <div class="sub">
+    「当たりそうな試合」ではなく、「外した時の損失が大きい不確実試合」に保険を配分。
   </div>
 
-  <h2>
-    💰 JUDGE90 推奨購入
-  </h2>
+  <div class="plans">
 
-  <div
-    class="sub"
-    id="strategy">
-    データを読み込み中...
-  </div>
-
-
-  <div class="buy-summary">
-
-    <div class="buy-item">
-      <span class="small">
-        購入口数
-      </span>
-
-      <b id="combinations">
-        -
-      </b>
+    <div class="plan">
+      <span>堅実</span>
+      <b id="p1"></b>
+      <div class="small">本命を信じる</div>
     </div>
 
-
-    <div class="buy-item">
-      <span class="small">
-        推定金額
-      </span>
-
-      <b id="price">
-        -
-      </b>
+    <div class="plan">
+      <span>バランス</span>
+      <b id="p2"></b>
+      <div class="small">迷いを重点カバー</div>
     </div>
 
-
-    <div class="buy-item">
-      <span class="small">
-        対象試合
-      </span>
-
-      <b id="matchcount">
-        -
-      </b>
+    <div class="plan">
+      <span>攻め</span>
+      <b id="p3"></b>
+      <div class="small">波乱を取りにいく</div>
     </div>
 
   </div>
-
 </section>
-
-
-<section class="panel">
-
-  <div class="tag">
-    CONFIDENCE RANKING
-  </div>
-
-  <h2>
-    🏆 信頼度ランキング
-  </h2>
-
-  <div
-    class="sub">
-    JUDGE90が「比較的読みやすい」と判断した試合。
-  </div>
-
-  <div
-    class="ranking"
-    id="ranking">
-  </div>
-
-</section>
-
-
-<footer>
-
-  JUDGE 90 — Explainable J.LEAGUE × toto Prediction System
-
-</footer>
 
 </main>
 
-
 <script>
 
-let DATA = null;
-let RECOMMENDATION = null;
-let current = "all";
+let DATA=null;
+let current="all";
 
+const pick=m=>
+  m.probabilities.home>=m.probabilities.draw &&
+  m.probabilities.home>=m.probabilities.away
+    ?"1"
+    :m.probabilities.draw>=m.probabilities.away
+      ?"0"
+      :"2";
 
-const pick = m => {
-
-  const probs = {
-    "1": m.probabilities.home,
-    "0": m.probabilities.draw,
-    "2": m.probabilities.away
-  };
-
-  return Object
-    .entries(probs)
-    .sort((a,b)=>b[1]-a[1])[0][0];
-
-};
-
-
-const recLabel = {
-
+const recLabel={
   single:"シングル推奨",
   double:"ダブル候補",
   triple:"トリプル候補"
-
 };
-
 
 function render(){
 
-  const list =
-    DATA.matches.filter(m => {
+  const list=DATA.matches.filter(m=>
+    current==="all"
+      ?true
+      :current==="upset"
+        ?m.upset
+        :m.recommendation===current
+  );
 
-      if(current === "all"){
-        return true;
-      }
+  document.getElementById("matches").innerHTML=
+    list.map(m=>{
 
-      if(current === "upset"){
-        return m.upset;
-      }
-
-      return m.recommendation === current;
-
-    });
-
-
-  document
-    .getElementById("matches")
-    .innerHTML =
-
-    list.map(m => {
-
-      const p = m.probabilities;
-
-      const vals = [
-        p.home,
-        p.draw,
-        p.away
-      ];
-
-
-      const recommendationMatch =
-        RECOMMENDATION
-          ?.selections
-          ?.find(
-            x => x.number === m.number
-          );
-
-
-      const selections =
-        recommendationMatch
-          ? recommendationMatch.selections
-          : [pick(m)];
-
+      const p=m.probabilities;
+      const vals=[p.home,p.draw,p.away];
 
       return `
-
       <article class="match">
 
         <div class="top">
 
           <div>
-
             <div class="meta">
-
-              No.${m.number}
-              ・${m.competition}
-              ・${m.date}
-
+              No.${m.number}　${m.competition}　${m.date}
             </div>
-
 
             <div class="teams">
-
               ${m.home}
-
-              <span class="vs">
-                vs
-              </span>
-
+              <span class="vs">vs</span>
               ${m.away}
-
             </div>
-
           </div>
 
-
           <div class="badge">
-
             信頼度 ${m.confidence}/100
-
           </div>
 
         </div>
-
 
         <div class="probgrid">
 
-          ${["1","0","2"]
-            .map((x,i)=>`
+          ${["1","0","2"].map((x,i)=>`
 
-              <div class="prob">
+            <div class="prob">
 
-                <span>${x}</span>
+              <span>${x}</span>
 
-                <b>
-                  ${vals[i]}%
-                </b>
+              <b>${vals[i]}%</b>
 
-                <div class="bar">
-
-                  <div
-                    class="fill"
-                    style="
-                      width:${vals[i]}%
-                    ">
-                  </div>
-
-                </div>
-
+              <div class="bar">
+                <div
+                  class="fill"
+                  style="width:${vals[i]}%"
+                ></div>
               </div>
 
-            `)
-            .join("")
-          }
+            </div>
+
+          `).join("")}
 
         </div>
-
-
-        <div class="selection-box">
-
-          <div class="selection-title">
-
-            JUDGE90 推奨買い目
-
-          </div>
-
-
-          <div class="selection-marks">
-
-            ${["1","0","2"]
-              .map(mark => `
-
-                <div
-                  class="
-                    mark
-                    ${selections.includes(mark)
-                      ? "active"
-                      : ""
-                    }
-                  ">
-
-                  ${mark}
-
-                </div>
-
-              `)
-              .join("")
-            }
-
-          </div>
-
-        </div>
-
 
         <div class="factors">
-
-          ${m.factors
-            .map(x=>"• "+x)
-            .join("<br>")
-          }
-
+          ${m.factors.map(x=>"• "+x).join("<br>")}
         </div>
-
 
         <div class="bottom">
 
-          <b
-            class="
-              rec
-              ${m.recommendation}
-            ">
-
+          <b class="rec ${m.recommendation}">
             ${recLabel[m.recommendation]}
-
-            ${m.upset
-              ? "　⚠ 波乱注意"
-              : ""
-            }
-
+            ${m.upset?"　⚠ 波乱注意":""}
           </b>
 
-
           <div>
-
             <span class="analysis">
-
-              JUDGE SCORE v1.2
-
+              JUDGE SCORE v1.3
             </span>
 
             <b>
-
-              AI予想：
-              ${pick(m)}
-
+              AI予想：${pick(m)}
             </b>
-
           </div>
 
         </div>
@@ -839,278 +466,101 @@ function render(){
       `;
 
     }).join("")
-
     ||
-
     `<div class="sub">
       該当する試合はありません。
     </div>`;
-
 }
-
 
 function summary(){
 
-  const ms = DATA.matches;
+  const ms=DATA.matches;
 
-  const count =
-    type =>
-      ms.filter(
-        x => x.recommendation === type
-      ).length;
+  const n=x=>
+    ms.filter(m=>m.recommendation===x).length;
 
+  document.getElementById("safe").textContent=n("single");
 
-  document
-    .getElementById("safe")
-    .textContent =
-    count("single");
+  document.getElementById("double").textContent=n("double");
 
+  document.getElementById("upset").textContent=
+    ms.filter(m=>m.upset).length;
 
-  document
-    .getElementById("double")
-    .textContent =
-    count("double");
-
-
-  document
-    .getElementById("upset")
-    .textContent =
-    ms.filter(x=>x.upset).length;
-
-
-  document
-    .getElementById("avg")
-    .textContent =
-
+  document.getElementById("avg").textContent=
     Math.round(
+      ms.reduce((s,x)=>s+x.confidence,0)/ms.length
+    )+"/100";
 
-      ms.reduce(
-        (sum,x)=>
-          sum + x.confidence,
-        0
-      ) / ms.length
+  const uncertain=[...ms]
+    .sort((a,b)=>a.confidence-b.confidence);
 
-    ) + "/100";
+  document.getElementById("p1").textContent=
+    `全${ms.length}試合シングル`;
 
+  document.getElementById("p2").textContent=
+    `${uncertain.slice(0,2)
+      .map(x=>"No."+x.number)
+      .join("・")}をダブル`;
 
-  document
-    .getElementById("round")
-    .textContent =
+  document.getElementById("p3").textContent=
+    `${uncertain.slice(0,3)
+      .map(x=>"No."+x.number)
+      .join("・")}を重点カバー`;
+}
 
-    `${DATA.toto.round} ${DATA.toto.type}`;
+fetch("./predictions.json?"+Date.now())
 
+.then(r=>r.json())
 
-  const deadline =
-    new Date(
-      DATA.toto.deadline
-    );
+.then(d=>{
 
+  DATA=d;
 
-  document
-    .getElementById("deadline")
-    .textContent =
+  document.getElementById("updated").textContent=
+    "更新 "+new Date(d.updated_at)
+      .toLocaleString("ja-JP");
 
-    "締切 " +
+  if(d.mode.startsWith("TEST")){
 
-    deadline.toLocaleString(
-      "ja-JP",
-      {
-        month:"numeric",
-        day:"numeric",
-        hour:"2-digit",
-        minute:"2-digit"
-      }
-    );
-
-
-  document
-    .getElementById("updated")
-    .textContent =
-
-    "更新 " +
-
-    new Date(
-      DATA.updated_at
-    ).toLocaleString(
-      "ja-JP"
-    );
-
-
-  if(RECOMMENDATION){
-
-    const s =
-      RECOMMENDATION.summary;
-
-
-    document
-      .getElementById("strategy")
-      .textContent =
-      s.strategy;
-
-
-    document
-      .getElementById("combinations")
-      .textContent =
-      `${s.combinations}口`;
-
-
-    document
-      .getElementById("price")
-      .textContent =
-      `¥${s.price.toLocaleString()}`;
-
-
-    document
-      .getElementById("matchcount")
-      .textContent =
-      `${s.matches}試合`;
+    document.getElementById("mode").innerHTML=
+      `<span class="demo">
+        現在：予測エンジン検証用データ
+      </span>`;
 
   }
 
-}
+  summary();
 
+  render();
 
-function renderRanking(){
+})
 
-  if(
-    !RECOMMENDATION ||
-    !RECOMMENDATION.confidence_ranking
-  ){
-    return;
-  }
+.catch(()=>{
 
+  document.getElementById("matches").innerHTML=
+    `<p class="sub">
+      データを読み込めませんでした。
+    </p>`;
 
-  document
-    .getElementById("ranking")
-    .innerHTML =
+});
 
-    RECOMMENDATION
-      .confidence_ranking
-      .map(item => `
+document.querySelectorAll(".btn")
+.forEach(b=>
 
-        <div class="rank-item">
+  b.onclick=()=>{
 
-          <div>
+    document.querySelectorAll(".btn")
+      .forEach(x=>x.classList.remove("active"));
 
-            <span class="rank-num">
+    b.classList.add("active");
 
-              #${item.rank}
-
-            </span>
-
-            No.${item.number}
-
-            ${item.match}
-
-          </div>
-
-
-          <div class="rank-confidence">
-
-            ${item.confidence}
-
-          </div>
-
-        </div>
-
-      `)
-      .join("");
-
-}
-
-
-async function loadData(){
-
-  try{
-
-    const timestamp =
-      Date.now();
-
-
-    const [
-      predictionResponse,
-      recommendationResponse
-    ] =
-
-    await Promise.all([
-
-      fetch(
-        "./predictions.json?" +
-        timestamp
-      ),
-
-      fetch(
-        "./recommendation.json?" +
-        timestamp
-      )
-
-    ]);
-
-
-    DATA =
-      await predictionResponse.json();
-
-
-    RECOMMENDATION =
-      await recommendationResponse.json();
-
-
-    summary();
+    current=b.dataset.filter;
 
     render();
 
-    renderRanking();
-
   }
 
-  catch(error){
-
-    console.error(error);
-
-    document
-      .getElementById("matches")
-      .innerHTML =
-
-      `<p class="sub">
-        データを読み込めませんでした。
-      </p>`;
-
-  }
-
-}
-
-
-document
-  .querySelectorAll(".btn")
-  .forEach(button => {
-
-    button.onclick = () => {
-
-      document
-        .querySelectorAll(".btn")
-        .forEach(x =>
-          x.classList
-            .remove("active")
-        );
-
-
-      button
-        .classList
-        .add("active");
-
-
-      current =
-        button.dataset.filter;
-
-
-      render();
-
-    };
-
-  });
-
-
-loadData();
+);
 
 </script>
 
