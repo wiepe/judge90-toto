@@ -23,7 +23,7 @@
           "name": "Setup Node.js",
           "uses": "actions/setup-node@v4",
           "with": {
-            "node-version": "20"
+            "node-version": "24"
           }
         },
         {
@@ -31,8 +31,12 @@
           "run": "node scripts/predict.mjs"
         },
         {
-          "name": "Commit predictions",
-          "run": "git config user.name \"judge90-bot\"\ngit config user.email \"actions@github.com\"\ngit add predictions.json\ngit diff --cached --quiet || git commit -m \"Update JUDGE 90 predictions\"\ngit push"
+          "name": "Build JUDGE 90 Betting Recommendation",
+          "run": "node scripts/build_recommendation.mjs"
+        },
+        {
+          "name": "Commit predictions and recommendations",
+          "run": "git config user.name \"judge90-bot\"\ngit config user.email \"actions@github.com\"\ngit add predictions.json recommendation.json\ngit diff --cached --quiet || git commit -m \"Update JUDGE 90 predictions and recommendations\"\ngit push"
         }
       ]
     }
