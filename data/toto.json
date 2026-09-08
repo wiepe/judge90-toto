@@ -1,0 +1,29 @@
+{
+  "round": "TEST-001",
+  "type": "toto",
+  "deadline": "2026-09-12T13:00:00+09:00",
+
+  "matches": [
+    {
+      "number": 1,
+      "competition": "J1",
+      "date": "2026-09-12",
+      "home": "浦和レッズ",
+      "away": "鹿島アントラーズ"
+    },
+    {
+      "number": 2,
+      "competition": "J1",
+      "date": "2026-09-12",
+      "home": "FC東京",
+      "away": "川崎フロンターレ"
+    },
+    {
+      "number": 3,
+      "competition": "J1",
+      "date": "2026-09-13",
+      "home": "横浜F・マリノス",
+      "away": "サンフレッチェ広島"
+    }
+  ]
+}
