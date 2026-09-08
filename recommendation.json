@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-08T13:10:20.097Z",
+  "generated_at": "2026-09-08T13:40:09.530Z",
   "engine": {
     "name": "JUDGE 90 Betting Strategy Engine",
-    "version": "1.0"
+    "version": "2.0"
   },
   "toto": {
     "round": "TEST-002",
@@ -11,9 +11,273 @@
   },
   "summary": {
     "matches": 3,
+    "main_strategy": "バランス型",
     "combinations": 8,
     "price": 800,
-    "strategy": "堅実型：高信頼度の本命を中心に購入"
+    "strategy": "不確実な試合を重点的にカバー"
+  },
+  "strategies": {
+    "safe": {
+      "type": "safe",
+      "name": "堅実型",
+      "description": "高信頼度の本命を中心に購入",
+      "combinations": 4,
+      "price": 400,
+      "selections": [
+        {
+          "number": 1,
+          "home": "浦和レッズ",
+          "away": "鹿島アントラーズ",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 38,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 40.4
+            },
+            {
+              "mark": "0",
+              "probability": 32.4
+            },
+            {
+              "mark": "1",
+              "probability": 27.2
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "home": "FC東京",
+          "away": "川崎フロンターレ",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 41,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 42.8
+            },
+            {
+              "mark": "0",
+              "probability": 32.1
+            },
+            {
+              "mark": "1",
+              "probability": 25.1
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "home": "横浜F・マリノス",
+          "away": "サンフレッチェ広島",
+          "selections": [
+            "2"
+          ],
+          "confidence": 43,
+          "recommendation": "single",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 45.2
+            },
+            {
+              "mark": "0",
+              "probability": 31.8
+            },
+            {
+              "mark": "1",
+              "probability": 23.1
+            }
+          ]
+        }
+      ]
+    },
+    "balance": {
+      "type": "balance",
+      "name": "バランス型",
+      "description": "不確実な試合を重点的にカバー",
+      "combinations": 8,
+      "price": 800,
+      "selections": [
+        {
+          "number": 1,
+          "home": "浦和レッズ",
+          "away": "鹿島アントラーズ",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 38,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 40.4
+            },
+            {
+              "mark": "0",
+              "probability": 32.4
+            },
+            {
+              "mark": "1",
+              "probability": 27.2
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "home": "FC東京",
+          "away": "川崎フロンターレ",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 41,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 42.8
+            },
+            {
+              "mark": "0",
+              "probability": 32.1
+            },
+            {
+              "mark": "1",
+              "probability": 25.1
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "home": "横浜F・マリノス",
+          "away": "サンフレッチェ広島",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 43,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 45.2
+            },
+            {
+              "mark": "0",
+              "probability": 31.8
+            },
+            {
+              "mark": "1",
+              "probability": 23.1
+            }
+          ]
+        }
+      ]
+    },
+    "aggressive": {
+      "type": "aggressive",
+      "name": "攻め型",
+      "description": "波乱試合まで広くカバー",
+      "combinations": 12,
+      "price": 1200,
+      "selections": [
+        {
+          "number": 1,
+          "home": "浦和レッズ",
+          "away": "鹿島アントラーズ",
+          "selections": [
+            "1",
+            "0",
+            "2"
+          ],
+          "confidence": 38,
+          "recommendation": "triple",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 40.4
+            },
+            {
+              "mark": "0",
+              "probability": 32.4
+            },
+            {
+              "mark": "1",
+              "probability": 27.2
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "home": "FC東京",
+          "away": "川崎フロンターレ",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 41,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 42.8
+            },
+            {
+              "mark": "0",
+              "probability": 32.1
+            },
+            {
+              "mark": "1",
+              "probability": 25.1
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "home": "横浜F・マリノス",
+          "away": "サンフレッチェ広島",
+          "selections": [
+            "2",
+            "0"
+          ],
+          "confidence": 43,
+          "recommendation": "double",
+          "upset": false,
+          "probabilities": [
+            {
+              "mark": "2",
+              "probability": 45.2
+            },
+            {
+              "mark": "0",
+              "probability": 31.8
+            },
+            {
+              "mark": "1",
+              "probability": 23.1
+            }
+          ]
+        }
+      ]
+    }
   },
   "selections": [
     {
