@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-09-08T04:44:00.361Z",
-  "mode": "TEST-001",
+  "updated_at": "2026-09-08T13:10:20.040Z",
+  "mode": "TEST-002",
   "toto": {
-    "round": "TEST-001",
+    "round": "TEST-002",
     "type": "toto",
     "deadline": "2026-09-12T13:00:00+09:00"
   },
   "model": {
-    "name": "JUDGE SCORE v1.2",
-    "version": "1.2",
-    "note": "順位・勝率・得失点差・直近フォーム・ホームアウェイ適性を加味したtoto予測モデル"
+    "name": "JUDGE SCORE v1.3",
+    "version": "1.3",
+    "note": "toto対象試合を読み込み、チーム指標から勝敗確率を算出する説明可能モデル"
   },
   "matches": [
     {
@@ -20,21 +20,21 @@
       "away": "鹿島アントラーズ",
       "prediction": "2",
       "probabilities": {
-        "home": 17.5,
-        "draw": 19.2,
-        "away": 63.4
+        "home": 27.2,
+        "draw": 32.4,
+        "away": 40.4
       },
-      "confidence": 44,
-      "recommendation": "single",
+      "confidence": 38,
+      "recommendation": "double",
       "upset": false,
       "factors": [
-        "リーグ順位：鹿島アントラーズが上位",
-        "直近フォーム：鹿島アントラーズが優勢"
+        "リーグ順位：アウェイチームが上位",
+        "総合戦力が拮抗しており予測難度が高い"
       ],
       "diagnostics": {
-        "homeScore": 51.3,
-        "awayScore": 65.7,
-        "difference": -14.4
+        "homeScore": 68,
+        "awayScore": 71.6,
+        "difference": -3.6
       }
     },
     {
@@ -45,22 +45,21 @@
       "away": "川崎フロンターレ",
       "prediction": "2",
       "probabilities": {
-        "home": 21.1,
-        "draw": 20,
-        "away": 58.9
+        "home": 25.1,
+        "draw": 32.1,
+        "away": 42.8
       },
-      "confidence": 38,
-      "recommendation": "single",
+      "confidence": 41,
+      "recommendation": "double",
       "upset": false,
       "factors": [
-        "リーグ順位：川崎フロンターレが上位",
-        "直近フォームは拮抗",
-        "川崎フロンターレ：選手コンディションに注意"
+        "リーグ順位：アウェイチームが上位",
+        "総合戦力が拮抗しており予測難度が高い"
       ],
       "diagnostics": {
-        "homeScore": 37.9,
-        "awayScore": 50.5,
-        "difference": -12.6
+        "homeScore": 64.4,
+        "awayScore": 69.2,
+        "difference": -4.8
       }
     },
     {
@@ -71,21 +70,20 @@
       "away": "サンフレッチェ広島",
       "prediction": "2",
       "probabilities": {
-        "home": 8.6,
-        "draw": 17.3,
-        "away": 74.1
+        "home": 23.1,
+        "draw": 31.8,
+        "away": 45.2
       },
-      "confidence": 57,
-      "recommendation": "single",
+      "confidence": 43,
+      "recommendation": "double",
       "upset": false,
       "factors": [
-        "リーグ順位：サンフレッチェ広島が上位",
-        "直近フォーム：サンフレッチェ広島が優勢"
+        "リーグ順位：アウェイチームが上位"
       ],
       "diagnostics": {
-        "homeScore": 50.5,
-        "awayScore": 69.1,
-        "difference": -18.6
+        "homeScore": 66.8,
+        "awayScore": 72.8,
+        "difference": -6
       }
     }
   ]

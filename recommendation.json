@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-09-08T04:44:00.417Z",
+  "generated_at": "2026-09-08T13:10:20.097Z",
   "engine": {
     "name": "JUDGE 90 Betting Strategy Engine",
     "version": "1.0"
   },
   "toto": {
-    "round": "TEST-001",
+    "round": "TEST-002",
     "type": "toto",
     "deadline": "2026-09-12T13:00:00+09:00"
   },
   "summary": {
     "matches": 3,
-    "combinations": 1,
-    "price": 100,
+    "combinations": 8,
+    "price": 800,
     "strategy": "堅実型：高信頼度の本命を中心に購入"
   },
   "selections": [
@@ -21,23 +21,24 @@
       "home": "浦和レッズ",
       "away": "鹿島アントラーズ",
       "selections": [
-        "2"
+        "2",
+        "0"
       ],
-      "confidence": 44,
-      "recommendation": "single",
+      "confidence": 38,
+      "recommendation": "double",
       "upset": false,
       "probabilities": [
         {
           "mark": "2",
-          "probability": 63.4
+          "probability": 40.4
         },
         {
           "mark": "0",
-          "probability": 19.2
+          "probability": 32.4
         },
         {
           "mark": "1",
-          "probability": 17.5
+          "probability": 27.2
         }
       ]
     },
@@ -46,23 +47,24 @@
       "home": "FC東京",
       "away": "川崎フロンターレ",
       "selections": [
-        "2"
+        "2",
+        "0"
       ],
-      "confidence": 38,
-      "recommendation": "single",
+      "confidence": 41,
+      "recommendation": "double",
       "upset": false,
       "probabilities": [
         {
           "mark": "2",
-          "probability": 58.9
-        },
-        {
-          "mark": "1",
-          "probability": 21.1
+          "probability": 42.8
         },
         {
           "mark": "0",
-          "probability": 20
+          "probability": 32.1
+        },
+        {
+          "mark": "1",
+          "probability": 25.1
         }
       ]
     },
@@ -71,23 +73,24 @@
       "home": "横浜F・マリノス",
       "away": "サンフレッチェ広島",
       "selections": [
-        "2"
+        "2",
+        "0"
       ],
-      "confidence": 57,
-      "recommendation": "single",
+      "confidence": 43,
+      "recommendation": "double",
       "upset": false,
       "probabilities": [
         {
           "mark": "2",
-          "probability": 74.1
+          "probability": 45.2
         },
         {
           "mark": "0",
-          "probability": 17.3
+          "probability": 31.8
         },
         {
           "mark": "1",
-          "probability": 8.6
+          "probability": 23.1
         }
       ]
     }
@@ -97,18 +100,18 @@
       "rank": 1,
       "number": 3,
       "match": "横浜F・マリノス vs サンフレッチェ広島",
-      "confidence": 57
+      "confidence": 43
     },
     {
       "rank": 2,
-      "number": 1,
-      "match": "浦和レッズ vs 鹿島アントラーズ",
-      "confidence": 44
+      "number": 2,
+      "match": "FC東京 vs 川崎フロンターレ",
+      "confidence": 41
     },
     {
       "rank": 3,
-      "number": 2,
-      "match": "FC東京 vs 川崎フロンターレ",
+      "number": 1,
+      "match": "浦和レッズ vs 鹿島アントラーズ",
       "confidence": 38
     }
   ]
