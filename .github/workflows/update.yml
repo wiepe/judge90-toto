@@ -1,44 +1,23 @@
-{
-  "name": "Update JUDGE 90 Predictions",
-  "on": {
-    "workflow_dispatch": {},
-    "schedule": [
-      {
-        "cron": "0 23 * * 5"
-      }
-    ]
-  },
-  "permissions": {
-    "contents": "write"
-  },
-  "jobs": {
-    "predict": {
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Checkout repository",
-          "uses": "actions/checkout@v4"
-        },
-        {
-          "name": "Setup Node.js",
-          "uses": "actions/setup-node@v4",
-          "with": {
-            "node-version": "24"
-          }
-        },
-        {
-          "name": "Run JUDGE 90 Prediction Engine",
-          "run": "node scripts/predict.mjs"
-        },
-        {
-          "name": "Build JUDGE 90 Betting Recommendation",
-          "run": "node scripts/build_recommendation.mjs"
-        },
-        {
-          "name": "Commit predictions and recommendations",
-          "run": "git config user.name \"judge90-bot\"\ngit config user.email \"actions@github.com\"\ngit add predictions.json recommendation.json\ngit diff --cached --quiet || git commit -m \"Update JUDGE 90 predictions and recommendations\"\ngit push"
-        }
-      ]
-    }
-  }
-}
+name: Test J.League Fetch
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run J.League fetch test
+        run: node scripts/test_jleague_fetch.mjs
