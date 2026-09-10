@@ -1,212 +1,168 @@
-import fs from "fs";
+import { writeFileSync, mkdirSync } from "node:fs";
 
-const predictions = JSON.parse(
-  fs.readFileSync("predictions.json", "utf8")
-);
-
-const matches = predictions.matches;
-
-// -----------------------------
-// 基本設定
-// -----------------------------
-
-const BET_PRICE = 100;
-
-// 最大予算ごとの戦略
-const STRATEGIES = {
-  safe: {
-    name: "堅実型",
-    description: "高信頼度の本命を中心に購入",
-    doubles: 2,
-    triples: 0
+const targets = [
+  {
+    league: "J1",
+    frameId: 1,
+    competitionId: 725
   },
-
-  balance: {
-    name: "バランス型",
-    description: "不確実な試合を重点的にカバー",
-    doubles: 4,
-    triples: 0
+  {
+    league: "J2",
+    frameId: 2,
+    competitionId: 727
   },
-
-  aggressive: {
-    name: "攻め型",
-    description: "波乱試合まで広くカバー",
-    doubles: 3,
-    triples: 1
+  {
+    league: "J3",
+    frameId: 3,
+    competitionId: 730
   }
-};
+];
 
-// -----------------------------
-// 確率から順位付け
-// -----------------------------
-
-function getProbabilities(match) {
-
-  return [
-    { mark: "1", probability: match.probabilities.home },
-    { mark: "0", probability: match.probabilities.draw },
-    { mark: "2", probability: match.probabilities.away }
-  ].sort((a, b) => b.probability - a.probability);
-
+function stripTags(html) {
+  return html
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-// -----------------------------
-// 戦略ごとの買い目生成
-// -----------------------------
+function parseDate(text) {
+  const match = text.match(/(\d{2})\/(\d{2})\/(\d{2})/);
 
-function buildStrategy(type) {
+  if (!match) {
+    return null;
+  }
 
-  const strategy = STRATEGIES[type];
+  const [, yy, mm, dd] = match;
 
-  // 信頼度が低い試合から優先
-  const uncertainMatches = [...matches]
-    .sort((a, b) => a.confidence - b.confidence);
+  return `20${yy}-${mm}-${dd}`;
+}
 
-  const tripleNumbers = uncertainMatches
-    .slice(0, strategy.triples)
-    .map(m => m.number);
+function extractRows(html) {
+  const rows = [];
+  const rowMatches = html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi);
 
-  const remaining = uncertainMatches
-    .filter(m => !tripleNumbers.includes(m.number));
+  for (const rowMatch of rowMatches) {
+    const rowHtml = rowMatch[1];
 
-  const doubleNumbers = remaining
-    .slice(0, strategy.doubles)
-    .map(m => m.number);
+    const cells = [
+      ...rowHtml.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)
+    ].map(match => stripTags(match[1]));
 
-  const selections = matches.map(match => {
-
-    const ranked = getProbabilities(match);
-
-    let picks = [ranked[0].mark];
-    let recommendation = "single";
-
-    if (tripleNumbers.includes(match.number)) {
-
-      picks = ["1", "0", "2"];
-      recommendation = "triple";
-
-    } else if (doubleNumbers.includes(match.number)) {
-
-      picks = [
-        ranked[0].mark,
-        ranked[1].mark
-      ];
-
-      recommendation = "double";
-
+    if (cells.length < 9) {
+      continue;
     }
 
-    return {
-      number: match.number,
-      home: match.home,
-      away: match.away,
-      selections: picks,
-      confidence: match.confidence,
-      recommendation,
-      upset: match.upset,
-      probabilities: ranked
-    };
+    const [
+      season,
+      competition,
+      section,
+      dateText,
+      kickoff,
+      home,
+      score,
+      away,
+      stadium
+    ] = cells;
 
-  });
+    if (!season || !season.startsWith("2026")) {
+      continue;
+    }
 
-  // 組み合わせ数計算
-  const combinations = selections.reduce(
-    (total, match) => total * match.selections.length,
-    1
+    if (!home || !away) {
+      continue;
+    }
+
+    rows.push({
+      season,
+      competition,
+      section,
+      date: parseDate(dateText),
+      kickoff,
+      home,
+      score: score === "vs" ? null : score,
+      away,
+      stadium
+    });
+  }
+
+  return rows;
+}
+
+async function fetchLeague(target) {
+  const url =
+    `https://data.j-league.or.jp/SFMS01/search` +
+    `?competition_frame_ids=${target.frameId}` +
+    `&competition_ids=${target.competitionId}` +
+    `&competition_years=2026`;
+
+  console.log(`Fetching ${target.league}...`);
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(
+      `${target.league} HTTP ERROR: ${response.status}`
+    );
+  }
+
+  const html = await response.text();
+
+  const matches = extractRows(html);
+
+  console.log(
+    `${target.league}: ${matches.length} matches`
   );
 
   return {
-    type,
-    name: strategy.name,
-    description: strategy.description,
-    combinations,
-    price: combinations * BET_PRICE,
-    selections
+    league: target.league,
+    source: "J.League Data Site",
+    source_url: url,
+    fetched_at: new Date().toISOString(),
+    matches
   };
-
 }
 
-// -----------------------------
-// 全戦略生成
-// -----------------------------
+const results = [];
 
-const strategies = {
-  safe: buildStrategy("safe"),
-  balance: buildStrategy("balance"),
-  aggressive: buildStrategy("aggressive")
+for (const target of targets) {
+  try {
+    const result = await fetchLeague(target);
+    results.push(result);
+  } catch (error) {
+    console.error(error.message);
+    process.exitCode = 1;
+  }
+}
+
+if (results.length !== targets.length) {
+  console.error("NOT ALL LEAGUES WERE FETCHED.");
+  process.exit(1);
+}
+
+const output = {
+  season: "2026/27",
+  fetched_at: new Date().toISOString(),
+  leagues: results
 };
 
-// -----------------------------
-// メインおすすめ戦略
-// -----------------------------
+mkdirSync("data", { recursive: true });
 
-const mainStrategy = strategies.balance;
-
-// -----------------------------
-// 信頼度ランキング
-// -----------------------------
-
-const confidenceRanking = [...matches]
-  .sort((a, b) => b.confidence - a.confidence)
-  .map((match, index) => ({
-    rank: index + 1,
-    number: match.number,
-    match: `${match.home} vs ${match.away}`,
-    confidence: match.confidence
-  }));
-
-// -----------------------------
-// JSON生成
-// -----------------------------
-
-const recommendation = {
-  generated_at: new Date().toISOString(),
-
-  engine: {
-    name: "JUDGE 90 Betting Strategy Engine",
-    version: "2.0"
-  },
-
-  toto: predictions.toto,
-
-  summary: {
-    matches: matches.length,
-
-    main_strategy: mainStrategy.name,
-
-    combinations: mainStrategy.combinations,
-
-    price: mainStrategy.price,
-
-    strategy: mainStrategy.description
-  },
-
-  strategies,
-
-  selections: mainStrategy.selections,
-
-  confidence_ranking: confidenceRanking
-};
-
-// -----------------------------
-// ファイル出力
-// -----------------------------
-
-fs.writeFileSync(
-  "recommendation.json",
-  JSON.stringify(recommendation, null, 2)
+writeFileSync(
+  "data/jleague_matches.json",
+  JSON.stringify(output, null, 2),
+  "utf8"
 );
 
-console.log("JUDGE 90 recommendation generated");
-
-console.log(
-  `Main strategy: ${mainStrategy.name}`
-);
-
-console.log(
-  `Combinations: ${mainStrategy.combinations}`
-);
-
-console.log(
-  `Price: ¥${mainStrategy.price}`
-);
+console.log("");
+console.log("==============================");
+console.log("JUDGE90 J.LEAGUE DATA");
+console.log("==============================");
+console.log("Saved: data/jleague_matches.json");
+console.log(`J1: ${results[0].matches.length}`);
+console.log(`J2: ${results[1].matches.length}`);
+console.log(`J3: ${results[2].matches.length}`);
