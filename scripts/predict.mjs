@@ -14,31 +14,98 @@ const metricsData = JSON.parse(
 
 const teams = metricsData.teams;
 
-function findTeam(name) {
-  return teams.find(team => team.team === name);
+// --------------------------------------------------
+// チーム名の違いを吸収
+// toto側とJ.League側で表記が違っても照合できるようにする
+// --------------------------------------------------
+
+const aliases = {
+  "水戸ホーリーホック": "水戸",
+  "川崎フロンターレ": "川崎Ｆ",
+  "清水エスパルス": "清水",
+  "アビスパ福岡": "福岡",
+  "ガンバ大阪": "Ｇ大阪",
+  "ＦＣ東京": "FC東京",
+  "FC東京": "FC東京",
+  "ＦＣ町田ゼルビア": "町田",
+  "横浜Ｆ・マリノス": "横浜FM",
+  "Ｖ・ファーレン長崎": "長崎",
+  "名古屋グランパス": "名古屋",
+  "サンフレッチェ広島": "広島",
+  "セレッソ大阪": "Ｃ大阪",
+  "東京ヴェルディ": "東京Ｖ",
+  "ジェフユナイテッド千葉": "千葉",
+  "浦和レッズ": "浦和",
+  "ファジアーノ岡山": "岡山",
+  "ＦＣ今治": "今治",
+  "サガン鳥栖": "鳥栖",
+  "いわきＦＣ": "いわき",
+  "横浜ＦＣ": "横浜FC",
+  "ヴァンラーレ八戸": "八戸",
+  "湘南ベルマーレ": "湘南",
+  "ヴァンフォーレ甲府": "甲府",
+  "ジュビロ磐田": "磐田",
+  "ブラウブリッツ秋田": "秋田",
+  "徳島ヴォルティス": "徳島"
+};
+
+function canonicalName(name) {
+  return aliases[name] || name;
 }
+
+function findTeam(name) {
+  const target = canonicalName(name);
+
+  return teams.find(team => {
+    return canonicalName(team.team) === target;
+  });
+}
+
+// --------------------------------------------------
+// 数値処理
+// --------------------------------------------------
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
 function normalize(value, min, max) {
-  if (max === min) return 0.5;
-  return clamp((value - min) / (max - min), 0, 1);
+  if (max === min) {
+    return 0.5;
+  }
+
+  return clamp(
+    (value - min) / (max - min),
+    0,
+    1
+  );
 }
 
+// --------------------------------------------------
+// チーム指標
+// --------------------------------------------------
+
 function winRate(team) {
-  if (!team.played) return 0.33;
+  if (!team.played) {
+    return 0.33;
+  }
+
   return team.wins / team.played;
 }
 
 function pointsPerGame(team) {
-  if (!team.played) return 1;
+  if (!team.played) {
+    return 1;
+  }
+
   return team.points / team.played;
 }
 
 function goalDifferencePerGame(team) {
-  if (!team.played) return 0;
+  if (!team.played) {
+    return 0;
+  }
+
   return (
     (team.goals_for - team.goals_against) /
     team.played
@@ -53,15 +120,20 @@ function recentFormScore(team) {
   let score = 0;
 
   for (const match of team.recent_form) {
-    if (match.result === "W") score += 1;
-    if (match.result === "D") score += 0.5;
+    if (match.result === "W") {
+      score += 1;
+    }
+
+    if (match.result === "D") {
+      score += 0.5;
+    }
   }
 
   return score / team.recent_form.length;
 }
 
-function venueScore(team, venue) {
-  const data = team[venue];
+function venueScore(team, venueType) {
+  const data = team[venueType];
 
   if (!data || !data.played) {
     return 0.5;
@@ -73,7 +145,11 @@ function venueScore(team, venue) {
   );
 }
 
-function calculateStrength(team, venue) {
+// --------------------------------------------------
+// 総合チーム力
+// --------------------------------------------------
+
+function calculateStrength(team, venueType) {
   const ppg = normalize(
     pointsPerGame(team),
     0,
@@ -90,16 +166,21 @@ function calculateStrength(team, venue) {
 
   const form = recentFormScore(team);
 
-  const venue = venueScore(team, venue);
+  const venueStrength =
+    venueScore(team, venueType);
 
   return (
     ppg * 0.25 +
     wr * 0.20 +
     gd * 0.20 +
     form * 0.15 +
-    venue * 0.20
+    venueStrength * 0.20
   );
 }
+
+// --------------------------------------------------
+// 1 / 0 / 2 の確率
+// --------------------------------------------------
 
 function calculateProbabilities(home, away) {
   const homeStrength =
@@ -108,7 +189,7 @@ function calculateProbabilities(home, away) {
   const awayStrength =
     calculateStrength(away, "away");
 
-  // ホームアドバンテージ
+  // 現段階では控えめなホームアドバンテージ
   const homeAdvantage = 0.055;
 
   const difference =
@@ -116,10 +197,16 @@ function calculateProbabilities(home, away) {
     awayStrength +
     homeAdvantage;
 
-  // 差が小さいほど引き分けを厚くする
+  // 力が拮抗するほど引き分けを厚くする
   const drawBase =
     0.24 +
-    (1 - Math.min(Math.abs(difference) * 2, 1)) * 0.12;
+    (
+      1 -
+      Math.min(
+        Math.abs(difference) * 2,
+        1
+      )
+    ) * 0.12;
 
   let homeProb =
     0.5 + difference * 0.55;
@@ -127,8 +214,17 @@ function calculateProbabilities(home, away) {
   let awayProb =
     0.5 - difference * 0.55;
 
-  homeProb = clamp(homeProb, 0.12, 0.70);
-  awayProb = clamp(awayProb, 0.12, 0.70);
+  homeProb = clamp(
+    homeProb,
+    0.12,
+    0.70
+  );
+
+  awayProb = clamp(
+    awayProb,
+    0.12,
+    0.70
+  );
 
   const remaining =
     1 - drawBase;
@@ -151,27 +247,47 @@ function calculateProbabilities(home, away) {
   };
 }
 
+// --------------------------------------------------
+// 本命判定
+// --------------------------------------------------
+
 function getPrediction(probabilities) {
   return Object.entries(probabilities)
     .sort((a, b) => b[1] - a[1])[0][0];
 }
 
+// --------------------------------------------------
+// 信頼度
+// --------------------------------------------------
+
 function getConfidence(probabilities) {
   const values =
-    Object.values(probabilities).sort((a, b) => b - a);
+    Object.values(probabilities)
+      .sort((a, b) => b - a);
 
-  const margin = values[0] - values[1];
+  const margin =
+    values[0] - values[1];
 
   return Math.round(
-    clamp(margin * 180, 10, 90)
+    clamp(
+      margin * 180,
+      10,
+      90
+    )
   );
 }
 
+// --------------------------------------------------
+// 不確実性
+// --------------------------------------------------
+
 function getUncertainty(probabilities) {
   const values =
-    Object.values(probabilities).sort((a, b) => b - a);
+    Object.values(probabilities)
+      .sort((a, b) => b - a);
 
-  const margin = values[0] - values[1];
+  const margin =
+    values[0] - values[1];
 
   if (margin < 0.08) {
     return "HIGH";
@@ -184,16 +300,34 @@ function getUncertainty(probabilities) {
   return "LOW";
 }
 
-function getReasons(home, away, probabilities) {
+// --------------------------------------------------
+// 不確実性の理由
+// --------------------------------------------------
+
+function getReasons(
+  home,
+  away,
+  probabilities
+) {
   const reasons = [];
 
   const homeStrength =
-    calculateStrength(home, "home");
+    calculateStrength(
+      home,
+      "home"
+    );
 
   const awayStrength =
-    calculateStrength(away, "away");
+    calculateStrength(
+      away,
+      "away"
+    );
 
-  if (Math.abs(homeStrength - awayStrength) < 0.08) {
+  if (
+    Math.abs(
+      homeStrength - awayStrength
+    ) < 0.08
+  ) {
     reasons.push(
       "両チームの総合評価が近い"
     );
@@ -212,7 +346,7 @@ function getReasons(home, away, probabilities) {
     venueScore(away, "away") + 0.12
   ) {
     reasons.push(
-      "ホーム成績が優位"
+      "ホーム側の開催地成績が優位"
     );
   }
 
@@ -243,6 +377,10 @@ function getReasons(home, away, probabilities) {
   return reasons;
 }
 
+// --------------------------------------------------
+// 予測実行
+// --------------------------------------------------
+
 const predictions = [];
 
 for (const match of toto.matches) {
@@ -258,34 +396,51 @@ for (const match of toto.matches) {
   }
 
   const probabilities =
-    calculateProbabilities(home, away);
+    calculateProbabilities(
+      home,
+      away
+    );
 
   const prediction =
-    getPrediction(probabilities);
+    getPrediction(
+      probabilities
+    );
 
   const confidence =
-    getConfidence(probabilities);
+    getConfidence(
+      probabilities
+    );
 
   const uncertainty =
-    getUncertainty(probabilities);
+    getUncertainty(
+      probabilities
+    );
 
   predictions.push({
     number: match.number,
+
     home: match.home,
+
     away: match.away,
+
     league: match.league,
 
     prediction,
 
     probabilities: {
       "1": Number(
-        probabilities["1"].toFixed(3)
+        probabilities["1"]
+          .toFixed(3)
       ),
+
       "0": Number(
-        probabilities["0"].toFixed(3)
+        probabilities["0"]
+          .toFixed(3)
       ),
+
       "2": Number(
-        probabilities["2"].toFixed(3)
+        probabilities["2"]
+          .toFixed(3)
       )
     },
 
@@ -293,11 +448,13 @@ for (const match of toto.matches) {
 
     uncertainty: {
       level: uncertainty,
-      reasons: getReasons(
-        home,
-        away,
-        probabilities
-      )
+
+      reasons:
+        getReasons(
+          home,
+          away,
+          probabilities
+        )
     },
 
     signals: {
@@ -320,11 +477,32 @@ for (const match of toto.matches) {
   });
 }
 
+// --------------------------------------------------
+// 13試合すべて取得できなければ失敗扱い
+// --------------------------------------------------
+
+if (
+  predictions.length !==
+  toto.matches.length
+) {
+  throw new Error(
+    `予測できた試合数が不足しています。` +
+    ` toto=${toto.matches.length},` +
+    ` predictions=${predictions.length}`
+  );
+}
+
+// --------------------------------------------------
+// 出力
+// --------------------------------------------------
+
 const output = {
-  updated_at: new Date().toISOString(),
+  updated_at:
+    new Date().toISOString(),
 
   model: {
     name: "JUDGE SCORE",
+
     version: "2.0",
 
     description:
@@ -336,18 +514,37 @@ const output = {
 
 writeFileSync(
   outputPath,
-  JSON.stringify(output, null, 2),
+  JSON.stringify(
+    output,
+    null,
+    2
+  ),
   "utf8"
 );
 
+// --------------------------------------------------
+// ログ
+// --------------------------------------------------
+
 console.log("");
-console.log("==============================");
-console.log("JUDGE90 PREDICTION ENGINE");
-console.log("==============================");
+
+console.log(
+  "=============================="
+);
+
+console.log(
+  "JUDGE90 PREDICTION ENGINE"
+);
+
+console.log(
+  "=============================="
+);
 
 for (const match of predictions) {
   console.log(
-    `${match.number}. ${match.home} vs ${match.away} → ${match.prediction}`
+    `${match.number}. ` +
+    `${match.home} vs ${match.away} ` +
+    `→ ${match.prediction}`
   );
 
   console.log(
@@ -363,6 +560,7 @@ for (const match of predictions) {
 }
 
 console.log("");
+
 console.log(
   `Generated ${predictions.length} predictions`
 );
