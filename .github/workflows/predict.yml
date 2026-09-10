@@ -1,0 +1,46 @@
+name: Run JUDGE90 Prediction
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch J.League data
+        run: node scripts/fetch_jleague.mjs
+
+      - name: Build team metrics
+        run: node scripts/build_team_metrics.mjs
+
+      - name: Fetch toto data
+        run: node scripts/fetch_toto.mjs
+
+      - name: Run prediction
+        run: node scripts/predict.mjs
+
+      - name: Commit prediction data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/jleague_matches.json
+          git add data/team_metrics.json
+          git add data/toto_matches.json
+          git add predictions.json
+
+          git diff --cached --quiet || git commit -m "Update JUDGE90 predictions"
+
+          git push
