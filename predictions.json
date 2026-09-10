@@ -1,89 +1,338 @@
 {
-  "updated_at": "2026-09-08T13:40:09.486Z",
-  "mode": "TEST-002",
-  "toto": {
-    "round": "TEST-002",
-    "type": "toto",
-    "deadline": "2026-09-12T13:00:00+09:00"
-  },
+  "updated_at": "2026-09-10T23:10:24.239Z",
   "model": {
-    "name": "JUDGE SCORE v1.3",
-    "version": "1.3",
-    "note": "toto対象試合を読み込み、チーム指標から勝敗確率を算出する説明可能モデル"
+    "name": "JUDGE SCORE",
+    "version": "2.0",
+    "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージを統合"
   },
   "matches": [
     {
       "number": 1,
-      "competition": "J1",
-      "date": "2026-09-12",
-      "home": "浦和レッズ",
-      "away": "鹿島アントラーズ",
-      "prediction": "2",
+      "home": "水戸ホーリーホック",
+      "away": "川崎フロンターレ",
+      "league": "J1",
+      "prediction": "1",
       "probabilities": {
-        "home": 27.2,
-        "draw": 32.4,
-        "away": 40.4
+        "0": 0.327,
+        "1": 0.387,
+        "2": 0.286
       },
-      "confidence": 38,
-      "recommendation": "double",
-      "upset": false,
-      "factors": [
-        "リーグ順位：アウェイチームが上位",
-        "総合戦力が拮抗しており予測難度が高い"
-      ],
-      "diagnostics": {
-        "homeScore": 68,
-        "awayScore": 71.6,
-        "difference": -3.6
+      "confidence": 11,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "水戸",
+        "momentum": "水戸",
+        "home_advantage": "水戸"
       }
     },
     {
       "number": 2,
-      "competition": "J1",
-      "date": "2026-09-12",
-      "home": "FC東京",
-      "away": "川崎フロンターレ",
-      "prediction": "2",
+      "home": "清水エスパルス",
+      "away": "アビスパ福岡",
+      "league": "J1",
+      "prediction": "0",
       "probabilities": {
-        "home": 25.1,
-        "draw": 32.1,
-        "away": 42.8
+        "0": 0.352,
+        "1": 0.336,
+        "2": 0.312
       },
-      "confidence": 41,
-      "recommendation": "double",
-      "upset": false,
-      "factors": [
-        "リーグ順位：アウェイチームが上位",
-        "総合戦力が拮抗しており予測難度が高い"
-      ],
-      "diagnostics": {
-        "homeScore": 64.4,
-        "awayScore": 69.2,
-        "difference": -4.8
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "清水",
+        "momentum": "福岡",
+        "home_advantage": "清水"
       }
     },
     {
       "number": 3,
-      "competition": "J1",
-      "date": "2026-09-13",
-      "home": "横浜F・マリノス",
-      "away": "サンフレッチェ広島",
+      "home": "ガンバ大阪",
+      "away": "ＦＣ東京",
+      "league": "J1",
       "prediction": "2",
       "probabilities": {
-        "home": 23.1,
-        "draw": 31.8,
-        "away": 45.2
+        "0": 0.315,
+        "1": 0.271,
+        "2": 0.414
       },
-      "confidence": 43,
-      "recommendation": "double",
-      "upset": false,
-      "factors": [
-        "リーグ順位：アウェイチームが上位"
-      ],
-      "diagnostics": {
-        "homeScore": 66.8,
-        "awayScore": 72.8,
-        "difference": -6
+      "confidence": 18,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "FC東京",
+        "momentum": "FC東京",
+        "home_advantage": "Ｇ大阪"
+      }
+    },
+    {
+      "number": 4,
+      "home": "ＦＣ町田ゼルビア",
+      "away": "横浜Ｆ・マリノス",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.268,
+        "1": 0.519,
+        "2": 0.214
+      },
+      "confidence": 45,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "町田",
+        "momentum": "町田",
+        "home_advantage": "町田"
+      }
+    },
+    {
+      "number": 5,
+      "home": "Ｖ・ファーレン長崎",
+      "away": "名古屋グランパス",
+      "league": "J1",
+      "prediction": "0",
+      "probabilities": {
+        "0": 0.354,
+        "1": 0.331,
+        "2": 0.314
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "名古屋",
+        "momentum": "名古屋",
+        "home_advantage": "長崎"
+      }
+    },
+    {
+      "number": 6,
+      "home": "サンフレッチェ広島",
+      "away": "セレッソ大阪",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.284,
+        "1": 0.483,
+        "2": 0.233
+      },
+      "confidence": 36,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "広島",
+        "momentum": "広島",
+        "home_advantage": "広島"
+      }
+    },
+    {
+      "number": 7,
+      "home": "東京ヴェルディ",
+      "away": "ジェフユナイテッド千葉",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.341,
+        "1": 0.359,
+        "2": 0.301
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "東京Ｖ",
+        "momentum": "東京Ｖ",
+        "home_advantage": "東京Ｖ"
+      }
+    },
+    {
+      "number": 8,
+      "home": "浦和レッズ",
+      "away": "ファジアーノ岡山",
+      "league": "J1",
+      "prediction": "0",
+      "probabilities": {
+        "0": 0.354,
+        "1": 0.332,
+        "2": 0.314
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "岡山",
+        "momentum": "岡山",
+        "home_advantage": "浦和"
+      }
+    },
+    {
+      "number": 9,
+      "home": "ＦＣ今治",
+      "away": "サガン鳥栖",
+      "league": "J2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.258,
+        "1": 0.204,
+        "2": 0.538
+      },
+      "confidence": 51,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "鳥栖",
+        "momentum": "鳥栖",
+        "home_advantage": "今治"
+      }
+    },
+    {
+      "number": 10,
+      "home": "いわきＦＣ",
+      "away": "横浜ＦＣ",
+      "league": "J2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.279,
+        "1": 0.227,
+        "2": 0.494
+      },
+      "confidence": 39,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "横浜FC",
+        "momentum": "横浜FC",
+        "home_advantage": "いわき"
+      }
+    },
+    {
+      "number": 11,
+      "home": "ヴァンラーレ八戸",
+      "away": "湘南ベルマーレ",
+      "league": "J2",
+      "prediction": "0",
+      "probabilities": {
+        "0": 0.356,
+        "1": 0.316,
+        "2": 0.328
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い"
+        ]
+      },
+      "signals": {
+        "season_strength": "湘南",
+        "momentum": "湘南",
+        "home_advantage": "八戸"
+      }
+    },
+    {
+      "number": 12,
+      "home": "ヴァンフォーレ甲府",
+      "away": "ジュビロ磐田",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.342,
+        "1": 0.356,
+        "2": 0.302
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "甲府",
+        "momentum": "甲府",
+        "home_advantage": "甲府"
+      }
+    },
+    {
+      "number": 13,
+      "home": "ブラウブリッツ秋田",
+      "away": "徳島ヴォルティス",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.346,
+        "1": 0.347,
+        "2": 0.306
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "徳島",
+        "momentum": "徳島",
+        "home_advantage": "秋田"
       }
     }
   ]
