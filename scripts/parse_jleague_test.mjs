@@ -1,49 +1,95 @@
-
 const targets = [
   {
     name: "J1",
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026"
+    frameId: 1,
+    competitionId: 725
   },
   {
     name: "J2",
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026"
+    frameId: 2,
+    competitionId: 727
   },
   {
     name: "J3",
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026"
+    frameId: 3,
+    competitionId: 730
   }
 ];
 
-function cleanText(text) {
-  return text
+function stripTags(html) {
+  return html
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-function extractMatches(html) {
-  const matches = [];
+function parseDate(text) {
+  const match = text.match(/(\d{2})\/(\d{2})\/(\d{2})/);
 
-  /*
-   * J.League公式ページのHTMLから
-   * 試合情報らしいブロックを探すための簡易テスト。
-   *
-   * この段階では「完全なパーサー」ではなく、
-   * 実際のHTML構造を確認することを目的とする。
-   */
+  if (!match) {
+    return null;
+  }
 
-  const dateMatches = [
-    ...html.matchAll(
-      /(\d{4})\/(\d{1,2})\/(\d{1,2})/g
-    )
-  ];
+  const [, yy, mm, dd] = match;
 
-  for (const match of dateMatches.slice(0, 10)) {
-    matches.push({
-      date: `${match[1]}-${String(match[2]).padStart(2, "0")}-${String(match[3]).padStart(2, "0")}`
+  return `20${yy}-${mm}-${dd}`;
+}
+
+function extractRows(html) {
+  const rows = [];
+  const rowMatches = html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi);
+
+  for (const rowMatch of rowMatches) {
+    const rowHtml = rowMatch[1];
+
+    const cells = [
+      ...rowHtml.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)
+    ].map(match => stripTags(match[1]));
+
+    if (cells.length < 9) {
+      continue;
+    }
+
+    const [
+      season,
+      competition,
+      section,
+      dateText,
+      kickoff,
+      home,
+      score,
+      away,
+      stadium
+    ] = cells;
+
+    // ヘッダーなどを除外
+    if (!season || !season.match(/^2026/)) {
+      continue;
+    }
+
+    if (!home || !away) {
+      continue;
+    }
+
+    rows.push({
+      season,
+      competition,
+      section,
+      date: parseDate(dateText),
+      kickoff,
+      home,
+      score: score === "vs" ? null : score,
+      away,
+      stadium
     });
   }
 
-  return matches;
+  return rows;
 }
 
 for (const target of targets) {
@@ -51,42 +97,54 @@ for (const target of targets) {
   console.log(`${target.name} PARSE TEST`);
   console.log("==============================");
 
+  const url =
+    `https://data.j-league.or.jp/SFMS01/search` +
+    `?competition_frame_ids=${target.frameId}` +
+    `&competition_ids=${target.competitionId}` +
+    `&competition_years=2026`;
+
+  console.log("URL:", url);
+
   try {
-    const response = await fetch(target.url);
+    const response = await fetch(url);
 
     console.log("HTTP STATUS:", response.status);
+
+    if (!response.ok) {
+      console.error("FETCH FAILED");
+      continue;
+    }
 
     const html = await response.text();
 
     console.log("HTML LENGTH:", html.length);
 
-    const matches = extractMatches(html);
+    const matches = extractRows(html);
 
-    console.log("\n--- DATE EXTRACTION ---");
+    console.log("MATCHES FOUND:", matches.length);
 
-    if (matches.length === 0) {
-      console.log("NO DATES FOUND");
-    } else {
-      for (const match of matches) {
-        console.log(match);
-      }
+    console.log("\n--- FIRST 5 MATCHES ---");
+
+    for (const match of matches.slice(0, 5)) {
+      console.log(JSON.stringify(match, null, 2));
     }
 
-    console.log("\n--- SAMPLE HTML ---");
+    console.log("\n--- UPCOMING MATCHES ---");
 
-    const sampleIndex = html.indexOf("浦和");
+    const upcoming = matches
+      .filter(match => match.score === null)
+      .slice(0, 5);
 
-    if (sampleIndex !== -1) {
-      console.log(
-        cleanText(
-          html.substring(
-            Math.max(0, sampleIndex - 500),
-            sampleIndex + 1000
-          )
-        )
-      );
+    for (const match of upcoming) {
+      console.log(JSON.stringify(match, null, 2));
+    }
+
+    console.log("\n--- PARSE STATUS ---");
+
+    if (matches.length > 0) {
+      console.log("SUCCESS");
     } else {
-      console.log("TEAM SAMPLE NOT FOUND");
+      console.log("FAILED: NO MATCHES");
     }
 
   } catch (error) {
