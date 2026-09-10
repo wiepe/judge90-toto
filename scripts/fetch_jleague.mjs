@@ -1,3 +1,4 @@
+import { writeFileSync, mkdirSync } from "node:fs";
 
 const targets = [
   {
@@ -110,7 +111,6 @@ async function fetchLeague(target) {
   }
 
   const html = await response.text();
-
   const matches = extractRows(html);
 
   console.log(
@@ -138,21 +138,30 @@ for (const target of targets) {
   }
 }
 
+if (results.length !== targets.length) {
+  console.error("NOT ALL LEAGUES WERE FETCHED.");
+  process.exit(1);
+}
+
 const output = {
   season: "2026/27",
   fetched_at: new Date().toISOString(),
   leagues: results
 };
 
-console.log("\n==============================");
-console.log("JUDGE90 J.LEAGUE DATA");
-console.log("==============================");
+mkdirSync("data", { recursive: true });
 
-console.log(
-  JSON.stringify(output, null, 2)
+writeFileSync(
+  "data/jleague_matches.json",
+  JSON.stringify(output, null, 2),
+  "utf8"
 );
 
-if (results.length !== targets.length) {
-  console.error("NOT ALL LEAGUES WERE FETCHED.");
-  process.exitCode = 1;
-}
+console.log("");
+console.log("==============================");
+console.log("JUDGE90 J.LEAGUE DATA");
+console.log("==============================");
+console.log("Saved: data/jleague_matches.json");
+console.log(`J1: ${results[0].matches.length}`);
+console.log(`J2: ${results[1].matches.length}`);
+console.log(`J3: ${results[2].matches.length}`);
