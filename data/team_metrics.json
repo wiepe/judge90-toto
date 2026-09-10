@@ -1,86 +1,5047 @@
 {
-  "浦和レッズ": {
-    "rank": 5,
-    "points": 35,
-    "played": 20,
-    "wins": 10,
-    "draws": 5,
-    "losses": 5,
-    "goals_for": 30,
-    "goals_against": 22,
-    "recent_form": ["W", "D", "W", "L", "W"],
-    "home_strength": 0.68,
-    "away_strength": 0.58,
-    "injury_risk": 0.10
-  },
-  "鹿島アントラーズ": {
-    "rank": 2,
-    "points": 45,
-    "played": 20,
-    "wins": 14,
-    "draws": 3,
-    "losses": 3,
-    "goals_for": 38,
-    "goals_against": 18,
-    "recent_form": ["W", "W", "D", "W", "W"],
-    "home_strength": 0.82,
-    "away_strength": 0.75,
-    "injury_risk": 0.08
-  },
-  "FC東京": {
-    "rank": 8,
-    "points": 29,
-    "played": 20,
-    "wins": 8,
-    "draws": 5,
-    "losses": 7,
-    "goals_for": 25,
-    "goals_against": 27,
-    "recent_form": ["L", "W", "D", "L", "W"],
-    "home_strength": 0.62,
-    "away_strength": 0.48,
-    "injury_risk": 0.12
-  },
-  "川崎フロンターレ": {
-    "rank": 4,
-    "points": 37,
-    "played": 20,
-    "wins": 11,
-    "draws": 4,
-    "losses": 5,
-    "goals_for": 33,
-    "goals_against": 24,
-    "recent_form": ["W", "W", "L", "D", "W"],
-    "home_strength": 0.76,
-    "away_strength": 0.72,
-    "injury_risk": 0.15
-  },
-  "横浜F・マリノス": {
-    "rank": 6,
-    "points": 33,
-    "played": 20,
-    "wins": 9,
-    "draws": 6,
-    "losses": 5,
-    "goals_for": 35,
-    "goals_against": 28,
-    "recent_form": ["W", "L", "W", "D", "W"],
-    "home_strength": 0.74,
-    "away_strength": 0.62,
-    "injury_risk": 0.11
-  },
-  "サンフレッチェ広島": {
-    "rank": 1,
-    "points": 48,
-    "played": 20,
-    "wins": 15,
-    "draws": 3,
-    "losses": 2,
-    "goals_for": 40,
-    "goals_against": 17,
-    "recent_form": ["W", "W", "W", "D", "W"],
-    "home_strength": 0.85,
-    "away_strength": 0.78,
-    "injury_risk": 0.07
-  }
+  "season": "2026/27",
+  "source": "J.League Data Site",
+  "generated_at": "2026-09-10T11:27:53.279Z",
+  "teams": [
+    {
+      "team_id": "J1_横浜FM",
+      "team": "横浜FM",
+      "league": "J1",
+      "season": 2026,
+      "rank": 7,
+      "points": 10,
+      "played": 6,
+      "wins": 3,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 10,
+      "goals_against": 8,
+      "goal_difference": 2,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "清水",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "神戸",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "浦和",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "京都",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "柏",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 5,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_鹿島",
+      "team": "鹿島",
+      "league": "J1",
+      "season": 2026,
+      "rank": 3,
+      "points": 12,
+      "played": 6,
+      "wins": 4,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 13,
+      "goals_against": 11,
+      "goal_difference": 2,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "名古屋",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "福岡",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "東京Ｖ",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "水戸",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "浦和",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 8,
+        "goals_against": 7
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_Ｇ大阪",
+      "team": "Ｇ大阪",
+      "league": "J1",
+      "season": 2026,
+      "rank": 13,
+      "points": 6,
+      "played": 6,
+      "wins": 1,
+      "draws": 3,
+      "losses": 2,
+      "goals_for": 8,
+      "goals_against": 11,
+      "goal_difference": -3,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "水戸",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "名古屋",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "広島",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "長崎",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "千葉",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 4,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 4,
+        "wins": 0,
+        "draws": 2,
+        "losses": 2,
+        "points": 2,
+        "goals_for": 4,
+        "goals_against": 8
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_浦和",
+      "team": "浦和",
+      "league": "J1",
+      "season": 2026,
+      "rank": 12,
+      "points": 9,
+      "played": 6,
+      "wins": 3,
+      "draws": 0,
+      "losses": 3,
+      "goals_for": 12,
+      "goals_against": 15,
+      "goal_difference": -3,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "広島",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-23",
+          "opponent": "町田",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "横浜FM",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "福岡",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "鹿島",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 6
+      },
+      "away": {
+        "played": 4,
+        "wins": 2,
+        "draws": 0,
+        "losses": 2,
+        "points": 6,
+        "goals_for": 8,
+        "goals_against": 9
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_Ｃ大阪",
+      "team": "Ｃ大阪",
+      "league": "J1",
+      "season": 2026,
+      "rank": 9,
+      "points": 10,
+      "played": 6,
+      "wins": 3,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 5,
+      "goals_against": 5,
+      "goal_difference": 0,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "福岡",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "清水",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "神戸",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "柏",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "東京Ｖ",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 4,
+        "wins": 3,
+        "draws": 1,
+        "losses": 0,
+        "points": 10,
+        "goals_for": 5,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 0,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_岡山",
+      "team": "岡山",
+      "league": "J1",
+      "season": 2026,
+      "rank": 8,
+      "points": 10,
+      "played": 6,
+      "wins": 3,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 8,
+      "goals_against": 7,
+      "goal_difference": 1,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "長崎",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "東京Ｖ",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "名古屋",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "千葉",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "広島",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 4,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_名古屋",
+      "team": "名古屋",
+      "league": "J1",
+      "season": 2026,
+      "rank": 14,
+      "points": 6,
+      "played": 6,
+      "wins": 2,
+      "draws": 0,
+      "losses": 4,
+      "goals_for": 7,
+      "goals_against": 11,
+      "goal_difference": -4,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "鹿島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "Ｇ大阪",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "岡山",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "広島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "町田",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 4,
+        "wins": 2,
+        "draws": 0,
+        "losses": 2,
+        "points": 6,
+        "goals_for": 6,
+        "goals_against": 6
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 1,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_清水",
+      "team": "清水",
+      "league": "J1",
+      "season": 2026,
+      "rank": 17,
+      "points": 4,
+      "played": 6,
+      "wins": 1,
+      "draws": 1,
+      "losses": 4,
+      "goals_for": 3,
+      "goals_against": 7,
+      "goal_difference": -4,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "横浜FM",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "Ｃ大阪",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "柏",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "FC東京",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "川崎Ｆ",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 0,
+        "draws": 1,
+        "losses": 2,
+        "points": 1,
+        "goals_for": 1,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 2,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_福岡",
+      "team": "福岡",
+      "league": "J1",
+      "season": 2026,
+      "rank": 16,
+      "points": 4,
+      "played": 6,
+      "wins": 1,
+      "draws": 1,
+      "losses": 4,
+      "goals_for": 9,
+      "goals_against": 10,
+      "goal_difference": -1,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "Ｃ大阪",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "鹿島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "京都",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "浦和",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "水戸",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 4,
+        "wins": 1,
+        "draws": 1,
+        "losses": 2,
+        "points": 4,
+        "goals_for": 6,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 3,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_神戸",
+      "team": "神戸",
+      "league": "J1",
+      "season": 2026,
+      "rank": 2,
+      "points": 13,
+      "played": 6,
+      "wins": 4,
+      "draws": 1,
+      "losses": 1,
+      "goals_for": 9,
+      "goals_against": 4,
+      "goal_difference": 5,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "FC東京",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "横浜FM",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "Ｃ大阪",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "東京Ｖ",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "長崎",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 6,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 3,
+        "goals_against": 1
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_柏",
+      "team": "柏",
+      "league": "J1",
+      "season": 2026,
+      "rank": 4,
+      "points": 12,
+      "played": 6,
+      "wins": 4,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 10,
+      "goals_against": 8,
+      "goal_difference": 2,
+      "recent_form": [
+        {
+          "date": "2026-08-14",
+          "opponent": "東京Ｖ",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-21",
+          "opponent": "長崎",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "清水",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "Ｃ大阪",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "横浜FM",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 6,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 4,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_水戸",
+      "team": "水戸",
+      "league": "J1",
+      "season": 2026,
+      "rank": 11,
+      "points": 9,
+      "played": 6,
+      "wins": 2,
+      "draws": 3,
+      "losses": 1,
+      "goals_for": 11,
+      "goals_against": 8,
+      "goal_difference": 3,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "Ｇ大阪",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "京都",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "町田",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "鹿島",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "福岡",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 2,
+        "losses": 0,
+        "points": 5,
+        "goals_for": 6,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 5,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_FC東京",
+      "team": "FC東京",
+      "league": "J1",
+      "season": 2026,
+      "rank": 6,
+      "points": 11,
+      "played": 6,
+      "wins": 3,
+      "draws": 2,
+      "losses": 1,
+      "goals_for": 11,
+      "goals_against": 8,
+      "goal_difference": 3,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "神戸",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-21",
+          "opponent": "千葉",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "長崎",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "清水",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "京都",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 2,
+        "losses": 0,
+        "points": 5,
+        "goals_for": 6,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_町田",
+      "team": "町田",
+      "league": "J1",
+      "season": 2026,
+      "rank": 1,
+      "points": 16,
+      "played": 6,
+      "wins": 5,
+      "draws": 1,
+      "losses": 0,
+      "goals_for": 18,
+      "goals_against": 5,
+      "goal_difference": 13,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "千葉",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-23",
+          "opponent": "浦和",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "水戸",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "川崎Ｆ",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "名古屋",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 4,
+        "wins": 3,
+        "draws": 1,
+        "losses": 0,
+        "points": 10,
+        "goals_for": 13,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_広島",
+      "team": "広島",
+      "league": "J1",
+      "season": 2026,
+      "rank": 5,
+      "points": 11,
+      "played": 6,
+      "wins": 3,
+      "draws": 2,
+      "losses": 1,
+      "goals_for": 13,
+      "goals_against": 5,
+      "goal_difference": 8,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "浦和",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "川崎Ｆ",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "Ｇ大阪",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "名古屋",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "岡山",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 7,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 6,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_千葉",
+      "team": "千葉",
+      "league": "J1",
+      "season": 2026,
+      "rank": 20,
+      "points": 3,
+      "played": 6,
+      "wins": 1,
+      "draws": 0,
+      "losses": 5,
+      "goals_for": 5,
+      "goals_against": 15,
+      "goal_difference": -10,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "町田",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-21",
+          "opponent": "FC東京",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "川崎Ｆ",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "岡山",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Ｇ大阪",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 3,
+        "goals_against": 6
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 0,
+        "losses": 3,
+        "points": 0,
+        "goals_for": 2,
+        "goals_against": 9
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_東京Ｖ",
+      "team": "東京Ｖ",
+      "league": "J1",
+      "season": 2026,
+      "rank": 19,
+      "points": 3,
+      "played": 6,
+      "wins": 0,
+      "draws": 3,
+      "losses": 3,
+      "goals_for": 2,
+      "goals_against": 8,
+      "goal_difference": -6,
+      "recent_form": [
+        {
+          "date": "2026-08-14",
+          "opponent": "柏",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "岡山",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "鹿島",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "神戸",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "Ｃ大阪",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 4,
+        "wins": 0,
+        "draws": 1,
+        "losses": 3,
+        "points": 1,
+        "goals_for": 2,
+        "goals_against": 8
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 2,
+        "losses": 0,
+        "points": 2,
+        "goals_for": 0,
+        "goals_against": 0
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_川崎Ｆ",
+      "team": "川崎Ｆ",
+      "league": "J1",
+      "season": 2026,
+      "rank": 10,
+      "points": 9,
+      "played": 6,
+      "wins": 2,
+      "draws": 3,
+      "losses": 1,
+      "goals_for": 12,
+      "goals_against": 9,
+      "goal_difference": 3,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "京都",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "広島",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "千葉",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "町田",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "清水",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 9,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 2,
+        "losses": 1,
+        "points": 2,
+        "goals_for": 3,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_長崎",
+      "team": "長崎",
+      "league": "J1",
+      "season": 2026,
+      "rank": 18,
+      "points": 4,
+      "played": 6,
+      "wins": 1,
+      "draws": 1,
+      "losses": 4,
+      "goals_for": 7,
+      "goals_against": 14,
+      "goal_difference": -7,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "岡山",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-21",
+          "opponent": "柏",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "FC東京",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "Ｇ大阪",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "神戸",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 4,
+        "goals_against": 6
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 0,
+        "losses": 3,
+        "points": 0,
+        "goals_for": 3,
+        "goals_against": 8
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J1_京都",
+      "team": "京都",
+      "league": "J1",
+      "season": 2026,
+      "rank": 15,
+      "points": 5,
+      "played": 6,
+      "wins": 1,
+      "draws": 2,
+      "losses": 3,
+      "goals_for": 7,
+      "goals_against": 11,
+      "goal_difference": -4,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "川崎Ｆ",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "水戸",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "福岡",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "横浜FM",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "FC東京",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 3,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 4,
+        "wins": 0,
+        "draws": 2,
+        "losses": 2,
+        "points": 2,
+        "goals_for": 4,
+        "goals_against": 7
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_札幌",
+      "team": "札幌",
+      "league": "J2",
+      "season": 2026,
+      "rank": 17,
+      "points": 3,
+      "played": 5,
+      "wins": 1,
+      "draws": 0,
+      "losses": 4,
+      "goals_for": 6,
+      "goals_against": 12,
+      "goal_difference": -6,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "徳島",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "新潟",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "大宮",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "甲府",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "栃木Ｃ",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 8
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 2,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_徳島",
+      "team": "徳島",
+      "league": "J2",
+      "season": 2026,
+      "rank": 12,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 3,
+      "goals_against": 4,
+      "goal_difference": -1,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "札幌",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "鳥栖",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "磐田",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "大分",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "いわき",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 2,
+        "goals_against": 0
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 1,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_八戸",
+      "team": "八戸",
+      "league": "J2",
+      "season": 2026,
+      "rank": 14,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 3,
+      "goals_against": 7,
+      "goal_difference": -4,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "富山",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "栃木Ｃ",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 5
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "仙台",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "秋田",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "藤枝",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 3,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "points": 1,
+        "goals_for": 0,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_富山",
+      "team": "富山",
+      "league": "J2",
+      "season": 2026,
+      "rank": 6,
+      "points": 9,
+      "played": 5,
+      "wins": 3,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 11,
+      "goals_against": 5,
+      "goal_difference": 6,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "八戸",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "秋田",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "今治",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "藤枝",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "磐田",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 6,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_藤枝",
+      "team": "藤枝",
+      "league": "J2",
+      "season": 2026,
+      "rank": 4,
+      "points": 10,
+      "played": 5,
+      "wins": 3,
+      "draws": 1,
+      "losses": 1,
+      "goals_for": 8,
+      "goals_against": 4,
+      "goal_difference": 4,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "仙台",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "いわき",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "新潟",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "富山",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "八戸",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 5,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 3,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_仙台",
+      "team": "仙台",
+      "league": "J2",
+      "season": 2026,
+      "rank": 3,
+      "points": 10,
+      "played": 5,
+      "wins": 3,
+      "draws": 1,
+      "losses": 1,
+      "goals_for": 9,
+      "goals_against": 5,
+      "goal_difference": 4,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "藤枝",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "大分",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "八戸",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "宮崎",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "湘南",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 4,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_大宮",
+      "team": "大宮",
+      "league": "J2",
+      "season": 2026,
+      "rank": 1,
+      "points": 11,
+      "played": 5,
+      "wins": 3,
+      "draws": 2,
+      "losses": 0,
+      "goals_for": 10,
+      "goals_against": 5,
+      "goal_difference": 5,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "新潟",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "今治",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "札幌",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "湘南",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "秋田",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 7,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_新潟",
+      "team": "新潟",
+      "league": "J2",
+      "season": 2026,
+      "rank": 8,
+      "points": 9,
+      "played": 5,
+      "wins": 3,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 6,
+      "goals_against": 9,
+      "goal_difference": -3,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "大宮",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "札幌",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "藤枝",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "いわき",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "横浜FC",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 5
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "points": 6,
+        "goals_for": 3,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 3,
+        "goals_against": 8
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_磐田",
+      "team": "磐田",
+      "league": "J2",
+      "season": 2026,
+      "rank": 11,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 7,
+      "goals_against": 7,
+      "goal_difference": 0,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "秋田",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "横浜FC",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "徳島",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "栃木Ｃ",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "富山",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_秋田",
+      "team": "秋田",
+      "league": "J2",
+      "season": 2026,
+      "rank": 16,
+      "points": 5,
+      "played": 5,
+      "wins": 1,
+      "draws": 2,
+      "losses": 2,
+      "goals_for": 4,
+      "goals_against": 6,
+      "goal_difference": -2,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "磐田",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "富山",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "甲府",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "八戸",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "大宮",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "points": 1,
+        "goals_for": 1,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_宮崎",
+      "team": "宮崎",
+      "league": "J2",
+      "season": 2026,
+      "rank": 19,
+      "points": 2,
+      "played": 5,
+      "wins": 0,
+      "draws": 2,
+      "losses": 3,
+      "goals_for": 3,
+      "goals_against": 8,
+      "goal_difference": -5,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "横浜FC",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "甲府",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "湘南",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "仙台",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "鳥栖",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "points": 1,
+        "goals_for": 0,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 1,
+        "losses": 2,
+        "points": 1,
+        "goals_for": 3,
+        "goals_against": 7
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_横浜FC",
+      "team": "横浜FC",
+      "league": "J2",
+      "season": 2026,
+      "rank": 2,
+      "points": 10,
+      "played": 5,
+      "wins": 3,
+      "draws": 1,
+      "losses": 1,
+      "goals_for": 11,
+      "goals_against": 5,
+      "goal_difference": 6,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "宮崎",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "磐田",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "山形",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "鳥栖",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "新潟",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 5,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 10,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 1,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_大分",
+      "team": "大分",
+      "league": "J2",
+      "season": 2026,
+      "rank": 15,
+      "points": 5,
+      "played": 5,
+      "wins": 1,
+      "draws": 2,
+      "losses": 2,
+      "goals_for": 5,
+      "goals_against": 4,
+      "goal_difference": 1,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "湘南",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "仙台",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "いわき",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "徳島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "今治",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 5,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "points": 1,
+        "goals_for": 0,
+        "goals_against": 1
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_湘南",
+      "team": "湘南",
+      "league": "J2",
+      "season": 2026,
+      "rank": 10,
+      "points": 8,
+      "played": 5,
+      "wins": 2,
+      "draws": 2,
+      "losses": 1,
+      "goals_for": 5,
+      "goals_against": 5,
+      "goal_difference": 0,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "大分",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "山形",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "宮崎",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "大宮",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "仙台",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 2,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 2,
+        "losses": 0,
+        "points": 5,
+        "goals_for": 3,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_鳥栖",
+      "team": "鳥栖",
+      "league": "J2",
+      "season": 2026,
+      "rank": 9,
+      "points": 8,
+      "played": 5,
+      "wins": 2,
+      "draws": 2,
+      "losses": 1,
+      "goals_for": 7,
+      "goals_against": 5,
+      "goal_difference": 2,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "甲府",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "徳島",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "栃木Ｃ",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "横浜FC",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "宮崎",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 2,
+        "losses": 0,
+        "points": 2,
+        "goals_for": 2,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_甲府",
+      "team": "甲府",
+      "league": "J2",
+      "season": 2026,
+      "rank": 13,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 5,
+      "goals_against": 8,
+      "goal_difference": -3,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "鳥栖",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "宮崎",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "秋田",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "札幌",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "山形",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 2,
+        "goals_against": 6
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_いわき",
+      "team": "いわき",
+      "league": "J2",
+      "season": 2026,
+      "rank": 18,
+      "points": 3,
+      "played": 5,
+      "wins": 1,
+      "draws": 0,
+      "losses": 4,
+      "goals_for": 6,
+      "goals_against": 12,
+      "goal_difference": -6,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "今治",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "藤枝",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "大分",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "新潟",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "徳島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 0,
+        "losses": 3,
+        "points": 0,
+        "goals_for": 2,
+        "goals_against": 8
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_今治",
+      "team": "今治",
+      "league": "J2",
+      "season": 2026,
+      "rank": 20,
+      "points": 1,
+      "played": 5,
+      "wins": 0,
+      "draws": 1,
+      "losses": 4,
+      "goals_for": 4,
+      "goals_against": 13,
+      "goal_difference": -9,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "いわき",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "大宮",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "富山",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "山形",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "大分",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 2,
+        "goals_against": 6
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 1,
+        "losses": 2,
+        "points": 1,
+        "goals_for": 2,
+        "goals_against": 7
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_山形",
+      "team": "山形",
+      "league": "J2",
+      "season": 2026,
+      "rank": 7,
+      "points": 9,
+      "played": 5,
+      "wins": 3,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 8,
+      "goals_against": 3,
+      "goal_difference": 5,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "栃木Ｃ",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "湘南",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "横浜FC",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "今治",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "甲府",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 3,
+        "goals_against": 1
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J2_栃木Ｃ",
+      "team": "栃木Ｃ",
+      "league": "J2",
+      "season": 2026,
+      "rank": 5,
+      "points": 9,
+      "played": 5,
+      "wins": 3,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 13,
+      "goals_against": 7,
+      "goal_difference": 6,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "山形",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "八戸",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 5,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "鳥栖",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "磐田",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "札幌",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 6,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 7,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_相模原",
+      "team": "相模原",
+      "league": "J3",
+      "season": 2026,
+      "rank": 5,
+      "points": 8,
+      "played": 5,
+      "wins": 2,
+      "draws": 2,
+      "losses": 1,
+      "goals_for": 8,
+      "goals_against": 5,
+      "goal_difference": 3,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "熊本",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "群馬",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-23",
+          "opponent": "金沢",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "琉球",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "長野",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 2,
+        "losses": 0,
+        "points": 5,
+        "goals_for": 3,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 5,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_熊本",
+      "team": "熊本",
+      "league": "J3",
+      "season": 2026,
+      "rank": 12,
+      "points": 6,
+      "played": 5,
+      "wins": 1,
+      "draws": 3,
+      "losses": 1,
+      "goals_for": 4,
+      "goals_against": 3,
+      "goal_difference": 1,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "相模原",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "栃木SC",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "長野",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "高知",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "奈良",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 0,
+        "draws": 2,
+        "losses": 1,
+        "points": 2,
+        "goals_for": 2,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 2,
+        "goals_against": 0
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_長野",
+      "team": "長野",
+      "league": "J3",
+      "season": 2026,
+      "rank": 10,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 6,
+      "goals_against": 7,
+      "goal_difference": -1,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "山口",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "FC大阪",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "熊本",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "群馬",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "相模原",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 2,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 4,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_山口",
+      "team": "山口",
+      "league": "J3",
+      "season": 2026,
+      "rank": 9,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 5,
+      "goals_against": 4,
+      "goal_difference": 1,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "長野",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "琉球",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "奈良",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "FC大阪",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "鳥取",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 1,
+        "goals_against": 0
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_鳥取",
+      "team": "鳥取",
+      "league": "J3",
+      "season": 2026,
+      "rank": 11,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 4,
+      "goals_against": 9,
+      "goal_difference": -5,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "FC大阪",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "愛媛",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "福島",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "滋賀",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "山口",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 1,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_FC大阪",
+      "team": "FC大阪",
+      "league": "J3",
+      "season": 2026,
+      "rank": 8,
+      "points": 7,
+      "played": 5,
+      "wins": 1,
+      "draws": 4,
+      "losses": 0,
+      "goals_for": 7,
+      "goals_against": 5,
+      "goal_difference": 2,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "鳥取",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "長野",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "琉球",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "山口",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "松本",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 6,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 3,
+        "losses": 0,
+        "points": 3,
+        "goals_for": 1,
+        "goals_against": 1
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_高知",
+      "team": "高知",
+      "league": "J3",
+      "season": 2026,
+      "rank": 18,
+      "points": 4,
+      "played": 5,
+      "wins": 1,
+      "draws": 1,
+      "losses": 3,
+      "goals_for": 2,
+      "goals_against": 12,
+      "goal_difference": -10,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "松本",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "岐阜",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 7
+        },
+        {
+          "date": "2026-08-23",
+          "opponent": "讃岐",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "熊本",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "栃木SC",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 2,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 0,
+        "goals_against": 9
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_松本",
+      "team": "松本",
+      "league": "J3",
+      "season": 2026,
+      "rank": 16,
+      "points": 4,
+      "played": 5,
+      "wins": 0,
+      "draws": 4,
+      "losses": 1,
+      "goals_for": 5,
+      "goals_against": 6,
+      "goal_difference": -1,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "高知",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "滋賀",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "愛媛",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "北九州",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "FC大阪",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 0,
+        "draws": 2,
+        "losses": 1,
+        "points": 2,
+        "goals_for": 4,
+        "goals_against": 5
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 2,
+        "losses": 0,
+        "points": 2,
+        "goals_for": 1,
+        "goals_against": 1
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_鹿児島",
+      "team": "鹿児島",
+      "league": "J3",
+      "season": 2026,
+      "rank": 2,
+      "points": 13,
+      "played": 5,
+      "wins": 4,
+      "draws": 1,
+      "losses": 0,
+      "goals_for": 10,
+      "goals_against": 5,
+      "goal_difference": 5,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "群馬",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "奈良",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "岐阜",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "讃岐",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "琉球",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 3,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "points": 6,
+        "goals_for": 7,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_群馬",
+      "team": "群馬",
+      "league": "J3",
+      "season": 2026,
+      "rank": 20,
+      "points": 3,
+      "played": 5,
+      "wins": 1,
+      "draws": 0,
+      "losses": 4,
+      "goals_for": 6,
+      "goals_against": 12,
+      "goal_difference": -6,
+      "recent_form": [
+        {
+          "date": "2026-08-08",
+          "opponent": "鹿児島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "相模原",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "滋賀",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "長野",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "福島",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 0,
+        "draws": 0,
+        "losses": 3,
+        "points": 0,
+        "goals_for": 4,
+        "goals_against": 10
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 2,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_福島",
+      "team": "福島",
+      "league": "J3",
+      "season": 2026,
+      "rank": 15,
+      "points": 4,
+      "played": 5,
+      "wins": 1,
+      "draws": 1,
+      "losses": 3,
+      "goals_for": 10,
+      "goals_against": 11,
+      "goal_difference": -1,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "讃岐",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "金沢",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 3,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "鳥取",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "奈良",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "群馬",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "points": 1,
+        "goals_for": 3,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 7,
+        "goals_against": 7
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_讃岐",
+      "team": "讃岐",
+      "league": "J3",
+      "season": 2026,
+      "rank": 17,
+      "points": 4,
+      "played": 5,
+      "wins": 1,
+      "draws": 1,
+      "losses": 3,
+      "goals_for": 6,
+      "goals_against": 10,
+      "goal_difference": -4,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "福島",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "北九州",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-23",
+          "opponent": "高知",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "鹿児島",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 3,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "滋賀",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 3,
+        "goals_against": 7
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 1,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 3
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_滋賀",
+      "team": "滋賀",
+      "league": "J3",
+      "season": 2026,
+      "rank": 4,
+      "points": 9,
+      "played": 5,
+      "wins": 3,
+      "draws": 0,
+      "losses": 2,
+      "goals_for": 9,
+      "goals_against": 8,
+      "goal_difference": 1,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "岐阜",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "松本",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "群馬",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "鳥取",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "讃岐",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 0,
+        "draws": 0,
+        "losses": 2,
+        "points": 0,
+        "goals_for": 0,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 3,
+        "draws": 0,
+        "losses": 0,
+        "points": 9,
+        "goals_for": 9,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_岐阜",
+      "team": "岐阜",
+      "league": "J3",
+      "season": 2026,
+      "rank": 3,
+      "points": 10,
+      "played": 5,
+      "wins": 3,
+      "draws": 1,
+      "losses": 1,
+      "goals_for": 14,
+      "goals_against": 2,
+      "goal_difference": 12,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "滋賀",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "高知",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 7,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "鹿児島",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "栃木SC",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "金沢",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 0,
+        "losses": 1,
+        "points": 6,
+        "goals_for": 11,
+        "goals_against": 2
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 0
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_愛媛",
+      "team": "愛媛",
+      "league": "J3",
+      "season": 2026,
+      "rank": 1,
+      "points": 13,
+      "played": 5,
+      "wins": 4,
+      "draws": 1,
+      "losses": 0,
+      "goals_for": 15,
+      "goals_against": 5,
+      "goal_difference": 10,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "奈良",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "鳥取",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "松本",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "金沢",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "北九州",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 3,
+        "draws": 0,
+        "losses": 0,
+        "points": 9,
+        "goals_for": 12,
+        "goals_against": 3
+      },
+      "away": {
+        "played": 2,
+        "wins": 1,
+        "draws": 1,
+        "losses": 0,
+        "points": 4,
+        "goals_for": 3,
+        "goals_against": 2
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_奈良",
+      "team": "奈良",
+      "league": "J3",
+      "season": 2026,
+      "rank": 14,
+      "points": 5,
+      "played": 5,
+      "wins": 1,
+      "draws": 2,
+      "losses": 2,
+      "goals_for": 9,
+      "goals_against": 12,
+      "goal_difference": -3,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "愛媛",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-08-16",
+          "opponent": "鹿児島",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "山口",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "福島",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-06",
+          "opponent": "熊本",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 2,
+        "losses": 1,
+        "points": 2,
+        "goals_for": 5,
+        "goals_against": 8
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_栃木SC",
+      "team": "栃木SC",
+      "league": "J3",
+      "season": 2026,
+      "rank": 6,
+      "points": 8,
+      "played": 5,
+      "wins": 2,
+      "draws": 2,
+      "losses": 1,
+      "goals_for": 8,
+      "goals_against": 8,
+      "goal_difference": 0,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "金沢",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "熊本",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "北九州",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "岐阜",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "高知",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 3,
+        "wins": 2,
+        "draws": 1,
+        "losses": 0,
+        "points": 7,
+        "goals_for": 7,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 2,
+        "wins": 0,
+        "draws": 1,
+        "losses": 1,
+        "points": 1,
+        "goals_for": 1,
+        "goals_against": 4
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_金沢",
+      "team": "金沢",
+      "league": "J3",
+      "season": 2026,
+      "rank": 13,
+      "points": 6,
+      "played": 5,
+      "wins": 2,
+      "draws": 0,
+      "losses": 3,
+      "goals_for": 8,
+      "goals_against": 9,
+      "goal_difference": -1,
+      "recent_form": [
+        {
+          "date": "2026-08-09",
+          "opponent": "栃木SC",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-15",
+          "opponent": "福島",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 4,
+          "goals_against": 3
+        },
+        {
+          "date": "2026-08-23",
+          "opponent": "相模原",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "愛媛",
+          "venue": "home",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "岐阜",
+          "venue": "away",
+          "result": "W",
+          "goals_for": 1,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 4
+      },
+      "away": {
+        "played": 3,
+        "wins": 1,
+        "draws": 0,
+        "losses": 2,
+        "points": 3,
+        "goals_for": 4,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_北九州",
+      "team": "北九州",
+      "league": "J3",
+      "season": 2026,
+      "rank": 19,
+      "points": 3,
+      "played": 5,
+      "wins": 0,
+      "draws": 3,
+      "losses": 2,
+      "goals_for": 5,
+      "goals_against": 10,
+      "goal_difference": -5,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "讃岐",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 0,
+          "goals_against": 0
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "栃木SC",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-30",
+          "opponent": "松本",
+          "venue": "home",
+          "result": "D",
+          "goals_for": 1,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "愛媛",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 2,
+          "goals_against": 4
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "琉球",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 3
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 0,
+        "draws": 2,
+        "losses": 0,
+        "points": 2,
+        "goals_for": 1,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 1,
+        "losses": 2,
+        "points": 1,
+        "goals_for": 4,
+        "goals_against": 9
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    },
+    {
+      "team_id": "J3_琉球",
+      "team": "琉球",
+      "league": "J3",
+      "season": 2026,
+      "rank": 7,
+      "points": 7,
+      "played": 5,
+      "wins": 2,
+      "draws": 1,
+      "losses": 2,
+      "goals_for": 8,
+      "goals_against": 6,
+      "goal_difference": 2,
+      "recent_form": [
+        {
+          "date": "2026-08-15",
+          "opponent": "山口",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 0,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "FC大阪",
+          "venue": "away",
+          "result": "D",
+          "goals_for": 2,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "相模原",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 2,
+          "goals_against": 1
+        },
+        {
+          "date": "2026-09-05",
+          "opponent": "鹿児島",
+          "venue": "away",
+          "result": "L",
+          "goals_for": 1,
+          "goals_against": 2
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "北九州",
+          "venue": "home",
+          "result": "W",
+          "goals_for": 3,
+          "goals_against": 0
+        }
+      ],
+      "home": {
+        "played": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "points": 6,
+        "goals_for": 5,
+        "goals_against": 1
+      },
+      "away": {
+        "played": 3,
+        "wins": 0,
+        "draws": 1,
+        "losses": 2,
+        "points": 1,
+        "goals_for": 3,
+        "goals_against": 5
+      },
+      "performance": {
+        "xg": null,
+        "xga": null,
+        "shots": null,
+        "shots_on_target": null
+      },
+      "availability": {
+        "injury_risk": null
+      }
+    }
+  ]
 }
