@@ -1,548 +1,372 @@
-import fs from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
-const teamMetrics = JSON.parse(
-  fs.readFileSync("data/team_metrics.json", "utf8")
+const totoPath = "data/toto_matches.json";
+const metricsPath = "data/team_metrics.json";
+const outputPath = "predictions.json";
+
+const toto = JSON.parse(
+  readFileSync(totoPath, "utf8")
 );
 
-const totoData = JSON.parse(
-  fs.readFileSync("data/toto_matches.json", "utf8")
+const metricsData = JSON.parse(
+  readFileSync(metricsPath, "utf8")
 );
 
-// ========================================
-// Utility
-// ========================================
+const teams = metricsData.teams;
+
+function findTeam(name) {
+  return teams.find(team => team.team === name);
+}
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-// ========================================
-// Recent form score
-// W = 100
-// D = 50
-// L = 0
-// ========================================
+function normalize(value, min, max) {
+  if (max === min) return 0.5;
+  return clamp((value - min) / (max - min), 0, 1);
+}
 
-function calculateFormScore(form) {
-  if (!Array.isArray(form) || form.length === 0) {
-    return 50;
+function winRate(team) {
+  if (!team.played) return 0.33;
+  return team.wins / team.played;
+}
+
+function pointsPerGame(team) {
+  if (!team.played) return 1;
+  return team.points / team.played;
+}
+
+function goalDifferencePerGame(team) {
+  if (!team.played) return 0;
+  return (
+    (team.goals_for - team.goals_against) /
+    team.played
+  );
+}
+
+function recentFormScore(team) {
+  if (!team.recent_form?.length) {
+    return 0.5;
   }
 
-  const values = {
-    W: 100,
-    D: 50,
-    L: 0
-  };
+  let score = 0;
 
-  const total = form.reduce(
-    (sum, result) => sum + (values[result] ?? 50),
-    0
+  for (const match of team.recent_form) {
+    if (match.result === "W") score += 1;
+    if (match.result === "D") score += 0.5;
+  }
+
+  return score / team.recent_form.length;
+}
+
+function venueScore(team, venue) {
+  const data = team[venue];
+
+  if (!data || !data.played) {
+    return 0.5;
+  }
+
+  return (
+    (data.wins + data.draws * 0.5) /
+    data.played
+  );
+}
+
+function calculateStrength(team, venue) {
+  const ppg = normalize(
+    pointsPerGame(team),
+    0,
+    3
   );
 
-  return total / form.length;
+  const wr = winRate(team);
+
+  const gd = clamp(
+    (goalDifferencePerGame(team) + 2) / 4,
+    0,
+    1
+  );
+
+  const form = recentFormScore(team);
+
+  const venue = venueScore(team, venue);
+
+  return (
+    ppg * 0.25 +
+    wr * 0.20 +
+    gd * 0.20 +
+    form * 0.15 +
+    venue * 0.20
+  );
 }
 
-// ========================================
-// Team score
-// ========================================
+function calculateProbabilities(home, away) {
+  const homeStrength =
+    calculateStrength(home, "home");
 
-function calculateScore(team, venue = "neutral") {
+  const awayStrength =
+    calculateStrength(away, "away");
 
-  if (!team) return 50;
-
-  let score = 50;
-
-  // -----------------------------
-  // League rank
-  // -----------------------------
-
-  if (typeof team.rank === "number") {
-
-    score += (20 - team.rank) * 1.2;
-
-  }
-
-  // -----------------------------
-  // Win rate
-  // -----------------------------
-
-  if (
-    typeof team.wins === "number" &&
-    typeof team.played === "number" &&
-    team.played > 0
-  ) {
-
-    const winRate =
-      (team.wins / team.played) * 100;
-
-    score += (winRate - 50) * 0.35;
-
-  }
-
-  // -----------------------------
-  // Goal difference
-  // -----------------------------
-
-  if (
-    typeof team.goals_for === "number" &&
-    typeof team.goals_against === "number"
-  ) {
-
-    const goalDifference =
-      team.goals_for - team.goals_against;
-
-    score += goalDifference * 0.6;
-
-  }
-
-  // -----------------------------
-  // Recent form
-  // -----------------------------
-
-  const formScore =
-    calculateFormScore(team.recent_form);
-
-  score += (formScore - 50) * 0.25;
-
-  // -----------------------------
-  // Home / Away strength
-  // -----------------------------
-
-  if (
-    venue === "home" &&
-    typeof team.home_strength === "number"
-  ) {
-
-    score +=
-      (team.home_strength * 100 - 50) * 0.15;
-
-  }
-
-  if (
-    venue === "away" &&
-    typeof team.away_strength === "number"
-  ) {
-
-    score +=
-      (team.away_strength * 100 - 50) * 0.15;
-
-  }
-
-  // -----------------------------
-  // Injury risk penalty
-  // -----------------------------
-
-  if (typeof team.injury_risk === "number") {
-
-    score -= team.injury_risk * 10;
-
-  }
-
-  return clamp(score, 1, 99);
-
-}
-
-// ========================================
-// Probability calculation
-// ========================================
-
-function calculateProbabilities(
-  homeScore,
-  awayScore
-) {
+  // ホームアドバンテージ
+  const homeAdvantage = 0.055;
 
   const difference =
-    homeScore - awayScore;
+    homeStrength -
+    awayStrength +
+    homeAdvantage;
 
-  let home =
-    33.3 + difference * 1.8;
+  // 差が小さいほど引き分けを厚くする
+  const drawBase =
+    0.24 +
+    (1 - Math.min(Math.abs(difference) * 2, 1)) * 0.12;
 
-  let away =
-    33.3 - difference * 1.8;
+  let homeProb =
+    0.5 + difference * 0.55;
 
-  // Stronger teams → lower draw probability
-  let draw =
-    33.4 - Math.abs(difference) * 0.4;
+  let awayProb =
+    0.5 - difference * 0.55;
 
-  home = clamp(home, 5, 85);
-  away = clamp(away, 5, 85);
-  draw = clamp(draw, 10, 40);
+  homeProb = clamp(homeProb, 0.12, 0.70);
+  awayProb = clamp(awayProb, 0.12, 0.70);
 
-  const total =
-    home + draw + away;
+  const remaining =
+    1 - drawBase;
+
+  const directionalTotal =
+    homeProb + awayProb;
+
+  homeProb =
+    (homeProb / directionalTotal) *
+    remaining;
+
+  awayProb =
+    (awayProb / directionalTotal) *
+    remaining;
 
   return {
-
-    home: +(
-      home / total * 100
-    ).toFixed(1),
-
-    draw: +(
-      draw / total * 100
-    ).toFixed(1),
-
-    away: +(
-      away / total * 100
-    ).toFixed(1)
-
+    "1": homeProb,
+    "0": drawBase,
+    "2": awayProb
   };
-
 }
-
-// ========================================
-// Prediction
-// ========================================
 
 function getPrediction(probabilities) {
+  return Object.entries(probabilities)
+    .sort((a, b) => b[1] - a[1])[0][0];
+}
 
-  const entries = [
+function getConfidence(probabilities) {
+  const values =
+    Object.values(probabilities).sort((a, b) => b - a);
 
-    ["1", probabilities.home],
+  const margin = values[0] - values[1];
 
-    ["0", probabilities.draw],
-
-    ["2", probabilities.away]
-
-  ];
-
-  entries.sort(
-    (a, b) => b[1] - a[1]
+  return Math.round(
+    clamp(margin * 180, 10, 90)
   );
-
-  return entries[0][0];
-
 }
 
-// ========================================
-// Recommendation
-// ========================================
+function getUncertainty(probabilities) {
+  const values =
+    Object.values(probabilities).sort((a, b) => b - a);
 
-function getRecommendation(
-  probabilities,
-  confidence
-) {
+  const margin = values[0] - values[1];
 
-  const values = [
+  if (margin < 0.08) {
+    return "HIGH";
+  }
 
-    probabilities.home,
+  if (margin < 0.16) {
+    return "MEDIUM";
+  }
 
-    probabilities.draw,
+  return "LOW";
+}
 
-    probabilities.away
+function getReasons(home, away, probabilities) {
+  const reasons = [];
 
-  ].sort((a, b) => b - a);
+  const homeStrength =
+    calculateStrength(home, "home");
 
-  const gap =
-    values[0] - values[1];
+  const awayStrength =
+    calculateStrength(away, "away");
 
-  if (
-    confidence < 30 ||
-    gap < 8
-  ) {
-
-    return "triple";
-
+  if (Math.abs(homeStrength - awayStrength) < 0.08) {
+    reasons.push(
+      "両チームの総合評価が近い"
+    );
   }
 
   if (
-    confidence < 45 ||
-    gap < 15
+    probabilities["0"] >= 0.32
   ) {
-
-    return "double";
-
+    reasons.push(
+      "引き分け確率が高い"
+    );
   }
 
-  return "single";
-
-}
-
-// ========================================
-// Explanation factors
-// ========================================
-
-function getFactors(
-  homeTeam,
-  awayTeam,
-  homeScore,
-  awayScore
-) {
-
-  const factors = [];
-
-  // League rank
+  if (
+    venueScore(home, "home") >
+    venueScore(away, "away") + 0.12
+  ) {
+    reasons.push(
+      "ホーム成績が優位"
+    );
+  }
 
   if (
-    typeof homeTeam?.rank === "number" &&
-    typeof awayTeam?.rank === "number"
+    recentFormScore(away) >
+    recentFormScore(home) + 0.12
   ) {
+    reasons.push(
+      "アウェイ側の直近フォームが優位"
+    );
+  }
 
-    if (
-      homeTeam.rank < awayTeam.rank
-    ) {
+  if (
+    recentFormScore(home) >
+    recentFormScore(away) + 0.12
+  ) {
+    reasons.push(
+      "ホーム側の直近フォームが優位"
+    );
+  }
 
-      factors.push(
-        "リーグ順位：ホームチームが上位"
-      );
+  if (!reasons.length) {
+    reasons.push(
+      "複数の指標から総合評価"
+    );
+  }
 
-    } else if (
-      homeTeam.rank > awayTeam.rank
-    ) {
+  return reasons;
+}
 
-      factors.push(
-        "リーグ順位：アウェイチームが上位"
-      );
+const predictions = [];
 
-    } else {
+for (const match of toto.matches) {
+  const home = findTeam(match.home);
+  const away = findTeam(match.away);
 
-      factors.push(
-        "リーグ順位は拮抗"
-      );
+  if (!home || !away) {
+    console.warn(
+      `TEAM NOT FOUND: ${match.home} vs ${match.away}`
+    );
 
+    continue;
+  }
+
+  const probabilities =
+    calculateProbabilities(home, away);
+
+  const prediction =
+    getPrediction(probabilities);
+
+  const confidence =
+    getConfidence(probabilities);
+
+  const uncertainty =
+    getUncertainty(probabilities);
+
+  predictions.push({
+    number: match.number,
+    home: match.home,
+    away: match.away,
+    league: match.league,
+
+    prediction,
+
+    probabilities: {
+      "1": Number(
+        probabilities["1"].toFixed(3)
+      ),
+      "0": Number(
+        probabilities["0"].toFixed(3)
+      ),
+      "2": Number(
+        probabilities["2"].toFixed(3)
+      )
+    },
+
+    confidence,
+
+    uncertainty: {
+      level: uncertainty,
+      reasons: getReasons(
+        home,
+        away,
+        probabilities
+      )
+    },
+
+    signals: {
+      season_strength:
+        home.points >= away.points
+          ? home.team
+          : away.team,
+
+      momentum:
+        recentFormScore(home) >=
+        recentFormScore(away)
+          ? home.team
+          : away.team,
+
+      home_advantage:
+        home.home.played > 0
+          ? home.team
+          : "neutral"
     }
-
-  }
-
-  // Recent form
-
-  const homeForm =
-    calculateFormScore(
-      homeTeam?.recent_form
-    );
-
-  const awayForm =
-    calculateFormScore(
-      awayTeam?.recent_form
-    );
-
-  const formDiff =
-    homeForm - awayForm;
-
-  if (formDiff > 15) {
-
-    factors.push(
-      "直近フォーム：ホームチームが優勢"
-    );
-
-  } else if (formDiff < -15) {
-
-    factors.push(
-      "直近フォーム：アウェイチームが優勢"
-    );
-
-  } else {
-
-    factors.push(
-      "直近フォームは拮抗"
-    );
-
-  }
-
-  // Team strength
-
-  if (
-    Math.abs(
-      homeScore - awayScore
-    ) < 5
-  ) {
-
-    factors.push(
-      "総合戦力が拮抗しており予測難度が高い"
-    );
-
-  }
-
-  // Injury risk
-
-  if (
-    homeTeam?.injury_risk >= 0.2
-  ) {
-
-    factors.push(
-      "ホームチーム：選手コンディションに注意"
-    );
-
-  }
-
-  if (
-    awayTeam?.injury_risk >= 0.2
-  ) {
-
-    factors.push(
-      "アウェイチーム：選手コンディションに注意"
-    );
-
-  }
-
-  return factors;
-
-}
-
-// ========================================
-// Match analysis
-// ========================================
-
-const matches =
-  totoData.matches.map((match) => {
-
-    const homeTeam =
-      teamMetrics[match.home];
-
-    const awayTeam =
-      teamMetrics[match.away];
-
-    const homeScore =
-      calculateScore(
-        homeTeam,
-        "home"
-      );
-
-    const awayScore =
-      calculateScore(
-        awayTeam,
-        "away"
-      );
-
-    const probabilities =
-      calculateProbabilities(
-        homeScore,
-        awayScore
-      );
-
-    const sortedProbabilities = [
-
-      probabilities.home,
-
-      probabilities.draw,
-
-      probabilities.away
-
-    ].sort((a, b) => b - a);
-
-    const confidence =
-      Math.round(
-
-        sortedProbabilities[0] -
-        sortedProbabilities[1] +
-        30
-
-      );
-
-    const recommendation =
-      getRecommendation(
-        probabilities,
-        confidence
-      );
-
-    return {
-
-      number: match.number,
-
-      competition: match.competition,
-
-      date: match.date,
-
-      home: match.home,
-
-      away: match.away,
-
-      prediction:
-        getPrediction(probabilities),
-
-      probabilities,
-
-      confidence:
-        clamp(confidence, 1, 99),
-
-      recommendation,
-
-      upset:
-        confidence < 35,
-
-      factors:
-
-        getFactors(
-          homeTeam,
-          awayTeam,
-          homeScore,
-          awayScore
-        ),
-
-      diagnostics: {
-
-        homeScore:
-          +homeScore.toFixed(1),
-
-        awayScore:
-          +awayScore.toFixed(1),
-
-        difference:
-          +(
-            homeScore - awayScore
-          ).toFixed(1)
-
-      }
-
-    };
-
   });
-
-// ========================================
-// Output
-// ========================================
+}
 
 const output = {
-
-  updated_at:
-    new Date().toISOString(),
-
-  mode:
-    totoData.round.startsWith("TEST")
-      ? totoData.round
-      : "LIVE",
-
-  toto: {
-
-    round:
-      totoData.round,
-
-    type:
-      totoData.type,
-
-    deadline:
-      totoData.deadline
-
-  },
+  updated_at: new Date().toISOString(),
 
   model: {
+    name: "JUDGE SCORE",
+    version: "2.0",
 
-    name:
-      "JUDGE SCORE v1.4",
-
-    version:
-      "1.4",
-
-    note:
-      "順位・勝率・得失点差・直近フォーム・ホームアウェイ適性・選手コンディションを加味した説明可能toto予測モデル"
-
+    description:
+      "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージを統合"
   },
 
-  matches
-
+  matches: predictions
 };
 
-fs.writeFileSync(
+writeFileSync(
+  outputPath,
+  JSON.stringify(output, null, 2),
+  "utf8"
+);
 
-  "predictions.json",
+console.log("");
+console.log("==============================");
+console.log("JUDGE90 PREDICTION ENGINE");
+console.log("==============================");
 
-  JSON.stringify(
-    output,
-    null,
-    2
-  )
+for (const match of predictions) {
+  console.log(
+    `${match.number}. ${match.home} vs ${match.away} → ${match.prediction}`
+  );
 
+  console.log(
+    `   1=${match.probabilities["1"]} ` +
+    `0=${match.probabilities["0"]} ` +
+    `2=${match.probabilities["2"]} ` +
+    `confidence=${match.confidence}`
+  );
+
+  console.log(
+    `   uncertainty=${match.uncertainty.level}`
+  );
+}
+
+console.log("");
+console.log(
+  `Generated ${predictions.length} predictions`
 );
 
 console.log(
-  `JUDGE90 prediction complete: ${matches.length} matches analyzed`
+  `Saved: ${outputPath}`
 );
