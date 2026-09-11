@@ -16,23 +16,34 @@
   --accent:#5eead4;
   --yellow:#fbbf24;
   --red:#fb7185;
-  --blue:#7dd3fc
+  --blue:#7dd3fc;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
-  background:radial-gradient(circle at 50% -20%,#182747 0,#090d18 45%);
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      #182747 0,
+      #090d18 45%
+    );
   color:var(--text);
-  font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif
+  font-family:
+    system-ui,
+    -apple-system,
+    "Noto Sans JP",
+    sans-serif;
 }
 
 .wrap{
   max-width:1050px;
   margin:auto;
   padding-left:18px;
-  padding-right:18px
+  padding-right:18px;
 }
 
 header{
@@ -41,75 +52,88 @@ header{
   backdrop-filter:blur(12px);
   position:sticky;
   top:0;
-  z-index:5
+  z-index:5;
 }
 
 .head{
-  height:70px;
+  min-height:70px;
   display:flex;
   align-items:center;
-  justify-content:space-between
+  justify-content:space-between;
+  gap:15px;
 }
 
 .brand{
   font-size:24px;
   font-weight:950;
-  letter-spacing:.09em
+  letter-spacing:.09em;
 }
 
-.brand span{color:var(--accent)}
+.brand span{
+  color:var(--accent);
+}
 
 .tag{
   font-size:11px;
   letter-spacing:.15em;
   color:var(--accent);
-  font-weight:800
+  font-weight:800;
 }
 
-.hero{padding:34px 0 22px}
+.hero{
+  padding:34px 0 22px;
+}
 
 .hero h1{
   font-size:clamp(25px,5vw,42px);
-  margin:5px 0 8px
+  margin:5px 0 8px;
+  line-height:1.25;
 }
 
 .sub{
   color:var(--muted);
-  line-height:1.6
+  line-height:1.6;
 }
 
 .demo{
   margin-top:14px;
   display:inline-block;
-  border:1px solid #6b5b20;
-  background:#2a2411;
-  color:#fde68a;
+  border:1px solid #315b58;
+  background:#102522;
+  color:#99f6e4;
   border-radius:999px;
   padding:7px 12px;
-  font-size:12px
+  font-size:12px;
 }
 
 .stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:10px;
-  margin:22px 0
+  margin:22px 0;
 }
 
 .stat{
-  background:linear-gradient(145deg,#131d31,#0f1626);
+  background:
+    linear-gradient(
+      145deg,
+      #131d31,
+      #0f1626
+    );
   border:1px solid var(--line);
   border-radius:16px;
-  padding:15px
+  padding:15px;
 }
 
-.stat b{font-size:26px}
+.stat b{
+  font-size:26px;
+}
 
 .controls{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin:12px 0 16px
+  margin:12px 0 16px;
 }
 
 .btn{
@@ -117,45 +141,52 @@ header{
   color:var(--text);
   border:1px solid var(--line);
   padding:9px 13px;
-  border-radius:999px
+  border-radius:999px;
+  cursor:pointer;
 }
 
 .btn.active{
   border-color:var(--accent);
   color:var(--accent);
-  box-shadow:0 0 0 1px #5eead422
+  box-shadow:0 0 0 1px #5eead422;
 }
 
 .match{
-  background:linear-gradient(145deg,#121a2b,#0e1422);
+  background:
+    linear-gradient(
+      145deg,
+      #121a2b,
+      #0e1422
+    );
   border:1px solid var(--line);
   border-radius:18px;
   padding:18px;
-  margin:12px 0
+  margin:12px 0;
 }
 
 .top{
   display:flex;
   justify-content:space-between;
   gap:12px;
-  align-items:flex-start
+  align-items:flex-start;
 }
 
 .meta{
   color:var(--muted);
   font-size:12px;
-  margin-bottom:7px
+  margin-bottom:7px;
 }
 
 .teams{
   font-size:20px;
-  font-weight:850
+  font-weight:850;
+  line-height:1.5;
 }
 
 .vs{
   color:var(--muted);
   font-size:14px;
-  margin:0 8px
+  margin:0 8px;
 }
 
 .badge{
@@ -164,14 +195,29 @@ header{
   background:#10192a;
   padding:7px 10px;
   border-radius:999px;
-  font-size:12px
+  font-size:12px;
+}
+
+.badge.high{
+  color:var(--red);
+  border-color:#6b2736;
+}
+
+.badge.medium{
+  color:var(--yellow);
+  border-color:#6b5b20;
+}
+
+.badge.low{
+  color:var(--accent);
+  border-color:#28635d;
 }
 
 .probgrid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:8px;
-  margin:16px 0 12px
+  margin:16px 0 12px;
 }
 
 .prob{
@@ -179,12 +225,21 @@ header{
   border-radius:12px;
   padding:10px;
   text-align:center;
-  border:1px solid #202b40
+  border:1px solid #202b40;
+}
+
+.prob.main{
+  border-color:#416d68;
 }
 
 .prob b{
   font-size:22px;
-  display:block
+  display:block;
+}
+
+.prob-label{
+  color:var(--muted);
+  font-size:12px;
 }
 
 .bar{
@@ -192,12 +247,12 @@ header{
   background:#1c2940;
   border-radius:99px;
   margin-top:7px;
-  overflow:hidden
+  overflow:hidden;
 }
 
 .fill{
   height:100%;
-  background:var(--accent)
+  background:var(--accent);
 }
 
 .factors{
@@ -205,65 +260,186 @@ header{
   padding-top:12px;
   color:var(--muted);
   font-size:13px;
-  line-height:1.8
+  line-height:1.8;
+}
+
+.factor-title{
+  color:var(--text);
+  font-weight:700;
+  margin-bottom:4px;
 }
 
 .bottom{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-top:13px
+  gap:12px;
+  margin-top:15px;
 }
 
-.rec.single{color:var(--accent)}
-.rec.double{color:var(--yellow)}
-.rec.triple{color:var(--red)}
+.rec{
+  font-size:14px;
+}
+
+.rec.single{
+  color:var(--accent);
+}
+
+.rec.double{
+  color:var(--yellow);
+}
+
+.rec.triple{
+  color:var(--red);
+}
 
 .analysis{
   font-size:12px;
-  color:var(--blue)
+  color:var(--blue);
+}
+
+.ai-pick{
+  display:block;
+  margin-top:4px;
 }
 
 .panel{
-  background:linear-gradient(135deg,#16223a,#0f1728);
+  background:
+    linear-gradient(
+      135deg,
+      #16223a,
+      #0f1728
+    );
   border:1px solid #2b3b5c;
   border-radius:20px;
   padding:20px;
-  margin:24px 0 42px
+  margin:24px 0 42px;
 }
 
-.panel h2{margin:0 0 6px}
+.panel h2{
+  margin:0 0 6px;
+}
+
+.portfolio-main{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:16px;
+}
+
+.portfolio-stat{
+  background:#0b1220;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+}
+
+.portfolio-stat .label{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.portfolio-stat b{
+  display:block;
+  font-size:25px;
+  margin-top:5px;
+}
+
+.strategy{
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  background:#0b1220;
+  border:1px solid var(--line);
+}
+
+.strategy-name{
+  color:var(--accent);
+  font-size:20px;
+  font-weight:800;
+}
 
 .plans{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
-  margin-top:14px
+  margin-top:14px;
 }
 
 .plan{
   background:#0b1220;
   border:1px solid var(--line);
   border-radius:14px;
-  padding:14px
+  padding:14px;
 }
 
 .plan b{
   display:block;
-  margin-top:7px
+  margin-top:7px;
 }
 
 .small{
   font-size:12px;
-  color:var(--muted)
+  color:var(--muted);
+}
+
+.loading{
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
+}
+
+.error{
+  padding:20px;
+  border:1px solid #6b2736;
+  background:#24111a;
+  border-radius:15px;
+  color:#fda4af;
 }
 
 @media(max-width:650px){
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .plans{grid-template-columns:1fr}
-  .teams{font-size:17px}
-  .top{align-items:flex-start}
-  .badge{font-size:11px}
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .plans{
+    grid-template-columns:1fr;
+  }
+
+  .portfolio-main{
+    grid-template-columns:1fr;
+  }
+
+  .teams{
+    font-size:17px;
+  }
+
+  .top{
+    align-items:flex-start;
+  }
+
+  .badge{
+    font-size:11px;
+  }
+
+  .bottom{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+}
+
+@media(max-width:430px){
+
+  .prob b{
+    font-size:19px;
+  }
+
+  .teams{
+    font-size:16px;
+  }
+
 }
 </style>
 </head>
@@ -272,297 +448,790 @@ header{
 
 <header>
   <div class="wrap head">
+
     <div>
-      <div class="tag">EXPLAINABLE FOOTBALL PREDICTION</div>
-      <div class="brand">JUDGE <span>90</span></div>
+      <div class="tag">
+        EXPLAINABLE FOOTBALL PREDICTION
+      </div>
+
+      <div class="brand">
+        JUDGE <span>90</span>
+      </div>
     </div>
+
     <div id="updated" class="small"></div>
+
   </div>
 </header>
 
 <main class="wrap">
 
 <section class="hero">
-  <div class="tag">WEEKLY MATCH INTELLIGENCE</div>
-  <h1>予想ではなく、<br>「どこで迷うべきか」を。</h1>
-  <div class="sub">
-    Jリーグ全試合を分析し、totoでは限られたダブル・トリプルを「不確実な試合」に集中させる。
+
+  <div class="tag">
+    WEEKLY MATCH INTELLIGENCE
   </div>
+
+  <h1>
+    予想ではなく、<br>
+    「どこで迷うべきか」を。
+  </h1>
+
+  <div class="sub">
+    Jリーグの成績・フォーム・ホーム/アウェイ成績を統合し、
+    totoでは限られたダブル・トリプルを
+    「不確実な試合」に集中させる。
+  </div>
+
   <div id="mode"></div>
+
 </section>
 
+
 <section class="stats">
+
   <div class="stat">
-    <span class="small">シングル候補</span><br>
+    <span class="small">シングル</span><br>
     <b id="safe">-</b>
   </div>
 
   <div class="stat">
-    <span class="small">ダブル候補</span><br>
+    <span class="small">ダブル</span><br>
     <b id="double">-</b>
   </div>
 
   <div class="stat">
-    <span class="small">波乱注意</span><br>
-    <b id="upset">-</b>
+    <span class="small">トリプル</span><br>
+    <b id="triple">-</b>
   </div>
 
   <div class="stat">
     <span class="small">平均信頼度</span><br>
     <b id="avg">-</b>
   </div>
+
 </section>
 
+
 <div class="controls">
-  <button class="btn active" data-filter="all">すべて</button>
-  <button class="btn" data-filter="single">シングル</button>
-  <button class="btn" data-filter="double">ダブル</button>
-  <button class="btn" data-filter="triple">トリプル</button>
-  <button class="btn" data-filter="upset">波乱注意</button>
+
+  <button
+    class="btn active"
+    data-filter="all">
+    すべて
+  </button>
+
+  <button
+    class="btn"
+    data-filter="single">
+    シングル
+  </button>
+
+  <button
+    class="btn"
+    data-filter="double">
+    ダブル
+  </button>
+
+  <button
+    class="btn"
+    data-filter="triple">
+    トリプル
+  </button>
+
+  <button
+    class="btn"
+    data-filter="upset">
+    波乱注意
+  </button>
+
 </div>
 
-<div id="matches"></div>
+
+<div id="matches">
+
+  <div class="loading">
+    JUDGE90データを読み込んでいます…
+  </div>
+
+</div>
+
 
 <section class="panel">
-  <div class="tag">PORTFOLIO OPTIMIZER</div>
 
-  <h2>💰 おすすめの買い方</h2>
+  <div class="tag">
+    PORTFOLIO OPTIMIZER
+  </div>
+
+  <h2>
+    💰 おすすめの買い方
+  </h2>
 
   <div class="sub">
-    「当たりそうな試合」ではなく、「外した時の損失が大きい不確実試合」に保険を配分。
+    「当たりそうな試合」ではなく、
+    「不確実性の高い試合」にダブル・トリプルを配分。
   </div>
+
+
+  <div class="portfolio-main">
+
+    <div class="portfolio-stat">
+      <div class="label">
+        推奨購入額
+      </div>
+
+      <b id="budget">
+        -
+      </b>
+    </div>
+
+
+    <div class="portfolio-stat">
+      <div class="label">
+        組み合わせ
+      </div>
+
+      <b id="combinations">
+        -
+      </b>
+    </div>
+
+
+    <div class="portfolio-stat">
+      <div class="label">
+        戦略
+      </div>
+
+      <b id="strategy">
+        -
+      </b>
+    </div>
+
+  </div>
+
+
+  <div class="strategy">
+
+    <div class="small">
+      JUDGE90の判断
+    </div>
+
+    <div
+      id="strategyDescription"
+      class="strategy-name">
+      -
+    </div>
+
+    <div
+      id="strategyPriority"
+      class="small"
+      style="margin-top:6px">
+    </div>
+
+  </div>
+
 
   <div class="plans">
 
     <div class="plan">
-      <span>堅実</span>
-      <b id="p1"></b>
-      <div class="small">本命を信じる</div>
+
+      <span>
+        シングル
+      </span>
+
+      <b id="singleCount">
+        -
+      </b>
+
+      <div class="small">
+        本命を一点で選択
+      </div>
+
     </div>
 
-    <div class="plan">
-      <span>バランス</span>
-      <b id="p2"></b>
-      <div class="small">迷いを重点カバー</div>
-    </div>
 
     <div class="plan">
-      <span>攻め</span>
-      <b id="p3"></b>
-      <div class="small">波乱を取りにいく</div>
+
+      <span>
+        ダブル
+      </span>
+
+      <b id="doubleCount">
+        -
+      </b>
+
+      <div class="small">
+        上位2候補をカバー
+      </div>
+
+    </div>
+
+
+    <div class="plan">
+
+      <span>
+        トリプル
+      </span>
+
+      <b id="tripleCount">
+        -
+      </b>
+
+      <div class="small">
+        全結果をカバー
+      </div>
+
     </div>
 
   </div>
+
 </section>
 
 </main>
 
+
 <script>
 
-let DATA=null;
-let current="all";
+let PREDICTIONS = null;
+let RECOMMENDATION = null;
+let currentFilter = "all";
 
-const pick=m=>
-  m.probabilities.home>=m.probabilities.draw &&
-  m.probabilities.home>=m.probabilities.away
-    ?"1"
-    :m.probabilities.draw>=m.probabilities.away
-      ?"0"
-      :"2";
 
-const recLabel={
-  single:"シングル推奨",
-  double:"ダブル候補",
-  triple:"トリプル候補"
-};
+function outcomeLabel(outcome){
+
+  if(outcome === "1"){
+    return "ホーム勝利";
+  }
+
+  if(outcome === "0"){
+    return "引き分け";
+  }
+
+  if(outcome === "2"){
+    return "アウェイ勝利";
+  }
+
+  return outcome;
+
+}
+
+
+function getPrediction(match){
+
+  const probabilities =
+    match.probabilities || {};
+
+  const values = [
+    ["1", probabilities["1"] || 0],
+    ["0", probabilities["0"] || 0],
+    ["2", probabilities["2"] || 0]
+  ];
+
+  values.sort((a,b) => b[1] - a[1]);
+
+  return values[0][0];
+
+}
+
+
+function getRecommendation(match){
+
+  if(!RECOMMENDATION){
+    return {
+      type:"single",
+      recommendation:[
+        getPrediction(match)
+      ]
+    };
+  }
+
+  const found =
+    RECOMMENDATION.matches.find(
+      item => item.number === match.number
+    );
+
+  if(!found){
+    return {
+      type:"single",
+      recommendation:[
+        getPrediction(match)
+      ]
+    };
+  }
+
+  return found;
+
+}
+
+
+function isUpset(match){
+
+  if(!match.uncertainty){
+    return false;
+  }
+
+  return (
+    match.uncertainty.level === "HIGH"
+  );
+
+}
+
+
+function getProbabilityPercent(value){
+
+  return Math.round(
+    Number(value || 0) * 100
+  );
+
+}
+
+
+function getBadgeClass(level){
+
+  if(level === "HIGH"){
+    return "high";
+  }
+
+  if(level === "MEDIUM"){
+    return "medium";
+  }
+
+  return "low";
+
+}
+
+
+function getRecommendationLabel(type){
+
+  if(type === "double"){
+    return "ダブル推奨";
+  }
+
+  if(type === "triple"){
+    return "トリプル推奨";
+  }
+
+  return "シングル推奨";
+
+}
+
+
+function getRecommendationText(rec){
+
+  if(!rec || !rec.recommendation){
+    return "";
+  }
+
+  return rec.recommendation
+    .map(outcomeLabel)
+    .join(" / ");
+
+}
+
 
 function render(){
 
-  const list=DATA.matches.filter(m=>
-    current==="all"
-      ?true
-      :current==="upset"
-        ?m.upset
-        :m.recommendation===current
-  );
+  if(!PREDICTIONS){
+    return;
+  }
 
-  document.getElementById("matches").innerHTML=
-    list.map(m=>{
+  const matches =
+    PREDICTIONS.matches || [];
 
-      const p=m.probabilities;
-      const vals=[p.home,p.draw,p.away];
+  const list =
+    matches.filter(match => {
 
-      return `
-      <article class="match">
+      const rec =
+        getRecommendation(match);
 
-        <div class="top">
+      if(currentFilter === "all"){
+        return true;
+      }
 
-          <div>
-            <div class="meta">
-              No.${m.number}　${m.competition}　${m.date}
-            </div>
+      if(currentFilter === "upset"){
+        return isUpset(match);
+      }
 
-            <div class="teams">
-              ${m.home}
-              <span class="vs">vs</span>
-              ${m.away}
-            </div>
-          </div>
+      return rec.type === currentFilter;
 
-          <div class="badge">
-            信頼度 ${m.confidence}/100
-          </div>
+    });
 
-        </div>
 
-        <div class="probgrid">
+  document.getElementById("matches")
+    .innerHTML =
+      list.map(match => {
 
-          ${["1","0","2"].map((x,i)=>`
+        const p =
+          match.probabilities || {};
 
-            <div class="prob">
+        const rec =
+          getRecommendation(match);
 
-              <span>${x}</span>
+        const prediction =
+          getPrediction(match);
 
-              <b>${vals[i]}%</b>
+        const uncertainty =
+          match.uncertainty || {
+            level:"MEDIUM",
+            reasons:[]
+          };
 
-              <div class="bar">
-                <div
-                  class="fill"
-                  style="width:${vals[i]}%"
-                ></div>
+        const confidence =
+          match.confidence || 0;
+
+        const recommendationText =
+          getRecommendationText(rec);
+
+
+        const reasons =
+          uncertainty.reasons || [];
+
+
+        return `
+
+        <article class="match">
+
+          <div class="top">
+
+            <div>
+
+              <div class="meta">
+                No.${match.number}
+               　${match.league || ""}
+              </div>
+
+              <div class="teams">
+                ${match.home}
+                <span class="vs">vs</span>
+                ${match.away}
               </div>
 
             </div>
 
-          `).join("")}
 
-        </div>
+            <div
+              class="badge ${getBadgeClass(
+                uncertainty.level
+              )}">
 
-        <div class="factors">
-          ${m.factors.map(x=>"• "+x).join("<br>")}
-        </div>
+              ${uncertainty.level}
+              ／信頼度 ${confidence}
 
-        <div class="bottom">
+            </div>
 
-          <b class="rec ${m.recommendation}">
-            ${recLabel[m.recommendation]}
-            ${m.upset?"　⚠ 波乱注意":""}
-          </b>
-
-          <div>
-            <span class="analysis">
-              JUDGE SCORE v1.3
-            </span>
-
-            <b>
-              AI予想：${pick(m)}
-            </b>
           </div>
 
+
+          <div class="probgrid">
+
+            <div class="prob ${
+              prediction === "1"
+                ? "main"
+                : ""
+            }">
+
+              <span class="prob-label">
+                1　ホーム
+              </span>
+
+              <b>
+                ${getProbabilityPercent(
+                  p["1"]
+                )}%
+              </b>
+
+              <div class="bar">
+
+                <div
+                  class="fill"
+                  style="
+                    width:${getProbabilityPercent(
+                      p["1"]
+                    )}%
+                  ">
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="prob ${
+              prediction === "0"
+                ? "main"
+                : ""
+            }">
+
+              <span class="prob-label">
+                0　引き分け
+              </span>
+
+              <b>
+                ${getProbabilityPercent(
+                  p["0"]
+                )}%
+              </b>
+
+              <div class="bar">
+
+                <div
+                  class="fill"
+                  style="
+                    width:${getProbabilityPercent(
+                      p["0"]
+                    )}%
+                  ">
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="prob ${
+              prediction === "2"
+                ? "main"
+                : ""
+            }">
+
+              <span class="prob-label">
+                2　アウェイ
+              </span>
+
+              <b>
+                ${getProbabilityPercent(
+                  p["2"]
+                )}%
+              </b>
+
+              <div class="bar">
+
+                <div
+                  class="fill"
+                  style="
+                    width:${getProbabilityPercent(
+                      p["2"]
+                    )}%
+                  ">
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="factors">
+
+            <div class="factor-title">
+              JUDGEの判断材料
+            </div>
+
+            ${
+              reasons.length
+                ? reasons
+                    .map(
+                      reason =>
+                        "• " + reason
+                    )
+                    .join("<br>")
+                : "• 複数の指標から総合評価"
+            }
+
+          </div>
+
+
+          <div class="bottom">
+
+            <div>
+
+              <b class="rec ${rec.type}">
+
+                ${getRecommendationLabel(
+                  rec.type
+                )}
+
+              </b>
+
+              <div
+                class="small"
+                style="margin-top:5px">
+
+                カバー：
+                ${recommendationText}
+
+                ${
+                  rec.probability_coverage !== undefined
+                    ? `
+                    ／確率カバー
+                    ${Math.round(
+                      rec.probability_coverage * 100
+                    )}%
+                    `
+                    : ""
+                }
+
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <span class="analysis">
+                JUDGE SCORE v${
+                  PREDICTIONS.model?.version || "2.0"
+                }
+              </span>
+
+              <b class="ai-pick">
+                AI予想：
+                ${prediction}
+                （${outcomeLabel(
+                  prediction
+                )}）
+              </b>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        `;
+
+      }).join("");
+
+
+  if(!list.length){
+
+    document.getElementById("matches")
+      .innerHTML = `
+        <div class="sub">
+          該当する試合はありません。
         </div>
-
-      </article>
-
       `;
 
-    }).join("")
-    ||
-    `<div class="sub">
-      該当する試合はありません。
-    </div>`;
-}
-
-function summary(){
-
-  const ms=DATA.matches;
-
-  const n=x=>
-    ms.filter(m=>m.recommendation===x).length;
-
-  document.getElementById("safe").textContent=n("single");
-
-  document.getElementById("double").textContent=n("double");
-
-  document.getElementById("upset").textContent=
-    ms.filter(m=>m.upset).length;
-
-  document.getElementById("avg").textContent=
-    Math.round(
-      ms.reduce((s,x)=>s+x.confidence,0)/ms.length
-    )+"/100";
-
-  const uncertain=[...ms]
-    .sort((a,b)=>a.confidence-b.confidence);
-
-  document.getElementById("p1").textContent=
-    `全${ms.length}試合シングル`;
-
-  document.getElementById("p2").textContent=
-    `${uncertain.slice(0,2)
-      .map(x=>"No."+x.number)
-      .join("・")}をダブル`;
-
-  document.getElementById("p3").textContent=
-    `${uncertain.slice(0,3)
-      .map(x=>"No."+x.number)
-      .join("・")}を重点カバー`;
-}
-
-fetch("./predictions.json?"+Date.now())
-
-.then(r=>r.json())
-
-.then(d=>{
-
-  DATA=d;
-
-  document.getElementById("updated").textContent=
-    "更新 "+new Date(d.updated_at)
-      .toLocaleString("ja-JP");
-
-  if(d.mode.startsWith("TEST")){
-
-    document.getElementById("mode").innerHTML=
-      `<span class="demo">
-        現在：予測エンジン検証用データ
-      </span>`;
-
   }
 
-  summary();
+}
 
-  render();
 
-})
+function renderSummary(){
 
-.catch(()=>{
-
-  document.getElementById("matches").innerHTML=
-    `<p class="sub">
-      データを読み込めませんでした。
-    </p>`;
-
-});
-
-document.querySelectorAll(".btn")
-.forEach(b=>
-
-  b.onclick=()=>{
-
-    document.querySelectorAll(".btn")
-      .forEach(x=>x.classList.remove("active"));
-
-    b.classList.add("active");
-
-    current=b.dataset.filter;
-
-    render();
-
+  if(!PREDICTIONS){
+    return;
   }
 
-);
+  const matches =
+    PREDICTIONS.matches || [];
 
-</script>
 
-</body>
-</html>
+  let singles = 0;
+  let doubles = 0;
+  let triples = 0;
+
+
+  matches.forEach(match => {
+
+    const rec =
+      getRecommendation(match);
+
+    if(rec.type === "single"){
+      singles++;
+    }
+
+    if(rec.type === "double"){
+      doubles++;
+    }
+
+    if(rec.type === "triple"){
+      triples++;
+    }
+
+  });
+
+
+  document.getElementById("safe")
+    .textContent = singles;
+
+  document.getElementById("double")
+    .textContent = doubles;
+
+  document.getElementById("triple")
+    .textContent = triples;
+
+
+  const avg =
+    matches.length
+      ? Math.round(
+          matches.reduce(
+            (sum, match) =>
+              sum +
+              Number(
+                match.confidence || 0
+              ),
+            0
+          ) / matches.length
+        )
+      : 0;
+
+
+  document.getElementById("avg")
+    .textContent =
+      avg + "/100";
+
+}
+
+
+function renderPortfolio(){
+
+  if(!RECOMMENDATION){
+    return;
+  }
+
+  const summary =
+    RECOMMENDATION.summary || {};
+
+  const strategy =
+    RECOMMENDATION.strategy || {};
+
+
+  document.getElementById("budget")
+    .textContent =
+      Number(
+        summary.price || 0
+      ).toLocaleString("ja-JP")
+      + "円";
+
+
+  document.getElementById("combinations")
+    .textContent =
+      Number(
+        summary.combinations || 0
+      ).toLocaleString("ja-JP")
+      + "通り";
+
+
+  document.getElementById("strategy")
+    .textContent =
+      summary.strategy || "-";
+
+
+  document.getElementById(
+    "strategyDescription"
+  ).textContent =
+    summary.strategy
+      ? summary.strategy
+      : "-";
+
+
+  document.getElementById(
+    "strategyPriority"
+  ).textContent =
+    strategy.priority || "";
+
+
+  document.getElementById(
+    "singleCount"
