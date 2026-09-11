@@ -270,9 +270,7 @@ header{
   margin-bottom:4px;
 }
 
-/* --------------------------------
-   H2H
--------------------------------- */
+/* H2H */
 
 .h2h{
   margin-top:14px;
@@ -349,8 +347,6 @@ header{
   color:var(--muted);
   font-size:12px;
 }
-
-/* -------------------------------- */
 
 .bottom{
   display:flex;
@@ -478,6 +474,7 @@ header{
   background:#24111a;
   border-radius:15px;
   color:#fda4af;
+  line-height:1.7;
 }
 
 @media(max-width:650px){
@@ -514,7 +511,6 @@ header{
   .h2h-grid{
     grid-template-columns:1fr 1fr 1fr;
   }
-
 }
 
 @media(max-width:430px){
@@ -530,7 +526,6 @@ header{
   .h2h-stat b{
     font-size:15px;
   }
-
 }
 </style>
 </head>
@@ -579,7 +574,6 @@ header{
 
 </section>
 
-
 <section class="stats">
 
   <div class="stat">
@@ -604,41 +598,29 @@ header{
 
 </section>
 
-
 <div class="controls">
 
-  <button
-    class="btn active"
-    data-filter="all">
+  <button class="btn active" data-filter="all">
     すべて
   </button>
 
-  <button
-    class="btn"
-    data-filter="single">
+  <button class="btn" data-filter="single">
     シングル
   </button>
 
-  <button
-    class="btn"
-    data-filter="double">
+  <button class="btn" data-filter="double">
     ダブル
   </button>
 
-  <button
-    class="btn"
-    data-filter="triple">
+  <button class="btn" data-filter="triple">
     トリプル
   </button>
 
-  <button
-    class="btn"
-    data-filter="upset">
+  <button class="btn" data-filter="upset">
     波乱注意
   </button>
 
 </div>
-
 
 <div id="matches">
 
@@ -647,7 +629,6 @@ header{
   </div>
 
 </div>
-
 
 <section class="panel">
 
@@ -664,7 +645,6 @@ header{
     「不確実性の高い試合」にダブル・トリプルを配分。
   </div>
 
-
   <div class="portfolio-main">
 
     <div class="portfolio-stat">
@@ -677,7 +657,6 @@ header{
       </b>
     </div>
 
-
     <div class="portfolio-stat">
       <div class="label">
         組み合わせ
@@ -687,7 +666,6 @@ header{
         -
       </b>
     </div>
-
 
     <div class="portfolio-stat">
       <div class="label">
@@ -700,7 +678,6 @@ header{
     </div>
 
   </div>
-
 
   <div class="strategy">
 
@@ -722,14 +699,10 @@ header{
 
   </div>
 
-
   <div class="plans">
 
     <div class="plan">
-
-      <span>
-        シングル
-      </span>
+      <span>シングル</span>
 
       <b id="singleCount">
         -
@@ -738,15 +711,10 @@ header{
       <div class="small">
         本命を一点で選択
       </div>
-
     </div>
 
-
     <div class="plan">
-
-      <span>
-        ダブル
-      </span>
+      <span>ダブル</span>
 
       <b id="doubleCount">
         -
@@ -755,15 +723,10 @@ header{
       <div class="small">
         上位2候補をカバー
       </div>
-
     </div>
 
-
     <div class="plan">
-
-      <span>
-        トリプル
-      </span>
+      <span>トリプル</span>
 
       <b id="tripleCount">
         -
@@ -772,7 +735,6 @@ header{
       <div class="small">
         全結果をカバー
       </div>
-
     </div>
 
   </div>
@@ -781,13 +743,20 @@ header{
 
 </main>
 
-
 <script>
+
+/* ==================================================
+   JUDGE90 FRONTEND
+================================================== */
 
 let PREDICTIONS = null;
 let RECOMMENDATION = null;
 let currentFilter = "all";
 
+
+/* ==================================================
+   基本関数
+================================================== */
 
 function outcomeLabel(outcome){
 
@@ -803,8 +772,7 @@ function outcomeLabel(outcome){
     return "アウェイ勝利";
   }
 
-  return outcome;
-
+  return outcome || "-";
 }
 
 
@@ -814,15 +782,14 @@ function getPrediction(match){
     match.probabilities || {};
 
   const values = [
-    ["1", probabilities["1"] || 0],
-    ["0", probabilities["0"] || 0],
-    ["2", probabilities["2"] || 0]
+    ["1", Number(probabilities["1"] || 0)],
+    ["0", Number(probabilities["0"] || 0)],
+    ["2", Number(probabilities["2"] || 0)]
   ];
 
   values.sort((a,b) => b[1] - a[1]);
 
   return values[0][0];
-
 }
 
 
@@ -837,9 +804,14 @@ function getRecommendation(match){
     };
   }
 
+  const list =
+    Array.isArray(RECOMMENDATION.matches)
+      ? RECOMMENDATION.matches
+      : [];
+
   const found =
-    RECOMMENDATION.matches.find(
-      item => item.number === match.number
+    list.find(
+      item => Number(item.number) === Number(match.number)
     );
 
   if(!found){
@@ -852,7 +824,6 @@ function getRecommendation(match){
   }
 
   return found;
-
 }
 
 
@@ -862,10 +833,7 @@ function isUpset(match){
     return false;
   }
 
-  return (
-    match.uncertainty.level === "HIGH"
-  );
-
+  return match.uncertainty.level === "HIGH";
 }
 
 
@@ -874,7 +842,6 @@ function getProbabilityPercent(value){
   return Math.round(
     Number(value || 0) * 100
   );
-
 }
 
 
@@ -889,7 +856,6 @@ function getBadgeClass(level){
   }
 
   return "low";
-
 }
 
 
@@ -904,33 +870,67 @@ function getRecommendationLabel(type){
   }
 
   return "シングル推奨";
-
 }
 
 
 function getRecommendationText(rec){
 
-  if(!rec || !rec.recommendation){
+  if(!rec || !Array.isArray(rec.recommendation)){
     return "";
   }
 
   return rec.recommendation
     .map(outcomeLabel)
     .join(" / ");
-
 }
 
 
-/* --------------------------------
-   H2H表示
--------------------------------- */
+/* ==================================================
+   H2H
+   いくつかのデータ形式に対応
+================================================== */
 
 function renderH2H(match){
 
   const h2h =
     match.signals?.h2h;
 
-  if(!h2h || !h2h.available){
+  if(!h2h){
+
+    return `
+      <div class="h2h">
+
+        <div class="h2h-title">
+
+          <div class="h2h-label">
+            H2H / HEAD TO HEAD
+          </div>
+
+          <div class="h2h-status">
+            データなし
+          </div>
+
+        </div>
+
+        <div class="h2h-none">
+          対戦データがありません。
+          H2Hによる補正は行っていません。
+        </div>
+
+      </div>
+    `;
+  }
+
+
+  /* -----------------------------
+     available
+  ----------------------------- */
+
+  const available =
+    h2h.available !== false;
+
+
+  if(!available){
 
     return `
       <div class="h2h">
@@ -954,59 +954,133 @@ function renderH2H(match){
 
       </div>
     `;
-
   }
 
+
+  /* -----------------------------
+     recent5
+  ----------------------------- */
 
   const recent =
     h2h.recent5 || {};
 
+
+  const stats =
+    recent.stats || {};
+
+
+  /*
+    新旧データ形式の両方を吸収
+  */
+
   const matches =
-    Number(recent.matches || 0);
+    Number(
+      recent.matches ??
+      recent.count ??
+      h2h.matches ??
+      0
+    );
+
 
   const homeWins =
-    Number(recent.home_wins || 0);
+    Number(
+      recent.home_wins ??
+      stats.home_wins ??
+      stats.teamA_wins ??
+      0
+    );
+
 
   const draws =
-    Number(recent.draws || 0);
+    Number(
+      recent.draws ??
+      stats.draws ??
+      0
+    );
+
 
   const awayWins =
-    Number(recent.away_wins || 0);
+    Number(
+      recent.away_wins ??
+      stats.away_wins ??
+      stats.teamB_wins ??
+      0
+    );
+
 
   const homeGoals =
-    Number(recent.home_goals || 0);
+    Number(
+      recent.home_goals ??
+      stats.home_goals ??
+      stats.teamA_goals ??
+      0
+    );
+
 
   const awayGoals =
-    Number(recent.away_goals || 0);
+    Number(
+      recent.away_goals ??
+      stats.away_goals ??
+      stats.teamB_goals ??
+      0
+    );
+
+
+  /* -----------------------------
+     advantage
+  ----------------------------- */
+
+  let advantage =
+    h2h.advantage ??
+    recent.advantage ??
+    "neutral";
+
 
   let statusText =
     "拮抗";
 
+
   if(
-    h2h.advantage === "HOME_ADVANTAGE"
+    advantage === "HOME_ADVANTAGE" ||
+    advantage === "home" ||
+    advantage === match.home
   ){
     statusText =
       "ホーム側優勢";
   }
 
+
   if(
-    h2h.advantage === "AWAY_ADVANTAGE"
+    advantage === "AWAY_ADVANTAGE" ||
+    advantage === "away" ||
+    advantage === match.away
   ){
     statusText =
       "アウェイ側優勢";
   }
 
 
+  /* -----------------------------
+     effect
+  ----------------------------- */
+
   const effect =
-    Number(h2h.effect || 0);
+    Number(
+      h2h.effect ??
+      h2h.h2h_effect ??
+      0
+    );
+
 
   let effectText =
     "H2H補正なし";
+
 
   if(effect > 0){
     effectText =
       `ホーム側 +${effect.toFixed(3)}`;
   }
+
 
   if(effect < 0){
     effectText =
@@ -1080,11 +1154,12 @@ function renderH2H(match){
 
     </div>
   `;
-
 }
 
 
-/* -------------------------------- */
+/* ==================================================
+   試合一覧
+================================================== */
 
 function render(){
 
@@ -1092,8 +1167,12 @@ function render(){
     return;
   }
 
+
   const matches =
-    PREDICTIONS.matches || [];
+    Array.isArray(PREDICTIONS.matches)
+      ? PREDICTIONS.matches
+      : [];
+
 
   const list =
     matches.filter(match => {
@@ -1101,13 +1180,16 @@ function render(){
       const rec =
         getRecommendation(match);
 
+
       if(currentFilter === "all"){
         return true;
       }
 
+
       if(currentFilter === "upset"){
         return isUpset(match);
       }
+
 
       return rec.type === currentFilter;
 
@@ -1121,11 +1203,14 @@ function render(){
         const p =
           match.probabilities || {};
 
+
         const rec =
           getRecommendation(match);
 
+
         const prediction =
           getPrediction(match);
+
 
         const uncertainty =
           match.uncertainty || {
@@ -1133,14 +1218,31 @@ function render(){
             reasons:[]
           };
 
+
         const confidence =
-          match.confidence || 0;
+          Number(match.confidence || 0);
+
 
         const recommendationText =
           getRecommendationText(rec);
 
+
         const reasons =
-          uncertainty.reasons || [];
+          Array.isArray(uncertainty.reasons)
+            ? uncertainty.reasons
+            : [];
+
+
+        const p1 =
+          getProbabilityPercent(p["1"]);
+
+
+        const p0 =
+          getProbabilityPercent(p["0"]);
+
+
+        const p2 =
+          getProbabilityPercent(p["2"]);
 
 
         return `
@@ -1153,7 +1255,7 @@ function render(){
 
               <div class="meta">
                 No.${match.number}
-                　${match.league || ""}
+                ${match.league || ""}
               </div>
 
               <div class="teams">
@@ -1165,10 +1267,9 @@ function render(){
             </div>
 
 
-            <div
-              class="badge ${getBadgeClass(
-                uncertainty.level
-              )}">
+            <div class="badge ${getBadgeClass(
+              uncertainty.level
+            )}">
 
               ${uncertainty.level}
               ／信頼度 ${confidence}
@@ -1191,20 +1292,14 @@ function render(){
               </span>
 
               <b>
-                ${getProbabilityPercent(
-                  p["1"]
-                )}%
+                ${p1}%
               </b>
 
               <div class="bar">
 
                 <div
                   class="fill"
-                  style="
-                    width:${getProbabilityPercent(
-                      p["1"]
-                    )}%
-                  ">
+                  style="width:${p1}%">
                 </div>
 
               </div>
@@ -1223,20 +1318,14 @@ function render(){
               </span>
 
               <b>
-                ${getProbabilityPercent(
-                  p["0"]
-                )}%
+                ${p0}%
               </b>
 
               <div class="bar">
 
                 <div
                   class="fill"
-                  style="
-                    width:${getProbabilityPercent(
-                      p["0"]
-                    )}%
-                  ">
+                  style="width:${p0}%">
                 </div>
 
               </div>
@@ -1255,20 +1344,14 @@ function render(){
               </span>
 
               <b>
-                ${getProbabilityPercent(
-                  p["2"]
-                )}%
+                ${p2}%
               </b>
 
               <div class="bar">
 
                 <div
                   class="fill"
-                  style="
-                    width:${getProbabilityPercent(
-                      p["2"]
-                    )}%
-                  ">
+                  style="width:${p2}%">
                 </div>
 
               </div>
@@ -1314,100 +1397,4 @@ function render(){
               </b>
 
               <div
-                class="small"
-                style="margin-top:5px">
-
-                カバー：
-                ${recommendationText}
-
-                ${
-                  rec.probability_coverage !== undefined
-                    ? `
-                    ／確率カバー
-                    ${Math.round(
-                      rec.probability_coverage * 100
-                    )}%
-                    `
-                    : ""
-                }
-
-              </div>
-
-            </div>
-
-
-            <div>
-
-              <span class="analysis">
-                JUDGE SCORE v${
-                  PREDICTIONS.model?.version || "2.1"
-                }
-              </span>
-
-              <b class="ai-pick">
-                AI予想：
-                ${prediction}
-                （${outcomeLabel(
-                  prediction
-                )}）
-              </b>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        `;
-
-      }).join("");
-
-
-  if(!list.length){
-
-    document.getElementById("matches")
-      .innerHTML = `
-        <div class="sub">
-          該当する試合はありません。
-        </div>
-      `;
-
-  }
-
-}
-
-
-function renderSummary(){
-
-  if(!PREDICTIONS){
-    return;
-  }
-
-  const matches =
-    PREDICTIONS.matches || [];
-
-  let singles = 0;
-  let doubles = 0;
-  let triples = 0;
-
-  matches.forEach(match => {
-
-    const rec =
-      getRecommendation(match);
-
-    if(rec.type === "single"){
-      singles++;
-    }
-
-    if(rec.type === "double"){
-      doubles++;
-    }
-
-    if(rec.type === "triple"){
-      triples++;
-    }
-
-  });
-
-
-  document.getElementBy
+                class="smal
