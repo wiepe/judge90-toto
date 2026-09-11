@@ -1,20 +1,56 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
-const totoPath = "data/toto_matches.json";
-const outputPath = "data/h2h.json";
+const TOTO_FILE = "data/toto_matches.json";
+const OUTPUT_FILE = "data/h2h.json";
+const BASE_URL = "https://data.j-league.or.jp/SFMS01/search";
 
-const SEARCH_URL =
-  "https://data.j-league.or.jp/SFMS01/search";
+const toto = JSON.parse(
+  readFileSync(TOTO_FILE, "utf8")
+);
 
-const toto =
-  JSON.parse(
-    readFileSync(totoPath, "utf8")
-  );
+const aliases = {
+  "水戸ホーリーホック": "水戸",
+  "川崎フロンターレ": "川崎Ｆ",
+  "清水エスパルス": "清水",
+  "アビスパ福岡": "福岡",
+  "ガンバ大阪": "Ｇ大阪",
+  "ＦＣ東京": "FC東京",
+  "FC東京": "FC東京",
+  "ＦＣ町田ゼルビア": "町田",
+  "町田": "町田",
+  "横浜Ｆ・マリノス": "横浜FM",
+  "横浜F・マリノス": "横浜FM",
+  "Ｖ・ファーレン長崎": "長崎",
+  "名古屋グランパス": "名古屋",
+  "サンフレッチェ広島": "広島",
+  "セレッソ大阪": "Ｃ大阪",
+  "東京ヴェルディ": "東京Ｖ",
+  "ジェフユナイテッド千葉": "千葉",
+  "ジェフ千葉": "千葉",
+  "浦和レッズ": "浦和",
+  "ファジアーノ岡山": "岡山",
+  "ＦＣ今治": "今治",
+  "FC今治": "今治",
+  "サガン鳥栖": "鳥栖",
+  "いわきＦＣ": "いわき",
+  "いわきFC": "いわき",
+  "横浜ＦＣ": "横浜FC",
+  "ヴァンラーレ八戸": "八戸",
+  "湘南ベルマーレ": "湘南",
+  "ヴァンフォーレ甲府": "甲府",
+  "ジュビロ磐田": "磐田",
+  "ブラウブリッツ秋田": "秋田",
+  "徳島ヴォルティス": "徳島"
+};
 
-function stripTags(html) {
+function normalize(name) {
+  return aliases[name] || name;
+}
+
+function text(html) {
   return html
     .replace(/<br\s*\/?>/gi, " ")
-    .replace(/<[^>]*>/g, " ")
+    .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
@@ -23,82 +59,19 @@ function stripTags(html) {
     .trim();
 }
 
-function parseScore(score) {
-  if (!score) return null;
-
-  const match =
-    score.match(/^(\d+)\s*-\s*(\d+)/);
-
-  if (!match) return null;
-
-  return {
-    homeGoals: Number(match[1]),
-    awayGoals: Number(match[2])
-  };
-}
-
-function normalizeName(name) {
-
-  const map = {
-    "水戸ホーリーホック": "水戸",
-    "川崎フロンターレ": "川崎Ｆ",
-    "清水エスパルス": "清水",
-    "アビスパ福岡": "福岡",
-    "ガンバ大阪": "Ｇ大阪",
-    "ＦＣ東京": "FC東京",
-    "FC東京": "FC東京",
-    "ＦＣ町田ゼルビア": "町田",
-    "横浜Ｆ・マリノス": "横浜FM",
-    "Ｖ・ファーレン長崎": "長崎",
-    "名古屋グランパス": "名古屋",
-    "サンフレッチェ広島": "広島",
-    "セレッソ大阪": "Ｃ大阪",
-    "東京ヴェルディ": "東京Ｖ",
-    "ジェフユナイテッド千葉": "千葉",
-    "浦和レッズ": "浦和",
-    "ファジアーノ岡山": "岡山",
-    "ＦＣ今治": "今治",
-    "サガン鳥栖": "鳥栖",
-    "いわきＦＣ": "いわき",
-    "横浜ＦＣ": "横浜FC",
-    "ヴァンラーレ八戸": "八戸",
-    "湘南ベルマーレ": "湘南",
-    "ヴァンフォーレ甲府": "甲府",
-    "ジュビロ磐田": "磐田",
-    "ブラウブリッツ秋田": "秋田",
-    "徳島ヴォルティス": "徳島"
-  };
-
-  return map[name] || name;
-}
-
-
 function parseRows(html) {
-
   const rows = [];
 
-  const rowMatches =
-    html.matchAll(
-      /<tr[^>]*>([\s\S]*?)<\/tr>/gi
-    );
-
-  for (const rowMatch of rowMatches) {
-
-    const rowHtml =
-      rowMatch[1];
-
+  for (const row of html.matchAll(
+    /<tr[^>]*>([\s\S]*?)<\/tr>/gi
+  )) {
     const cells = [
-      ...rowHtml.matchAll(
+      ...row[1].matchAll(
         /<td[^>]*>([\s\S]*?)<\/td>/gi
       )
-    ].map(
-      match =>
-        stripTags(match[1])
-    );
+    ].map(x => text(x[1]));
 
-    if (cells.length < 8) {
-      continue;
-    }
+    if (cells.length < 8) continue;
 
     const [
       season,
@@ -112,558 +85,247 @@ function parseRows(html) {
       stadium
     ] = cells;
 
-    if (!home || !away) {
-      continue;
-    }
+    if (!home || !away || !score) continue;
 
-    if (score === "vs") {
-      continue;
-    }
+    const scoreMatch =
+      score.match(/^(\d+)\s*-\s*(\d+)/);
 
-    const parsedScore =
-      parseScore(score);
-
-    if (!parsedScore) {
-      continue;
-    }
+    if (!scoreMatch) continue;
 
     const dateMatch =
-      dateText.match(
-        /(\d{2})\/(\d{2})\/(\d{2})/
-      );
+      dateText.match(/(\d{2})\/(\d{2})\/(\d{2})/);
 
-    if (!dateMatch) {
-      continue;
-    }
+    if (!dateMatch) continue;
 
-    const [
-      ,
-      yy,
-      mm,
-      dd
-    ] = dateMatch;
+    const [, yy, mm, dd] = dateMatch;
 
-    const date =
-      `20${yy}-${mm}-${dd}`;
-
-    /*
-      H2H対象：
-      J1/J2/J3リーグ戦
-      ルヴァンカップ等のリーグカップ
-
-      天皇杯などは除外。
-    */
-
-    const competitionText =
-      competition || "";
-
-    const isLeague =
-      /Ｊ１|Ｊ２|Ｊ３|J1|J2|J3/.test(
-        competitionText
-      );
-
-    const isLeagueCup =
-      /ルヴァン|リーグカップ/.test(
-        competitionText
-      );
+    const competitionName = competition || "";
 
     if (
-      !isLeague &&
-      !isLeagueCup
+      !/Ｊ１|Ｊ２|Ｊ３|J1|J2|J3|ルヴァン|リーグカップ|ヤマザキ/
+        .test(competitionName)
     ) {
       continue;
     }
 
     rows.push({
-      season,
-      competition,
-      date,
-      kickoff,
-      home:
-        normalizeName(home),
-      away:
-        normalizeName(away),
-      score,
-      stadium,
-      homeGoals:
-        parsedScore.homeGoals,
-      awayGoals:
-        parsedScore.awayGoals
+      date: `20${yy}-${mm}-${dd}`,
+      competition: competitionName,
+      home: normalize(home),
+      away: normalize(away),
+      homeGoals: Number(scoreMatch[1]),
+      awayGoals: Number(scoreMatch[2])
     });
   }
 
   return rows;
 }
 
-
-async function fetchTeamMatches(team) {
-
-  console.log(
-    `Fetching historical matches: ${team}`
-  );
-
-  /*
-    まず検索フォームから
-    チームIDを取得する。
-  */
-
-  const searchPage =
-    await fetch(
-      SEARCH_URL
-    );
-
-  if (!searchPage.ok) {
-    throw new Error(
-      `Search page HTTP ERROR: ${searchPage.status}`
-    );
-  }
-
-  const searchHtml =
-    await searchPage.text();
-
-  /*
-    チーム選択欄から
-    チーム名とIDを探す。
-  */
-
-  const optionMatches =
-    searchHtml.matchAll(
-      /<option[^>]*value=["']([^"']+)["'][^>]*>([\s\S]*?)<\/option>/gi
-    );
-
-  let teamId = null;
-
-  for (
-    const match of optionMatches
-  ) {
-
-    const value =
-      match[1];
-
-    const label =
-      stripTags(match[2]);
-
-    if (
-      normalizeName(label) === team
-    ) {
-
-      teamId = value;
-
-      break;
-    }
-  }
-
-  if (!teamId) {
-
-    throw new Error(
-      `TEAM ID NOT FOUND: ${team}`
-    );
-
-  }
-
+async function fetchYear(frame, year) {
   const url =
-    `${SEARCH_URL}?team_ids=${encodeURIComponent(teamId)}`;
+    `${BASE_URL}?competition_frame_ids=${frame}` +
+    `&competition_years=${year}`;
 
-  const response =
-    await fetch(url);
+  const response = await fetch(url);
 
   if (!response.ok) {
     throw new Error(
-      `${team} HTTP ERROR: ${response.status}`
+      `HTTP ${response.status}`
     );
   }
 
-  const html =
-    await response.text();
-
-  return parseRows(html);
+  return parseRows(
+    await response.text()
+  );
 }
 
-
-function resultForTeam(
-  team,
-  match
-) {
-
-  if (
-    match.home === team
-  ) {
-
-    if (
-      match.homeGoals >
-      match.awayGoals
-    ) {
-      return "W";
-    }
-
-    if (
-      match.homeGoals <
-      match.awayGoals
-    ) {
-      return "L";
-    }
-
+function result(team, match) {
+  if (match.home === team) {
+    if (match.homeGoals > match.awayGoals) return "W";
+    if (match.homeGoals < match.awayGoals) return "L";
     return "D";
   }
 
-
-  if (
-    match.away === team
-  ) {
-
-    if (
-      match.awayGoals >
-      match.homeGoals
-    ) {
-      return "W";
-    }
-
-    if (
-      match.awayGoals <
-      match.homeGoals
-    ) {
-      return "L";
-    }
-
+  if (match.away === team) {
+    if (match.awayGoals > match.homeGoals) return "W";
+    if (match.awayGoals < match.homeGoals) return "L";
     return "D";
   }
 
   return null;
 }
 
+function summarize(home, away, allMatches) {
+  const matches = allMatches
+    .filter(m =>
+      (m.home === home && m.away === away) ||
+      (m.home === away && m.away === home)
+    )
+    .sort((a, b) =>
+      b.date.localeCompare(a.date)
+    );
 
-function summarize(
-  teamA,
-  teamB,
-  matches
-) {
+  const recent = matches.slice(0, 5);
 
-  const h2h =
-    matches
-      .filter(match =>
-        (
-          match.home === teamA &&
-          match.away === teamB
-        ) ||
-        (
-          match.home === teamB &&
-          match.away === teamA
-        )
-      )
-      .sort(
-        (a,b) =>
-          b.date.localeCompare(a.date)
-      );
+  let homeWins = 0;
+  let draws = 0;
+  let awayWins = 0;
+  let homeGoals = 0;
+  let awayGoals = 0;
 
-  const recent =
-    h2h.slice(0,5);
+  for (const m of recent) {
+    const r = result(home, m);
 
-  const recentStats = {
-    matches: recent.length,
-    teamA_wins: 0,
-    draws: 0,
-    teamB_wins: 0,
-    teamA_goals: 0,
-    teamB_goals: 0
-  };
+    if (r === "W") homeWins++;
+    if (r === "D") draws++;
+    if (r === "L") awayWins++;
 
-
-  for (
-    const match of recent
-  ) {
-
-    const result =
-      resultForTeam(
-        teamA,
-        match
-      );
-
-    if (result === "W") {
-      recentStats.teamA_wins++;
-    }
-
-    if (result === "D") {
-      recentStats.draws++;
-    }
-
-    if (result === "L") {
-      recentStats.teamB_wins++;
-    }
-
-    if (
-      match.home === teamA
-    ) {
-
-      recentStats.teamA_goals +=
-        match.homeGoals;
-
-      recentStats.teamB_goals +=
-        match.awayGoals;
-
+    if (m.home === home) {
+      homeGoals += m.homeGoals;
+      awayGoals += m.awayGoals;
     } else {
-
-      recentStats.teamA_goals +=
-        match.awayGoals;
-
-      recentStats.teamB_goals +=
-        match.homeGoals;
-
+      homeGoals += m.awayGoals;
+      awayGoals += m.homeGoals;
     }
-
   }
 
+  let advantage = "neutral";
 
-  const allStats = {
-    matches: h2h.length,
-    teamA_wins: 0,
-    draws: 0,
-    teamB_wins: 0
-  };
-
-
-  for (
-    const match of h2h
-  ) {
-
-    const result =
-      resultForTeam(
-        teamA,
-        match
-      );
-
-    if (result === "W") {
-      allStats.teamA_wins++;
-    }
-
-    if (result === "D") {
-      allStats.draws++;
-    }
-
-    if (result === "L") {
-      allStats.teamB_wins++;
-    }
-
+  if (homeWins > awayWins) {
+    advantage = "HOME_ADVANTAGE";
+  } else if (awayWins > homeWins) {
+    advantage = "AWAY_ADVANTAGE";
   }
-
-
-  let recentAdvantage =
-    "neutral";
-
-  if (
-    recentStats.teamA_wins >
-    recentStats.teamB_wins
-  ) {
-    recentAdvantage =
-      teamA;
-  }
-
-  if (
-    recentStats.teamB_wins >
-    recentStats.teamA_wins
-  ) {
-    recentAdvantage =
-      teamB;
-  }
-
-
-  let overallAdvantage =
-    "neutral";
-
-  if (
-    allStats.teamA_wins >
-    allStats.teamB_wins
-  ) {
-    overallAdvantage =
-      teamA;
-  }
-
-  if (
-    allStats.teamB_wins >
-    allStats.teamA_wins
-  ) {
-    overallAdvantage =
-      teamB;
-  }
-
 
   return {
-    teamA,
-    teamB,
+    available: recent.length > 0,
 
     recent5: {
-      matches:
-        recent.map(match => ({
-          date:
-            match.date,
-          competition:
-            match.competition,
-          home:
-            match.home,
-          away:
-            match.away,
-          score:
-            match.score
-        })),
-
-      stats:
-        recentStats,
-
-      advantage:
-        recentAdvantage
+      matches: recent.length,
+      home_wins: homeWins,
+      draws,
+      away_wins: awayWins,
+      home_goals: homeGoals,
+      away_goals: awayGoals,
+      advantage
     },
 
     all_time: {
-      stats:
-        allStats,
-
-      advantage:
-        overallAdvantage
+      matches: matches.length
     },
 
-    data_source:
-      "J.League Data Site",
-
-    generated_at:
-      new Date().toISOString()
+    effect: 0
   };
 }
 
-
 async function main() {
+  console.log("");
+  console.log("==============================");
+  console.log("JUDGE90 H2H FETCH");
+  console.log("==============================");
 
-  const targetTeams =
-    [
-      ...new Set(
-        toto.matches.flatMap(
-          match => [
-            normalizeName(match.home),
-            normalizeName(match.away)
-          ]
-        )
-      )
-    ];
+  const teams = [
+    ...new Set(
+      toto.matches.flatMap(m => [
+        normalize(m.home),
+        normalize(m.away)
+      ])
+    )
+  ];
 
+  console.log(
+    `対象チーム: ${teams.length}`
+  );
+
+  const allMatches = [];
+
+  /*
+   * J.League Data Siteから
+   * 2004〜2026年のJ1/J2/J3を取得。
+   */
+  for (const frame of [1, 2, 3]) {
+    for (let year = 2004; year <= 2026; year++) {
+      try {
+        const matches =
+          await fetchYear(frame, year);
+
+        allMatches.push(...matches);
+
+        console.log(
+          `frame ${frame} / ${year}: ${matches.length}`
+        );
+      } catch (error) {
+        console.log(
+          `SKIP ${frame}/${year}: ${error.message}`
+        );
+      }
+    }
+  }
+
+  /*
+   * 同一試合を重複排除。
+   */
+  const unique = new Map();
+
+  for (const m of allMatches) {
+    const key =
+      `${m.date}|${m.home}|${m.away}|` +
+      `${m.homeGoals}-${m.awayGoals}`;
+
+    unique.set(key, m);
+  }
+
+  const historical =
+    [...unique.values()];
 
   console.log("");
   console.log(
-    "=============================="
-  );
-  console.log(
-    "JUDGE90 H2H FETCH"
-  );
-  console.log(
-    "=============================="
+    `取得した過去試合: ${historical.length}`
   );
 
-  console.log(
-    `Teams: ${targetTeams.length}`
-  );
+  const matches =
+    toto.matches.map(m => {
+      const home = normalize(m.home);
+      const away = normalize(m.away);
 
-
-  const teamMatches =
-    new Map();
-
-
-  for (
-    const team of targetTeams
-  ) {
-
-    try {
-
-      const matches =
-        await fetchTeamMatches(
-          team
+      const h2h =
+        summarize(
+          home,
+          away,
+          historical
         );
 
-      teamMatches.set(
-        team,
-        matches
-      );
+      return {
+        number: m.number,
+        home,
+        away,
+        h2h
+      };
+    });
 
-      console.log(
-        `${team}: ${matches.length} historical matches`
-      );
-
-    } catch(error) {
-
-      console.error(
-        error.message
-      );
-
-      throw error;
-    }
-
-  }
-
-
-  const outputMatches =
-    toto.matches.map(
-      match => {
-
-        const teamA =
-          normalizeName(
-            match.home
-          );
-
-        const teamB =
-          normalizeName(
-            match.away
-          );
-
-
-        const sourceMatches =
-          teamMatches.get(
-            teamA
-          ) || [];
-
-
-        return {
-          number:
-            match.number,
-
-          home:
-            teamA,
-
-          away:
-            teamB,
-
-          h2h:
-            summarize(
-              teamA,
-              teamB,
-              sourceMatches
-            )
-        };
-
-      }
-    );
-
+  const available =
+    matches.filter(
+      m => m.h2h.available
+    ).length;
 
   const output = {
-
-    season:
-      "2026/27",
-
+    season: "2026/27",
     generated_at:
       new Date().toISOString(),
-
     source:
       "J.League Data Site",
-
-    matches:
-      outputMatches
-
+    historical_range:
+      "2004-2026",
+    matches
   };
-
 
   mkdirSync(
     "data",
-    { recursive:true }
+    { recursive: true }
   );
 
-
   writeFileSync(
-    outputPath,
+    OUTPUT_FILE,
     JSON.stringify(
       output,
       null,
@@ -672,68 +334,46 @@ async function main() {
     "utf8"
   );
 
-
   console.log("");
+  console.log("==============================");
+  console.log("JUDGE90 H2H RESULT");
+  console.log("==============================");
 
-  console.log(
-    "=============================="
-  );
-
-  console.log(
-    "JUDGE90 H2H DATA"
-  );
-
-  console.log(
-    "=============================="
-  );
-
-
-  for (
-    const match of outputMatches
-  ) {
-
-    const h2h =
-      match.h2h;
+  for (const m of matches) {
+    const h = m.h2h.recent5;
 
     console.log(
-      `${match.number}. ` +
-      `${match.home} vs ${match.away}`
+      `${m.number}. ${m.home} vs ${m.away}`
     );
 
     console.log(
-      `   recent5: ` +
-      `${h2h.recent5.stats.teamA_wins}-` +
-      `${h2h.recent5.stats.draws}-` +
-      `${h2h.recent5.stats.teamB_wins}`
+      `   直近5: ${h.home_wins}-` +
+      `${h.draws}-${h.away_wins}`
     );
 
     console.log(
-      `   advantage: ` +
-      `${h2h.recent5.advantage}`
+      `   available: ${m.h2h.available}`
     );
-
   }
 
-
   console.log("");
-
   console.log(
-    `Saved: ${outputPath}`
+    `H2H available: ${available}/13`
+  );
+  console.log(
+    `Saved: ${OUTPUT_FILE}`
   );
 
+  if (available === 0) {
+    throw new Error(
+      "H2Hを1件も取得できませんでした。"
+    );
+  }
 }
 
-
 main().catch(error => {
-
   console.error("");
-
-  console.error(
-    "H2H FETCH ERROR"
-  );
-
+  console.error("H2H FETCH ERROR");
   console.error(error);
-
   process.exit(1);
-
 });
