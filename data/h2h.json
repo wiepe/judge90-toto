@@ -1,0 +1,423 @@
+{
+  "season": "2026/27",
+  "generated_at": "2026-09-11T04:41:29.422Z",
+  "source": "J.League Data Site",
+  "matches": [
+    {
+      "number": 1,
+      "home": "水戸",
+      "away": "川崎Ｆ",
+      "h2h": {
+        "teamA": "水戸",
+        "teamB": "川崎Ｆ",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 2,
+      "home": "清水",
+      "away": "福岡",
+      "h2h": {
+        "teamA": "清水",
+        "teamB": "福岡",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 3,
+      "home": "Ｇ大阪",
+      "away": "FC東京",
+      "h2h": {
+        "teamA": "Ｇ大阪",
+        "teamB": "FC東京",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 4,
+      "home": "町田",
+      "away": "横浜FM",
+      "h2h": {
+        "teamA": "町田",
+        "teamB": "横浜FM",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 5,
+      "home": "長崎",
+      "away": "名古屋",
+      "h2h": {
+        "teamA": "長崎",
+        "teamB": "名古屋",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 6,
+      "home": "広島",
+      "away": "Ｃ大阪",
+      "h2h": {
+        "teamA": "広島",
+        "teamB": "Ｃ大阪",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 7,
+      "home": "東京Ｖ",
+      "away": "千葉",
+      "h2h": {
+        "teamA": "東京Ｖ",
+        "teamB": "千葉",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 8,
+      "home": "浦和",
+      "away": "岡山",
+      "h2h": {
+        "teamA": "浦和",
+        "teamB": "岡山",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 9,
+      "home": "今治",
+      "away": "鳥栖",
+      "h2h": {
+        "teamA": "今治",
+        "teamB": "鳥栖",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 10,
+      "home": "いわき",
+      "away": "横浜FC",
+      "h2h": {
+        "teamA": "いわき",
+        "teamB": "横浜FC",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 11,
+      "home": "八戸",
+      "away": "湘南",
+      "h2h": {
+        "teamA": "八戸",
+        "teamB": "湘南",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 12,
+      "home": "甲府",
+      "away": "磐田",
+      "h2h": {
+        "teamA": "甲府",
+        "teamB": "磐田",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    },
+    {
+      "number": 13,
+      "home": "秋田",
+      "away": "徳島",
+      "h2h": {
+        "teamA": "秋田",
+        "teamB": "徳島",
+        "recent5": {
+          "matches": [],
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          },
+          "advantage": "neutral"
+        },
+        "all_time": {
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0
+          },
+          "advantage": "neutral"
+        },
+        "data_source": "J.League Data Site",
+        "generated_at": "2026-09-11T04:41:29.422Z"
+      }
+    }
+  ]
+}
