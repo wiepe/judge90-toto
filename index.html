@@ -17,6 +17,7 @@
   --yellow:#fbbf24;
   --red:#fb7185;
   --blue:#7dd3fc;
+  --purple:#c4b5fd;
 }
 
 *{
@@ -269,6 +270,88 @@ header{
   margin-bottom:4px;
 }
 
+/* --------------------------------
+   H2H
+-------------------------------- */
+
+.h2h{
+  margin-top:14px;
+  padding:14px;
+  background:
+    linear-gradient(
+      145deg,
+      #15152a,
+      #0d1220
+    );
+  border:1px solid #353456;
+  border-radius:14px;
+}
+
+.h2h-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.h2h-label{
+  color:var(--purple);
+  font-weight:800;
+  font-size:13px;
+  letter-spacing:.05em;
+}
+
+.h2h-status{
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid #3d3a62;
+  color:var(--muted);
+}
+
+.h2h-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.h2h-stat{
+  background:#0a1020;
+  border:1px solid #202b40;
+  border-radius:10px;
+  padding:9px;
+}
+
+.h2h-stat .label{
+  color:var(--muted);
+  font-size:11px;
+}
+
+.h2h-stat b{
+  display:block;
+  margin-top:3px;
+  font-size:17px;
+}
+
+.h2h-note{
+  margin-top:10px;
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+.h2h-effect{
+  color:var(--purple);
+}
+
+.h2h-none{
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* -------------------------------- */
+
 .bottom{
   display:flex;
   justify-content:space-between;
@@ -428,6 +511,10 @@ header{
     flex-direction:column;
   }
 
+  .h2h-grid{
+    grid-template-columns:1fr 1fr 1fr;
+  }
+
 }
 
 @media(max-width:430px){
@@ -438,6 +525,10 @@ header{
 
   .teams{
     font-size:16px;
+  }
+
+  .h2h-stat b{
+    font-size:15px;
   }
 
 }
@@ -478,7 +569,8 @@ header{
   </h1>
 
   <div class="sub">
-    Jリーグの成績・フォーム・ホーム/アウェイ成績を統合し、
+    Jリーグの成績・フォーム・ホーム/アウェイ成績・
+    過去の対戦成績を統合し、
     totoでは限られたダブル・トリプルを
     「不確実な試合」に集中させる。
   </div>
@@ -829,6 +921,171 @@ function getRecommendationText(rec){
 }
 
 
+/* --------------------------------
+   H2H表示
+-------------------------------- */
+
+function renderH2H(match){
+
+  const h2h =
+    match.signals?.h2h;
+
+  if(!h2h || !h2h.available){
+
+    return `
+      <div class="h2h">
+
+        <div class="h2h-title">
+
+          <div class="h2h-label">
+            H2H / HEAD TO HEAD
+          </div>
+
+          <div class="h2h-status">
+            データなし
+          </div>
+
+        </div>
+
+        <div class="h2h-none">
+          対戦データが十分に取得できないため、
+          H2Hによる補正は行っていません。
+        </div>
+
+      </div>
+    `;
+
+  }
+
+
+  const recent =
+    h2h.recent5 || {};
+
+  const matches =
+    Number(recent.matches || 0);
+
+  const homeWins =
+    Number(recent.home_wins || 0);
+
+  const draws =
+    Number(recent.draws || 0);
+
+  const awayWins =
+    Number(recent.away_wins || 0);
+
+  const homeGoals =
+    Number(recent.home_goals || 0);
+
+  const awayGoals =
+    Number(recent.away_goals || 0);
+
+  let statusText =
+    "拮抗";
+
+  if(
+    h2h.advantage === "HOME_ADVANTAGE"
+  ){
+    statusText =
+      "ホーム側優勢";
+  }
+
+  if(
+    h2h.advantage === "AWAY_ADVANTAGE"
+  ){
+    statusText =
+      "アウェイ側優勢";
+  }
+
+
+  const effect =
+    Number(h2h.effect || 0);
+
+  let effectText =
+    "H2H補正なし";
+
+  if(effect > 0){
+    effectText =
+      `ホーム側 +${effect.toFixed(3)}`;
+  }
+
+  if(effect < 0){
+    effectText =
+      `アウェイ側 +${Math.abs(effect).toFixed(3)}`;
+  }
+
+
+  return `
+    <div class="h2h">
+
+      <div class="h2h-title">
+
+        <div class="h2h-label">
+          H2H / HEAD TO HEAD
+        </div>
+
+        <div class="h2h-status">
+          ${statusText}
+        </div>
+
+      </div>
+
+
+      <div class="h2h-grid">
+
+        <div class="h2h-stat">
+
+          <div class="label">
+            直近${matches}戦
+          </div>
+
+          <b>
+            ${homeWins}-${draws}-${awayWins}
+          </b>
+
+        </div>
+
+
+        <div class="h2h-stat">
+
+          <div class="label">
+            得点
+          </div>
+
+          <b>
+            ${homeGoals} - ${awayGoals}
+          </b>
+
+        </div>
+
+
+        <div class="h2h-stat">
+
+          <div class="label">
+            H2H補正
+          </div>
+
+          <b class="h2h-effect">
+            ${effectText}
+          </b>
+
+        </div>
+
+      </div>
+
+
+      <div class="h2h-note">
+        直近5戦の対戦傾向を補助材料として使用。
+        現在のチーム力を上書きしない控えめな補正です。
+      </div>
+
+    </div>
+  `;
+
+}
+
+
+/* -------------------------------- */
+
 function render(){
 
   if(!PREDICTIONS){
@@ -882,7 +1139,6 @@ function render(){
         const recommendationText =
           getRecommendationText(rec);
 
-
         const reasons =
           uncertainty.reasons || [];
 
@@ -897,7 +1153,7 @@ function render(){
 
               <div class="meta">
                 No.${match.number}
-               　${match.league || ""}
+                　${match.league || ""}
               </div>
 
               <div class="teams">
@@ -1042,6 +1298,9 @@ function render(){
           </div>
 
 
+          ${renderH2H(match)}
+
+
           <div class="bottom">
 
             <div>
@@ -1081,7 +1340,7 @@ function render(){
 
               <span class="analysis">
                 JUDGE SCORE v${
-                  PREDICTIONS.model?.version || "2.0"
+                  PREDICTIONS.model?.version || "2.1"
                 }
               </span>
 
@@ -1127,11 +1386,9 @@ function renderSummary(){
   const matches =
     PREDICTIONS.matches || [];
 
-
   let singles = 0;
   let doubles = 0;
   let triples = 0;
-
 
   matches.forEach(match => {
 
@@ -1153,243 +1410,4 @@ function renderSummary(){
   });
 
 
-  document.getElementById("safe")
-    .textContent = singles;
-
-  document.getElementById("double")
-    .textContent = doubles;
-
-  document.getElementById("triple")
-    .textContent = triples;
-
-
-  const avg =
-    matches.length
-      ? Math.round(
-          matches.reduce(
-            (sum, match) =>
-              sum +
-              Number(
-                match.confidence || 0
-              ),
-            0
-          ) / matches.length
-        )
-      : 0;
-
-
-  document.getElementById("avg")
-    .textContent =
-      avg + "/100";
-
-}
-
-
-function renderPortfolio(){
-
-  if(!RECOMMENDATION){
-    return;
-  }
-
-  const summary =
-    RECOMMENDATION.summary || {};
-
-  const strategy =
-    RECOMMENDATION.strategy || {};
-
-
-  document.getElementById("budget")
-    .textContent =
-      Number(
-        summary.price || 0
-      ).toLocaleString("ja-JP")
-      + "円";
-
-
-  document.getElementById("combinations")
-    .textContent =
-      Number(
-        summary.combinations || 0
-      ).toLocaleString("ja-JP")
-      + "通り";
-
-
-  document.getElementById("strategy")
-    .textContent =
-      summary.strategy || "-";
-
-
-  document.getElementById(
-    "strategyDescription"
-  ).textContent =
-    summary.strategy
-      ? summary.strategy
-      : "-";
-
-
-  document.getElementById(
-    "strategyPriority"
-  ).textContent =
-    strategy.priority || "";
-
-
-  document.getElementById(
-    "singleCount"
-  ).textContent =
-    `${summary.singles || 0}試合`;
-
-
-  document.getElementById(
-    "doubleCount"
-  ).textContent =
-    `${summary.doubles || 0}試合`;
-
-
-  document.getElementById(
-    "tripleCount"
-  ).textContent =
-    `${summary.triples || 0}試合`;
-
-}
-
-
-async function loadData(){
-
-  try{
-
-    const [
-      predictionsResponse,
-      recommendationResponse
-    ] = await Promise.all([
-
-      fetch(
-        "./predictions.json?" +
-        Date.now()
-      ),
-
-      fetch(
-        "./recommendation.json?" +
-        Date.now()
-      )
-
-    ]);
-
-
-    if(!predictionsResponse.ok){
-      throw new Error(
-        "predictions.jsonを取得できませんでした"
-      );
-    }
-
-
-    PREDICTIONS =
-      await predictionsResponse.json();
-
-
-    if(recommendationResponse.ok){
-
-      RECOMMENDATION =
-        await recommendationResponse.json();
-
-    }
-
-
-    document.getElementById(
-      "updated"
-    ).textContent =
-      "更新 " +
-      new Date(
-        PREDICTIONS.updated_at
-      ).toLocaleString(
-        "ja-JP"
-      );
-
-
-    document.getElementById(
-      "mode"
-    ).innerHTML = `
-      <span class="demo">
-        JUDGE SCORE v${
-          PREDICTIONS.model?.version || "2.0"
-        } ／実データ運用中
-      </span>
-    `;
-
-
-    renderSummary();
-
-    renderPortfolio();
-
-    render();
-
-  }catch(error){
-
-    console.error(error);
-
-    document.getElementById(
-      "matches"
-    ).innerHTML = `
-      <div class="error">
-        <b>
-          JUDGE90データを読み込めませんでした。
-        </b>
-
-        <div
-          class="small"
-          style="margin-top:8px">
-
-          predictions.json または
-          recommendation.json の
-          読み込みを確認してください。
-
-        </div>
-
-      </div>
-    `;
-
-  }
-
-}
-
-
-document
-  .querySelectorAll(".btn")
-  .forEach(button => {
-
-    button.addEventListener(
-      "click",
-      () => {
-
-        document
-          .querySelectorAll(".btn")
-          .forEach(
-            item =>
-              item.classList.remove(
-                "active"
-              )
-          );
-
-
-        button.classList.add(
-          "active"
-        );
-
-
-        currentFilter =
-          button.dataset.filter;
-
-
-        render();
-
-      }
-    );
-
-  });
-
-
-loadData();
-
-</script>
-
-</body>
-</html>
+  document.getElementBy
