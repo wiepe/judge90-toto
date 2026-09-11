@@ -5,6 +5,10 @@ const metricsPath = "data/team_metrics.json";
 const h2hPath = "data/h2h.json";
 const outputPath = "predictions.json";
 
+// --------------------------------------------------
+// データ読み込み
+// --------------------------------------------------
+
 const toto = JSON.parse(
   readFileSync(totoPath, "utf8")
 );
@@ -117,7 +121,7 @@ function goalDifferencePerGame(team) {
 }
 
 function recentFormScore(team) {
-  if (!team.recent_form?.length) {
+  if (!team.recent_form || !team.recent_form.length) {
     return 0.5;
   }
 
@@ -170,8 +174,10 @@ function calculateStrength(team, venueType) {
 
   const form = recentFormScore(team);
 
-  const venueStrength =
-    venueScore(team, venueType);
+  const venueStrength = venueScore(
+    team,
+    venueType
+  );
 
   return (
     ppg * 0.25 +
@@ -183,109 +189,98 @@ function calculateStrength(team, venueType) {
 }
 
 // --------------------------------------------------
-// H2H
+// H2Hデータ取得
 // --------------------------------------------------
 
 function findH2H(homeName, awayName) {
   const home = canonicalName(homeName);
   const away = canonicalName(awayName);
 
-  const match = h2hData.matches?.find(item => {
+  if (!h2hData.matches) {
+    return null;
+  }
+
+  const item = h2hData.matches.find(match => {
+    const matchHome = canonicalName(match.home);
+    const matchAway = canonicalName(match.away);
+
     return (
-      canonicalName(item.home) === home &&
-      canonicalName(item.away) === away
-    ) ||
-    (
-      canonicalName(item.home) === away &&
-      canonicalName(item.away) === home
+      (matchHome === home && matchAway === away) ||
+      (matchHome === away && matchAway === home)
     );
   });
 
-  return match?.h2h || null;
+  return item ? item.h2h : null;
 }
 
 // --------------------------------------------------
-// H2Hによる補助強度
+// H2H補正
 //
-// H2Hは現在のチーム力を上書きしない。
-// 最大でも小さな補助補正に留める。
+// H2Hは補助材料。
+// 最大でも±0.025の小さな補正にする。
 // --------------------------------------------------
 
-function calculateH2HEffect(h2h, homeName, awayName) {
+function calculateH2HEffect(h2h) {
   if (!h2h) {
-    return {
-      home: 0,
-      away: 0,
-      status: "NO_DATA"
-    };
+    return 0;
   }
 
-  const recent = h2h.recent5?.stats;
+  const stats = h2h.recent5?.stats;
 
-  if (!recent || recent.matches === 0) {
-    return {
-      home: 0,
-      away: 0,
-      status: "NO_DATA"
-    };
+  if (!stats || stats.matches === 0) {
+    return 0;
   }
 
-  const home = canonicalName(homeName);
-  const away = canonicalName(awayName);
-
-  let homeWins = 0;
-  let awayWins = 0;
-
-  if (h2h.recent5.advantage === home) {
-    homeWins = recent.teamA_wins;
-    awayWins = recent.teamB_wins;
-  } else if (h2h.recent5.advantage === away) {
-    awayWins = recent.teamA_wins;
-    homeWins = recent.teamB_wins;
-  } else {
-    homeWins = recent.teamA_wins;
-    awayWins = recent.teamB_wins;
-  }
+  const homeWins = stats.teamA_wins || 0;
+  const awayWins = stats.teamB_wins || 0;
+  const draws = stats.draws || 0;
 
   const total =
     homeWins +
     awayWins +
-    recent.draws;
+    draws;
 
-  if (!total) {
-    return {
-      home: 0,
-      away: 0,
-      status: "NEUTRAL"
-    };
+  if (total === 0) {
+    return 0;
   }
 
   const difference =
     (homeWins - awayWins) / total;
 
-  // H2Hの影響は最大±0.025
-  const effect =
-    clamp(
-      difference * 0.025,
-      -0.025,
-      0.025
-    );
+  return clamp(
+    difference * 0.025,
+    -0.025,
+    0.025
+  );
+}
 
-  let status = "NEUTRAL";
+// --------------------------------------------------
+// H2Hの状態
+// --------------------------------------------------
 
-  if (effect > 0.008) {
-    status = "HOME_ADVANTAGE";
-  } else if (effect < -0.008) {
-    status = "AWAY_ADVANTAGE";
-  } else {
-    status = "BALANCED";
+function getH2HStatus(h2h) {
+  if (!h2h) {
+    return "NO_DATA";
   }
 
-  return {
-    home: effect,
-    away: -effect,
-    status
-  };
+  const stats = h2h.recent5?.stats;
+
+  if (!stats || stats.matches === 0) {
+    return "NO_DATA";
+  }
+
+  const homeWins = stats.teamA_wins || 0;
+  const awayWins = stats.teamB_wins || 0;
+
+  if (homeWins > awayWins) {
+    return "HOME_ADVANTAGE";
+  }
+
+  if (awayWins > homeWins) {
+    return "AWAY_ADVANTAGE";
+  }
+
+  return "BALANCED";
 }
 
 // --------------------------------------------------
@@ -298,33 +293,26 @@ function calculateProbabilities(
   h2h
 ) {
   const homeStrength =
-    calculateStrength(
-      home,
-      "home"
-    );
+    calculateStrength(home, "home");
 
   const awayStrength =
-    calculateStrength(
-      away,
-      "away"
-    );
+    calculateStrength(away, "away");
 
-  // H2Hは補助材料としてのみ使用
+  // 通常のチーム力差
+  const strengthDifference =
+    homeStrength - awayStrength;
+
+  // H2Hによる小さな補正
   const h2hEffect =
-    calculateH2HEffect(
-      h2h,
-      home.team,
-      away.team
-    );
+    calculateH2HEffect(h2h);
 
-  const homeAdvantage =
-    0.055;
+  // 控えめなホームアドバンテージ
+  const homeAdvantage = 0.055;
 
   const difference =
-    homeStrength -
-    awayStrength +
+    strengthDifference +
     homeAdvantage +
-    h2hEffect.home;
+    h2hEffect;
 
   // 力が拮抗するほど引き分けを厚くする
   const drawBase =
@@ -361,8 +349,7 @@ function calculateProbabilities(
     1 - drawBase;
 
   const directionalTotal =
-    homeProb +
-    awayProb;
+    homeProb + awayProb;
 
   homeProb =
     (homeProb / directionalTotal) *
@@ -445,16 +432,10 @@ function getReasons(
   const reasons = [];
 
   const homeStrength =
-    calculateStrength(
-      home,
-      "home"
-    );
+    calculateStrength(home, "home");
 
   const awayStrength =
-    calculateStrength(
-      away,
-      "away"
-    );
+    calculateStrength(away, "away");
 
   if (
     Math.abs(
@@ -502,28 +483,33 @@ function getReasons(
   }
 
   // H2H
-  if (h2h?.recent5?.stats?.matches > 0) {
+  if (h2h) {
     const stats =
-      h2h.recent5.stats;
+      h2h.recent5?.stats;
 
-    if (
-      h2h.recent5.advantage ===
-      canonicalName(home.team)
-    ) {
-      reasons.push(
-        `H2H直近5戦はホーム側が優勢（${stats.teamA_wins}-${stats.draws}-${stats.teamB_wins}）`
-      );
-    } else if (
-      h2h.recent5.advantage ===
-      canonicalName(away.team)
-    ) {
-      reasons.push(
-        `H2H直近5戦はアウェイ側が優勢（${stats.teamB_wins}-${stats.draws}-${stats.teamA_wins}）`
-      );
-    } else {
-      reasons.push(
-        `H2H直近${stats.matches}戦は拮抗`
-      );
+    if (stats && stats.matches > 0) {
+      const homeWins =
+        stats.teamA_wins || 0;
+
+      const awayWins =
+        stats.teamB_wins || 0;
+
+      const draws =
+        stats.draws || 0;
+
+      if (homeWins > awayWins) {
+        reasons.push(
+          `H2H直近${stats.matches}戦はホーム側が優勢（${homeWins}-${draws}-${awayWins}）`
+        );
+      } else if (awayWins > homeWins) {
+        reasons.push(
+          `H2H直近${stats.matches}戦はアウェイ側が優勢（${homeWins}-${draws}-${awayWins}）`
+        );
+      } else {
+        reasons.push(
+          `H2H直近${stats.matches}戦は拮抗（${homeWins}-${draws}-${awayWins}）`
+        );
+      }
     }
   }
 
@@ -540,61 +526,81 @@ function getReasons(
 // H2Hシグナル
 // --------------------------------------------------
 
-function buildH2HSignal(
-  home,
-  away,
-  h2h
-) {
-  if (
-    !h2h ||
-    !h2h.recent5 ||
-    !h2h.recent5.stats ||
-    h2h.recent5.stats.matches === 0
-  ) {
+function buildH2HSignal(h2h) {
+  if (!h2h) {
     return {
       available: false,
       recent5: null,
+      all_time: null,
       advantage: "neutral",
       effect: 0
     };
   }
 
-  const effect =
-    calculateH2HEffect(
-      h2h,
-      home.team,
-      away.team
-    );
+  const recentStats =
+    h2h.recent5?.stats;
+
+  const allStats =
+    h2h.all_time?.stats;
+
+  if (
+    !recentStats ||
+    recentStats.matches === 0
+  ) {
+    return {
+      available: false,
+      recent5: null,
+      all_time: null,
+      advantage: "neutral",
+      effect: 0
+    };
+  }
 
   return {
     available: true,
 
     recent5: {
       matches:
-        h2h.recent5.stats.matches,
+        recentStats.matches,
 
       home_wins:
-        h2h.recent5.stats.teamA_wins,
+        recentStats.teamA_wins || 0,
 
       draws:
-        h2h.recent5.stats.draws,
+        recentStats.draws || 0,
 
       away_wins:
-        h2h.recent5.stats.teamB_wins,
+        recentStats.teamB_wins || 0,
 
       home_goals:
-        h2h.recent5.stats.teamA_goals,
+        recentStats.teamA_goals || 0,
 
       away_goals:
-        h2h.recent5.stats.teamB_goals
+        recentStats.teamB_goals || 0
     },
 
+    all_time: allStats
+      ? {
+          matches:
+            allStats.matches || 0,
+
+          home_wins:
+            allStats.teamA_wins || 0,
+
+          draws:
+            allStats.draws || 0,
+
+          away_wins:
+            allStats.teamB_wins || 0
+        }
+      : null,
+
     advantage:
-      h2h.recent5.advantage,
+      getH2HStatus(h2h),
 
     effect:
       Number(
-        effect.home.toFixed(3)
+        calculateH2HEffect(h2h).toFixed(3)
       )
   };
 }
@@ -631,52 +637,51 @@ for (const match of toto.matches) {
     );
 
   const prediction =
-    getPrediction(
-      probabilities
-    );
+    getPrediction(probabilities);
 
   const confidence =
-    getConfidence(
-      probabilities
-    );
+    getConfidence(probabilities);
 
   const uncertainty =
-    getUncertainty(
-      probabilities
-    );
+    getUncertainty(probabilities);
 
   predictions.push({
-    number: match.number,
+    number:
+      match.number,
 
-    home: match.home,
+    home:
+      match.home,
 
-    away: match.away,
+    away:
+      match.away,
 
-    league: match.league,
+    league:
+      match.league,
 
     prediction,
 
     probabilities: {
-      "1": Number(
-        probabilities["1"]
-          .toFixed(3)
-      ),
+      "1":
+        Number(
+          probabilities["1"].toFixed(3)
+        ),
 
-      "0": Number(
-        probabilities["0"]
-          .toFixed(3)
-      ),
+      "0":
+        Number(
+          probabilities["0"].toFixed(3)
+        ),
 
-      "2": Number(
-        probabilities["2"]
-          .toFixed(3)
-      )
+      "2":
+        Number(
+          probabilities["2"].toFixed(3)
+        )
     },
 
     confidence,
 
     uncertainty: {
-      level: uncertainty,
+      level:
+        uncertainty,
 
       reasons:
         getReasons(
@@ -705,17 +710,13 @@ for (const match of toto.matches) {
           : "neutral",
 
       h2h:
-        buildH2HSignal(
-          home,
-          away,
-          h2h
-        )
+        buildH2HSignal(h2h)
     }
   });
 }
 
 // --------------------------------------------------
-// 13試合すべて取得できなければ失敗扱い
+// 13試合すべて取得できなければ失敗
 // --------------------------------------------------
 
 if (
@@ -738,15 +739,18 @@ const output = {
     new Date().toISOString(),
 
   model: {
-    name: "JUDGE SCORE",
+    name:
+      "JUDGE SCORE",
 
-    version: "2.1",
+    version:
+      "2.1",
 
     description:
       "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
   },
 
-  matches: predictions
+  matches:
+    predictions
 };
 
 writeFileSync(
@@ -783,12 +787,31 @@ console.log(
 
 for (const match of predictions) {
   console.log(
-    `${match.number}. ` +
-    `${match.home} vs ${match.away} ` +
-    `→ ${match.prediction}`
+    `${match.number}. ${match.home} vs ${match.away} → ${match.prediction}`
   );
 
   console.log(
     `   1=${match.probabilities["1"]} ` +
     `0=${match.probabilities["0"]} ` +
-    `2=${match.probabilities["2"]}
+    `2=${match.probabilities["2"]} ` +
+    `confidence=${match.confidence}`
+  );
+
+  console.log(
+    `   uncertainty=${match.uncertainty.level}`
+  );
+
+  console.log(
+    `   H2H=${match.signals.h2h.available ? "available" : "none"}`
+  );
+}
+
+console.log("");
+
+console.log(
+  `Generated ${predictions.length} predictions`
+);
+
+console.log(
+  `Saved: ${outputPath}`
+);
