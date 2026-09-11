@@ -1235,3 +1235,161 @@ function renderPortfolio(){
 
   document.getElementById(
     "singleCount"
+  ).textContent =
+    `${summary.singles || 0}試合`;
+
+
+  document.getElementById(
+    "doubleCount"
+  ).textContent =
+    `${summary.doubles || 0}試合`;
+
+
+  document.getElementById(
+    "tripleCount"
+  ).textContent =
+    `${summary.triples || 0}試合`;
+
+}
+
+
+async function loadData(){
+
+  try{
+
+    const [
+      predictionsResponse,
+      recommendationResponse
+    ] = await Promise.all([
+
+      fetch(
+        "./predictions.json?" +
+        Date.now()
+      ),
+
+      fetch(
+        "./recommendation.json?" +
+        Date.now()
+      )
+
+    ]);
+
+
+    if(!predictionsResponse.ok){
+      throw new Error(
+        "predictions.jsonを取得できませんでした"
+      );
+    }
+
+
+    PREDICTIONS =
+      await predictionsResponse.json();
+
+
+    if(recommendationResponse.ok){
+
+      RECOMMENDATION =
+        await recommendationResponse.json();
+
+    }
+
+
+    document.getElementById(
+      "updated"
+    ).textContent =
+      "更新 " +
+      new Date(
+        PREDICTIONS.updated_at
+      ).toLocaleString(
+        "ja-JP"
+      );
+
+
+    document.getElementById(
+      "mode"
+    ).innerHTML = `
+      <span class="demo">
+        JUDGE SCORE v${
+          PREDICTIONS.model?.version || "2.0"
+        } ／実データ運用中
+      </span>
+    `;
+
+
+    renderSummary();
+
+    renderPortfolio();
+
+    render();
+
+  }catch(error){
+
+    console.error(error);
+
+    document.getElementById(
+      "matches"
+    ).innerHTML = `
+      <div class="error">
+        <b>
+          JUDGE90データを読み込めませんでした。
+        </b>
+
+        <div
+          class="small"
+          style="margin-top:8px">
+
+          predictions.json または
+          recommendation.json の
+          読み込みを確認してください。
+
+        </div>
+
+      </div>
+    `;
+
+  }
+
+}
+
+
+document
+  .querySelectorAll(".btn")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".btn")
+          .forEach(
+            item =>
+              item.classList.remove(
+                "active"
+              )
+          );
+
+
+        button.classList.add(
+          "active"
+        );
+
+
+        currentFilter =
+          button.dataset.filter;
+
+
+        render();
+
+      }
+    );
+
+  });
+
+
+loadData();
+
+</script>
+
+</body>
+</html>
