@@ -129,14 +129,10 @@ async function fetchYear(frame, year) {
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error(
-      `HTTP ${response.status}`
-    );
+    throw new Error(`HTTP ${response.status}`);
   }
 
-  return parseRows(
-    await response.text()
-  );
+  return parseRows(await response.text());
 }
 
 function result(team, match) {
@@ -197,21 +193,55 @@ function summarize(home, away, allMatches) {
     advantage = "AWAY_ADVANTAGE";
   }
 
+  /*
+   * 重要：
+   * 新形式と旧形式の両方を保存する。
+   *
+   * 新形式：
+   * recent5.home_wins
+   *
+   * 旧形式：
+   * recent5.stats.teamA_wins
+   *
+   * predict.mjs は旧形式を読むため、
+   * ここで互換性を持たせる。
+   */
+
   return {
     available: recent.length > 0,
 
+    teamA: home,
+    teamB: away,
+
     recent5: {
       matches: recent.length,
+
+      // 新形式
       home_wins: homeWins,
       draws,
       away_wins: awayWins,
       home_goals: homeGoals,
       away_goals: awayGoals,
-      advantage
+      advantage,
+
+      // 旧形式
+      stats: {
+        matches: recent.length,
+        teamA_wins: homeWins,
+        draws,
+        teamB_wins: awayWins,
+        teamA_goals: homeGoals,
+        teamB_goals: awayGoals
+      }
     },
 
     all_time: {
-      matches: matches.length
+      matches: matches.length,
+
+      // 旧形式との互換性
+      stats: {
+        matches: matches.length
+      }
     },
 
     effect: 0
@@ -275,8 +305,9 @@ async function main() {
     unique.set(key, m);
   }
 
-  const historical =
-    [...unique.values()];
+  const historical = [
+    ...unique.values()
+  ];
 
   console.log("");
   console.log(
@@ -360,6 +391,7 @@ async function main() {
   console.log(
     `H2H available: ${available}/13`
   );
+
   console.log(
     `Saved: ${OUTPUT_FILE}`
   );
