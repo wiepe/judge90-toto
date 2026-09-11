@@ -31,7 +31,10 @@ jobs:
       - name: Run prediction
         run: node scripts/predict.mjs
 
-      - name: Commit prediction data
+      - name: Build betting recommendation
+        run: node scripts/build_recommendation.mjs
+
+      - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -40,6 +43,7 @@ jobs:
           git add data/team_metrics.json
           git add data/toto_matches.json
           git add predictions.json
+          git add recommendation.json
 
           git diff --cached --quiet || git commit -m "Update JUDGE90 predictions"
 
