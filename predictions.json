@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-11T04:29:23.933Z",
+  "updated_at": "2026-09-11T04:51:38.961Z",
   "model": {
     "name": "JUDGE SCORE",
-    "version": "2.0",
-    "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージを統合"
+    "version": "2.1",
+    "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
   },
   "matches": [
     {
@@ -28,7 +28,14 @@
       "signals": {
         "season_strength": "水戸",
         "momentum": "水戸",
-        "home_advantage": "水戸"
+        "home_advantage": "水戸",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -55,7 +62,14 @@
       "signals": {
         "season_strength": "清水",
         "momentum": "福岡",
-        "home_advantage": "清水"
+        "home_advantage": "清水",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -79,7 +93,14 @@
       "signals": {
         "season_strength": "FC東京",
         "momentum": "FC東京",
-        "home_advantage": "Ｇ大阪"
+        "home_advantage": "Ｇ大阪",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -104,7 +125,14 @@
       "signals": {
         "season_strength": "町田",
         "momentum": "町田",
-        "home_advantage": "町田"
+        "home_advantage": "町田",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -131,7 +159,14 @@
       "signals": {
         "season_strength": "名古屋",
         "momentum": "名古屋",
-        "home_advantage": "長崎"
+        "home_advantage": "長崎",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -155,7 +190,14 @@
       "signals": {
         "season_strength": "広島",
         "momentum": "広島",
-        "home_advantage": "広島"
+        "home_advantage": "広島",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -181,7 +223,14 @@
       "signals": {
         "season_strength": "東京Ｖ",
         "momentum": "東京Ｖ",
-        "home_advantage": "東京Ｖ"
+        "home_advantage": "東京Ｖ",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -207,7 +256,14 @@
       "signals": {
         "season_strength": "岡山",
         "momentum": "岡山",
-        "home_advantage": "浦和"
+        "home_advantage": "浦和",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -231,7 +287,14 @@
       "signals": {
         "season_strength": "鳥栖",
         "momentum": "鳥栖",
-        "home_advantage": "今治"
+        "home_advantage": "今治",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -255,7 +318,14 @@
       "signals": {
         "season_strength": "横浜FC",
         "momentum": "横浜FC",
-        "home_advantage": "いわき"
+        "home_advantage": "いわき",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -280,7 +350,14 @@
       "signals": {
         "season_strength": "湘南",
         "momentum": "湘南",
-        "home_advantage": "八戸"
+        "home_advantage": "八戸",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -306,7 +383,14 @@
       "signals": {
         "season_strength": "甲府",
         "momentum": "甲府",
-        "home_advantage": "甲府"
+        "home_advantage": "甲府",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     },
     {
@@ -332,7 +416,14 @@
       "signals": {
         "season_strength": "徳島",
         "momentum": "徳島",
-        "home_advantage": "秋田"
+        "home_advantage": "秋田",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
       }
     }
   ]
