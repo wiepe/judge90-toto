@@ -28,6 +28,9 @@ jobs:
       - name: Fetch toto data
         run: node scripts/fetch_toto.mjs
 
+      - name: Fetch H2H data
+        run: node scripts/fetch_h2h.mjs
+
       - name: Run prediction
         run: node scripts/predict.mjs
 
@@ -42,6 +45,7 @@ jobs:
           git add data/jleague_matches.json
           git add data/team_metrics.json
           git add data/toto_matches.json
+          git add data/h2h.json
           git add predictions.json
           git add recommendation.json
 
