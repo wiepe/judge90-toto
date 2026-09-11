@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-11T14:55:35.789Z",
+  "generated_at": "2026-09-11T15:25:09.726Z",
   "engine": "JUDGE 90 Betting Strategy Engine",
   "version": "2.0",
   "budget": 1000,
@@ -27,16 +27,17 @@
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.387,
-      "confidence": 11,
+      "probability_coverage": 0.374,
+      "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
           "引き分け確率が高い",
-          "ホーム側の開催地成績が優位"
+          "ホーム側の開催地成績が優位",
+          "H2H直近4戦はアウェイ側が優勢（0-0-4）"
         ]
       },
-      "uncertainty_score": 0.895
+      "uncertainty_score": 0.924
     },
     {
       "number": 2,
@@ -44,12 +45,10 @@
       "away": "アビスパ福岡",
       "league": "J1",
       "recommendation": [
-        "1",
-        "0",
-        "2"
+        "0"
       ],
-      "type": "triple",
-      "probability_coverage": 1,
+      "type": "single",
+      "probability_coverage": 0.35,
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
@@ -57,10 +56,11 @@
           "両チームの総合評価が近い",
           "引き分け確率が高い",
           "ホーム側の開催地成績が優位",
-          "アウェイ側の直近フォームが優位"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
         ]
       },
-      "uncertainty_score": 0.968
+      "uncertainty_score": 0.976
     },
     {
       "number": 3,
@@ -76,7 +76,8 @@
       "uncertainty": {
         "level": "MEDIUM",
         "reasons": [
-          "アウェイ側の直近フォームが優位"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
         ]
       },
       "uncertainty_score": 0.833
@@ -90,16 +91,17 @@
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.519,
-      "confidence": 45,
+      "probability_coverage": 0.516,
+      "confidence": 44,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位"
+          "ホーム側の直近フォームが優位",
+          "H2H直近4戦はアウェイ側が優勢（1-1-2）"
         ]
       },
-      "uncertainty_score": 0.581
+      "uncertainty_score": 0.587
     },
     {
       "number": 5,
@@ -110,7 +112,7 @@
         "0"
       ],
       "type": "single",
-      "probability_coverage": 0.354,
+      "probability_coverage": 0.353,
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
@@ -118,10 +120,11 @@
           "両チームの総合評価が近い",
           "引き分け確率が高い",
           "ホーム側の開催地成績が優位",
-          "アウェイ側の直近フォームが優位"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近4戦はホーム側が優勢（2-1-1）"
         ]
       },
-      "uncertainty_score": 0.96
+      "uncertainty_score": 0.964
     },
     {
       "number": 6,
@@ -132,15 +135,16 @@
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.483,
-      "confidence": 36,
+      "probability_coverage": 0.489,
+      "confidence": 37,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
-          "ホーム側の開催地成績が優位"
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（2-3-0）"
         ]
       },
-      "uncertainty_score": 0.669
+      "uncertainty_score": 0.654
     },
     {
       "number": 7,
@@ -151,27 +155,6 @@
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.359,
-      "confidence": 10,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "両チームの総合評価が近い",
-          "引き分け確率が高い",
-          "ホーム側の開催地成績が優位"
-        ]
-      },
-      "uncertainty_score": 0.959
-    },
-    {
-      "number": 8,
-      "home": "浦和レッズ",
-      "away": "ファジアーノ岡山",
-      "league": "J1",
-      "recommendation": [
-        "0"
-      ],
-      "type": "single",
       "probability_coverage": 0.354,
       "confidence": 10,
       "uncertainty": {
@@ -179,10 +162,35 @@
         "reasons": [
           "両チームの総合評価が近い",
           "引き分け確率が高い",
-          "ホーム側の開催地成績が優位"
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
         ]
       },
-      "uncertainty_score": 0.961
+      "uncertainty_score": 0.97
+    },
+    {
+      "number": 8,
+      "home": "浦和レッズ",
+      "away": "ファジアーノ岡山",
+      "league": "J1",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位",
+          "H2H直近2戦はホーム側が優勢（2-0-0）"
+        ]
+      },
+      "uncertainty_score": 0.981
     },
     {
       "number": 9,
@@ -193,15 +201,16 @@
         "2"
       ],
       "type": "single",
-      "probability_coverage": 0.538,
-      "confidence": 51,
+      "probability_coverage": 0.532,
+      "confidence": 49,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
-          "アウェイ側の直近フォームが優位"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近2戦はホーム側が優勢（1-1-0）"
         ]
       },
-      "uncertainty_score": 0.531
+      "uncertainty_score": 0.547
     },
     {
       "number": 10,
@@ -212,15 +221,16 @@
         "2"
       ],
       "type": "single",
-      "probability_coverage": 0.494,
-      "confidence": 39,
+      "probability_coverage": 0.501,
+      "confidence": 40,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
-          "アウェイ側の直近フォームが優位"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近2戦はアウェイ側が優勢（0-1-1）"
         ]
       },
-      "uncertainty_score": 0.642
+      "uncertainty_score": 0.625
     },
     {
       "number": 11,
@@ -248,20 +258,23 @@
       "away": "ジュビロ磐田",
       "league": "J2",
       "recommendation": [
-        "1"
+        "1",
+        "0",
+        "2"
       ],
-      "type": "single",
-      "probability_coverage": 0.356,
+      "type": "triple",
+      "probability_coverage": 1.001,
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
           "両チームの総合評価が近い",
           "引き分け確率が高い",
-          "ホーム側の開催地成績が優位"
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はアウェイ側が優勢（0-2-3）"
         ]
       },
-      "uncertainty_score": 0.965
+      "uncertainty_score": 0.982
     },
     {
       "number": 13,
@@ -269,22 +282,21 @@
       "away": "徳島ヴォルティス",
       "league": "J2",
       "recommendation": [
-        "1",
-        "0",
-        "2"
+        "1"
       ],
-      "type": "triple",
-      "probability_coverage": 0.999,
+      "type": "single",
+      "probability_coverage": 0.35,
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
           "両チームの総合評価が近い",
           "引き分け確率が高い",
-          "ホーム側の開催地成績が優位"
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（2-2-1）"
         ]
       },
-      "uncertainty_score": 0.984
+      "uncertainty_score": 0.979
     }
   ]
 }
