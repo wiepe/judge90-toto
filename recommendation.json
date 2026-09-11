@@ -1,382 +1,290 @@
 {
-  "generated_at": "2026-09-08T13:40:09.530Z",
-  "engine": {
-    "name": "JUDGE 90 Betting Strategy Engine",
-    "version": "2.0"
-  },
-  "toto": {
-    "round": "TEST-002",
-    "type": "toto",
-    "deadline": "2026-09-12T13:00:00+09:00"
-  },
+  "generated_at": "2026-09-11T04:29:24.078Z",
+  "engine": "JUDGE 90 Betting Strategy Engine",
+  "version": "2.0",
+  "budget": 1000,
+  "unit_price": 100,
   "summary": {
-    "matches": 3,
-    "main_strategy": "バランス型",
-    "combinations": 8,
-    "price": 800,
-    "strategy": "不確実な試合を重点的にカバー"
+    "matches": 13,
+    "combinations": 9,
+    "price": 900,
+    "strategy": "波乱対応型",
+    "singles": 11,
+    "doubles": 0,
+    "triples": 2
   },
-  "strategies": {
-    "safe": {
-      "type": "safe",
-      "name": "堅実型",
-      "description": "高信頼度の本命を中心に購入",
-      "combinations": 4,
-      "price": 400,
-      "selections": [
-        {
-          "number": 1,
-          "home": "浦和レッズ",
-          "away": "鹿島アントラーズ",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 38,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 40.4
-            },
-            {
-              "mark": "0",
-              "probability": 32.4
-            },
-            {
-              "mark": "1",
-              "probability": 27.2
-            }
-          ]
-        },
-        {
-          "number": 2,
-          "home": "FC東京",
-          "away": "川崎フロンターレ",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 41,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 42.8
-            },
-            {
-              "mark": "0",
-              "probability": 32.1
-            },
-            {
-              "mark": "1",
-              "probability": 25.1
-            }
-          ]
-        },
-        {
-          "number": 3,
-          "home": "横浜F・マリノス",
-          "away": "サンフレッチェ広島",
-          "selections": [
-            "2"
-          ],
-          "confidence": 43,
-          "recommendation": "single",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 45.2
-            },
-            {
-              "mark": "0",
-              "probability": 31.8
-            },
-            {
-              "mark": "1",
-              "probability": 23.1
-            }
-          ]
-        }
-      ]
-    },
-    "balance": {
-      "type": "balance",
-      "name": "バランス型",
-      "description": "不確実な試合を重点的にカバー",
-      "combinations": 8,
-      "price": 800,
-      "selections": [
-        {
-          "number": 1,
-          "home": "浦和レッズ",
-          "away": "鹿島アントラーズ",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 38,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 40.4
-            },
-            {
-              "mark": "0",
-              "probability": 32.4
-            },
-            {
-              "mark": "1",
-              "probability": 27.2
-            }
-          ]
-        },
-        {
-          "number": 2,
-          "home": "FC東京",
-          "away": "川崎フロンターレ",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 41,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 42.8
-            },
-            {
-              "mark": "0",
-              "probability": 32.1
-            },
-            {
-              "mark": "1",
-              "probability": 25.1
-            }
-          ]
-        },
-        {
-          "number": 3,
-          "home": "横浜F・マリノス",
-          "away": "サンフレッチェ広島",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 43,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 45.2
-            },
-            {
-              "mark": "0",
-              "probability": 31.8
-            },
-            {
-              "mark": "1",
-              "probability": 23.1
-            }
-          ]
-        }
-      ]
-    },
-    "aggressive": {
-      "type": "aggressive",
-      "name": "攻め型",
-      "description": "波乱試合まで広くカバー",
-      "combinations": 12,
-      "price": 1200,
-      "selections": [
-        {
-          "number": 1,
-          "home": "浦和レッズ",
-          "away": "鹿島アントラーズ",
-          "selections": [
-            "1",
-            "0",
-            "2"
-          ],
-          "confidence": 38,
-          "recommendation": "triple",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 40.4
-            },
-            {
-              "mark": "0",
-              "probability": 32.4
-            },
-            {
-              "mark": "1",
-              "probability": 27.2
-            }
-          ]
-        },
-        {
-          "number": 2,
-          "home": "FC東京",
-          "away": "川崎フロンターレ",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 41,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 42.8
-            },
-            {
-              "mark": "0",
-              "probability": 32.1
-            },
-            {
-              "mark": "1",
-              "probability": 25.1
-            }
-          ]
-        },
-        {
-          "number": 3,
-          "home": "横浜F・マリノス",
-          "away": "サンフレッチェ広島",
-          "selections": [
-            "2",
-            "0"
-          ],
-          "confidence": 43,
-          "recommendation": "double",
-          "upset": false,
-          "probabilities": [
-            {
-              "mark": "2",
-              "probability": 45.2
-            },
-            {
-              "mark": "0",
-              "probability": 31.8
-            },
-            {
-              "mark": "1",
-              "probability": 23.1
-            }
-          ]
-        }
-      ]
-    }
+  "strategy": {
+    "description": "予測確率と不確実性をもとに、限られた購入金額を不確実な試合へ配分する",
+    "priority": "不確実性の高い試合を優先してダブル・トリプル化"
   },
-  "selections": [
+  "matches": [
     {
       "number": 1,
-      "home": "浦和レッズ",
-      "away": "鹿島アントラーズ",
-      "selections": [
-        "2",
-        "0"
-      ],
-      "confidence": 38,
-      "recommendation": "double",
-      "upset": false,
-      "probabilities": [
-        {
-          "mark": "2",
-          "probability": 40.4
-        },
-        {
-          "mark": "0",
-          "probability": 32.4
-        },
-        {
-          "mark": "1",
-          "probability": 27.2
-        }
-      ]
-    },
-    {
-      "number": 2,
-      "home": "FC東京",
+      "home": "水戸ホーリーホック",
       "away": "川崎フロンターレ",
-      "selections": [
-        "2",
-        "0"
+      "league": "J1",
+      "recommendation": [
+        "1"
       ],
-      "confidence": 41,
-      "recommendation": "double",
-      "upset": false,
-      "probabilities": [
-        {
-          "mark": "2",
-          "probability": 42.8
-        },
-        {
-          "mark": "0",
-          "probability": 32.1
-        },
-        {
-          "mark": "1",
-          "probability": 25.1
-        }
-      ]
+      "type": "single",
+      "probability_coverage": 0.387,
+      "confidence": 11,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.895
     },
     {
-      "number": 3,
-      "home": "横浜F・マリノス",
-      "away": "サンフレッチェ広島",
-      "selections": [
-        "2",
-        "0"
-      ],
-      "confidence": 43,
-      "recommendation": "double",
-      "upset": false,
-      "probabilities": [
-        {
-          "mark": "2",
-          "probability": 45.2
-        },
-        {
-          "mark": "0",
-          "probability": 31.8
-        },
-        {
-          "mark": "1",
-          "probability": 23.1
-        }
-      ]
-    }
-  ],
-  "confidence_ranking": [
-    {
-      "rank": 1,
-      "number": 3,
-      "match": "横浜F・マリノス vs サンフレッチェ広島",
-      "confidence": 43
-    },
-    {
-      "rank": 2,
       "number": 2,
-      "match": "FC東京 vs 川崎フロンターレ",
-      "confidence": 41
+      "home": "清水エスパルス",
+      "away": "アビスパ福岡",
+      "league": "J1",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.968
     },
     {
-      "rank": 3,
-      "number": 1,
-      "match": "浦和レッズ vs 鹿島アントラーズ",
-      "confidence": 38
+      "number": 3,
+      "home": "ガンバ大阪",
+      "away": "ＦＣ東京",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.414,
+      "confidence": 18,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.833
+    },
+    {
+      "number": 4,
+      "home": "ＦＣ町田ゼルビア",
+      "away": "横浜Ｆ・マリノス",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.519,
+      "confidence": 45,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.581
+    },
+    {
+      "number": 5,
+      "home": "Ｖ・ファーレン長崎",
+      "away": "名古屋グランパス",
+      "league": "J1",
+      "recommendation": [
+        "0"
+      ],
+      "type": "single",
+      "probability_coverage": 0.354,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.96
+    },
+    {
+      "number": 6,
+      "home": "サンフレッチェ広島",
+      "away": "セレッソ大阪",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.483,
+      "confidence": 36,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.669
+    },
+    {
+      "number": 7,
+      "home": "東京ヴェルディ",
+      "away": "ジェフユナイテッド千葉",
+      "league": "J2",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.359,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.959
+    },
+    {
+      "number": 8,
+      "home": "浦和レッズ",
+      "away": "ファジアーノ岡山",
+      "league": "J1",
+      "recommendation": [
+        "0"
+      ],
+      "type": "single",
+      "probability_coverage": 0.354,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.961
+    },
+    {
+      "number": 9,
+      "home": "ＦＣ今治",
+      "away": "サガン鳥栖",
+      "league": "J2",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.538,
+      "confidence": 51,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.531
+    },
+    {
+      "number": 10,
+      "home": "いわきＦＣ",
+      "away": "横浜ＦＣ",
+      "league": "J2",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.494,
+      "confidence": 39,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.642
+    },
+    {
+      "number": 11,
+      "home": "ヴァンラーレ八戸",
+      "away": "湘南ベルマーレ",
+      "league": "J2",
+      "recommendation": [
+        "0"
+      ],
+      "type": "single",
+      "probability_coverage": 0.356,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い"
+        ]
+      },
+      "uncertainty_score": 0.954
+    },
+    {
+      "number": 12,
+      "home": "ヴァンフォーレ甲府",
+      "away": "ジュビロ磐田",
+      "league": "J2",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.356,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.965
+    },
+    {
+      "number": 13,
+      "home": "ブラウブリッツ秋田",
+      "away": "徳島ヴォルティス",
+      "league": "J2",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 0.999,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "引き分け確率が高い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.984
     }
   ]
 }
