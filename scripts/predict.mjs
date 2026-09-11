@@ -791,4 +791,4 @@ for (const match of predictions) {
   console.log(
     `   1=${match.probabilities["1"]} ` +
     `0=${match.probabilities["0"]} ` +
-    `2=${match.probabilities["2"]
+    `2=${match.probabilities["2"]}
