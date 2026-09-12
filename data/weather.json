@@ -1,8 +1,8 @@
 {
   "source": "Open-Meteo",
   "source_url": "https://open-meteo.com/en/docs",
-  "fetched_at": "2026-09-12T00:41:40.472Z",
-  "available_matches": 0,
+  "fetched_at": "2026-09-12T00:46:40.200Z",
+  "available_matches": 7,
   "total_matches": 13,
   "matches": [
     {
@@ -10,24 +10,48 @@
       "date": "09/12",
       "home": "水戸ホーリーホック",
       "away": "川崎フロンターレ",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "18:00",
+      "stadium": "水戸信用金庫スタジアム",
+      "available": true,
+      "forecast_time": "2026-09-12T18:00",
+      "temperature_c": 22.6,
+      "precipitation_mm": 0,
+      "precipitation_probability": 0,
+      "wind_speed_kmh": 8.4,
+      "weather_code": 3,
+      "weather_description": "Overcast"
     },
     {
       "number": 2,
       "date": "09/12",
       "home": "清水エスパルス",
       "away": "アビスパ福岡",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "18:30",
+      "stadium": "IAIスタジアム日本平",
+      "available": true,
+      "forecast_time": "2026-09-12T18:00",
+      "temperature_c": 25.1,
+      "precipitation_mm": 0,
+      "precipitation_probability": 0,
+      "wind_speed_kmh": 14,
+      "weather_code": 2,
+      "weather_description": "Partly cloudy"
     },
     {
       "number": 3,
       "date": "09/12",
       "home": "ガンバ大阪",
       "away": "ＦＣ東京",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "16:00",
+      "stadium": "パナソニックスタジアム吹田",
+      "available": true,
+      "forecast_time": "2026-09-12T16:00",
+      "temperature_c": 29.9,
+      "precipitation_mm": 0,
+      "precipitation_probability": 8,
+      "wind_speed_kmh": 4.3,
+      "weather_code": 1,
+      "weather_description": "Mainly clear"
     },
     {
       "number": 4,
@@ -35,7 +59,7 @@
       "home": "ＦＣ町田ゼルビア",
       "away": "横浜Ｆ・マリノス",
       "available": false,
-      "reason": "stadium_not_found"
+      "reason": "jleague_match_not_found"
     },
     {
       "number": 5,
@@ -43,7 +67,7 @@
       "home": "Ｖ・ファーレン長崎",
       "away": "名古屋グランパス",
       "available": false,
-      "reason": "stadium_not_found"
+      "reason": "jleague_match_not_found"
     },
     {
       "number": 6,
@@ -51,7 +75,7 @@
       "home": "サンフレッチェ広島",
       "away": "セレッソ大阪",
       "available": false,
-      "reason": "stadium_not_found"
+      "reason": "jleague_match_not_found"
     },
     {
       "number": 7,
@@ -59,23 +83,39 @@
       "home": "東京ヴェルディ",
       "away": "ジェフユナイテッド千葉",
       "available": false,
-      "reason": "stadium_not_found"
+      "reason": "jleague_match_not_found"
     },
     {
       "number": 8,
       "date": "09/13",
       "home": "浦和レッズ",
       "away": "ファジアーノ岡山",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "18:30",
+      "stadium": "埼玉スタジアム2002",
+      "available": true,
+      "forecast_time": "2026-09-13T18:00",
+      "temperature_c": 26.6,
+      "precipitation_mm": 0,
+      "precipitation_probability": 2,
+      "wind_speed_kmh": 2.9,
+      "weather_code": 1,
+      "weather_description": "Mainly clear"
     },
     {
       "number": 9,
       "date": "09/12",
       "home": "ＦＣ今治",
       "away": "サガン鳥栖",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "19:00",
+      "stadium": "アシックス里山スタジアム",
+      "available": true,
+      "forecast_time": "2026-09-12T19:00",
+      "temperature_c": 25.7,
+      "precipitation_mm": 0,
+      "precipitation_probability": 51,
+      "wind_speed_kmh": 4.4,
+      "weather_code": 1,
+      "weather_description": "Mainly clear"
     },
     {
       "number": 10,
@@ -83,23 +123,39 @@
       "home": "いわきＦＣ",
       "away": "横浜ＦＣ",
       "available": false,
-      "reason": "stadium_not_found"
+      "reason": "jleague_match_not_found"
     },
     {
       "number": 11,
       "date": "09/12",
       "home": "ヴァンラーレ八戸",
       "away": "湘南ベルマーレ",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "18:30",
+      "stadium": "プライフーズスタジアム",
+      "available": true,
+      "forecast_time": "2026-09-12T18:00",
+      "temperature_c": 20.7,
+      "precipitation_mm": 0,
+      "precipitation_probability": 0,
+      "wind_speed_kmh": 4.3,
+      "weather_code": 0,
+      "weather_description": "Clear"
     },
     {
       "number": 12,
       "date": "09/12",
       "home": "ヴァンフォーレ甲府",
       "away": "ジュビロ磐田",
-      "available": false,
-      "reason": "stadium_not_found"
+      "kickoff": "19:00",
+      "stadium": "JITリサイクルインクスタジアム",
+      "available": true,
+      "forecast_time": "2026-09-12T19:00",
+      "temperature_c": 24.3,
+      "precipitation_mm": 0,
+      "precipitation_probability": 84,
+      "wind_speed_kmh": 3.4,
+      "weather_code": 2,
+      "weather_description": "Partly cloudy"
     },
     {
       "number": 13,
@@ -107,7 +163,7 @@
       "home": "ブラウブリッツ秋田",
       "away": "徳島ヴォルティス",
       "available": false,
-      "reason": "stadium_not_found"
+      "reason": "jleague_match_not_found"
     }
   ]
 }
