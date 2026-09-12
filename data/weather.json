@@ -1,254 +1,113 @@
 {
-  "generated_at": "2026-09-12T00:35:13.007Z",
   "source": "Open-Meteo",
-  "source_url": "https://open-meteo.com/",
-  "timezone": "Asia/Tokyo",
+  "source_url": "https://open-meteo.com/en/docs",
+  "fetched_at": "2026-09-12T00:41:40.472Z",
+  "available_matches": 0,
+  "total_matches": 13,
   "matches": [
     {
       "number": 1,
+      "date": "09/12",
       "home": "水戸ホーリーホック",
       "away": "川崎フロンターレ",
-      "date": "2026-09-12",
-      "kickoff": "18:00",
-      "stadium": "水戸信ス",
-      "weather": {
-        "available": true,
-        "stadium": "水戸市立競技場",
-        "latitude": 36.3498,
-        "longitude": 140.4068,
-        "date": "2026-09-12",
-        "kickoff": "18:00",
-        "temperature": 22.6,
-        "precipitation": 0,
-        "precipitation_probability": 0,
-        "wind_speed": 8.4,
-        "weather_code": 3,
-        "weather": "Overcast"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 2,
+      "date": "09/12",
       "home": "清水エスパルス",
       "away": "アビスパ福岡",
-      "date": "2026-09-12",
-      "kickoff": "18:30",
-      "stadium": "アイスタ",
-      "weather": {
-        "available": false,
-        "reason": "kickoff_hour_not_found"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 3,
+      "date": "09/12",
       "home": "ガンバ大阪",
       "away": "ＦＣ東京",
-      "date": "2026-09-12",
-      "kickoff": "19:00",
-      "stadium": "パナスタ",
-      "weather": {
-        "available": true,
-        "stadium": "パナソニックスタジアム吹田",
-        "latitude": 34.8057,
-        "longitude": 135.5407,
-        "date": "2026-09-12",
-        "kickoff": "19:00",
-        "temperature": 27.4,
-        "precipitation": 0,
-        "precipitation_probability": 26,
-        "wind_speed": 3.1,
-        "weather_code": 1,
-        "weather": "Mainly clear"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 4,
+      "date": "09/12",
       "home": "ＦＣ町田ゼルビア",
       "away": "横浜Ｆ・マリノス",
-      "date": "2026-09-12",
-      "kickoff": "19:00",
-      "stadium": "MUFG国立",
-      "weather": {
-        "available": false,
-        "reason": "stadium_coordinates_not_found"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 5,
+      "date": "09/12",
       "home": "Ｖ・ファーレン長崎",
       "away": "名古屋グランパス",
-      "date": "2026-09-12",
-      "kickoff": "19:00",
-      "stadium": "ピースタ",
-      "weather": {
-        "available": true,
-        "stadium": "PEACE STADIUM Connected by SoftBank",
-        "latitude": 32.7447,
-        "longitude": 129.8688,
-        "date": "2026-09-12",
-        "kickoff": "19:00",
-        "temperature": 27,
-        "precipitation": 0,
-        "precipitation_probability": 27,
-        "wind_speed": 1.6,
-        "weather_code": 1,
-        "weather": "Mainly clear"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 6,
+      "date": "09/12",
       "home": "サンフレッチェ広島",
       "away": "セレッソ大阪",
-      "date": "2026-09-12",
-      "kickoff": "19:00",
-      "stadium": "Ｅピース",
-      "weather": {
-        "available": true,
-        "stadium": "エディオンピースウイング広島",
-        "latitude": 34.3933,
-        "longitude": 132.4533,
-        "date": "2026-09-12",
-        "kickoff": "19:00",
-        "temperature": 27,
-        "precipitation": 0,
-        "precipitation_probability": 29,
-        "wind_speed": 0.7,
-        "weather_code": 1,
-        "weather": "Mainly clear"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 7,
+      "date": "09/13",
       "home": "東京ヴェルディ",
       "away": "ジェフユナイテッド千葉",
-      "date": "2026-09-13",
-      "kickoff": "18:00",
-      "stadium": "味スタ",
-      "weather": {
-        "available": true,
-        "stadium": "味の素スタジアム",
-        "latitude": 35.6644,
-        "longitude": 139.5272,
-        "date": "2026-09-13",
-        "kickoff": "18:00",
-        "temperature": 25.7,
-        "precipitation": 0,
-        "precipitation_probability": 0,
-        "wind_speed": 3.9,
-        "weather_code": 0,
-        "weather": "Clear"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 8,
+      "date": "09/13",
       "home": "浦和レッズ",
       "away": "ファジアーノ岡山",
-      "date": "2026-09-13",
-      "kickoff": "18:30",
-      "stadium": "埼玉",
-      "weather": {
-        "available": false,
-        "reason": "kickoff_hour_not_found"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 9,
+      "date": "09/12",
       "home": "ＦＣ今治",
       "away": "サガン鳥栖",
-      "date": "2026-09-12",
-      "kickoff": "19:00",
-      "stadium": "アシさと",
-      "weather": {
-        "available": true,
-        "stadium": "アシックス里山スタジアム",
-        "latitude": 34.0686,
-        "longitude": 133.0008,
-        "date": "2026-09-12",
-        "kickoff": "19:00",
-        "temperature": 25.7,
-        "precipitation": 0,
-        "precipitation_probability": 51,
-        "wind_speed": 4.4,
-        "weather_code": 1,
-        "weather": "Mainly clear"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 10,
+      "date": "09/12",
       "home": "いわきＦＣ",
       "away": "横浜ＦＣ",
-      "date": "2026-09-12",
-      "kickoff": "18:00",
-      "stadium": "ハワスタ",
-      "weather": {
-        "available": true,
-        "stadium": "ハワイアンズスタジアムいわき",
-        "latitude": 37.0419,
-        "longitude": 140.8854,
-        "date": "2026-09-12",
-        "kickoff": "18:00",
-        "temperature": 22.2,
-        "precipitation": 0,
-        "precipitation_probability": 2,
-        "wind_speed": 3.9,
-        "weather_code": 2,
-        "weather": "Partly cloudy"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 11,
+      "date": "09/12",
       "home": "ヴァンラーレ八戸",
       "away": "湘南ベルマーレ",
-      "date": "2026-09-12",
-      "kickoff": "18:30",
-      "stadium": "プラスタ",
-      "weather": {
-        "available": false,
-        "reason": "kickoff_hour_not_found"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 12,
+      "date": "09/12",
       "home": "ヴァンフォーレ甲府",
       "away": "ジュビロ磐田",
-      "date": "2026-09-12",
-      "kickoff": "19:00",
-      "stadium": "ＪＩＴス",
-      "weather": {
-        "available": true,
-        "stadium": "JITリサイクルインクスタジアム",
-        "latitude": 35.6255,
-        "longitude": 138.5956,
-        "date": "2026-09-12",
-        "kickoff": "19:00",
-        "temperature": 24.3,
-        "precipitation": 0,
-        "precipitation_probability": 84,
-        "wind_speed": 3.4,
-        "weather_code": 2,
-        "weather": "Partly cloudy"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     },
     {
       "number": 13,
+      "date": "09/12",
       "home": "ブラウブリッツ秋田",
       "away": "徳島ヴォルティス",
-      "date": "2026-09-12",
-      "kickoff": "18:00",
-      "stadium": "ソユスタ",
-      "weather": {
-        "available": true,
-        "stadium": "ソユースタジアム",
-        "latitude": 39.7194,
-        "longitude": 140.1225,
-        "date": "2026-09-12",
-        "kickoff": "18:00",
-        "temperature": 22.1,
-        "precipitation": 0,
-        "precipitation_probability": 0,
-        "wind_speed": 6.2,
-        "weather_code": 1,
-        "weather": "Mainly clear"
-      }
+      "available": false,
+      "reason": "stadium_not_found"
     }
   ]
 }
