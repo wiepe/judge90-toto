@@ -52,50 +52,174 @@ const WEATHER_CODES = {
   99: "Thunderstorm with heavy hail"
 };
 
-function normalizeTeam(name) {
+/*
+ * ------------------------------------------------------------
+ * チーム名照合
+ * ------------------------------------------------------------
+ *
+ * J.League Data Site:
+ *   町田 / 横浜FM / 東京Ｖ / いわきFC ...
+ *
+ * toto:
+ *   ＦＣ町田ゼルビア / 横浜Ｆ・マリノス / 東京ヴェルディ ...
+ *
+ * 「特定6チームだけを直す」のではなく、
+ * 表記を正規化して同一クラブとして照合する。
+ */
+
+const TEAM_ALIASES = {
+  "水戸ホーリーホック": "水戸",
+  "川崎フロンターレ": "川崎Ｆ",
+  "清水エスパルス": "清水",
+  "アビスパ福岡": "福岡",
+  "ガンバ大阪": "Ｇ大阪",
+  "ＦＣ東京": "FC東京",
+  "FC東京": "FC東京",
+
+  "ＦＣ町田ゼルビア": "町田",
+  "FC町田ゼルビア": "町田",
+
+  "横浜Ｆ・マリノス": "横浜FM",
+  "横浜F・マリノス": "横浜FM",
+  "横浜Ｆマリノス": "横浜FM",
+  "横浜Fマリノス": "横浜FM",
+
+  "Ｖ・ファーレン長崎": "長崎",
+  "V・ファーレン長崎": "長崎",
+
+  "名古屋グランパス": "名古屋",
+  "サンフレッチェ広島": "広島",
+  "セレッソ大阪": "Ｃ大阪",
+  "東京ヴェルディ": "東京Ｖ",
+  "ジェフユナイテッド千葉": "千葉",
+  "ジェフ千葉": "千葉",
+  "浦和レッズ": "浦和",
+  "ファジアーノ岡山": "岡山",
+  "ＦＣ今治": "今治",
+  "FC今治": "今治",
+  "サガン鳥栖": "鳥栖",
+  "いわきＦＣ": "いわきFC",
+  "いわきFC": "いわきFC",
+  "横浜ＦＣ": "横浜FC",
+  "横浜FC": "横浜FC",
+  "ヴァンラーレ八戸": "八戸",
+  "湘南ベルマーレ": "湘南",
+  "ヴァンフォーレ甲府": "甲府",
+  "ジュビロ磐田": "磐田",
+  "ブラウブリッツ秋田": "秋田",
+  "徳島ヴォルティス": "徳島"
+};
+
+function basicNormalize(name) {
   return String(name || "")
-    .replace(/[ＦＣＶ・]/g, "")
-    .replace(/　/g, "")
+    .normalize("NFKC")
+    .replace(/[・･]/g, "")
+    .replace(/[（）()]/g, "")
+    .replace(/[「」『』]/g, "")
     .replace(/\s+/g, "")
-    .replace(/ホーリーホック/g, "")
-    .replace(/フロンターレ/g, "")
-    .replace(/エスパルス/g, "")
-    .replace(/アビスパ福岡/g, "福岡")
-    .replace(/ガンバ大阪/g, "Ｇ大阪")
-    .replace(/ゼルビア/g, "")
-    .replace(/マリノス/g, "")
-    .replace(/グランパス/g, "")
-    .replace(/サンフレッチェ/g, "")
-    .replace(/セレッソ大阪/g, "Ｃ大阪")
-    .replace(/レッズ/g, "")
-    .replace(/ファジアーノ岡山/g, "岡山")
-    .replace(/ジェフユナイテッド千葉/g, "千葉")
-    .replace(/ヴァンラーレ八戸/g, "八戸")
-    .replace(/ベルマーレ/g, "")
-    .replace(/ヴァンフォーレ甲府/g, "甲府")
-    .replace(/ジュビロ磐田/g, "磐田")
-    .replace(/徳島ヴォルティス/g, "徳島")
-    .replace(/サガン鳥栖/g, "鳥栖")
-    .replace(/横浜ＦＣ/g, "横浜FC")
     .trim();
 }
 
-function findMatch(match, jleague) {
-  const home = normalizeTeam(match.home);
-  const away = normalizeTeam(match.away);
+function normalizeTeam(name) {
+  const raw = basicNormalize(name);
+
+  if (TEAM_ALIASES[raw]) {
+    return TEAM_ALIASES[raw];
+  }
+
+  return raw;
+}
+
+/*
+ * Jリーグ側の略称を基準に、
+ * toto側の正式名称からクラブ名の核を取り出す。
+ *
+ * ここは「完全一致しないと失敗」ではなく、
+ * 複数の表記パターンを段階的に比較する。
+ */
+
+function teamVariants(name) {
+  const raw = basicNormalize(name);
+  const normalized = normalizeTeam(raw);
+
+  const variants = new Set([
+    raw,
+    normalized
+  ]);
+
+  const replacements = [
+    ["ＦＣ", ""],
+    ["FC", ""],
+    ["Ｖ", ""],
+    ["V", ""],
+    ["・", ""],
+    ["マリノス", "FM"],
+    ["横浜Fマリノス", "横浜FM"],
+    ["横浜FM", "横浜Fマリノス"]
+  ];
+
+  for (const [from, to] of replacements) {
+    if (raw.includes(from)) {
+      variants.add(raw.replaceAll(from, to));
+    }
+  }
+
+  return [...variants].filter(Boolean);
+}
+
+function sameTeam(a, b) {
+  const na = normalizeTeam(a);
+  const nb = normalizeTeam(b);
+
+  if (na === nb) return true;
+
+  const va = teamVariants(a);
+  const vb = teamVariants(b);
+
+  for (const x of va) {
+    for (const y of vb) {
+      if (x === y) return true;
+    }
+  }
+
+  return false;
+}
+
+function findMatch(match, jleague, date) {
+  const candidates = [];
 
   for (const league of jleague.leagues || []) {
     for (const game of league.matches || []) {
+      if (game.date !== date) continue;
+
       if (
-        normalizeTeam(game.home) === home &&
-        normalizeTeam(game.away) === away
+        sameTeam(match.home, game.home) &&
+        sameTeam(match.away, game.away)
       ) {
-        return game;
+        candidates.push(game);
       }
     }
   }
 
-  return null;
+  if (candidates.length === 0) {
+    return null;
+  }
+
+  /*
+   * 同日・同カードが複数存在する場合は
+   * kickoffまで確認する。
+   */
+  if (candidates.length > 1 && match.kickoff) {
+    const exactKickoff = candidates.find(
+      game => game.kickoff === match.kickoff
+    );
+
+    if (exactKickoff) {
+      return exactKickoff;
+    }
+  }
+
+  return candidates[0];
 }
 
 function nearestHourlyIndex(times, targetDate, kickoff) {
@@ -113,7 +237,9 @@ function nearestHourlyIndex(times, targetDate, kickoff) {
     const hour = Number(time.slice(11, 13));
     const minute = Number(time.slice(14, 16));
 
-    if (!Number.isFinite(hour) || !Number.isFinite(minute)) continue;
+    if (!Number.isFinite(hour) || !Number.isFinite(minute)) {
+      continue;
+    }
 
     const minutes = hour * 60 + minute;
     const diff = Math.abs(minutes - targetMinutes);
@@ -187,8 +313,10 @@ async function fetchWeather(stadium, date, kickoff) {
     available: true,
     stadium: coords.name,
     forecast_time: data.hourly.time[index],
-    temperature_c: data.hourly.temperature_2m?.[index] ?? null,
-    precipitation_mm: data.hourly.precipitation?.[index] ?? null,
+    temperature_c:
+      data.hourly.temperature_2m?.[index] ?? null,
+    precipitation_mm:
+      data.hourly.precipitation?.[index] ?? null,
     precipitation_probability:
       data.hourly.precipitation_probability?.[index] ?? null,
     wind_speed_kmh:
@@ -200,21 +328,29 @@ async function fetchWeather(stadium, date, kickoff) {
 }
 
 async function main() {
-  const toto = JSON.parse(fs.readFileSync(TOTO_PATH, "utf8"));
-  const jleague = JSON.parse(fs.readFileSync(JLEAGUE_PATH, "utf8"));
+  const toto = JSON.parse(
+    fs.readFileSync(TOTO_PATH, "utf8")
+  );
+
+  const jleague = JSON.parse(
+    fs.readFileSync(JLEAGUE_PATH, "utf8")
+  );
 
   const results = [];
 
   for (const match of toto.matches || []) {
 
-    // totoの日付 09/12 → 2026-09-12
-    const [month, day] = match.date.split("/").map(Number);
+    const [month, day] =
+      match.date.split("/").map(Number);
 
     const date =
       `2026-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 
-    // ホーム・アウェイからJリーグ側の試合を検索
-    const game = findMatch(match, jleague);
+    const game = findMatch(
+      match,
+      jleague,
+      date
+    );
 
     if (!game) {
       results.push({
@@ -225,6 +361,11 @@ async function main() {
         available: false,
         reason: "jleague_match_not_found"
       });
+
+      console.log(
+        `${match.number}. ${match.home} vs ${match.away} -> NO MATCH`
+      );
+
       continue;
     }
 
@@ -248,6 +389,11 @@ async function main() {
         ...weather
       });
 
+      console.log(
+        `${match.number}. ${match.home} vs ${match.away} -> ` +
+        `${weather.available ? "OK" : weather.reason}`
+      );
+
     } catch (error) {
       results.push({
         number: match.number,
@@ -260,10 +406,15 @@ async function main() {
         reason: "weather_fetch_failed",
         error: error.message
       });
+
+      console.log(
+        `${match.number}. ${match.home} vs ${match.away} -> ERROR`
+      );
     }
   }
 
-  const available = results.filter(x => x.available).length;
+  const available =
+    results.filter(x => x.available).length;
 
   const output = {
     source: "Open-Meteo",
@@ -279,7 +430,10 @@ async function main() {
     JSON.stringify(output, null, 2) + "\n"
   );
 
-  console.log(`Weather available: ${available}/${results.length}`);
+  console.log("");
+  console.log(
+    `Weather available: ${available}/${results.length}`
+  );
   console.log(`Saved: ${OUT_PATH}`);
 }
 
