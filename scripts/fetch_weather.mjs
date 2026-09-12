@@ -339,8 +339,11 @@ function basicNormalize(name) {
 function normalizeTeam(name) {
   const raw = basicNormalize(name);
 
-  if (TEAM_ALIASES[raw]) {
-    return TEAM_ALIASES[raw];
+  // TEAM_ALIASES側も同じ正規化をして比較する
+  for (const [alias, canonical] of Object.entries(TEAM_ALIASES)) {
+    if (basicNormalize(alias) === raw) {
+      return canonical;
+    }
   }
 
   return raw;
