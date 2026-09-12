@@ -18,8 +18,6 @@ const STADIUMS = {
   "プラスタ": { name: "プライフーズスタジアム", latitude: 40.5094, longitude: 141.4880 },
   "ＪＩＴス": { name: "JITリサイクルインクスタジアム", latitude: 35.6255, longitude: 138.5956 },
   "ソユスタ": { name: "ソユースタジアム", latitude: 39.7194, longitude: 140.1225 },
-
-  // 国立競技場
   "MUFG国立": { name: "国立競技場", latitude: 35.6786, longitude: 139.7147 }
 };
 
@@ -56,7 +54,7 @@ const WEATHER_CODES = {
 
 function normalizeTeam(name) {
   return String(name || "")
-    .replace(/[ＦＦＣＶ・]/g, "")
+    .replace(/[ＦＣＶ・]/g, "")
     .replace(/　/g, "")
     .replace(/\s+/g, "")
     .replace(/ホーリーホック/g, "")
@@ -64,7 +62,6 @@ function normalizeTeam(name) {
     .replace(/エスパルス/g, "")
     .replace(/アビスパ福岡/g, "福岡")
     .replace(/ガンバ大阪/g, "Ｇ大阪")
-    .replace(/FC東京/g, "FC東京")
     .replace(/ゼルビア/g, "")
     .replace(/マリノス/g, "")
     .replace(/グランパス/g, "")
@@ -79,11 +76,11 @@ function normalizeTeam(name) {
     .replace(/ジュビロ磐田/g, "磐田")
     .replace(/徳島ヴォルティス/g, "徳島")
     .replace(/サガン鳥栖/g, "鳥栖")
-    .replace(/横浜FC/g, "横浜FC")
+    .replace(/横浜ＦＣ/g, "横浜FC")
     .trim();
 }
 
-function findStadium(match, jleague) {
+function findMatch(match, jleague) {
   const home = normalizeTeam(match.home);
   const away = normalizeTeam(match.away);
 
@@ -91,10 +88,9 @@ function findStadium(match, jleague) {
     for (const game of league.matches || []) {
       if (
         normalizeTeam(game.home) === home &&
-        normalizeTeam(game.away) === away &&
-        game.date === match.date
+        normalizeTeam(game.away) === away
       ) {
-        return game.stadium;
+        return game;
       }
     }
   }
@@ -122,7 +118,6 @@ function nearestHourlyIndex(times, targetDate, kickoff) {
     const minutes = hour * 60 + minute;
     const diff = Math.abs(minutes - targetMinutes);
 
-    // 同距離なら早い時間を採用
     if (diff < bestDiff) {
       bestDiff = diff;
       bestIndex = i;
@@ -194,10 +189,13 @@ async function fetchWeather(stadium, date, kickoff) {
     forecast_time: data.hourly.time[index],
     temperature_c: data.hourly.temperature_2m?.[index] ?? null,
     precipitation_mm: data.hourly.precipitation?.[index] ?? null,
-    precipitation_probability: data.hourly.precipitation_probability?.[index] ?? null,
-    wind_speed_kmh: data.hourly.wind_speed_10m?.[index] ?? null,
+    precipitation_probability:
+      data.hourly.precipitation_probability?.[index] ?? null,
+    wind_speed_kmh:
+      data.hourly.wind_speed_10m?.[index] ?? null,
     weather_code: weatherCode ?? null,
-    weather_description: WEATHER_CODES[weatherCode] ?? "Unknown"
+    weather_description:
+      WEATHER_CODES[weatherCode] ?? "Unknown"
   };
 }
 
@@ -208,56 +206,30 @@ async function main() {
   const results = [];
 
   for (const match of toto.matches || []) {
-    const stadium = findStadium(match, jleague);
 
-    if (!stadium) {
-      results.push({
-        number: match.number,
-        date: match.date,
-        home: match.home,
-        away: match.away,
-        available: false,
-        reason: "stadium_not_found"
-      });
-      continue;
-    }
-
-    // toto の MM/DD を YYYY-MM-DD に変換
+    // totoの日付 09/12 → 2026-09-12
     const [month, day] = match.date.split("/").map(Number);
-    const year = 2026;
 
-    const date = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    const date =
+      `2026-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 
-    // J.Leagueデータからキックオフを取得
-    let kickoff = null;
+    // ホーム・アウェイからJリーグ側の試合を検索
+    const game = findMatch(match, jleague);
 
-    for (const league of jleague.leagues || []) {
-      for (const game of league.matches || []) {
-        if (
-          normalizeTeam(game.home) === normalizeTeam(match.home) &&
-          normalizeTeam(game.away) === normalizeTeam(match.away) &&
-          game.date === date
-        ) {
-          kickoff = game.kickoff;
-          break;
-        }
-      }
-
-      if (kickoff) break;
-    }
-
-    if (!kickoff) {
+    if (!game) {
       results.push({
         number: match.number,
         date: match.date,
         home: match.home,
         away: match.away,
-        stadium,
         available: false,
-        reason: "kickoff_not_found"
+        reason: "jleague_match_not_found"
       });
       continue;
     }
+
+    const stadium = game.stadium;
+    const kickoff = game.kickoff;
 
     try {
       const weather = await fetchWeather(
@@ -275,6 +247,7 @@ async function main() {
         stadium,
         ...weather
       });
+
     } catch (error) {
       results.push({
         number: match.number,
