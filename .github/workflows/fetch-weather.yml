@@ -1,0 +1,42 @@
+name: Fetch Weather Data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch J.League data
+        run: node scripts/fetch_jleague.mjs
+
+      - name: Fetch Toto data
+        run: node scripts/fetch_toto.mjs
+
+      - name: Fetch weather
+        run: node scripts/fetch_weather.mjs
+
+      - name: Commit weather data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/jleague_matches.json
+          git add data/toto_matches.json
+          git add data/weather.json
+
+          git diff --cached --quiet || git commit -m "Update weather data"
+
+          git push
