@@ -4,9 +4,7 @@ const TOTO_FILE = "data/toto_matches.json";
 const OUTPUT_FILE = "data/h2h.json";
 const BASE_URL = "https://data.j-league.or.jp/SFMS01/search";
 
-const toto = JSON.parse(
-  readFileSync(TOTO_FILE, "utf8")
-);
+const toto = JSON.parse(readFileSync(TOTO_FILE, "utf8"));
 
 const aliases = {
   "水戸ホーリーホック": "水戸",
@@ -47,7 +45,7 @@ function normalize(name) {
   return aliases[name] || name;
 }
 
-function text(html) {
+function clean(html) {
   return html
     .replace(/<br\s*\/?>/gi, " ")
     .replace(/<[^>]+>/g, " ")
@@ -69,48 +67,41 @@ function parseRows(html) {
       ...row[1].matchAll(
         /<td[^>]*>([\s\S]*?)<\/td>/gi
       )
-    ].map(x => text(x[1]));
+    ].map(x => clean(x[1]));
 
     if (cells.length < 8) continue;
 
-    const [
-      season,
-      competition,
-      section,
-      dateText,
-      kickoff,
-      home,
-      score,
-      away,
-      stadium
-    ] = cells;
+    const dateText = cells[3];
+    const home = cells[5];
+    const score = cells[6];
+    const away = cells[7];
+    const competition = cells[1] || "";
 
     if (!home || !away || !score) continue;
 
-    const scoreMatch =
-      score.match(/^(\d+)\s*-\s*(\d+)/);
+    const scoreMatch = score.match(
+      /^(\d+)\s*-\s*(\d+)/
+    );
 
     if (!scoreMatch) continue;
 
-    const dateMatch =
-      dateText.match(/(\d{2})\/(\d{2})\/(\d{2})/);
+    const dateMatch = dateText.match(
+      /(\d{2})\/(\d{2})\/(\d{2})/
+    );
 
     if (!dateMatch) continue;
 
     const [, yy, mm, dd] = dateMatch;
 
-    const competitionName = competition || "";
-
     if (
       !/Ｊ１|Ｊ２|Ｊ３|J1|J2|J3|ルヴァン|リーグカップ|ヤマザキ/
-        .test(competitionName)
+        .test(competition)
     ) {
       continue;
     }
 
     rows.push({
       date: `20${yy}-${mm}-${dd}`,
-      competition: competitionName,
       home: normalize(home),
       away: normalize(away),
       homeGoals: Number(scoreMatch[1]),
@@ -135,7 +126,7 @@ async function fetchYear(frame, year) {
   return parseRows(await response.text());
 }
 
-function result(team, match) {
+function getResult(team, match) {
   if (match.home === team) {
     if (match.homeGoals > match.awayGoals) return "W";
     if (match.homeGoals < match.awayGoals) return "L";
@@ -153,9 +144,9 @@ function result(team, match) {
 
 function summarize(home, away, allMatches) {
   const matches = allMatches
-    .filter(m =>
-      (m.home === home && m.away === away) ||
-      (m.home === away && m.away === home)
+    .filter(match =>
+      (match.home === home && match.away === away) ||
+      (match.home === away && match.away === home)
     )
     .sort((a, b) =>
       b.date.localeCompare(a.date)
@@ -169,19 +160,19 @@ function summarize(home, away, allMatches) {
   let homeGoals = 0;
   let awayGoals = 0;
 
-  for (const m of recent) {
-    const r = result(home, m);
+  for (const match of recent) {
+    const result = getResult(home, match);
 
-    if (r === "W") homeWins++;
-    if (r === "D") draws++;
-    if (r === "L") awayWins++;
+    if (result === "W") homeWins++;
+    if (result === "D") draws++;
+    if (result === "L") awayWins++;
 
-    if (m.home === home) {
-      homeGoals += m.homeGoals;
-      awayGoals += m.awayGoals;
+    if (match.home === home) {
+      homeGoals += match.homeGoals;
+      awayGoals += match.awayGoals;
     } else {
-      homeGoals += m.awayGoals;
-      awayGoals += m.homeGoals;
+      homeGoals += match.awayGoals;
+      awayGoals += match.homeGoals;
     }
   }
 
@@ -192,20 +183,6 @@ function summarize(home, away, allMatches) {
   } else if (awayWins > homeWins) {
     advantage = "AWAY_ADVANTAGE";
   }
-
-  /*
-   * 重要：
-   * 新形式と旧形式の両方を保存する。
-   *
-   * 新形式：
-   * recent5.home_wins
-   *
-   * 旧形式：
-   * recent5.stats.teamA_wins
-   *
-   * predict.mjs は旧形式を読むため、
-   * ここで互換性を持たせる。
-   */
 
   return {
     available: recent.length > 0,
@@ -224,7 +201,7 @@ function summarize(home, away, allMatches) {
       away_goals: awayGoals,
       advantage,
 
-      // 旧形式
+      // predict.mjs互換用
       stats: {
         matches: recent.length,
         teamA_wins: homeWins,
@@ -238,7 +215,7 @@ function summarize(home, away, allMatches) {
     all_time: {
       matches: matches.length,
 
-      // 旧形式との互換性
+      // predict.mjs互換用
       stats: {
         matches: matches.length
       }
@@ -254,30 +231,15 @@ async function main() {
   console.log("JUDGE90 H2H FETCH");
   console.log("==============================");
 
-  const teams = [
-    ...new Set(
-      toto.matches.flatMap(m => [
-        normalize(m.home),
-        normalize(m.away)
-      ])
-    )
-  ];
-
-  console.log(
-    `対象チーム: ${teams.length}`
-  );
-
   const allMatches = [];
 
-  /*
-   * J.League Data Siteから
-   * 2004〜2026年のJ1/J2/J3を取得。
-   */
   for (const frame of [1, 2, 3]) {
     for (let year = 2004; year <= 2026; year++) {
       try {
-        const matches =
-          await fetchYear(frame, year);
+        const matches = await fetchYear(
+          frame,
+          year
+        );
 
         allMatches.push(...matches);
 
@@ -292,17 +254,14 @@ async function main() {
     }
   }
 
-  /*
-   * 同一試合を重複排除。
-   */
   const unique = new Map();
 
-  for (const m of allMatches) {
+  for (const match of allMatches) {
     const key =
-      `${m.date}|${m.home}|${m.away}|` +
-      `${m.homeGoals}-${m.awayGoals}`;
+      `${match.date}|${match.home}|${match.away}|` +
+      `${match.homeGoals}-${match.awayGoals}`;
 
-    unique.set(key, m);
+    unique.set(key, match);
   }
 
   const historical = [
@@ -311,33 +270,28 @@ async function main() {
 
   console.log("");
   console.log(
-    `取得した過去試合: ${historical.length}`
+    `過去試合データ: ${historical.length}`
   );
 
-  const matches =
-    toto.matches.map(m => {
-      const home = normalize(m.home);
-      const away = normalize(m.away);
+  const matches = toto.matches.map(match => {
+    const home = normalize(match.home);
+    const away = normalize(match.away);
 
-      const h2h =
-        summarize(
-          home,
-          away,
-          historical
-        );
-
-      return {
-        number: m.number,
+    return {
+      number: match.number,
+      home,
+      away,
+      h2h: summarize(
         home,
         away,
-        h2h
-      };
-    });
+        historical
+      )
+    };
+  });
 
-  const available =
-    matches.filter(
-      m => m.h2h.available
-    ).length;
+  const available = matches.filter(
+    match => match.h2h.available
+  ).length;
 
   const output = {
     season: "2026/27",
@@ -367,23 +321,22 @@ async function main() {
 
   console.log("");
   console.log("==============================");
-  console.log("JUDGE90 H2H RESULT");
+  console.log("H2H RESULT");
   console.log("==============================");
 
-  for (const m of matches) {
-    const h = m.h2h.recent5;
+  for (const match of matches) {
+    const h = match.h2h.recent5;
 
     console.log(
-      `${m.number}. ${m.home} vs ${m.away}`
+      `${match.number}. ${match.home} vs ${match.away}`
     );
 
     console.log(
-      `   直近5: ${h.home_wins}-` +
-      `${h.draws}-${h.away_wins}`
+      `   直近5: ${h.home_wins}-${h.draws}-${h.away_wins}`
     );
 
     console.log(
-      `   available: ${m.h2h.available}`
+      `   available: ${match.h2h.available}`
     );
   }
 
@@ -398,7 +351,7 @@ async function main() {
 
   if (available === 0) {
     throw new Error(
-      "H2Hを1件も取得できませんでした。"
+      "H2Hデータを取得できませんでした。"
     );
   }
 }
