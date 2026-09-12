@@ -1,8 +1,8 @@
 {
-  "fetched_at": "2026-09-12T12:21:34.496Z",
+  "fetched_at": "2026-09-12T12:27:50.918Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
-  "available": "12/13",
+  "available": "13/13",
   "matches": [
     {
       "number": 1,
@@ -139,10 +139,24 @@
     {
       "number": 7,
       "date": "09/19",
+      "jleague_date": "2026-09-19",
       "home": "横浜Ｆ・マリノス",
       "away": "水戸ホーリーホック",
-      "available": false,
-      "reason": "jleague_match_not_found"
+      "kickoff": "19:30",
+      "stadium": "日産ス",
+      "location_source": "stadium",
+      "weather_location": "日産スタジアム",
+      "latitude": 35.5101,
+      "longitude": 139.6064,
+      "available": true,
+      "kickoff_known": true,
+      "forecast_time": "2026-09-19T19:00",
+      "temperature_c": 23.6,
+      "precipitation_mm": 0.4,
+      "precipitation_probability": 58,
+      "wind_speed_kmh": 9.1,
+      "weather_code": 51,
+      "weather_description": "弱い霧雨"
     },
     {
       "number": 8,
