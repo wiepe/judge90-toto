@@ -168,68 +168,54 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function fetchDailyWeather(location, startDate, endDate) {
+async function fetchDailyWeather(locations, startDate, endDate) {
   const params = new URLSearchParams({
-    latitude: String(location.latitude),
-    longitude: String(location.longitude),
+    latitude: locations.map(x => x.latitude).join(','),
+    longitude: locations.map(x => x.longitude).join(','),
     start_date: startDate,
     end_date: endDate,
-    daily: [
-      "weather_code",
-      "temperature_2m_max",
-      "temperature_2m_min",
-      "precipitation_sum",
-      "precipitation_hours",
-      "wind_speed_10m_max"
-    ].join(","),
-    timezone: "Asia/Tokyo",
-    temperature_unit: "celsius",
-    wind_speed_unit: "kmh",
-    precipitation_unit: "mm",
-    models: "era5"
+    daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_hours,wind_speed_10m_max',
+    timezone: 'Asia/Tokyo',
+    temperature_unit: 'celsius',
+    wind_speed_unit: 'kmh',
+    precipitation_unit: 'mm',
+    models: 'era5'
   });
-
   const url = `https://archive-api.open-meteo.com/v1/archive?${params}`;
-
-  for (let attempt = 1; attempt <= 6; attempt++) {
-    const response = await fetch(url);
-    if (response.ok) return response.json();
-
-    if (response.status === 429 || response.status >= 500) {
-      const retryAfter = Number(response.headers.get("retry-after"));
-      const wait = Number.isFinite(retryAfter) && retryAfter > 0
-        ? Math.min(120000, retryAfter * 1000)
-        : Math.min(120000, 10000 * 2 ** (attempt - 1));
-      console.log(`  Open-Meteo HTTP ${response.status}; retry ${attempt}/6 after ${Math.round(wait / 1000)}s`);
-      await sleep(wait);
-      continue;
+  for (let attempt=1; attempt<=6; attempt++) {
+    const r=await fetch(url);
+    if(r.ok) return r.json();
+    if(r.status===429 || r.status>=500){
+      const ra=Number(r.headers.get('retry-after'));
+      const wait=Number.isFinite(ra)&&ra>0 ? Math.min(90000,ra*1000) : Math.min(90000,5000*2**(attempt-1));
+      console.log(`  Open-Meteo HTTP ${r.status}; retry ${attempt}/6 after ${Math.round(wait/1000)}s`);
+      await sleep(wait); continue;
     }
-
-    const body = await response.text();
-    throw new Error(`Open-Meteo HTTP ${response.status}: ${body.slice(0, 300)}`);
+    throw new Error(`Open-Meteo HTTP ${r.status}`);
   }
-
-  throw new Error("Open-Meteo retry limit exceeded");
+  throw new Error('Open-Meteo retry limit exceeded');
 }
 
-function buildWeatherMap(data) {
-  const daily = data?.daily;
-  const map = new Map();
-
-  if (!daily?.time) return map;
-
-  for (let j = 0; j < daily.time.length; j++) {
-    map.set(daily.time[j], {
-      weather_code: daily.weather_code?.[j] ?? null,
-      temperature_max_c: daily.temperature_2m_max?.[j] ?? null,
-      temperature_min_c: daily.temperature_2m_min?.[j] ?? null,
-      precipitation_mm: daily.precipitation_sum?.[j] ?? null,
-      precipitation_hours: daily.precipitation_hours?.[j] ?? null,
-      wind_speed_max_kmh: daily.wind_speed_10m_max?.[j] ?? null
-    });
-  }
-
+function oneWeatherMap(payload){
+  const d=payload?.daily;
+  const map=new Map();
+  if(!d?.time) return map;
+  for(let i=0;i<d.time.length;i++) map.set(d.time[i],{
+    weather_code:d.weather_code?.[i]??null,
+    temperature_max_c:d.temperature_2m_max?.[i]??null,
+    temperature_min_c:d.temperature_2m_min?.[i]??null,
+    precipitation_mm:d.precipitation_sum?.[i]??null,
+    precipitation_hours:d.precipitation_hours?.[i]??null,
+    wind_speed_max_kmh:d.wind_speed_10m_max?.[i]??null
+  });
   return map;
+}
+
+function buildWeatherMaps(data, locations){
+  const payloads=Array.isArray(data)?data:(Array.isArray(data?.results)?data.results:[data]);
+  const maps=new Map();
+  locations.forEach((loc,i)=>maps.set(loc.city,oneWeatherMap(payloads[i])));
+  return maps;
 }
 
 function normalCdf(x) {
@@ -416,30 +402,29 @@ async function main() {
 
   console.log(`Weather locations: ${groups.size}`);
 
-  const weatherByCity = new Map();
-  let weatherFailures = 0;
+  const locations=[...groups.values()];
+  const weatherByCity=new Map();
+  let weatherFailures=0;
+  const BATCH_SIZE=5;
+  const globalStart=locations.reduce((m,g)=>g.dates.reduce((a,b)=>a<b?a:b,m),'9999-12-31');
+  const globalEnd=locations.reduce((m,g)=>g.dates.reduce((a,b)=>a>b?a:b,m),'0000-01-01');
 
-  // Open-Meteoの無料APIは短時間に大量のリクエストを送ると429になりやすい。
-  // 今回は「確実に全地点を取る」ことを優先し、1地点ずつ取得して間隔を空ける。
-  const locations = [...groups.values()];
-
-  for (let i = 0; i < locations.length; i++) {
-    const location = locations[i];
-    const startDate = location.dates.reduce((a, b) => a < b ? a : b);
-    const endDate = location.dates.reduce((a, b) => a > b ? a : b);
-
-    console.log(`Weather ${i + 1}/${locations.length}: ${location.city} (${startDate} -> ${endDate})`);
-
-    try {
-      const data = await fetchDailyWeather(location, startDate, endDate);
-      weatherByCity.set(location.city, buildWeatherMap(data));
-    } catch (error) {
-      weatherFailures++;
-      console.log(`  WEATHER ERROR: ${error.message}`);
+  for(let i=0;i<locations.length;i+=BATCH_SIZE){
+    const batch=locations.slice(i,i+BATCH_SIZE);
+    console.log(`Weather batch ${i+1}-${i+batch.length}/${locations.length}: ${batch.map(x=>x.city).join(', ')}`);
+    try{
+      const data=await fetchDailyWeather(batch,globalStart,globalEnd);
+      const maps=buildWeatherMaps(data,batch);
+      let got=0;
+      for(const [city,map] of maps){
+        if(map.size){weatherByCity.set(city,map);got++;}
+      }
+      console.log(`  received ${got}/${batch.length} locations`);
+    }catch(e){
+      weatherFailures+=batch.length;
+      console.log(`  WEATHER BATCH ERROR: ${e.message}`);
     }
-
-    // APIのレート制限を避けるため、地点ごとに少なくとも2秒空ける。
-    if (i < locations.length - 1) await sleep(2000);
+    if(i+BATCH_SIZE<locations.length) await sleep(2000);
   }
 
   const joined = [];
