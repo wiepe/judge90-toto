@@ -168,10 +168,10 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function fetchDailyWeather(locations, startDate, endDate) {
+async function fetchDailyWeather(location, startDate, endDate) {
   const params = new URLSearchParams({
-    latitude: locations.map(location => location.latitude).join(","),
-    longitude: locations.map(location => location.longitude).join(","),
+    latitude: String(location.latitude),
+    longitude: String(location.longitude),
     start_date: startDate,
     end_date: endDate,
     daily: [
@@ -190,48 +190,46 @@ async function fetchDailyWeather(locations, startDate, endDate) {
   });
 
   const url = `https://archive-api.open-meteo.com/v1/archive?${params}`;
-  for (let attempt = 1; attempt <= 5; attempt++) {
+
+  for (let attempt = 1; attempt <= 6; attempt++) {
     const response = await fetch(url);
     if (response.ok) return response.json();
 
     if (response.status === 429 || response.status >= 500) {
-      const wait = Math.min(60000, 5000 * 2 ** (attempt - 1));
-      console.log(`  Open-Meteo HTTP ${response.status}; retry ${attempt}/5 after ${wait / 1000}s`);
+      const retryAfter = Number(response.headers.get("retry-after"));
+      const wait = Number.isFinite(retryAfter) && retryAfter > 0
+        ? Math.min(120000, retryAfter * 1000)
+        : Math.min(120000, 10000 * 2 ** (attempt - 1));
+      console.log(`  Open-Meteo HTTP ${response.status}; retry ${attempt}/6 after ${Math.round(wait / 1000)}s`);
       await sleep(wait);
       continue;
     }
 
-    throw new Error(`Open-Meteo HTTP ${response.status}`);
+    const body = await response.text();
+    throw new Error(`Open-Meteo HTTP ${response.status}: ${body.slice(0, 300)}`);
   }
 
   throw new Error("Open-Meteo retry limit exceeded");
 }
 
-function buildWeatherMaps(data, locations) {
-  const payloads = Array.isArray(data) ? data : [data];
-  const maps = new Map();
+function buildWeatherMap(data) {
+  const daily = data?.daily;
+  const map = new Map();
 
-  for (let i = 0; i < locations.length; i++) {
-    const daily = payloads[i]?.daily;
-    const map = new Map();
+  if (!daily?.time) return map;
 
-    if (daily?.time) {
-      for (let j = 0; j < daily.time.length; j++) {
-        map.set(daily.time[j], {
-          weather_code: daily.weather_code?.[j] ?? null,
-          temperature_max_c: daily.temperature_2m_max?.[j] ?? null,
-          temperature_min_c: daily.temperature_2m_min?.[j] ?? null,
-          precipitation_mm: daily.precipitation_sum?.[j] ?? null,
-          precipitation_hours: daily.precipitation_hours?.[j] ?? null,
-          wind_speed_max_kmh: daily.wind_speed_10m_max?.[j] ?? null
-        });
-      }
-    }
-
-    maps.set(locations[i].city, map);
+  for (let j = 0; j < daily.time.length; j++) {
+    map.set(daily.time[j], {
+      weather_code: daily.weather_code?.[j] ?? null,
+      temperature_max_c: daily.temperature_2m_max?.[j] ?? null,
+      temperature_min_c: daily.temperature_2m_min?.[j] ?? null,
+      precipitation_mm: daily.precipitation_sum?.[j] ?? null,
+      precipitation_hours: daily.precipitation_hours?.[j] ?? null,
+      wind_speed_max_kmh: daily.wind_speed_10m_max?.[j] ?? null
+    });
   }
 
-  return maps;
+  return map;
 }
 
 function normalCdf(x) {
@@ -421,27 +419,27 @@ async function main() {
   const weatherByCity = new Map();
   let weatherFailures = 0;
 
-  // Open-Meteoは大量の単地点リクエストを連続すると429になりやすい。
-  // 複数地点を1リクエストにまとめ、必要なら指数バックオフで再試行する。
+  // Open-Meteoの無料APIは短時間に大量のリクエストを送ると429になりやすい。
+  // 今回は「確実に全地点を取る」ことを優先し、1地点ずつ取得して間隔を空ける。
   const locations = [...groups.values()];
-  const batchSize = locations.length;
-  const globalStart = locations.reduce((min, g) => g.dates.reduce((a, b) => a < b ? a : b, min), "9999-12-31");
-  const globalEnd = locations.reduce((max, g) => g.dates.reduce((a, b) => a > b ? a : b, max), "0000-01-01");
 
-  for (let i = 0; i < locations.length; i += batchSize) {
-    const batch = locations.slice(i, i + batchSize);
-    console.log(`Weather batch ${i + 1}-${i + batch.length}/${locations.length}: ${batch.map(x => x.city).join(", ")} (${globalStart} -> ${globalEnd})`);
+  for (let i = 0; i < locations.length; i++) {
+    const location = locations[i];
+    const startDate = location.dates.reduce((a, b) => a < b ? a : b);
+    const endDate = location.dates.reduce((a, b) => a > b ? a : b);
+
+    console.log(`Weather ${i + 1}/${locations.length}: ${location.city} (${startDate} -> ${endDate})`);
 
     try {
-      const data = await fetchDailyWeather(batch, globalStart, globalEnd);
-      const maps = buildWeatherMaps(data, batch);
-      for (const [city, map] of maps) weatherByCity.set(city, map);
+      const data = await fetchDailyWeather(location, startDate, endDate);
+      weatherByCity.set(location.city, buildWeatherMap(data));
     } catch (error) {
-      weatherFailures += batch.length;
-      console.log(`  WEATHER BATCH ERROR: ${error.message}`);
+      weatherFailures++;
+      console.log(`  WEATHER ERROR: ${error.message}`);
     }
 
-    await sleep(1000);
+    // APIのレート制限を避けるため、地点ごとに少なくとも2秒空ける。
+    if (i < locations.length - 1) await sleep(2000);
   }
 
   const joined = [];
