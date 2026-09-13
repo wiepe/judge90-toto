@@ -1,0 +1,84 @@
+{
+  "generated_at": "2026-09-13T10:23:53.919Z",
+  "source": {
+    "matches": "J.League Data Site",
+    "weather": "Open-Meteo Historical Weather API / ERA5"
+  },
+  "scope": {
+    "years": "2004-2026",
+    "competitions": "J1/J2/J3 league matches",
+    "weather_unit": "daily home-area weather",
+    "note": "This is a validation stage. It does not modify prediction probabilities."
+  },
+  "coverage": {
+    "historical_matches": 19504,
+    "weather_locations": 47,
+    "weather_matched_matches": 0,
+    "coverage_percent": 0,
+    "skipped_no_location": 2459,
+    "skipped_no_weather": 17045,
+    "weather_api_failures": 47
+  },
+  "conditions": {
+    "rain": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    },
+    "heavy_rain": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    },
+    "hot": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    },
+    "warm": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    },
+    "cold": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    },
+    "strong_wind": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    },
+    "storm": {
+      "sample": {
+        "condition": 0,
+        "control": 0
+      },
+      "insufficient_data": true,
+      "candidate_for_model": false
+    }
+  },
+  "model_change_recommendation": {
+    "candidate_signals": [],
+    "action": "No weather signal passed the conservative screening threshold. Keep weather as an environment signal only."
+  }
+}
