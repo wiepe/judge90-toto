@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T10:23:53.919Z",
+  "generated_at": "2026-09-13T11:01:11.898Z",
   "source": {
     "matches": "J.League Data Site",
     "weather": "Open-Meteo Historical Weather API / ERA5"
@@ -13,65 +13,209 @@
   "coverage": {
     "historical_matches": 19504,
     "weather_locations": 47,
-    "weather_matched_matches": 0,
-    "coverage_percent": 0,
+    "weather_matched_matches": 7136,
+    "coverage_percent": 36.59,
     "skipped_no_location": 2459,
-    "skipped_no_weather": 17045,
-    "weather_api_failures": 47
+    "skipped_no_weather": 9909,
+    "weather_api_failures": 30
   },
   "conditions": {
     "rain": {
       "sample": {
-        "condition": 0,
-        "control": 0
+        "condition": 4067,
+        "control": 3069
       },
-      "insufficient_data": true,
+      "outcome_rate_condition": {
+        "0": 24.74,
+        "1": 41.09,
+        "2": 34.18
+      },
+      "outcome_rate_control": {
+        "0": 25.55,
+        "1": 42.16,
+        "2": 32.29
+      },
+      "difference_condition_minus_control_pp": {
+        "0": -0.81,
+        "1": -1.08,
+        "2": 1.89
+      },
+      "p_values": {
+        "0": 0.43447,
+        "1": 0.36082,
+        "2": 0.09421
+      },
+      "average_total_goals": {
+        "condition": 2.636,
+        "control": 2.53,
+        "difference": 0.105
+      },
       "candidate_for_model": false
     },
     "heavy_rain": {
       "sample": {
-        "condition": 0,
-        "control": 0
+        "condition": 1612,
+        "control": 5524
       },
-      "insufficient_data": true,
+      "outcome_rate_condition": {
+        "0": 25.06,
+        "1": 40.2,
+        "2": 34.74
+      },
+      "outcome_rate_control": {
+        "0": 25.09,
+        "1": 41.94,
+        "2": 32.97
+      },
+      "difference_condition_minus_control_pp": {
+        "0": -0.03,
+        "1": -1.75,
+        "2": 1.77
+      },
+      "p_values": {
+        "0": 0.98148,
+        "1": 0.2108,
+        "2": 0.18379
+      },
+      "average_total_goals": {
+        "condition": 2.767,
+        "control": 2.539,
+        "difference": 0.228
+      },
       "candidate_for_model": false
     },
     "hot": {
       "sample": {
-        "condition": 0,
-        "control": 0
+        "condition": 1317,
+        "control": 5819
       },
-      "insufficient_data": true,
+      "outcome_rate_condition": {
+        "0": 24.98,
+        "1": 43.36,
+        "2": 31.66
+      },
+      "outcome_rate_control": {
+        "0": 25.11,
+        "1": 41.14,
+        "2": 33.75
+      },
+      "difference_condition_minus_control_pp": {
+        "0": -0.13,
+        "1": 2.22,
+        "2": -2.09
+      },
+      "p_values": {
+        "0": 0.92388,
+        "1": 0.14076,
+        "2": 0.14661
+      },
+      "average_total_goals": {
+        "condition": 2.699,
+        "control": 2.566,
+        "difference": 0.132
+      },
       "candidate_for_model": false
     },
     "warm": {
       "sample": {
-        "condition": 0,
-        "control": 0
+        "condition": 1957,
+        "control": 5179
       },
-      "insufficient_data": true,
+      "outcome_rate_condition": {
+        "0": 25.45,
+        "1": 42.36,
+        "2": 32.19
+      },
+      "outcome_rate_control": {
+        "0": 24.95,
+        "1": 41.24,
+        "2": 33.81
+      },
+      "difference_condition_minus_control_pp": {
+        "0": 0.5,
+        "1": 1.12,
+        "2": -1.62
+      },
+      "p_values": {
+        "0": 0.66366,
+        "1": 0.39287,
+        "2": 0.19608
+      },
+      "average_total_goals": {
+        "condition": 2.648,
+        "control": 2.569,
+        "difference": 0.079
+      },
       "candidate_for_model": false
     },
     "cold": {
       "sample": {
-        "condition": 0,
-        "control": 0
+        "condition": 1736,
+        "control": 5400
       },
-      "insufficient_data": true,
+      "outcome_rate_condition": {
+        "0": 24.65,
+        "1": 41.07,
+        "2": 34.27
+      },
+      "outcome_rate_control": {
+        "0": 25.22,
+        "1": 41.7,
+        "2": 33.07
+      },
+      "difference_condition_minus_control_pp": {
+        "0": -0.57,
+        "1": -0.63,
+        "2": 1.2
+      },
+      "p_values": {
+        "0": 0.63495,
+        "1": 0.64192,
+        "2": 0.35627
+      },
+      "average_total_goals": {
+        "condition": 2.468,
+        "control": 2.63,
+        "difference": -0.162
+      },
       "candidate_for_model": false
     },
     "strong_wind": {
       "sample": {
-        "condition": 0,
-        "control": 0
+        "condition": 806,
+        "control": 6330
       },
-      "insufficient_data": true,
+      "outcome_rate_condition": {
+        "0": 25.68,
+        "1": 40.69,
+        "2": 33.62
+      },
+      "outcome_rate_control": {
+        "0": 25.01,
+        "1": 41.66,
+        "2": 33.33
+      },
+      "difference_condition_minus_control_pp": {
+        "0": 0.67,
+        "1": -0.96,
+        "2": 0.29
+      },
+      "p_values": {
+        "0": 0.67739,
+        "1": 0.60095,
+        "2": 0.8696
+      },
+      "average_total_goals": {
+        "condition": 2.586,
+        "control": 2.591,
+        "difference": -0.006
+      },
       "candidate_for_model": false
     },
     "storm": {
       "sample": {
         "condition": 0,
-        "control": 0
+        "control": 7136
       },
       "insufficient_data": true,
       "candidate_for_model": false
