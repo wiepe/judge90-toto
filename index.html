@@ -6,13 +6,11 @@
 <title>JUDGE 90 | J.LEAGUE × toto Predictor</title>
 <style>
 :root{--bg:#090d18;--card:#111827;--line:#26324a;--text:#f4f7ff;--muted:#93a0b8;--accent:#5eead4;--yellow:#fbbf24;--red:#fb7185;--blue:#7dd3fc;--purple:#c4b5fd;--weather:#93c5fd}
-*{box-sizing:border-box}
-body{margin:0;background:radial-gradient(circle at 50% -20%,#182747 0,#090d18 45%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -20%,#182747 0,#090d18 45%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans JP",sans-serif}
 .wrap{max-width:1050px;margin:auto;padding:0 18px}
 header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:blur(12px);position:sticky;top:0;z-index:5}
 .head{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{font-size:24px;font-weight:950;letter-spacing:.09em}.brand span{color:var(--accent)}
-.tag{font-size:11px;letter-spacing:.15em;color:var(--accent);font-weight:800}
+.brand{font-size:24px;font-weight:950;letter-spacing:.09em}.brand span{color:var(--accent)}.tag{font-size:11px;letter-spacing:.15em;color:var(--accent);font-weight:800}
 .hero{padding:34px 0 22px}.hero h1{font-size:clamp(25px,5vw,42px);margin:5px 0 8px;line-height:1.25}.sub{color:var(--muted);line-height:1.6}
 .demo{margin-top:14px;display:inline-block;border:1px solid #315b58;background:#102522;color:#99f6e4;border-radius:999px;padding:7px 12px;font-size:12px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0}.stat{background:linear-gradient(145deg,#131d31,#0f1626);border:1px solid var(--line);border-radius:16px;padding:15px}.stat b{font-size:26px}
@@ -23,69 +21,18 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 .probgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 12px}.prob{background:#0a1020;border-radius:12px;padding:10px;text-align:center;border:1px solid #202b40}.prob.main{border-color:#416d68}.prob b{font-size:22px;display:block}.prob-label{color:var(--muted);font-size:12px}
 .bar{height:6px;background:#1c2940;border-radius:99px;margin-top:7px;overflow:hidden}.fill{height:100%;background:var(--accent)}
 .factors{border-top:1px solid var(--line);padding-top:12px;color:var(--muted);font-size:13px;line-height:1.8}.factor-title{color:var(--text);font-weight:700;margin-bottom:4px}
-
-.h2h{margin-top:14px;padding:14px;background:linear-gradient(145deg,#15152a,#0d1220);border:1px solid #353456;border-radius:14px}
-.h2h-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-.h2h-label{color:var(--purple);font-weight:800;font-size:13px;letter-spacing:.05em}
-.h2h-status{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #3d3a62;color:var(--muted)}
-.h2h-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.h2h-stat{background:#0a1020;border:1px solid #202b40;border-radius:10px;padding:9px}
-.h2h-stat .label{color:var(--muted);font-size:11px}.h2h-stat b{display:block;margin-top:3px;font-size:17px}
-.h2h-note{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.6}.h2h-effect{color:var(--purple)}.h2h-none{color:var(--muted);font-size:12px}
-
-/* ENVIRONMENT */
-.environment{margin-top:14px;padding:14px;background:linear-gradient(145deg,#101d31,#0d1525);border:1px solid #30435f;border-radius:14px}
-.environment-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-.environment-label{color:var(--weather);font-weight:800;font-size:13px;letter-spacing:.05em}
-.environment-status{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #30435f;color:var(--muted)}
-.environment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.environment-stat{background:#0a1020;border:1px solid #202b40;border-radius:10px;padding:9px}
-.environment-stat .label{color:var(--muted);font-size:11px}
-.environment-stat b{display:block;margin-top:3px;font-size:16px}
-.environment-note{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.6}
-
-.bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:15px}
-.rec{font-size:14px}.rec.single{color:var(--accent)}.rec.double{color:var(--yellow)}.rec.triple{color:var(--red)}
-.analysis{font-size:12px;color:var(--blue)}.ai-pick{display:block;margin-top:4px}
-.panel{background:linear-gradient(135deg,#16223a,#0f1728);border:1px solid #2b3b5c;border-radius:20px;padding:20px;margin:24px 0 42px}
-.panel h2{margin:0 0 6px}.portfolio-main{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
-.portfolio-stat{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:14px}
-.portfolio-stat .label{color:var(--muted);font-size:12px}.portfolio-stat b{display:block;font-size:25px;margin-top:5px}
-.strategy{margin-top:14px;padding:14px;border-radius:14px;background:#0b1220;border:1px solid var(--line)}
-.strategy-name{color:var(--accent);font-size:20px;font-weight:800}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.plan{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:14px}
-.plan b{display:block;margin-top:7px}.small{font-size:12px;color:var(--muted)}
-.loading{padding:30px 0;text-align:center;color:var(--muted)}
-.error{padding:20px;border:1px solid #6b2736;background:#24111a;border-radius:15px;color:#fda4af;line-height:1.7}
-
-@media(max-width:650px){
-.stats{grid-template-columns:repeat(2,1fr)}
-.plans,.portfolio-main{grid-template-columns:1fr}
-.teams{font-size:17px}.badge{font-size:11px}
-.bottom{align-items:flex-start;flex-direction:column}
-.h2h-grid{grid-template-columns:1fr 1fr 1fr}
-.environment-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:430px){
-.prob b{font-size:19px}.teams{font-size:16px}.h2h-stat b{font-size:15px}.environment-stat b{font-size:14px}
-}
+.h2h{margin-top:14px;padding:14px;background:linear-gradient(145deg,#15152a,#0d1220);border:1px solid #353456;border-radius:14px}.h2h-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.h2h-label{color:var(--purple);font-weight:800;font-size:13px;letter-spacing:.05em}.h2h-status{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #3d3a62;color:var(--muted)}.h2h-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.h2h-stat{background:#0a1020;border:1px solid #202b40;border-radius:10px;padding:9px}.h2h-stat .label{color:var(--muted);font-size:11px}.h2h-stat b{display:block;margin-top:3px;font-size:17px}.h2h-note{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.6}.h2h-effect{color:var(--purple)}.h2h-none{color:var(--muted);font-size:12px}
+.environment{margin-top:14px;padding:14px;background:linear-gradient(145deg,#101d31,#0d1525);border:1px solid #30435f;border-radius:14px}.environment-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}.environment-label{color:var(--weather);font-weight:800;font-size:13px;letter-spacing:.05em}.environment-status{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #30435f;color:var(--muted)}.environment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.environment-stat{background:#0a1020;border:1px solid #202b40;border-radius:10px;padding:9px}.environment-stat .label{color:var(--muted);font-size:11px}.environment-stat b{display:block;margin-top:3px;font-size:16px}.environment-note{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.6}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:15px}.rec{font-size:14px}.rec.single{color:var(--accent)}.rec.double{color:var(--yellow)}.rec.triple{color:var(--red)}.analysis{font-size:12px;color:var(--blue)}.ai-pick{display:block;margin-top:4px}
+.panel{background:linear-gradient(135deg,#16223a,#0f1728);border:1px solid #2b3b5c;border-radius:20px;padding:20px;margin:24px 0 42px}.panel h2{margin:0 0 6px}.portfolio-main{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.portfolio-stat{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:14px}.portfolio-stat .label{color:var(--muted);font-size:12px}.portfolio-stat b{display:block;font-size:25px;margin-top:5px}.strategy{margin-top:14px;padding:14px;border-radius:14px;background:#0b1220;border:1px solid var(--line)}.strategy-name{color:var(--accent);font-size:20px;font-weight:800}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.plan{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:14px}.plan b{display:block;margin-top:7px}.small{font-size:12px;color:var(--muted)}.loading{padding:30px 0;text-align:center;color:var(--muted)}.error{padding:20px;border:1px solid #6b2736;background:#24111a;border-radius:15px;color:#fda4af;line-height:1.7}
+@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.plans,.portfolio-main{grid-template-columns:1fr}.teams{font-size:17px}.badge{font-size:11px}.bottom{align-items:flex-start;flex-direction:column}.h2h-grid{grid-template-columns:1fr 1fr 1fr}.environment-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.prob b{font-size:19px}.teams{font-size:16px}.h2h-stat b{font-size:15px}.environment-stat b{font-size:14px}}
 </style>
 </head>
-
 <body>
-<header>
-<div class="wrap head">
-<div>
-<div class="tag">EXPLAINABLE FOOTBALL PREDICTION</div>
-<div class="brand">JUDGE <span>90</span></div>
-</div>
-<div id="updated" class="small"></div>
-</div>
-</header>
+<header><div class="wrap head"><div><div class="tag">EXPLAINABLE FOOTBALL PREDICTION</div><div class="brand">JUDGE <span>90</span></div></div><div id="updated" class="small"></div></div></header>
 
 <main class="wrap">
-
 <section class="hero">
 <div class="tag">WEEKLY MATCH INTELLIGENCE</div>
 <h1>予想ではなく、<br>「どこで迷うべきか」を。</h1>
@@ -114,26 +61,18 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 <div class="tag">PORTFOLIO OPTIMIZER</div>
 <h2>💰 おすすめの買い方</h2>
 <div class="sub">「当たりそうな試合」ではなく、「不確実性の高い試合」にダブル・トリプルを配分。</div>
-
 <div class="portfolio-main">
 <div class="portfolio-stat"><div class="label">推奨購入額</div><b id="budget">-</b></div>
 <div class="portfolio-stat"><div class="label">組み合わせ</div><b id="combinations">-</b></div>
 <div class="portfolio-stat"><div class="label">戦略</div><b id="strategy">-</b></div>
 </div>
-
-<div class="strategy">
-<div class="small">JUDGE90の判断</div>
-<div id="strategyDescription" class="strategy-name">-</div>
-<div id="strategyPriority" class="small" style="margin-top:6px"></div>
-</div>
-
+<div class="strategy"><div class="small">JUDGE90の判断</div><div id="strategyDescription" class="strategy-name">-</div><div id="strategyPriority" class="small" style="margin-top:6px"></div></div>
 <div class="plans">
 <div class="plan"><span>シングル</span><b id="singleCount">-</b><div class="small">本命を一点で選択</div></div>
 <div class="plan"><span>ダブル</span><b id="doubleCount">-</b><div class="small">上位2候補をカバー</div></div>
 <div class="plan"><span>トリプル</span><b id="tripleCount">-</b><div class="small">全結果をカバー</div></div>
 </div>
 </section>
-
 </main>
 
 <script>
@@ -150,8 +89,7 @@ function outcomeLabel(o){
 
 function getPrediction(match){
   const p=match.probabilities||{};
-  return [["1",Number(p["1"]||0)],["0",Number(p["0"]||0)],["2",Number(p["2"]||0)]]
-    .sort((a,b)=>b[1]-a[1])[0][0];
+  return [["1",Number(p["1"]||0)],["0",Number(p["0"]||0)],["2",Number(p["2"]||0)]].sort((a,b)=>b[1]-a[1])[0][0];
 }
 
 function getRecommendation(match){
@@ -165,44 +103,19 @@ function isUpset(match){
   return match?.uncertainty?.level==="HIGH";
 }
 
-function pct(v){
-  return Math.round(Number(v||0)*100);
-}
-
-function badgeClass(level){
-  return level==="HIGH"?"high":level==="MEDIUM"?"medium":"low";
-}
-
-function recLabel(type){
-  return type==="double"?"ダブル推奨":type==="triple"?"トリプル推奨":"シングル推奨";
-}
-
-function recText(rec){
-  return Array.isArray(rec?.recommendation)
-    ? rec.recommendation.map(outcomeLabel).join(" / ")
-    : "";
-}
-
-/* -----------------------------
-   H2H
------------------------------ */
+function pct(v){return Math.round(Number(v||0)*100)}
+function badgeClass(level){return level==="HIGH"?"high":level==="MEDIUM"?"medium":"low"}
+function recLabel(type){return type==="double"?"ダブル推奨":type==="triple"?"トリプル推奨":"シングル推奨"}
+function recText(rec){return Array.isArray(rec?.recommendation)?rec.recommendation.map(outcomeLabel).join(" / "):""}
 
 function renderH2H(match){
   const h=match?.signals?.h2h;
-
   if(!h||h.available===false){
-    return '<div class="h2h">'+
-      '<div class="h2h-title">'+
-      '<div class="h2h-label">H2H / HEAD TO HEAD</div>'+
-      '<div class="h2h-status">データなし</div>'+
-      '</div>'+
-      '<div class="h2h-none">対戦データが十分に取得できないため、H2Hによる補正は行っていません。</div>'+
-      '</div>';
+    return '<div class="h2h"><div class="h2h-title"><div class="h2h-label">H2H / HEAD TO HEAD</div><div class="h2h-status">データなし</div></div><div class="h2h-none">対戦データが十分に取得できないため、H2Hによる補正は行っていません。</div></div>';
   }
 
   const r=h.recent5||{};
   const s=r.stats||{};
-
   const matches=Number(r.matches??r.count??h.matches??0);
   const homeWins=Number(r.home_wins??s.home_wins??s.teamA_wins??0);
   const draws=Number(r.draws??s.draws??0);
@@ -211,27 +124,17 @@ function renderH2H(match){
   const awayGoals=Number(r.away_goals??s.away_goals??s.teamB_goals??0);
 
   const adv=h.advantage??r.advantage??"neutral";
-
   let status="拮抗";
-
-  if(adv==="HOME_ADVANTAGE"||adv==="home"||adv===match.home)
-    status="ホーム側優勢";
-
-  if(adv==="AWAY_ADVANTAGE"||adv==="away"||adv===match.away)
-    status="アウェイ側優勢";
+  if(adv==="HOME_ADVANTAGE"||adv==="home"||adv===match.home)status="ホーム側優勢";
+  if(adv==="AWAY_ADVANTAGE"||adv==="away"||adv===match.away)status="アウェイ側優勢";
 
   const effect=Number(h.effect??h.h2h_effect??0);
-
   let effectText="H2H補正なし";
-
   if(effect>0)effectText="ホーム側 +"+effect.toFixed(3);
   if(effect<0)effectText="アウェイ側 +"+Math.abs(effect).toFixed(3);
 
   return '<div class="h2h">'+
-    '<div class="h2h-title">'+
-    '<div class="h2h-label">H2H / HEAD TO HEAD</div>'+
-    '<div class="h2h-status">'+status+'</div>'+
-    '</div>'+
+    '<div class="h2h-title"><div class="h2h-label">H2H / HEAD TO HEAD</div><div class="h2h-status">'+status+'</div></div>'+
     '<div class="h2h-grid">'+
     '<div class="h2h-stat"><div class="label">直近'+matches+'戦</div><b>'+homeWins+'-'+draws+'-'+awayWins+'</b></div>'+
     '<div class="h2h-stat"><div class="label">得点</div><b>'+homeGoals+' - '+awayGoals+'</b></div>'+
@@ -241,202 +144,45 @@ function renderH2H(match){
     '</div>';
 }
 
-/* -----------------------------
-   ENVIRONMENT / WEATHER
------------------------------ */
-
-function weatherList(){
-  if(!WEATHER)return [];
-
-  if(Array.isArray(WEATHER))return WEATHER;
-
-  if(Array.isArray(WEATHER.matches))return WEATHER.matches;
-  if(Array.isArray(WEATHER.weather))return WEATHER.weather;
-  if(Array.isArray(WEATHER.data))return WEATHER.data;
-
-  return [];
-}
-
-function normalizeText(v){
-  return String(v??"")
-    .normalize("NFKC")
-    .replace(/[・･]/g,"")
-    .replace(/\s+/g,"")
-    .trim();
-}
-
 function weatherForMatch(match){
-  const list=weatherList();
-
-  if(!list.length)return null;
-
-  const byNumber=list.find(x=>
-    Number(x.number)===Number(match.number)
-  );
-
-  if(byNumber)return byNumber;
-
-  const home=normalizeText(match.home);
-  const away=normalizeText(match.away);
-
-  return list.find(x=>{
-    const xhome=normalizeText(x.home??x.home_team??x.homeTeam);
-    const xaway=normalizeText(x.away??x.away_team??x.awayTeam);
-
-    return xhome===home&&xaway===away;
-  })||null;
+  if(!WEATHER||!Array.isArray(WEATHER.matches))return null;
+  return WEATHER.matches.find(x=>Number(x.number)===Number(match.number))||null;
 }
 
-function firstValue(obj,keys){
-  for(const key of keys){
-    if(obj?.[key]!==undefined&&obj?.[key]!==null&&obj?.[key]!==""){
-      return obj[key];
-    }
-  }
-  return null;
-}
-
-function formatNumber(v,digits=1){
+function formatWeatherNumber(v,digits=1){
   const n=Number(v);
   if(!Number.isFinite(n))return null;
-  return n.toFixed(digits);
+  return n.toFixed(digits).replace(/\.0$/," ").trim();
 }
 
 function renderWeather(match){
   const w=weatherForMatch(match);
-
-  if(!w){
-    return '<div class="environment">'+
-      '<div class="environment-title">'+
-      '<div class="environment-label">LAYER 6 / ENVIRONMENT</div>'+
-      '<div class="environment-status">データなし</div>'+
-      '</div>'+
-      '<div class="environment-note">試合会場の天候データを取得できませんでした。</div>'+
-      '</div>';
-  }
-
-  const available=w.available;
-
-  if(available===false){
-    return '<div class="environment">'+
-      '<div class="environment-title">'+
-      '<div class="environment-label">LAYER 6 / ENVIRONMENT</div>'+
-      '<div class="environment-status">取得不可</div>'+
-      '</div>'+
-      '<div class="environment-note">天候予報を取得できませんでした。</div>'+
-      '</div>';
-  }
-
-  const weatherCode=firstValue(w,[
-    "weather_code",
-    "weatherCode",
-    "code"
-  ]);
-
-  const description=firstValue(w,[
-    "weather",
-    "weather_description",
-    "description",
-    "weatherDescription"
-  ])||"—";
-
-  const temperature=firstValue(w,[
-    "temperature",
-    "temperature_c",
-    "temp",
-    "temperature_2m"
-  ]);
-
-  const precipitationProbability=firstValue(w,[
-    "precipitation_probability",
-    "precipitationProbability",
-    "rain_probability",
-    "rainProbability"
-  ]);
-
-  const wind=firstValue(w,[
-    "wind_speed",
-    "windSpeed",
-    "windspeed",
-    "wind_speed_10m"
-  ]);
-
-  const precipitation=firstValue(w,[
-    "precipitation",
-    "precipitation_mm",
-    "rain"
-  ]);
-
-  const kickoffKnown=w.kickoff_known!==false;
-
-  const tempText=formatNumber(temperature,1);
-  const rainText=Number.isFinite(Number(precipitationProbability))
-    ? Math.round(Number(precipitationProbability))+"%"
-    :"—";
-
-  const windText=formatNumber(wind,1);
-  const precipText=formatNumber(precipitation,1);
-
-  const location=w.location||w.venue||w.stadium||"試合会場";
-
-  let status="予報取得済み";
-  if(!kickoffKnown)status="代表時刻の予報";
-
+  if(!w)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">データなし</div></div><div class="environment-note">試合会場の天候データを取得できませんでした。</div></div>';
+  if(w.available===false)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">取得不可</div></div><div class="environment-note">天候予報を取得できませんでした。</div></div>';
+  const temp=formatWeatherNumber(w.temperature_c);
+  const rainProb=Number.isFinite(Number(w.precipitation_probability))?Math.round(Number(w.precipitation_probability))+"%":"—";
+  const precip=formatWeatherNumber(w.precipitation_mm);
+  const wind=formatWeatherNumber(w.wind_speed_kmh);
+  const status=w.kickoff_known?"キックオフ時点の予報":"代表時刻の予報";
   return '<div class="environment">'+
-    '<div class="environment-title">'+
-    '<div class="environment-label">LAYER 6 / ENVIRONMENT</div>'+
-    '<div class="environment-status">'+status+'</div>'+
-    '</div>'+
+    '<div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">'+status+'</div></div>'+
     '<div class="environment-grid">'+
-
-    '<div class="environment-stat">'+
-    '<div class="label">天候</div>'+
-    '<b>🌦 '+description+'</b>'+
+    '<div class="environment-stat"><div class="label">天候</div><b>🌦 '+(w.weather_description||"—")+'</b></div>'+
+    '<div class="environment-stat"><div class="label">気温</div><b>'+(temp!==null?temp+"℃":"—")+'</b></div>'+
+    '<div class="environment-stat"><div class="label">降水確率</div><b>☔ '+rainProb+'</b></div>'+
+    '<div class="environment-stat"><div class="label">風速</div><b>💨 '+(wind!==null?wind+"km/h":"—")+'</b></div>'+
     '</div>'+
-
-    '<div class="environment-stat">'+
-    '<div class="label">気温</div>'+
-    '<b>'+(tempText!==null?tempText+"℃":"—")+'</b>'+
-    '</div>'+
-
-    '<div class="environment-stat">'+
-    '<div class="label">降水確率</div>'+
-    '<b>☔ '+rainText+'</b>'+
-    '</div>'+
-
-    '<div class="environment-stat">'+
-    '<div class="label">風速</div>'+
-    '<b>💨 '+(windText!==null?windText+"m/s":"—")+'</b>'+
-    '</div>'+
-
-    '</div>'+
-
-    '<div class="environment-note">'+
-    location+
-    (precipText!==null?" ／ 降水量 "+precipText+"mm":"")+
-    ' ／ 天候は現時点では予想確率に未反映'+
-    '</div>'+
-
+    '<div class="environment-note">'+(w.weather_location||w.stadium||"試合会場")+(precip!==null?" ／ 降水量 "+precip+"mm":"")+' ／ 天候は現時点では予想確率に未反映</div>'+
     '</div>';
 }
 
-/* -----------------------------
-   RENDER MATCHES
------------------------------ */
-
 function render(){
   if(!PREDICTIONS)return;
-
-  const matches=Array.isArray(PREDICTIONS.matches)
-    ? PREDICTIONS.matches
-    : [];
-
+  const matches=Array.isArray(PREDICTIONS.matches)?PREDICTIONS.matches:[];
   const list=matches.filter(m=>{
     const rec=getRecommendation(m);
-
     if(currentFilter==="all")return true;
     if(currentFilter==="upset")return isUpset(m);
-
     return rec.type===currentFilter;
   });
 
@@ -447,124 +193,40 @@ function render(){
     const u=match.uncertainty||{level:"MEDIUM",reasons:[]};
     const reasons=Array.isArray(u.reasons)?u.reasons:[];
     const confidence=Number(match.confidence||0);
-
-    const p1=pct(p["1"]);
-    const p0=pct(p["0"]);
-    const p2=pct(p["2"]);
+    const p1=pct(p["1"]),p0=pct(p["0"]),p2=pct(p["2"]);
 
     return '<article class="match">'+
-
       '<div class="top">'+
-      '<div>'+
-      '<div class="meta">No.'+match.number+'　'+(match.league||"")+'</div>'+
-      '<div class="teams">'+
-      match.home+
-      '<span class="vs">vs</span>'+
-      match.away+
+      '<div><div class="meta">No.'+match.number+'　'+(match.league||"")+'</div><div class="teams">'+match.home+'<span class="vs">vs</span>'+match.away+'</div></div>'+
+      '<div class="badge '+badgeClass(u.level)+'">'+u.level+' ／信頼度 '+confidence+'</div>'+
       '</div>'+
-      '</div>'+
-
-      '<div class="badge '+badgeClass(u.level)+'">'+
-      u.level+' ／信頼度 '+confidence+
-      '</div>'+
-      '</div>'+
-
       '<div class="probgrid">'+
-
-      '<div class="prob '+(prediction==="1"?"main":"")+'">'+
-      '<span class="prob-label">1　ホーム</span>'+
-      '<b>'+p1+'%</b>'+
-      '<div class="bar"><div class="fill" style="width:'+p1+'%"></div></div>'+
+      '<div class="prob '+(prediction==="1"?"main":"")+'"><span class="prob-label">1　ホーム</span><b>'+p1+'%</b><div class="bar"><div class="fill" style="width:'+p1+'%"></div></div></div>'+
+      '<div class="prob '+(prediction==="0"?"main":"")+'"><span class="prob-label">0　引き分け</span><b>'+p0+'%</b><div class="bar"><div class="fill" style="width:'+p0+'%"></div></div></div>'+
+      '<div class="prob '+(prediction==="2"?"main":"")+'"><span class="prob-label">2　アウェイ</span><b>'+p2+'%</b><div class="bar"><div class="fill" style="width:'+p2+'%"></div></div></div>'+
       '</div>'+
-
-      '<div class="prob '+(prediction==="0"?"main":"")+'">'+
-      '<span class="prob-label">0　引き分け</span>'+
-      '<b>'+p0+'%</b>'+
-      '<div class="bar"><div class="fill" style="width:'+p0+'%"></div></div>'+
+      '<div class="factors"><div class="factor-title">JUDGEの判断材料</div>'+
+      (reasons.length?reasons.map(x=>"• "+x).join("<br>"):"• 複数の指標から総合評価")+
       '</div>'+
-
-      '<div class="prob '+(prediction==="2"?"main":"")+'">'+
-      '<span class="prob-label">2　アウェイ</span>'+
-      '<b>'+p2+'%</b>'+
-      '<div class="bar"><div class="fill" style="width:'+p2+'%"></div></div>'+
-      '</div>'+
-
-      '</div>'+
-
-      '<div class="factors">'+
-      '<div class="factor-title">JUDGEの判断材料</div>'+
-      (reasons.length
-        ?reasons.map(x=>"• "+x).join("<br>")
-        :"• 複数の指標から総合評価")+
-      '</div>'+
-
       renderH2H(match)+
-
       renderWeather(match)+
-
       '<div class="bottom">'+
-
-      '<div>'+
-      '<b class="rec '+rec.type+'">'+recLabel(rec.type)+'</b>'+
-      '<div class="small" style="margin-top:5px">カバー：'+
-      recText(rec)+
-      (rec.probability_coverage!==undefined
-        ?" ／確率カバー "+pct(rec.probability_coverage)+"%"
-        :"")+
+      '<div><b class="rec '+rec.type+'">'+recLabel(rec.type)+'</b><div class="small" style="margin-top:5px">カバー：'+recText(rec)+(rec.probability_coverage!==undefined?" ／確率カバー "+pct(rec.probability_coverage)+"%":"")+'</div></div>'+
+      '<div><span class="analysis">JUDGE SCORE v'+(PREDICTIONS.model?.version||"2.1")+'</span><b class="ai-pick">AI予想：'+prediction+'（'+outcomeLabel(prediction)+'）</b></div>'+
       '</div>'+
-      '</div>'+
-
-      '<div>'+
-      '<span class="analysis">JUDGE SCORE v'+
-      (PREDICTIONS.model?.version||"2.1")+
-      '</span>'+
-      '<b class="ai-pick">AI予想：'+
-      prediction+
-      '（'+
-      outcomeLabel(prediction)+
-      '）</b>'+
-      '</div>'+
-
-      '</div>'+
-
       '</article>';
   }).join("");
 
-  if(!list.length){
-    document.getElementById("matches").innerHTML=
-      '<div class="sub">該当する試合はありません。</div>';
-  }
+  if(!list.length)document.getElementById("matches").innerHTML='<div class="sub">該当する試合はありません。</div>';
 }
-
-/* -----------------------------
-   SUMMARY
------------------------------ */
 
 function renderSummary(){
   if(!PREDICTIONS)return;
-
-  const ms=Array.isArray(PREDICTIONS.matches)
-    ? PREDICTIONS.matches
-    : [];
-
+  const ms=Array.isArray(PREDICTIONS.matches)?PREDICTIONS.matches:[];
   let single=0,dbl=0,triple=0;
-
-  ms.forEach(m=>{
-    const t=getRecommendation(m).type;
-
-    if(t==="single")single++;
-    else if(t==="double")dbl++;
-    else if(t==="triple")triple++;
-  });
-
-  const vals=ms
-    .map(m=>Number(m.confidence))
-    .filter(Number.isFinite);
-
-  const avg=vals.length
-    ?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length)
-    :0;
-
+  ms.forEach(m=>{const t=getRecommendation(m).type;if(t==="single")single++;else if(t==="double")dbl++;else if(t==="triple")triple++;});
+  const vals=ms.map(m=>Number(m.confidence)).filter(Number.isFinite);
+  const avg=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0;
   document.getElementById("safe").textContent=single;
   document.getElementById("double").textContent=dbl;
   document.getElementById("triple").textContent=triple;
@@ -573,8 +235,68 @@ function renderSummary(){
 
 function renderRecommendation(){
   if(!RECOMMENDATION)return;
-
   const s=RECOMMENDATION.summary||{};
   const st=RECOMMENDATION.strategy||{};
+  const budget=s.budget??RECOMMENDATION.budget;
+  const combinations=s.combinations??RECOMMENDATION.combinations;
+  const strategy=s.strategy??st.name??RECOMMENDATION.strategy_name??"-";
+  document.getElementById("budget").textContent=budget!=null?Number(budget).toLocaleString()+"円":"-";
+  document.getElementById("combinations").textContent=combinations!=null?combinations+"通り":"-";
+  document.getElementById("strategy").textContent=strategy;
+  document.getElementById("strategyDescription").textContent=st.description??s.description??strategy;
+  document.getElementById("strategyPriority").textContent=st.priority??s.priority??"";
 
-  const budget=s.budget??RECOMMENDATION.budge
+  const ms=Array.isArray(RECOMMENDATION.matches)?RECOMMENDATION.matches:[];
+  let a=0,b=0,c=0;
+  ms.forEach(x=>{if(x.type==="single")a++;else if(x.type==="double")b++;else if(x.type==="triple")c++;});
+  document.getElementById("singleCount").textContent=a+"試合";
+  document.getElementById("doubleCount").textContent=b+"試合";
+  document.getElementById("tripleCount").textContent=c+"試合";
+}
+
+function renderUpdated(){
+  const v=PREDICTIONS?.updated_at;
+  if(!v)return;
+  const d=new Date(v);
+  if(!Number.isNaN(d.getTime()))document.getElementById("updated").textContent="更新 "+d.toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"});
+}
+
+function renderMode(){
+  document.getElementById("mode").innerHTML='<span class="demo">JUDGE SCORE v'+(PREDICTIONS?.model?.version||"2.1")+' ／ H2H + ENVIRONMENT</span>';
+}
+
+document.querySelectorAll(".btn").forEach(btn=>btn.addEventListener("click",()=>{
+  document.querySelectorAll(".btn").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  currentFilter=btn.dataset.filter;
+  render();
+}));
+
+async function loadJSON(path){
+  const res=await fetch(path+"?v="+Date.now(),{cache:"no-store"});
+  if(!res.ok)throw new Error(path+" を取得できませんでした (HTTP "+res.status+")");
+  return res.json();
+}
+
+async function loadData(){
+  try{
+    const [pred,rec,weather]=await Promise.all([loadJSON("predictions.json"),loadJSON("recommendation.json"),loadJSON("data/weather.json")]);
+    if(!pred||!Array.isArray(pred.matches))throw new Error("predictions.json の形式が正しくありません");
+    PREDICTIONS=pred;
+    RECOMMENDATION=rec;
+    WEATHER=weather;
+    renderSummary();
+    renderRecommendation();
+    renderUpdated();
+    renderMode();
+    render();
+  }catch(error){
+    console.error("JUDGE90 LOAD ERROR:",error);
+    document.getElementById("matches").innerHTML='<div class="error"><strong>JUDGE90データを読み込めませんでした。</strong><br><br>'+error.message+'<br><br>GitHub Pagesのデータ更新直後の場合は、少し待ってからページを再読み込みしてください。</div>';
+  }
+}
+
+loadData();
+</script>
+</body>
+</html>
