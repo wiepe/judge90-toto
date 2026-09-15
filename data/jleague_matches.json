@@ -1,12 +1,12 @@
 {
   "season": "2026/27",
-  "fetched_at": "2026-09-12T12:27:34.605Z",
+  "fetched_at": "2026-09-15T14:16:46.188Z",
   "leagues": [
     {
       "league": "J1",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026",
-      "fetched_at": "2026-09-12T12:27:32.640Z",
+      "fetched_at": "2026-09-15T14:16:44.377Z",
       "matches": [
         {
           "season": "2026/27",
@@ -717,39 +717,6 @@
           "competition": "Ｊ１",
           "section": "第７節第２日",
           "date": "2026-09-12",
-          "kickoff": "19:00",
-          "home": "町田",
-          "score": null,
-          "away": "横浜FM",
-          "stadium": "MUFG国立"
-        },
-        {
-          "season": "2026/27",
-          "competition": "Ｊ１",
-          "section": "第７節第２日",
-          "date": "2026-09-12",
-          "kickoff": "19:00",
-          "home": "Ｇ大阪",
-          "score": null,
-          "away": "FC東京",
-          "stadium": "パナスタ"
-        },
-        {
-          "season": "2026/27",
-          "competition": "Ｊ１",
-          "section": "第７節第２日",
-          "date": "2026-09-12",
-          "kickoff": "19:00",
-          "home": "広島",
-          "score": null,
-          "away": "Ｃ大阪",
-          "stadium": "Ｅピース"
-        },
-        {
-          "season": "2026/27",
-          "competition": "Ｊ１",
-          "section": "第７節第２日",
-          "date": "2026-09-12",
           "kickoff": "19:03",
           "home": "長崎",
           "score": "2-0",
@@ -759,11 +726,44 @@
         {
           "season": "2026/27",
           "competition": "Ｊ１",
+          "section": "第７節第２日",
+          "date": "2026-09-12",
+          "kickoff": "19:04",
+          "home": "Ｇ大阪",
+          "score": "0-2",
+          "away": "FC東京",
+          "stadium": "パナスタ"
+        },
+        {
+          "season": "2026/27",
+          "competition": "Ｊ１",
+          "section": "第７節第２日",
+          "date": "2026-09-12",
+          "kickoff": "19:05",
+          "home": "町田",
+          "score": "1-1",
+          "away": "横浜FM",
+          "stadium": "MUFG国立"
+        },
+        {
+          "season": "2026/27",
+          "competition": "Ｊ１",
+          "section": "第７節第２日",
+          "date": "2026-09-12",
+          "kickoff": "19:05",
+          "home": "広島",
+          "score": "6-1",
+          "away": "Ｃ大阪",
+          "stadium": "Ｅピース"
+        },
+        {
+          "season": "2026/27",
+          "competition": "Ｊ１",
           "section": "第７節第３日",
           "date": "2026-09-13",
-          "kickoff": "18:00",
+          "kickoff": "18:04",
           "home": "東京Ｖ",
-          "score": null,
+          "score": "1-1",
           "away": "千葉",
           "stadium": "味スタ"
         },
@@ -772,9 +772,9 @@
           "competition": "Ｊ１",
           "section": "第７節第３日",
           "date": "2026-09-13",
-          "kickoff": "18:30",
+          "kickoff": "18:33",
           "home": "浦和",
-          "score": null,
+          "score": "1-2",
           "away": "岡山",
           "stadium": "埼玉"
         },
@@ -4194,7 +4194,7 @@
       "league": "J2",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026",
-      "fetched_at": "2026-09-12T12:27:34.154Z",
+      "fetched_at": "2026-09-15T14:16:45.790Z",
       "matches": [
         {
           "season": "2026/27",
@@ -4795,33 +4795,11 @@
           "competition": "Ｊ２",
           "section": "第６節第１日",
           "date": "2026-09-12",
-          "kickoff": "19:00",
+          "kickoff": "19:03",
           "home": "大宮",
-          "score": null,
+          "score": "0-0",
           "away": "大分",
           "stadium": "ＮＡＣＫ"
-        },
-        {
-          "season": "2026/27",
-          "competition": "Ｊ２",
-          "section": "第６節第１日",
-          "date": "2026-09-12",
-          "kickoff": "19:00",
-          "home": "甲府",
-          "score": null,
-          "away": "磐田",
-          "stadium": "ＪＩＴス"
-        },
-        {
-          "season": "2026/27",
-          "competition": "Ｊ２",
-          "section": "第６節第１日",
-          "date": "2026-09-12",
-          "kickoff": "19:00",
-          "home": "宮崎",
-          "score": null,
-          "away": "藤枝",
-          "stadium": "いちご"
         },
         {
           "season": "2026/27",
@@ -4837,24 +4815,46 @@
         {
           "season": "2026/27",
           "competition": "Ｊ２",
-          "section": "第６節第２日",
-          "date": "2026-09-13",
-          "kickoff": "18:00",
-          "home": "仙台",
-          "score": null,
-          "away": "札幌",
-          "stadium": "ユアスタ"
+          "section": "第６節第１日",
+          "date": "2026-09-12",
+          "kickoff": "19:05",
+          "home": "宮崎",
+          "score": "3-2",
+          "away": "藤枝",
+          "stadium": "いちご"
+        },
+        {
+          "season": "2026/27",
+          "competition": "Ｊ２",
+          "section": "第６節第１日",
+          "date": "2026-09-12",
+          "kickoff": "19:05",
+          "home": "甲府",
+          "score": "0-1",
+          "away": "磐田",
+          "stadium": "ＪＩＴス"
         },
         {
           "season": "2026/27",
           "competition": "Ｊ２",
           "section": "第６節第２日",
           "date": "2026-09-13",
-          "kickoff": "18:00",
+          "kickoff": "18:05",
           "home": "新潟",
-          "score": null,
+          "score": "1-0",
           "away": "山形",
           "stadium": "デンカＳ"
+        },
+        {
+          "season": "2026/27",
+          "competition": "Ｊ２",
+          "section": "第６節第２日",
+          "date": "2026-09-13",
+          "kickoff": "18:06",
+          "home": "仙台",
+          "score": "1-1",
+          "away": "札幌",
+          "stadium": "ユアスタ"
         },
         {
           "season": "2026/27",
@@ -8382,7 +8382,7 @@
       "league": "J3",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026",
-      "fetched_at": "2026-09-12T12:27:34.605Z",
+      "fetched_at": "2026-09-15T14:16:46.188Z",
       "matches": [
         {
           "season": "2026/27",
@@ -8972,9 +8972,9 @@
           "competition": "Ｊ３",
           "section": "第６節第１日",
           "date": "2026-09-12",
-          "kickoff": "19:00",
+          "kickoff": "19:03",
           "home": "山口",
-          "score": null,
+          "score": "2-0",
           "away": "群馬",
           "stadium": "みらスタ"
         },
@@ -8983,9 +8983,9 @@
           "competition": "Ｊ３",
           "section": "第６節第２日",
           "date": "2026-09-13",
-          "kickoff": "18:00",
+          "kickoff": "18:03",
           "home": "松本",
-          "score": null,
+          "score": "1-3",
           "away": "相模原",
           "stadium": "サンアル"
         },
@@ -8994,9 +8994,9 @@
           "competition": "Ｊ３",
           "section": "第６節第２日",
           "date": "2026-09-13",
-          "kickoff": "18:00",
+          "kickoff": "18:05",
           "home": "琉球",
-          "score": null,
+          "score": "1-0",
           "away": "讃岐",
           "stadium": "沖縄県陸"
         },
@@ -9005,9 +9005,9 @@
           "competition": "Ｊ３",
           "section": "第６節第２日",
           "date": "2026-09-13",
-          "kickoff": "18:30",
+          "kickoff": "18:35",
           "home": "滋賀",
-          "score": null,
+          "score": "1-2",
           "away": "鹿児島",
           "stadium": "ハトスタ"
         },
@@ -9016,9 +9016,9 @@
           "competition": "Ｊ３",
           "section": "第６節第２日",
           "date": "2026-09-13",
-          "kickoff": "19:00",
+          "kickoff": "19:03",
           "home": "長野",
-          "score": null,
+          "score": "1-1",
           "away": "栃木SC",
           "stadium": "長野Ｕ"
         },
@@ -9027,9 +9027,9 @@
           "competition": "Ｊ３",
           "section": "第６節第２日",
           "date": "2026-09-13",
-          "kickoff": "19:00",
+          "kickoff": "19:04",
           "home": "高知",
-          "score": null,
+          "score": "1-1",
           "away": "金沢",
           "stadium": "ギケンス"
         },
@@ -9038,9 +9038,9 @@
           "competition": "Ｊ３",
           "section": "第６節第３日",
           "date": "2026-09-14",
-          "kickoff": "19:00",
+          "kickoff": "19:05",
           "home": "FC大阪",
-          "score": null,
+          "score": "2-1",
           "away": "愛媛",
           "stadium": "花園"
         },
