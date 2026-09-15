@@ -316,14 +316,14 @@ function calculateProbabilities(
 
   // 力が拮抗するほど引き分けを厚くする
   const drawBase =
-    0.24 +
+    0.23 +
     (
       1 -
       Math.min(
         Math.abs(difference) * 2,
         1
       )
-    ) * 0.12;
+    ) * 0.08;
 
   let homeProb =
     0.5 +
