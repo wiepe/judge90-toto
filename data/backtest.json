@@ -1,0 +1,700 @@
+{
+  "generated_at": "2026-09-15T14:04:09.852Z",
+  "source": "data/jleague_matches.json",
+  "methodology": {
+    "type": "walk-forward",
+    "leakage_safe": true,
+    "note": "各試合の予測時点より後の結果をチーム成績・H2Hに使用しない。2026シーズンの完了済みJ1/J2/J3リーグ戦を対象。",
+    "interpretation": "accuracyだけでなくLogLossとBrierも比較し、単純な的中率の偶然を避ける。"
+  },
+  "coverage": {
+    "completed_matches": 173,
+    "first_date": "2026-08-07",
+    "last_date": "2026-09-12",
+    "test_from_half": "2026-08-23",
+    "test_from_70pct": "2026-09-02"
+  },
+  "results": {
+    "all": {
+      "baseline": {
+        "matches": 173,
+        "hits": 62,
+        "accuracy": 0.3583815028901734,
+        "logLoss": 1.14137381473003,
+        "brier": 0.69163508152271,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 11,
+            "accuracy": 0.28205128205128205
+          },
+          "1": {
+            "n": 80,
+            "hit": 30,
+            "accuracy": 0.375
+          },
+          "2": {
+            "n": 54,
+            "hit": 21,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "noH2H": {
+        "matches": 173,
+        "hits": 62,
+        "accuracy": 0.3583815028901734,
+        "logLoss": 1.14137381473003,
+        "brier": 0.69163508152271,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 11,
+            "accuracy": 0.28205128205128205
+          },
+          "1": {
+            "n": 80,
+            "hit": 30,
+            "accuracy": 0.375
+          },
+          "2": {
+            "n": 54,
+            "hit": 21,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "drawLower": {
+        "matches": 173,
+        "hits": 76,
+        "accuracy": 0.4393063583815029,
+        "logLoss": 1.13182478140249,
+        "brier": 0.6874615540323855,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 0,
+            "accuracy": 0
+          },
+          "1": {
+            "n": 80,
+            "hit": 53,
+            "accuracy": 0.6625
+          },
+          "2": {
+            "n": 54,
+            "hit": 23,
+            "accuracy": 0.42592592592592593
+          }
+        }
+      },
+      "drawMid": {
+        "matches": 173,
+        "hits": 76,
+        "accuracy": 0.4393063583815029,
+        "logLoss": 1.1301336074917196,
+        "brier": 0.6856507579446052,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 0,
+            "accuracy": 0
+          },
+          "1": {
+            "n": 80,
+            "hit": 53,
+            "accuracy": 0.6625
+          },
+          "2": {
+            "n": 54,
+            "hit": 23,
+            "accuracy": 0.42592592592592593
+          }
+        }
+      },
+      "strongerDir": {
+        "matches": 173,
+        "hits": 74,
+        "accuracy": 0.4277456647398844,
+        "logLoss": 1.159915927287843,
+        "brier": 0.7011496336761381,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 6,
+            "accuracy": 0.15384615384615385
+          },
+          "1": {
+            "n": 80,
+            "hit": 47,
+            "accuracy": 0.5875
+          },
+          "2": {
+            "n": 54,
+            "hit": 21,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "ppgHeavy": {
+        "matches": 173,
+        "hits": 62,
+        "accuracy": 0.3583815028901734,
+        "logLoss": 1.1410836925955157,
+        "brier": 0.6914170797576273,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 11,
+            "accuracy": 0.28205128205128205
+          },
+          "1": {
+            "n": 80,
+            "hit": 30,
+            "accuracy": 0.375
+          },
+          "2": {
+            "n": 54,
+            "hit": 21,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "formHeavy": {
+        "matches": 173,
+        "hits": 62,
+        "accuracy": 0.3583815028901734,
+        "logLoss": 1.1418331951340515,
+        "brier": 0.6917511920551631,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 11,
+            "accuracy": 0.28205128205128205
+          },
+          "1": {
+            "n": 80,
+            "hit": 30,
+            "accuracy": 0.375
+          },
+          "2": {
+            "n": 54,
+            "hit": 21,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "venueLower": {
+        "matches": 173,
+        "hits": 62,
+        "accuracy": 0.3583815028901734,
+        "logLoss": 1.1426469952793255,
+        "brier": 0.6925479826081065,
+        "byOutcome": {
+          "0": {
+            "n": 39,
+            "hit": 11,
+            "accuracy": 0.28205128205128205
+          },
+          "1": {
+            "n": 80,
+            "hit": 29,
+            "accuracy": 0.3625
+          },
+          "2": {
+            "n": 54,
+            "hit": 22,
+            "accuracy": 0.4074074074074074
+          }
+        }
+      }
+    },
+    "second_half": {
+      "baseline": {
+        "matches": 87,
+        "hits": 35,
+        "accuracy": 0.40229885057471265,
+        "logLoss": 1.135720141459024,
+        "brier": 0.6843206707487662,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 3,
+            "accuracy": 0.15789473684210525
+          },
+          "1": {
+            "n": 37,
+            "hit": 19,
+            "accuracy": 0.5135135135135135
+          },
+          "2": {
+            "n": 31,
+            "hit": 13,
+            "accuracy": 0.41935483870967744
+          }
+        }
+      },
+      "noH2H": {
+        "matches": 87,
+        "hits": 35,
+        "accuracy": 0.40229885057471265,
+        "logLoss": 1.135720141459024,
+        "brier": 0.6843206707487662,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 3,
+            "accuracy": 0.15789473684210525
+          },
+          "1": {
+            "n": 37,
+            "hit": 19,
+            "accuracy": 0.5135135135135135
+          },
+          "2": {
+            "n": 31,
+            "hit": 13,
+            "accuracy": 0.41935483870967744
+          }
+        }
+      },
+      "drawLower": {
+        "matches": 87,
+        "hits": 37,
+        "accuracy": 0.42528735632183906,
+        "logLoss": 1.1268922279709066,
+        "brier": 0.680866922069545,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 0,
+            "accuracy": 0
+          },
+          "1": {
+            "n": 37,
+            "hit": 22,
+            "accuracy": 0.5945945945945946
+          },
+          "2": {
+            "n": 31,
+            "hit": 15,
+            "accuracy": 0.4838709677419355
+          }
+        }
+      },
+      "drawMid": {
+        "matches": 87,
+        "hits": 37,
+        "accuracy": 0.42528735632183906,
+        "logLoss": 1.1272364667514194,
+        "brier": 0.6802697514661994,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 0,
+            "accuracy": 0
+          },
+          "1": {
+            "n": 37,
+            "hit": 22,
+            "accuracy": 0.5945945945945946
+          },
+          "2": {
+            "n": 31,
+            "hit": 15,
+            "accuracy": 0.4838709677419355
+          }
+        }
+      },
+      "strongerDir": {
+        "matches": 87,
+        "hits": 35,
+        "accuracy": 0.40229885057471265,
+        "logLoss": 1.1590155155986261,
+        "brier": 0.6960342560091467,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 3,
+            "accuracy": 0.15789473684210525
+          },
+          "1": {
+            "n": 37,
+            "hit": 19,
+            "accuracy": 0.5135135135135135
+          },
+          "2": {
+            "n": 31,
+            "hit": 13,
+            "accuracy": 0.41935483870967744
+          }
+        }
+      },
+      "ppgHeavy": {
+        "matches": 87,
+        "hits": 35,
+        "accuracy": 0.40229885057471265,
+        "logLoss": 1.1349733326065536,
+        "brier": 0.6838309796513883,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 3,
+            "accuracy": 0.15789473684210525
+          },
+          "1": {
+            "n": 37,
+            "hit": 19,
+            "accuracy": 0.5135135135135135
+          },
+          "2": {
+            "n": 31,
+            "hit": 13,
+            "accuracy": 0.41935483870967744
+          }
+        }
+      },
+      "formHeavy": {
+        "matches": 87,
+        "hits": 35,
+        "accuracy": 0.40229885057471265,
+        "logLoss": 1.1356443310664557,
+        "brier": 0.6843246221696098,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 3,
+            "accuracy": 0.15789473684210525
+          },
+          "1": {
+            "n": 37,
+            "hit": 19,
+            "accuracy": 0.5135135135135135
+          },
+          "2": {
+            "n": 31,
+            "hit": 13,
+            "accuracy": 0.41935483870967744
+          }
+        }
+      },
+      "venueLower": {
+        "matches": 87,
+        "hits": 35,
+        "accuracy": 0.40229885057471265,
+        "logLoss": 1.1361324842489267,
+        "brier": 0.6850247390679677,
+        "byOutcome": {
+          "0": {
+            "n": 19,
+            "hit": 3,
+            "accuracy": 0.15789473684210525
+          },
+          "1": {
+            "n": 37,
+            "hit": 18,
+            "accuracy": 0.4864864864864865
+          },
+          "2": {
+            "n": 31,
+            "hit": 14,
+            "accuracy": 0.45161290322580644
+          }
+        }
+      }
+    },
+    "final_30pct": {
+      "baseline": {
+        "matches": 52,
+        "hits": 21,
+        "accuracy": 0.40384615384615385,
+        "logLoss": 1.145355830256359,
+        "brier": 0.6930947409368818,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 1,
+            "accuracy": 0.09090909090909091
+          },
+          "1": {
+            "n": 23,
+            "hit": 13,
+            "accuracy": 0.5652173913043478
+          },
+          "2": {
+            "n": 18,
+            "hit": 7,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "noH2H": {
+        "matches": 52,
+        "hits": 21,
+        "accuracy": 0.40384615384615385,
+        "logLoss": 1.145355830256359,
+        "brier": 0.6930947409368818,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 1,
+            "accuracy": 0.09090909090909091
+          },
+          "1": {
+            "n": 23,
+            "hit": 13,
+            "accuracy": 0.5652173913043478
+          },
+          "2": {
+            "n": 18,
+            "hit": 7,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "drawLower": {
+        "matches": 52,
+        "hits": 23,
+        "accuracy": 0.4423076923076923,
+        "logLoss": 1.1345600410286851,
+        "brier": 0.6881378335406255,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 0,
+            "accuracy": 0
+          },
+          "1": {
+            "n": 23,
+            "hit": 15,
+            "accuracy": 0.6521739130434783
+          },
+          "2": {
+            "n": 18,
+            "hit": 8,
+            "accuracy": 0.4444444444444444
+          }
+        }
+      },
+      "drawMid": {
+        "matches": 52,
+        "hits": 23,
+        "accuracy": 0.4423076923076923,
+        "logLoss": 1.1333859807983357,
+        "brier": 0.6866345395126429,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 0,
+            "accuracy": 0
+          },
+          "1": {
+            "n": 23,
+            "hit": 15,
+            "accuracy": 0.6521739130434783
+          },
+          "2": {
+            "n": 18,
+            "hit": 8,
+            "accuracy": 0.4444444444444444
+          }
+        }
+      },
+      "strongerDir": {
+        "matches": 52,
+        "hits": 21,
+        "accuracy": 0.40384615384615385,
+        "logLoss": 1.1666266040800646,
+        "brier": 0.7042326140378008,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 1,
+            "accuracy": 0.09090909090909091
+          },
+          "1": {
+            "n": 23,
+            "hit": 13,
+            "accuracy": 0.5652173913043478
+          },
+          "2": {
+            "n": 18,
+            "hit": 7,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "ppgHeavy": {
+        "matches": 52,
+        "hits": 21,
+        "accuracy": 0.40384615384615385,
+        "logLoss": 1.1445168980888583,
+        "brier": 0.6925581019469114,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 1,
+            "accuracy": 0.09090909090909091
+          },
+          "1": {
+            "n": 23,
+            "hit": 13,
+            "accuracy": 0.5652173913043478
+          },
+          "2": {
+            "n": 18,
+            "hit": 7,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "formHeavy": {
+        "matches": 52,
+        "hits": 21,
+        "accuracy": 0.40384615384615385,
+        "logLoss": 1.1468074227757958,
+        "brier": 0.6942118512237047,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 1,
+            "accuracy": 0.09090909090909091
+          },
+          "1": {
+            "n": 23,
+            "hit": 13,
+            "accuracy": 0.5652173913043478
+          },
+          "2": {
+            "n": 18,
+            "hit": 7,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      },
+      "venueLower": {
+        "matches": 52,
+        "hits": 20,
+        "accuracy": 0.38461538461538464,
+        "logLoss": 1.1476991417341362,
+        "brier": 0.6950614767830279,
+        "byOutcome": {
+          "0": {
+            "n": 11,
+            "hit": 1,
+            "accuracy": 0.09090909090909091
+          },
+          "1": {
+            "n": 23,
+            "hit": 12,
+            "accuracy": 0.5217391304347826
+          },
+          "2": {
+            "n": 18,
+            "hit": 7,
+            "accuracy": 0.3888888888888889
+          }
+        }
+      }
+    }
+  },
+  "variants": {
+    "baseline": {
+      "ppg": 0.25,
+      "winRate": 0.2,
+      "gd": 0.2,
+      "form": 0.15,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.24,
+      "drawRange": 0.12,
+      "directionScale": 0.55
+    },
+    "noH2H": {
+      "ppg": 0.25,
+      "winRate": 0.2,
+      "gd": 0.2,
+      "form": 0.15,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 0,
+      "drawBase": 0.24,
+      "drawRange": 0.12,
+      "directionScale": 0.55
+    },
+    "drawLower": {
+      "ppg": 0.25,
+      "winRate": 0.2,
+      "gd": 0.2,
+      "form": 0.15,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.22,
+      "drawRange": 0.1,
+      "directionScale": 0.55
+    },
+    "drawMid": {
+      "ppg": 0.25,
+      "winRate": 0.2,
+      "gd": 0.2,
+      "form": 0.15,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.23,
+      "drawRange": 0.08,
+      "directionScale": 0.55
+    },
+    "strongerDir": {
+      "ppg": 0.25,
+      "winRate": 0.2,
+      "gd": 0.2,
+      "form": 0.15,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.24,
+      "drawRange": 0.12,
+      "directionScale": 0.7
+    },
+    "ppgHeavy": {
+      "ppg": 0.35,
+      "winRate": 0.15,
+      "gd": 0.2,
+      "form": 0.1,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.24,
+      "drawRange": 0.12,
+      "directionScale": 0.55
+    },
+    "formHeavy": {
+      "ppg": 0.2,
+      "winRate": 0.15,
+      "gd": 0.2,
+      "form": 0.25,
+      "venue": 0.2,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.24,
+      "drawRange": 0.12,
+      "directionScale": 0.55
+    },
+    "venueLower": {
+      "ppg": 0.3,
+      "winRate": 0.2,
+      "gd": 0.2,
+      "form": 0.15,
+      "venue": 0.15,
+      "homeAdvantage": 0.055,
+      "h2hScale": 1,
+      "drawBase": 0.24,
+      "drawRange": 0.12,
+      "directionScale": 0.55
+    }
+  },
+  "model_change": "このファイルは検証のみ。自動でpredict.mjsを変更しない。"
+}
