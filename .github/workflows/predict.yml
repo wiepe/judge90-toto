@@ -3,6 +3,9 @@ name: Run JUDGE90 Prediction
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: "0 0 * * 6"
+
 permissions:
   contents: write
 
@@ -31,6 +34,9 @@ jobs:
       - name: Fetch H2H data
         run: node scripts/fetch_h2h.mjs
 
+      - name: Fetch weather data
+        run: node scripts/fetch_weather.mjs
+
       - name: Run prediction
         run: node scripts/predict.mjs
 
@@ -46,6 +52,7 @@ jobs:
           git add data/team_metrics.json
           git add data/toto_matches.json
           git add data/h2h.json
+          git add data/weather.json
           git add predictions.json
           git add recommendation.json
 
