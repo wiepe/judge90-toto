@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-12T12:27:50.918Z",
+  "fetched_at": "2026-09-18T13:40:38.047Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
   "available": "13/13",
@@ -19,12 +19,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T18:00",
-      "temperature_c": 28,
-      "precipitation_mm": 0.1,
-      "precipitation_probability": 64,
-      "wind_speed_kmh": 9.8,
-      "weather_code": 51,
-      "weather_description": "弱い霧雨"
+      "temperature_c": 24.2,
+      "precipitation_mm": 0,
+      "precipitation_probability": 53,
+      "wind_speed_kmh": 6.5,
+      "weather_code": 3,
+      "weather_description": "曇り"
     },
     {
       "number": 2,
@@ -41,10 +41,10 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T18:00",
-      "temperature_c": 24,
-      "precipitation_mm": 0.4,
-      "precipitation_probability": 68,
-      "wind_speed_kmh": 5.7,
+      "temperature_c": 21.1,
+      "precipitation_mm": 0.1,
+      "precipitation_probability": 43,
+      "wind_speed_kmh": 5.5,
       "weather_code": 51,
       "weather_description": "弱い霧雨"
     },
@@ -63,12 +63,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T18:00",
-      "temperature_c": 24.1,
-      "precipitation_mm": 0.1,
-      "precipitation_probability": 44,
-      "wind_speed_kmh": 7.9,
-      "weather_code": 51,
-      "weather_description": "弱い霧雨"
+      "temperature_c": 25.9,
+      "precipitation_mm": 0,
+      "precipitation_probability": 18,
+      "wind_speed_kmh": 13.7,
+      "weather_code": 3,
+      "weather_description": "曇り"
     },
     {
       "number": 4,
@@ -85,12 +85,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T19:00",
-      "temperature_c": 25.5,
-      "precipitation_mm": 0.5,
-      "precipitation_probability": 63,
-      "wind_speed_kmh": 10.1,
-      "weather_code": 53,
-      "weather_description": "霧雨"
+      "temperature_c": 26.6,
+      "precipitation_mm": 0,
+      "precipitation_probability": 16,
+      "wind_speed_kmh": 6.5,
+      "weather_code": 2,
+      "weather_description": "薄曇り"
     },
     {
       "number": 5,
@@ -107,12 +107,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T19:00",
-      "temperature_c": 23.6,
-      "precipitation_mm": 0.4,
-      "precipitation_probability": 61,
-      "wind_speed_kmh": 5.4,
-      "weather_code": 51,
-      "weather_description": "弱い霧雨"
+      "temperature_c": 20.8,
+      "precipitation_mm": 0,
+      "precipitation_probability": 37,
+      "wind_speed_kmh": 5.5,
+      "weather_code": 2,
+      "weather_description": "薄曇り"
     },
     {
       "number": 6,
@@ -129,12 +129,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T18:00",
-      "temperature_c": 29.4,
+      "temperature_c": 24.4,
       "precipitation_mm": 0,
-      "precipitation_probability": 38,
-      "wind_speed_kmh": 16.9,
-      "weather_code": 3,
-      "weather_description": "曇り"
+      "precipitation_probability": 63,
+      "wind_speed_kmh": 7.5,
+      "weather_code": 1,
+      "weather_description": "晴れ"
     },
     {
       "number": 7,
@@ -151,12 +151,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T19:00",
-      "temperature_c": 23.6,
-      "precipitation_mm": 0.4,
-      "precipitation_probability": 58,
-      "wind_speed_kmh": 9.1,
-      "weather_code": 51,
-      "weather_description": "弱い霧雨"
+      "temperature_c": 21,
+      "precipitation_mm": 0,
+      "precipitation_probability": 32,
+      "wind_speed_kmh": 7.6,
+      "weather_code": 3,
+      "weather_description": "曇り"
     },
     {
       "number": 8,
@@ -173,12 +173,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-20T17:00",
-      "temperature_c": 27.3,
-      "precipitation_mm": 0,
-      "precipitation_probability": 47,
-      "wind_speed_kmh": 8.6,
-      "weather_code": 2,
-      "weather_description": "薄曇り"
+      "temperature_c": 22.4,
+      "precipitation_mm": 7,
+      "precipitation_probability": 97,
+      "wind_speed_kmh": 14.3,
+      "weather_code": 63,
+      "weather_description": "雨"
     },
     {
       "number": 9,
@@ -195,10 +195,10 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-20T17:00",
-      "temperature_c": 28.4,
+      "temperature_c": 26,
       "precipitation_mm": 0,
-      "precipitation_probability": 32,
-      "wind_speed_kmh": 11.6,
+      "precipitation_probability": 21,
+      "wind_speed_kmh": 14.4,
       "weather_code": 3,
       "weather_description": "曇り"
     },
@@ -217,12 +217,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T19:00",
-      "temperature_c": 23.1,
-      "precipitation_mm": 0.1,
-      "precipitation_probability": 62,
-      "wind_speed_kmh": 3,
-      "weather_code": 51,
-      "weather_description": "弱い霧雨"
+      "temperature_c": 22.1,
+      "precipitation_mm": 0,
+      "precipitation_probability": 4,
+      "wind_speed_kmh": 5.6,
+      "weather_code": 2,
+      "weather_description": "薄曇り"
     },
     {
       "number": 11,
@@ -239,10 +239,10 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T18:00",
-      "temperature_c": 24.7,
+      "temperature_c": 25.3,
       "precipitation_mm": 0,
-      "precipitation_probability": 36,
-      "wind_speed_kmh": 18.5,
+      "precipitation_probability": 6,
+      "wind_speed_kmh": 9.8,
       "weather_code": 3,
       "weather_description": "曇り"
     },
@@ -261,12 +261,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T19:00",
-      "temperature_c": 26.6,
+      "temperature_c": 25.2,
       "precipitation_mm": 0,
-      "precipitation_probability": 43,
-      "wind_speed_kmh": 11.6,
-      "weather_code": 3,
-      "weather_description": "曇り"
+      "precipitation_probability": 2,
+      "wind_speed_kmh": 7.2,
+      "weather_code": 2,
+      "weather_description": "薄曇り"
     },
     {
       "number": 13,
@@ -283,12 +283,12 @@
       "available": true,
       "kickoff_known": true,
       "forecast_time": "2026-09-19T19:00",
-      "temperature_c": 23.1,
-      "precipitation_mm": 0.6,
-      "precipitation_probability": 51,
-      "wind_speed_kmh": 1.2,
-      "weather_code": 53,
-      "weather_description": "霧雨"
+      "temperature_c": 22.9,
+      "precipitation_mm": 0.2,
+      "precipitation_probability": 15,
+      "wind_speed_kmh": 1.5,
+      "weather_code": 51,
+      "weather_description": "弱い霧雨"
     }
   ]
 }
