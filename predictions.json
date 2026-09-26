@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T02:36:06.645Z",
+  "updated_at": "2026-09-26T02:53:47.579Z",
   "model": {
     "name": "JUDGE SCORE",
     "version": "2.1",
@@ -8,251 +8,27 @@
   "matches": [
     {
       "number": 1,
-      "home": "アビスパ福岡",
-      "away": "サンフレッチェ広島",
-      "league": "J1",
-      "prediction": "2",
-      "probabilities": {
-        "0": 0.25,
-        "1": 0.221,
-        "2": 0.529
-      },
-      "confidence": 50,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "アウェイ側の直近フォームが優位",
-          "H2H直近5戦はアウェイ側が優勢（0-1-4）"
-        ]
-      },
-      "signals": {
-        "season_strength": "広島",
-        "momentum": "広島",
-        "home_advantage": "福岡",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 5,
-            "home_wins": 0,
-            "draws": 1,
-            "away_wins": 4,
-            "home_goals": 3,
-            "away_goals": 7
-          },
-          "all_time": {
-            "matches": 19,
-            "home_wins": 0,
-            "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "AWAY_ADVANTAGE",
-          "effect": -0.02
-        }
-      }
-    },
-    {
-      "number": 2,
-      "home": "浦和レッズ",
-      "away": "東京ヴェルディ",
-      "league": "J1",
-      "prediction": "1",
-      "probabilities": {
-        "0": 0.274,
-        "1": 0.453,
-        "2": 0.273
-      },
-      "confidence": 32,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の直近フォームが優位",
-          "H2H直近5戦は拮抗（1-3-1）"
-        ]
-      },
-      "signals": {
-        "season_strength": "浦和",
-        "momentum": "浦和",
-        "home_advantage": "浦和",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 5,
-            "home_wins": 1,
-            "draws": 3,
-            "away_wins": 1,
-            "home_goals": 5,
-            "away_goals": 4
-          },
-          "all_time": {
-            "matches": 10,
-            "home_wins": 0,
-            "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "BALANCED",
-          "effect": 0
-        }
-      }
-    },
-    {
-      "number": 3,
-      "home": "清水エスパルス",
-      "away": "ジェフユナイテッド千葉",
-      "league": "J1",
-      "prediction": "1",
-      "probabilities": {
-        "0": 0.273,
-        "1": 0.455,
-        "2": 0.272
-      },
-      "confidence": 33,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦はホーム側が優勢（3-1-1）"
-        ]
-      },
-      "signals": {
-        "season_strength": "清水",
-        "momentum": "清水",
-        "home_advantage": "清水",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 5,
-            "home_wins": 3,
-            "draws": 1,
-            "away_wins": 1,
-            "home_goals": 11,
-            "away_goals": 7
-          },
-          "all_time": {
-            "matches": 16,
-            "home_wins": 0,
-            "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "HOME_ADVANTAGE",
-          "effect": 0.01
-        }
-      }
-    },
-    {
-      "number": 4,
-      "home": "ファジアーノ岡山",
-      "away": "京都",
+      "home": "山形",
+      "away": "サガン鳥栖",
       "league": "J2",
       "prediction": "1",
       "probabilities": {
-        "0": 0.238,
-        "1": 0.561,
-        "2": 0.201
+        "0": 0.286,
+        "1": 0.416,
+        "2": 0.298
       },
-      "confidence": 58,
+      "confidence": 21,
       "uncertainty": {
-        "level": "LOW",
+        "level": "MEDIUM",
         "reasons": [
           "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
-          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
-        ]
-      },
-      "signals": {
-        "season_strength": "岡山",
-        "momentum": "岡山",
-        "home_advantage": "岡山",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 5,
-            "home_wins": 1,
-            "draws": 1,
-            "away_wins": 3,
-            "home_goals": 3,
-            "away_goals": 9
-          },
-          "all_time": {
-            "matches": 24,
-            "home_wins": 0,
-            "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "AWAY_ADVANTAGE",
-          "effect": -0.01
-        }
-      }
-    },
-    {
-      "number": 5,
-      "home": "ＦＣ東京",
-      "away": "名古屋グランパス",
-      "league": "J1",
-      "prediction": "1",
-      "probabilities": {
-        "0": 0.23,
-        "1": 0.584,
-        "2": 0.186
-      },
-      "confidence": 64,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
-          "H2H直近5戦はホーム側が優勢（3-1-1）"
-        ]
-      },
-      "signals": {
-        "season_strength": "FC東京",
-        "momentum": "FC東京",
-        "home_advantage": "FC東京",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 5,
-            "home_wins": 3,
-            "draws": 1,
-            "away_wins": 1,
-            "home_goals": 11,
-            "away_goals": 6
-          },
-          "all_time": {
-            "matches": 20,
-            "home_wins": 0,
-            "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "HOME_ADVANTAGE",
-          "effect": 0.01
-        }
-      }
-    },
-    {
-      "number": 6,
-      "home": "Ｖ・ファーレン長崎",
-      "away": "セレッソ大阪",
-      "league": "J1",
-      "prediction": "1",
-      "probabilities": {
-        "0": 0.299,
-        "1": 0.378,
-        "2": 0.323
-      },
-      "confidence": 10,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "両チームの総合評価が近い",
-          "ホーム側の開催地成績が優位",
-          "アウェイ側の直近フォームが優位",
           "H2H直近5戦はアウェイ側が優勢（1-0-4）"
         ]
       },
       "signals": {
-        "season_strength": "Ｃ大阪",
-        "momentum": "Ｃ大阪",
-        "home_advantage": "長崎",
+        "season_strength": "山形",
+        "momentum": "山形",
+        "home_advantage": "山形",
         "h2h": {
           "available": true,
           "recent5": {
@@ -260,11 +36,11 @@
             "home_wins": 1,
             "draws": 0,
             "away_wins": 4,
-            "home_goals": 4,
+            "home_goals": 5,
             "away_goals": 9
           },
           "all_time": {
-            "matches": 6,
+            "matches": 23,
             "home_wins": 0,
             "draws": 0,
             "away_wins": 0
@@ -275,27 +51,73 @@
       }
     },
     {
-      "number": 7,
-      "home": "横浜Ｆ・マリノス",
-      "away": "水戸ホーリーホック",
-      "league": "J1",
+      "number": 2,
+      "home": "富山",
+      "away": "横浜ＦＣ",
+      "league": "J2",
       "prediction": "1",
       "probabilities": {
-        "0": 0.293,
-        "1": 0.395,
-        "2": 0.312
+        "0": 0.291,
+        "1": 0.401,
+        "2": 0.308
       },
-      "confidence": 15,
+      "confidence": 17,
       "uncertainty": {
         "level": "MEDIUM",
         "reasons": [
-          "両チームの総合評価が近い"
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（0-1-4）"
         ]
       },
       "signals": {
-        "season_strength": "横浜FM",
-        "momentum": "横浜FM",
-        "home_advantage": "横浜FM",
+        "season_strength": "富山",
+        "momentum": "富山",
+        "home_advantage": "富山",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 0,
+            "draws": 1,
+            "away_wins": 4,
+            "home_goals": 2,
+            "away_goals": 7
+          },
+          "all_time": {
+            "matches": 13,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.02
+        }
+      }
+    },
+    {
+      "number": 3,
+      "home": "徳島ヴォルティス",
+      "away": "栃木Ｃ",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.3,
+        "1": 0.374,
+        "2": 0.326
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "徳島",
+        "momentum": "徳島",
+        "home_advantage": "徳島",
         "h2h": {
           "available": false,
           "recent5": null,
@@ -306,84 +128,41 @@
       }
     },
     {
-      "number": 8,
-      "home": "ＦＣ町田ゼルビア",
-      "away": "柏",
-      "league": "J1",
+      "number": 4,
+      "home": "大宮",
+      "away": "ヴァンフォーレ甲府",
+      "league": "J2",
       "prediction": "1",
       "probabilities": {
-        "0": 0.278,
-        "1": 0.439,
-        "2": 0.283
+        "0": 0.259,
+        "1": 0.5,
+        "2": 0.241
       },
-      "confidence": 28,
+      "confidence": 43,
       "uncertainty": {
-        "level": "MEDIUM",
+        "level": "LOW",
         "reasons": [
+          "ホーム側の開催地成績が優位",
           "ホーム側の直近フォームが優位",
-          "H2H直近5戦は拮抗（2-1-2）"
+          "H2H直近5戦はアウェイ側が優勢（2-0-3）"
         ]
       },
       "signals": {
-        "season_strength": "町田",
-        "momentum": "町田",
-        "home_advantage": "町田",
+        "season_strength": "大宮",
+        "momentum": "大宮",
+        "home_advantage": "大宮",
         "h2h": {
           "available": true,
           "recent5": {
             "matches": 5,
             "home_wins": 2,
-            "draws": 1,
-            "away_wins": 2,
-            "home_goals": 6,
-            "away_goals": 5
-          },
-          "all_time": {
-            "matches": 6,
-            "home_wins": 0,
             "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "BALANCED",
-          "effect": 0
-        }
-      }
-    },
-    {
-      "number": 9,
-      "home": "ガンバ大阪",
-      "away": "神戸",
-      "league": "J1",
-      "prediction": "2",
-      "probabilities": {
-        "0": 0.248,
-        "1": 0.219,
-        "2": 0.532
-      },
-      "confidence": 51,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "アウェイ側の直近フォームが優位",
-          "H2H直近5戦はアウェイ側が優勢（1-2-2）"
-        ]
-      },
-      "signals": {
-        "season_strength": "神戸",
-        "momentum": "神戸",
-        "home_advantage": "Ｇ大阪",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 5,
-            "home_wins": 1,
-            "draws": 2,
-            "away_wins": 2,
-            "home_goals": 7,
+            "away_wins": 3,
+            "home_goals": 5,
             "away_goals": 8
           },
           "all_time": {
-            "matches": 42,
+            "matches": 32,
             "home_wins": 0,
             "draws": 0,
             "away_wins": 0
@@ -394,29 +173,213 @@
       }
     },
     {
-      "number": 10,
-      "home": "山形",
-      "away": "富山",
+      "number": 5,
+      "home": "宮崎",
+      "away": "札幌",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.267,
+        "1": 0.474,
+        "2": 0.259
+      },
+      "confidence": 37,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "宮崎",
+        "momentum": "宮崎",
+        "home_advantage": "宮崎",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "number": 6,
+      "home": "ブラウブリッツ秋田",
+      "away": "新潟",
       "league": "J2",
       "prediction": "2",
       "probabilities": {
-        "0": 0.309,
-        "1": 0.343,
-        "2": 0.348
+        "0": 0.3,
+        "1": 0.327,
+        "2": 0.373
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位",
+          "H2H直近4戦は拮抗（2-0-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "新潟",
+        "momentum": "新潟",
+        "home_advantage": "秋田",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 4,
+            "home_wins": 2,
+            "draws": 0,
+            "away_wins": 2,
+            "home_goals": 3,
+            "away_goals": 6
+          },
+          "all_time": {
+            "matches": 4,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "BALANCED",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "number": 7,
+      "home": "いわきＦＣ",
+      "away": "仙台",
+      "league": "J2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.279,
+        "1": 0.284,
+        "2": 0.436
+      },
+      "confidence": 27,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
+        ]
+      },
+      "signals": {
+        "season_strength": "仙台",
+        "momentum": "仙台",
+        "home_advantage": "いわき",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 1,
+            "draws": 1,
+            "away_wins": 3,
+            "home_goals": 5,
+            "away_goals": 8
+          },
+          "all_time": {
+            "matches": 6,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.01
+        }
+      }
+    },
+    {
+      "number": 8,
+      "home": "ジュビロ磐田",
+      "away": "ヴァンラーレ八戸",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.267,
+        "1": 0.476,
+        "2": 0.257
+      },
+      "confidence": 38,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "磐田",
+        "momentum": "磐田",
+        "home_advantage": "磐田",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "number": 9,
+      "home": "ＦＣ今治",
+      "away": "湘南ベルマーレ",
+      "league": "J2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.265,
+        "1": 0.253,
+        "2": 0.482
+      },
+      "confidence": 39,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "signals": {
+        "season_strength": "湘南",
+        "momentum": "湘南",
+        "home_advantage": "今治",
+        "h2h": {
+          "available": false,
+          "recent5": null,
+          "all_time": null,
+          "advantage": "neutral",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "number": 10,
+      "home": "大分",
+      "away": "藤枝",
+      "league": "J2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.31,
+        "1": 0.345,
+        "2": 0.345
       },
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
           "両チームの総合評価が近い",
-          "アウェイ側の直近フォームが優位",
+          "ホーム側の開催地成績が優位",
           "H2H直近5戦はホーム側が優勢（3-2-0）"
         ]
       },
       "signals": {
-        "season_strength": "富山",
-        "momentum": "富山",
-        "home_advantage": "山形",
+        "season_strength": "藤枝",
+        "momentum": "大分",
+        "home_advantage": "大分",
         "h2h": {
           "available": true,
           "recent5": {
@@ -424,7 +387,7 @@
             "home_wins": 3,
             "draws": 2,
             "away_wins": 0,
-            "home_goals": 8,
+            "home_goals": 6,
             "away_goals": 2
           },
           "all_time": {
@@ -440,73 +403,27 @@
     },
     {
       "number": 11,
-      "home": "藤枝",
-      "away": "大宮",
+      "home": "群馬",
+      "away": "熊本",
       "league": "J2",
       "prediction": "2",
       "probabilities": {
-        "0": 0.305,
-        "1": 0.335,
-        "2": 0.36
+        "0": 0.275,
+        "1": 0.275,
+        "2": 0.45
       },
-      "confidence": 10,
+      "confidence": 31,
       "uncertainty": {
-        "level": "HIGH",
+        "level": "LOW",
         "reasons": [
-          "両チームの総合評価が近い",
           "アウェイ側の直近フォームが優位",
-          "H2H直近4戦はアウェイ側が優勢（1-0-3）"
-        ]
-      },
-      "signals": {
-        "season_strength": "大宮",
-        "momentum": "大宮",
-        "home_advantage": "藤枝",
-        "h2h": {
-          "available": true,
-          "recent5": {
-            "matches": 4,
-            "home_wins": 1,
-            "draws": 0,
-            "away_wins": 3,
-            "home_goals": 5,
-            "away_goals": 7
-          },
-          "all_time": {
-            "matches": 4,
-            "home_wins": 0,
-            "draws": 0,
-            "away_wins": 0
-          },
-          "advantage": "AWAY_ADVANTAGE",
-          "effect": -0.013
-        }
-      }
-    },
-    {
-      "number": 12,
-      "home": "新潟",
-      "away": "ジュビロ磐田",
-      "league": "J2",
-      "prediction": "1",
-      "probabilities": {
-        "0": 0.282,
-        "1": 0.427,
-        "2": 0.291
-      },
-      "confidence": 25,
-      "uncertainty": {
-        "level": "MEDIUM",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
           "H2H直近5戦はアウェイ側が優勢（0-2-3）"
         ]
       },
       "signals": {
-        "season_strength": "新潟",
-        "momentum": "新潟",
-        "home_advantage": "新潟",
+        "season_strength": "熊本",
+        "momentum": "熊本",
+        "home_advantage": "群馬",
         "h2h": {
           "available": true,
           "recent5": {
@@ -515,10 +432,10 @@
             "draws": 2,
             "away_wins": 3,
             "home_goals": 5,
-            "away_goals": 9
+            "away_goals": 12
           },
           "all_time": {
-            "matches": 30,
+            "matches": 18,
             "home_wins": 0,
             "draws": 0,
             "away_wins": 0
@@ -529,46 +446,90 @@
       }
     },
     {
-      "number": 13,
-      "home": "ヴァンフォーレ甲府",
-      "away": "徳島ヴォルティス",
+      "number": 12,
+      "home": "福島",
+      "away": "長野",
       "league": "J2",
-      "prediction": "1",
+      "prediction": "2",
       "probabilities": {
-        "0": 0.286,
-        "1": 0.416,
-        "2": 0.298
+        "0": 0.27,
+        "1": 0.264,
+        "2": 0.467
       },
-      "confidence": 21,
+      "confidence": 36,
       "uncertainty": {
-        "level": "MEDIUM",
+        "level": "LOW",
         "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦はアウェイ側が優勢（2-0-3）"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（0-1-4）"
         ]
       },
       "signals": {
-        "season_strength": "甲府",
-        "momentum": "甲府",
-        "home_advantage": "甲府",
+        "season_strength": "長野",
+        "momentum": "長野",
+        "home_advantage": "福島",
         "h2h": {
           "available": true,
           "recent5": {
             "matches": 5,
-            "home_wins": 2,
-            "draws": 0,
-            "away_wins": 3,
-            "home_goals": 9,
-            "away_goals": 11
+            "home_wins": 0,
+            "draws": 1,
+            "away_wins": 4,
+            "home_goals": 2,
+            "away_goals": 9
           },
           "all_time": {
-            "matches": 30,
+            "matches": 26,
             "home_wins": 0,
             "draws": 0,
             "away_wins": 0
           },
           "advantage": "AWAY_ADVANTAGE",
-          "effect": -0.005
+          "effect": -0.02
+        }
+      }
+    },
+    {
+      "number": 13,
+      "home": "栃木SC",
+      "away": "松本",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.271,
+        "1": 0.463,
+        "2": 0.266
+      },
+      "confidence": 35,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近2戦はホーム側が優勢（1-1-0）"
+        ]
+      },
+      "signals": {
+        "season_strength": "栃木SC",
+        "momentum": "栃木SC",
+        "home_advantage": "栃木SC",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 2,
+            "home_wins": 1,
+            "draws": 1,
+            "away_wins": 0,
+            "home_goals": 4,
+            "away_goals": 2
+          },
+          "all_time": {
+            "matches": 2,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "HOME_ADVANTAGE",
+          "effect": 0.013
         }
       }
     }
