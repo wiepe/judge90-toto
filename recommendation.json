@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T02:09:48.370Z",
+  "generated_at": "2026-10-17T02:07:44.221Z",
   "engine": "JUDGE 90 Betting Strategy Engine",
   "version": "2.0",
   "budget": 1000,
@@ -20,268 +20,275 @@
   "matches": [
     {
       "number": 1,
-      "home": "ＦＣ町田ゼルビア",
-      "away": "京都",
-      "league": "J1",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.529,
-      "confidence": 50,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦は拮抗（2-1-2）"
-        ]
-      },
-      "uncertainty_score": 0.545
-    },
-    {
-      "number": 2,
-      "home": "柏",
+      "home": "清水エスパルス",
       "away": "ガンバ大阪",
       "league": "J1",
       "recommendation": [
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.589,
+      "probability_coverage": 0.526,
+      "confidence": 50,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（1-2-2）"
+        ]
+      },
+      "uncertainty_score": 0.552
+    },
+    {
+      "number": 2,
+      "home": "ジェフユナイテッド千葉",
+      "away": "横浜Ｆ・マリノス",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.487,
+      "confidence": 40,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（0-2-3）"
+        ]
+      },
+      "uncertainty_score": 0.644
+    },
+    {
+      "number": 3,
+      "home": "東京ヴェルディ",
+      "away": "ＦＣ東京",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.604,
+      "confidence": 67,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近4戦はアウェイ側が優勢（0-3-1）"
+        ]
+      },
+      "uncertainty_score": 0.389
+    },
+    {
+      "number": 4,
+      "home": "セレッソ大阪",
+      "away": "川崎フロンターレ",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.378,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
+        ]
+      },
+      "uncertainty_score": 0.909
+    },
+    {
+      "number": 5,
+      "home": "鹿島",
+      "away": "Ｖ・ファーレン長崎",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.517,
+      "confidence": 47,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位",
+          "H2H直近2戦はホーム側が優勢（2-0-0）"
+        ]
+      },
+      "uncertainty_score": 0.574
+    },
+    {
+      "number": 6,
+      "home": "サンフレッチェ広島",
+      "away": "京都",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.594,
       "confidence": 65,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
           "ホーム側の直近フォームが優位",
-          "H2H直近5戦は拮抗（2-1-2）"
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
         ]
       },
-      "uncertainty_score": 0.407
-    },
-    {
-      "number": 3,
-      "home": "藤枝",
-      "away": "湘南ベルマーレ",
-      "league": "J2",
-      "recommendation": [
-        "1",
-        "0",
-        "2"
-      ],
-      "type": "triple",
-      "probability_coverage": 1,
-      "confidence": 10,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "両チームの総合評価が近い"
-        ]
-      },
-      "uncertainty_score": 0.966
-    },
-    {
-      "number": 4,
-      "home": "ヴァンフォーレ甲府",
-      "away": "富山",
-      "league": "J2",
-      "recommendation": [
-        "2"
-      ],
-      "type": "single",
-      "probability_coverage": 0.48,
-      "confidence": 39,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "アウェイ側の直近フォームが優位",
-          "H2H直近5戦は拮抗（2-1-2）"
-        ]
-      },
-      "uncertainty_score": 0.66
-    },
-    {
-      "number": 5,
-      "home": "大分",
-      "away": "山形",
-      "league": "J2",
-      "recommendation": [
-        "1",
-        "0",
-        "2"
-      ],
-      "type": "triple",
-      "probability_coverage": 1,
-      "confidence": 10,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦はアウェイ側が優勢（0-1-4）"
-        ]
-      },
-      "uncertainty_score": 0.914
-    },
-    {
-      "number": 6,
-      "home": "新潟",
-      "away": "徳島ヴォルティス",
-      "league": "J2",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.46,
-      "confidence": 34,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦は拮抗（1-3-1）"
-        ]
-      },
-      "uncertainty_score": 0.707
+      "uncertainty_score": 0.401
     },
     {
       "number": 7,
-      "home": "札幌",
-      "away": "いわきＦＣ",
+      "home": "水戸ホーリーホック",
+      "away": "浦和レッズ",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.364,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "アウェイ側の直近フォームが優位"
+        ]
+      },
+      "uncertainty_score": 0.944
+    },
+    {
+      "number": 8,
+      "home": "ファジアーノ岡山",
+      "away": "神戸",
       "league": "J2",
       "recommendation": [
         "2"
       ],
       "type": "single",
-      "probability_coverage": 0.379,
+      "probability_coverage": 0.394,
+      "confidence": 15,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近4戦はアウェイ側が優勢（1-1-2）"
+        ]
+      },
+      "uncertainty_score": 0.87
+    },
+    {
+      "number": 9,
+      "home": "ＦＣ町田ゼルビア",
+      "away": "アビスパ福岡",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.594,
+      "confidence": 66,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はホーム側が優勢（1-4-0）"
+        ]
+      },
+      "uncertainty_score": 0.401
+    },
+    {
+      "number": 10,
+      "home": "柏",
+      "away": "名古屋グランパス",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.581,
+      "confidence": 63,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ]
+      },
+      "uncertainty_score": 0.415
+    },
+    {
+      "number": 11,
+      "home": "札幌",
+      "away": "ブラウブリッツ秋田",
+      "league": "J2",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
           "ホーム側の開催地成績が優位",
-          "アウェイ側の直近フォームが優位",
-          "H2H直近2戦はアウェイ側が優勢（0-1-1）"
-        ]
-      },
-      "uncertainty_score": 0.907
-    },
-    {
-      "number": 8,
-      "home": "ヴァンラーレ八戸",
-      "away": "横浜ＦＣ",
-      "league": "J2",
-      "recommendation": [
-        "2"
-      ],
-      "type": "single",
-      "probability_coverage": 0.39,
-      "confidence": 14,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "複数の指標から総合評価"
-        ]
-      },
-      "uncertainty_score": 0.88
-    },
-    {
-      "number": 9,
-      "home": "仙台",
-      "away": "ジュビロ磐田",
-      "league": "J2",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.51,
-      "confidence": 46,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
-          "H2H直近5戦はアウェイ側が優勢（2-0-3）"
-        ]
-      },
-      "uncertainty_score": 0.59
-    },
-    {
-      "number": 10,
-      "home": "栃木Ｃ",
-      "away": "ＦＣ今治",
-      "league": "J2",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.479,
-      "confidence": 39,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位"
-        ]
-      },
-      "uncertainty_score": 0.663
-    },
-    {
-      "number": 11,
-      "home": "ブラウブリッツ秋田",
-      "away": "サガン鳥栖",
-      "league": "J2",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.429,
-      "confidence": 25,
-      "uncertainty": {
-        "level": "MEDIUM",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
-          "H2H直近2戦はアウェイ側が優勢（0-0-2）"
-        ]
-      },
-      "uncertainty_score": 0.784
-    },
-    {
-      "number": 12,
-      "home": "讃岐",
-      "away": "栃木SC",
-      "league": "J2",
-      "recommendation": [
-        "2"
-      ],
-      "type": "single",
-      "probability_coverage": 0.412,
-      "confidence": 20,
-      "uncertainty": {
-        "level": "MEDIUM",
-        "reasons": [
           "アウェイ側の直近フォームが優位",
           "H2H直近2戦は拮抗（1-0-1）"
         ]
       },
-      "uncertainty_score": 0.826
+      "uncertainty_score": 0.959
+    },
+    {
+      "number": 12,
+      "home": "大分",
+      "away": "新潟",
+      "league": "J2",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（3-0-2）"
+        ]
+      },
+      "uncertainty_score": 0.976
     },
     {
       "number": 13,
-      "home": "琉球",
-      "away": "金沢",
+      "home": "ＦＣ今治",
+      "away": "ヴァンラーレ八戸",
       "league": "J2",
       "recommendation": [
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.428,
-      "confidence": 25,
+      "probability_coverage": 0.401,
+      "confidence": 17,
       "uncertainty": {
         "level": "MEDIUM",
         "reasons": [
-          "ホーム側の開催地成績が優位",
+          "両チームの総合評価が近い",
+          "ホーム側の直近フォームが優位",
           "H2H直近5戦はホーム側が優勢（4-0-1）"
         ]
       },
-      "uncertainty_score": 0.786
+      "uncertainty_score": 0.853
     }
   ]
 }
