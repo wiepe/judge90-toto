@@ -1,0 +1,97 @@
+# One-time permission proof using this real operational repair, never a fake research candidate.
+name: Verify Actions can create the operational repair PR
+on:
+  push:
+    branches: [fix/automation-completion]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: node scripts/check_release.mjs
+      - name: Create the actual repair PR and record permission readiness
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh pr list --state all --head fix/automation-completion --json number --jq 'length')
+          if [ "$existing" != 0 ]; then
+            echo 'An existing repair PR is present; no duplicate or permission-success claim.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          cat > /tmp/judge90-repair.md <<'BODY'
+          PR #8の全機能がmainへ反映されたことを確認し、リリース後の自動初期化と公開Pagesの検査を追加します。
+          初期化はmainのCI成功後に必要な場合だけ週次研究→予測・配信を共通ワークフローで実行します。
+          3時間更新と月曜09:47の定期設定を維持し、本番モデル・登録済み候補・未使用確認期間は変更しません。
+          この運用修正PRをActions自身から作成することで、研究候補を偽らずにPR作成権限を実証します。
+          公開サイトの取得・表示検査、Node/Pythonテスト、研究再現、既存の失敗時保持をCIで検証します。
+          本番へのマージと公開は承認待ちです。詳細は docs/automation-completion.md を参照してください。
+          BODY
+          if gh pr create --base main --head fix/automation-completion --title 'リリース後の自動初期化と公開サイト・PR作成権限を検証' --body-file /tmp/judge90-repair.md > /tmp/pr-result.txt 2>&1; then
+            cat /tmp/pr-result.txt | tee -a "$GITHUB_STEP_SUMMARY"
+            echo 'Actions created the real operational repair PR. No research candidate was fabricated.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            cat /tmp/pr-result.txt | tee -a "$GITHUB_STEP_SUMMARY"
+            echo 'Actions PR creation was not confirmed. Keep the incumbent; an operator can submit the repair via the connected GitHub app.' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: actions-pr-permission-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/pr-result.txt
+          retention-days: 30
+  verify_main:
+    # Authorized operational verification: dispatch existing main workflows, never change model/code.
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      actions: write
+    concurrency:
+      group: judge90-main-operational-verification
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Inspect current main initialization evidence
+        id: plan
+        run: |
+          git fetch origin main
+          mkdir -p /tmp/judge90-main-state
+          git archive FETCH_HEAD data predictions.json recommendation.json | tar -x -C /tmp/judge90-main-state
+          cd /tmp/judge90-main-state
+          node "$GITHUB_WORKSPACE/scripts/initialization_plan.mjs"
+      - name: Verify existing main evaluation and prediction workflows in order
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEED_RESEARCH: ${{ steps.plan.outputs.research }}
+          NEED_PREDICTION: ${{ steps.plan.outputs.prediction }}
+        run: |
+          dispatch_and_watch() {
+            workflow="$1"
+            since=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+            gh workflow run "$workflow" --ref main
+            run_id=''
+            for attempt in $(seq 1 30); do
+              run_id=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/runs?event=workflow_dispatch&branch=main&per_page=20" --jq ".workflow_runs | map(select(.created_at >= \"$since\")) | first | .id // empty")
+              if [ -n "$run_id" ]; then break; fi
+              sleep 2
+            done
+            if [ -z "$run_id" ]; then echo "Dispatched workflow could not be identified"; return 1; fi
+            echo "Verified dispatch: $workflow run $run_id" | tee -a "$GITHUB_STEP_SUMMARY"
+            gh run watch "$run_id" --exit-status
+          }
+          if [ "$NEED_RESEARCH" = true ]; then dispatch_and_watch continuous-evaluation.yml; fi
+          if [ "$NEED_PREDICTION" = true ]; then dispatch_and_watch predict.yml; fi

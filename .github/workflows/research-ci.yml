@@ -3,7 +3,7 @@ on:
   pull_request:
     paths: [research/**, scripts/research/**, scripts/lib/portfolio.mjs, tests/research/**, tests/portfolio.test.mjs, .github/workflows/research-ci.yml]
   push:
-    branches: [feat/stage2-model-validation]
+    branches: [feat/stage2-model-validation, fix/automation-completion]
 permissions:
   contents: read
 jobs:

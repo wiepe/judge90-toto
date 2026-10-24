@@ -1,0 +1,56 @@
+name: Initialize automatic operations after a verified release
+on:
+  workflow_run:
+    workflows: [Stage 1 checks]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
+concurrency:
+  group: judge90-initialization
+  cancel-in-progress: false
+jobs:
+  inspect:
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository))
+    runs-on: ubuntu-latest
+    outputs:
+      prediction: ${{ steps.plan.outputs.prediction }}
+      research: ${{ steps.plan.outputs.research }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check_release.mjs
+      - id: plan
+        run: node scripts/initialization_plan.mjs
+  research:
+    needs: inspect
+    if: needs.inspect.outputs.research == 'true'
+    uses: ./.github/workflows/continuous-evaluation.yml
+  prediction:
+    needs: [inspect, research]
+    if: always() && needs.inspect.result == 'success' && needs.inspect.outputs.prediction == 'true'
+    uses: ./.github/workflows/predict.yml
+  verify:
+    needs: [inspect, research, prediction]
+    if: always() && needs.inspect.result == 'success' && (needs.prediction.result == 'success' || needs.prediction.result == 'skipped')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Verify published Pages and data
+        run: node scripts/check_public_site.mjs
