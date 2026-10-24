@@ -40,3 +40,7 @@ Node77件（既存68＋初期化・公開内容・データ混在・期限切れ
 未解決として区別する項目：定刻起動の継続実績、十分な将来確認データ、実際の研究候補が条件を満たした後のPR。本番モデルの変更は一切承認していない。
 
 追加証拠：読み取り専用運用CI run40108683731で、実公開URLの画面/モジュール8件が一致し、第1668回・current=true・4予算・49試合選択肢を確認した。公開データの確認済み実績は0件、研究状態はpreview。PR作成権限の最初の検査run40108683865は失敗しており、成功扱いしていない。診断を標準出力・artifactにも保存するよう追加した。
+
+権限検査の確定結果：run40108942993で `GitHub Actions is not permitted to create or approve pull requests` と明示的に拒否された。リポジトリ管理画面の Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests の確認が必要。無断で設定を変更せず、研究候補を偽造して迂回しない。
+
+本番での実行確認：今回の運用確認用ブランチに限る一度限りのActionsジョブから、既存mainの週次評価と予測ワークフローをworkflow_dispatchで順番に起動する。これは利用者が依頼した通常更新処理の確認で、mainのコードやモデルを変更する操作ではない。研究・配信の証跡が既に新しければ重複起動しない。PR作成許可の拒否とは独立に検証し、結果は実行IDと終了状態で報告する。
