@@ -45,3 +45,25 @@ class ContinuousTests(unittest.TestCase):
   later=next_registration(rows,reg,datetime(2027,6,7,tzinfo=timezone.utc))
   self.assertEqual(later['cycle'],1);self.assertEqual(later['root_experiment_id'],'first');self.assertGreater(later['protocol']['prospective_start'],protocol['prospective_end']);self.assertEqual(reg['protocol']['prospective_start'],'2026-11-01')
   budget=sum(.05/((i+1)*(i+2)) for i in range(1000));self.assertLess(budget,.05)
+ def test_weekly_integration_proposes_only_after_gate_and_starts_new_window(self):
+  import tempfile
+  from unittest.mock import patch
+  from continuous import weekly,match_id
+  root=Path(tempfile.mkdtemp());research=root/'research';(research/'continuous').mkdir(parents=True)
+  registration=json.loads((Path(__file__).resolve().parents[2]/'research/continuous/registration.json').read_text())
+  (research/'continuous/registration.json').write_text(json.dumps(registration))
+  now=datetime(2027,6,7,tzinfo=timezone.utc);leagues=[];predictions=[]
+  for league in ['J1','J2','J3']:
+   games=[]
+   for i in range(200):
+    y=['1','0','2'][i%3];score={'1':'2-1','0':'1-1','2':'1-2'}[y]
+    game={'league':league,'date':f'2027-{i%3+1:02d}-{i%28+1:02d}','home_team_id':league+'h'+str(i),'away_team_id':league+'a'+str(i),'home':'H','away':'A','season':'2026/27','score':score};games.append(game)
+    base={'1':.4,'0':.3,'2':.3};models={n:dict(base) for n in ['current','league_mean','elo','poisson','dixon_coles','ensemble','calibrated_dc','calibrated_ensemble']};models[registration['selected']]={k:.8 if k==y else .1 for k in ['1','0','2']}
+    predictions.append({**game,'id':match_id(game),'models':models})
+   leagues.append({'league':league,'matches':games})
+  forecasts=root/'data/research/forecasts';forecasts.mkdir(parents=True);(forecasts/'fixture.json').write_text(json.dumps({'experiment_id':registration['experiment_id'],'generated_at':'2026-12-30T15:00:00+00:00','training_cutoff':'2026-12-31','matches':predictions}))
+  fixtures=root/'fixtures.json';fixtures.write_text(json.dumps({'fetched_at':now.isoformat(),'leagues':leagues}))
+  with patch('continuous.ROOT',research),patch('continuous.sources',return_value=registration['sources']),patch('continuous.load_matches',return_value=([],{})):
+   report=weekly(root,fixtures,now);self.assertTrue(report['proposal_eligible']);self.assertTrue((research/'proposed-model.json').exists());self.assertEqual(len(list((root/'data/research/registrations').glob('*.json'))),1)
+   original=(root/'data/research/decisions'/f"{registration['experiment_id']}.json").read_text()
+   later=datetime(2027,6,14,tzinfo=timezone.utc);fixtures.write_text(json.dumps({'fetched_at':later.isoformat(),'leagues':leagues}));new=weekly(root,fixtures,later);self.assertFalse(new['proposal_eligible']);self.assertEqual(new['decision'],'collect_new_prospective_data');self.assertEqual((root/'data/research/decisions'/f"{registration['experiment_id']}.json").read_text(),original)

@@ -35,3 +35,5 @@ GitHub Actionsは毎週土曜9:17日本時間に更新します。手動実行�
 - [研究用比較画面](research/report.html)
 
 自動運用の実行時刻・検証・制約は [自動運用レポート](docs/automatic-operation.md) を参照してください。
+
+継続評価は [配信証跡と指標](docs/continuous-evaluation.md)、[候補登録・将来検定](docs/challenger-validation.md)、[予算と画面](docs/strategy-dashboard.md) を参照してください。画面は `validation.html` です。本番モデルは承認なしに変更しません。

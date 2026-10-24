@@ -103,6 +103,7 @@ test('offline end-to-end: metrics -> predictions -> recommendations -> validated
   }});
   assert.equal(status.state,'success');assert.equal(status.round_id,'1665');
   const pred=JSON.parse(readFileSync(join(path,'predictions.json')));assert.equal(pred.matches.length,13);assert.equal(pred.dataset_id,status.dataset_id);
+  const rec=JSON.parse(readFileSync(join(path,'recommendation.json')));assert.deepEqual(rec.budget_comparisons.map(p=>p.budget_yen),[100,500,1000,3000]);for(const p of rec.budget_comparisons)assert.ok(p.individual.cost_yen<=p.budget_yen);
   const history=join(path,'data/history');assert.ok(readdirSync(history).some(f=>readFileSync(join(history,f),'utf8').trim()===old.trim()));
   assert.equal(JSON.parse(readFileSync(join(path,'data/team_metrics.json'))).teams[0].team_id.startsWith('j90-'),true);
 });

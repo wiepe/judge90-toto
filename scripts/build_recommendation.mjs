@@ -1,3 +1,4 @@
+import { optimizeTickets, optimizePortfolio } from './lib/portfolio.mjs';
 import { roundMetadata } from './lib/integrity.mjs';
 import { readFileSync, writeFileSync } from "node:fs";
 
@@ -504,6 +505,7 @@ const strategyType =
   );
 
 const output = {
+  budget_comparisons: [100,500,1000,3000].map(budget => ({budget_yen:budget,individual:optimizeTickets(matches,budget),rectangular:optimizePortfolio(matches,budget)})),
   ...roundMetadata(predictionsData),
   source_digest: predictionsData.source_digest,
   generated_at:
