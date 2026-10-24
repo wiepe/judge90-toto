@@ -1,0 +1,490 @@
+{
+  "research_only": true,
+  "source": "research/results/budget_input_example.json",
+  "round_id": null,
+  "source_note": "2025年の最初の検証予測13試合。実際のtoto開催回を再現したものではなく、購入用の最新予測でもありません。独立仮定の計算例です。",
+  "probability_warning": "試合間の独立を仮定したモデル上の推定値です。実際の当選確率・賞金・期待収益を保証しません。",
+  "plans": [
+    {
+      "budget_limit_yen": 100,
+      "unit_price_yen": 100,
+      "combinations": 1,
+      "cost_yen": 100,
+      "estimated_all_13_covered_probability": 0.000041243471685374744,
+      "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+      "expected_return": null,
+      "payout_estimate": null,
+      "selections": [
+        {
+          "number": 1,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4136772071044731
+        },
+        {
+          "number": 2,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5608833072172639
+        },
+        {
+          "number": 3,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4483967761562337
+        },
+        {
+          "number": 4,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.3992529270452911
+        },
+        {
+          "number": 5,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.49700598076004276
+        },
+        {
+          "number": 6,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44764319204829717
+        },
+        {
+          "number": 7,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44660736601409995
+        },
+        {
+          "number": 8,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.47806131363437104
+        },
+        {
+          "number": 9,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.3995568704511957
+        },
+        {
+          "number": 10,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5762575123471997
+        },
+        {
+          "number": 11,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.3971612461732569
+        },
+        {
+          "number": 12,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.5582002187955374
+        },
+        {
+          "number": 13,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4095013766859732
+        }
+      ]
+    },
+    {
+      "budget_limit_yen": 1000,
+      "unit_price_yen": 100,
+      "combinations": 9,
+      "cost_yen": 900,
+      "estimated_all_13_covered_probability": 0.0002600999337509025,
+      "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+      "expected_return": null,
+      "payout_estimate": null,
+      "selections": [
+        {
+          "number": 1,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4136772071044731
+        },
+        {
+          "number": 2,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5608833072172639
+        },
+        {
+          "number": 3,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4483967761562337
+        },
+        {
+          "number": 4,
+          "type": "triple",
+          "outcomes": [
+            "1",
+            "0",
+            "2"
+          ],
+          "coverage": 1
+        },
+        {
+          "number": 5,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.49700598076004276
+        },
+        {
+          "number": 6,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44764319204829717
+        },
+        {
+          "number": 7,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44660736601409995
+        },
+        {
+          "number": 8,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.47806131363437104
+        },
+        {
+          "number": 9,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.3995568704511957
+        },
+        {
+          "number": 10,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5762575123471997
+        },
+        {
+          "number": 11,
+          "type": "triple",
+          "outcomes": [
+            "2",
+            "1",
+            "0"
+          ],
+          "coverage": 1
+        },
+        {
+          "number": 12,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.5582002187955374
+        },
+        {
+          "number": 13,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4095013766859732
+        }
+      ]
+    },
+    {
+      "budget_limit_yen": 5000,
+      "unit_price_yen": 100,
+      "combinations": 48,
+      "cost_yen": 4800,
+      "estimated_all_13_covered_probability": 0.0011029466928860116,
+      "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+      "expected_return": null,
+      "payout_estimate": null,
+      "selections": [
+        {
+          "number": 1,
+          "type": "triple",
+          "outcomes": [
+            "1",
+            "2",
+            "0"
+          ],
+          "coverage": 1
+        },
+        {
+          "number": 2,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5608833072172639
+        },
+        {
+          "number": 3,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4483967761562337
+        },
+        {
+          "number": 4,
+          "type": "double",
+          "outcomes": [
+            "1",
+            "0"
+          ],
+          "coverage": 0.7177427066257753
+        },
+        {
+          "number": 5,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.49700598076004276
+        },
+        {
+          "number": 6,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44764319204829717
+        },
+        {
+          "number": 7,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44660736601409995
+        },
+        {
+          "number": 8,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.47806131363437104
+        },
+        {
+          "number": 9,
+          "type": "double",
+          "outcomes": [
+            "2",
+            "1"
+          ],
+          "coverage": 0.7490865076774789
+        },
+        {
+          "number": 10,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5762575123471997
+        },
+        {
+          "number": 11,
+          "type": "double",
+          "outcomes": [
+            "2",
+            "1"
+          ],
+          "coverage": 0.7251022357095711
+        },
+        {
+          "number": 12,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.5582002187955374
+        },
+        {
+          "number": 13,
+          "type": "double",
+          "outcomes": [
+            "1",
+            "2"
+          ],
+          "coverage": 0.7362237712410957
+        }
+      ]
+    },
+    {
+      "budget_limit_yen": 10000,
+      "unit_price_yen": 100,
+      "combinations": 96,
+      "cost_yen": 9600,
+      "estimated_all_13_covered_probability": 0.0018319548224101402,
+      "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+      "expected_return": null,
+      "payout_estimate": null,
+      "selections": [
+        {
+          "number": 1,
+          "type": "triple",
+          "outcomes": [
+            "1",
+            "2",
+            "0"
+          ],
+          "coverage": 1
+        },
+        {
+          "number": 2,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5608833072172639
+        },
+        {
+          "number": 3,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.4483967761562337
+        },
+        {
+          "number": 4,
+          "type": "double",
+          "outcomes": [
+            "1",
+            "0"
+          ],
+          "coverage": 0.7177427066257753
+        },
+        {
+          "number": 5,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.49700598076004276
+        },
+        {
+          "number": 6,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.44764319204829717
+        },
+        {
+          "number": 7,
+          "type": "double",
+          "outcomes": [
+            "2",
+            "1"
+          ],
+          "coverage": 0.7417987860796611
+        },
+        {
+          "number": 8,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.47806131363437104
+        },
+        {
+          "number": 9,
+          "type": "double",
+          "outcomes": [
+            "2",
+            "1"
+          ],
+          "coverage": 0.7490865076774789
+        },
+        {
+          "number": 10,
+          "type": "single",
+          "outcomes": [
+            "1"
+          ],
+          "coverage": 0.5762575123471997
+        },
+        {
+          "number": 11,
+          "type": "double",
+          "outcomes": [
+            "2",
+            "1"
+          ],
+          "coverage": 0.7251022357095711
+        },
+        {
+          "number": 12,
+          "type": "single",
+          "outcomes": [
+            "2"
+          ],
+          "coverage": 0.5582002187955374
+        },
+        {
+          "number": 13,
+          "type": "double",
+          "outcomes": [
+            "1",
+            "2"
+          ],
+          "coverage": 0.7362237712410957
+        }
+      ]
+    }
+  ]
+}

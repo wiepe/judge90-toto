@@ -27,6 +27,9 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 .panel{background:linear-gradient(135deg,#16223a,#0f1728);border:1px solid #2b3b5c;border-radius:20px;padding:20px;margin:24px 0 42px}.panel h2{margin:0 0 6px}.portfolio-main{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.portfolio-stat{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:14px}.portfolio-stat .label{color:var(--muted);font-size:12px}.portfolio-stat b{display:block;font-size:25px;margin-top:5px}.strategy{margin-top:14px;padding:14px;border-radius:14px;background:#0b1220;border:1px solid var(--line)}.strategy-name{color:var(--accent);font-size:20px;font-weight:800}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.plan{background:#0b1220;border:1px solid var(--line);border-radius:14px;padding:14px}.plan b{display:block;margin-top:7px}.small{font-size:12px;color:var(--muted)}.loading{padding:30px 0;text-align:center;color:var(--muted)}.error{padding:20px;border:1px solid #6b2736;background:#24111a;border-radius:15px;color:#fda4af;line-height:1.7}
 @media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.plans,.portfolio-main{grid-template-columns:1fr}.teams{font-size:17px}.badge{font-size:11px}.bottom{align-items:flex-start;flex-direction:column}.h2h-grid{grid-template-columns:1fr 1fr 1fr}.environment-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:430px){.prob b{font-size:19px}.teams{font-size:16px}.h2h-stat b{font-size:15px}.environment-stat b{font-size:14px}}
+
+.notice{padding:16px;border:1px solid #315b58;background:#102522;border-radius:14px;line-height:1.7;color:#c2eee5}.notice.reference{border-color:#6b5b20;background:#221e12;color:#fde8ad}.quality-panel{margin:18px 0;padding:14px;background:#111c2d;border:1px solid #30435f;border-radius:12px}.quality-panel summary,.match-evidence summary{cursor:pointer;font-weight:700;min-height:32px}.quality-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.quality-item{background:#0a1020;padding:12px;border-radius:10px;font-size:13px;overflow-wrap:anywhere}.quality-item strong{display:block}.source-badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.source-badges span{font-size:12px;background:#16243a;border-radius:6px;padding:5px 8px}.venue-line{font-size:13px;color:#b9c9dd;margin-top:8px;overflow-wrap:anywhere}.match-evidence{margin-top:12px;border-top:1px solid #26324a;padding-top:10px}.budget-input{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.budget-input input{width:160px;max-width:100%;padding:12px;background:#0a1020;color:#fff;border:1px solid #698097;border-radius:8px;font-size:16px}.budget-input button{min-height:44px}.budget-picks{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.budget-picks span{padding:5px 8px;background:#14243a;border-radius:6px}.budget-result{margin-top:12px;line-height:1.8;overflow-wrap:anywhere}
+@media(max-width:650px){.hero{padding:14px 0 10px}.hero h1{font-size:27px}.hero>.sub{font-size:13px}.hero .tag,.hero>.sub,.head .tag{display:none}.hero .demo{margin-top:4px;padding:4px 8px;font-size:11px}.quality-panel{padding:10px;margin:10px 0}.quality-panel summary{font-size:13px}.notice{padding:12px}.stats{margin:12px 0}.stat{padding:10px}.stat b{font-size:22px}.quality-list{grid-template-columns:1fr}.top{flex-wrap:wrap}.top>div:first-child{min-width:0;max-width:100%}.badge{white-space:normal}.head{align-items:flex-start;padding-top:12px;padding-bottom:12px}#updated{max-width:45%;overflow-wrap:anywhere}.factors{font-size:14px}.notice{font-size:14px}.prob-label{font-size:11px}.prob{padding:10px 4px}}
 </style>
 </head>
 <body>
@@ -36,17 +39,18 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 <div id="dataStatus" class="error" role="status" aria-live="polite">データの開催回と更新状態を確認しています…</div>
 <section class="hero">
 <div class="tag">WEEKLY MATCH INTELLIGENCE</div>
-<h1>予想ではなく、<br>「どこで迷うべきか」を。</h1>
-<div class="sub">Jリーグの成績・フォーム・ホーム/アウェイ成績・過去の対戦成績を統合し、totoでは限られたダブル・トリプルを「不確実な試合」に集中させる。</div>
+<h1 id="roundTitle">toto対象13試合の予測</h1>
+<div class="sub">予測確率と根拠を確認し、上限予算から買い目を比較できます。</div>
 <div id="mode"></div>
 </section>
 
-<section class="stats">
+<details class="quality-panel" id="dataQuality"><summary id="qualitySummary">13試合のデータ取得・使用状況</summary><p class="small">成績・直近フォーム・ホーム/アウェイ成績を予測に使用。H2Hは利用可能な場合のみ補正。天気と会場所在地は参考情報で、負傷・スタメンは未使用です。</p><p class="small"><a href="research/report.html">過去のモデル比較・採用見送りの理由</a></p><div id="qualityList" class="quality-list"></div></details>
+<details id="statsOverview" class="quality-panel"><summary id="statsOverviewSummary">配信済み買い目の概要</summary><section class="stats">
 <div class="stat"><span class="small">シングル</span><br><b id="safe">-</b></div>
 <div class="stat"><span class="small">ダブル</span><br><b id="double">-</b></div>
 <div class="stat"><span class="small">トリプル</span><br><b id="triple">-</b></div>
 <div class="stat"><span class="small">平均判定スコア</span><br><b id="avg">-</b></div>
-</section>
+</section></details>
 
 <div class="controls">
 <button class="btn active" data-filter="all">すべて</button>
@@ -73,24 +77,47 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 <div class="plan"><span>ダブル</span><b id="doubleCount">-</b><div class="small">上位2候補をカバー</div></div>
 <div class="plan"><span>トリプル</span><b id="tripleCount">-</b><div class="small">全結果をカバー</div></div>
 </div>
+<h3>予算上限を指定して比較</h3><p class="small">計算のみです。各試合の独立を仮定した推定で、実際の当選確率・収益を保証しません。</p><div class="budget-input"><label for="budgetLimit">上限（円）</label><input id="budgetLimit" type="number" min="100" max="1000000" step="100" value="1000" inputmode="numeric"><button class="btn" id="calculateBudget" type="button">買い目を計算</button><button class="btn" data-budget="1000" type="button">1,000円</button><button class="btn" data-budget="5000" type="button">5,000円</button></div><div id="budgetResult" class="budget-result" role="status" aria-live="polite"></div>
 </section>
 </main>
 
 <script src="assets/data-status.js"></script>
+<script src="assets/source-status.js"></script>
 <script>
 "use strict";
 
 let PREDICTIONS=null;
 let RECOMMENDATION=null;
 let WEATHER=null;
+let FIXTURES=null;
 let currentFilter="all";
 let UPDATE_STATUS=null;
 function renderDataStatus(){
   const state=Judge90DataStatus.assess(PREDICTIONS,RECOMMENDATION,WEATHER,UPDATE_STATUS);
   document.getElementById("dataStatus").textContent=state.message;
+  document.getElementById("dataStatus").className=state.current?"notice reference":"error";
   document.getElementById("purchasePanel").hidden=!state.current;
 }
 
+globalThis.Judge90BudgetContext=()=>({predictions:PREDICTIONS,current:Judge90DataStatus.assess(PREDICTIONS,RECOMMENDATION,WEATHER,UPDATE_STATUS).current});
+function usableWeather(){
+  if(!WEATHER)return null;
+  if(PREDICTIONS?.dataset_id&&(WEATHER.dataset_id!==PREDICTIONS.dataset_id||WEATHER.round_id!==PREDICTIONS.round_id||WEATHER.matches?.length!==13))return null;
+  return WEATHER;
+}
+function usableFixtures(){
+  if(!FIXTURES||FIXTURES.matches?.length!==13)return null;
+  if(PREDICTIONS?.dataset_id&&(FIXTURES.dataset_id!==PREDICTIONS.dataset_id||FIXTURES.round_id!==PREDICTIONS.round_id))return null;
+  return FIXTURES;
+}
+function fixtureForMatch(m){return usableFixtures()?.matches.find(f=>f.number===m.number&&f.home===m.home&&f.away===m.away)||null;}
+function renderDataQuality(){
+  if(!globalThis.Judge90DataSources||!PREDICTIONS)return;
+  const audit=Judge90DataSources.summarize(PREDICTIONS,usableWeather(),usableFixtures());
+  document.getElementById('qualitySummary').textContent='データ取得状況：予測 '+audit.prediction+'/13・会場 '+audit.venue+'/13・天気 '+audit.weather+'/13';
+  const list=document.getElementById('qualityList');list.replaceChildren();
+  for(const row of audit.rows){const card=document.createElement('div');card.className='quality-item';const title=document.createElement('strong');title.textContent='No.'+row.number+' '+row.home+' vs '+row.away;card.append(title);const detail=document.createElement('div');detail.textContent='予測：'+(row.prediction.state==='available'?'生成済み':'確認不可')+' ／ 会場：'+(row.venue.stadium||'未取得')+' ／ '+row.h2h.label+' ／ 天気：'+row.weather.label;card.append(detail);list.append(card);}
+}
 function outcomeLabel(o){
   return o==="1"?"ホーム勝利":o==="0"?"引き分け":o==="2"?"アウェイ勝利":o||"-";
 }
@@ -111,6 +138,7 @@ function isUpset(match){
   return match?.uncertainty?.level==="HIGH";
 }
 
+function escapeHTML(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function pct(v){return Math.round(Number(v||0)*100)}
 function badgeClass(level){return level==="HIGH"?"high":level==="MEDIUM"?"medium":"low"}
 function recLabel(type){return type==="double"?"ダブル推奨":type==="triple"?"トリプル推奨":"シングル推奨"}
@@ -153,22 +181,24 @@ function renderH2H(match){
 }
 
 function weatherForMatch(match){
-  if(!WEATHER||!Array.isArray(WEATHER.matches))return null;
-  return WEATHER.matches.find(x=>Number(x.number)===Number(match.number))||null;
+  const data=usableWeather();
+  if(!data||!Array.isArray(data.matches))return null;
+  return data.matches.find(x=>Number(x.number)===Number(match.number)&&x.home===match.home&&x.away===match.away)||null;
 }
 
 function formatWeatherNumber(v,digits=1){
   const n=Number(v);
-  if(!Number.isFinite(n))return null;
+  if(v===null||v===undefined||v===""||!Number.isFinite(n))return null;
   return n.toFixed(digits).replace(/\.0$/," ").trim();
 }
 
 function renderWeather(match){
   const w=weatherForMatch(match);
+  const officialLink='<p class="small"><a href="https://www.jma.go.jp/bosai/forecast/" target="_blank" rel="noopener noreferrer">気象庁の地域予報を確認</a>（外部サイト。会場・キックオフ時点の予報とは限りません）</p>';
   if(!w)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">データなし</div></div><div class="environment-note">試合会場の天候データを取得できませんでした。</div></div>';
-  if(w.available===false)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">取得不可</div></div><div class="environment-note">'+(String(w.reason||'').includes('robots.txt')?'データ提供元のアクセス条件に従い、天気の取得を停止しています。':'天候予報を取得できませんでした。')+'</div></div>';
+  if(w.available===false)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">取得不可</div></div><div class="environment-note">'+(String(w.reason||'').includes('robots.txt')?'データ提供元のアクセス条件に従い、天気の取得を停止しています。':'天候予報を取得できませんでした。')+'</div>'+officialLink+'</div>';
   const temp=formatWeatherNumber(w.temperature_c);
-  const rainProb=Number.isFinite(Number(w.precipitation_probability))?Math.round(Number(w.precipitation_probability))+"%":"—";
+  const rainProb=w.precipitation_probability!==null&&w.precipitation_probability!==undefined&&Number.isFinite(Number(w.precipitation_probability))?Math.round(Number(w.precipitation_probability))+"%":"—";
   const precip=formatWeatherNumber(w.precipitation_mm);
   const wind=formatWeatherNumber(w.wind_speed_kmh);
   const status=w.kickoff_known?"キックオフ時点の予報":"代表時刻の予報";
@@ -202,22 +232,30 @@ function render(){
     const reasons=Array.isArray(u.reasons)?u.reasons:[];
     const confidence=Number(match.confidence||0);
     const p1=pct(p["1"]),p0=pct(p["0"]),p2=pct(p["2"]);
+    const weather=weatherForMatch(match);
+    const fixture=fixtureForMatch(match);
+    const stadium=match.stadium||fixture?.stadium||weather?.stadium;
+    const kickoff=match.kickoff||fixture?.kickoff||weather?.kickoff;
+    const venueLine=stadium?'<div class="venue-line">会場：'+escapeHTML(stadium)+(kickoff?' ／ '+escapeHTML(kickoff)+'（日本時間）':'')+'</div>':'';
+    const badges='<div class="source-badges"><span>成績・フォーム：予測に使用</span><span>H2H：'+(match.signals?.h2h?.available?'補正に使用':'利用可能な履歴なし・補正0')+'</span><span>天気：参考のみ・予測に未使用</span></div>';
 
     return '<article class="match">'+
       '<div class="top">'+
       '<div><div class="meta">No.'+match.number+'　'+(match.league||"")+'</div><div class="teams">'+match.home+'<span class="vs">vs</span>'+match.away+'</div></div>'+
       '<div class="badge '+badgeClass(u.level)+'">'+u.level+' ／判定スコア '+confidence+'</div>'+
       '</div>'+
+      venueLine+badges+
       '<div class="probgrid">'+
       '<div class="prob '+(prediction==="1"?"main":"")+'"><span class="prob-label">1　ホーム</span><b>'+p1+'%</b><div class="bar"><div class="fill" style="width:'+p1+'%"></div></div></div>'+
       '<div class="prob '+(prediction==="0"?"main":"")+'"><span class="prob-label">0　引き分け</span><b>'+p0+'%</b><div class="bar"><div class="fill" style="width:'+p0+'%"></div></div></div>'+
       '<div class="prob '+(prediction==="2"?"main":"")+'"><span class="prob-label">2　アウェイ</span><b>'+p2+'%</b><div class="bar"><div class="fill" style="width:'+p2+'%"></div></div></div>'+
       '</div>'+
-      '<div class="factors"><div class="factor-title">JUDGEの判断材料</div>'+
-      (reasons.length?reasons.map(x=>"• "+x).join("<br>"):"• 複数の指標から総合評価")+
+      '<details class="match-evidence"><summary>予測根拠・H2H・天気の取得状態</summary><div class="factors"><div class="factor-title">予測に使った判断材料</div>'+
+      (reasons.length?reasons.map(x=>"• "+escapeHTML(x)).join("<br>"):"• 複数の指標から総合評価")+
       '</div>'+
       renderH2H(match)+
       renderWeather(match)+
+      '</details>'+
       '<div class="bottom">'+
       '<div><b class="rec '+rec.type+'">'+recLabel(rec.type)+'</b><div class="small" style="margin-top:5px">カバー：'+recText(rec)+(rec.probability_coverage!==undefined?" ／確率カバー "+pct(rec.probability_coverage)+"%":"")+'</div></div>'+
       '<div><span class="analysis">JUDGE SCORE v'+(PREDICTIONS.model?.version||"2.1")+'</span><b class="ai-pick">AI予想：'+prediction+'（'+outcomeLabel(prediction)+'）</b></div>'+
@@ -270,7 +308,7 @@ function renderUpdated(){
 }
 
 function renderMode(){
-  document.getElementById("mode").innerHTML='<span class="demo">JUDGE SCORE v'+(PREDICTIONS?.model?.version||"2.1")+' ／ H2H + ENVIRONMENT</span>';
+  document.getElementById("mode").innerHTML='<span class="demo">JUDGE SCORE v'+(PREDICTIONS?.model?.version||"2.1")+' ／ 天気は予測に未使用</span>';
 }
 
 document.querySelectorAll(".btn").forEach(btn=>btn.addEventListener("click",()=>{
@@ -288,19 +326,24 @@ async function loadJSON(path){
 
 async function loadData(){
   try{
-    const [pred,rec,weather,status]=await Promise.all([loadJSON("predictions.json"),loadJSON("recommendation.json"),loadJSON("data/weather.json"),loadJSON("data/update_status.json").catch(()=>null)]);
+    const [pred,rec,weather,status,fixtures]=await Promise.all([loadJSON("predictions.json"),loadJSON("recommendation.json"),loadJSON("data/weather.json").catch(()=>null),loadJSON("data/update_status.json").catch(()=>null),loadJSON("data/toto_matches.json").catch(()=>null)]);
     if(!pred||!Array.isArray(pred.matches))throw new Error("predictions.json の形式が正しくありません");
     PREDICTIONS=pred;
     RECOMMENDATION=rec;
     WEATHER=weather;
+    FIXTURES=fixtures;
     UPDATE_STATUS=status;
+    document.getElementById("roundTitle").textContent=pred.round_id?"第"+pred.round_id+"回 totoの予測":"toto対象13試合の予測";
     renderDataStatus();
+    renderDataQuality();
     renderSummary();
+    document.getElementById("statsOverviewSummary").textContent="配信済み買い目：シングル "+document.getElementById("safe").textContent+"・ダブル "+document.getElementById("double").textContent+"・トリプル "+document.getElementById("triple").textContent;
     renderRecommendation();
     renderUpdated();
     renderMode();
-    const note=document.createElement("p");note.className="small";note.textContent="判定スコアは予測の差を表す指標で、実際の的中確率ではありません。";document.getElementById("mode").append(note);
+    const note=document.createElement("p");note.className="small";note.textContent="判定スコアは的中確率ではありません。";document.getElementById("mode").append(note);
     render();
+    document.dispatchEvent(new Event("judge90:data"));
   }catch(error){
     console.error("JUDGE90 LOAD ERROR:",error);
     document.getElementById("dataStatus").textContent="データ取得エラー。最新予測を確認できません。";
@@ -312,5 +355,6 @@ async function loadData(){
 setInterval(()=>{if(PREDICTIONS)renderDataStatus();},60000);
 loadData();
 </script>
+<script type="module" src="assets/budget-ui.mjs"></script>
 </body>
 </html>

@@ -1,0 +1,1676 @@
+[
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-02-01",
+    "matches": 612,
+    "last_training_date": "2023-12-03",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-02-01",
+    "matches": 612,
+    "last_training_date": "2023-12-03",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-02-01",
+    "matches": 612,
+    "last_training_date": "2023-12-03",
+    "converged": true,
+    "iterations": 33
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-02-01",
+    "matches": 612,
+    "last_training_date": "2023-12-03",
+    "converged": true,
+    "iterations": 22
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-02-01",
+    "matches": 924,
+    "last_training_date": "2023-11-12",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-02-01",
+    "matches": 924,
+    "last_training_date": "2023-11-12",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-02-01",
+    "matches": 924,
+    "last_training_date": "2023-11-12",
+    "converged": true,
+    "iterations": 39
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-02-01",
+    "matches": 924,
+    "last_training_date": "2023-11-12",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-02-01",
+    "matches": 686,
+    "last_training_date": "2023-12-02",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-02-01",
+    "matches": 686,
+    "last_training_date": "2023-12-02",
+    "converged": true,
+    "iterations": 22
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-02-01",
+    "matches": 686,
+    "last_training_date": "2023-12-02",
+    "converged": true,
+    "iterations": 28
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-02-01",
+    "matches": 686,
+    "last_training_date": "2023-12-02",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-03-01",
+    "matches": 622,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-03-01",
+    "matches": 622,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 21
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-03-01",
+    "matches": 622,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 30
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-03-01",
+    "matches": 622,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-03-01",
+    "matches": 934,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 29
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-03-01",
+    "matches": 934,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-03-01",
+    "matches": 934,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-03-01",
+    "matches": 934,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-03-01",
+    "matches": 696,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-03-01",
+    "matches": 696,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-03-01",
+    "matches": 696,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-03-01",
+    "matches": 696,
+    "last_training_date": "2024-02-25",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-04-01",
+    "matches": 661,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-04-01",
+    "matches": 661,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-04-01",
+    "matches": 661,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-04-01",
+    "matches": 661,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-04-01",
+    "matches": 994,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-04-01",
+    "matches": 994,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-04-01",
+    "matches": 994,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-04-01",
+    "matches": 994,
+    "last_training_date": "2024-03-30",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-04-01",
+    "matches": 753,
+    "last_training_date": "2024-03-31",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-04-01",
+    "matches": 753,
+    "last_training_date": "2024-03-31",
+    "converged": true,
+    "iterations": 22
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-04-01",
+    "matches": 753,
+    "last_training_date": "2024-03-31",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-04-01",
+    "matches": 753,
+    "last_training_date": "2024-03-31",
+    "converged": true,
+    "iterations": 33
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-05-01",
+    "matches": 711,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 22
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-05-01",
+    "matches": 711,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-05-01",
+    "matches": 711,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-05-01",
+    "matches": 711,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-05-01",
+    "matches": 1044,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-05-01",
+    "matches": 1044,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-05-01",
+    "matches": 1044,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-05-01",
+    "matches": 1044,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-05-01",
+    "matches": 796,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-05-01",
+    "matches": 796,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-05-01",
+    "matches": 796,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-05-01",
+    "matches": 796,
+    "last_training_date": "2024-04-28",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-06-01",
+    "matches": 771,
+    "last_training_date": "2024-05-31",
+    "converged": true,
+    "iterations": 28
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-06-01",
+    "matches": 771,
+    "last_training_date": "2024-05-31",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-06-01",
+    "matches": 771,
+    "last_training_date": "2024-05-31",
+    "converged": true,
+    "iterations": 28
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-06-01",
+    "matches": 771,
+    "last_training_date": "2024-05-31",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-06-01",
+    "matches": 1094,
+    "last_training_date": "2024-05-26",
+    "converged": true,
+    "iterations": 29
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-06-01",
+    "matches": 1094,
+    "last_training_date": "2024-05-26",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-06-01",
+    "matches": 1094,
+    "last_training_date": "2024-05-26",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-06-01",
+    "matches": 1094,
+    "last_training_date": "2024-05-26",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-06-01",
+    "matches": 826,
+    "last_training_date": "2024-05-19",
+    "converged": true,
+    "iterations": 28
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-06-01",
+    "matches": 826,
+    "last_training_date": "2024-05-19",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-06-01",
+    "matches": 826,
+    "last_training_date": "2024-05-19",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-06-01",
+    "matches": 826,
+    "last_training_date": "2024-05-19",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-07-01",
+    "matches": 821,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 22
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-07-01",
+    "matches": 821,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-07-01",
+    "matches": 821,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 30
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-07-01",
+    "matches": 821,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-07-01",
+    "matches": 1144,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 29
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-07-01",
+    "matches": 1144,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-07-01",
+    "matches": 1144,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-07-01",
+    "matches": 1144,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-07-01",
+    "matches": 876,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 28
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-07-01",
+    "matches": 876,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 22
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-07-01",
+    "matches": 876,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-07-01",
+    "matches": 876,
+    "last_training_date": "2024-06-30",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-08-01",
+    "matches": 1164,
+    "last_training_date": "2024-07-14",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-08-01",
+    "matches": 1164,
+    "last_training_date": "2024-07-14",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-08-01",
+    "matches": 1164,
+    "last_training_date": "2024-07-14",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-08-01",
+    "matches": 1164,
+    "last_training_date": "2024-07-14",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-08-01",
+    "matches": 852,
+    "last_training_date": "2024-07-21",
+    "converged": true,
+    "iterations": 21
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-08-01",
+    "matches": 852,
+    "last_training_date": "2024-07-21",
+    "converged": true,
+    "iterations": 21
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-08-01",
+    "matches": 852,
+    "last_training_date": "2024-07-21",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-08-01",
+    "matches": 852,
+    "last_training_date": "2024-07-21",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-08-01",
+    "matches": 916,
+    "last_training_date": "2024-07-28",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-08-01",
+    "matches": 916,
+    "last_training_date": "2024-07-28",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-08-01",
+    "matches": 916,
+    "last_training_date": "2024-07-28",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-08-01",
+    "matches": 916,
+    "last_training_date": "2024-07-28",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-09-01",
+    "matches": 894,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-09-01",
+    "matches": 894,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-09-01",
+    "matches": 894,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-09-01",
+    "matches": 894,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 33
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-09-01",
+    "matches": 1210,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-09-01",
+    "matches": 1210,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-09-01",
+    "matches": 1210,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-09-01",
+    "matches": 1210,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-09-01",
+    "matches": 943,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 29
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-09-01",
+    "matches": 943,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-09-01",
+    "matches": 943,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-09-01",
+    "matches": 943,
+    "last_training_date": "2024-08-31",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-10-01",
+    "matches": 927,
+    "last_training_date": "2024-09-28",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-10-01",
+    "matches": 927,
+    "last_training_date": "2024-09-28",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-10-01",
+    "matches": 927,
+    "last_training_date": "2024-09-28",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-10-01",
+    "matches": 927,
+    "last_training_date": "2024-09-28",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-10-01",
+    "matches": 985,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-10-01",
+    "matches": 985,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 23
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-10-01",
+    "matches": 985,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-10-01",
+    "matches": 985,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-10-01",
+    "matches": 1254,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-10-01",
+    "matches": 1254,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-10-01",
+    "matches": 1254,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-10-01",
+    "matches": 1254,
+    "last_training_date": "2024-09-29",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-11-01",
+    "matches": 952,
+    "last_training_date": "2024-10-30",
+    "converged": true,
+    "iterations": 40
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-11-01",
+    "matches": 952,
+    "last_training_date": "2024-10-30",
+    "converged": true,
+    "iterations": 19
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-11-01",
+    "matches": 952,
+    "last_training_date": "2024-10-30",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-11-01",
+    "matches": 952,
+    "last_training_date": "2024-10-30",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2024-11-01",
+    "matches": 1026,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "poisson_1",
+    "league": "J3",
+    "cutoff": "2024-11-01",
+    "matches": 1026,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2024-11-01",
+    "matches": 1026,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J3",
+    "cutoff": "2024-11-01",
+    "matches": 1026,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2024-11-01",
+    "matches": 1284,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "poisson_1",
+    "league": "J2",
+    "cutoff": "2024-11-01",
+    "matches": 1284,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2024-11-01",
+    "matches": 1284,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J2",
+    "cutoff": "2024-11-01",
+    "matches": 1284,
+    "last_training_date": "2024-10-27",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2024-12-01",
+    "matches": 981,
+    "last_training_date": "2024-11-30",
+    "converged": true,
+    "iterations": 29
+  },
+  {
+    "model": "poisson_1",
+    "league": "J1",
+    "cutoff": "2024-12-01",
+    "matches": 981,
+    "last_training_date": "2024-11-30",
+    "converged": true,
+    "iterations": 30
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2024-12-01",
+    "matches": 981,
+    "last_training_date": "2024-11-30",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "dixon_coles_1",
+    "league": "J1",
+    "cutoff": "2024-12-01",
+    "matches": 981,
+    "last_training_date": "2024-11-30",
+    "converged": true,
+    "iterations": 24
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-02-01",
+    "matches": 992,
+    "last_training_date": "2024-12-08",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-02-01",
+    "matches": 992,
+    "last_training_date": "2024-12-08",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-02-01",
+    "matches": 1304,
+    "last_training_date": "2024-11-10",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-02-01",
+    "matches": 1304,
+    "last_training_date": "2024-11-10",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-02-01",
+    "matches": 1066,
+    "last_training_date": "2024-11-24",
+    "converged": true,
+    "iterations": 30
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-02-01",
+    "matches": 1066,
+    "last_training_date": "2024-11-24",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-03-01",
+    "matches": 1022,
+    "last_training_date": "2025-02-26",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-03-01",
+    "matches": 1022,
+    "last_training_date": "2025-02-26",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-03-01",
+    "matches": 1324,
+    "last_training_date": "2025-02-23",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-03-01",
+    "matches": 1324,
+    "last_training_date": "2025-02-23",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-03-01",
+    "matches": 1084,
+    "last_training_date": "2025-02-23",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-03-01",
+    "matches": 1084,
+    "last_training_date": "2025-02-23",
+    "converged": true,
+    "iterations": 46
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-04-01",
+    "matches": 1060,
+    "last_training_date": "2025-03-29",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-04-01",
+    "matches": 1060,
+    "last_training_date": "2025-03-29",
+    "converged": true,
+    "iterations": 41
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-04-01",
+    "matches": 1374,
+    "last_training_date": "2025-03-30",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-04-01",
+    "matches": 1374,
+    "last_training_date": "2025-03-30",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-04-01",
+    "matches": 1132,
+    "last_training_date": "2025-03-30",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-04-01",
+    "matches": 1132,
+    "last_training_date": "2025-03-30",
+    "converged": true,
+    "iterations": 41
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-05-01",
+    "matches": 1120,
+    "last_training_date": "2025-04-29",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-05-01",
+    "matches": 1120,
+    "last_training_date": "2025-04-29",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-05-01",
+    "matches": 1424,
+    "last_training_date": "2025-04-29",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-05-01",
+    "matches": 1424,
+    "last_training_date": "2025-04-29",
+    "converged": true,
+    "iterations": 35
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-05-01",
+    "matches": 1165,
+    "last_training_date": "2025-04-27",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-05-01",
+    "matches": 1165,
+    "last_training_date": "2025-04-27",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-06-01",
+    "matches": 1178,
+    "last_training_date": "2025-05-31",
+    "converged": true,
+    "iterations": 26
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-06-01",
+    "matches": 1178,
+    "last_training_date": "2025-05-31",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-06-01",
+    "matches": 1480,
+    "last_training_date": "2025-05-31",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-06-01",
+    "matches": 1480,
+    "last_training_date": "2025-05-31",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-06-01",
+    "matches": 1202,
+    "last_training_date": "2025-05-31",
+    "converged": true,
+    "iterations": 33
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-06-01",
+    "matches": 1202,
+    "last_training_date": "2025-05-31",
+    "converged": true,
+    "iterations": 46
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-07-01",
+    "matches": 1210,
+    "last_training_date": "2025-06-29",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-07-01",
+    "matches": 1210,
+    "last_training_date": "2025-06-29",
+    "converged": true,
+    "iterations": 33
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-07-01",
+    "matches": 1514,
+    "last_training_date": "2025-06-28",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-07-01",
+    "matches": 1514,
+    "last_training_date": "2025-06-28",
+    "converged": true,
+    "iterations": 38
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-07-01",
+    "matches": 1246,
+    "last_training_date": "2025-06-30",
+    "converged": true,
+    "iterations": 31
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-07-01",
+    "matches": 1246,
+    "last_training_date": "2025-06-30",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-08-01",
+    "matches": 1534,
+    "last_training_date": "2025-07-12",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-08-01",
+    "matches": 1534,
+    "last_training_date": "2025-07-12",
+    "converged": true,
+    "iterations": 39
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-08-01",
+    "matches": 1232,
+    "last_training_date": "2025-07-27",
+    "converged": true,
+    "iterations": 20
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-08-01",
+    "matches": 1232,
+    "last_training_date": "2025-07-27",
+    "converged": true,
+    "iterations": 30
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-08-01",
+    "matches": 1286,
+    "last_training_date": "2025-07-26",
+    "converged": true,
+    "iterations": 28
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-08-01",
+    "matches": 1286,
+    "last_training_date": "2025-07-26",
+    "converged": true,
+    "iterations": 42
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-09-01",
+    "matches": 1316,
+    "last_training_date": "2025-08-31",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-09-01",
+    "matches": 1316,
+    "last_training_date": "2025-08-31",
+    "converged": true,
+    "iterations": 39
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-09-01",
+    "matches": 1274,
+    "last_training_date": "2025-08-31",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-09-01",
+    "matches": 1274,
+    "last_training_date": "2025-08-31",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-09-01",
+    "matches": 1584,
+    "last_training_date": "2025-08-31",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-09-01",
+    "matches": 1584,
+    "last_training_date": "2025-08-31",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-10-01",
+    "matches": 1312,
+    "last_training_date": "2025-09-28",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-10-01",
+    "matches": 1312,
+    "last_training_date": "2025-09-28",
+    "converged": true,
+    "iterations": 29
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-10-01",
+    "matches": 1614,
+    "last_training_date": "2025-09-28",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-10-01",
+    "matches": 1614,
+    "last_training_date": "2025-09-28",
+    "converged": true,
+    "iterations": 36
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-10-01",
+    "matches": 1355,
+    "last_training_date": "2025-09-28",
+    "converged": true,
+    "iterations": 32
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-10-01",
+    "matches": 1355,
+    "last_training_date": "2025-09-28",
+    "converged": true,
+    "iterations": 39
+  },
+  {
+    "model": "poisson_0",
+    "league": "J2",
+    "cutoff": "2025-11-01",
+    "matches": 1644,
+    "last_training_date": "2025-10-26",
+    "converged": true,
+    "iterations": 37
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J2",
+    "cutoff": "2025-11-01",
+    "matches": 1644,
+    "last_training_date": "2025-10-26",
+    "converged": true,
+    "iterations": 39
+  },
+  {
+    "model": "poisson_0",
+    "league": "J3",
+    "cutoff": "2025-11-01",
+    "matches": 1395,
+    "last_training_date": "2025-10-26",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J3",
+    "cutoff": "2025-11-01",
+    "matches": 1395,
+    "last_training_date": "2025-10-26",
+    "converged": true,
+    "iterations": 41
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-11-01",
+    "matches": 1342,
+    "last_training_date": "2025-10-26",
+    "converged": true,
+    "iterations": 25
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-11-01",
+    "matches": 1342,
+    "last_training_date": "2025-10-26",
+    "converged": true,
+    "iterations": 34
+  },
+  {
+    "model": "poisson_0",
+    "league": "J1",
+    "cutoff": "2025-12-01",
+    "matches": 1362,
+    "last_training_date": "2025-11-30",
+    "converged": true,
+    "iterations": 27
+  },
+  {
+    "model": "dixon_coles_0",
+    "league": "J1",
+    "cutoff": "2025-12-01",
+    "matches": 1362,
+    "last_training_date": "2025-11-30",
+    "converged": true,
+    "iterations": 36
+  }
+]

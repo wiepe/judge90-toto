@@ -1,3 +1,4 @@
+import '../assets/source-status.js';
 import { mkdtempSync, mkdirSync, cpSync, readFileSync, writeFileSync, copyFileSync, existsSync, renameSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
@@ -60,7 +61,7 @@ export async function update({ root = process.cwd(), runner, now = () => new Dat
     }
     const snapshot = join(root,'data/history',`predictions-${digest(json(join(stage,'predictions.json')))}.json`);
     if (!existsSync(snapshot)) copyFileSync(join(stage,'predictions.json'),snapshot);
-    const status = {state:'success',started_at,checked_at:now().toISOString(),dataset_id,...roundMetadata(round),weather_available:weather.available,warnings:weather.matches.filter(m=>!m.available).map(m=>({source:'weather',number:m.number,reason:m.reason}))};
+    const status = {state:'success',started_at,checked_at:now().toISOString(),dataset_id,...roundMetadata(round),weather_available:weather.available,data_quality:globalThis.Judge90DataSources.summarize(pred,weather,round),warnings:weather.matches.filter(m=>!m.available).map(m=>({source:'weather',number:m.number,reason:m.reason,used_in_prediction:false,severity:'reference_only',state:globalThis.Judge90DataSources.weatherState(m).state}))};
     atomicJSON(join(root,'data/update_status.json'),status);
     return status;
   } catch (error) {

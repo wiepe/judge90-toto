@@ -621,6 +621,8 @@ for (const match of toto.matches) {
     away_team_id: match.away_team_id,
     match_date: match.match_date,
     official_game_id: match.official_game_id,
+    stadium: match.stadium,
+    kickoff: match.kickoff,
     number:
       match.number,
 
@@ -717,6 +719,7 @@ const output = {
     new Date().toISOString(),
 
   model: {
+    data_usage: { season_results: true, recent_form: true, venue_results: true, h2h: "when_available", weather: false, stadium_information: "display_only", injuries: false, lineups: false },
     name:
       "JUDGE SCORE",
 
