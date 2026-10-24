@@ -34,6 +34,15 @@ export function validateBundle(round, predictions, recommendation, weather, now 
       if (data[key] !== round[key]) throw new Error(`${name}: ${key} mismatch`);
     }
   }
+  if(recommendation.budget_comparisons!==undefined){
+    const plans=recommendation.budget_comparisons;
+    if(!Array.isArray(plans)||JSON.stringify(plans.map(p=>p.budget_yen))!==JSON.stringify([100,500,1000,3000]))throw new Error('Invalid budget comparison set');
+    for(const {budget_yen,individual:p} of plans){
+      if(!p||!Number.isSafeInteger(p.cost_yen)||p.cost_yen<100||p.cost_yen>budget_yen||p.cost_yen!==p.tickets?.length*100||p.combinations!==p.tickets.length||p.tickets.some(t=>t.outcomes?.length!==13||t.outcomes.some(k=>!['1','0','2'].includes(k)))||new Set(p.tickets.map(t=>t.outcomes.join(''))).size!==p.tickets.length)throw new Error('Invalid individual ticket plan');
+      const prizes=p.prizes?.highest_prize;
+      if(!prizes||!['1','2','3','none'].every(k=>Number.isFinite(prizes[k])&&prizes[k]>=0&&prizes[k]<=1)||Math.abs(Object.values(prizes).reduce((a,b)=>a+b,0)-1)>1e-9)throw new Error('Invalid prize probability partition');
+    }
+  }
   if(predictions.model?.data_usage?.weather===true&&weather.matches.some(m=>m.available!==true))throw new Error('Required weather inputs missing');
   predictions.matches.forEach(m => {
     const p = ['1','0','2'].map(k => m.probabilities?.[k]);

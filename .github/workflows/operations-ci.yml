@@ -1,0 +1,50 @@
+name: Read-only operations verification
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/continuous-evaluation.yml
+      - .github/workflows/operations-ci.yml
+      - scripts/check_release.mjs
+      - scripts/check_proposal.mjs
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: research/requirements.txt
+      - run: npm ci --ignore-scripts
+      - run: pip install -r research/requirements.txt
+      - run: node scripts/check_release.mjs
+      - name: Refresh public official results using the production fetcher
+        run: |
+          mkdir -p /tmp/judge90-operations-source/data /tmp/judge90-operations
+          cp -R data /tmp/judge90-operations/
+          cd /tmp/judge90-operations-source
+          node "$GITHUB_WORKSPACE/scripts/fetch_jleague.mjs"
+      - name: Run real weekly evaluation in scratch space without publishing
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: python research/continuous.py weekly --root /tmp/judge90-operations --fixtures /tmp/judge90-operations-source/data/jleague_matches.json
+      - name: Verify no unconfirmed candidate can request a PR
+        run: |
+          cd /tmp/judge90-operations
+          node "$GITHUB_WORKSPACE/scripts/check_proposal.mjs"
+          node --input-type=module -e "import{readFileSync}from'node:fs';const r=JSON.parse(readFileSync('data/research/report.json')),p=JSON.parse(readFileSync('data/research/proposal-status.json'));if(r.production_model_changed!==false||p.eligible!==false)throw new Error('Unexpected promotion in scratch verification')"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: read-only-operations-${{ github.run_id }}-${{ github.run_attempt }}
+          path: /tmp/judge90-operations/data/research/
+          retention-days: 30

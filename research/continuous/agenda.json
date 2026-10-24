@@ -1,0 +1,8 @@
+{
+  "priority": "draw_probability_and_detection",
+  "set_at_jst": "2026-10-25",
+  "production_model_change_authorized": false,
+  "current_registered_experiment_unchanged": true,
+  "next_steps": ["league-specific draw reliability and sample sizes", "low-score and balanced-strength error analysis", "regularized partial-pooling calibration as a separate future experiment"],
+  "evaluation_requirements": ["no new selection on 2025", "register a new unused evaluation window", "proper probability scores and draw precision/recall together", "human approval before production adoption"]
+}

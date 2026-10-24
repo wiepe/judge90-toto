@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-10-24T15:26:41.503Z",
+  "main_commit": "287607822cf6aaf4204a996e9ea22dc7a756e2c9",
+  "before": {
+    "missing": [
+      ".github/workflows/continuous-evaluation.yml",
+      "scripts/check_proposal.mjs",
+      "research/continuous.py",
+      "research/continuous/registration.json",
+      "validation.html",
+      "assets/validation-ui.mjs",
+      "assets/strategy-ui.mjs"
+    ],
+    "last_prediction_schedule_run": 40088719650,
+    "last_pages_run": 40106136956
+  },
+  "after_branch": {
+    "complete": true,
+    "missing": [],
+    "features": [
+      "prediction",
+      "verified-evaluation",
+      "weekly-research",
+      "review-proposals",
+      "mobile-validation"
+    ]
+  },
+  "scratch_pipeline": {
+    "state": "success",
+    "round_id": "1668",
+    "matches": 13,
+    "budgets": [
+      100,
+      500,
+      1000,
+      3000
+    ],
+    "model_version": "2.1",
+    "updated_at": "2026-10-24T15:22:02.029Z"
+  },
+  "reconciliation": {
+    "completed": 5,
+    "hits": 2,
+    "verified_metric_matches": 0,
+    "rounds": [
+      {
+        "snapshot_id": "2a08615ccc0e804aabf2cfa74e95ea9d3fc5afb35cff3720a094eb91c220ecf9",
+        "completed": 5,
+        "hits": 2,
+        "results": [
+          {
+            "number": 1,
+            "score": "4-0",
+            "actual": "1"
+          },
+          {
+            "number": 2,
+            "score": "2-3",
+            "actual": "2"
+          },
+          {
+            "number": 3,
+            "score": "0-0",
+            "actual": "0"
+          },
+          {
+            "number": 6,
+            "score": "3-1",
+            "actual": "1"
+          },
+          {
+            "number": 7,
+            "score": "2-2",
+            "actual": "0"
+          }
+        ]
+      },
+      {
+        "snapshot_id": "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b",
+        "completed": 5,
+        "hits": 2,
+        "results": [
+          {
+            "number": 1,
+            "score": "4-0",
+            "actual": "1"
+          },
+          {
+            "number": 2,
+            "score": "2-3",
+            "actual": "2"
+          },
+          {
+            "number": 3,
+            "score": "0-0",
+            "actual": "0"
+          },
+          {
+            "number": 6,
+            "score": "3-1",
+            "actual": "1"
+          },
+          {
+            "number": 7,
+            "score": "2-2",
+            "actual": "0"
+          }
+        ]
+      }
+    ]
+  },
+  "scratch_weekly": {
+    "decision": "collect_new_prospective_data",
+    "upcoming": 30,
+    "leagues": [
+      "J1",
+      "J2",
+      "J3"
+    ],
+    "paired_confirmed": 0
+  },
+  "limits": [
+    "Scratch output is not a production deployment.",
+    "No new verified performance improvement.",
+    "Pages direct URL was inaccessible to available web reader; deployment checked via GitHub job and commit.",
+    "Scheduled cadence and Actions PR creation permission require post-merge confirmation."
+  ]
+}
