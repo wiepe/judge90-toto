@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "source": "J.League Data Site",
+  "retrieved_at": "2026-10-24T00:28:04.045Z",
+  "dataset_sha256": "2aa27c9059294a8c63cd513fc771ea84b0793f4666c7cdd50e2c926c2f3c4734",
+  "matches": 4502,
+  "sources": [
+    {
+      "season": 2022,
+      "league": "J1",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_years=2022",
+      "fetched_at": "2026-10-24T00:27:55.750Z",
+      "response_sha256": "ebfbf90184f3dfa89445fdde9c1a10b7651ccd0474a1041e3fe05ceecc714128",
+      "matches": 306,
+      "teams": 18
+    },
+    {
+      "season": 2022,
+      "league": "J2",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_years=2022",
+      "fetched_at": "2026-10-24T00:27:57.661Z",
+      "response_sha256": "0092a7b593674236571e66762a20722af8c3bfd005cae7d0a22eb363b158a9c5",
+      "matches": 462,
+      "teams": 22
+    },
+    {
+      "season": 2022,
+      "league": "J3",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_years=2022",
+      "fetched_at": "2026-10-24T00:27:58.250Z",
+      "response_sha256": "95a4a41b25a39ec150331d6480e0095dd5614e18bb7fe3e6ad1e1f1da1b88d67",
+      "matches": 306,
+      "teams": 18
+    },
+    {
+      "season": 2023,
+      "league": "J1",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_years=2023",
+      "fetched_at": "2026-10-24T00:27:58.872Z",
+      "response_sha256": "ea0c2954ec87481abbcad725b6707f60e15d2934052269e0d99e51103473cc11",
+      "matches": 306,
+      "teams": 18
+    },
+    {
+      "season": 2023,
+      "league": "J2",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_years=2023",
+      "fetched_at": "2026-10-24T00:27:59.556Z",
+      "response_sha256": "127e1c5c39ec2a2ab28adb277321baad1239e1d1c58bad4d9cde5db7b589b646",
+      "matches": 462,
+      "teams": 22
+    },
+    {
+      "season": 2023,
+      "league": "J3",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_years=2023",
+      "fetched_at": "2026-10-24T00:28:00.485Z",
+      "response_sha256": "c4aaf9d9444a9073076d30ff897b96048fb5e19fd2a3fe80c98366f57a456914",
+      "matches": 380,
+      "teams": 20
+    },
+    {
+      "season": 2024,
+      "league": "J1",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_years=2024",
+      "fetched_at": "2026-10-24T00:28:01.095Z",
+      "response_sha256": "ae4695e1e364c477450b661858a4310a3741c11864260bb46fbaa46425bbedb1",
+      "matches": 380,
+      "teams": 20
+    },
+    {
+      "season": 2024,
+      "league": "J2",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_years=2024",
+      "fetched_at": "2026-10-24T00:28:01.675Z",
+      "response_sha256": "a6f47e38361c1fb96eaa0cc83064e8a11d028703c329ba5024a406cc169b95e9",
+      "matches": 380,
+      "teams": 20
+    },
+    {
+      "season": 2024,
+      "league": "J3",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_years=2024",
+      "fetched_at": "2026-10-24T00:28:02.234Z",
+      "response_sha256": "6632d4f60bb1fe34fdf9834512f222b95f23890503f491aa7a58a1c2eaed7107",
+      "matches": 380,
+      "teams": 20
+    },
+    {
+      "season": 2025,
+      "league": "J1",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_years=2025",
+      "fetched_at": "2026-10-24T00:28:02.856Z",
+      "response_sha256": "0ae30994ecf9264b95271bb86038909c509c334467f3e8d85cf3c41614be269f",
+      "matches": 380,
+      "teams": 20
+    },
+    {
+      "season": 2025,
+      "league": "J2",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_years=2025",
+      "fetched_at": "2026-10-24T00:28:03.458Z",
+      "response_sha256": "4f0435ca9117f9e04ce0f02a2396cce09991f5a931e21e70bf5b1c45bde9b6ff",
+      "matches": 380,
+      "teams": 20
+    },
+    {
+      "season": 2025,
+      "league": "J3",
+      "url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_years=2025",
+      "fetched_at": "2026-10-24T00:28:04.009Z",
+      "response_sha256": "ac72d41599e162bedf8b857af066224af5716d601a1c11b411a08f060cf63814",
+      "matches": 380,
+      "teams": 20
+    }
+  ],
+  "license_note": "Factual match records only. No page HTML, images, credentials or team statistics distributed. Source rights and access conditions remain applicable.",
+  "as_of_limitation": "Retrospective final results; original result publication/correction timestamps unavailable."
+}

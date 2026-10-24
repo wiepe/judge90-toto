@@ -1,3 +1,6 @@
 node_modules/
 work/
 *.tmp
+
+__pycache__/
+*.pyc
