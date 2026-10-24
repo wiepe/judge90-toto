@@ -34,6 +34,7 @@ export function validateBundle(round, predictions, recommendation, weather, now 
       if (data[key] !== round[key]) throw new Error(`${name}: ${key} mismatch`);
     }
   }
+  if(predictions.model?.data_usage?.weather===true&&weather.matches.some(m=>m.available!==true))throw new Error('Required weather inputs missing');
   predictions.matches.forEach(m => {
     const p = ['1','0','2'].map(k => m.probabilities?.[k]);
     if (!p.every(n => Number.isFinite(n) && n >= 0 && n <= 1) || Math.abs(p.reduce((a,b)=>a+b,0)-1) > 0.002) throw new Error('Invalid prediction probabilities');

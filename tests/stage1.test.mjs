@@ -153,5 +153,5 @@ test('local publish I/O failure rolls back every prediction/data file',async()=>
 test('long Retry-After stops without early retry; weather policy warning remains visible',async()=>{
   let calls=0;await assert.rejects(requestText('https://example.test',{fetchImpl:async()=>{calls++;return new Response('',{status:429,headers:{'Retry-After':'120'}})},sleep:async()=>{throw new Error('must not retry')}}),/429/);assert.equal(calls,1);
   const dom=new JSDOM('',{runScripts:'outside-only'});dom.window.eval(statusJS);const b=domBundle();b.status.warnings=[{source:'weather'}];
-  const result=dom.window.Judge90DataStatus.assess(b.pred,b.rec,b.weather,b.status,now);assert.equal(result.current,true);assert.match(result.message,/未完了/);dom.window.close();
+  const result=dom.window.Judge90DataStatus.assess(b.pred,b.rec,b.weather,b.status,now);assert.equal(result.current,true);assert.match(result.message,/予測には未使用/);dom.window.close();
 });

@@ -701,6 +701,11 @@ async function main() {
         kickoff,
         stadium,
         available: false,
+        jleague_date: date,
+        location_source: coords.source,
+        weather_location: coords.name,
+        latitude: coords.latitude,
+        longitude: coords.longitude,
         reason: `fetch_error: ${error.message}`
       });
 
