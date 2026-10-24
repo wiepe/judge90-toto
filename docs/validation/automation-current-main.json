@@ -1,0 +1,19 @@
+{
+  "main": "0c2cf2ed82290f9db1cf0eeb07e546a596afcb58",
+  "round": "1668",
+  "matches": 13,
+  "model": "2.1",
+  "updated_at": "2026-10-24T15:58:26.805Z",
+  "status": "success",
+  "research_state": "success",
+  "research_decision": "collect_new_prospective_data",
+  "research_upcoming": 30,
+  "research_confirmed": 0,
+  "verified_evaluation": 0,
+  "legacy_results": {
+    "completed": 5,
+    "hits": 2
+  },
+  "delivery_receipts": 1,
+  "current_receipt": true
+}
