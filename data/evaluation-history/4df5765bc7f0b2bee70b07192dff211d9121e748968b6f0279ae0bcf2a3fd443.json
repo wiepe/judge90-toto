@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-24T05:25:06.451Z",
+  "scope": "Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot",
+  "logloss_floor": 1e-15,
+  "overall": {
+    "n": 0,
+    "accuracy": null,
+    "logloss": null,
+    "brier": null,
+    "draw_precision": null,
+    "draw_recall": null,
+    "draw_brier": null,
+    "draw_calibration": []
+  },
+  "by_league": {
+    "J1": {
+      "n": 0,
+      "accuracy": null,
+      "logloss": null,
+      "brier": null,
+      "draw_precision": null,
+      "draw_recall": null,
+      "draw_brier": null,
+      "draw_calibration": []
+    },
+    "J2": {
+      "n": 0,
+      "accuracy": null,
+      "logloss": null,
+      "brier": null,
+      "draw_precision": null,
+      "draw_recall": null,
+      "draw_brier": null,
+      "draw_calibration": []
+    },
+    "J3": {
+      "n": 0,
+      "accuracy": null,
+      "logloss": null,
+      "brier": null,
+      "draw_precision": null,
+      "draw_recall": null,
+      "draw_brier": null,
+      "draw_calibration": []
+    }
+  },
+  "timeline": [],
+  "rows": [],
+  "unverified_snapshots": 3,
+  "issues": [],
+  "limitations": [
+    "J.League result reconciliation, not toto cancellation/settlement rulings.",
+    "Old forecasts without a delivery receipt are excluded, not counted as misses."
+  ]
+}

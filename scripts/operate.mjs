@@ -7,6 +7,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fetchText } from './lib/http.mjs';
 import { parseToto,parseLotInfo,advertisedRounds } from './lib/toto.mjs';
+import { evaluatePublished } from './lib/evaluation.mjs';
 import { update } from './update.mjs';
 import { readJSON,saveJSON,reconcileHistory,publicationWindow } from './lib/operation.mjs';
 const exec=promisify(execFile);
@@ -38,7 +39,7 @@ export async function operate({root=process.cwd(),now=()=>new Date(),discoverRou
       const scratch=mkdtempSync(join(tmpdir(),'judge90-results-'));
       try {cpSync(join(root,'data'),join(scratch,'data'),{recursive:true});await exec(process.execPath,[fileURLToPath(new URL('./fetch_jleague.mjs',import.meta.url))],{cwd:scratch,timeout:2*60000,maxBuffer:4*1024*1024});fixtures=readJSON(join(scratch,'data/jleague_matches.json'));}finally{rmSync(scratch,{recursive:true,force:true});}
     }
-    const results=reconcileHistory(root,fixtures,now());resultError=null;record({state:'results_success',attempt:resultAttempt,completed:results.completed});break;
+    const results=reconcileHistory(root,fixtures,now());evaluatePublished(root,fixtures,now());resultError=null;record({state:'results_success',attempt:resultAttempt,completed:results.completed});break;
   } catch(e) {resultError=e.message;record({state:'results_error',attempt:resultAttempt,error:e.message});if(/robots\.txt|HTTP (401|403|429)/.test(e.message)||resultAttempt===attempts)break;await wait(resultAttempt*30000);}
   }
   let last;
