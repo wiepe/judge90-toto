@@ -43,6 +43,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/jleague_matches.json data/team_metrics.json data/toto_matches.json data/h2h.json data/weather.json data/history data/operations predictions.json recommendation.json data/update_status.json
           if [ -f data/results.json ]; then git add data/results.json; fi
+          if [ -f data/evaluation.json ]; then git add data/evaluation.json data/evaluation-history; fi
           git diff --cached --quiet || git commit -m "Update JUDGE90 automatic operation"
           # Never overwrite concurrent main changes. A rejected push stops deployment.
           git push origin HEAD:main
@@ -105,6 +106,14 @@ jobs:
         run: |
           export PUBLISHED_COMMIT=$(git rev-parse HEAD)
           node scripts/check_delivery.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Preserve delivery receipts for future evaluation
+        if: always() && steps.commit.outputs.published == 'true'
+        run: |
+          if [ -d data/deliveries ]; then
+            git add data/deliveries
+            git diff --cached --quiet || git commit -m "Record JUDGE90 Pages delivery receipt"
+            git push origin HEAD:main
+          fi
       - name: Record delivery outcome in durable Actions history
         if: always()
         env:
@@ -123,4 +132,7 @@ jobs:
             data/update_status.json
             data/results.json
             delivery-status.json
+            data/deliveries/
+            data/evaluation.json
+            data/evaluation-history/
           retention-days: 90
