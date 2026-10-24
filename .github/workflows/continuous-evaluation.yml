@@ -1,6 +1,7 @@
 name: Weekly forecast evaluation and improvement proposals
 on:
   workflow_dispatch:
+  workflow_call:
   schedule:
     - cron: '47 0 * * 1'
 permissions:

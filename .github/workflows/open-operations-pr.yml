@@ -1,0 +1,46 @@
+# One-time permission proof using this real operational repair, never a fake research candidate.
+name: Verify Actions can create the operational repair PR
+on:
+  push:
+    branches: [fix/automation-completion]
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  propose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - run: node scripts/check_release.mjs
+      - name: Create the actual repair PR and record permission readiness
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh pr list --state all --head fix/automation-completion --json number --jq 'length')
+          if [ "$existing" != 0 ]; then
+            echo 'An existing repair PR is present; no duplicate or permission-success claim.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          cat > /tmp/judge90-repair.md <<'BODY'
+          PR #8の全機能がmainへ反映されたことを確認し、リリース後の自動初期化と公開Pagesの検査を追加します。
+          初期化はmainのCI成功後に必要な場合だけ週次研究→予測・配信を共通ワークフローで実行します。
+          3時間更新と月曜09:47の定期設定を維持し、本番モデル・登録済み候補・未使用確認期間は変更しません。
+          この運用修正PRをActions自身から作成することで、研究候補を偽らずにPR作成権限を実証します。
+          公開サイトの取得・表示検査、Node/Pythonテスト、研究再現、既存の失敗時保持をCIで検証します。
+          本番へのマージと公開は承認待ちです。詳細は docs/automation-completion.md を参照してください。
+          BODY
+          if gh pr create --base main --head fix/automation-completion --title 'リリース後の自動初期化と公開サイト・PR作成権限を検証' --body-file /tmp/judge90-repair.md > /tmp/pr-result.txt 2>&1; then
+            cat /tmp/pr-result.txt >> "$GITHUB_STEP_SUMMARY"
+            echo 'Actions created the real operational repair PR. No research candidate was fabricated.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            cat /tmp/pr-result.txt >> "$GITHUB_STEP_SUMMARY"
+            echo 'Actions PR creation was not confirmed. Keep the incumbent; an operator can submit the repair via the connected GitHub app.' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
