@@ -1,3 +1,4 @@
+import { fetchText } from './lib/http.mjs';
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
 const TOTO_FILE = "data/toto_matches.json";
@@ -117,13 +118,7 @@ async function fetchYear(frame, year) {
     `${BASE_URL}?competition_frame_ids=${frame}` +
     `&competition_years=${year}`;
 
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
-
-  return parseRows(await response.text());
+  return parseRows(await fetchText(url));
 }
 
 function getResult(team, match) {

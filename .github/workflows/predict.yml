@@ -1,61 +1,43 @@
 name: Run JUDGE90 Prediction
-
 on:
   workflow_dispatch:
-
+  workflow_call:
   schedule:
     - cron: "17 0 * * 6"
-
 permissions:
   contents: write
-
+concurrency:
+  group: judge90-published-data
+  cancel-in-progress: false
 jobs:
   predict:
+    # A manual run on a feature branch must never publish production data.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
+    timeout-minutes: 45
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Fetch J.League data
-        run: node scripts/fetch_jleague.mjs
-
-      - name: Build team metrics
-        run: node scripts/build_team_metrics.mjs
-
-      - name: Fetch toto data
-        run: node scripts/fetch_toto.mjs
-
-      - name: Fetch H2H data
-        run: node scripts/fetch_h2h.mjs
-
-      - name: Fetch weather data
-        run: node scripts/fetch_weather.mjs
-
-      - name: Run prediction
-        run: node scripts/predict.mjs
-
-      - name: Build betting recommendation
-        run: node scripts/build_recommendation.mjs
-
-      - name: Commit updated data
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Unit and integration tests
+        run: npm test
+      - name: Stage, validate and update
+        id: update
+        run: npm run update
+      - name: Commit complete data or failure status
+        if: always() && steps.update.outcome != 'skipped' && steps.update.outcome != ''
+        env:
+          UPDATE_OUTCOME: ${{ steps.update.outcome }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add data/jleague_matches.json
-          git add data/team_metrics.json
-          git add data/toto_matches.json
-          git add data/h2h.json
-          git add data/weather.json
-          git add predictions.json
-          git add recommendation.json
-
-          git diff --cached --quiet || git commit -m "Update JUDGE90 predictions"
-
-          git push
+          if [ "$UPDATE_OUTCOME" = "success" ]; then
+            git add data/jleague_matches.json data/team_metrics.json data/toto_matches.json data/h2h.json data/weather.json data/history predictions.json recommendation.json data/update_status.json
+          else
+            git add data/update_status.json
+          fi
+          git diff --cached --quiet || git commit -m "Update JUDGE90 data status ($UPDATE_OUTCOME)"
+          git push origin HEAD:main

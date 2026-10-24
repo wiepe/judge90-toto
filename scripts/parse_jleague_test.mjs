@@ -1,3 +1,4 @@
+import { fetchText } from './lib/http.mjs';
 const targets = [
   {
     name: "J1",
@@ -106,16 +107,7 @@ for (const target of targets) {
   console.log("URL:", url);
 
   try {
-    const response = await fetch(url);
-
-    console.log("HTTP STATUS:", response.status);
-
-    if (!response.ok) {
-      console.error("FETCH FAILED");
-      continue;
-    }
-
-    const html = await response.text();
+    const html = await fetchText(url);
 
     console.log("HTML LENGTH:", html.length);
 

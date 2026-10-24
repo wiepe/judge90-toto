@@ -1,3 +1,6 @@
+import { validateRound, roundMetadata, sourceDigest } from './lib/integrity.mjs';
+import { teamRegistry } from './lib/teams.mjs';
+const resolveTeam = teamRegistry();
 import { readFileSync, writeFileSync } from "node:fs";
 
 const totoPath = "data/toto_matches.json";
@@ -21,52 +24,20 @@ const h2hData = JSON.parse(
   readFileSync(h2hPath, "utf8")
 );
 
+validateRound(toto);
+if (Date.now() - Date.parse(metricsData.generated_at) > 6*3600000 || Date.parse(metricsData.generated_at) - Date.now() > 60000 || !Number.isFinite(Date.parse(metricsData.generated_at))) throw new Error('Stale team metrics');
 const teams = metricsData.teams;
 
 // --------------------------------------------------
 // チーム名の違いを吸収
 // --------------------------------------------------
 
-const aliases = {
-  "水戸ホーリーホック": "水戸",
-  "川崎フロンターレ": "川崎Ｆ",
-  "清水エスパルス": "清水",
-  "アビスパ福岡": "福岡",
-  "ガンバ大阪": "Ｇ大阪",
-  "ＦＣ東京": "FC東京",
-  "FC東京": "FC東京",
-  "ＦＣ町田ゼルビア": "町田",
-  "横浜Ｆ・マリノス": "横浜FM",
-  "Ｖ・ファーレン長崎": "長崎",
-  "名古屋グランパス": "名古屋",
-  "サンフレッチェ広島": "広島",
-  "セレッソ大阪": "Ｃ大阪",
-  "東京ヴェルディ": "東京Ｖ",
-  "ジェフユナイテッド千葉": "千葉",
-  "浦和レッズ": "浦和",
-  "ファジアーノ岡山": "岡山",
-  "ＦＣ今治": "今治",
-  "サガン鳥栖": "鳥栖",
-  "いわきＦＣ": "いわき",
-  "横浜ＦＣ": "横浜FC",
-  "ヴァンラーレ八戸": "八戸",
-  "湘南ベルマーレ": "湘南",
-  "ヴァンフォーレ甲府": "甲府",
-  "ジュビロ磐田": "磐田",
-  "ブラウブリッツ秋田": "秋田",
-  "徳島ヴォルティス": "徳島"
-};
-
-function canonicalName(name) {
-  return aliases[name] || name;
-}
-
+function canonicalName(name) { return resolveTeam(name).name; }
 function findTeam(name) {
-  const target = canonicalName(name);
-
-  return teams.find(team => {
-    return canonicalName(team.team) === target;
-  });
+  const id = resolveTeam(name).id;
+  const found = teams.filter(team => team.team_id === id);
+  if (found.length !== 1) throw new Error(`Team ID missing/ambiguous: ${id}`);
+  return found[0];
 }
 
 // --------------------------------------------------
@@ -646,6 +617,10 @@ for (const match of toto.matches) {
     getUncertainty(probabilities);
 
   predictions.push({
+    home_team_id: match.home_team_id,
+    away_team_id: match.away_team_id,
+    match_date: match.match_date,
+    official_game_id: match.official_game_id,
     number:
       match.number,
 
@@ -735,6 +710,9 @@ if (
 // --------------------------------------------------
 
 const output = {
+  ...roundMetadata(toto),
+  source_fetched_at: toto.fetched_at,
+  source_digest: sourceDigest(toto),
   updated_at:
     new Date().toISOString(),
 

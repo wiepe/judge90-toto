@@ -1,3 +1,5 @@
+import { teamRegistry } from './lib/teams.mjs';
+const resolveTeam = teamRegistry();
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
@@ -23,7 +25,7 @@ function parseScore(score) {
 
 function createTeam(name, league) {
   return {
-    team_id: `${league}_${name}`,
+    team_id: resolveTeam(name).id,
     team: name,
     league,
     season: 2026,

@@ -1,3 +1,4 @@
+import { fetchText, fetchJSON } from './lib/http.mjs';
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
 const BASE_URL = "https://data.j-league.or.jp/SFMS01/search";
@@ -145,10 +146,7 @@ async function fetchYear(frame, year) {
     `${BASE_URL}?competition_frame_ids=${frame}` +
     `&competition_years=${year}`;
 
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-
-  return parseRows(await response.text());
+  return parseRows(await fetchText(url));
 }
 
 function locationForTeam(team) {
@@ -182,18 +180,7 @@ async function fetchDailyWeather(locations, startDate, endDate) {
     models: 'era5'
   });
   const url = `https://archive-api.open-meteo.com/v1/archive?${params}`;
-  for (let attempt=1; attempt<=6; attempt++) {
-    const r=await fetch(url);
-    if(r.ok) return r.json();
-    if(r.status===429 || r.status>=500){
-      const ra=Number(r.headers.get('retry-after'));
-      const wait=Number.isFinite(ra)&&ra>0 ? Math.min(90000,ra*1000) : Math.min(90000,5000*2**(attempt-1));
-      console.log(`  Open-Meteo HTTP ${r.status}; retry ${attempt}/6 after ${Math.round(wait/1000)}s`);
-      await sleep(wait); continue;
-    }
-    throw new Error(`Open-Meteo HTTP ${r.status}`);
-  }
-  throw new Error('Open-Meteo retry limit exceeded');
+  return fetchJSON(url);
 }
 
 function oneWeatherMap(payload){

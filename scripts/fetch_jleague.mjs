@@ -1,3 +1,6 @@
+import { fetchText } from './lib/http.mjs';
+import { teamRegistry } from './lib/teams.mjs';
+const resolveTeam = teamRegistry();
 import { writeFileSync, mkdirSync } from "node:fs";
 
 const targets = [
@@ -102,16 +105,11 @@ async function fetchLeague(target) {
 
   console.log(`Fetching ${target.league}...`);
 
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(
-      `${target.league} HTTP ERROR: ${response.status}`
-    );
-  }
-
-  const html = await response.text();
-  const matches = extractRows(html);
+  const html = await fetchText(url);
+  const matches = extractRows(html).map(m => ({ ...m, home_team_id: resolveTeam(m.home).id, away_team_id: resolveTeam(m.away).id }));
+  if (matches.length !== 380 || matches.some(m => !m.date)) throw new Error(`${target.league}: invalid/empty fixtures`);
+  if (new Set(matches.flatMap(m => [m.home_team_id,m.away_team_id])).size !== 20) throw new Error(`${target.league}: expected 20 registered teams`);
+  if (new Set(matches.map(m => `${m.date}|${m.home_team_id}|${m.away_team_id}`)).size !== matches.length) throw new Error('Duplicate fixture');
 
   console.log(
     `${target.league}: ${matches.length} matches`

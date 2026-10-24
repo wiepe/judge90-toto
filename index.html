@@ -33,6 +33,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 <header><div class="wrap head"><div><div class="tag">EXPLAINABLE FOOTBALL PREDICTION</div><div class="brand">JUDGE <span>90</span></div></div><div id="updated" class="small"></div></div></header>
 
 <main class="wrap">
+<div id="dataStatus" class="error" role="status" aria-live="polite">データの開催回と更新状態を確認しています…</div>
 <section class="hero">
 <div class="tag">WEEKLY MATCH INTELLIGENCE</div>
 <h1>予想ではなく、<br>「どこで迷うべきか」を。</h1>
@@ -44,7 +45,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 <div class="stat"><span class="small">シングル</span><br><b id="safe">-</b></div>
 <div class="stat"><span class="small">ダブル</span><br><b id="double">-</b></div>
 <div class="stat"><span class="small">トリプル</span><br><b id="triple">-</b></div>
-<div class="stat"><span class="small">平均信頼度</span><br><b id="avg">-</b></div>
+<div class="stat"><span class="small">平均判定スコア</span><br><b id="avg">-</b></div>
 </section>
 
 <div class="controls">
@@ -57,7 +58,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 
 <div id="matches"><div class="loading">JUDGE90データを読み込んでいます…</div></div>
 
-<section class="panel">
+<section class="panel" id="purchasePanel">
 <div class="tag">PORTFOLIO OPTIMIZER</div>
 <h2>💰 おすすめの買い方</h2>
 <div class="sub">「当たりそうな試合」ではなく、「不確実性の高い試合」にダブル・トリプルを配分。</div>
@@ -75,6 +76,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 </section>
 </main>
 
+<script src="assets/data-status.js"></script>
 <script>
 "use strict";
 
@@ -82,6 +84,12 @@ let PREDICTIONS=null;
 let RECOMMENDATION=null;
 let WEATHER=null;
 let currentFilter="all";
+let UPDATE_STATUS=null;
+function renderDataStatus(){
+  const state=Judge90DataStatus.assess(PREDICTIONS,RECOMMENDATION,WEATHER,UPDATE_STATUS);
+  document.getElementById("dataStatus").textContent=state.message;
+  document.getElementById("purchasePanel").hidden=!state.current;
+}
 
 function outcomeLabel(o){
   return o==="1"?"ホーム勝利":o==="0"?"引き分け":o==="2"?"アウェイ勝利":o||"-";
@@ -158,7 +166,7 @@ function formatWeatherNumber(v,digits=1){
 function renderWeather(match){
   const w=weatherForMatch(match);
   if(!w)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">データなし</div></div><div class="environment-note">試合会場の天候データを取得できませんでした。</div></div>';
-  if(w.available===false)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">取得不可</div></div><div class="environment-note">天候予報を取得できませんでした。</div></div>';
+  if(w.available===false)return '<div class="environment"><div class="environment-title"><div class="environment-label">LAYER 6 / ENVIRONMENT</div><div class="environment-status">取得不可</div></div><div class="environment-note">'+(String(w.reason||'').includes('robots.txt')?'データ提供元のアクセス条件に従い、天気の取得を停止しています。':'天候予報を取得できませんでした。')+'</div></div>';
   const temp=formatWeatherNumber(w.temperature_c);
   const rainProb=Number.isFinite(Number(w.precipitation_probability))?Math.round(Number(w.precipitation_probability))+"%":"—";
   const precip=formatWeatherNumber(w.precipitation_mm);
@@ -198,7 +206,7 @@ function render(){
     return '<article class="match">'+
       '<div class="top">'+
       '<div><div class="meta">No.'+match.number+'　'+(match.league||"")+'</div><div class="teams">'+match.home+'<span class="vs">vs</span>'+match.away+'</div></div>'+
-      '<div class="badge '+badgeClass(u.level)+'">'+u.level+' ／信頼度 '+confidence+'</div>'+
+      '<div class="badge '+badgeClass(u.level)+'">'+u.level+' ／判定スコア '+confidence+'</div>'+
       '</div>'+
       '<div class="probgrid">'+
       '<div class="prob '+(prediction==="1"?"main":"")+'"><span class="prob-label">1　ホーム</span><b>'+p1+'%</b><div class="bar"><div class="fill" style="width:'+p1+'%"></div></div></div>'+
@@ -258,7 +266,7 @@ function renderUpdated(){
   const v=PREDICTIONS?.updated_at;
   if(!v)return;
   const d=new Date(v);
-  if(!Number.isNaN(d.getTime()))document.getElementById("updated").textContent="更新 "+d.toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"});
+  if(!Number.isNaN(d.getTime()))document.getElementById("updated").textContent="更新 "+d.toLocaleString("ja-JP",{timeZone:"Asia/Tokyo",month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"});
 }
 
 function renderMode(){
@@ -280,22 +288,28 @@ async function loadJSON(path){
 
 async function loadData(){
   try{
-    const [pred,rec,weather]=await Promise.all([loadJSON("predictions.json"),loadJSON("recommendation.json"),loadJSON("data/weather.json")]);
+    const [pred,rec,weather,status]=await Promise.all([loadJSON("predictions.json"),loadJSON("recommendation.json"),loadJSON("data/weather.json"),loadJSON("data/update_status.json").catch(()=>null)]);
     if(!pred||!Array.isArray(pred.matches))throw new Error("predictions.json の形式が正しくありません");
     PREDICTIONS=pred;
     RECOMMENDATION=rec;
     WEATHER=weather;
+    UPDATE_STATUS=status;
+    renderDataStatus();
     renderSummary();
     renderRecommendation();
     renderUpdated();
     renderMode();
+    const note=document.createElement("p");note.className="small";note.textContent="判定スコアは予測の差を表す指標で、実際の的中確率ではありません。";document.getElementById("mode").append(note);
     render();
   }catch(error){
     console.error("JUDGE90 LOAD ERROR:",error);
+    document.getElementById("dataStatus").textContent="データ取得エラー。最新予測を確認できません。";
+    document.getElementById("purchasePanel").hidden=true;
     document.getElementById("matches").innerHTML='<div class="error"><strong>JUDGE90データを読み込めませんでした。</strong><br><br>'+error.message+'<br><br>GitHub Pagesのデータ更新直後の場合は、少し待ってからページを再読み込みしてください。</div>';
   }
 }
 
+setInterval(()=>{if(PREDICTIONS)renderDataStatus();},60000);
 loadData();
 </script>
 </body>

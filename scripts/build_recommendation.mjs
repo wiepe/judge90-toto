@@ -1,3 +1,4 @@
+import { roundMetadata } from './lib/integrity.mjs';
 import { readFileSync, writeFileSync } from "node:fs";
 
 const predictionsPath = "predictions.json";
@@ -503,6 +504,8 @@ const strategyType =
   );
 
 const output = {
+  ...roundMetadata(predictionsData),
+  source_digest: predictionsData.source_digest,
   generated_at:
     new Date().toISOString(),
 
