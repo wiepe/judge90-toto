@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 const exec = promisify(execFile);
+import { publicationWindow } from './lib/operation.mjs';
 import { digest, sourceDigest, roundMetadata, validateBundle } from './lib/integrity.mjs';
 
 export const steps = ['fetch_jleague','build_team_metrics','fetch_toto','fetch_h2h','fetch_weather','predict','build_recommendation'];
@@ -17,16 +18,19 @@ function atomicJSON(path, value) {
 }
 export async function update({ root = process.cwd(), runner, now = () => new Date() } = {}) {
   const started_at = now().toISOString();
+  const executionStart = performance.now();
   const stage = mkdtempSync(join(tmpdir(),'judge90-update-'));
   cpSync(join(root,'data'),join(stage,'data'),{recursive:true});
   let step = 'prepare';
   let publishedBefore = null;
   try {
     for (step of steps) {
+      const remaining = 10*60*1000 - (performance.now()-executionStart);
+      if(remaining<=0)throw new Error('Update execution budget exhausted');
       console.log(`Updating: ${step}`);
       if (runner) await runner(step,stage);
       else {
-        const child = await exec(process.execPath,[fileURLToPath(new URL(`./${step}.mjs`,import.meta.url))],{cwd:stage,timeout:20*60*1000,maxBuffer:4*1024*1024});
+        const child = await exec(process.execPath,[fileURLToPath(new URL(`./${step}.mjs`,import.meta.url))],{cwd:stage,timeout:Math.min(2*60*1000,remaining),maxBuffer:4*1024*1024});
         process.stdout.write(child.stdout);process.stderr.write(child.stderr);
       }
     }
@@ -44,6 +48,8 @@ export async function update({ root = process.cwd(), runner, now = () => new Dat
       if (['predictions.json','recommendation.json','data/weather.json'].includes(path)) Object.assign(data,roundMetadata(round));
       atomicJSON(join(stage,path),data);
     }
+    const publication = publicationWindow(round,now());
+    if (!publication.on_time) throw new Error('Less than 30 minutes remain before sales close; publication stopped');
     step = 'archive';
     // Append-only snapshots; preserve the old published prediction, including legacy data.
     for (const path of ['predictions.json','recommendation.json']) {
@@ -61,7 +67,7 @@ export async function update({ root = process.cwd(), runner, now = () => new Dat
     }
     const snapshot = join(root,'data/history',`predictions-${digest(json(join(stage,'predictions.json')))}.json`);
     if (!existsSync(snapshot)) copyFileSync(join(stage,'predictions.json'),snapshot);
-    const status = {state:'success',started_at,checked_at:now().toISOString(),dataset_id,...roundMetadata(round),weather_available:weather.available,data_quality:globalThis.Judge90DataSources.summarize(pred,weather,round),warnings:weather.matches.filter(m=>!m.available).map(m=>({source:'weather',number:m.number,reason:m.reason,used_in_prediction:false,severity:'reference_only',state:globalThis.Judge90DataSources.weatherState(m).state}))};
+    const status = {publication,state:'success',started_at,checked_at:now().toISOString(),dataset_id,...roundMetadata(round),weather_available:weather.available,data_quality:globalThis.Judge90DataSources.summarize(pred,weather,round),warnings:weather.matches.filter(m=>!m.available).map(m=>({source:'weather',number:m.number,reason:m.reason,used_in_prediction:false,severity:'reference_only',state:globalThis.Judge90DataSources.weatherState(m).state}))};
     atomicJSON(join(root,'data/update_status.json'),status);
     return status;
   } catch (error) {
