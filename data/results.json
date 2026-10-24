@@ -1,14 +1,14 @@
 {
-  "checked_at": "2026-10-24T11:09:15.957Z",
-  "completed": 0,
-  "hits": 0,
-  "accuracy": null,
+  "checked_at": "2026-10-24T15:57:58.195Z",
+  "completed": 5,
+  "hits": 2,
+  "accuracy": 0.4,
   "rounds": [
     {
-      "snapshot_id": "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b",
-      "dataset_id": "36cd1a5701b388fd6c9208282eb1d3df8a3b23cbc399f2deb5105d7b0b5909a8",
-      "round_id": "1665",
-      "checked_at": "2026-10-24T11:09:15.957Z",
+      "snapshot_id": "01c66dc77e71eec47a78348a9402047be1a7ce2c15ab4077b5590926e27d2df7",
+      "dataset_id": "da46cf260522bf286423fd7b2c56b71f3c73a93e835386680df9e940b71c1e0e",
+      "round_id": "1668",
+      "checked_at": "2026-10-24T15:57:58.195Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -17,28 +17,8 @@
       "matches": [
         {
           "number": 1,
-          "home": "広島",
-          "away": "清水",
-          "status": "pending",
-          "score": null,
-          "actual": null,
-          "prediction": "1",
-          "hit": null
-        },
-        {
-          "number": 2,
-          "home": "鹿島",
-          "away": "柏",
-          "status": "pending",
-          "score": null,
-          "actual": null,
-          "prediction": "1",
-          "hit": null
-        },
-        {
-          "number": 3,
-          "home": "神戸",
-          "away": "町田",
+          "home": "岡山",
+          "away": "FC東京",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -46,9 +26,29 @@
           "hit": null
         },
         {
+          "number": 2,
+          "home": "水戸",
+          "away": "広島",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 3,
+          "home": "神戸",
+          "away": "名古屋",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
           "number": 4,
-          "home": "Ｃ大阪",
-          "away": "千葉",
+          "home": "鹿島",
+          "away": "Ｃ大阪",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -57,8 +57,8 @@
         },
         {
           "number": 5,
-          "home": "FC東京",
-          "away": "水戸",
+          "home": "柏",
+          "away": "浦和",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -67,7 +67,17 @@
         },
         {
           "number": 6,
-          "home": "東京Ｖ",
+          "home": "京都",
+          "away": "清水",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 7,
+          "home": "千葉",
           "away": "福岡",
           "status": "pending",
           "score": null,
@@ -76,9 +86,9 @@
           "hit": null
         },
         {
-          "number": 7,
-          "home": "Ｇ大阪",
-          "away": "京都",
+          "number": 8,
+          "home": "長崎",
+          "away": "東京Ｖ",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -86,19 +96,9 @@
           "hit": null
         },
         {
-          "number": 8,
-          "home": "名古屋",
-          "away": "横浜FM",
-          "status": "pending",
-          "score": null,
-          "actual": null,
-          "prediction": "2",
-          "hit": null
-        },
-        {
           "number": 9,
-          "home": "川崎Ｆ",
-          "away": "岡山",
+          "home": "町田",
+          "away": "Ｇ大阪",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -107,18 +107,18 @@
         },
         {
           "number": 10,
-          "home": "浦和",
-          "away": "長崎",
+          "home": "横浜FM",
+          "away": "川崎Ｆ",
           "status": "pending",
           "score": null,
           "actual": null,
-          "prediction": "1",
+          "prediction": "2",
           "hit": null
         },
         {
           "number": 11,
-          "home": "秋田",
-          "away": "今治",
+          "home": "仙台",
+          "away": "大宮",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -127,8 +127,8 @@
         },
         {
           "number": 12,
-          "home": "鳥栖",
-          "away": "八戸",
+          "home": "新潟",
+          "away": "富山",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -137,8 +137,8 @@
         },
         {
           "number": 13,
-          "home": "富山",
-          "away": "札幌",
+          "home": "宮崎",
+          "away": "大分",
           "status": "pending",
           "score": null,
           "actual": null,
@@ -151,42 +151,42 @@
       "snapshot_id": "2a08615ccc0e804aabf2cfa74e95ea9d3fc5afb35cff3720a094eb91c220ecf9",
       "dataset_id": "e5020919403886468830e5500a11803a305334300adaf6c2ef617fbafefb6f4a",
       "round_id": "1665",
-      "checked_at": "2026-10-24T11:09:15.957Z",
+      "checked_at": "2026-10-24T15:57:58.195Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
-      "completed": 0,
-      "hits": 0,
+      "completed": 5,
+      "hits": 2,
       "matches": [
         {
           "number": 1,
           "home": "広島",
           "away": "清水",
-          "status": "pending",
-          "score": null,
-          "actual": null,
+          "status": "completed",
+          "score": "4-0",
+          "actual": "1",
           "prediction": "1",
-          "hit": null
+          "hit": true
         },
         {
           "number": 2,
           "home": "鹿島",
           "away": "柏",
-          "status": "pending",
-          "score": null,
-          "actual": null,
+          "status": "completed",
+          "score": "2-3",
+          "actual": "2",
           "prediction": "1",
-          "hit": null
+          "hit": false
         },
         {
           "number": 3,
           "home": "神戸",
           "away": "町田",
-          "status": "pending",
-          "score": null,
-          "actual": null,
+          "status": "completed",
+          "score": "0-0",
+          "actual": "0",
           "prediction": "2",
-          "hit": null
+          "hit": false
         },
         {
           "number": 4,
@@ -212,21 +212,21 @@
           "number": 6,
           "home": "東京Ｖ",
           "away": "福岡",
-          "status": "pending",
-          "score": null,
-          "actual": null,
+          "status": "completed",
+          "score": "3-1",
+          "actual": "1",
           "prediction": "1",
-          "hit": null
+          "hit": true
         },
         {
           "number": 7,
           "home": "Ｇ大阪",
           "away": "京都",
-          "status": "pending",
-          "score": null,
-          "actual": null,
+          "status": "completed",
+          "score": "2-2",
+          "actual": "0",
           "prediction": "1",
-          "hit": null
+          "hit": false
         },
         {
           "number": 8,
@@ -292,7 +292,7 @@
     },
     {
       "snapshot_id": "34e2048e9dd84b2ca93c82f0c92339800fb50624c15c26d5b2201f4c5220c636",
-      "checked_at": "2026-10-24T11:09:15.957Z",
+      "checked_at": "2026-10-24T15:57:58.195Z",
       "eligible": false,
       "eligibility_note": "旧形式または締切前予測を確認できないため集計対象外",
       "source": "J.League results; not official toto settlement",
@@ -430,9 +430,153 @@
           "hit": null
         }
       ]
+    },
+    {
+      "snapshot_id": "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b",
+      "dataset_id": "36cd1a5701b388fd6c9208282eb1d3df8a3b23cbc399f2deb5105d7b0b5909a8",
+      "round_id": "1665",
+      "checked_at": "2026-10-24T15:57:58.195Z",
+      "eligible": true,
+      "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
+      "source": "J.League results; not official toto settlement",
+      "completed": 5,
+      "hits": 2,
+      "matches": [
+        {
+          "number": 1,
+          "home": "広島",
+          "away": "清水",
+          "status": "completed",
+          "score": "4-0",
+          "actual": "1",
+          "prediction": "1",
+          "hit": true
+        },
+        {
+          "number": 2,
+          "home": "鹿島",
+          "away": "柏",
+          "status": "completed",
+          "score": "2-3",
+          "actual": "2",
+          "prediction": "1",
+          "hit": false
+        },
+        {
+          "number": 3,
+          "home": "神戸",
+          "away": "町田",
+          "status": "completed",
+          "score": "0-0",
+          "actual": "0",
+          "prediction": "2",
+          "hit": false
+        },
+        {
+          "number": 4,
+          "home": "Ｃ大阪",
+          "away": "千葉",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 5,
+          "home": "FC東京",
+          "away": "水戸",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 6,
+          "home": "東京Ｖ",
+          "away": "福岡",
+          "status": "completed",
+          "score": "3-1",
+          "actual": "1",
+          "prediction": "1",
+          "hit": true
+        },
+        {
+          "number": 7,
+          "home": "Ｇ大阪",
+          "away": "京都",
+          "status": "completed",
+          "score": "2-2",
+          "actual": "0",
+          "prediction": "1",
+          "hit": false
+        },
+        {
+          "number": 8,
+          "home": "名古屋",
+          "away": "横浜FM",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 9,
+          "home": "川崎Ｆ",
+          "away": "岡山",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 10,
+          "home": "浦和",
+          "away": "長崎",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 11,
+          "home": "秋田",
+          "away": "今治",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 12,
+          "home": "鳥栖",
+          "away": "八戸",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 13,
+          "home": "富山",
+          "away": "札幌",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        }
+      ]
     }
   ],
   "counted_snapshot_ids": [
+    "01c66dc77e71eec47a78348a9402047be1a7ce2c15ab4077b5590926e27d2df7",
     "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b"
   ]
 }
