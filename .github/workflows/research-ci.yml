@@ -24,3 +24,9 @@ jobs:
         run: |
           python research/evaluate.py --output /tmp/judge90-reproduced
           python research/verify_results.py research/results /tmp/judge90-reproduced
+      - name: Reproduce development-only candidate selection
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          python research/continuous.py register --output /tmp/judge90-registration.json
+          python research/verify_registration.py research/continuous/registration.json /tmp/judge90-registration.json

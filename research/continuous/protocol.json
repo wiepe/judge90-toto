@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "calibration_training": [
+    2023
+  ],
+  "candidate_selection": [
+    2024
+  ],
+  "previously_exposed_period": [
+    2025
+  ],
+  "prospective_start": "2026-11-01",
+  "prospective_end": "2027-05-31",
+  "decision_not_before": "2027-06-07",
+  "minimum_matches_per_league": 200,
+  "minimum_relative_logloss_improvement": 0.01,
+  "maximum_league_logloss_regression": 0.01,
+  "single_confirmatory_look": true,
+  "bootstrap_replicates": 4000,
+  "bootstrap_seed": 902027,
+  "cutoff": "Results strictly before JST date of forecast creation; forecast only later match dates",
+  "primary_comparison": "selected candidate vs current formula replica and league mean on exactly paired prospective fixtures",
+  "warning": "2025 remains an exposed historical audit, never a new candidate selection or confirmation set. Research current uses league-only H2H from 2022, unlike production's longer cup-inclusive H2H. No production promotion is automatic.",
+  "lifetime_alpha_budget": 0.05,
+  "alpha_spending": "0.05 / ((cycle+1)*(cycle+2)); telescoping sum <= 0.05",
+  "next_window_days": 210,
+  "next_window_lead_days": 7,
+  "maximum_bootstrap_replicates": 100000
+}
