@@ -61,14 +61,15 @@ jobs:
         if: always() && steps.pages.outputs.mode == 'workflow'
         run: |
           mkdir -p /tmp/judge90-site
-          cp index.html predictions.json recommendation.json /tmp/judge90-site/
+          cp index.html validation.html predictions.json recommendation.json /tmp/judge90-site/
           cp -R assets data /tmp/judge90-site/
           mkdir -p /tmp/judge90-site/scripts/lib
           cp scripts/lib/portfolio.mjs /tmp/judge90-site/scripts/lib/
           mkdir -p /tmp/judge90-site/research/results /tmp/judge90-site/docs
           cp research/report.html research/protocol.json /tmp/judge90-site/research/
+          cp -R research/continuous /tmp/judge90-site/research/
           cp research/results/comparison.json research/results/budget_example.json /tmp/judge90-site/research/results/
-          cp docs/stage2.md /tmp/judge90-site/docs/
+          cp docs/stage2.md docs/challenger-validation.md docs/continuous-evaluation.md /tmp/judge90-site/docs/
           touch /tmp/judge90-site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         if: always() && steps.pages.outputs.mode == 'workflow' && steps.commit.outputs.published == 'true'

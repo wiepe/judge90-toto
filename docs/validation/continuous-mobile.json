@@ -1,0 +1,56 @@
+{
+  "clock_note": "Existing prediction validity interval frozen; research preview timestamp aligned for rendering tests only.",
+  "results": [
+    {
+      "page": "validation",
+      "width": 360,
+      "scrollWidth": 360,
+      "cards": 4,
+      "modelOptions": 54,
+      "modelCount": 10,
+      "errors": []
+    },
+    {
+      "page": "main",
+      "width": 360,
+      "scrollWidth": 360,
+      "matches": 13,
+      "strategies": 4,
+      "errors": []
+    },
+    {
+      "page": "validation",
+      "width": 390,
+      "scrollWidth": 390,
+      "cards": 4,
+      "modelOptions": 54,
+      "modelCount": 10,
+      "errors": []
+    },
+    {
+      "page": "main",
+      "width": 390,
+      "scrollWidth": 390,
+      "matches": 13,
+      "strategies": 4,
+      "errors": []
+    },
+    {
+      "page": "validation",
+      "width": 768,
+      "scrollWidth": 768,
+      "cards": 4,
+      "modelOptions": 54,
+      "modelCount": 10,
+      "errors": []
+    },
+    {
+      "page": "main",
+      "width": 768,
+      "scrollWidth": 768,
+      "matches": 13,
+      "strategies": 4,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+name: Weekly forecast evaluation and improvement proposals
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '47 0 * * 1'
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: judge90-published-data
+  cancel-in-progress: false
+jobs:
+  research:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: research/requirements.txt
+      - run: npm ci --ignore-scripts
+      - run: pip install -r research/requirements.txt
+      - run: npm test
+      - run: python -m unittest discover -s tests/research -v
+      - name: Refresh official results in an isolated directory
+        id: source
+        run: |
+          mkdir -p /tmp/judge90-research/data
+          cd /tmp/judge90-research
+          node "$GITHUB_WORKSPACE/scripts/fetch_jleague.mjs"
+      - name: Generate registered shadow forecasts and evaluate fixed future window
+        id: evaluate
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: python research/continuous.py weekly --fixtures /tmp/judge90-research/data/jleague_matches.json
+      - name: Preserve explicit research acquisition failure
+        if: failure() && steps.source.outcome == 'failure'
+        run: |
+          mkdir -p data/research
+          node --input-type=module -e "import{writeFileSync}from'node:fs';writeFileSync('data/research/status.json',JSON.stringify({state:'error',checked_at:new Date().toISOString(),error:'Official result acquisition failed; previous research forecasts retained'}))"
+      - name: Validate candidate evidence without creating a PR
+        id: proposal
+        if: success() && steps.evaluate.outcome == 'success'
+        run: node scripts/check_proposal.mjs
+      - name: Commit research data without modifying the production model
+        id: persist
+        if: always() && (steps.source.outcome == 'failure' || steps.evaluate.outcome == 'success' || steps.evaluate.outcome == 'failure')
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research
+          git diff --cached --quiet || git commit -m 'Record weekly registered model evaluation'
+          git push origin HEAD:main
+      - name: Propose only a statistically eligible registered candidate
+        if: success() && steps.evaluate.outcome == 'success' && steps.persist.outcome == 'success' && steps.proposal.outputs.eligible == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROPOSAL_BRANCH: ${{ steps.proposal.outputs.branch }}
+        run: |
+          branch="$PROPOSAL_BRANCH"
+          existing=$(gh pr list --state all --head "$branch" --json number --jq 'length')
+          if [ "$existing" != 0 ]; then exit 0; fi
+          git switch -c "$branch"
+          git add research/proposed-model.json
+          git commit -m 'Propose registered candidate for human review'
+          git push origin "HEAD:$branch"
+          cat > /tmp/judge90-proposal.md <<'BODY'
+          固定した将来期間の一度だけの検定で、登録済み候補が事前条件を満たしました。
+          research/proposed-model.json に同一試合での比較指標・日単位bootstrap・リーグ別成績を保存しています。
+          現行式の比較用モデルは2022年以降のリーグ戦H2Hを使用し、本番の長期・カップ戦H2Hとは条件が異なります。
+          このPRは研究上の採用候補の提案です。本番予測コードは変更しません。実運用評価と制約を確認し、承認後に本番統合を行ってください。
+          BODY
+          gh pr create --base main --head "$branch" --title '登録モデルの改善候補：統計検証を通過・承認待ち' --body-file /tmp/judge90-proposal.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forecast-research-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/research/
+            research/continuous/registration.json
+            research/proposed-model.json
+          retention-days: 90

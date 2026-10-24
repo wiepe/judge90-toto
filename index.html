@@ -30,6 +30,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 
 .notice{padding:16px;border:1px solid #315b58;background:#102522;border-radius:14px;line-height:1.7;color:#c2eee5}.notice.reference{border-color:#6b5b20;background:#221e12;color:#fde8ad}.quality-panel{margin:18px 0;padding:14px;background:#111c2d;border:1px solid #30435f;border-radius:12px}.quality-panel summary,.match-evidence summary{cursor:pointer;font-weight:700;min-height:32px}.quality-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.quality-item{background:#0a1020;padding:12px;border-radius:10px;font-size:13px;overflow-wrap:anywhere}.quality-item strong{display:block}.source-badges{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.source-badges span{font-size:12px;background:#16243a;border-radius:6px;padding:5px 8px}.venue-line{font-size:13px;color:#b9c9dd;margin-top:8px;overflow-wrap:anywhere}.match-evidence{margin-top:12px;border-top:1px solid #26324a;padding-top:10px}.budget-input{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.budget-input input{width:160px;max-width:100%;padding:12px;background:#0a1020;color:#fff;border:1px solid #698097;border-radius:8px;font-size:16px}.budget-input button{min-height:44px}.budget-picks{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.budget-picks span{padding:5px 8px;background:#14243a;border-radius:6px}.budget-result{margin-top:12px;line-height:1.8;overflow-wrap:anywhere}
 @media(max-width:650px){.hero{padding:14px 0 10px}.hero h1{font-size:27px}.hero>.sub{font-size:13px}.hero .tag,.hero>.sub,.head .tag{display:none}.hero .demo{margin-top:4px;padding:4px 8px;font-size:11px}.quality-panel{padding:10px;margin:10px 0}.quality-panel summary{font-size:13px}.notice{padding:12px}.stats{margin:12px 0}.stat{padding:10px}.stat b{font-size:22px}.quality-list{grid-template-columns:1fr}.top{flex-wrap:wrap}.top>div:first-child{min-width:0;max-width:100%}.badge{white-space:normal}.head{align-items:flex-start;padding-top:12px;padding-bottom:12px}#updated{max-width:45%;overflow-wrap:anywhere}.factors{font-size:14px}.notice{font-size:14px}.prob-label{font-size:11px}.prob{padding:10px 4px}}
+.strategy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}.strategy-card{padding:14px;background:#111d30;border:1px solid #35516b;border-radius:12px;min-width:0}.strategy-card p{font-size:13px}.ticket-list{padding-left:24px}.ticket-list li{font:11px/1.9 ui-monospace,monospace;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -62,6 +63,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 
 <div id="matches"><div class="loading">JUDGE90データを読み込んでいます…</div></div>
 
+<p class="small"><a href="validation.html">モデル比較・公開予測の実績・予算別の買い目を見る</a></p>
 <section class="panel" id="purchasePanel">
 <div class="tag">PORTFOLIO OPTIMIZER</div>
 <h2>💰 おすすめの買い方</h2>
@@ -78,6 +80,7 @@ header{border-bottom:1px solid var(--line);background:#090d18dd;backdrop-filter:
 <div class="plan"><span>トリプル</span><b id="tripleCount">-</b><div class="small">全結果をカバー</div></div>
 </div>
 <h3>予算上限を指定して比較</h3><p class="small">計算のみです。各試合の独立を仮定した推定で、実際の当選確率・収益を保証しません。</p><div class="budget-input"><label for="budgetLimit">上限（円）</label><input id="budgetLimit" type="number" min="100" max="1000000" step="100" value="1000" inputmode="numeric"><button class="btn" id="calculateBudget" type="button">買い目を計算</button><button class="btn" data-budget="1000" type="button">1,000円</button><button class="btn" data-budget="5000" type="button">5,000円</button></div><div id="budgetResult" class="budget-result" role="status" aria-live="polite"></div>
+<h3>100円・500円・1,000円・3,000円で比較</h3><p class="small">個別買い目の13試合的中確率を最大化する計算です。各試合の独立と通常開催を仮定。実証済み当選確率ではなく、賞金・期待収益は算定しません。最高等級別の確率は排他的です。</p><div id="fixedBudgetStrategies" class="strategy-grid"></div>
 </section>
 </main>
 
@@ -356,5 +359,6 @@ setInterval(()=>{if(PREDICTIONS)renderDataStatus();},60000);
 loadData();
 </script>
 <script type="module" src="assets/budget-ui.mjs"></script>
+<script type="module" src="assets/strategy-ui.mjs"></script>
 </body>
 </html>

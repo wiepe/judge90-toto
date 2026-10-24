@@ -1,0 +1,4 @@
+import{existsSync}from'node:fs';import{resolve,join}from'node:path';import{fileURLToPath}from'node:url';
+export const requiredReleaseFiles=['.github/workflows/predict.yml','.github/workflows/continuous-evaluation.yml','scripts/operate.mjs','scripts/lib/evaluation.mjs','scripts/check_delivery.mjs','scripts/check_proposal.mjs','research/continuous.py','research/continuous/registration.json','validation.html','assets/validation-ui.mjs','assets/strategy-ui.mjs'];
+export function inspectRelease(root=process.cwd()) {const missing=requiredReleaseFiles.filter(p=>!existsSync(join(root,p)));return {complete:missing.length===0,missing,features:['prediction','verified-evaluation','weekly-research','review-proposals','mobile-validation']};}
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){const report=inspectRelease();console.log(JSON.stringify(report,null,2));if(!report.complete)process.exitCode=1;}
