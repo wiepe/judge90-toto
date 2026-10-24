@@ -1,0 +1,32 @@
+{
+  "protocol_version": 1,
+  "frozen_before_data_evaluation": true,
+  "training_seasons": [2022, 2023],
+  "validation_seasons": [2024],
+  "holdout_seasons": [2025],
+  "leagues": ["J1", "J2", "J3"],
+  "prediction_cutoff": "00:00 Asia/Tokyo on match day; only dates strictly before match day",
+  "refit_frequency": "each calendar month, using only earlier dates",
+  "selection_metric": "validation macro-league LogLoss",
+  "promotion_gate": {
+    "holdout_relative_logloss_improvement_over_current": 0.01,
+    "holdout_relative_logloss_improvement_over_league_mean": 0.01,
+    "max_per_league_logloss_regression": 0.01,
+    "paired_date_block_bootstrap_95pct_upper_difference_below_zero": true,
+    "must_improve_brier": true,
+    "must_not_reduce_accuracy": true,
+    "must_improve_draw_recall": true,
+    "minimum_holdout_matches_per_league": 200
+  },
+  "hyperparameters": {
+    "elo": [{"k": 16, "home": 60, "draw_prior": 0.26}, {"k": 24, "home": 60, "draw_prior": 0.30}],
+    "poisson": [{"decay_days": 365, "ridge": 5}, {"decay_days": 730, "ridge": 10}],
+    "dixon_coles": [{"decay_days": 365, "ridge": 5}, {"decay_days": 730, "ridge": 10}]
+  },
+  "limitations": [
+    "Retrospective results archive, not immutable as-of snapshots: corrections/publication times cannot be proven.",
+    "No lineups, injuries, suspensions, odds or weather used.",
+    "Model promotion is a research candidate only; production remains unchanged.",
+    "2025 is code-held-out from tuning, not a prospectively collected future season."
+  ]
+}

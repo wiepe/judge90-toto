@@ -25,3 +25,13 @@ GitHub Actionsは毎週土曜9:17日本時間に更新します。手動実行�
 - [第2段階以降の優先順位](docs/roadmap.md)
 
 現行モデルは固定重み方式です。判定スコアは実際の的中確率ではありません。天気は取得可能な場合のみ表示し、予測確率には未反映です。予測は当選や収益を保証しません。
+
+## 第2段階の研究用比較（本番モデルとは分離）
+
+2022〜2025年の4,502試合で現行式・Elo・Poisson・Dixon–Colesを比較しています。2024年で選択した候補は2025年の採用基準に届かず、本番モデルは維持する判定です。
+
+- [比較結果・時系列検証と残る制約](docs/stage2.md)
+- [研究用ダッシュボード](research/report.html)
+- [固定した評価条件](research/protocol.json)
+
+再計算：`python -m pip install -r research/requirements.txt` の後に `python research/evaluate.py`。本番の定期更新は研究用コードを実行しません。
