@@ -1,79 +1,460 @@
 {
+  "publication": {
+    "checked_at": "2026-10-24T11:09:47.721Z",
+    "sales_close_at": "2026-10-31T13:50:00+09:00",
+    "remaining_minutes": 9700.20465,
+    "reserve_minutes": 30,
+    "on_time": true
+  },
   "state": "success",
-  "started_at": "2026-10-24T04:38:54.904Z",
-  "checked_at": "2026-10-24T04:39:21.954Z",
-  "dataset_id": "36cd1a5701b388fd6c9208282eb1d3df8a3b23cbc399f2deb5105d7b0b5909a8",
-  "round_id": "1665",
+  "started_at": "2026-10-24T11:09:19.158Z",
+  "checked_at": "2026-10-24T11:09:47.723Z",
+  "dataset_id": "da46cf260522bf286423fd7b2c56b71f3c73a93e835386680df9e940b71c1e0e",
+  "round_id": "1668",
   "product": "toto",
   "product_id": "01",
-  "sales_open_at": "2026-10-21T08:00:00+09:00",
-  "sales_close_at": "2026-10-24T13:50:00+09:00",
+  "sales_open_at": "2026-10-24T08:00:00+09:00",
+  "sales_close_at": "2026-10-31T13:50:00+09:00",
   "weather_available": "0/13",
+  "data_quality": {
+    "prediction": 13,
+    "venue": 13,
+    "h2h_used": 11,
+    "weather": 0,
+    "weather_policy_blocked": 11,
+    "weather_used": false,
+    "rows": [
+      {
+        "number": 1,
+        "home": "岡山",
+        "away": "FC東京",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "ＪＦＥス",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 2,
+        "home": "水戸",
+        "away": "広島",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "水戸信ス",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 3,
+        "home": "神戸",
+        "away": "名古屋",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "ノエスタ",
+          "kickoff": "15:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 4,
+        "home": "鹿島",
+        "away": "Ｃ大阪",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "メルスタ",
+          "kickoff": "15:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 5,
+        "home": "柏",
+        "away": "浦和",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "三協Ｆ柏",
+          "kickoff": "16:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 6,
+        "home": "京都",
+        "away": "清水",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "サンガＳ",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 7,
+        "home": "千葉",
+        "away": "福岡",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "フクアリ",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 8,
+        "home": "長崎",
+        "away": "東京Ｖ",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "ピースタ",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 9,
+        "home": "町田",
+        "away": "Ｇ大阪",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "Ｇスタ",
+          "kickoff": "16:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 10,
+        "home": "横浜FM",
+        "away": "川崎Ｆ",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "日産ス",
+          "kickoff": "13:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 11,
+        "home": "仙台",
+        "away": "大宮",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "ユアスタ",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "coordinates_missing",
+          "label": "座標未登録（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 12,
+        "home": "新潟",
+        "away": "富山",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "デンカＳ",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "no_usable_history",
+          "used": false,
+          "label": "利用可能な対戦履歴なし・補正0（未対戦とは断定しません）"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 13,
+        "home": "宮崎",
+        "away": "大分",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "いちご",
+          "kickoff": "14:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "no_usable_history",
+          "used": false,
+          "label": "利用可能な対戦履歴なし・補正0（未対戦とは断定しません）"
+        },
+        "weather": {
+          "state": "coordinates_missing",
+          "label": "座標未登録（予測に未使用）",
+          "used": false
+        }
+      }
+    ]
+  },
   "warnings": [
     {
       "source": "weather",
       "number": 1,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 2,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 3,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 4,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 5,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 6,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 7,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 8,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 9,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 10,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 11,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "coordinates_not_found",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "coordinates_missing"
     },
     {
       "source": "weather",
       "number": 12,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 13,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "coordinates_not_found",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "coordinates_missing"
     }
   ]
 }

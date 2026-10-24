@@ -1,11 +1,11 @@
 {
-  "round_id": "1665",
+  "round_id": "1668",
   "product": "toto",
   "product_id": "01",
-  "sales_open_at": "2026-10-21T08:00:00+09:00",
-  "sales_close_at": "2026-10-24T13:50:00+09:00",
-  "source_digest": "a4a2df1960e62223727fc9d786736b9314d291d01a40f03f559bec3303b02b6b",
-  "generated_at": "2026-10-24T04:39:21.928Z",
+  "sales_open_at": "2026-10-24T08:00:00+09:00",
+  "sales_close_at": "2026-10-31T13:50:00+09:00",
+  "source_digest": "77ca6fa1ce49582582c18d2a9c3333f869b74256c447a7b81c18ed9f87e78fcf",
+  "generated_at": "2026-10-24T11:09:47.706Z",
   "engine": "JUDGE 90 Betting Strategy Engine",
   "version": "2.0",
   "budget": 1000,
@@ -26,240 +26,242 @@
   "matches": [
     {
       "number": 1,
-      "home": "広島",
-      "away": "清水",
+      "home": "岡山",
+      "away": "FC東京",
       "league": "J1",
       "recommendation": [
-        "1"
+        "2"
       ],
       "type": "single",
-      "probability_coverage": 0.526,
-      "confidence": 49,
+      "probability_coverage": 0.452,
+      "confidence": 32,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦は拮抗（1-3-1）"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近2戦は拮抗（1-0-1）"
         ]
       },
-      "uncertainty_score": 0.552
+      "uncertainty_score": 0.725
     },
     {
       "number": 2,
-      "home": "鹿島",
-      "away": "柏",
+      "home": "水戸",
+      "away": "広島",
       "league": "J1",
       "recommendation": [
-        "1"
+        "2"
       ],
       "type": "single",
-      "probability_coverage": 0.36,
-      "confidence": 10,
+      "probability_coverage": 0.555,
+      "confidence": 57,
       "uncertainty": {
-        "level": "HIGH",
+        "level": "LOW",
         "reasons": [
-          "両チームの総合評価が近い",
-          "H2H直近5戦はホーム側が優勢（3-2-0）"
+          "アウェイ側の直近フォームが優位",
+          "H2H直近3戦はアウェイ側が優勢（0-1-2）"
         ]
       },
-      "uncertainty_score": 0.952
+      "uncertainty_score": 0.481
     },
     {
       "number": 3,
       "home": "神戸",
-      "away": "町田",
+      "away": "名古屋",
       "league": "J1",
       "recommendation": [
-        "2"
+        "1"
       ],
       "type": "single",
-      "probability_coverage": 0.377,
-      "confidence": 10,
+      "probability_coverage": 0.499,
+      "confidence": 43,
       "uncertainty": {
-        "level": "HIGH",
+        "level": "LOW",
         "reasons": [
-          "H2H直近4戦はホーム側が優勢（2-1-1）"
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（3-2-0）"
         ]
       },
-      "uncertainty_score": 0.912
+      "uncertainty_score": 0.616
     },
     {
       "number": 4,
-      "home": "Ｃ大阪",
-      "away": "千葉",
+      "home": "鹿島",
+      "away": "Ｃ大阪",
       "league": "J1",
       "recommendation": [
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.485,
-      "confidence": 40,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦はホーム側が優勢（2-2-1）"
-        ]
-      },
-      "uncertainty_score": 0.649
-    },
-    {
-      "number": 5,
-      "home": "FC東京",
-      "away": "水戸",
-      "league": "J1",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.605,
-      "confidence": 67,
-      "uncertainty": {
-        "level": "LOW",
-        "reasons": [
-          "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位"
-        ]
-      },
-      "uncertainty_score": 0.388
-    },
-    {
-      "number": 6,
-      "home": "東京Ｖ",
-      "away": "福岡",
-      "league": "J1",
-      "recommendation": [
-        "1",
-        "0",
-        "2"
-      ],
-      "type": "triple",
-      "probability_coverage": 1,
-      "confidence": 10,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "両チームの総合評価が近い",
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦はホーム側が優勢（1-4-0）"
-        ]
-      },
-      "uncertainty_score": 0.988
-    },
-    {
-      "number": 7,
-      "home": "Ｇ大阪",
-      "away": "京都",
-      "league": "J1",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.383,
-      "confidence": 11,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "両チームの総合評価が近い",
-          "H2H直近5戦はホーム側が優勢（2-2-1）"
-        ]
-      },
-      "uncertainty_score": 0.897
-    },
-    {
-      "number": 8,
-      "home": "名古屋",
-      "away": "横浜FM",
-      "league": "J1",
-      "recommendation": [
-        "1",
-        "0",
-        "2"
-      ],
-      "type": "triple",
-      "probability_coverage": 1,
-      "confidence": 10,
-      "uncertainty": {
-        "level": "HIGH",
-        "reasons": [
-          "H2H直近5戦はホーム側が優勢（3-1-1）"
-        ]
-      },
-      "uncertainty_score": 0.952
-    },
-    {
-      "number": 9,
-      "home": "川崎Ｆ",
-      "away": "岡山",
-      "league": "J1",
-      "recommendation": [
-        "1"
-      ],
-      "type": "single",
-      "probability_coverage": 0.444,
-      "confidence": 30,
+      "probability_coverage": 0.51,
+      "confidence": 46,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
           "ホーム側の直近フォームが優位",
-          "H2H直近2戦は拮抗（0-2-0）"
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
         ]
       },
-      "uncertainty_score": 0.745
+      "uncertainty_score": 0.59
     },
     {
-      "number": 10,
-      "home": "浦和",
-      "away": "長崎",
+      "number": 5,
+      "home": "柏",
+      "away": "浦和",
       "league": "J1",
       "recommendation": [
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.468,
-      "confidence": 36,
+      "probability_coverage": 0.438,
+      "confidence": 28,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "H2H直近5戦はホーム側が優勢（3-0-2）"
+        ]
+      },
+      "uncertainty_score": 0.76
+    },
+    {
+      "number": 6,
+      "home": "京都",
+      "away": "清水",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.365,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
+        ]
+      },
+      "uncertainty_score": 0.94
+    },
+    {
+      "number": 7,
+      "home": "千葉",
+      "away": "福岡",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.399,
+      "confidence": 16,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（2-2-1）"
+        ]
+      },
+      "uncertainty_score": 0.858
+    },
+    {
+      "number": 8,
+      "home": "長崎",
+      "away": "東京Ｖ",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.474,
+      "confidence": 37,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
-          "H2H直近2戦は拮抗（0-2-0）"
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
         ]
       },
-      "uncertainty_score": 0.688
+      "uncertainty_score": 0.674
+    },
+    {
+      "number": 9,
+      "home": "町田",
+      "away": "Ｇ大阪",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.587,
+      "confidence": 64,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近4戦はホーム側が優勢（3-1-0）"
+        ]
+      },
+      "uncertainty_score": 0.409
+    },
+    {
+      "number": 10,
+      "home": "横浜FM",
+      "away": "川崎Ｆ",
+      "league": "J1",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "H2H直近5戦はアウェイ側が優勢（1-2-2）"
+        ]
+      },
+      "uncertainty_score": 0.981
     },
     {
       "number": 11,
-      "home": "秋田",
-      "away": "今治",
+      "home": "仙台",
+      "away": "大宮",
       "league": "J2",
       "recommendation": [
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.41,
-      "confidence": 19,
+      "probability_coverage": 0.483,
+      "confidence": 39,
       "uncertainty": {
-        "level": "MEDIUM",
+        "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
-          "アウェイ側の直近フォームが優位",
-          "H2H直近4戦は拮抗（2-0-2）"
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
         ]
       },
-      "uncertainty_score": 0.831
+      "uncertainty_score": 0.653
     },
     {
       "number": 12,
-      "home": "鳥栖",
-      "away": "八戸",
+      "home": "新潟",
+      "away": "富山",
       "league": "J2",
       "recommendation": [
-        "1"
+        "1",
+        "0",
+        "2"
       ],
-      "type": "single",
-      "probability_coverage": 0.393,
-      "confidence": 14,
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
@@ -267,28 +269,28 @@
           "ホーム側の開催地成績が優位"
         ]
       },
-      "uncertainty_score": 0.872
+      "uncertainty_score": 0.95
     },
     {
       "number": 13,
-      "home": "富山",
-      "away": "札幌",
+      "home": "宮崎",
+      "away": "大分",
       "league": "J2",
       "recommendation": [
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.471,
-      "confidence": 36,
+      "probability_coverage": 0.362,
+      "confidence": 10,
       "uncertainty": {
-        "level": "LOW",
+        "level": "HIGH",
         "reasons": [
-          "ホーム側の開催地成績が優位",
-          "H2H直近5戦はアウェイ側が優勢（1-0-4）"
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位"
         ]
       },
-      "uncertainty_score": 0.681
+      "uncertainty_score": 0.948
     }
   ],
-  "dataset_id": "36cd1a5701b388fd6c9208282eb1d3df8a3b23cbc399f2deb5105d7b0b5909a8"
+  "dataset_id": "da46cf260522bf286423fd7b2c56b71f3c73a93e835386680df9e940b71c1e0e"
 }

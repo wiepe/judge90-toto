@@ -1,0 +1,438 @@
+{
+  "checked_at": "2026-10-24T11:09:15.957Z",
+  "completed": 0,
+  "hits": 0,
+  "accuracy": null,
+  "rounds": [
+    {
+      "snapshot_id": "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b",
+      "dataset_id": "36cd1a5701b388fd6c9208282eb1d3df8a3b23cbc399f2deb5105d7b0b5909a8",
+      "round_id": "1665",
+      "checked_at": "2026-10-24T11:09:15.957Z",
+      "eligible": true,
+      "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
+      "source": "J.League results; not official toto settlement",
+      "completed": 0,
+      "hits": 0,
+      "matches": [
+        {
+          "number": 1,
+          "home": "広島",
+          "away": "清水",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 2,
+          "home": "鹿島",
+          "away": "柏",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 3,
+          "home": "神戸",
+          "away": "町田",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 4,
+          "home": "Ｃ大阪",
+          "away": "千葉",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 5,
+          "home": "FC東京",
+          "away": "水戸",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 6,
+          "home": "東京Ｖ",
+          "away": "福岡",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 7,
+          "home": "Ｇ大阪",
+          "away": "京都",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 8,
+          "home": "名古屋",
+          "away": "横浜FM",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 9,
+          "home": "川崎Ｆ",
+          "away": "岡山",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 10,
+          "home": "浦和",
+          "away": "長崎",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 11,
+          "home": "秋田",
+          "away": "今治",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 12,
+          "home": "鳥栖",
+          "away": "八戸",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 13,
+          "home": "富山",
+          "away": "札幌",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        }
+      ]
+    },
+    {
+      "snapshot_id": "2a08615ccc0e804aabf2cfa74e95ea9d3fc5afb35cff3720a094eb91c220ecf9",
+      "dataset_id": "e5020919403886468830e5500a11803a305334300adaf6c2ef617fbafefb6f4a",
+      "round_id": "1665",
+      "checked_at": "2026-10-24T11:09:15.957Z",
+      "eligible": true,
+      "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
+      "source": "J.League results; not official toto settlement",
+      "completed": 0,
+      "hits": 0,
+      "matches": [
+        {
+          "number": 1,
+          "home": "広島",
+          "away": "清水",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 2,
+          "home": "鹿島",
+          "away": "柏",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 3,
+          "home": "神戸",
+          "away": "町田",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 4,
+          "home": "Ｃ大阪",
+          "away": "千葉",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 5,
+          "home": "FC東京",
+          "away": "水戸",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 6,
+          "home": "東京Ｖ",
+          "away": "福岡",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 7,
+          "home": "Ｇ大阪",
+          "away": "京都",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 8,
+          "home": "名古屋",
+          "away": "横浜FM",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 9,
+          "home": "川崎Ｆ",
+          "away": "岡山",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 10,
+          "home": "浦和",
+          "away": "長崎",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 11,
+          "home": "秋田",
+          "away": "今治",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 12,
+          "home": "鳥栖",
+          "away": "八戸",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 13,
+          "home": "富山",
+          "away": "札幌",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        }
+      ]
+    },
+    {
+      "snapshot_id": "34e2048e9dd84b2ca93c82f0c92339800fb50624c15c26d5b2201f4c5220c636",
+      "checked_at": "2026-10-24T11:09:15.957Z",
+      "eligible": false,
+      "eligibility_note": "旧形式または締切前予測を確認できないため集計対象外",
+      "source": "J.League results; not official toto settlement",
+      "completed": 0,
+      "hits": 0,
+      "matches": [
+        {
+          "number": 1,
+          "home": "清水エスパルス",
+          "away": "ガンバ大阪",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 2,
+          "home": "ジェフユナイテッド千葉",
+          "away": "横浜Ｆ・マリノス",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 3,
+          "home": "東京ヴェルディ",
+          "away": "ＦＣ東京",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 4,
+          "home": "セレッソ大阪",
+          "away": "川崎フロンターレ",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 5,
+          "home": "鹿島",
+          "away": "Ｖ・ファーレン長崎",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 6,
+          "home": "サンフレッチェ広島",
+          "away": "京都",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 7,
+          "home": "水戸ホーリーホック",
+          "away": "浦和レッズ",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 8,
+          "home": "ファジアーノ岡山",
+          "away": "神戸",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 9,
+          "home": "ＦＣ町田ゼルビア",
+          "away": "アビスパ福岡",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 10,
+          "home": "柏",
+          "away": "名古屋グランパス",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 11,
+          "home": "札幌",
+          "away": "ブラウブリッツ秋田",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 12,
+          "home": "大分",
+          "away": "新潟",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 13,
+          "home": "ＦＣ今治",
+          "away": "ヴァンラーレ八戸",
+          "status": "unmatched",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        }
+      ]
+    }
+  ],
+  "counted_snapshot_ids": [
+    "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b"
+  ]
+}
