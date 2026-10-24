@@ -1,5 +1,5 @@
 import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';
-import{initializationPlan}from'../scripts/initialization_plan.mjs';import{checkPublicSite,verifyPublicSite}from'../scripts/check_public_site.mjs';
+import{initializationPlan}from'../scripts/initialization_plan.mjs';import{checkPublicSite,verifyPublicSite,assertPublicMime}from'../scripts/check_public_site.mjs';
 import{parseToto}from'../scripts/lib/toto.mjs';import{matchFixture}from'../scripts/lib/teams.mjs';
 const now=new Date('2026-10-25T00:00:00Z');
 test('first release initializes research and prediction; no manual dispatch required',()=>{const p=initializationPlan({now,status:{state:'success',checked_at:now.toISOString(),dataset_id:'x'},researchStatus:{state:'preview'}});assert.equal(p.research,true);assert.equal(p.prediction,true);});
@@ -12,3 +12,5 @@ test('mixed datasets and expired data cannot pass public health verification',as
 test('network failure is reported as unverified',async()=>{await assert.rejects(checkPublicSite({fetcher:async()=>{throw new Error('HTTP 503')}}),/503/);});
 
 test('deployment propagation retries are bounded and never bypass access refusals',async()=>{let calls=0;const waits=[];const result=await verifyPublicSite({checker:async()=>{if(++calls===1)throw new Error('old asset');return 'ready';},sleep:async ms=>waits.push(ms)});assert.equal(result,'ready');assert.deepEqual(waits,[15000]);calls=0;await assert.rejects(verifyPublicSite({checker:async()=>{calls++;throw new Error('HTTP 403');},sleep:async()=>{throw new Error('must not retry');}}),/403/);assert.equal(calls,1);});
+
+test('browser module and page MIME types must support actual rendering',()=>{assert.doesNotThrow(()=>assertPublicMime('/assets/validation-ui.mjs','application/javascript; charset=utf-8'));assert.throws(()=>assertPublicMime('/assets/validation-ui.mjs','application/octet-stream'),/content type/);assert.throws(()=>assertPublicMime('/validation.html','text/plain'),/content type/);});
