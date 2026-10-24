@@ -3,20 +3,26 @@ on:
   workflow_dispatch:
   workflow_call:
   schedule:
-    - cron: "17 0 * * 6"
+    # UTC: Saturday 00:17 = Saturday 09:17 JST, plus rollover/result/recovery checks.
+    - cron: "17 */3 * * *"
 permissions:
   contents: write
+  pages: write
+  id-token: write
 concurrency:
   group: judge90-published-data
   cancel-in-progress: false
 jobs:
   predict:
-    # A manual run on a feature branch must never publish production data.
     if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -24,20 +30,97 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: Unit and integration tests
         run: npm test
-      - name: Stage, validate and update
+      - name: Discover, reconcile, retry and update
         id: update
-        run: npm run update
-      - name: Commit complete data or failure status
+        run: npm run operate
+      - name: Commit valid data, status and operation history
+        id: commit
         if: always() && steps.update.outcome != 'skipped' && steps.update.outcome != ''
         env:
-          UPDATE_OUTCOME: ${{ steps.update.outcome }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ "$UPDATE_OUTCOME" = "success" ]; then
-            git add data/jleague_matches.json data/team_metrics.json data/toto_matches.json data/h2h.json data/weather.json data/history predictions.json recommendation.json data/update_status.json
-          else
-            git add data/update_status.json
-          fi
-          git diff --cached --quiet || git commit -m "Update JUDGE90 data status ($UPDATE_OUTCOME)"
+          git add data/jleague_matches.json data/team_metrics.json data/toto_matches.json data/h2h.json data/weather.json data/history data/operations predictions.json recommendation.json data/update_status.json
+          if [ -f data/results.json ]; then git add data/results.json; fi
+          git diff --cached --quiet || git commit -m "Update JUDGE90 automatic operation"
+          # Never overwrite concurrent main changes. A rejected push stops deployment.
           git push origin HEAD:main
+          echo "published=true" >> "$GITHUB_OUTPUT"
+      - name: Inspect existing Pages mode
+        id: pages
+        if: always() && steps.commit.outputs.published == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mode=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          case "$mode" in legacy|workflow) ;; *) echo "Unknown Pages mode: $mode"; exit 1;; esac
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+      - name: Prepare public files only
+        if: always() && steps.pages.outputs.mode == 'workflow'
+        run: |
+          mkdir -p /tmp/judge90-site
+          cp index.html predictions.json recommendation.json /tmp/judge90-site/
+          cp -R assets data /tmp/judge90-site/
+          mkdir -p /tmp/judge90-site/scripts/lib
+          cp scripts/lib/portfolio.mjs /tmp/judge90-site/scripts/lib/
+          mkdir -p /tmp/judge90-site/research/results /tmp/judge90-site/docs
+          cp research/report.html research/protocol.json /tmp/judge90-site/research/
+          cp research/results/comparison.json research/results/budget_example.json /tmp/judge90-site/research/results/
+          cp docs/stage2.md /tmp/judge90-site/docs/
+          touch /tmp/judge90-site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        if: always() && steps.pages.outputs.mode == 'workflow' && steps.commit.outputs.published == 'true'
+        with:
+          path: /tmp/judge90-site
+      - name: Deploy workflow Pages
+        id: deploy
+        if: always() && steps.pages.outputs.mode == 'workflow' && steps.commit.outputs.published == 'true'
+        uses: actions/deploy-pages@v4
+      - name: Build existing branch Pages and verify completion
+        id: legacy
+        if: always() && steps.pages.outputs.mode == 'legacy'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.source.branch')
+          path=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.source.path')
+          if [ "$branch" != main ] || [ "$path" != / ]; then
+            echo "Existing Pages source is not main:/; refusing to change site configuration."
+            exit 1
+          fi
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+          for attempt in $(seq 1 30); do
+            state=$(gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest" --jq '.status')
+            built_commit=$(gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest" --jq '.commit')
+            if [ "$state" = built ] && [ "$built_commit" = "$(git rev-parse HEAD)" ]; then exit 0; fi
+            if [ "$state" = errored ] && [ "$built_commit" = "$(git rev-parse HEAD)" ]; then echo "Pages build failed"; exit 1; fi
+            sleep 10
+          done
+          echo "Pages build timed out"; exit 1
+      - name: Verify delivery time against sales close
+        if: always() && steps.commit.outputs.published == 'true'
+        env:
+          PAGES_DELIVERED: ${{ steps.deploy.outcome == 'success' || steps.legacy.outcome == 'success' }}
+        run: |
+          export PUBLISHED_COMMIT=$(git rev-parse HEAD)
+          node scripts/check_delivery.mjs | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Record delivery outcome in durable Actions history
+        if: always()
+        env:
+          UPDATE_OUTCOME: ${{ steps.update.outcome }}
+          COMMIT_OUTCOME: ${{ steps.commit.outcome }}
+        run: |
+          echo "## JUDGE90 operation" >> "$GITHUB_STEP_SUMMARY"
+          echo "Update: $UPDATE_OUTCOME / commit: $COMMIT_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
+          echo "Pages delivery outcome is recorded in the steps above. No merge/site setting change is performed by this workflow." >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: judge90-operation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/operations/
+            data/update_status.json
+            data/results.json
+            delivery-status.json
+          retention-days: 90

@@ -33,3 +33,5 @@ GitHub Actionsは毎週土曜9:17日本時間に更新します。手動実行�
 - [第1665回の13試合調査・画面改善・検証結果](docs/data-status-mobile.md)
 - [モデル比較と採用見送りの理由](docs/stage2.md)
 - [研究用比較画面](research/report.html)
+
+自動運用の実行時刻・検証・制約は [自動運用レポート](docs/automatic-operation.md) を参照してください。
