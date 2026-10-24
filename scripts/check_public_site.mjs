@@ -13,7 +13,8 @@ export async function checkPublicSite({base='https://wiepe.github.io/judge90-tot
  for(const path of paths){const text=await fetcher(new URL(path,base));if(fingerprint(text)!==fingerprint(readFileSync(resolve(root,path),'utf8')))throw new Error('Published asset differs from release: '+path);checked.push(path);}
  const pathsJSON={predictions:'predictions.json',recommendation:'recommendation.json',weather:'data/weather.json',status:'data/update_status.json',evaluation:'data/evaluation.json',research:'data/research/report.json',researchStatus:'data/research/status.json',registration:'research/continuous/registration.json'};
  const data={};for(const[k,path]of Object.entries(pathsJSON))data[k]=JSON.parse(await fetcher(new URL(path,base)));
- if(data.predictions.dataset_id!==data.status.dataset_id||data.predictions.dataset_id!==data.recommendation.dataset_id)throw new Error('Published dataset generations do not match');
+ const idleAge=now-new Date(data.status?.checked_at);const healthyIdle=data.status?.state==='idle'&&Number.isFinite(idleAge)&&idleAge>=-60000&&idleAge<=6*3600000;
+ if((!healthyIdle&&data.predictions.dataset_id!==data.status.dataset_id)||data.predictions.dataset_id!==data.recommendation.dataset_id)throw new Error('Published dataset generations do not match');
  if(data.registration.experiment_id!==data.research.experiment_id){const id=data.research.experiment_id;if(!/^[a-f0-9]{64}$/.test(id))throw new Error('Invalid active experiment');data.registration=JSON.parse(await fetcher(new URL('data/research/registrations/'+id+'.json',base)));}
  const dom=new JSDOM(readFileSync(resolve(root,'validation.html'),'utf8'));
  try{
@@ -22,8 +23,8 @@ export async function checkPublicSite({base='https://wiepe.github.io/judge90-tot
   const budgets=doc.querySelectorAll('.strategy-card').length;
   if(state.current&&budgets!==4)throw new Error('Fresh site did not render four budgets');
   if(!state.current&&budgets!==0)throw new Error('Stale predictions must not render purchase candidates');
-  if(!state.current)throw new Error('Published prediction is not current: '+state.message);
-  return {checked_at:now.toISOString(),base,browser_mime_checked:fetcher===publicText,assets:checked.length,round_id:data.predictions.round_id,updated_at:data.predictions.updated_at,current:state.current,status_message:state.message,budget_cards:budgets,model_options:doc.querySelectorAll('#comparisonMatch option').length,verified_results:data.evaluation.overall.n,research_state:data.researchStatus.state,production_model_version:data.predictions.model?.version};
+  if(!state.current&&!healthyIdle)throw new Error('Published prediction is not current: '+state.message);
+  return {checked_at:now.toISOString(),base,browser_mime_checked:fetcher===publicText,assets:checked.length,round_id:data.predictions.round_id,updated_at:data.predictions.updated_at,current:state.current,healthy_idle:healthyIdle,status_message:state.message,budget_cards:budgets,model_options:doc.querySelectorAll('#comparisonMatch option').length,verified_results:data.evaluation.overall.n,research_state:data.researchStatus.state,production_model_version:data.predictions.model?.version};
  }finally{dom.window.close();}
 }
 export async function verifyPublicSite({attempts=3,sleep=ms=>new Promise(r=>setTimeout(r,ms)),checker=checkPublicSite,...options}={}){
