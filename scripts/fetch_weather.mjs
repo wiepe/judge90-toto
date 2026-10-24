@@ -1,3 +1,4 @@
+import { fetchJSON } from './lib/http.mjs';
 import fs from "fs";
 
 const TOTO_PATH = "data/toto_matches.json";
@@ -514,13 +515,7 @@ async function fetchWeather(coords, date, kickoff) {
 
   const url = `https://api.open-meteo.com/v1/forecast?${params}`;
 
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error(`Open-Meteo HTTP ${response.status}`);
-  }
-
-  const data = await response.json();
+  const data = await fetchJSON(url);
 
   if (!data.hourly || !Array.isArray(data.hourly.time)) {
     return {

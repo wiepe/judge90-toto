@@ -1,3 +1,4 @@
+import { fetchText } from './lib/http.mjs';
 const urls = [
   {
     name: "J1",
@@ -32,11 +33,7 @@ for (const target of urls) {
   console.log("URL:", url);
 
   try {
-    const response = await fetch(url);
-
-    console.log("HTTP STATUS:", response.status);
-
-    const html = await response.text();
+    const html = await fetchText(url);
 
     console.log("HTML LENGTH:", html.length);
 
