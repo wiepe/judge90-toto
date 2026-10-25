@@ -2,25 +2,8 @@ import { existsSync,readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { digest } from './integrity.mjs';
 import { readJSON,saveJSON,reconcile } from './operation.mjs';
-const labels=['1','0','2'];
-export function probabilities(raw) {
-  const sum=labels.reduce((s,k)=>s+raw?.[k],0);
-  if(!labels.every(k=>Number.isFinite(raw?.[k])&&raw[k]>=0&&raw[k]<=1)||Math.abs(sum-1)>.002)throw new Error('Invalid evaluation probabilities');
-  return Object.fromEntries(labels.map(k=>[k,raw[k]/sum]));
-}
-export function scoreRows(rows) {
-  if(!rows.length)return {n:0,accuracy:null,logloss:null,brier:null,draw_precision:null,draw_recall:null,draw_brier:null,draw_calibration:[]};
-  let hits=0,ll=0,brier=0,draws=0,picks=0,tp=0,drawBrier=0;
-  const bins=Array.from({length:10},(_,i)=>({lower:i/10,upper:(i+1)/10,n:0,sum_probability:0,draws:0}));
-  for(const r of rows) {
-    if(!labels.includes(r.actual)||!labels.includes(r.prediction))throw new Error('Unknown outcome');
-    const p=probabilities(r.probabilities);hits+=r.actual===r.prediction;ll-=Math.log(Math.max(1e-15,p[r.actual]));
-    brier+=labels.reduce((s,k)=>s+(p[k]-Number(r.actual===k))**2,0);
-    draws+=r.actual==='0';picks+=r.prediction==='0';tp+=r.actual==='0'&&r.prediction==='0';drawBrier+=(p['0']-Number(r.actual==='0'))**2;
-    const bin=bins[Math.min(9,Math.floor(p['0']*10))];bin.n++;bin.sum_probability+=p['0'];bin.draws+=r.actual==='0';
-  }
-  return {n:rows.length,hits,accuracy:hits/rows.length,logloss:ll/rows.length,brier:brier/rows.length,draw_actual:draws,draw_picks:picks,draw_hits:tp,draw_precision:picks?tp/picks:null,draw_recall:draws?tp/draws:null,draw_brier:drawBrier/rows.length,draw_calibration:bins.filter(b=>b.n).map(b=>({lower:b.lower,upper:b.upper,n:b.n,mean_probability:b.sum_probability/b.n,observed_draw_rate:b.draws/b.n}))};
-}
+import {scoreRows,probabilities,summarizePerformance} from './scoring.mjs';
+export {scoreRows,probabilities} from './scoring.mjs';
 function files(dir,filter=()=>true) {return existsSync(dir)?readdirSync(dir).filter(filter).sort().map(f=>join(dir,f)):[];}
 export function evaluatePublished(root,fixtures,now=new Date()) {
   const snapshots=new Map();
@@ -49,10 +32,11 @@ export function evaluatePublished(root,fixtures,now=new Date()) {
   }
   const rows=[...unique.values()].sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
   const timeline=[...new Set(rows.map(r=>r.date))].map(day=>({date:day,...scoreRows(rows.filter(r=>r.date<=day))}));
-  const report={schema_version:1,checked_at:now.toISOString(),scope:'Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot',logloss_floor:1e-15,overall:scoreRows(rows),by_league:Object.fromEntries(['J1','J2','J3'].map(l=>[l,scoreRows(rows.filter(r=>r.league===l))])),timeline,rows,unverified_snapshots:unverified,issues,limitations:['J.League result reconciliation, not toto cancellation/settlement rulings.','Old forecasts without a delivery receipt are excluded, not counted as misses.']};
+  const report={schema_version:1,checked_at:now.toISOString(),scope:'Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot',logloss_floor:1e-15,overall:scoreRows(rows),by_league:Object.fromEntries(['J1','J2','J3'].map(l=>[l,scoreRows(rows.filter(r=>r.league===l))])),timeline,rows,diagnostics:summarizePerformance(rows,now),unverified_snapshots:unverified,issues,limitations:['J.League result reconciliation, not toto cancellation/settlement rulings.','Old forecasts without a delivery receipt are excluded, not counted as misses.']};
   saveJSON(join(root,'data/evaluation.json'),report);
   // Content-based append-only revisions preserve result corrections without double-counting metrics.
-  const {checked_at,...content}=report;const archive=join(root,'data/evaluation-history',digest(content)+'.json');
+  // Rolling diagnostics depend on today; archive identity tracks evidence, not clock changes.
+  const {checked_at,diagnostics,...content}=report;const archive=join(root,'data/evaluation-history',digest(content)+'.json');
   if(!existsSync(archive))saveJSON(archive,report);
   return report;
 }
