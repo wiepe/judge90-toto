@@ -45,7 +45,14 @@ jobs:
           node "$GITHUB_WORKSPACE/scripts/check_proposal.mjs"
           node --input-type=module -e "import{readFileSync}from'node:fs';const r=JSON.parse(readFileSync('data/research/report.json')),p=JSON.parse(readFileSync('data/research/proposal-status.json'));if(r.production_model_changed!==false||p.eligible!==false)throw new Error('Unexpected promotion in scratch verification')"
       - name: Verify the live Pages files and rendered data without publishing
-        run: node scripts/check_public_site.mjs
+        run: |
+          # A PR is not deployed: compare the public site to main, never PR assets.
+          git fetch origin main
+          mkdir -p /tmp/judge90-live-main
+          git archive origin/main | tar -x -C /tmp/judge90-live-main
+          ln -s "$GITHUB_WORKSPACE/node_modules" /tmp/judge90-live-main/node_modules
+          cd /tmp/judge90-live-main
+          node scripts/check_public_site.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
