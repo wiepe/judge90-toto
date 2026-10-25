@@ -1,3 +1,5 @@
+import{mountPersonal}from'./personal-ui.mjs';
+import{renderPerformance}from'./performance.mjs';
 import {renderPurchase} from './purchase.mjs';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
 export const percent=(x,d=1)=>Number.isFinite(x)?(100*x).toFixed(d)+'%':'未評価';
@@ -32,7 +34,7 @@ export function renderDashboard(doc,data,now=new Date()){
  }
  doc.getElementById('dataEvidence').textContent=state.message+' 予測使用：成績・フォーム・ホーム／アウェイ成績、取得できたH2H。天気・負傷・スタメンは本番2.1では未使用。';
  const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation},budget);
- const e=data.evaluation?.overall,perf=doc.getElementById('performanceContent');perf.replaceChildren();perf.append(element(doc,'p',e?.n?'配信証跡付き '+e.n+'試合 ／ 的中率 '+percent(e.accuracy):'配信証跡付きの確定成績はまだありません。精度は未評価です。'),element(doc,'p','購入したと記録していない候補は購入実績に含めません。','muted'));
+ renderPerformance(doc,doc.getElementById('performanceContent'),data.evaluation,now);
  return state;
 }
 export async function loadDashboard(doc=globalThis.document,fetcher=fetch){
@@ -40,6 +42,7 @@ export async function loadDashboard(doc=globalThis.document,fetcher=fetch){
  const entries=await Promise.all(Object.entries(paths).map(async([k,path])=>{try{const r=await fetcher(path+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return[k,await r.json()];}catch{return[k,null];}}));return Object.fromEntries(entries);
 }
 if(typeof document!=='undefined'&&document.getElementById('quickPicks')){
+ try{mountPersonal(document,document.getElementById('personalContent'));}catch{document.getElementById('personalContent').textContent='端末内の保存領域にアクセスできません。個人記録は保存していません。';}
  let data;const draw=()=>{if(data)renderDashboard(document,data);};
  loadDashboard().then(d=>{data=d;draw();}).catch(()=>{document.getElementById('purchaseState').textContent='表示に失敗しました · 購入候補は停止中';});
  navigate(document,location.hash||'#forecast');addEventListener('hashchange',()=>navigate(document,location.hash));setInterval(draw,60000);
