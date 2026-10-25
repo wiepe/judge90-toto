@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-10-25T04:49:22.715Z",
+  "checked_at": "2026-10-25T07:30:55.604Z",
   "scope": "Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot",
   "logloss_floor": 1e-15,
   "overall": {
@@ -47,7 +47,7 @@
   },
   "timeline": [],
   "rows": [],
-  "unverified_snapshots": 4,
+  "unverified_snapshots": 5,
   "issues": [],
   "limitations": [
     "J.League result reconciliation, not toto cancellation/settlement rulings.",
