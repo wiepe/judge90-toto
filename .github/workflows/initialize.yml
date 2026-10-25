@@ -5,6 +5,9 @@ on:
     types: [completed]
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # 90 minutes after each primary cron; recover only if data needs refresh.
+    - cron: "47 1,4,7,10,13,16,19,22 * * *"
 permissions:
   contents: write
   pages: write
@@ -15,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   inspect:
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository))
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository))
     runs-on: ubuntu-latest
     outputs:
       prediction: ${{ steps.plan.outputs.prediction }}
