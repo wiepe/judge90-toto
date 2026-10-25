@@ -92,20 +92,14 @@ jobs:
             exit 1
           fi
           gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
-          for attempt in $(seq 1 30); do
-            state=$(gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest" --jq '.status')
-            built_commit=$(gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest" --jq '.commit')
-            if [ "$state" = built ] && [ "$built_commit" = "$(git rev-parse HEAD)" ]; then exit 0; fi
-            if [ "$state" = errored ] && [ "$built_commit" = "$(git rev-parse HEAD)" ]; then echo "Pages build failed"; exit 1; fi
-            sleep 10
-          done
-          echo "Pages build timed out"; exit 1
+          bash scripts/wait_pages.sh "$(git rev-parse HEAD)"
       - name: Verify delivery time against sales close
         if: always() && steps.commit.outputs.published == 'true'
         env:
           PAGES_DELIVERED: ${{ steps.deploy.outcome == 'success' || steps.legacy.outcome == 'success' }}
         run: |
           export PUBLISHED_COMMIT=$(git rev-parse HEAD)
+          set -o pipefail
           node scripts/check_delivery.mjs | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Preserve delivery receipts for future evaluation
         if: always() && steps.commit.outputs.published == 'true'
