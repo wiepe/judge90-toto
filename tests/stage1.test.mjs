@@ -118,14 +118,14 @@ test('freshness assessment: legacy, expired, failure and mixed generations canno
   assert.equal(assess(b.pred,b.rec,b.weather,b.status,new Date('2026-10-25')).current,false);dom.window.close();
 });
 test('existing Pages dashboard renders 13 legacy matches, flags history, and hides purchase panel',async(t)=>{
-  const dom=new JSDOM(readFileSync('index.html','utf8'),{runScripts:'outside-only',url:'https://example.test/judge90-toto/'});
+  const dom=new JSDOM(readFileSync('analysis.html','utf8'),{runScripts:'outside-only',url:'https://example.test/judge90-toto/'});
   t.after(()=>dom.window.close());dom.window.eval(statusJS);dom.window.fetch=async path=>{const p=path.split('?')[0];if(p==='data/update_status.json')return {ok:false,status:404};const b=domBundle();const samples={'predictions.json':{...b.pred,round_id:undefined,dataset_id:undefined},'recommendation.json':b.rec,'data/weather.json':b.weather};return {ok:true,json:async()=>samples[p]};};
   dom.window.eval(dom.window.document.querySelector('script:not([src])').textContent+';globalThis.testRenderStatus=renderDataStatus;');
   await new Promise(r=>setTimeout(r,50));
   assert.equal(dom.window.document.querySelectorAll('.match').length,13);assert.equal(dom.window.document.getElementById('purchasePanel').hidden,true);assert.match(dom.window.document.getElementById('dataStatus').textContent,/過去データ/);assert.match(dom.window.document.getElementById('mode').textContent,/的中確率ではありません/);dom.window.close();
 });
 test('current Pages dashboard renders and keeps filters; errors are text, never HTML',async(t)=>{
-  const b=domBundle();const dom=new JSDOM(readFileSync('index.html','utf8'),{runScripts:'outside-only',url:'https://example.test/judge90-toto/'});t.after(()=>dom.window.close());dom.window.eval(statusJS);
+  const b=domBundle();const dom=new JSDOM(readFileSync('analysis.html','utf8'),{runScripts:'outside-only',url:'https://example.test/judge90-toto/'});t.after(()=>dom.window.close());dom.window.eval(statusJS);
   const Original=dom.window.Date;dom.window.Date=class extends Original{constructor(...a){super(...(a.length?a:[now.toISOString()]))}static now(){return now.getTime()}};
   const data={'predictions.json':b.pred,'recommendation.json':b.rec,'data/weather.json':b.weather,'data/update_status.json':b.status};dom.window.fetch=async p=>({ok:true,json:async()=>data[p.split('?')[0]]});
   dom.window.eval(dom.window.document.querySelector('script:not([src])').textContent+';globalThis.testRenderStatus=renderDataStatus;');await new Promise(r=>setTimeout(r,50));

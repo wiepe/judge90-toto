@@ -1,6 +1,6 @@
 import{readFileSync}from'node:fs';import{resolve}from'node:path';import{fileURLToPath}from'node:url';import{createHash}from'node:crypto';import{JSDOM}from'jsdom';
 import{fetch as transport}from'undici';
-import{fetchText}from'./lib/http.mjs';import'../assets/data-status.js';import{renderValidation}from'../assets/validation-ui.mjs';
+import{fetchText}from'./lib/http.mjs';import'../assets/data-status.js';import{renderValidation}from'../assets/validation-ui.mjs';import{renderDashboard}from'../assets/dashboard.mjs';
 const fingerprint=s=>createHash('sha256').update(s).digest('hex');
 export function assertPublicMime(path,type){
  const expected=/\.m?js$/.test(path)?/(?:application|text)\/(?:java|ecma)script/i:/\.html$/.test(path)?/text\/html/i:/\.css$/.test(path)?/text\/css/i:null;
@@ -8,7 +8,7 @@ export function assertPublicMime(path,type){
 }
 async function publicText(url){return fetchText(url,{fetchImpl:async(target,options)=>{const response=await transport(target,options);if(response.ok)assertPublicMime(new URL(target).pathname,response.headers.get('content-type'));return response;}});}
 export async function checkPublicSite({base='https://wiepe.github.io/judge90-toto/',fetcher=publicText,root=process.cwd(),now=new Date()}={}){
- const paths=['index.html','validation.html','assets/validation-ui.mjs','assets/strategy-ui.mjs','assets/budget-ui.mjs','assets/data-status.js','assets/validation.css','scripts/lib/portfolio.mjs'];
+ const paths=['index.html','validation.html','assets/validation-ui.mjs','assets/strategy-ui.mjs','assets/budget-ui.mjs','assets/data-status.js','assets/validation.css','scripts/lib/portfolio.mjs','analysis.html','assets/dashboard.mjs','assets/dashboard.css'];
  const checked=[];
  for(const path of paths){const text=await fetcher(new URL(path,base));if(fingerprint(text)!==fingerprint(readFileSync(resolve(root,path),'utf8')))throw new Error('Published asset differs from release: '+path);checked.push(path);}
  const pathsJSON={predictions:'predictions.json',recommendation:'recommendation.json',weather:'data/weather.json',status:'data/update_status.json',evaluation:'data/evaluation.json',research:'data/research/report.json',researchStatus:'data/research/status.json',registration:'research/continuous/registration.json'};
@@ -16,6 +16,7 @@ export async function checkPublicSite({base='https://wiepe.github.io/judge90-tot
  const idleAge=now-new Date(data.status?.checked_at);const healthyIdle=data.status?.state==='idle'&&Number.isFinite(idleAge)&&idleAge>=-60000&&idleAge<=6*3600000;
  if((!healthyIdle&&data.predictions.dataset_id!==data.status.dataset_id)||data.predictions.dataset_id!==data.recommendation.dataset_id)throw new Error('Published dataset generations do not match');
  if(data.registration.experiment_id!==data.research.experiment_id){const id=data.research.experiment_id;if(!/^[a-f0-9]{64}$/.test(id))throw new Error('Invalid active experiment');data.registration=JSON.parse(await fetcher(new URL('data/research/registrations/'+id+'.json',base)));}
+ const top=new JSDOM(readFileSync(resolve(root,'index.html'),'utf8'));try{renderDashboard(top.window.document,data,now);if(top.window.document.querySelectorAll('.match-card').length!==13)throw new Error('Top page missing matches');}finally{top.window.close();}
  const dom=new JSDOM(readFileSync(resolve(root,'validation.html'),'utf8'));
  try{
   const state=renderValidation(dom.window.document,data,now),doc=dom.window.document;
