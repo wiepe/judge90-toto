@@ -1,3 +1,4 @@
+import{renderPerformance}from'./performance.mjs';
 import {renderPurchase} from './purchase.mjs';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
 export const percent=(x,d=1)=>Number.isFinite(x)?(100*x).toFixed(d)+'%':'未評価';
@@ -32,7 +33,7 @@ export function renderDashboard(doc,data,now=new Date()){
  }
  doc.getElementById('dataEvidence').textContent=state.message+' 予測使用：成績・フォーム・ホーム／アウェイ成績、取得できたH2H。天気・負傷・スタメンは本番2.1では未使用。';
  const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation},budget);
- const e=data.evaluation?.overall,perf=doc.getElementById('performanceContent');perf.replaceChildren();perf.append(element(doc,'p',e?.n?'配信証跡付き '+e.n+'試合 ／ 的中率 '+percent(e.accuracy):'配信証跡付きの確定成績はまだありません。精度は未評価です。'),element(doc,'p','購入したと記録していない候補は購入実績に含めません。','muted'));
+ renderPerformance(doc,doc.getElementById('performanceContent'),data.evaluation,now);
  return state;
 }
 export async function loadDashboard(doc=globalThis.document,fetcher=fetch){
