@@ -30,3 +30,9 @@ jobs:
         run: |
           python research/continuous.py register --output /tmp/judge90-registration.json
           python research/verify_registration.py research/continuous/registration.json /tmp/judge90-registration.json
+      - name: Reproduce development diagnostics without final evaluation data
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          python research/development_diagnostics.py --output /tmp/diagnostics.json
+          python -c "import json; a=json.load(open('research/development/diagnostics.json')); b=json.load(open('/tmp/diagnostics.json')); assert a['registration_experiment_id']==b['registration_experiment_id']; assert all(abs(a['models'][k]['overall']['logloss']-b['models'][k]['overall']['logloss'])<1e-7 for k in a['models'])"

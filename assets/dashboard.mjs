@@ -43,7 +43,7 @@ export function renderDashboard(doc,data,now=new Date()){
  doc.getElementById('dataEvidence').textContent=state.message+' 予測使用：成績・フォーム・ホーム／アウェイ成績、取得できたH2H。天気・負傷・スタメンは本番2.1では未使用。';
  const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current},budget);
  for(const b of doc.querySelectorAll('[data-quick-budget]'))b.onclick=()=>renderPurchase(doc,doc.getElementById('purchaseContent'),{current:purchaseState(data,new Date()).current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current},Number(b.dataset.quickBudget));
- renderPerformance(doc,doc.getElementById('performanceContent'),data.evaluation,now);
+ renderPerformance(doc,doc.getElementById('performanceContent'),data.evaluation,now,{currentRoundId:p?.round_id});
  return state;
 }
 export async function loadDashboard(doc=globalThis.document,fetcher=fetch){
