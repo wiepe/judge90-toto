@@ -9,10 +9,11 @@ export function evaluatePublished(root,fixtures,now=new Date()) {
   const snapshots=new Map();
   for(const path of [join(root,'predictions.json'),...files(join(root,'data/history'),f=>/^predictions-.*\.json$/.test(f))]) {if(!existsSync(path))continue;const p=readJSON(path);snapshots.set(digest(p),p);}
   const receipts=files(join(root,'data/deliveries'),f=>f.endsWith('.json')).map(readJSON);
-  const selected=new Map();let unverified=0;
+  const selected=new Map(),observations=[];let unverified=0;
   for(const [id,p]of snapshots) {
-    const r=receipts.filter(r=>r.snapshot_id===id&&r.pages_delivered===true&&r.dataset_id===p.dataset_id&&Date.parse(r.checked_at)>=Date.parse(p.updated_at)&&Date.parse(r.checked_at)<Date.parse(p.sales_close_at)).sort((a,b)=>Date.parse(a.checked_at)-Date.parse(b.checked_at))[0];
+    const r=receipts.filter(r=>r.snapshot_id===id&&r.pages_delivered===true&&Date.parse(r.checked_at)<=now&&r.dataset_id===p.dataset_id&&Date.parse(r.checked_at)>=Date.parse(p.updated_at)&&Date.parse(r.checked_at)<Date.parse(p.sales_close_at)).sort((a,b)=>Date.parse(a.checked_at)-Date.parse(b.checked_at))[0];
     if(!r||!reconcile(p,fixtures,now).eligible){unverified++;continue;}
+    observations.push({name:p.model?.name||'不明',version:p.model?.version||'未登録',first_observed_at:r.checked_at,round_id:p.round_id,snapshot_id:id});
     const previous=selected.get(p.round_id);
     if(!previous||Date.parse(p.updated_at)>Date.parse(previous.p.updated_at))selected.set(p.round_id,{p,receipt:r});
   }
@@ -32,7 +33,8 @@ export function evaluatePublished(root,fixtures,now=new Date()) {
   }
   const rows=[...unique.values()].sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id));
   const timeline=[...new Set(rows.map(r=>r.date))].map(day=>({date:day,...scoreRows(rows.filter(r=>r.date<=day))}));
-  const report={schema_version:1,checked_at:now.toISOString(),scope:'Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot',logloss_floor:1e-15,overall:scoreRows(rows),by_league:Object.fromEntries(['J1','J2','J3'].map(l=>[l,scoreRows(rows.filter(r=>r.league===l))])),timeline,rows,diagnostics:summarizePerformance(rows,now),unverified_snapshots:unverified,issues,limitations:['J.League result reconciliation, not toto cancellation/settlement rulings.','Old forecasts without a delivery receipt are excluded, not counted as misses.']};
+  const model_history=[];for(const h of observations.sort((a,b)=>a.first_observed_at.localeCompare(b.first_observed_at))){const last=model_history.at(-1);if(!last||last.name!==h.name||last.version!==h.version)model_history.push(h);}
+  const report={schema_version:1,model_history,checked_at:now.toISOString(),scope:'Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot',logloss_floor:1e-15,overall:scoreRows(rows),by_league:Object.fromEntries(['J1','J2','J3'].map(l=>[l,scoreRows(rows.filter(r=>r.league===l))])),timeline,rows,diagnostics:summarizePerformance(rows,now),unverified_snapshots:unverified,issues,limitations:['J.League result reconciliation, not toto cancellation/settlement rulings.','Old forecasts without a delivery receipt are excluded, not counted as misses.']};
   saveJSON(join(root,'data/evaluation.json'),report);
   // Content-based append-only revisions preserve result corrections without double-counting metrics.
   // Rolling diagnostics depend on today; archive identity tracks evidence, not clock changes.
