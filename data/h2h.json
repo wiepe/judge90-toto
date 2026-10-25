@@ -1,6 +1,6 @@
 {
   "season": "2026/27",
-  "generated_at": "2026-10-25T11:39:50.177Z",
+  "generated_at": "2026-10-25T16:29:35.956Z",
   "source": "J.League Data Site",
   "historical_range": "2004-2026",
   "matches": [
@@ -447,5 +447,5 @@
       }
     }
   ],
-  "dataset_id": "7de9a7ec1bbc313e5d3f8b04ad86228a174d1fd69806fc581f9d652e99bf4e7e"
+  "dataset_id": "95b38ea058cd2b81db89bde87de6e7516ffafa7f9076054532cb7a715ff0c39a"
 }

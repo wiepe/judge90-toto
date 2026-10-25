@@ -1,12 +1,12 @@
 {
   "season": "2026/27",
-  "fetched_at": "2026-10-25T11:39:25.338Z",
+  "fetched_at": "2026-10-25T16:29:12.105Z",
   "leagues": [
     {
       "league": "J1",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026",
-      "fetched_at": "2026-10-25T11:39:23.545Z",
+      "fetched_at": "2026-10-25T16:29:10.419Z",
       "matches": [
         {
           "season": "2026/27",
@@ -4954,7 +4954,7 @@
       "league": "J2",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026",
-      "fetched_at": "2026-10-25T11:39:24.927Z",
+      "fetched_at": "2026-10-25T16:29:11.704Z",
       "matches": [
         {
           "season": "2026/27",
@@ -6638,9 +6638,9 @@
           "competition": "Ｊ２",
           "section": "第１３節第２日",
           "date": "2026-10-25",
-          "kickoff": "18:00",
+          "kickoff": "18:03",
           "home": "湘南",
-          "score": null,
+          "score": "2-1",
           "away": "栃木Ｃ",
           "stadium": "レモンＳ",
           "home_team_id": "j90-aad1b197486c",
@@ -9902,7 +9902,7 @@
       "league": "J3",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026",
-      "fetched_at": "2026-10-25T11:39:25.338Z",
+      "fetched_at": "2026-10-25T16:29:12.105Z",
       "matches": [
         {
           "season": "2026/27",
@@ -14847,5 +14847,5 @@
       ]
     }
   ],
-  "dataset_id": "7de9a7ec1bbc313e5d3f8b04ad86228a174d1fd69806fc581f9d652e99bf4e7e"
+  "dataset_id": "95b38ea058cd2b81db89bde87de6e7516ffafa7f9076054532cb7a715ff0c39a"
 }
