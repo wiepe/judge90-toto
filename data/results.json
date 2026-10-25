@@ -1,14 +1,14 @@
 {
-  "checked_at": "2026-10-25T20:55:40.221Z",
+  "checked_at": "2026-10-25T23:19:10.007Z",
   "completed": 13,
   "hits": 7,
   "accuracy": 0.5384615384615384,
   "rounds": [
     {
-      "snapshot_id": "3c8f71f5be674972cfaeb93ab8416024de911f5b3d173d6800d9d6ae4254a3fc",
-      "dataset_id": "95b38ea058cd2b81db89bde87de6e7516ffafa7f9076054532cb7a715ff0c39a",
+      "snapshot_id": "b695538de5f5966c67dce372e88858e9427d64049783a3da98a85a53b9dc2a8a",
+      "dataset_id": "af299f7537827809cece8c415b3b3817f97bd902e4c6aedfcdf8648b3a1845f9",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -151,7 +151,7 @@
       "snapshot_id": "01c66dc77e71eec47a78348a9402047be1a7ce2c15ab4077b5590926e27d2df7",
       "dataset_id": "da46cf260522bf286423fd7b2c56b71f3c73a93e835386680df9e940b71c1e0e",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -294,7 +294,7 @@
       "snapshot_id": "0cb10c4d6484ee7d6592b60273b1402ecff13d8d154fe462088f1cede337bf9f",
       "dataset_id": "150f05f8141bd77cedde5036643433727b861153b00c9912b807e8f5a00a9ff6",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -437,7 +437,7 @@
       "snapshot_id": "1802a5c62e2d7819696a4c89d9839fd26fa92a081e69fa2cd860b0ab8f1d2202",
       "dataset_id": "1ac297a5d8203c9a9b8ba2e7ed00244485b2148dedd60d8c25b9bc7bf21868cf",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -580,7 +580,7 @@
       "snapshot_id": "2a08615ccc0e804aabf2cfa74e95ea9d3fc5afb35cff3720a094eb91c220ecf9",
       "dataset_id": "e5020919403886468830e5500a11803a305334300adaf6c2ef617fbafefb6f4a",
       "round_id": "1665",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -721,7 +721,7 @@
     },
     {
       "snapshot_id": "34e2048e9dd84b2ca93c82f0c92339800fb50624c15c26d5b2201f4c5220c636",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": false,
       "eligibility_note": "旧形式または締切前予測を確認できないため集計対象外",
       "source": "J.League results; not official toto settlement",
@@ -861,10 +861,153 @@
       ]
     },
     {
+      "snapshot_id": "3c8f71f5be674972cfaeb93ab8416024de911f5b3d173d6800d9d6ae4254a3fc",
+      "dataset_id": "95b38ea058cd2b81db89bde87de6e7516ffafa7f9076054532cb7a715ff0c39a",
+      "round_id": "1668",
+      "checked_at": "2026-10-25T23:19:10.007Z",
+      "eligible": true,
+      "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
+      "source": "J.League results; not official toto settlement",
+      "completed": 0,
+      "hits": 0,
+      "matches": [
+        {
+          "number": 1,
+          "home": "岡山",
+          "away": "FC東京",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 2,
+          "home": "水戸",
+          "away": "広島",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 3,
+          "home": "神戸",
+          "away": "名古屋",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 4,
+          "home": "鹿島",
+          "away": "Ｃ大阪",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 5,
+          "home": "柏",
+          "away": "浦和",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 6,
+          "home": "京都",
+          "away": "清水",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 7,
+          "home": "千葉",
+          "away": "福岡",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 8,
+          "home": "長崎",
+          "away": "東京Ｖ",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 9,
+          "home": "町田",
+          "away": "Ｇ大阪",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 10,
+          "home": "横浜FM",
+          "away": "川崎Ｆ",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "2",
+          "hit": null
+        },
+        {
+          "number": 11,
+          "home": "仙台",
+          "away": "大宮",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 12,
+          "home": "新潟",
+          "away": "富山",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        },
+        {
+          "number": 13,
+          "home": "宮崎",
+          "away": "大分",
+          "status": "pending",
+          "score": null,
+          "actual": null,
+          "prediction": "1",
+          "hit": null
+        }
+      ]
+    },
+    {
       "snapshot_id": "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b",
       "dataset_id": "36cd1a5701b388fd6c9208282eb1d3df8a3b23cbc399f2deb5105d7b0b5909a8",
       "round_id": "1665",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -1007,7 +1150,7 @@
       "snapshot_id": "638a1bb3a66f4cd7d8a60f6b04f5cda094fe5541d2e063a349639057faf179c4",
       "dataset_id": "979df19aa50fa6338e8c09e4f93b1547e8ae17e774143272b03c3acb70455536",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -1150,7 +1293,7 @@
       "snapshot_id": "6b5dd00d897decb6600fc4a5be8fe491132a7843e2e25f2b420bb245bde018e8",
       "dataset_id": "bbac990c133953396d5b1e6221a7ff16f5958cbdf916f792d9264698618dafd2",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -1293,7 +1436,7 @@
       "snapshot_id": "bc776ff31185ef850b9cab9f1fb0b65d461cb2321bb4d0091145bb585bc00e31",
       "dataset_id": "7de9a7ec1bbc313e5d3f8b04ad86228a174d1fd69806fc581f9d652e99bf4e7e",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -1436,7 +1579,7 @@
       "snapshot_id": "d11e190e4a9b4865ce47b9fc77e26745ee7b4cd48190bcf084cd92e9cd0b3e16",
       "dataset_id": "3da7e889f0fe57085cdc3ff0755c61f16b246755dc13682dee17e8b17b450e6c",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -1579,7 +1722,7 @@
       "snapshot_id": "d1c718d9fca951fc377b64149bda82ffeffd96a20426ab6258d5fb4df49234b8",
       "dataset_id": "d66eedcd0c7be470e1f861e6053847753c852f853f8eda85e8ec27ae51eb2268",
       "round_id": "1668",
-      "checked_at": "2026-10-25T20:55:40.221Z",
+      "checked_at": "2026-10-25T23:19:10.007Z",
       "eligible": true,
       "eligibility_note": "保存済み・締切前予測。実際のPages配信時刻は未確認",
       "source": "J.League results; not official toto settlement",
@@ -1720,7 +1863,7 @@
     }
   ],
   "counted_snapshot_ids": [
-    "3c8f71f5be674972cfaeb93ab8416024de911f5b3d173d6800d9d6ae4254a3fc",
+    "b695538de5f5966c67dce372e88858e9427d64049783a3da98a85a53b9dc2a8a",
     "5505b438b8d7349647977d6e64e0a9798b09ce5e85ce37f8d070aa0f38d8e01b"
   ]
 }
