@@ -1,4 +1,4 @@
-import {optimizeTickets} from '../scripts/lib/portfolio.mjs';
+import {renderPurchase} from './purchase.mjs';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
 export const percent=(x,d=1)=>Number.isFinite(x)?(100*x).toFixed(d)+'%':'未評価';
 export function element(doc,tag,text,className){const e=doc.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
@@ -31,8 +31,7 @@ export function renderDashboard(doc,data,now=new Date()){
   const quality=data.status?.data_quality?.rows?.find(r=>r.number===m.number);details.append(element(doc,'p','天気：'+(quality?.weather?.label||'取得状態不明・利用は確認できません')));card.append(details);cards.append(card);
  }
  doc.getElementById('dataEvidence').textContent=state.message+' 予測使用：成績・フォーム・ホーム／アウェイ成績、取得できたH2H。天気・負傷・スタメンは本番2.1では未使用。';
- const buy=doc.getElementById('purchaseContent');buy.replaceChildren();
- if(state.current){try{const plan=optimizeTickets(matches,100);buy.append(element(doc,'h3','まずは100円の1口'),element(doc,'p',plan.tickets[0].outcomes.join(' '),'ticket-line'),element(doc,'p','全13試合的中のモデル推定 '+percent(plan.estimated_all_13_covered_probability,4)),element(doc,'p',plan.assumption,'muted'));}catch{buy.textContent='確率データが不正のため購入候補を停止しています。';}}else buy.textContent=state.message;
+ const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation},budget);
  const e=data.evaluation?.overall,perf=doc.getElementById('performanceContent');perf.replaceChildren();perf.append(element(doc,'p',e?.n?'配信証跡付き '+e.n+'試合 ／ 的中率 '+percent(e.accuracy):'配信証跡付きの確定成績はまだありません。精度は未評価です。'),element(doc,'p','購入したと記録していない候補は購入実績に含めません。','muted'));
  return state;
 }
