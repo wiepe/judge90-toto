@@ -1,9 +1,11 @@
+import{renderGrowth}from'./growth.mjs';
 import{summarizePerformance}from'../scripts/lib/scoring.mjs';
 const pct=x=>Number.isFinite(x)?(x*100).toFixed(1)+'%':'未評価',num=x=>Number.isFinite(x)?x.toFixed(4):'未評価';
 function el(d,t,text){const e=d.createElement(t);e.textContent=text;return e;}
 function table(doc,root,headers,rows){const wrap=el(doc,'div','');wrap.className='table-scroll';const t=doc.createElement('table');for(const[i,row]of[headers,...rows].entries()){const tr=doc.createElement('tr');for(const v of row)tr.append(el(doc,i?'td':'th',String(v)));t.append(tr);}wrap.append(t);root.append(wrap);}
-export function renderPerformance(doc,root,evaluation,now=new Date()){
+export function renderPerformance(doc,root,evaluation,now=new Date(),context={}){
  root.replaceChildren();if(!evaluation){root.append(el(doc,'p','成績データを取得できません。未評価です。'));return;}
+ renderGrowth(doc,root,evaluation,{...context,now});
  const s=summarizePerformance(evaluation.rows||[],now),m=s.long_term;
  root.append(el(doc,'h3','配信証跡付き '+m.n+'試合'),el(doc,'p',m.n?'公開時点が確認できる予測のみ。未確定結果は除外。':'確定した実運用成績がなく、精度・校正は未評価です。'));
  table(doc,root,['期間','試合','的中率','LogLoss','Brier'],[['長期',s.long_term],['直近30日',s.recent_30_days],['直近90日',s.recent_90_days]].map(([n,x])=>[n,x.n,pct(x.accuracy),num(x.logloss),num(x.brier)]));
