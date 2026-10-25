@@ -4,9 +4,9 @@
   "product_id": "01",
   "sales_open_at": "2026-10-24T08:00:00+09:00",
   "sales_close_at": "2026-10-31T13:50:00+09:00",
-  "source_fetched_at": "2026-10-25T07:31:03.888Z",
-  "source_digest": "31319ca0127c188463727888cb90f026583ba7fc2d1f8c8a77bae0ce06565447",
-  "updated_at": "2026-10-25T07:31:27.304Z",
+  "source_fetched_at": "2026-10-25T11:39:27.093Z",
+  "source_digest": "c31f3436bfbd74a5502de4e7219d0242caf70752a4fc737723ccc4c1a8c8f873",
+  "updated_at": "2026-10-25T11:39:50.906Z",
   "model": {
     "data_usage": {
       "season_results": true,
@@ -36,11 +36,11 @@
       "league": "J1",
       "prediction": "2",
       "probabilities": {
-        "0": 0.274,
-        "1": 0.274,
-        "2": 0.452
+        "0": 0.261,
+        "1": 0.245,
+        "2": 0.494
       },
-      "confidence": 32,
+      "confidence": 42,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
@@ -86,11 +86,11 @@
       "league": "J1",
       "prediction": "2",
       "probabilities": {
-        "0": 0.24,
-        "1": 0.205,
-        "2": 0.555
+        "0": 0.235,
+        "1": 0.196,
+        "2": 0.569
       },
-      "confidence": 57,
+      "confidence": 60,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
@@ -186,11 +186,11 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.256,
-        "1": 0.51,
-        "2": 0.234
+        "0": 0.258,
+        "1": 0.504,
+        "2": 0.238
       },
-      "confidence": 46,
+      "confidence": 44,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
@@ -237,11 +237,11 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.279,
-        "1": 0.438,
-        "2": 0.283
+        "0": 0.287,
+        "1": 0.412,
+        "2": 0.3
       },
-      "confidence": 28,
+      "confidence": 20,
       "uncertainty": {
         "level": "MEDIUM",
         "reasons": [
@@ -250,7 +250,7 @@
       },
       "signals": {
         "season_strength": "柏",
-        "momentum": "柏",
+        "momentum": "浦和",
         "home_advantage": "柏",
         "h2h": {
           "available": true,
@@ -335,11 +335,11 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.292,
-        "1": 0.399,
-        "2": 0.309
+        "0": 0.291,
+        "1": 0.402,
+        "2": 0.307
       },
-      "confidence": 16,
+      "confidence": 17,
       "uncertainty": {
         "level": "MEDIUM",
         "reasons": [
@@ -349,7 +349,7 @@
         ]
       },
       "signals": {
-        "season_strength": "福岡",
+        "season_strength": "千葉",
         "momentum": "千葉",
         "home_advantage": "千葉",
         "h2h": {
@@ -386,16 +386,15 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.267,
-        "1": 0.474,
-        "2": 0.258
+        "0": 0.274,
+        "1": 0.452,
+        "2": 0.274
       },
-      "confidence": 37,
+      "confidence": 32,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
           "H2H直近5戦は拮抗（2-1-2）"
         ]
       },
@@ -488,15 +487,14 @@
       "league": "J1",
       "prediction": "2",
       "probabilities": {
-        "0": 0.307,
-        "1": 0.339,
-        "2": 0.354
+        "0": 0.304,
+        "1": 0.333,
+        "2": 0.363
       },
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
-          "両チームの総合評価が近い",
           "H2H直近5戦はアウェイ側が優勢（1-2-2）"
         ]
       },
@@ -653,5 +651,5 @@
       }
     }
   ],
-  "dataset_id": "150f05f8141bd77cedde5036643433727b861153b00c9912b807e8f5a00a9ff6"
+  "dataset_id": "7de9a7ec1bbc313e5d3f8b04ad86228a174d1fd69806fc581f9d652e99bf4e7e"
 }
