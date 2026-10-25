@@ -25,7 +25,7 @@ export function renderValidation(doc,{evaluation,research,registration,researchS
  select.onchange=compare;compare();
  table(doc,'developmentMetrics',['モデル','試合','的中率','LogLoss','Brier','引分検出'],Object.entries(registration?.selection||{}).map(([n,s])=>[names[n]||n,s.overall.n,pct(s.overall.accuracy),num(s.overall.logloss),num(s.overall.brier),pct(s.overall.draw_recall)]));
  doc.getElementById('candidateStatus').textContent='開発用期間で選んだ候補：'+(names[registration?.selected]||'未登録')+'。本番モデルは変更していません。';
- doc.getElementById('futureStatus').textContent=registration?'初回の未使用確認期間 '+registration.protocol.prospective_start+'〜'+registration.protocol.prospective_end+'、判定は '+registration.protocol.decision_not_before+'以降。現在の判断：'+(research?.decision==='propose_review_only'?'研究候補の承認待ち':research?.decision?.startsWith('retain_current')?'条件未達・現行維持':'新しい評価データを収集中'):'候補登録を確認できません。';
+ doc.getElementById('futureStatus').textContent=registration?'初回の未使用確認期間 '+registration.protocol.prospective_start+'〜'+registration.protocol.prospective_end+'、判定は '+registration.protocol.decision_not_before+'以降。現在の判断：'+(research?.decision==='propose_review_only'?'研究候補の承認待ち':research?.decision?.startsWith('retain_current')?'改善なし（採用条件未達）・現行維持':'改善未確認・新しい評価データを収集中'):'候補登録を確認できません。';
  table(doc,'futureMetrics',['将来期間のモデル','試合','的中率','LogLoss','Brier','引分検出'],Object.entries(research?.metrics||{}).map(([n,s])=>[names[n]||n,s.overall.n,pct(s.overall.accuracy),num(s.overall.logloss),num(s.overall.brier),pct(s.overall.draw_recall)]));
  renderStrategies(doc,doc.getElementById('fixedBudgetStrategies'),{current:state.current,predictions});
  return state;

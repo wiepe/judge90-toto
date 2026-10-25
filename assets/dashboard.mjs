@@ -1,5 +1,6 @@
 import{mountPersonal}from'./personal-ui.mjs';
 import{renderPerformance}from'./performance.mjs';
+import{optimizePortfolio}from'../scripts/lib/portfolio.mjs';
 import {renderPurchase} from './purchase.mjs';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
 export const percent=(x,d=1)=>Number.isFinite(x)?(100*x).toFixed(d)+'%':'未評価';
@@ -7,6 +8,7 @@ export function element(doc,tag,text,className){const e=doc.createElement(tag);i
 export function purchaseState(data,now=new Date()){
  const {predictions:p,recommendation:r,weather:w,status:s}=data;
  const checked=globalThis.Judge90DataStatus.assess(p,r,w,s,now);
+ if(checked.current){try{optimizePortfolio(p.matches,100);}catch{return{current:false,code:'invalid',label:'確率データ不正 · 購入候補を停止',message:'13試合の番号・予測確率を検証できません。'};}}
  let code=checked.current?'ready':s?.state==='error'?'error':s?.state==='idle'?'idle':!p?'missing':now>=new Date(p.sales_close_at)?'closed':now<new Date(p.sales_open_at)?'not_open':'stale';
  return {...checked,code,label:({ready:'購入候補を確認できます',error:'取得失敗 · 購入候補を停止',idle:'販売対象なし · 過去予測',missing:'未更新 · データ未取得',closed:'販売終了 · 過去予測',not_open:'販売開始前',stale:'最新性未確認 · 購入候補を停止'})[code]};
 }
@@ -33,7 +35,7 @@ export function renderDashboard(doc,data,now=new Date()){
   const quality=data.status?.data_quality?.rows?.find(r=>r.number===m.number);details.append(element(doc,'p','天気：'+(quality?.weather?.label||'取得状態不明・利用は確認できません')));card.append(details);cards.append(card);
  }
  doc.getElementById('dataEvidence').textContent=state.message+' 予測使用：成績・フォーム・ホーム／アウェイ成績、取得できたH2H。天気・負傷・スタメンは本番2.1では未使用。';
- const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation},budget);
+ const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current},budget);
  renderPerformance(doc,doc.getElementById('performanceContent'),data.evaluation,now);
  return state;
 }
