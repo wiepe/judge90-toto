@@ -28,10 +28,11 @@ async function seal(data,key,salt,crypto){validateLedger(data);const iv=crypto.g
 async function unlock(raw,pass,crypto){const {salt,iv,cipher}=envelope(raw),key=await derive(pass,salt,crypto);try{const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv,additionalData:utf8.encode('JUDGE90 private ledger v1')},key,cipher);return{data:validateLedger(JSON.parse(decode.decode(plain))),key,salt};}catch{throw new Error('Cannot unlock: wrong passphrase or damaged backup');}}
 export async function openPrivateLedger(storage,pass,{crypto=globalThis.crypto}={}){
  if(!crypto?.subtle)throw new Error('Web Crypto requires HTTPS or localhost');
- const stored=storage.getItem(STORAGE_KEY);let data,key,salt;
- if(stored){({data,key,salt}=await unlock(stored,pass,crypto));}else{data={version:1,records:[]};salt=crypto.getRandomValues(new Uint8Array(16));key=await derive(pass,salt,crypto);storage.setItem(STORAGE_KEY,await seal(data,key,salt,crypto));}
+ const underLock=fn=>{if(typeof window!=='undefined'){if(!globalThis.navigator?.locks)throw new Error('Web Locks is required for safe private saving');return globalThis.navigator.locks.request(STORAGE_KEY,fn);}return fn();};
+ let stored=storage.getItem(STORAGE_KEY);let data,key,salt;
+ if(stored){({data,key,salt}=await unlock(stored,pass,crypto));}else{data={version:1,records:[]};salt=crypto.getRandomValues(new Uint8Array(16));key=await derive(pass,salt,crypto);const initial=await seal(data,key,salt,crypto);await underLock(()=>{if(storage.getItem(STORAGE_KEY)!==null)throw new Error('Ledger created in another tab; reopen it');storage.setItem(STORAGE_KEY,initial);stored=initial;});}
  let active=true,busy=false;const check=()=>{if(!active)throw new Error('Ledger locked');};
- async function persist(next){check();if(busy)throw new Error('Another save is in progress');busy=true;try{const encrypted=await seal(next,key,salt,crypto);check();storage.setItem(STORAGE_KEY,encrypted);data=next;}finally{busy=false;}}
+ async function persist(next){check();if(busy)throw new Error('Another save is in progress');busy=true;try{const encrypted=await seal(next,key,salt,crypto);await underLock(()=>{check();if(storage.getItem(STORAGE_KEY)!==stored)throw new Error('History changed in another tab; lock and reopen before saving');storage.setItem(STORAGE_KEY,encrypted);stored=encrypted;data=next;});}finally{busy=false;}}
  return{
   read(){check();return structuredClone(data);},
   export(){check();return storage.getItem(STORAGE_KEY);},
