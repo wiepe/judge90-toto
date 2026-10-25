@@ -39,12 +39,18 @@ jobs:
           cd /tmp/judge90-research
           node "$GITHUB_WORKSPACE/scripts/fetch_jleague.mjs"
       - name: Reconcile verified published forecasts and update diagnostics
+        id: reconcile
         run: node scripts/evaluate_published.mjs /tmp/judge90-research/data/jleague_matches.json
       - name: Generate registered shadow forecasts and evaluate fixed future window
         id: evaluate
         env:
           OPENBLAS_NUM_THREADS: '1'
         run: python research/continuous.py weekly --fixtures /tmp/judge90-research/data/jleague_matches.json
+      - name: Diagnose frozen development predictions without selecting a model
+        id: diagnostics
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: python research/development_diagnostics.py --output data/research/diagnostics.json
       - name: Preserve explicit research acquisition failure
         if: failure() && steps.source.outcome == 'failure'
         run: |
@@ -64,6 +70,7 @@ jobs:
           git diff --cached --quiet || git commit -m 'Record weekly registered model evaluation'
           git push origin HEAD:main
       - name: Propose only a statistically eligible registered candidate
+        id: propose
         if: success() && steps.evaluate.outcome == 'success' && steps.persist.outcome == 'success' && steps.proposal.outputs.eligible == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -83,6 +90,19 @@ jobs:
           このPRは研究上の採用候補の提案です。本番予測コードは変更しません。実運用評価と制約を確認し、承認後に本番統合を行ってください。
           BODY
           gh pr create --base main --head "$branch" --title '登録モデルの改善候補：統計検証を通過・承認待ち' --body-file /tmp/judge90-proposal.md
+      - name: Record complete weekly outcome, including PR permission failures
+        if: always()
+        env:
+          WEEKLY_STAGES: '{"source":"${{ steps.source.outcome }}","reconcile":"${{ steps.reconcile.outcome }}","evaluate":"${{ steps.evaluate.outcome }}","diagnostics":"${{ steps.diagnostics.outcome }}","proposal":"${{ steps.proposal.outcome }}","persist":"${{ steps.persist.outcome }}","propose":"${{ steps.propose.outcome }}"}'
+        run: |
+          # The proposal step may be on a candidate branch: never push that to main.
+          git switch main
+          node scripts/record_weekly_outcome.mjs
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/operations data/research/status.json
+          git diff --cached --quiet || git commit -m 'Record weekly operation outcome'
+          git push origin HEAD:main
       - uses: actions/upload-artifact@v4
         if: always()
         with:

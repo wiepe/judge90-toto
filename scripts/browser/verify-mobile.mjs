@@ -13,6 +13,7 @@ async function pageFor(width){const page=await browser.newPage({viewport:{width,
 try{
  for(const width of[360,393,412,768]){
   const page=await pageFor(width);await page.goto(base);await page.locator('.match-card').first().waitFor();assert.equal(await page.locator('#quickPicks strong').count(),13);
+  assert.equal(await page.locator('#quickPicks .pick-probability').count(),13);await page.locator('#quickPicks button').first().click();assert.equal(await page.locator('.match-card details').first().getAttribute('open'),'');await page.clock.fastForward(61000);assert.equal(await page.locator('.match-card details').first().getAttribute('open'),'');await page.evaluate(()=>scrollTo(0,0));
   const strip=await page.locator('#quickPicks').boundingBox();assert.ok(strip.y+strip.height<760,'All thirteen picks must fit in the initial viewport');
   for(const tab of['forecast','purchase','performance']){await page.locator(`.bottom-nav a[href="#${tab}"]`).click();await page.locator('#'+tab).waitFor({state:'visible'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`${width}px ${tab} overflows`);}
   await page.locator('.bottom-nav a[href="#purchase"]').click();await page.locator('#purchase').waitFor({state:'visible'});
@@ -29,6 +30,7 @@ try{
    if(mode==='invalid'&&path==='predictions.json')d.matches[0].probabilities['1']=9;
    await route.fulfill({json:d});});await page.goto(base+'/#purchase');await page.waitForFunction(()=>document.getElementById('purchaseState').textContent!=='読込中 · 購入候補は停止中');assert.equal(await page.locator('.purchase-plan').count(),0,mode+' must stop buying');await page.close();
  }
+ const diagnostic=await pageFor(393);await diagnostic.goto(base+'/research/diagnostics.html');await diagnostic.locator('#diagnostics table').first().waitFor();assert.equal(await diagnostic.locator('#diagnostics>details').count(),8);assert.equal(await diagnostic.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await diagnostic.close();
  const page=await pageFor(393);await page.goto(base+'/#performance');assert.equal(await page.evaluate(()=>localStorage.length),0,'Opening the site must not create purchase records');
  await page.locator('input[name=passphrase]').fill('synthetic-test-passphrase');await page.getByRole('button',{name:'開く / 初回作成'}).click();await page.locator('input[name=round]').fill('1668');await page.locator('textarea[name=tickets]').fill('1111111111111');await page.locator('input[name=amount]').fill('100');await page.locator('input[name=confirmed]').check();await page.getByRole('button',{name:'実購入として保存'}).click();await page.getByText('実際の購入として暗号化保存しました。',{exact:true}).waitFor();
  const raw=await page.evaluate(()=>localStorage.getItem('judge90.private-ledger.v1'));assert.doesNotMatch(raw,/round_id|1111111111111/);

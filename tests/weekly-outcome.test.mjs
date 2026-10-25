@@ -1,0 +1,4 @@
+import test from'node:test';import assert from'node:assert/strict';import{weeklyOutcome}from'../scripts/record_weekly_outcome.mjs';
+const stages={source:'success',reconcile:'success',evaluate:'success',diagnostics:'success',proposal:'success',persist:'success',propose:'skipped'};
+test('an ineligible candidate is healthy but PR permission or reconciliation failures stay visible',()=>{assert.equal(weeklyOutcome(stages,{runId:42}).state,'success');assert.deepEqual(weeklyOutcome({...stages,propose:'failure'},{runId:42}).failed_stages,['propose']);assert.ok(weeklyOutcome({...stages,reconcile:'failure',evaluate:'skipped'},{runId:42}).failed_stages.includes('reconcile'));});
+test('run identity cannot escape the append-only history path; retries have separate identities',()=>{assert.throws(()=>weeklyOutcome(stages,{runId:'../x'}));assert.notEqual(weeklyOutcome(stages,{runId:1,attempt:'1'}).attempt,weeklyOutcome(stages,{runId:1,attempt:'2'}).attempt);});
