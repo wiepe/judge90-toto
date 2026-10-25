@@ -1,3 +1,4 @@
+import{mountPersonal}from'./personal-ui.mjs';
 import{renderPerformance}from'./performance.mjs';
 import {renderPurchase} from './purchase.mjs';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
@@ -41,6 +42,7 @@ export async function loadDashboard(doc=globalThis.document,fetcher=fetch){
  const entries=await Promise.all(Object.entries(paths).map(async([k,path])=>{try{const r=await fetcher(path+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return[k,await r.json()];}catch{return[k,null];}}));return Object.fromEntries(entries);
 }
 if(typeof document!=='undefined'&&document.getElementById('quickPicks')){
+ try{mountPersonal(document,document.getElementById('personalContent'));}catch{document.getElementById('personalContent').textContent='端末内の保存領域にアクセスできません。個人記録は保存していません。';}
  let data;const draw=()=>{if(data)renderDashboard(document,data);};
  loadDashboard().then(d=>{data=d;draw();}).catch(()=>{document.getElementById('purchaseState').textContent='表示に失敗しました · 購入候補は停止中';});
  navigate(document,location.hash||'#forecast');addEventListener('hashchange',()=>navigate(document,location.hash));setInterval(draw,60000);
