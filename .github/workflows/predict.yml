@@ -29,6 +29,7 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - name: Unit and integration tests
+        id: tests
         run: npm test
       - name: Discover, reconcile, retry and update
         id: update
@@ -45,8 +46,8 @@ jobs:
           if [ -f data/results.json ]; then git add data/results.json; fi
           if [ -f data/evaluation.json ]; then git add data/evaluation.json data/evaluation-history; fi
           git diff --cached --quiet || git commit -m "Update JUDGE90 automatic operation"
-          # Never overwrite concurrent main changes. A rejected push stops deployment.
-          git push origin HEAD:main
+          # Retry transient server failures only; concurrent main changes stop deployment.
+          bash scripts/push_main.sh
           echo "published=true" >> "$GITHUB_OUTPUT"
       - name: Inspect existing Pages mode
         id: pages
@@ -107,22 +108,25 @@ jobs:
           if [ -d data/deliveries ]; then
             git add data/deliveries
             git diff --cached --quiet || git commit -m "Record JUDGE90 Pages delivery receipt"
-            git push origin HEAD:main
+            bash scripts/push_main.sh
           fi
       - name: Record delivery outcome in durable Actions history
         if: always()
         env:
+          TEST_OUTCOME: ${{ steps.tests.outcome }}
           UPDATE_OUTCOME: ${{ steps.update.outcome }}
           COMMIT_OUTCOME: ${{ steps.commit.outcome }}
         run: |
           echo "## JUDGE90 operation" >> "$GITHUB_STEP_SUMMARY"
-          echo "Update: $UPDATE_OUTCOME / commit: $COMMIT_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
+          echo "Tests: $TEST_OUTCOME / update: $UPDATE_OUTCOME / commit: $COMMIT_OUTCOME" >> "$GITHUB_STEP_SUMMARY"
           echo "Pages delivery outcome is recorded in the steps above. No merge/site setting change is performed by this workflow." >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: judge90-operation-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
+            predictions.json
+            recommendation.json
             data/operations/
             data/update_status.json
             data/results.json

@@ -44,7 +44,7 @@ test('multiple archived predictions count only latest eligible snapshot per roun
  const report=reconcileHistory(r,{leagues:[]},clock());assert.equal(report.rounds.length,2);assert.equal(report.counted_snapshot_ids.length,1);
 });
 test('scheduled and manual executions share one pipeline and explicit Pages delivery',()=>{
- const y=readFileSync('.github/workflows/predict.yml','utf8');assert.match(y,/17 \*\/3 \* \* \*/);assert.match(y,/npm run operate/);assert.match(y,/actions\/deploy-pages@v4/);assert.match(y,/pages\/builds/);assert.match(y,/git push origin HEAD:main/);
+ const y=readFileSync('.github/workflows/predict.yml','utf8');assert.match(y,/17 \*\/3 \* \* \*/);assert.match(y,/npm run operate/);assert.match(y,/actions\/deploy-pages@v4/);assert.match(y,/pages\/builds/);assert.match(y,/bash scripts\/push_main\.sh/);
 });
 
 test('real official onclick round links are extracted without executing JavaScript',()=>{

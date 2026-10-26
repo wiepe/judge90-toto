@@ -1,0 +1,9 @@
+# GitHub refused publication after a successful forecast
+
+After PR #19 merged, initializer run 40339811509 passed 114 tests and successfully retrieved and generated round 1668. Its first attempt failed at 2026-10-26 14:28:43 UTC when `git push origin HEAD:main` returned `remote: fatal error in commit_refs` and `[remote rejected] ... (failure)`. Pages deployment was correctly skipped. This is separate from the earlier stale-clock test failure. The server message does not establish the scope of a GitHub outage.
+
+The prediction workflow now uses a shared shell helper for its data and delivery-receipt pushes. It retries only recognized transient server/transport failures, at most three attempts with 15/30-second waits. Every attempt is the same ordinary fast-forward push; it never rebases, force-pushes, or overwrites concurrent changes. Authentication, policy, permission, non-fast-forward and unknown failures stop immediately. Raw transport errors are not echoed by the helper because remote URLs may contain credentials. Exhaustion blocks publication. Existing operation retries and schedules remain unchanged.
+
+The workflow summary includes the test result, and the existing 90-day diagnostic artifact now also includes the generated public prediction and recommendation, so a push failure does not discard this diagnostic evidence. These artifacts are not proof of delivery and are not counted as publicly delivered predictions. No private purchase records are uploaded.
+
+Validation: 119 Node tests passed locally, including transient recovery/exhaustion, immediate refusal for policy/permission/concurrent changes, idempotent real Git pushes, and preservation of divergent remote history. Actionlint and diff checks passed. This fix changes no production probabilities, public forecasts, security settings or stored histories. Merge is subject to owner approval; actual recovery requires successful main push, Pages delivery and public-site verification.
