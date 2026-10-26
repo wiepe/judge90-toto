@@ -3,9 +3,11 @@ import {createServer} from 'node:http';
 import {readFileSync,mkdirSync} from 'node:fs';
 import {resolve,extname} from 'node:path';
 import assert from 'node:assert/strict';
-const root=process.cwd(),prediction=JSON.parse(readFileSync('predictions.json')),out=resolve('work/mobile-verification');mkdirSync(out,{recursive:true});
+import {dashboardFiles} from '../../tests/helpers/dashboard-fixture.mjs';
+const fixtures=dashboardFiles();
+const root=process.cwd(),prediction=fixtures['predictions.json'],out=resolve('work/mobile-verification');mkdirSync(out,{recursive:true});
 const types={'.html':'text/html','.mjs':'text/javascript','.js':'text/javascript','.css':'text/css','.json':'application/json'};
-const server=createServer((req,res)=>{try{let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(path==='/')path='/index.html';if(path.includes('..')||path.includes('/.')||!types[extname(path)])throw new Error('Forbidden');const file=resolve(root,'.'+path);if(!file.startsWith(root+'/'))throw new Error('Forbidden');res.setHeader('Content-Type',types[extname(path)]);res.end(readFileSync(file));}catch{res.statusCode=404;res.end('Not found');}});
+const server=createServer((req,res)=>{try{let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(path==='/')path='/index.html';if(path.includes('..')||path.includes('/.')||!types[extname(path)])throw new Error('Forbidden');const file=resolve(root,'.'+path);if(!file.startsWith(root+'/'))throw new Error('Forbidden');res.setHeader('Content-Type',types[extname(path)]);res.end(Object.hasOwn(fixtures,path.slice(1))?JSON.stringify(fixtures[path.slice(1)]):readFileSync(file));}catch{res.statusCode=404;res.end('Not found');}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox']}: {})});
 const errors=[],writes=[];
@@ -22,7 +24,7 @@ try{
  }
  // Simulate acquisition failure, stale data, closed sales and generation races.
  for(const mode of['error','stale','closed','mixed','invalid']){
-  const page=await pageFor(393);await page.route('**/*.json?*',async route=>{const path=new URL(route.request().url()).pathname.slice(1);const d=JSON.parse(readFileSync(resolve(root,path)));
+  const page=await pageFor(393);await page.route('**/*.json?*',async route=>{const path=new URL(route.request().url()).pathname.slice(1);const d=Object.hasOwn(fixtures,path)?structuredClone(fixtures[path]):JSON.parse(readFileSync(resolve(root,path)));
    if(mode==='error'&&path==='data/update_status.json'){d.state='error';d.error='simulated outage';}
    if(mode==='stale'&&path==='predictions.json')d.updated_at=new Date(Date.parse(prediction.updated_at)-7*3600000).toISOString();
    if(mode==='closed'&&path==='predictions.json')d.sales_close_at=prediction.updated_at;

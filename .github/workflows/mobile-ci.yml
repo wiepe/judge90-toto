@@ -1,7 +1,7 @@
 name: Mobile dashboard and privacy checks
 on:
   pull_request:
-    paths: [index.html, analysis.html, assets/**, scripts/lib/**, scripts/browser/**, package.json, package-lock.json, .github/workflows/mobile-ci.yml]
+    paths: [index.html, analysis.html, assets/**, scripts/lib/**, scripts/browser/**, tests/helpers/**, package.json, package-lock.json, .github/workflows/mobile-ci.yml]
   push:
     branches: [test/next-generation-operation]
   workflow_dispatch:
