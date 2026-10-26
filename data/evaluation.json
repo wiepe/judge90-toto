@@ -9,7 +9,7 @@
       "snapshot_id": "d11e190e4a9b4865ce47b9fc77e26745ee7b4cd48190bcf084cd92e9cd0b3e16"
     }
   ],
-  "checked_at": "2026-10-26T14:32:24.196Z",
+  "checked_at": "2026-10-26T20:33:12.314Z",
   "scope": "Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot",
   "logloss_floor": 1e-15,
   "overall": {
@@ -65,7 +65,7 @@
   "timeline": [],
   "rows": [],
   "diagnostics": {
-    "as_of": "2026-10-26",
+    "as_of": "2026-10-27",
     "long_term": {
       "n": 0,
       "accuracy": null,
