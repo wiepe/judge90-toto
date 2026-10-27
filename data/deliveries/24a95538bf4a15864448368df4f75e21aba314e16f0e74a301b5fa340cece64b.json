@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-27T09:07:10.908Z",
+  "data_state": "success",
+  "commit": "e0a58490cece0cbbb1dfe0659d3e38f1328f2f76",
+  "pages_delivered": true,
+  "snapshot_id": "0a530e40cd7ed7df071e5f3c2779614461c08426c046e7c5e5adb0cc86dff9d6",
+  "dataset_id": "4f5c81e6dc7e0aba9d8545c7748c449a67470ca00db8d4db693a14e91bf5e788",
+  "round_id": "1668",
+  "sales_close_at": "2026-10-31T13:50:00+09:00",
+  "remaining_minutes": 5502.8182,
+  "reserve_minutes": 0,
+  "on_time": true
+}
