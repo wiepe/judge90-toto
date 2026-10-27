@@ -1,0 +1,1732 @@
+{
+  "budget_comparisons": [
+    {
+      "budget_yen": 100,
+      "individual": {
+        "budget_limit_yen": 100,
+        "cost_yen": 100,
+        "combinations": 1,
+        "estimated_all_13_covered_probability": 0.000027770406455854075,
+        "prizes": {
+          "highest_prize": {
+            "1": 0.000027770406455854075,
+            "2": 0.0004576481936811516,
+            "3": 0.003459856702888138,
+            "none": 0.9960547246969749
+          },
+          "any_ticket_exact_prize": {
+            "1": 0.000027770406455854075,
+            "2": 0.0004576481936811516,
+            "3": 0.003459856702888138
+          },
+          "estimated_at_least_third_probability": 0.003945275303025144,
+          "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+          "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
+          "expected_return": null,
+          "payout_estimate": null
+        },
+        "tickets": [
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000027770406455854054
+          }
+        ],
+        "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
+        "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+        "expected_return": null,
+        "payout_estimate": null
+      },
+      "rectangular": {
+        "budget_limit_yen": 100,
+        "unit_price_yen": 100,
+        "combinations": 1,
+        "cost_yen": 100,
+        "estimated_all_13_covered_probability": 0.000027770406455854054,
+        "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+        "expected_return": null,
+        "payout_estimate": null,
+        "selections": [
+          {
+            "number": 1,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 2,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.569
+          },
+          {
+            "number": 3,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 4,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.504
+          },
+          {
+            "number": 5,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.41241241241241244
+          },
+          {
+            "number": 6,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.365
+          },
+          {
+            "number": 7,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.402
+          },
+          {
+            "number": 8,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 9,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.587
+          },
+          {
+            "number": 10,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.363
+          },
+          {
+            "number": 11,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 12,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.39639639639639646
+          },
+          {
+            "number": 13,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.38
+          }
+        ]
+      }
+    },
+    {
+      "budget_yen": 500,
+      "individual": {
+        "budget_limit_yen": 500,
+        "cost_yen": 500,
+        "combinations": 5,
+        "estimated_all_13_covered_probability": 0.00012529391997307527,
+        "prizes": {
+          "highest_prize": {
+            "1": 0.00012529391997307527,
+            "2": 0.0016924043651318772,
+            "3": 0.01044151453478524,
+            "none": 0.9877407871801098
+          },
+          "any_ticket_exact_prize": {
+            "1": 0.00012529391997307527,
+            "2": 0.0018176982851049529,
+            "3": 0.01223144241343431
+          },
+          "estimated_at_least_third_probability": 0.012259212819890192,
+          "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+          "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
+          "expected_return": null,
+          "payout_estimate": null
+        },
+        "tickets": [
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000027770406455854054
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.00002547533154214712
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000025259657379023405
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000023531765470486878
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023256759125563736
+          }
+        ],
+        "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
+        "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+        "expected_return": null,
+        "payout_estimate": null
+      },
+      "rectangular": {
+        "budget_limit_yen": 500,
+        "unit_price_yen": 100,
+        "combinations": 4,
+        "cost_yen": 400,
+        "estimated_all_13_covered_probability": 0.00010167747776604586,
+        "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+        "expected_return": null,
+        "payout_estimate": null,
+        "selections": [
+          {
+            "number": 1,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 2,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.569
+          },
+          {
+            "number": 3,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 4,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.504
+          },
+          {
+            "number": 5,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.41241241241241244
+          },
+          {
+            "number": 6,
+            "type": "double",
+            "outcomes": [
+              "2",
+              "1"
+            ],
+            "coverage": 0.6970000000000001
+          },
+          {
+            "number": 7,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.402
+          },
+          {
+            "number": 8,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 9,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.587
+          },
+          {
+            "number": 10,
+            "type": "double",
+            "outcomes": [
+              "2",
+              "1"
+            ],
+            "coverage": 0.696
+          },
+          {
+            "number": 11,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 12,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.39639639639639646
+          },
+          {
+            "number": 13,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.38
+          }
+        ]
+      }
+    },
+    {
+      "budget_yen": 1000,
+      "individual": {
+        "budget_limit_yen": 1000,
+        "cost_yen": 1000,
+        "combinations": 10,
+        "estimated_all_13_covered_probability": 0.00023669366730144346,
+        "prizes": {
+          "highest_prize": {
+            "1": 0.00023669366730144346,
+            "2": 0.0028863865945201895,
+            "3": 0.016067964406761774,
+            "none": 0.9808089553314167
+          },
+          "any_ticket_exact_prize": {
+            "1": 0.00023669366730144346,
+            "2": 0.0031230802618216315,
+            "3": 0.01919104466858336
+          },
+          "estimated_at_least_third_probability": 0.019191044668583408,
+          "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+          "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
+          "expected_return": null,
+          "payout_estimate": null
+        },
+        "tickets": [
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000027770406455854054
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.00002547533154214712
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000025259657379023405
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000023531765470486878
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023256759125563736
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023172082389021482
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023053241523626783
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "2",
+              "1"
+            ],
+            "probability": 0.00002180958688830962
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "0"
+            ],
+            "probability": 0.000021777845062748705
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000021586991464661526
+          }
+        ],
+        "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
+        "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+        "expected_return": null,
+        "payout_estimate": null
+      },
+      "rectangular": {
+        "budget_limit_yen": 1000,
+        "unit_price_yen": 100,
+        "combinations": 9,
+        "cost_yen": 900,
+        "estimated_all_13_covered_probability": 0.00020959588253031454,
+        "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+        "expected_return": null,
+        "payout_estimate": null,
+        "selections": [
+          {
+            "number": 1,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 2,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.569
+          },
+          {
+            "number": 3,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 4,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.504
+          },
+          {
+            "number": 5,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.41241241241241244
+          },
+          {
+            "number": 6,
+            "type": "triple",
+            "outcomes": [
+              "2",
+              "1",
+              "0"
+            ],
+            "coverage": 1
+          },
+          {
+            "number": 7,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.402
+          },
+          {
+            "number": 8,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 9,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.587
+          },
+          {
+            "number": 10,
+            "type": "triple",
+            "outcomes": [
+              "2",
+              "1",
+              "0"
+            ],
+            "coverage": 1
+          },
+          {
+            "number": 11,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 12,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.39639639639639646
+          },
+          {
+            "number": 13,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.38
+          }
+        ]
+      }
+    },
+    {
+      "budget_yen": 3000,
+      "individual": {
+        "budget_limit_yen": 3000,
+        "cost_yen": 3000,
+        "combinations": 30,
+        "estimated_all_13_covered_probability": 0.0006357245350141997,
+        "prizes": {
+          "highest_prize": {
+            "1": 0.0006357245350141997,
+            "2": 0.006535096104276308,
+            "3": 0.0308271623959577,
+            "none": 0.9620020169647518
+          },
+          "any_ticket_exact_prize": {
+            "1": 0.0006357245350141997,
+            "2": 0.007170820639290502,
+            "3": 0.037997983035248324
+          },
+          "estimated_at_least_third_probability": 0.037997983035248206,
+          "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+          "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
+          "expected_return": null,
+          "payout_estimate": null
+        },
+        "tickets": [
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000027770406455854054
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.00002547533154214712
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000025259657379023405
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000023531765470486878
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023256759125563736
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023172082389021482
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000023053241523626783
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "2",
+              "1"
+            ],
+            "probability": 0.00002180958688830962
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "0"
+            ],
+            "probability": 0.000021777845062748705
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000021586991464661526
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.00002140423598959354
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "2",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000021207748213798985
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000021154093232019613
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.00002114801495142623
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "0",
+              "1"
+            ],
+            "probability": 0.000020477168396740885
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000020221169749408284
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "0",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000020102458404610757
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1"
+            ],
+            "probability": 0.000020007141690928667
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "0"
+            ],
+            "probability": 0.000019978023156736424
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "2",
+              "1"
+            ],
+            "probability": 0.000019837761224435042
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "0"
+            ],
+            "probability": 0.00001980888920776046
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000019707043259030343
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.000019635290866486642
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "2"
+            ],
+            "probability": 0.00001953458887002061
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000019455041749848664
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "0",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000019344919060267282
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000019306295931632357
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1"
+            ],
+            "probability": 0.000019290335361592493
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "0",
+              "1"
+            ],
+            "probability": 0.000018784840430068093
+          },
+          {
+            "outcomes": [
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "0",
+              "1"
+            ],
+            "probability": 0.00001862580796635061
+          }
+        ],
+        "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
+        "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
+        "expected_return": null,
+        "payout_estimate": null
+      },
+      "rectangular": {
+        "budget_limit_yen": 3000,
+        "unit_price_yen": 100,
+        "combinations": 27,
+        "cost_yen": 2700,
+        "estimated_all_13_covered_probability": 0.0005515681119218807,
+        "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
+        "expected_return": null,
+        "payout_estimate": null,
+        "selections": [
+          {
+            "number": 1,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 2,
+            "type": "single",
+            "outcomes": [
+              "2"
+            ],
+            "coverage": 0.569
+          },
+          {
+            "number": 3,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.494
+          },
+          {
+            "number": 4,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.504
+          },
+          {
+            "number": 5,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.41241241241241244
+          },
+          {
+            "number": 6,
+            "type": "triple",
+            "outcomes": [
+              "2",
+              "1",
+              "0"
+            ],
+            "coverage": 1
+          },
+          {
+            "number": 7,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.402
+          },
+          {
+            "number": 8,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 9,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.587
+          },
+          {
+            "number": 10,
+            "type": "triple",
+            "outcomes": [
+              "2",
+              "1",
+              "0"
+            ],
+            "coverage": 1
+          },
+          {
+            "number": 11,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.452
+          },
+          {
+            "number": 12,
+            "type": "single",
+            "outcomes": [
+              "1"
+            ],
+            "coverage": 0.39639639639639646
+          },
+          {
+            "number": 13,
+            "type": "triple",
+            "outcomes": [
+              "1",
+              "2",
+              "0"
+            ],
+            "coverage": 1
+          }
+        ]
+      }
+    }
+  ],
+  "round_id": "1668",
+  "product": "toto",
+  "product_id": "01",
+  "sales_open_at": "2026-10-24T08:00:00+09:00",
+  "sales_close_at": "2026-10-31T13:50:00+09:00",
+  "source_digest": "7a022ee6eb4a2fdbbc3b89f65b9f9cc8331194e681c6404428f522345ebdd1b1",
+  "generated_at": "2026-10-26T20:33:41.152Z",
+  "engine": "JUDGE 90 Betting Strategy Engine",
+  "version": "2.0",
+  "budget": 1000,
+  "unit_price": 100,
+  "summary": {
+    "matches": 13,
+    "combinations": 9,
+    "price": 900,
+    "strategy": "波乱対応型",
+    "singles": 11,
+    "doubles": 0,
+    "triples": 2
+  },
+  "strategy": {
+    "description": "予測確率と不確実性をもとに、限られた購入金額を不確実な試合へ配分する",
+    "priority": "不確実性の高い試合を優先してダブル・トリプル化"
+  },
+  "matches": [
+    {
+      "number": 1,
+      "home": "岡山",
+      "away": "FC東京",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.494,
+      "confidence": 42,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近2戦は拮抗（1-0-1）"
+        ]
+      },
+      "uncertainty_score": 0.628
+    },
+    {
+      "number": 2,
+      "home": "水戸",
+      "away": "広島",
+      "league": "J1",
+      "recommendation": [
+        "2"
+      ],
+      "type": "single",
+      "probability_coverage": 0.569,
+      "confidence": 60,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近3戦はアウェイ側が優勢（0-1-2）"
+        ]
+      },
+      "uncertainty_score": 0.446
+    },
+    {
+      "number": 3,
+      "home": "神戸",
+      "away": "名古屋",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.494,
+      "confidence": 42,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（3-2-0）"
+        ]
+      },
+      "uncertainty_score": 0.628
+    },
+    {
+      "number": 4,
+      "home": "鹿島",
+      "away": "Ｃ大阪",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.504,
+      "confidence": 44,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
+        ]
+      },
+      "uncertainty_score": 0.605
+    },
+    {
+      "number": 5,
+      "home": "柏",
+      "away": "浦和",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.412,
+      "confidence": 20,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "H2H直近5戦はホーム側が優勢（3-0-2）"
+        ]
+      },
+      "uncertainty_score": 0.825
+    },
+    {
+      "number": 6,
+      "home": "京都",
+      "away": "清水",
+      "league": "J1",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
+        ]
+      },
+      "uncertainty_score": 0.94
+    },
+    {
+      "number": 7,
+      "home": "千葉",
+      "away": "福岡",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.402,
+      "confidence": 17,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（2-2-1）"
+        ]
+      },
+      "uncertainty_score": 0.85
+    },
+    {
+      "number": 8,
+      "home": "長崎",
+      "away": "東京Ｖ",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.452,
+      "confidence": 32,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ]
+      },
+      "uncertainty_score": 0.725
+    },
+    {
+      "number": 9,
+      "home": "町田",
+      "away": "Ｇ大阪",
+      "league": "J1",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.587,
+      "confidence": 64,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近4戦はホーム側が優勢（3-1-0）"
+        ]
+      },
+      "uncertainty_score": 0.409
+    },
+    {
+      "number": 10,
+      "home": "横浜FM",
+      "away": "川崎Ｆ",
+      "league": "J1",
+      "recommendation": [
+        "1",
+        "0",
+        "2"
+      ],
+      "type": "triple",
+      "probability_coverage": 1,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "H2H直近5戦はアウェイ側が優勢（1-2-2）"
+        ]
+      },
+      "uncertainty_score": 0.945
+    },
+    {
+      "number": 11,
+      "home": "仙台",
+      "away": "大宮",
+      "league": "J2",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.452,
+      "confidence": 32,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
+        ]
+      },
+      "uncertainty_score": 0.725
+    },
+    {
+      "number": 12,
+      "home": "新潟",
+      "away": "富山",
+      "league": "J2",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.396,
+      "confidence": 15,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.864
+    },
+    {
+      "number": 13,
+      "home": "宮崎",
+      "away": "大分",
+      "league": "J2",
+      "recommendation": [
+        "1"
+      ],
+      "type": "single",
+      "probability_coverage": 0.38,
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位"
+        ]
+      },
+      "uncertainty_score": 0.904
+    }
+  ],
+  "dataset_id": "f44ba15c517edf876d614574495add04425cc321c935001ee1c6bd43e0ab1e4f"
+}
