@@ -7,7 +7,24 @@ import {dashboardFiles} from '../../tests/helpers/dashboard-fixture.mjs';
 const fixtures=dashboardFiles();
 const root=process.cwd(),prediction=fixtures['predictions.json'],out=resolve('work/mobile-verification');mkdirSync(out,{recursive:true});
 const types={'.html':'text/html','.mjs':'text/javascript','.js':'text/javascript','.css':'text/css','.json':'application/json'};
-const server=createServer((req,res)=>{try{let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(path==='/')path='/index.html';if(path.includes('..')||path.includes('/.')||!types[extname(path)])throw new Error('Forbidden');const file=resolve(root,'.'+path);if(!file.startsWith(root+'/'))throw new Error('Forbidden');res.setHeader('Content-Type',types[extname(path)]);res.end(Object.hasOwn(fixtures,path.slice(1))?JSON.stringify(fixtures[path.slice(1)]):readFileSync(file));}catch{res.statusCode=404;res.end('Not found');}});
+let warmOldUI=false;
+const oldPurchase="export function renderPurchase(doc,root){root.textContent='No.1 2 シングル（旧表示）';}";
+const server=createServer((req,res)=>{
+ try{
+  const url=new URL(req.url,'http://localhost');let path=decodeURIComponent(url.pathname);if(path==='/')path='/index.html';
+  if(path.includes('..')||path.includes('/.')||!types[extname(path)])throw new Error('Forbidden');
+  const file=resolve(root,'.'+path);if(!file.startsWith(root+'/'))throw new Error('Forbidden');
+  res.setHeader('Content-Type',types[extname(path)]);
+  res.setHeader('Cache-Control',extname(path)==='.html'?'no-store':'public, max-age=86400');
+  let body=Object.hasOwn(fixtures,path.slice(1))?JSON.stringify(fixtures[path.slice(1)]):readFileSync(file,'utf8');
+  if(warmOldUI){
+   if(path==='/index.html'||path==='/assets/dashboard.mjs')body=body.replace(/\?v=[a-f0-9]+/g,'');
+   if(path==='/assets/purchase.mjs')body=oldPurchase;
+   if(path==='/assets/dashboard.css')body+='.selection-grid{grid-template-columns:repeat(3,minmax(0,1fr))}';
+  }
+  res.end(body);
+ }catch{res.statusCode=404;res.end('Not found');}
+});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port;
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH,args:['--no-sandbox']}: {})});
 const errors=[],writes=[];
@@ -27,13 +44,26 @@ try{
   await rectangular.locator('.purchase-home').first().evaluate(e=>e.textContent='北海道コンサドーレ札幌');
   await rectangular.locator('.purchase-away').first().evaluate(e=>e.textContent='ヴァンフォーレ甲府');
   await rectangular.scrollIntoViewIfNeeded();await page.screenshot({path:resolve(out,`purchase-teams-${width}.png`)});
-  const individual=page.locator('[data-kind="individual"]');await individual.locator('summary').click();
+  const individual=page.locator('[data-kind="individual"]');assert.equal(await individual.locator('details').getAttribute('open'),'');
   await individual.locator('select').selectOption('29');
   assert.equal(await individual.locator('.ticket-preview .purchase-home').count(),13);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`${width}px ticket details overflow`);
   await individual.locator('select').scrollIntoViewIfNeeded();await page.screenshot({path:resolve(out,`purchase-ticket-${width}.png`)});
   await page.locator('.bottom-nav a[href="#forecast"]').click();await page.screenshot({path:resolve(out,`forecast-${width}.png`),fullPage:true});await page.close();
  }
+ // Revisit with an HTTP cache containing the old unversioned module graph.
+ const cached=await pageFor(393);warmOldUI=true;
+ await cached.goto(base+'/?cache-prime#purchase');
+ await cached.getByText('No.1 2 シングル（旧表示）',{exact:true}).waitFor();
+ await cached.evaluate(()=>localStorage.setItem('cache-test-private-sentinel','preserve'));
+ warmOldUI=false;
+ await cached.goto(base+'/?screen=teams#purchase');
+ await cached.locator('[data-kind="individual"] .purchase-home').first().waitFor();
+ assert.equal(await cached.locator('[data-kind="rectangular"] > .selection-grid .purchase-home').count(),13);
+ assert.equal(await cached.locator('[data-kind="individual"] details').getAttribute('open'),'');
+ assert.equal(await cached.evaluate(()=>localStorage.getItem('cache-test-private-sentinel')),'preserve');
+ assert.equal(await cached.evaluate(()=>getComputedStyle(document.querySelector('.selection-grid')).gridTemplateColumns.split(' ').length),1);
+ await cached.close();
  // Simulate acquisition failure, stale data, closed sales and generation races.
  for(const mode of['error','stale','closed','mixed','invalid']){
   const page=await pageFor(393);await page.route('**/*.json?*',async route=>{const path=new URL(route.request().url()).pathname.slice(1);const d=Object.hasOwn(fixtures,path)?structuredClone(fixtures[path]):JSON.parse(readFileSync(resolve(root,path)));
@@ -51,5 +81,5 @@ try{
  await page.locator('.bottom-nav a[href="#forecast"]').click();await page.locator('.bottom-nav a[href="#performance"]').click();await page.locator('#performance').waitFor({state:'visible'});await page.locator('input[name=passphrase]').waitFor();await page.locator('input[name=passphrase]').fill('synthetic-test-passphrase');await page.getByRole('button',{name:'開く / 初回作成'}).click();await page.getByText('購入総額 100円',{exact:false}).waitFor();await page.clock.fastForward(301000);await page.locator('input[name=passphrase]').waitFor();
  // Minute revalidation must remove purchase candidates when freshness expires.
  await page.locator('.bottom-nav a[href="#purchase"]').click();await page.clock.fastForward(7*3600000);assert.equal(await page.locator('.purchase-plan').count(),0);await page.close();
- assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);console.log(JSON.stringify({widths:[360,393,412,768],screens:3,budgets:4,failure_states:5,private_encryption:true,auto_lock:true,external_writes:writes.length,errors:errors.length}));
+ assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);console.log(JSON.stringify({widths:[360,393,412,768],screens:3,budgets:4,failure_states:5,private_encryption:true,auto_lock:true,old_cache_recovery:true,external_writes:writes.length,errors:errors.length}));
 }finally{await browser.close();await new Promise(r=>server.close(r));}

@@ -2,7 +2,7 @@ import{riskEstimate,deadlineText,appendMatchDetails}from'./forecast-details.mjs'
 import{mountPersonal}from'./personal-ui.mjs';
 import{renderPerformance}from'./performance.mjs';
 import{optimizePortfolio}from'../scripts/lib/portfolio.mjs';
-import {renderPurchase} from './purchase.mjs';
+import {renderPurchase} from './purchase.mjs?v=408ba51c8ae09d2c';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
 export const percent=(x,d=1)=>Number.isFinite(x)?(100*x).toFixed(d)+'%':'未評価';
 export function element(doc,tag,text,className){const e=doc.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
