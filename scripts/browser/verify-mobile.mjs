@@ -20,6 +20,18 @@ try{
   for(const tab of['forecast','purchase','performance']){await page.locator(`.bottom-nav a[href="#${tab}"]`).click();await page.locator('#'+tab).waitFor({state:'visible'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`${width}px ${tab} overflows`);}
   await page.locator('.bottom-nav a[href="#purchase"]').click();await page.locator('#purchase').waitFor({state:'visible'});
   for(const budget of[100,500,1000,3000]){await page.locator(`[data-amount="${budget}"]`).click();assert.equal(await page.locator('.purchase-plan').count(),2);assert.equal(await page.locator(`[data-amount="${budget}"]`).getAttribute('aria-pressed'),'true');}
+  const rectangular=page.locator('[data-kind="rectangular"]');
+  assert.equal(await rectangular.locator(':scope > .selection-grid .purchase-home').count(),13);
+  assert.equal(await rectangular.locator(':scope > .selection-grid .purchase-away').first().textContent(),prediction.matches[0].away);
+  // Long names wrap instead of losing the opponent or overflowing a Pixel screen.
+  await rectangular.locator('.purchase-home').first().evaluate(e=>e.textContent='北海道コンサドーレ札幌');
+  await rectangular.locator('.purchase-away').first().evaluate(e=>e.textContent='ヴァンフォーレ甲府');
+  await rectangular.scrollIntoViewIfNeeded();await page.screenshot({path:resolve(out,`purchase-teams-${width}.png`)});
+  const individual=page.locator('[data-kind="individual"]');await individual.locator('summary').click();
+  await individual.locator('select').selectOption('29');
+  assert.equal(await individual.locator('.ticket-preview .purchase-home').count(),13);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`${width}px ticket details overflow`);
+  await individual.locator('select').scrollIntoViewIfNeeded();await page.screenshot({path:resolve(out,`purchase-ticket-${width}.png`)});
   await page.locator('.bottom-nav a[href="#forecast"]').click();await page.screenshot({path:resolve(out,`forecast-${width}.png`),fullPage:true});await page.close();
  }
  // Simulate acquisition failure, stale data, closed sales and generation races.
