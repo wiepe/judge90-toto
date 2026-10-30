@@ -18,5 +18,7 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm test
+      - name: Verify purchase UI cache versions
+        run: node scripts/version_purchase_ui.mjs --check
       - name: Verify all release features are present
         run: node scripts/check_release.mjs

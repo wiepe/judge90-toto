@@ -50,7 +50,7 @@ export function renderPurchase(doc,container,{current,predictions,evaluation,get
   panel.append(el(doc,'p','最高等級別：1等 '+pct(plan.prizes.highest_prize['1'])+' ／ 2等 '+pct(plan.prizes.highest_prize['2'])+' ／ 3等 '+pct(plan.prizes.highest_prize['3']),'muted'));
   panel.append(el(doc,'p','対戦カードはホーム → アウェイの順。1＝ホーム勝ち・0＝引き分け・2＝アウェイ勝ち。','muted'));
   if(kind==='rectangular')panel.append(matchRows(doc,plan.selections,byNumber));
-  const details=el(doc,'details');details.append(el(doc,'summary',kind==='individual'?'購入候補を対戦カードで見る':'展開した個別口を確認'));
+  const details=el(doc,'details');details.open=kind==='individual';details.append(el(doc,'summary',kind==='individual'?'購入候補を対戦カードで見る':'展開した個別口を確認'));
   ticketViewer(doc,details,plan,byNumber,getCurrent);panel.append(details);
   container.append(panel);
  }
