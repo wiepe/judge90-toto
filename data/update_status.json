@@ -1,15 +1,15 @@
 {
   "publication": {
-    "checked_at": "2026-10-31T14:36:36.047Z",
+    "checked_at": "2026-10-31T19:21:13.209Z",
     "sales_close_at": "2026-11-03T13:45:00+09:00",
-    "remaining_minutes": 3728.3992166666667,
+    "remaining_minutes": 3443.77985,
     "reserve_minutes": 30,
     "on_time": true
   },
   "state": "success",
-  "started_at": "2026-10-31T14:36:07.365Z",
-  "checked_at": "2026-10-31T14:36:36.051Z",
-  "dataset_id": "db8154c23c79cfee04d9b33912f8da8b3748a734fb585441cccb7be333dedd71",
+  "started_at": "2026-10-31T19:20:46.072Z",
+  "checked_at": "2026-10-31T19:21:13.213Z",
+  "dataset_id": "a8dec488bf4d6ed19e2fe842ef7c78fd3a9d750b7942c8ba94fc543601ee9e01",
   "round_id": "1669",
   "product": "toto",
   "product_id": "01",
