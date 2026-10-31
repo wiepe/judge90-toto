@@ -1,0 +1,42 @@
+{
+  "run_id": "3c26c418-6b11-49da-a0d1-6d0e54263872",
+  "events": [
+    {
+      "state": "started",
+      "trigger": "schedule",
+      "at": "2026-10-31T12:40:57.733Z"
+    },
+    {
+      "state": "results_success",
+      "attempt": 1,
+      "completed": 13,
+      "at": "2026-10-31T12:41:01.262Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 1,
+      "error": "Command failed: /opt/hostedtoolcache/node/22.23.4/x64/bin/node /home/runner/work/judge90-toto/judge90-toto/scripts/fetch_toto.mjs\nTOTO FETCH ERROR: Unknown team: モンテディオ山形. Register a verified alias/ID before publishing.\n",
+      "at": "2026-10-31T12:41:07.737Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 2,
+      "error": "Command failed: /opt/hostedtoolcache/node/22.23.4/x64/bin/node /home/runner/work/judge90-toto/judge90-toto/scripts/fetch_toto.mjs\nTOTO FETCH ERROR: Unknown team: モンテディオ山形. Register a verified alias/ID before publishing.\n",
+      "at": "2026-10-31T12:41:43.298Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 3,
+      "error": "Command failed: /opt/hostedtoolcache/node/22.23.4/x64/bin/node /home/runner/work/judge90-toto/judge90-toto/scripts/fetch_toto.mjs\nTOTO FETCH ERROR: Unknown team: モンテディオ山形. Register a verified alias/ID before publishing.\n",
+      "at": "2026-10-31T12:42:49.359Z"
+    },
+    {
+      "state": "error",
+      "checked_at": "2026-10-31T12:42:49.359Z",
+      "failed_step": "automatic_operation",
+      "error": "Command failed: /opt/hostedtoolcache/node/22.23.4/x64/bin/node /home/runner/work/judge90-toto/judge90-toto/scripts/fetch_toto.mjs\nTOTO FETCH ERROR: Unknown team: モンテディオ山形. Register a verified alias/ID before publishing.\n",
+      "previous_data_retained": true,
+      "at": "2026-10-31T12:42:49.359Z"
+    }
+  ]
+}
