@@ -1,31 +1,303 @@
 {
   "season": "2026/27",
-  "generated_at": "2026-10-31T01:52:22.107Z",
+  "generated_at": "2026-10-31T14:36:35.030Z",
   "source": "J.League Data Site",
   "historical_range": "2004-2026",
   "matches": [
     {
       "number": 1,
-      "home": "岡山",
-      "away": "FC東京",
+      "home": "富山",
+      "away": "仙台",
       "h2h": {
         "available": true,
-        "teamA": "岡山",
-        "teamB": "FC東京",
+        "teamA": "富山",
+        "teamB": "仙台",
         "recent5": {
-          "matches": 2,
+          "matches": 5,
           "home_wins": 1,
           "draws": 0,
-          "away_wins": 1,
+          "away_wins": 4,
+          "home_goals": 4,
+          "away_goals": 10,
+          "advantage": "AWAY_ADVANTAGE",
+          "stats": {
+            "matches": 5,
+            "teamA_wins": 1,
+            "draws": 0,
+            "teamB_wins": 4,
+            "teamA_goals": 4,
+            "teamB_goals": 10
+          }
+        },
+        "all_time": {
+          "matches": 5,
+          "stats": {
+            "matches": 5
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 2,
+      "home": "大宮",
+      "away": "いわき",
+      "h2h": {
+        "available": true,
+        "teamA": "大宮",
+        "teamB": "いわき",
+        "recent5": {
+          "matches": 4,
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 4,
+          "home_goals": 4,
+          "away_goals": 11,
+          "advantage": "AWAY_ADVANTAGE",
+          "stats": {
+            "matches": 4,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 4,
+            "teamA_goals": 4,
+            "teamB_goals": 11
+          }
+        },
+        "all_time": {
+          "matches": 4,
+          "stats": {
+            "matches": 4
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 3,
+      "home": "大分",
+      "away": "八戸",
+      "h2h": {
+        "available": false,
+        "teamA": "大分",
+        "teamB": "八戸",
+        "recent5": {
+          "matches": 0,
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "home_goals": 0,
+          "away_goals": 0,
+          "advantage": "neutral",
+          "stats": {
+            "matches": 0,
+            "teamA_wins": 0,
+            "draws": 0,
+            "teamB_wins": 0,
+            "teamA_goals": 0,
+            "teamB_goals": 0
+          }
+        },
+        "all_time": {
+          "matches": 0,
+          "stats": {
+            "matches": 0
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 4,
+      "home": "山形",
+      "away": "徳島",
+      "h2h": {
+        "available": true,
+        "teamA": "山形",
+        "teamB": "徳島",
+        "recent5": {
+          "matches": 5,
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
           "home_goals": 2,
+          "away_goals": 4,
+          "advantage": "AWAY_ADVANTAGE",
+          "stats": {
+            "matches": 5,
+            "teamA_wins": 1,
+            "draws": 1,
+            "teamB_wins": 3,
+            "teamA_goals": 2,
+            "teamB_goals": 4
+          }
+        },
+        "all_time": {
+          "matches": 37,
+          "stats": {
+            "matches": 37
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 5,
+      "home": "湘南",
+      "away": "鳥栖",
+      "h2h": {
+        "available": true,
+        "teamA": "湘南",
+        "teamB": "鳥栖",
+        "recent5": {
+          "matches": 5,
+          "home_wins": 4,
+          "draws": 0,
+          "away_wins": 1,
+          "home_goals": 12,
+          "away_goals": 9,
+          "advantage": "HOME_ADVANTAGE",
+          "stats": {
+            "matches": 5,
+            "teamA_wins": 4,
+            "draws": 0,
+            "teamB_wins": 1,
+            "teamA_goals": 12,
+            "teamB_goals": 9
+          }
+        },
+        "all_time": {
+          "matches": 44,
+          "stats": {
+            "matches": 44
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 6,
+      "home": "甲府",
+      "away": "新潟",
+      "h2h": {
+        "available": true,
+        "teamA": "甲府",
+        "teamB": "新潟",
+        "recent5": {
+          "matches": 5,
+          "home_wins": 0,
+          "draws": 2,
+          "away_wins": 3,
+          "home_goals": 4,
+          "away_goals": 8,
+          "advantage": "AWAY_ADVANTAGE",
+          "stats": {
+            "matches": 5,
+            "teamA_wins": 0,
+            "draws": 2,
+            "teamB_wins": 3,
+            "teamA_goals": 4,
+            "teamB_goals": 8
+          }
+        },
+        "all_time": {
+          "matches": 26,
+          "stats": {
+            "matches": 26
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 7,
+      "home": "藤枝",
+      "away": "磐田",
+      "h2h": {
+        "available": true,
+        "teamA": "藤枝",
+        "teamB": "磐田",
+        "recent5": {
+          "matches": 4,
+          "home_wins": 1,
+          "draws": 0,
+          "away_wins": 3,
+          "home_goals": 3,
+          "away_goals": 7,
+          "advantage": "AWAY_ADVANTAGE",
+          "stats": {
+            "matches": 4,
+            "teamA_wins": 1,
+            "draws": 0,
+            "teamB_wins": 3,
+            "teamA_goals": 3,
+            "teamB_goals": 7
+          }
+        },
+        "all_time": {
+          "matches": 4,
+          "stats": {
+            "matches": 4
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 8,
+      "home": "宮崎",
+      "away": "栃木Ｃ",
+      "h2h": {
+        "available": true,
+        "teamA": "宮崎",
+        "teamB": "栃木Ｃ",
+        "recent5": {
+          "matches": 2,
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 1,
+          "home_goals": 3,
+          "away_goals": 4,
+          "advantage": "AWAY_ADVANTAGE",
+          "stats": {
+            "matches": 2,
+            "teamA_wins": 0,
+            "draws": 1,
+            "teamB_wins": 1,
+            "teamA_goals": 3,
+            "teamB_goals": 4
+          }
+        },
+        "all_time": {
+          "matches": 2,
+          "stats": {
+            "matches": 2
+          }
+        },
+        "effect": 0
+      }
+    },
+    {
+      "number": 9,
+      "home": "今治",
+      "away": "札幌",
+      "h2h": {
+        "available": true,
+        "teamA": "今治",
+        "teamB": "札幌",
+        "recent5": {
+          "matches": 2,
+          "home_wins": 0,
+          "draws": 2,
+          "away_wins": 0,
+          "home_goals": 3,
           "away_goals": 3,
           "advantage": "neutral",
           "stats": {
             "matches": 2,
-            "teamA_wins": 1,
-            "draws": 0,
-            "teamB_wins": 1,
-            "teamA_goals": 2,
+            "teamA_wins": 0,
+            "draws": 2,
+            "teamB_wins": 0,
+            "teamA_goals": 3,
             "teamB_goals": 3
           }
         },
@@ -39,266 +311,28 @@
       }
     },
     {
-      "number": 2,
-      "home": "水戸",
-      "away": "広島",
+      "number": 10,
+      "home": "横浜FC",
+      "away": "秋田",
       "h2h": {
         "available": true,
-        "teamA": "水戸",
-        "teamB": "広島",
-        "recent5": {
-          "matches": 3,
-          "home_wins": 0,
-          "draws": 1,
-          "away_wins": 2,
-          "home_goals": 4,
-          "away_goals": 8,
-          "advantage": "AWAY_ADVANTAGE",
-          "stats": {
-            "matches": 3,
-            "teamA_wins": 0,
-            "draws": 1,
-            "teamB_wins": 2,
-            "teamA_goals": 4,
-            "teamB_goals": 8
-          }
-        },
-        "all_time": {
-          "matches": 3,
-          "stats": {
-            "matches": 3
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 3,
-      "home": "神戸",
-      "away": "名古屋",
-      "h2h": {
-        "available": true,
-        "teamA": "神戸",
-        "teamB": "名古屋",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 3,
-          "draws": 2,
-          "away_wins": 0,
-          "home_goals": 11,
-          "away_goals": 7,
-          "advantage": "HOME_ADVANTAGE",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 3,
-            "draws": 2,
-            "teamB_wins": 0,
-            "teamA_goals": 11,
-            "teamB_goals": 7
-          }
-        },
-        "all_time": {
-          "matches": 38,
-          "stats": {
-            "matches": 38
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 4,
-      "home": "鹿島",
-      "away": "Ｃ大阪",
-      "h2h": {
-        "available": true,
-        "teamA": "鹿島",
-        "teamB": "Ｃ大阪",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "home_goals": 7,
-          "away_goals": 3,
-          "advantage": "HOME_ADVANTAGE",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 3,
-            "draws": 1,
-            "teamB_wins": 1,
-            "teamA_goals": 7,
-            "teamB_goals": 3
-          }
-        },
-        "all_time": {
-          "matches": 34,
-          "stats": {
-            "matches": 34
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 5,
-      "home": "柏",
-      "away": "浦和",
-      "h2h": {
-        "available": true,
-        "teamA": "柏",
-        "teamB": "浦和",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 3,
-          "draws": 0,
-          "away_wins": 2,
-          "home_goals": 7,
-          "away_goals": 5,
-          "advantage": "HOME_ADVANTAGE",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 3,
-            "draws": 0,
-            "teamB_wins": 2,
-            "teamA_goals": 7,
-            "teamB_goals": 5
-          }
-        },
-        "all_time": {
-          "matches": 38,
-          "stats": {
-            "matches": 38
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 6,
-      "home": "京都",
-      "away": "清水",
-      "h2h": {
-        "available": true,
-        "teamA": "京都",
-        "teamB": "清水",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "home_goals": 3,
-          "away_goals": 7,
-          "advantage": "AWAY_ADVANTAGE",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 1,
-            "draws": 1,
-            "teamB_wins": 3,
-            "teamA_goals": 3,
-            "teamB_goals": 7
-          }
-        },
-        "all_time": {
-          "matches": 14,
-          "stats": {
-            "matches": 14
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 7,
-      "home": "千葉",
-      "away": "福岡",
-      "h2h": {
-        "available": true,
-        "teamA": "千葉",
-        "teamB": "福岡",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 2,
-          "draws": 2,
-          "away_wins": 1,
-          "home_goals": 9,
-          "away_goals": 6,
-          "advantage": "HOME_ADVANTAGE",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 2,
-            "draws": 2,
-            "teamB_wins": 1,
-            "teamA_goals": 9,
-            "teamB_goals": 6
-          }
-        },
-        "all_time": {
-          "matches": 20,
-          "stats": {
-            "matches": 20
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 8,
-      "home": "長崎",
-      "away": "東京Ｖ",
-      "h2h": {
-        "available": true,
-        "teamA": "長崎",
-        "teamB": "東京Ｖ",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "home_goals": 7,
-          "away_goals": 5,
-          "advantage": "neutral",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 2,
-            "draws": 1,
-            "teamB_wins": 2,
-            "teamA_goals": 7,
-            "teamB_goals": 5
-          }
-        },
-        "all_time": {
-          "matches": 20,
-          "stats": {
-            "matches": 20
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
-      "number": 9,
-      "home": "町田",
-      "away": "Ｇ大阪",
-      "h2h": {
-        "available": true,
-        "teamA": "町田",
-        "teamB": "Ｇ大阪",
+        "teamA": "横浜FC",
+        "teamB": "秋田",
         "recent5": {
           "matches": 4,
-          "home_wins": 3,
+          "home_wins": 2,
           "draws": 1,
-          "away_wins": 0,
-          "home_goals": 8,
-          "away_goals": 3,
+          "away_wins": 1,
+          "home_goals": 4,
+          "away_goals": 2,
           "advantage": "HOME_ADVANTAGE",
           "stats": {
             "matches": 4,
-            "teamA_wins": 3,
+            "teamA_wins": 2,
             "draws": 1,
-            "teamB_wins": 0,
-            "teamA_goals": 8,
-            "teamB_goals": 3
+            "teamB_wins": 1,
+            "teamA_goals": 4,
+            "teamB_goals": 2
           }
         },
         "all_time": {
@@ -311,68 +345,34 @@
       }
     },
     {
-      "number": 10,
-      "home": "横浜FM",
-      "away": "川崎Ｆ",
-      "h2h": {
-        "available": true,
-        "teamA": "横浜FM",
-        "teamB": "川崎Ｆ",
-        "recent5": {
-          "matches": 5,
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "home_goals": 6,
-          "away_goals": 8,
-          "advantage": "AWAY_ADVANTAGE",
-          "stats": {
-            "matches": 5,
-            "teamA_wins": 1,
-            "draws": 2,
-            "teamB_wins": 2,
-            "teamA_goals": 6,
-            "teamB_goals": 8
-          }
-        },
-        "all_time": {
-          "matches": 42,
-          "stats": {
-            "matches": 42
-          }
-        },
-        "effect": 0
-      }
-    },
-    {
       "number": 11,
-      "home": "仙台",
-      "away": "大宮",
+      "home": "奈良",
+      "away": "群馬",
       "h2h": {
         "available": true,
-        "teamA": "仙台",
-        "teamB": "大宮",
+        "teamA": "奈良",
+        "teamB": "群馬",
         "recent5": {
-          "matches": 5,
+          "matches": 2,
           "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "home_goals": 5,
-          "away_goals": 9,
-          "advantage": "AWAY_ADVANTAGE",
+          "draws": 0,
+          "away_wins": 1,
+          "home_goals": 3,
+          "away_goals": 3,
+          "advantage": "neutral",
           "stats": {
-            "matches": 5,
+            "matches": 2,
             "teamA_wins": 1,
-            "draws": 1,
-            "teamB_wins": 3,
-            "teamA_goals": 5,
-            "teamB_goals": 9
+            "draws": 0,
+            "teamB_wins": 1,
+            "teamA_goals": 3,
+            "teamB_goals": 3
           }
         },
         "all_time": {
-          "matches": 24,
+          "matches": 2,
           "stats": {
-            "matches": 24
+            "matches": 2
           }
         },
         "effect": 0
@@ -380,33 +380,33 @@
     },
     {
       "number": 12,
-      "home": "新潟",
-      "away": "富山",
+      "home": "山口",
+      "away": "鹿児島",
       "h2h": {
-        "available": false,
-        "teamA": "新潟",
-        "teamB": "富山",
+        "available": true,
+        "teamA": "山口",
+        "teamB": "鹿児島",
         "recent5": {
-          "matches": 0,
-          "home_wins": 0,
-          "draws": 0,
+          "matches": 4,
+          "home_wins": 3,
+          "draws": 1,
           "away_wins": 0,
-          "home_goals": 0,
+          "home_goals": 3,
           "away_goals": 0,
-          "advantage": "neutral",
+          "advantage": "HOME_ADVANTAGE",
           "stats": {
-            "matches": 0,
-            "teamA_wins": 0,
-            "draws": 0,
+            "matches": 4,
+            "teamA_wins": 3,
+            "draws": 1,
             "teamB_wins": 0,
-            "teamA_goals": 0,
+            "teamA_goals": 3,
             "teamB_goals": 0
           }
         },
         "all_time": {
-          "matches": 0,
+          "matches": 4,
           "stats": {
-            "matches": 0
+            "matches": 4
           }
         },
         "effect": 0
@@ -414,38 +414,38 @@
     },
     {
       "number": 13,
-      "home": "宮崎",
-      "away": "大分",
+      "home": "讃岐",
+      "away": "松本",
       "h2h": {
-        "available": false,
-        "teamA": "宮崎",
-        "teamB": "大分",
+        "available": true,
+        "teamA": "讃岐",
+        "teamB": "松本",
         "recent5": {
-          "matches": 0,
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "home_goals": 0,
-          "away_goals": 0,
-          "advantage": "neutral",
+          "matches": 5,
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "home_goals": 4,
+          "away_goals": 9,
+          "advantage": "AWAY_ADVANTAGE",
           "stats": {
-            "matches": 0,
-            "teamA_wins": 0,
-            "draws": 0,
-            "teamB_wins": 0,
-            "teamA_goals": 0,
-            "teamB_goals": 0
+            "matches": 5,
+            "teamA_wins": 1,
+            "draws": 1,
+            "teamB_wins": 3,
+            "teamA_goals": 4,
+            "teamB_goals": 9
           }
         },
         "all_time": {
-          "matches": 0,
+          "matches": 16,
           "stats": {
-            "matches": 0
+            "matches": 16
           }
         },
         "effect": 0
       }
     }
   ],
-  "dataset_id": "a1eee62e22a1d5638572297c3507f1f8324342a9e9e5f0a67a2093360bb570e6"
+  "dataset_id": "db8154c23c79cfee04d9b33912f8da8b3748a734fb585441cccb7be333dedd71"
 }
