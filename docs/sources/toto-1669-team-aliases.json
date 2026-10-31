@@ -1,0 +1,100 @@
+{
+  "captured_at": "2026-10-31T14:27:22.426Z",
+  "landing_url": "https://store.toto-dream.com/dcs/subos/screen/ps01/spsl000/PGSPSL00001InitTotoSingle.form?commodityId=01",
+  "lot_url": "https://store.toto-dream.com/dcs/subos/screen/pi01/spin000/PGSPIN00001DisptotoLotInfo.form?holdCntId=1669",
+  "landing_sha256": "c8f163429f1ecea92c15cedd60ca5e19352a241d18f09cc89b16f87e8cd6e2fe",
+  "lot_sha256": "79424643ffb051bd677d73b6fc869fd5c98295930ba212a808fa8aa4c42b41c2",
+  "method": "Same round, official game ID, number, date and home/away side on both official pages; IDs remain JUDGE90 internal IDs.",
+  "aliases": [
+    {
+      "number": 4,
+      "official_game_id": "56189",
+      "match_date": "2026-11-03",
+      "side": "home",
+      "short_name": "山形",
+      "full_name": "モンテディオ山形",
+      "team_id": "j90-9c204ad92d5d"
+    },
+    {
+      "number": 7,
+      "official_game_id": "56194",
+      "match_date": "2026-11-03",
+      "side": "home",
+      "short_name": "藤枝",
+      "full_name": "藤枝ＭＹＦＣ",
+      "team_id": "j90-efe4e4220444"
+    },
+    {
+      "number": 8,
+      "official_game_id": "56196",
+      "match_date": "2026-11-03",
+      "side": "away",
+      "short_name": "栃木Ｃ",
+      "full_name": "栃木シティ",
+      "team_id": "j90-fa3fa5c01cc5"
+    },
+    {
+      "number": 9,
+      "official_game_id": "56197",
+      "match_date": "2026-11-03",
+      "side": "away",
+      "short_name": "札幌",
+      "full_name": "北海道コンサドーレ札幌",
+      "team_id": "j90-3bf2c28a7895"
+    },
+    {
+      "number": 11,
+      "official_game_id": "56571",
+      "match_date": "2026-11-03",
+      "side": "home",
+      "short_name": "奈良",
+      "full_name": "奈良クラブ",
+      "team_id": "j90-88a6e3a06ff0"
+    },
+    {
+      "number": 11,
+      "official_game_id": "56571",
+      "match_date": "2026-11-03",
+      "side": "away",
+      "short_name": "群馬",
+      "full_name": "ザスパ群馬",
+      "team_id": "j90-5ce53ddb31fc"
+    },
+    {
+      "number": 12,
+      "official_game_id": "56573",
+      "match_date": "2026-11-03",
+      "side": "home",
+      "short_name": "山口",
+      "full_name": "レノファ山口ＦＣ",
+      "team_id": "j90-31e9bf970d19"
+    },
+    {
+      "number": 12,
+      "official_game_id": "56573",
+      "match_date": "2026-11-03",
+      "side": "away",
+      "short_name": "鹿児島",
+      "full_name": "鹿児島ユナイテッドＦＣ",
+      "team_id": "j90-ac1c1ab4d3ed"
+    },
+    {
+      "number": 13,
+      "official_game_id": "56574",
+      "match_date": "2026-11-03",
+      "side": "home",
+      "short_name": "讃岐",
+      "full_name": "カマタマーレ讃岐",
+      "team_id": "j90-ee8564af5f03"
+    },
+    {
+      "number": 13,
+      "official_game_id": "56574",
+      "match_date": "2026-11-03",
+      "side": "away",
+      "short_name": "松本",
+      "full_name": "松本山雅ＦＣ",
+      "team_id": "j90-64627adc4e5e"
+    }
+  ]
+}
