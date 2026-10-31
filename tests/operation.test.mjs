@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { operate,discover } from '../scripts/operate.mjs';
 import { reconcile,reconcileHistory,publicationWindow } from '../scripts/lib/operation.mjs';
+import {matchFixture,teamRegistry} from '../scripts/lib/teams.mjs';
 import { advertisedRounds,parseLotInfo } from '../scripts/lib/toto.mjs';
 const clock=()=>new Date('2026-10-24T00:00:00Z');
 const round={round_id:'1665',sales_close_at:'2026-10-24T04:50:00Z'};
@@ -17,7 +18,7 @@ test('whole operation retries and records failures and success, preserving previ
  const log=JSON.parse(readFileSync(join(r,'data/operations',readdirSync(join(r,'data/operations'))[0])));assert.equal(log.events.filter(e=>e.state==='attempt_error').length,2);assert.equal(log.events.at(-1).state,'success');
 });
 test('exhaustion retains old forecast, emits error and respects access denial without outer retries',async()=>{
- for(const error of ['temporary outage','robots.txt disallows /']) {const r=root();let calls=0;await assert.rejects(operate({root:r,now:clock,refreshResults:async()=>fixtures,discoverRound:async()=>{calls++;throw new Error(error)},wait:async()=>{}}));assert.equal(calls,error.startsWith('robots')?1:3);assert.equal(JSON.parse(readFileSync(join(r,'data/update_status.json'))).previous_data_retained,true);}
+ for(const error of ['temporary outage','robots.txt disallows /','Unknown team: test','Ambiguous team alias: test','Duplicate team ID: test']) {const r=root();let calls=0;await assert.rejects(operate({root:r,now:clock,refreshResults:async()=>fixtures,discoverRound:async()=>{calls++;throw new Error(error)},wait:async()=>{}}));assert.equal(calls,error==='temporary outage'?3:1);assert.equal(JSON.parse(readFileSync(join(r,'data/update_status.json'))).previous_data_retained,true);}
 });
 test('closed sales idle and near-deadline fail without calling prediction',async()=>{
  for(const selected of [null,{...round,sales_close_at:'2026-10-24T00:20:00Z'}]) {const r=root();const p=operate({root:r,now:clock,refreshResults:async()=>fixtures,discoverRound:async()=>selected,updateRun:async()=>{throw new Error('must not run')},wait:async()=>{}});if(selected)await assert.rejects(p,/Sales close/);else assert.equal((await p).state,'idle');}
@@ -87,4 +88,15 @@ test('post-delivery check fails for missing Pages delivery and for an expired ne
   const r=root();writeFileSync(join(r,'data/update_status.json'),JSON.stringify({state:'success'}));writeFileSync(join(r,'predictions.json'),JSON.stringify({sales_close_at:close}));
   let success=true;try{await exec(process.execPath,[script],{cwd:r,env:{...process.env,PAGES_DELIVERED:delivered},stdio:'pipe'});}catch{success=false;}assert.equal(success,ok);assert.equal(JSON.parse(readFileSync(join(r,'delivery-status.json'))).pages_delivered,delivered==='true');
  }
+});
+
+test('round 1669 official full names join all 13 fixtures using verified existing team IDs',()=>{
+ const full=parseLotInfo(readFileSync('tests/fixtures/toto-lot-1669.html','utf8'),{now:new Date('2026-10-31T12:00:00Z'),expectedRound:'1669'});
+ const fixtures=JSON.parse(readFileSync('tests/fixtures/jleague-1669.json'));
+ const joined=full.matches.map(m=>matchFixture(m,fixtures));
+ assert.equal(joined.length,13);assert.equal(joined.filter(m=>m.league==='J2').length,10);assert.equal(joined.filter(m=>m.league==='J3').length,3);
+ assert.equal(joined[3].home,'山形');assert.equal(joined[3].home_team_id,'j90-9c204ad92d5d');
+ const evidence=JSON.parse(readFileSync('docs/sources/toto-1669-team-aliases.json'));
+ const resolve=teamRegistry();for(const row of evidence.aliases){assert.equal(resolve(row.full_name).id,row.team_id);assert.equal(resolve(row.short_name).id,row.team_id);}
+ assert.throws(()=>resolve('未検証の山形クラブ'),/Unknown team/);
 });

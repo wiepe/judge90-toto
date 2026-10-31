@@ -40,7 +40,7 @@ export async function operate({root=process.cwd(),now=()=>new Date(),discoverRou
       try {cpSync(join(root,'data'),join(scratch,'data'),{recursive:true});await exec(process.execPath,[fileURLToPath(new URL('./fetch_jleague.mjs',import.meta.url))],{cwd:scratch,timeout:2*60000,maxBuffer:4*1024*1024});fixtures=readJSON(join(scratch,'data/jleague_matches.json'));}finally{rmSync(scratch,{recursive:true,force:true});}
     }
     const results=reconcileHistory(root,fixtures,now());evaluatePublished(root,fixtures,now());resultError=null;record({state:'results_success',attempt:resultAttempt,completed:results.completed});break;
-  } catch(e) {resultError=e.message;record({state:'results_error',attempt:resultAttempt,error:e.message});if(/robots\.txt|HTTP (401|403|429)/.test(e.message)||resultAttempt===attempts)break;await wait(resultAttempt*30000);}
+  } catch(e) {resultError=e.message;record({state:'results_error',attempt:resultAttempt,error:e.message});if(/robots\.txt|HTTP (401|403|429)|Unknown team:|Ambiguous team alias:|Duplicate team ID:/.test(e.message)||resultAttempt===attempts)break;await wait(resultAttempt*30000);}
   }
   let last;
   for(let attempt=1;attempt<=attempts;attempt++) {
@@ -60,8 +60,8 @@ export async function operate({root=process.cwd(),now=()=>new Date(),discoverRou
       if(resultError){status.result_error=resultError;saveJSON(join(root,'data/update_status.json'),status);}
       record({state:'success',attempt,round_id:round.round_id,dataset_id:status.dataset_id,publication:status.publication,result_error:resultError||null});return status;
     }catch(e){last=e;record({state:'attempt_error',attempt,error:e.message});
-      // Access refusals and explicit long Retry-After must not be bypassed by an outer retry.
-      if(/robots\.txt|HTTP (401|403|429)|Sales close|30 minutes|execution budget/.test(e.message)||attempt===attempts)break;
+      // Access refusals must not be bypassed; deterministic registry errors need a code fix, not more requests.
+      if(/robots\.txt|HTTP (401|403|429)|Unknown team:|Ambiguous team alias:|Duplicate team ID:|Sales close|30 minutes|execution budget/.test(e.message)||attempt===attempts)break;
       await wait(attempt*30000);
     }
   }
