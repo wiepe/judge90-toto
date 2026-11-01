@@ -1,12 +1,12 @@
 {
   "season": "2026/27",
-  "fetched_at": "2026-11-01T06:15:24.941Z",
+  "fetched_at": "2026-11-01T13:37:17.895Z",
   "leagues": [
     {
       "league": "J1",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026",
-      "fetched_at": "2026-11-01T06:15:23.506Z",
+      "fetched_at": "2026-11-01T13:37:16.154Z",
       "matches": [
         {
           "season": "2026/27",
@@ -1651,9 +1651,9 @@
           "competition": "Ｊ１",
           "section": "第１３節第２日",
           "date": "2026-11-01",
-          "kickoff": "13:00",
+          "kickoff": "13:03",
           "home": "横浜FM",
-          "score": null,
+          "score": "4-2",
           "away": "川崎Ｆ",
           "stadium": "日産ス",
           "home_team_id": "j90-b41dbc5583c2",
@@ -1664,9 +1664,9 @@
           "competition": "Ｊ１",
           "section": "第１３節第２日",
           "date": "2026-11-01",
-          "kickoff": "14:00",
+          "kickoff": "14:03",
           "home": "千葉",
-          "score": null,
+          "score": "3-0",
           "away": "福岡",
           "stadium": "フクアリ",
           "home_team_id": "j90-40ab7fc1a5a5",
@@ -1677,9 +1677,9 @@
           "competition": "Ｊ１",
           "section": "第１３節第２日",
           "date": "2026-11-01",
-          "kickoff": "14:00",
+          "kickoff": "14:03",
           "home": "長崎",
-          "score": null,
+          "score": "1-2",
           "away": "東京Ｖ",
           "stadium": "ピースタ",
           "home_team_id": "j90-2c90fecc4a9d",
@@ -1690,9 +1690,9 @@
           "competition": "Ｊ１",
           "section": "第１３節第２日",
           "date": "2026-11-01",
-          "kickoff": "16:00",
+          "kickoff": "16:03",
           "home": "町田",
-          "score": null,
+          "score": "0-0",
           "away": "Ｇ大阪",
           "stadium": "Ｇスタ",
           "home_team_id": "j90-4529f8c8c42d",
@@ -4954,7 +4954,7 @@
       "league": "J2",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026",
-      "fetched_at": "2026-11-01T06:15:24.591Z",
+      "fetched_at": "2026-11-01T13:37:17.457Z",
       "matches": [
         {
           "season": "2026/27",
@@ -9902,7 +9902,7 @@
       "league": "J3",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026",
-      "fetched_at": "2026-11-01T06:15:24.941Z",
+      "fetched_at": "2026-11-01T13:37:17.895Z",
       "matches": [
         {
           "season": "2026/27",
@@ -14847,5 +14847,5 @@
       ]
     }
   ],
-  "dataset_id": "b1a121d89a14d40386631ecc98d282fc1ddc23e12b4bc9c68a652ee868313687"
+  "dataset_id": "4625cf5706b510414e7108266b66ab049fa6d7ba2f3d16cc208be62454d2f1f1"
 }
