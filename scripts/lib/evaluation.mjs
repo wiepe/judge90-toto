@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { digest } from './integrity.mjs';
 import { readJSON,saveJSON,reconcile } from './operation.mjs';
 import {scoreRows,probabilities,summarizePerformance} from './scoring.mjs';
+import {reviewRounds,savedReviewContext} from './round-review.mjs';
 export {scoreRows,probabilities} from './scoring.mjs';
 function files(dir,filter=()=>true) {return existsSync(dir)?readdirSync(dir).filter(filter).sort().map(f=>join(dir,f)):[];}
 export function evaluatePublished(root,fixtures,now=new Date()) {
@@ -28,6 +29,7 @@ export function evaluatePublished(root,fixtures,now=new Date()) {
       try{probabilities(m.probabilities);}catch{issues.push({round_id:p.round_id,number:m.number,reason:'Invalid probabilities'});continue;}
       const id=[m.league,m.match_date,m.home_team_id,m.away_team_id].join('|');
       const row={id,date:m.match_date,league:m.league,round_id:p.round_id,number:m.number,home:m.home,away:m.away,actual:result.actual,prediction:m.prediction,probabilities:m.probabilities,published_at:receipt.checked_at,snapshot_id:report.snapshot_id,model:p.model||null};
+      row.review_context=savedReviewContext(m,result);
       if(!unique.has(id)||Date.parse(row.published_at)>Date.parse(unique.get(id).published_at))unique.set(id,row);
     }
   }
@@ -35,6 +37,7 @@ export function evaluatePublished(root,fixtures,now=new Date()) {
   const timeline=[...new Set(rows.map(r=>r.date))].map(day=>({date:day,...scoreRows(rows.filter(r=>r.date<=day))}));
   const model_history=[];for(const h of observations.sort((a,b)=>a.first_observed_at.localeCompare(b.first_observed_at))){const last=model_history.at(-1);if(!last||last.name!==h.name||last.version!==h.version)model_history.push(h);}
   const report={schema_version:1,model_history,checked_at:now.toISOString(),scope:'Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot',logloss_floor:1e-15,overall:scoreRows(rows),by_league:Object.fromEntries(['J1','J2','J3'].map(l=>[l,scoreRows(rows.filter(r=>r.league===l))])),timeline,rows,diagnostics:summarizePerformance(rows,now),unverified_snapshots:unverified,issues,limitations:['J.League result reconciliation, not toto cancellation/settlement rulings.','Old forecasts without a delivery receipt are excluded, not counted as misses.']};
+  report.round_reviews=reviewRounds(rows);
   saveJSON(join(root,'data/evaluation.json'),report);
   // Content-based append-only revisions preserve result corrections without double-counting metrics.
   // Rolling diagnostics depend on today; archive identity tracks evidence, not clock changes.

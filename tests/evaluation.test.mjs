@@ -8,3 +8,18 @@ test('only proven deliveries count; late/failed receipts and match-day scores ex
 test('result corrections create immutable revisions; unchanged evaluations are idempotent',()=>{const b=setup();writeFileSync(join(b.root,'data/deliveries/r.json'),JSON.stringify(b.receipt));const now=new Date('2026-11-02');evaluatePublished(b.root,b.fixtures,now);const count=readdirSync(join(b.root,'data/evaluation-history')).length;evaluatePublished(b.root,b.fixtures,new Date('2026-11-03'));assert.equal(readdirSync(join(b.root,'data/evaluation-history')).length,count);b.fixtures.leagues[0].matches[0].score='2-1';const r=evaluatePublished(b.root,b.fixtures,now);assert.equal(r.overall.hits,12);assert.equal(readdirSync(join(b.root,'data/evaluation-history')).length,count+1);});
 test('zero probability uses the declared loss floor and rounded probabilities normalize',()=>{const s=scoreRows([{actual:'0',prediction:'1',probabilities:{'1':1,'0':0,'2':0}}]);assert.equal(s.logloss,-Math.log(1e-15));assert.equal(s.brier,2);assert.equal(s.draw_precision,null);const rounded=scoreRows([{...row,probabilities:{'1':.333,'0':.333,'2':.333}}]);assert.ok(Math.abs(rounded.logloss-Math.log(3))<1e-12);});
 test('model history requires an observed delivery and never invents an adoption date from results',()=>{const b=setup();writeFileSync(join(b.root,'data/deliveries/r.json'),JSON.stringify(b.receipt));assert.equal(evaluatePublished(b.root,b.fixtures,new Date('2026-10-29')).model_history.length,0);const r=evaluatePublished(b.root,b.fixtures,new Date('2026-10-30T00:02:00Z'));assert.equal(r.overall.n,0);assert.equal(r.model_history.length,1);assert.equal(r.model_history[0].first_observed_at,b.receipt.checked_at);});
+test('round review inherits delivery and kickoff guards and takes reasons from that exact snapshot',()=>{
+ const b=setup(),now=new Date('2026-11-02');
+ b.p.matches[0].uncertainty={reasons:['締切前に保存した根拠']};
+ writeFileSync(join(b.root,'predictions.json'),JSON.stringify(b.p));b.receipt.snapshot_id=digest(b.p);
+ assert.deepEqual(evaluatePublished(b.root,b.fixtures,now).round_reviews,[]);
+ writeFileSync(join(b.root,'data/deliveries/r.json'),JSON.stringify(b.receipt));
+ const r=evaluatePublished(b.root,b.fixtures,now).round_reviews[0];assert.equal(r.complete,true);
+ assert.deepEqual(r.matches[0].saved_reasons,['締切前に保存した根拠']);assert.equal(r.matches[0].score,'1-1');
+ // A valid sales-close receipt still cannot qualify after an earlier kickoff.
+ b.p.matches[0].kickoff='08:00';b.p.matches[0].match_date='2026-10-30';
+ b.fixtures.leagues[0].matches[0].date='2026-10-30';
+ writeFileSync(join(b.root,'predictions.json'),JSON.stringify(b.p));b.receipt.snapshot_id=digest(b.p);
+ writeFileSync(join(b.root,'data/deliveries/r.json'),JSON.stringify(b.receipt));
+ const after=evaluatePublished(b.root,b.fixtures,now).round_reviews[0];assert.equal(after.complete,false);assert.equal(after.matches.length,12);assert.ok(after.matches.every(m=>m.number!==1));
+});

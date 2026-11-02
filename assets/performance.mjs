@@ -1,4 +1,4 @@
-import{renderGrowth}from'./growth.mjs';
+import{renderGrowth}from'./growth.mjs?v=2f496c571f6e820c';
 import{summarizePerformance}from'../scripts/lib/scoring.mjs';
 const pct=x=>Number.isFinite(x)?(x*100).toFixed(1)+'%':'未評価',num=x=>Number.isFinite(x)?x.toFixed(4):'未評価';
 function el(d,t,text){const e=d.createElement(t);e.textContent=text;return e;}
