@@ -1396,8 +1396,8 @@
         "n": 1140,
         "hits": 528,
         "accuracy": 0.4631578947368421,
-        "logloss": 1.051556044149207,
-        "brier": 0.6334864767870553,
+        "logloss": 1.0515560441493457,
+        "brier": 0.6334864767871443,
         "draw_actual": 302,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -1409,147 +1409,147 @@
               {
                 "lower": 0.0,
                 "n": 1,
-                "mean_probability": 0.09552608341623318,
+                "mean_probability": 0.09552608341622328,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.1,
                 "n": 28,
-                "mean_probability": 0.17342826688372667,
+                "mean_probability": 0.17342826688360477,
                 "observed_rate": 0.14285714285714285
               },
               {
                 "lower": 0.2,
                 "n": 186,
-                "mean_probability": 0.26221867678073596,
+                "mean_probability": 0.2622186767806545,
                 "observed_rate": 0.25268817204301075
               },
               {
                 "lower": 0.3,
                 "n": 380,
-                "mean_probability": 0.35368385208230624,
+                "mean_probability": 0.3536838520822799,
                 "observed_rate": 0.35
               },
               {
                 "lower": 0.4,
                 "n": 334,
-                "mean_probability": 0.44582520421138466,
+                "mean_probability": 0.4458252042115693,
                 "observed_rate": 0.45209580838323354
               },
               {
                 "lower": 0.5,
                 "n": 148,
-                "mean_probability": 0.5402013019646864,
+                "mean_probability": 0.5402013019645676,
                 "observed_rate": 0.5067567567567568
               },
               {
                 "lower": 0.6,
                 "n": 58,
-                "mean_probability": 0.6358493554141841,
+                "mean_probability": 0.6358493554145757,
                 "observed_rate": 0.6896551724137931
               },
               {
                 "lower": 0.7,
                 "n": 5,
-                "mean_probability": 0.7364546794640449,
+                "mean_probability": 0.7364546794643365,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.01369008219428251
+            "ece": 0.013690082194166729
           },
           "0": {
             "bins": [
               {
                 "lower": 0.1,
                 "n": 25,
-                "mean_probability": 0.18478567859825687,
+                "mean_probability": 0.18478567859818842,
                 "observed_rate": 0.12
               },
               {
                 "lower": 0.2,
                 "n": 1004,
-                "mean_probability": 0.25905954484329985,
+                "mean_probability": 0.2590595448432253,
                 "observed_rate": 0.26693227091633465
               },
               {
                 "lower": 0.3,
                 "n": 111,
-                "mean_probability": 0.3121070053488694,
+                "mean_probability": 0.31210700534878816,
                 "observed_rate": 0.27927927927927926
               }
             ],
-            "ece": 0.011550646084217426
+            "ece": 0.01155064608427367
           },
           "2": {
             "bins": [
               {
                 "lower": 0.0,
                 "n": 4,
-                "mean_probability": 0.09051910700867537,
+                "mean_probability": 0.09051910700846691,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.1,
                 "n": 98,
-                "mean_probability": 0.16631057245991435,
+                "mean_probability": 0.16631057245983014,
                 "observed_rate": 0.1836734693877551
               },
               {
                 "lower": 0.2,
                 "n": 334,
-                "mean_probability": 0.2564636321432184,
+                "mean_probability": 0.25646363214321855,
                 "observed_rate": 0.2634730538922156
               },
               {
                 "lower": 0.3,
                 "n": 412,
-                "mean_probability": 0.3471280834345998,
+                "mean_probability": 0.3471280834346709,
                 "observed_rate": 0.3422330097087379
               },
               {
                 "lower": 0.4,
                 "n": 214,
-                "mean_probability": 0.4399228435284205,
+                "mean_probability": 0.43992284352847083,
                 "observed_rate": 0.43457943925233644
               },
               {
                 "lower": 0.5,
                 "n": 62,
-                "mean_probability": 0.5409963913182404,
+                "mean_probability": 0.5409963913182863,
                 "observed_rate": 0.5
               },
               {
                 "lower": 0.6,
                 "n": 15,
-                "mean_probability": 0.6234737220037715,
+                "mean_probability": 0.623473722004566,
                 "observed_rate": 0.7333333333333333
               },
               {
                 "lower": 0.7,
                 "n": 1,
-                "mean_probability": 0.726188634407439,
+                "mean_probability": 0.7261886344074665,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.010551340244326444
+            "ece": 0.010551340244360068
           }
         },
         "low_probability_events": {
           "1": {
             "n": 6,
-            "expected_count": 0.7958614067500721,
+            "expected_count": 0.7958614067472028,
             "observed_count": 0,
             "threshold": 0.15
           },
           "0": {
             "n": 1,
-            "expected_count": 0.1480364387004931,
+            "expected_count": 0.14803643869994434,
             "observed_count": 0,
             "threshold": 0.15
           },
           "2": {
             "n": 30,
-            "expected_count": 3.8759042590220933,
+            "expected_count": 3.875904259015064,
             "observed_count": 2,
             "threshold": 0.15
           }
@@ -1560,8 +1560,8 @@
           "n": 380,
           "hits": 161,
           "accuracy": 0.4236842105263158,
-          "logloss": 1.0875132560812553,
-          "brier": 0.658836166717446,
+          "logloss": 1.0875132560813905,
+          "brier": 0.6588361667175274,
           "draw_actual": 104,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1572,28 +1572,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 90,
-              "mean_probability": 0.37924862532726183,
+              "mean_probability": 0.3792486253271256,
               "observed_accuracy": 0.4
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 187,
-              "mean_probability": 0.44506745632992323,
+              "mean_probability": 0.4450674563301333,
               "observed_accuracy": 0.41711229946524064
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 80,
-              "mean_probability": 0.5397129688453531,
+              "mean_probability": 0.5397129688452772,
               "observed_accuracy": 0.45
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 23,
-              "mean_probability": 0.6318928299856015,
+              "mean_probability": 0.6318928299861973,
               "observed_accuracy": 0.4782608695652174
             }
           ]
@@ -1602,8 +1602,8 @@
           "n": 380,
           "hits": 197,
           "accuracy": 0.5184210526315789,
-          "logloss": 1.015464675307807,
-          "brier": 0.6079290503113274,
+          "logloss": 1.0154646753080763,
+          "brier": 0.6079290503115014,
           "draw_actual": 89,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1614,35 +1614,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 105,
-              "mean_probability": 0.3796062333749978,
+              "mean_probability": 0.379606233375129,
               "observed_accuracy": 0.4095238095238095
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 173,
-              "mean_probability": 0.44272025205007,
+              "mean_probability": 0.4427202520502469,
               "observed_accuracy": 0.5144508670520231
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 68,
-              "mean_probability": 0.5409777698356878,
+              "mean_probability": 0.5409777698355058,
               "observed_accuracy": 0.5441176470588235
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 30,
-              "mean_probability": 0.628778295640476,
+              "mean_probability": 0.6287782956410728,
               "observed_accuracy": 0.8
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 4,
-              "mean_probability": 0.7280820394532237,
+              "mean_probability": 0.7280820394532816,
               "observed_accuracy": 1.0
             }
           ]
@@ -1651,8 +1651,8 @@
           "n": 380,
           "hits": 170,
           "accuracy": 0.4473684210526316,
-          "logloss": 1.051690201058558,
-          "brier": 0.6336942133323924,
+          "logloss": 1.0516902010585703,
+          "brier": 0.6336942133324043,
           "draw_actual": 109,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1663,35 +1663,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 108,
-              "mean_probability": 0.37866112282442616,
+              "mean_probability": 0.37866112282441905,
               "observed_accuracy": 0.3888888888888889
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 188,
-              "mean_probability": 0.44271749352833345,
+              "mean_probability": 0.4427174935283473,
               "observed_accuracy": 0.4095744680851064
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 62,
-              "mean_probability": 0.540774888645959,
+              "mean_probability": 0.5407748886460191,
               "observed_accuracy": 0.532258064516129
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 20,
-              "mean_probability": 0.6417242242598069,
+              "mean_probability": 0.6417242242599579,
               "observed_accuracy": 0.8
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 2,
-              "mean_probability": 0.7480669369573842,
+              "mean_probability": 0.7480669369580113,
               "observed_accuracy": 1.0
             }
           ]
@@ -1702,8 +1702,8 @@
           "n": 186,
           "hits": 79,
           "accuracy": 0.42473118279569894,
-          "logloss": 1.0829113826445615,
-          "brier": 0.6555147097483518,
+          "logloss": 1.0829113826449286,
+          "brier": 0.6555147097486084,
           "draw_actual": 58,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1714,28 +1714,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 45,
-              "mean_probability": 0.377470172234575,
+              "mean_probability": 0.37747017223456686,
               "observed_accuracy": 0.3333333333333333
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 102,
-              "mean_probability": 0.44108310747479945,
+              "mean_probability": 0.4410831074752762,
               "observed_accuracy": 0.47058823529411764
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 30,
-              "mean_probability": 0.5363134517452604,
+              "mean_probability": 0.536313451745509,
               "observed_accuracy": 0.3333333333333333
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 9,
-              "mean_probability": 0.6219411848334313,
+              "mean_probability": 0.6219411848346476,
               "observed_accuracy": 0.6666666666666666
             }
           ]
@@ -1744,8 +1744,8 @@
           "n": 433,
           "hits": 196,
           "accuracy": 0.45265588914549654,
-          "logloss": 1.061033642283217,
-          "brier": 0.6395714780348033,
+          "logloss": 1.0610336422833127,
+          "brier": 0.6395714780348647,
           "draw_actual": 121,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1756,35 +1756,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 119,
-              "mean_probability": 0.3785811166546444,
+              "mean_probability": 0.3785811166546941,
               "observed_accuracy": 0.40336134453781514
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 215,
-              "mean_probability": 0.4414665514790871,
+              "mean_probability": 0.44146655147923325,
               "observed_accuracy": 0.4372093023255814
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 73,
-              "mean_probability": 0.544030904091848,
+              "mean_probability": 0.544030904091812,
               "observed_accuracy": 0.4931506849315068
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 23,
-              "mean_probability": 0.6378207225640552,
+              "mean_probability": 0.6378207225644767,
               "observed_accuracy": 0.6521739130434783
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 3,
-              "mean_probability": 0.7435127617393139,
+              "mean_probability": 0.743512761740007,
               "observed_accuracy": 1.0
             }
           ]
@@ -1793,8 +1793,8 @@
           "n": 325,
           "hits": 161,
           "accuracy": 0.49538461538461537,
-          "logloss": 1.0268553537643283,
-          "brier": 0.6168426822025037,
+          "logloss": 1.0268553537644867,
+          "brier": 0.6168426822025943,
           "draw_actual": 71,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1805,28 +1805,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 96,
-              "mean_probability": 0.38136681452373594,
+              "mean_probability": 0.3813668145236815,
               "observed_accuracy": 0.4375
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 140,
-              "mean_probability": 0.4468411430300786,
+              "mean_probability": 0.44684114303000955,
               "observed_accuracy": 0.45
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 63,
-              "mean_probability": 0.5389297355109762,
+              "mean_probability": 0.5389297355106731,
               "observed_accuracy": 0.5873015873015873
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 26,
-              "mean_probability": 0.6325534750271918,
+              "mean_probability": 0.6325534750278566,
               "observed_accuracy": 0.7307692307692307
             }
           ]
@@ -1835,8 +1835,8 @@
           "n": 196,
           "hits": 92,
           "accuracy": 0.46938775510204084,
-          "logloss": 1.0418204901845287,
-          "brier": 0.626737376628398,
+          "logloss": 1.0418204901845145,
+          "brier": 0.6267373766283864,
           "draw_actual": 52,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1847,35 +1847,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 43,
-              "mean_probability": 0.3776257493518412,
+              "mean_probability": 0.3776257493518505,
               "observed_accuracy": 0.37209302325581395
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 91,
-              "mean_probability": 0.44599517765978214,
+              "mean_probability": 0.4459951776598053,
               "observed_accuracy": 0.42857142857142855
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 44,
-              "mean_probability": 0.5394394560056885,
+              "mean_probability": 0.5394394560056773,
               "observed_accuracy": 0.5227272727272727
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 15,
-              "mean_probability": 0.6345087207265406,
+              "mean_probability": 0.6345087207263211,
               "observed_accuracy": 0.7333333333333333
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 3,
-              "mean_probability": 0.725974582169907,
+              "mean_probability": 0.7259745821697093,
               "observed_accuracy": 1.0
             }
           ]
@@ -1885,8 +1885,8 @@
         "n": 290,
         "hits": 144,
         "accuracy": 0.496551724137931,
-        "logloss": 1.0251509208610694,
-        "brier": 0.6159737115854137,
+        "logloss": 1.0251509208613079,
+        "brier": 0.6159737115855597,
         "draw_actual": 80,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -1897,35 +1897,35 @@
             "lower": 0,
             "upper": 0.4,
             "n": 51,
-            "mean_probability": 0.3827680223302829,
+            "mean_probability": 0.38276802233049323,
             "observed_accuracy": 0.45098039215686275
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 117,
-            "mean_probability": 0.44543918048503667,
+            "mean_probability": 0.44543918048506637,
             "observed_accuracy": 0.46153846153846156
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 80,
-            "mean_probability": 0.5458691891421978,
+            "mean_probability": 0.5458691891416958,
             "observed_accuracy": 0.4875
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 37,
-            "mean_probability": 0.6415192170011875,
+            "mean_probability": 0.641519217001802,
             "observed_accuracy": 0.6216216216216216
           },
           {
             "lower": 0.7,
             "upper": 1,
             "n": 5,
-            "mean_probability": 0.7382126743157299,
+            "mean_probability": 0.7382126743159466,
             "observed_accuracy": 1.0
           }
         ]
@@ -1934,8 +1934,8 @@
         "n": 850,
         "hits": 384,
         "accuracy": 0.45176470588235296,
-        "logloss": 1.0605648509181007,
-        "brier": 0.6394614202087918,
+        "logloss": 1.0605648509182057,
+        "brier": 0.6394614202088614,
         "draw_actual": 222,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -1946,35 +1946,35 @@
             "lower": 0,
             "upper": 0.4,
             "n": 252,
-            "mean_probability": 0.3784335829762776,
+            "mean_probability": 0.3784335829762379,
             "observed_accuracy": 0.3888888888888889
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 431,
-            "mean_probability": 0.442999356391961,
+            "mean_probability": 0.442999356392121,
             "observed_accuracy": 0.4408352668213457
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 130,
-            "mean_probability": 0.5370925678548361,
+            "mean_probability": 0.5370925678550315,
             "observed_accuracy": 0.5153846153846153
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 36,
-            "mean_probability": 0.6248654837509808,
+            "mean_probability": 0.6248654837513109,
             "observed_accuracy": 0.7777777777777778
           },
           {
             "lower": 0.7,
             "upper": 1,
             "n": 1,
-            "mean_probability": 0.7173986601490137,
+            "mean_probability": 0.7173986601494161,
             "observed_accuracy": 1.0
           }
         ]
@@ -1985,8 +1985,8 @@
         "n": 1140,
         "hits": 529,
         "accuracy": 0.46403508771929824,
-        "logloss": 1.0527868870960186,
-        "brier": 0.6340678364335207,
+        "logloss": 1.052786887096185,
+        "brier": 0.6340678364336481,
         "draw_actual": 302,
         "draw_picks": 1,
         "draw_hits": 0,
@@ -1998,147 +1998,147 @@
               {
                 "lower": 0.0,
                 "n": 1,
-                "mean_probability": 0.09757937088492562,
+                "mean_probability": 0.0975793708849248,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.1,
                 "n": 26,
-                "mean_probability": 0.17152182505800465,
+                "mean_probability": 0.1715218250598642,
                 "observed_rate": 0.15384615384615385
               },
               {
                 "lower": 0.2,
                 "n": 188,
-                "mean_probability": 0.2617105137383294,
+                "mean_probability": 0.26171051373943194,
                 "observed_rate": 0.25
               },
               {
                 "lower": 0.3,
                 "n": 381,
-                "mean_probability": 0.3536448911784152,
+                "mean_probability": 0.3536448911786988,
                 "observed_rate": 0.3438320209973753
               },
               {
                 "lower": 0.4,
                 "n": 334,
-                "mean_probability": 0.44611244177146164,
+                "mean_probability": 0.4461124417714867,
                 "observed_rate": 0.46407185628742514
               },
               {
                 "lower": 0.5,
                 "n": 147,
-                "mean_probability": 0.5397019404317661,
+                "mean_probability": 0.5397019404309625,
                 "observed_rate": 0.4965986394557823
               },
               {
                 "lower": 0.6,
                 "n": 57,
-                "mean_probability": 0.6340209124182355,
+                "mean_probability": 0.6340209124178533,
                 "observed_rate": 0.6842105263157895
               },
               {
                 "lower": 0.7,
                 "n": 6,
-                "mean_probability": 0.7306081260961923,
+                "mean_probability": 0.7306081260861966,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.020446680589087732
+            "ece": 0.02044668058936752
           },
           "0": {
             "bins": [
               {
                 "lower": 0.1,
                 "n": 24,
-                "mean_probability": 0.1839613943026189,
+                "mean_probability": 0.1839613943040341,
                 "observed_rate": 0.125
               },
               {
                 "lower": 0.2,
                 "n": 996,
-                "mean_probability": 0.2585176473332846,
+                "mean_probability": 0.25851764733344235,
                 "observed_rate": 0.26706827309236947
               },
               {
                 "lower": 0.3,
                 "n": 120,
-                "mean_probability": 0.31279755153239996,
+                "mean_probability": 0.31279755153238464,
                 "observed_rate": 0.275
               }
             ],
-            "ece": 0.012690528862455608
+            "ece": 0.012690528862345953
           },
           "2": {
             "bins": [
               {
                 "lower": 0.0,
                 "n": 4,
-                "mean_probability": 0.09167518187572224,
+                "mean_probability": 0.09167518188437575,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.1,
                 "n": 96,
-                "mean_probability": 0.1649265140278971,
+                "mean_probability": 0.16492651402825423,
                 "observed_rate": 0.17708333333333334
               },
               {
                 "lower": 0.2,
                 "n": 335,
-                "mean_probability": 0.2556508248347424,
+                "mean_probability": 0.2556508248350142,
                 "observed_rate": 0.2626865671641791
               },
               {
                 "lower": 0.3,
                 "n": 417,
-                "mean_probability": 0.347894279816628,
+                "mean_probability": 0.34789427981619103,
                 "observed_rate": 0.35251798561151076
               },
               {
                 "lower": 0.4,
                 "n": 208,
-                "mean_probability": 0.44044674627005087,
+                "mean_probability": 0.4404467462693814,
                 "observed_rate": 0.4182692307692308
               },
               {
                 "lower": 0.5,
                 "n": 65,
-                "mean_probability": 0.5414269204616343,
+                "mean_probability": 0.5414269204597224,
                 "observed_rate": 0.5076923076923077
               },
               {
                 "lower": 0.6,
                 "n": 14,
-                "mean_probability": 0.6257323306977293,
+                "mean_probability": 0.6257323306923295,
                 "observed_rate": 0.7142857142857143
               },
               {
                 "lower": 0.7,
                 "n": 1,
-                "mean_probability": 0.7271223438695441,
+                "mean_probability": 0.7271223438695358,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.012400975840518623
+            "ece": 0.012400975840434033
           }
         },
         "low_probability_events": {
           "1": {
             "n": 6,
-            "expected_count": 0.8018120162654748,
+            "expected_count": 0.8018120163108543,
             "observed_count": 0,
             "threshold": 0.15
           },
           "0": {
             "n": 1,
-            "expected_count": 0.14468605333544948,
+            "expected_count": 0.1446860533358371,
             "observed_count": 0,
             "threshold": 0.15
           },
           "2": {
             "n": 31,
-            "expected_count": 4.015300311661144,
+            "expected_count": 4.015300311699197,
             "observed_count": 2,
             "threshold": 0.15
           }
@@ -2149,8 +2149,8 @@
           "n": 380,
           "hits": 161,
           "accuracy": 0.4236842105263158,
-          "logloss": 1.0877006657409225,
-          "brier": 0.6587141395163923,
+          "logloss": 1.0877006657409292,
+          "brier": 0.6587141395164028,
           "draw_actual": 104,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2161,28 +2161,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 105,
-              "mean_probability": 0.37847087168887206,
+              "mean_probability": 0.3784708716884466,
               "observed_accuracy": 0.4
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 177,
-              "mean_probability": 0.4463032494518151,
+              "mean_probability": 0.44630324945153377,
               "observed_accuracy": 0.423728813559322
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 76,
-              "mean_probability": 0.5394547968723655,
+              "mean_probability": 0.5394547968718472,
               "observed_accuracy": 0.4473684210526316
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 22,
-              "mean_probability": 0.6300669230514285,
+              "mean_probability": 0.6300669230514299,
               "observed_accuracy": 0.45454545454545453
             }
           ]
@@ -2191,8 +2191,8 @@
           "n": 380,
           "hits": 196,
           "accuracy": 0.5157894736842106,
-          "logloss": 1.0158107594108046,
-          "brier": 0.6081336071147531,
+          "logloss": 1.0158107594110306,
+          "brier": 0.6081336071148895,
           "draw_actual": 89,
           "draw_picks": 1,
           "draw_hits": 0,
@@ -2203,35 +2203,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 107,
-              "mean_probability": 0.37899237030802246,
+              "mean_probability": 0.3789923703080439,
               "observed_accuracy": 0.411214953271028
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 171,
-              "mean_probability": 0.4423688070138257,
+              "mean_probability": 0.442368807013799,
               "observed_accuracy": 0.5087719298245614
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 68,
-              "mean_probability": 0.5402026940093461,
+              "mean_probability": 0.5402026940089324,
               "observed_accuracy": 0.5441176470588235
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 30,
-              "mean_probability": 0.6282639313481287,
+              "mean_probability": 0.6282639313477911,
               "observed_accuracy": 0.8
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 4,
-              "mean_probability": 0.728006047160213,
+              "mean_probability": 0.7280060471610762,
               "observed_accuracy": 1.0
             }
           ]
@@ -2240,8 +2240,8 @@
           "n": 380,
           "hits": 172,
           "accuracy": 0.45263157894736844,
-          "logloss": 1.0548492361363293,
-          "brier": 0.6353557626694166,
+          "logloss": 1.0548492361365946,
+          "brier": 0.6353557626696521,
           "draw_actual": 109,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2252,35 +2252,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 96,
-              "mean_probability": 0.3807407895306441,
+              "mean_probability": 0.38074078952989704,
               "observed_accuracy": 0.40625
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 194,
-              "mean_probability": 0.44316359599743965,
+              "mean_probability": 0.44316359599704536,
               "observed_accuracy": 0.41237113402061853
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 68,
-              "mean_probability": 0.5411262840961842,
+              "mean_probability": 0.5411262840936127,
               "observed_accuracy": 0.5147058823529411
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 19,
-              "mean_probability": 0.6415818100017027,
+              "mean_probability": 0.6415818099971085,
               "observed_accuracy": 0.7894736842105263
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 3,
-              "mean_probability": 0.7329156372686153,
+              "mean_probability": 0.7329156372474704,
               "observed_accuracy": 1.0
             }
           ]
@@ -2291,8 +2291,8 @@
           "n": 186,
           "hits": 78,
           "accuracy": 0.41935483870967744,
-          "logloss": 1.0893414432218576,
-          "brier": 0.6588338418913187,
+          "logloss": 1.0893414432221349,
+          "brier": 0.658833841891472,
           "draw_actual": 58,
           "draw_picks": 1,
           "draw_hits": 0,
@@ -2303,28 +2303,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 45,
-              "mean_probability": 0.3789181708013466,
+              "mean_probability": 0.3789181708014126,
               "observed_accuracy": 0.3333333333333333
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 100,
-              "mean_probability": 0.4423992935721368,
+              "mean_probability": 0.4423992935722326,
               "observed_accuracy": 0.45
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 32,
-              "mean_probability": 0.53696077759869,
+              "mean_probability": 0.5369607775987151,
               "observed_accuracy": 0.375
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 9,
-              "mean_probability": 0.6205799173121943,
+              "mean_probability": 0.6205799173126315,
               "observed_accuracy": 0.6666666666666666
             }
           ]
@@ -2333,8 +2333,8 @@
           "n": 433,
           "hits": 198,
           "accuracy": 0.45727482678983833,
-          "logloss": 1.0611437167836368,
-          "brier": 0.639609824836871,
+          "logloss": 1.0611437167834703,
+          "brier": 0.6396098248367554,
           "draw_actual": 121,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2345,35 +2345,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 121,
-              "mean_probability": 0.3780975462138694,
+              "mean_probability": 0.3780975462138547,
               "observed_accuracy": 0.4214876033057851
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 213,
-              "mean_probability": 0.44145925887504295,
+              "mean_probability": 0.4414592588751353,
               "observed_accuracy": 0.4413145539906103
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 73,
-              "mean_probability": 0.5429419001165948,
+              "mean_probability": 0.5429419001161633,
               "observed_accuracy": 0.4794520547945205
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 23,
-              "mean_probability": 0.6372958292128391,
+              "mean_probability": 0.6372958292127944,
               "observed_accuracy": 0.6521739130434783
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 3,
-              "mean_probability": 0.7436645177846417,
+              "mean_probability": 0.7436645177851741,
               "observed_accuracy": 1.0
             }
           ]
@@ -2382,8 +2382,8 @@
           "n": 325,
           "hits": 161,
           "accuracy": 0.49538461538461537,
-          "logloss": 1.0269188701396779,
-          "brier": 0.6167926602807132,
+          "logloss": 1.0269188701402678,
+          "brier": 0.6167926602811818,
           "draw_actual": 71,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2394,35 +2394,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 96,
-              "mean_probability": 0.38182250714235044,
+              "mean_probability": 0.38182250714112786,
               "observed_accuracy": 0.4270833333333333
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 141,
-              "mean_probability": 0.4471838081857219,
+              "mean_probability": 0.4471838081845664,
               "observed_accuracy": 0.46808510638297873
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 62,
-              "mean_probability": 0.5394092744517569,
+              "mean_probability": 0.5394092744483608,
               "observed_accuracy": 0.5645161290322581
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 25,
-              "mean_probability": 0.6298383217173573,
+              "mean_probability": 0.6298383217131739,
               "observed_accuracy": 0.72
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 1,
-              "mean_probability": 0.7003762827807339,
+              "mean_probability": 0.7003762827187631,
               "observed_accuracy": 1.0
             }
           ]
@@ -2431,8 +2431,8 @@
           "n": 196,
           "hits": 92,
           "accuracy": 0.46938775510204084,
-          "logloss": 1.0425289830994175,
-          "brier": 0.6269671948817926,
+          "logloss": 1.0425289830995106,
+          "brier": 0.6269671948818669,
           "draw_actual": 52,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2443,35 +2443,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 46,
-              "mean_probability": 0.37797085829624705,
+              "mean_probability": 0.37797085829629223,
               "observed_accuracy": 0.391304347826087
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 88,
-              "mean_probability": 0.4464864809551608,
+              "mean_probability": 0.44648648095519244,
               "observed_accuracy": 0.42045454545454547
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 45,
-              "mean_probability": 0.5392901436843868,
+              "mean_probability": 0.5392901436843615,
               "observed_accuracy": 0.5333333333333333
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 14,
-              "mean_probability": 0.6364616619263327,
+              "mean_probability": 0.6364616619266394,
               "observed_accuracy": 0.7142857142857143
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 3,
-              "mean_probability": 0.726467088104013,
+              "mean_probability": 0.7264670881041435,
               "observed_accuracy": 1.0
             }
           ]
@@ -2481,8 +2481,8 @@
         "n": 290,
         "hits": 145,
         "accuracy": 0.5,
-        "logloss": 1.0258759307150729,
-        "brier": 0.6161559566589706,
+        "logloss": 1.0258759307155063,
+        "brier": 0.6161559566592933,
         "draw_actual": 80,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -2493,35 +2493,35 @@
             "lower": 0,
             "upper": 0.4,
             "n": 57,
-            "mean_probability": 0.3828293387524917,
+            "mean_probability": 0.3828293387512807,
             "observed_accuracy": 0.47368421052631576
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 111,
-            "mean_probability": 0.4470614511858235,
+            "mean_probability": 0.44706145118552154,
             "observed_accuracy": 0.4594594594594595
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 81,
-            "mean_probability": 0.5465104843224344,
+            "mean_probability": 0.5465104843204232,
             "observed_accuracy": 0.49382716049382713
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 35,
-            "mean_probability": 0.6412932751272189,
+            "mean_probability": 0.6412932751247374,
             "observed_accuracy": 0.6
           },
           {
             "lower": 0.7,
             "upper": 1,
             "n": 6,
-            "mean_probability": 0.7323545922143002,
+            "mean_probability": 0.7323545922041111,
             "observed_accuracy": 1.0
           }
         ]
@@ -2530,8 +2530,8 @@
         "n": 850,
         "hits": 384,
         "accuracy": 0.45176470588235296,
-        "logloss": 1.0619682722142239,
-        "brier": 0.6401789483566024,
+        "logloss": 1.0619682722142987,
+        "brier": 0.6401789483566633,
         "draw_actual": 222,
         "draw_picks": 1,
         "draw_hits": 0,
@@ -2542,35 +2542,35 @@
             "lower": 0,
             "upper": 0.4,
             "n": 251,
-            "mean_probability": 0.3785715881925887,
+            "mean_probability": 0.3785715881924092,
             "observed_accuracy": 0.3904382470119522
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 431,
-            "mean_probability": 0.44313377655269687,
+            "mean_probability": 0.443133776552471,
             "observed_accuracy": 0.4431554524361949
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 131,
-            "mean_probability": 0.5363479835370889,
+            "mean_probability": 0.5363479835364822,
             "observed_accuracy": 0.5038167938931297
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 36,
-            "mean_probability": 0.6237272224487493,
+            "mean_probability": 0.6237272224484567,
             "observed_accuracy": 0.7777777777777778
           },
           {
             "lower": 0.7,
             "upper": 1,
             "n": 1,
-            "mean_probability": 0.716643547160897,
+            "mean_probability": 0.7166435471620488,
             "observed_accuracy": 1.0
           }
         ]
@@ -2581,8 +2581,8 @@
         "n": 1140,
         "hits": 519,
         "accuracy": 0.45526315789473687,
-        "logloss": 1.0522060623168694,
-        "brier": 0.6338377133781037,
+        "logloss": 1.0522060623169869,
+        "brier": 0.6338377133781881,
         "draw_actual": 302,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -2594,123 +2594,123 @@
               {
                 "lower": 0.1,
                 "n": 19,
-                "mean_probability": 0.17103784178649054,
+                "mean_probability": 0.17103784178727222,
                 "observed_rate": 0.10526315789473684
               },
               {
                 "lower": 0.2,
                 "n": 171,
-                "mean_probability": 0.26520432398274385,
+                "mean_probability": 0.2652043239831223,
                 "observed_rate": 0.2573099415204678
               },
               {
                 "lower": 0.3,
                 "n": 374,
-                "mean_probability": 0.3526569650508858,
+                "mean_probability": 0.35265696505099925,
                 "observed_rate": 0.3235294117647059
               },
               {
                 "lower": 0.4,
                 "n": 364,
-                "mean_probability": 0.44505854373965664,
+                "mean_probability": 0.44505854373964354,
                 "observed_rate": 0.4532967032967033
               },
               {
                 "lower": 0.5,
                 "n": 161,
-                "mean_probability": 0.5410680831073091,
+                "mean_probability": 0.5410680831071413,
                 "observed_rate": 0.5403726708074534
               },
               {
                 "lower": 0.6,
                 "n": 48,
-                "mean_probability": 0.6328596008677879,
+                "mean_probability": 0.6328596008673649,
                 "observed_rate": 0.6875
               },
               {
                 "lower": 0.7,
                 "n": 3,
-                "mean_probability": 0.7179702869442677,
+                "mean_probability": 0.7179702869445034,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.017607757088227125
+            "ece": 0.017607757088331816
           },
           "0": {
             "bins": [
               {
                 "lower": 0.1,
                 "n": 5,
-                "mean_probability": 0.18845170715324072,
+                "mean_probability": 0.1884517071531039,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.2,
                 "n": 1042,
-                "mean_probability": 0.2684944798761603,
+                "mean_probability": 0.2684944798761973,
                 "observed_rate": 0.2648752399232246
               },
               {
                 "lower": 0.3,
                 "n": 93,
-                "mean_probability": 0.30815780703382695,
+                "mean_probability": 0.30815780703379125,
                 "observed_rate": 0.27956989247311825
               }
             ],
-            "ece": 0.006466826860413281
+            "ece": 0.00646682686044356
           },
           "2": {
             "bins": [
               {
                 "lower": 0.0,
                 "n": 1,
-                "mean_probability": 0.08335582349218168,
+                "mean_probability": 0.08335582349218229,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.1,
                 "n": 111,
-                "mean_probability": 0.16491649093460714,
+                "mean_probability": 0.16491649093477856,
                 "observed_rate": 0.18018018018018017
               },
               {
                 "lower": 0.2,
                 "n": 374,
-                "mean_probability": 0.2547608414417758,
+                "mean_probability": 0.2547608414418689,
                 "observed_rate": 0.2647058823529412
               },
               {
                 "lower": 0.3,
                 "n": 409,
-                "mean_probability": 0.3466975100322033,
+                "mean_probability": 0.34669751003207405,
                 "observed_rate": 0.36674816625916873
               },
               {
                 "lower": 0.4,
                 "n": 194,
-                "mean_probability": 0.438723929794142,
+                "mean_probability": 0.43872392979390157,
                 "observed_rate": 0.4484536082474227
               },
               {
                 "lower": 0.5,
                 "n": 44,
-                "mean_probability": 0.5355790338376238,
+                "mean_probability": 0.5355790338367564,
                 "observed_rate": 0.4772727272727273
               },
               {
                 "lower": 0.6,
                 "n": 7,
-                "mean_probability": 0.6204526517941175,
+                "mean_probability": 0.6204526517910642,
                 "observed_rate": 0.8571428571428571
               }
             ],
-            "ece": 0.017375136468060166
+            "ece": 0.017375136468085483
           }
         },
         "low_probability_events": {
           "1": {
             "n": 3,
-            "expected_count": 0.40389112781202935,
+            "expected_count": 0.40389112782629816,
             "observed_count": 0,
             "threshold": 0.15
           },
@@ -2722,7 +2722,7 @@
           },
           "2": {
             "n": 28,
-            "expected_count": 3.6528545211018466,
+            "expected_count": 3.6528545211120016,
             "observed_count": 1,
             "threshold": 0.15
           }
@@ -2733,8 +2733,8 @@
           "n": 380,
           "hits": 161,
           "accuracy": 0.4236842105263158,
-          "logloss": 1.0845807865179633,
-          "brier": 0.6564692040321161,
+          "logloss": 1.0845807865180201,
+          "brier": 0.6564692040321531,
           "draw_actual": 104,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2745,28 +2745,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 103,
-              "mean_probability": 0.3771674318398993,
+              "mean_probability": 0.37716743183978396,
               "observed_accuracy": 0.34951456310679613
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 181,
-              "mean_probability": 0.4440212403540458,
+              "mean_probability": 0.4440212403539912,
               "observed_accuracy": 0.4585635359116022
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 78,
-              "mean_probability": 0.5395894914755743,
+              "mean_probability": 0.539589491475432,
               "observed_accuracy": 0.4358974358974359
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 18,
-              "mean_probability": 0.6275015593961615,
+              "mean_probability": 0.6275015593963279,
               "observed_accuracy": 0.4444444444444444
             }
           ]
@@ -2775,8 +2775,8 @@
           "n": 380,
           "hits": 188,
           "accuracy": 0.49473684210526314,
-          "logloss": 1.0189753697144042,
-          "brier": 0.6104516407684463,
+          "logloss": 1.0189753697145583,
+          "brier": 0.6104516407685426,
           "draw_actual": 89,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2787,7 +2787,7 @@
               "lower": 0,
               "upper": 0.4,
               "n": 104,
-              "mean_probability": 0.3782398224366294,
+              "mean_probability": 0.3782398224366378,
               "observed_accuracy": 0.3557692307692308
             },
             {
@@ -2801,21 +2801,21 @@
               "lower": 0.5,
               "upper": 0.6,
               "n": 71,
-              "mean_probability": 0.5414903906043825,
+              "mean_probability": 0.5414903906042323,
               "observed_accuracy": 0.6056338028169014
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 23,
-              "mean_probability": 0.6327299368468566,
+              "mean_probability": 0.6327299368470463,
               "observed_accuracy": 0.782608695652174
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 2,
-              "mean_probability": 0.7182997066472414,
+              "mean_probability": 0.7182997066476332,
               "observed_accuracy": 1.0
             }
           ]
@@ -2824,8 +2824,8 @@
           "n": 380,
           "hits": 170,
           "accuracy": 0.4473684210526316,
-          "logloss": 1.0530620307182408,
-          "brier": 0.6345922953337491,
+          "logloss": 1.053062030718382,
+          "brier": 0.6345922953338684,
           "draw_actual": 109,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2836,35 +2836,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 112,
-              "mean_probability": 0.3794508740378638,
+              "mean_probability": 0.3794508740376569,
               "observed_accuracy": 0.39285714285714285
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 197,
-              "mean_probability": 0.44432519163751244,
+              "mean_probability": 0.44432519163730166,
               "observed_accuracy": 0.41116751269035534
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 56,
-              "mean_probability": 0.5382793000201117,
+              "mean_probability": 0.5382793000193361,
               "observed_accuracy": 0.5535714285714286
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 14,
-              "mean_probability": 0.6337580562574309,
+              "mean_probability": 0.6337580562539287,
               "observed_accuracy": 0.9285714285714286
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 1,
-              "mean_probability": 0.7173114475383202,
+              "mean_probability": 0.7173114475382438,
               "observed_accuracy": 1.0
             }
           ]
@@ -2875,8 +2875,8 @@
           "n": 186,
           "hits": 75,
           "accuracy": 0.4032258064516129,
-          "logloss": 1.0841775183368076,
-          "brier": 0.6556075522887993,
+          "logloss": 1.0841775183370144,
+          "brier": 0.6556075522889316,
           "draw_actual": 58,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2887,28 +2887,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 45,
-              "mean_probability": 0.38011395645404444,
+              "mean_probability": 0.3801139564541996,
               "observed_accuracy": 0.2222222222222222
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 108,
-              "mean_probability": 0.43921812682172073,
+              "mean_probability": 0.4392181268218491,
               "observed_accuracy": 0.4537037037037037
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 29,
-              "mean_probability": 0.5392206305746895,
+              "mean_probability": 0.5392206305748188,
               "observed_accuracy": 0.4827586206896552
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 4,
-              "mean_probability": 0.6195290483211097,
+              "mean_probability": 0.6195290483219844,
               "observed_accuracy": 0.5
             }
           ]
@@ -2917,8 +2917,8 @@
           "n": 433,
           "hits": 190,
           "accuracy": 0.4387990762124711,
-          "logloss": 1.0584434821281032,
-          "brier": 0.6383435900714349,
+          "logloss": 1.058443482128082,
+          "brier": 0.6383435900714166,
           "draw_actual": 121,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2929,35 +2929,35 @@
               "lower": 0,
               "upper": 0.4,
               "n": 134,
-              "mean_probability": 0.3779221126223461,
+              "mean_probability": 0.37792211262235686,
               "observed_accuracy": 0.3582089552238806
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 210,
-              "mean_probability": 0.4421398170344442,
+              "mean_probability": 0.44213981703452093,
               "observed_accuracy": 0.43333333333333335
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 73,
-              "mean_probability": 0.5404774076964607,
+              "mean_probability": 0.5404774076963318,
               "observed_accuracy": 0.547945205479452
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 14,
-              "mean_probability": 0.6309935154731167,
+              "mean_probability": 0.6309935154733336,
               "observed_accuracy": 0.6428571428571429
             },
             {
               "lower": 0.7,
               "upper": 1,
               "n": 2,
-              "mean_probability": 0.7108404725022357,
+              "mean_probability": 0.7108404725025894,
               "observed_accuracy": 1.0
             }
           ]
@@ -2966,8 +2966,8 @@
           "n": 325,
           "hits": 162,
           "accuracy": 0.49846153846153846,
-          "logloss": 1.0329414828022319,
-          "brier": 0.620505822646834,
+          "logloss": 1.0329414828025378,
+          "brier": 0.6205058226470656,
           "draw_actual": 71,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -2978,28 +2978,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 95,
-              "mean_probability": 0.3790015360667992,
+              "mean_probability": 0.37900153606634657,
               "observed_accuracy": 0.4421052631578947
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 150,
-              "mean_probability": 0.4459517614314226,
+              "mean_probability": 0.44595176143087173,
               "observed_accuracy": 0.48
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 58,
-              "mean_probability": 0.5422397460538609,
+              "mean_probability": 0.5422397460528322,
               "observed_accuracy": 0.5517241379310345
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 22,
-              "mean_probability": 0.6288997568097522,
+              "mean_probability": 0.6288997568075483,
               "observed_accuracy": 0.7272727272727273
             }
           ]
@@ -3008,8 +3008,8 @@
           "n": 196,
           "hits": 92,
           "accuracy": 0.46938775510204084,
-          "logloss": 1.0400300150938309,
-          "brier": 0.6253307227763738,
+          "logloss": 1.040030015093857,
+          "brier": 0.625330722776395,
           "draw_actual": 52,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3020,28 +3020,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 45,
-              "mean_probability": 0.3762632854886117,
+              "mean_probability": 0.3762632854886212,
               "observed_accuracy": 0.37777777777777777
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 90,
-              "mean_probability": 0.443734097917845,
+              "mean_probability": 0.4437340979178586,
               "observed_accuracy": 0.4444444444444444
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 45,
-              "mean_probability": 0.5363396566555703,
+              "mean_probability": 0.536339656655573,
               "observed_accuracy": 0.4888888888888889
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 15,
-              "mean_probability": 0.6381739562993348,
+              "mean_probability": 0.6381739562993531,
               "observed_accuracy": 0.8
             },
             {
@@ -3058,8 +3058,8 @@
         "n": 290,
         "hits": 140,
         "accuracy": 0.4827586206896552,
-        "logloss": 1.0268192868531074,
-        "brier": 0.617137023285674,
+        "logloss": 1.026819286853387,
+        "brier": 0.617137023285871,
         "draw_actual": 80,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -3070,35 +3070,35 @@
             "lower": 0,
             "upper": 0.4,
             "n": 63,
-            "mean_probability": 0.3803729150855723,
+            "mean_probability": 0.3803729150851242,
             "observed_accuracy": 0.3333333333333333
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 123,
-            "mean_probability": 0.44449442736295747,
+            "mean_probability": 0.4444944273626828,
             "observed_accuracy": 0.4959349593495935
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 74,
-            "mean_probability": 0.5434074039643769,
+            "mean_probability": 0.543407403963803,
             "observed_accuracy": 0.5
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 27,
-            "mean_probability": 0.6356375331626047,
+            "mean_probability": 0.6356375331609696,
             "observed_accuracy": 0.6666666666666666
           },
           {
             "lower": 0.7,
             "upper": 1,
             "n": 3,
-            "mean_probability": 0.7179702869442677,
+            "mean_probability": 0.7179702869445035,
             "observed_accuracy": 1.0
           }
         ]
@@ -3107,8 +3107,8 @@
         "n": 850,
         "hits": 379,
         "accuracy": 0.44588235294117645,
-        "logloss": 1.0608674327692118,
-        "brier": 0.6395355958802269,
+        "logloss": 1.060867432769274,
+        "brier": 0.6395355958802728,
         "draw_actual": 222,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -3119,28 +3119,28 @@
             "lower": 0,
             "upper": 0.4,
             "n": 256,
-            "mean_probability": 0.37781324708894054,
+            "mean_probability": 0.3778132470889174,
             "observed_accuracy": 0.375
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 435,
-            "mean_probability": 0.4423929603118501,
+            "mean_probability": 0.4423929603118096,
             "observed_accuracy": 0.43908045977011495
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 131,
-            "mean_probability": 0.5379029845478497,
+            "mean_probability": 0.5379029845476763,
             "observed_accuracy": 0.5419847328244275
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 28,
-            "mean_probability": 0.6270791431722257,
+            "mean_probability": 0.627079143172314,
             "observed_accuracy": 0.75
           }
         ]
@@ -3151,8 +3151,8 @@
         "n": 1140,
         "hits": 519,
         "accuracy": 0.45526315789473687,
-        "logloss": 1.055306904483549,
-        "brier": 0.6360615009868735,
+        "logloss": 1.0553069044836585,
+        "brier": 0.6360615009869522,
         "draw_actual": 302,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -3164,99 +3164,99 @@
               {
                 "lower": 0.1,
                 "n": 2,
-                "mean_probability": 0.1817328370016774,
+                "mean_probability": 0.18173283700130685,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.2,
                 "n": 110,
-                "mean_probability": 0.2702307335631158,
+                "mean_probability": 0.2702307335636063,
                 "observed_rate": 0.18181818181818182
               },
               {
                 "lower": 0.3,
                 "n": 510,
-                "mean_probability": 0.35465900394117567,
+                "mean_probability": 0.35465900394125516,
                 "observed_rate": 0.3411764705882353
               },
               {
                 "lower": 0.4,
                 "n": 418,
-                "mean_probability": 0.4418536554535631,
+                "mean_probability": 0.44185365545351063,
                 "observed_rate": 0.46172248803827753
               },
               {
                 "lower": 0.5,
                 "n": 96,
-                "mean_probability": 0.5376445348391242,
+                "mean_probability": 0.5376445348390954,
                 "observed_rate": 0.6666666666666666
               },
               {
                 "lower": 0.6,
                 "n": 4,
-                "mean_probability": 0.6215877802921431,
+                "mean_probability": 0.6215877802880417,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.034359547307571764
+            "ece": 0.034359547307690065
           },
           "0": {
             "bins": [
               {
                 "lower": 0.2,
                 "n": 1127,
-                "mean_probability": 0.2702980508851646,
+                "mean_probability": 0.27029805088518144,
                 "observed_rate": 0.26619343389529726
               },
               {
                 "lower": 0.3,
                 "n": 13,
-                "mean_probability": 0.303773195564323,
+                "mean_probability": 0.30377319556431215,
                 "observed_rate": 0.15384615384615385
               }
             ],
-            "ece": 0.0057675042894006255
+            "ece": 0.005767504289417131
           },
           "2": {
             "bins": [
               {
                 "lower": 0.1,
                 "n": 25,
-                "mean_probability": 0.18265782224724192,
+                "mean_probability": 0.18265782224765523,
                 "observed_rate": 0.04
               },
               {
                 "lower": 0.2,
                 "n": 343,
-                "mean_probability": 0.26155989507553157,
+                "mean_probability": 0.2615598950755728,
                 "observed_rate": 0.24489795918367346
               },
               {
                 "lower": 0.3,
                 "n": 566,
-                "mean_probability": 0.3469805736851039,
+                "mean_probability": 0.346980573685063,
                 "observed_rate": 0.36042402826855124
               },
               {
                 "lower": 0.4,
                 "n": 189,
-                "mean_probability": 0.43361867014921607,
+                "mean_probability": 0.4336186701489171,
                 "observed_rate": 0.4444444444444444
               },
               {
                 "lower": 0.5,
                 "n": 16,
-                "mean_probability": 0.5271519718610479,
+                "mean_probability": 0.527151971860024,
                 "observed_rate": 0.5625
               },
               {
                 "lower": 0.6,
                 "n": 1,
-                "mean_probability": 0.6041978079880229,
+                "mean_probability": 0.6041978079880282,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.01745432179416926
+            "ece": 0.017454321794274953
           }
         },
         "low_probability_events": {
@@ -3274,7 +3274,7 @@
           },
           "2": {
             "n": 1,
-            "expected_count": 0.13869048715198015,
+            "expected_count": 0.13869048715198082,
             "observed_count": 0,
             "threshold": 0.15
           }
@@ -3285,8 +3285,8 @@
           "n": 380,
           "hits": 161,
           "accuracy": 0.4236842105263158,
-          "logloss": 1.0787771917005045,
-          "brier": 0.6528449622670526,
+          "logloss": 1.0787771917005435,
+          "brier": 0.6528449622670797,
           "draw_actual": 104,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3297,21 +3297,21 @@
               "lower": 0,
               "upper": 0.4,
               "n": 132,
-              "mean_probability": 0.37933073077261814,
+              "mean_probability": 0.37933073077256196,
               "observed_accuracy": 0.42424242424242425
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 208,
-              "mean_probability": 0.4411800500862387,
+              "mean_probability": 0.4411800500861705,
               "observed_accuracy": 0.41346153846153844
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 40,
-              "mean_probability": 0.5347284969576341,
+              "mean_probability": 0.5347284969576761,
               "observed_accuracy": 0.475
             }
           ]
@@ -3320,8 +3320,8 @@
           "n": 380,
           "hits": 188,
           "accuracy": 0.49473684210526314,
-          "logloss": 1.0281325224851479,
-          "brier": 0.6169758134663583,
+          "logloss": 1.028132522485264,
+          "brier": 0.6169758134664344,
           "draw_actual": 89,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3332,28 +3332,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 140,
-              "mean_probability": 0.3806152185419599,
+              "mean_probability": 0.38061521854197805,
               "observed_accuracy": 0.38571428571428573
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 193,
-              "mean_probability": 0.4389964524548196,
+              "mean_probability": 0.4389964524547789,
               "observed_accuracy": 0.5025906735751295
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 45,
-              "mean_probability": 0.5397851710792415,
+              "mean_probability": 0.5397851710792546,
               "observed_accuracy": 0.7777777777777778
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6288311760263392,
+              "mean_probability": 0.6288311760266548,
               "observed_accuracy": 1.0
             }
           ]
@@ -3362,8 +3362,8 @@
           "n": 380,
           "hits": 170,
           "accuracy": 0.4473684210526316,
-          "logloss": 1.0590109992649948,
-          "brier": 0.6383637272272097,
+          "logloss": 1.0590109992651684,
+          "brier": 0.6383637272273426,
           "draw_actual": 109,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3374,28 +3374,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 144,
-              "mean_probability": 0.3806753862370456,
+              "mean_probability": 0.38067538623689334,
               "observed_accuracy": 0.375
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 206,
-              "mean_probability": 0.4376552956120067,
+              "mean_probability": 0.43765529561173283,
               "observed_accuracy": 0.4563106796116505
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 27,
-              "mean_probability": 0.5321790487948691,
+              "mean_probability": 0.5321790487940752,
               "observed_accuracy": 0.7037037037037037
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 3,
-              "mean_probability": 0.6109621923679723,
+              "mean_probability": 0.6109621923622952,
               "observed_accuracy": 1.0
             }
           ]
@@ -3406,8 +3406,8 @@
           "n": 186,
           "hits": 75,
           "accuracy": 0.4032258064516129,
-          "logloss": 1.0839956049118136,
-          "brier": 0.6556357259350224,
+          "logloss": 1.0839956049119486,
+          "brier": 0.6556357259351124,
           "draw_actual": 58,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3418,21 +3418,21 @@
               "lower": 0,
               "upper": 0.4,
               "n": 67,
-              "mean_probability": 0.38300669963010975,
+              "mean_probability": 0.38300669963019945,
               "observed_accuracy": 0.29850746268656714
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 108,
-              "mean_probability": 0.43565387580881315,
+              "mean_probability": 0.43565387580889336,
               "observed_accuracy": 0.4537037037037037
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 11,
-              "mean_probability": 0.5321627373474572,
+              "mean_probability": 0.532162737347914,
               "observed_accuracy": 0.5454545454545454
             }
           ]
@@ -3441,8 +3441,8 @@
           "n": 433,
           "hits": 190,
           "accuracy": 0.4387990762124711,
-          "logloss": 1.0618099666015024,
-          "brier": 0.6405446107721311,
+          "logloss": 1.0618099666014913,
+          "brier": 0.6405446107721208,
           "draw_actual": 121,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3453,28 +3453,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 169,
-              "mean_probability": 0.37938208829979514,
+              "mean_probability": 0.3793820882998115,
               "observed_accuracy": 0.40236686390532544
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 225,
-              "mean_probability": 0.4377015103669125,
+              "mean_probability": 0.4377015103669297,
               "observed_accuracy": 0.4311111111111111
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 37,
-              "mean_probability": 0.531934384205862,
+              "mean_probability": 0.5319343842058706,
               "observed_accuracy": 0.6216216216216216
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6214634724720756,
+              "mean_probability": 0.6214634724723519,
               "observed_accuracy": 1.0
             }
           ]
@@ -3483,8 +3483,8 @@
           "n": 325,
           "hits": 162,
           "accuracy": 0.49846153846153846,
-          "logloss": 1.036540177815285,
-          "brier": 0.6235087081412652,
+          "logloss": 1.0365401778155967,
+          "brier": 0.6235087081414951,
           "draw_actual": 71,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3495,28 +3495,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 119,
-              "mean_probability": 0.38004192213210314,
+              "mean_probability": 0.3800419221317973,
               "observed_accuracy": 0.44537815126050423
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 166,
-              "mean_probability": 0.4408412202902427,
+              "mean_probability": 0.44084122028969214,
               "observed_accuracy": 0.4939759036144578
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 39,
-              "mean_probability": 0.5389302620851212,
+              "mean_probability": 0.5389302620844855,
               "observed_accuracy": 0.6666666666666666
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 1,
-              "mean_probability": 0.6019452071813146,
+              "mean_probability": 0.6019452071643564,
               "observed_accuracy": 1.0
             }
           ]
@@ -3525,8 +3525,8 @@
           "n": 196,
           "hits": 92,
           "accuracy": 0.46938775510204084,
-          "logloss": 1.0448337513736246,
-          "brier": 0.6283965280146825,
+          "logloss": 1.0448337513736412,
+          "brier": 0.6283965280146959,
           "draw_actual": 52,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3537,28 +3537,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 61,
-              "mean_probability": 0.37988577285887754,
+              "mean_probability": 0.3798857728588909,
               "observed_accuracy": 0.3770491803278688
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 108,
-              "mean_probability": 0.44384866342318297,
+              "mean_probability": 0.4438486634231869,
               "observed_accuracy": 0.4537037037037037
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 25,
-              "mean_probability": 0.5397865738629619,
+              "mean_probability": 0.5397865738629731,
               "observed_accuracy": 0.72
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6228383885155648,
+              "mean_probability": 0.6228383885155675,
               "observed_accuracy": 1.0
             }
           ]
@@ -3568,8 +3568,8 @@
         "n": 290,
         "hits": 140,
         "accuracy": 0.4827586206896552,
-        "logloss": 1.035235578180818,
-        "brier": 0.6220756986439943,
+        "logloss": 1.0352355781810985,
+        "brier": 0.6220756986441951,
         "draw_actual": 80,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -3580,28 +3580,28 @@
             "lower": 0,
             "upper": 0.4,
             "n": 84,
-            "mean_probability": 0.38133118857922776,
+            "mean_probability": 0.38133118857901477,
             "observed_accuracy": 0.40476190476190477
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 152,
-            "mean_probability": 0.44529825419016184,
+            "mean_probability": 0.44529825418979685,
             "observed_accuracy": 0.46710526315789475
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 49,
-            "mean_probability": 0.5390521058401745,
+            "mean_probability": 0.5390521058397864,
             "observed_accuracy": 0.6122448979591837
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 5,
-            "mean_probability": 0.618109785831319,
+            "mean_probability": 0.618109785828039,
             "observed_accuracy": 1.0
           }
         ]
@@ -3610,8 +3610,8 @@
         "n": 850,
         "hits": 379,
         "accuracy": 0.44588235294117645,
-        "logloss": 1.0621547687515396,
-        "brier": 0.6408331276685618,
+        "logloss": 1.0621547687515909,
+        "brier": 0.6408331276685987,
         "draw_actual": 222,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -3622,21 +3622,21 @@
             "lower": 0,
             "upper": 0.4,
             "n": 332,
-            "mean_probability": 0.3799494663715043,
+            "mean_probability": 0.37994946637147736,
             "observed_accuracy": 0.39156626506024095
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 455,
-            "mean_probability": 0.4372822461557947,
+            "mean_probability": 0.4372822461557443,
             "observed_accuracy": 0.45274725274725275
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 63,
-            "mean_probability": 0.5338849794946688,
+            "mean_probability": 0.5338849794946667,
             "observed_accuracy": 0.6825396825396826
           }
         ]
@@ -3647,8 +3647,8 @@
         "n": 1140,
         "hits": 530,
         "accuracy": 0.4649122807017544,
-        "logloss": 1.056890083327049,
-        "brier": 0.6371074674726,
+        "logloss": 1.0568900833272696,
+        "brier": 0.6371074674727629,
         "draw_actual": 302,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -3660,99 +3660,99 @@
               {
                 "lower": 0.1,
                 "n": 2,
-                "mean_probability": 0.18180746243697055,
+                "mean_probability": 0.18180746243701956,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.2,
                 "n": 117,
-                "mean_probability": 0.26734118436467785,
+                "mean_probability": 0.2673411843658749,
                 "observed_rate": 0.19658119658119658
               },
               {
                 "lower": 0.3,
                 "n": 569,
-                "mean_probability": 0.3532815834593673,
+                "mean_probability": 0.3532815834595866,
                 "observed_rate": 0.351493848857645
               },
               {
                 "lower": 0.4,
                 "n": 375,
-                "mean_probability": 0.4383431455876414,
+                "mean_probability": 0.43834314558743687,
                 "observed_rate": 0.472
               },
               {
                 "lower": 0.5,
                 "n": 74,
-                "mean_probability": 0.5328197190825128,
+                "mean_probability": 0.5328197190815871,
                 "observed_rate": 0.7027027027027027
               },
               {
                 "lower": 0.6,
                 "n": 3,
-                "mean_probability": 0.6242636607781741,
+                "mean_probability": 0.624263660778242,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.03156107429308352
+            "ece": 0.031561074293443125
           },
           "0": {
             "bins": [
               {
                 "lower": 0.2,
                 "n": 1055,
-                "mean_probability": 0.270767095381981,
+                "mean_probability": 0.2707670953820835,
                 "observed_rate": 0.26350710900473934
               },
               {
                 "lower": 0.3,
                 "n": 85,
-                "mean_probability": 0.3069535160362347,
+                "mean_probability": 0.30695351603618304,
                 "observed_rate": 0.2823529411764706
               }
             ],
-            "ece": 0.008552924992166597
+            "ece": 0.008552924992257578
           },
           "2": {
             "bins": [
               {
                 "lower": 0.1,
                 "n": 15,
-                "mean_probability": 0.1840400910821741,
+                "mean_probability": 0.18404009108463487,
                 "observed_rate": 0.0
               },
               {
                 "lower": 0.2,
                 "n": 297,
-                "mean_probability": 0.26473324412798216,
+                "mean_probability": 0.26473324412810706,
                 "observed_rate": 0.24242424242424243
               },
               {
                 "lower": 0.3,
                 "n": 618,
-                "mean_probability": 0.34808648510775486,
+                "mean_probability": 0.348086485107616,
                 "observed_rate": 0.33818770226537215
               },
               {
                 "lower": 0.4,
                 "n": 188,
-                "mean_probability": 0.43527242504170804,
+                "mean_probability": 0.43527242504085606,
                 "observed_rate": 0.4627659574468085
               },
               {
                 "lower": 0.5,
                 "n": 21,
-                "mean_probability": 0.5223426112620972,
+                "mean_probability": 0.522342611259637,
                 "observed_rate": 0.6666666666666666
               },
               {
                 "lower": 0.6,
                 "n": 1,
-                "mean_probability": 0.6055478220219038,
+                "mean_probability": 0.6055478220218978,
                 "observed_rate": 1.0
               }
             ],
-            "ece": 0.021138477282867336
+            "ece": 0.021138477283042793
           }
         },
         "low_probability_events": {
@@ -3781,8 +3781,8 @@
           "n": 380,
           "hits": 161,
           "accuracy": 0.4236842105263158,
-          "logloss": 1.0800375693399706,
-          "brier": 0.6537580771886908,
+          "logloss": 1.0800375693400006,
+          "brier": 0.6537580771887148,
           "draw_actual": 104,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3793,21 +3793,21 @@
               "lower": 0,
               "upper": 0.4,
               "n": 156,
-              "mean_probability": 0.3774284230178849,
+              "mean_probability": 0.3774284230176387,
               "observed_accuracy": 0.3974358974358974
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 193,
-              "mean_probability": 0.43803941267857377,
+              "mean_probability": 0.43803941267835794,
               "observed_accuracy": 0.43005181347150256
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 31,
-              "mean_probability": 0.5256566654584348,
+              "mean_probability": 0.5256566654583217,
               "observed_accuracy": 0.5161290322580645
             }
           ]
@@ -3816,8 +3816,8 @@
           "n": 380,
           "hits": 197,
           "accuracy": 0.5184210526315789,
-          "logloss": 1.0303401330748854,
-          "brier": 0.6185081309650227,
+          "logloss": 1.0303401330750517,
+          "brier": 0.6185081309651282,
           "draw_actual": 89,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3828,28 +3828,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 161,
-              "mean_probability": 0.37767739091413727,
+              "mean_probability": 0.377677390914171,
               "observed_accuracy": 0.4472049689440994
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 180,
-              "mean_probability": 0.4374103663918575,
+              "mean_probability": 0.437410366391714,
               "observed_accuracy": 0.5222222222222223
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 37,
-              "mean_probability": 0.5322220323837623,
+              "mean_probability": 0.5322220323836131,
               "observed_accuracy": 0.7837837837837838
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6162168673799063,
+              "mean_probability": 0.6162168673806624,
               "observed_accuracy": 1.0
             }
           ]
@@ -3858,8 +3858,8 @@
           "n": 380,
           "hits": 172,
           "accuracy": 0.45263157894736844,
-          "logloss": 1.0602925475662903,
-          "brier": 0.6390561942640866,
+          "logloss": 1.060292547566757,
+          "brier": 0.6390561942644459,
           "draw_actual": 109,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3870,28 +3870,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 161,
-              "mean_probability": 0.37998231461553766,
+              "mean_probability": 0.3799823146152813,
               "observed_accuracy": 0.38509316770186336
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 190,
-              "mean_probability": 0.43649696266161875,
+              "mean_probability": 0.43649696266072713,
               "observed_accuracy": 0.45789473684210524
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 27,
-              "mean_probability": 0.533714156340715,
+              "mean_probability": 0.5337141563365985,
               "observed_accuracy": 0.7777777777777778
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6229525347983067,
+              "mean_probability": 0.6229525347976494,
               "observed_accuracy": 1.0
             }
           ]
@@ -3902,8 +3902,8 @@
           "n": 186,
           "hits": 79,
           "accuracy": 0.42473118279569894,
-          "logloss": 1.0852581923006772,
-          "brier": 0.6564244823464912,
+          "logloss": 1.0852581923008422,
+          "brier": 0.6564244823465913,
           "draw_actual": 58,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3914,21 +3914,21 @@
               "lower": 0,
               "upper": 0.4,
               "n": 76,
-              "mean_probability": 0.3786317239947663,
+              "mean_probability": 0.37863172399482786,
               "observed_accuracy": 0.3815789473684211
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 99,
-              "mean_probability": 0.4346249049341015,
+              "mean_probability": 0.43462490493413236,
               "observed_accuracy": 0.43434343434343436
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 11,
-              "mean_probability": 0.523026454835297,
+              "mean_probability": 0.5230264548356222,
               "observed_accuracy": 0.6363636363636364
             }
           ]
@@ -3937,8 +3937,8 @@
           "n": 433,
           "hits": 198,
           "accuracy": 0.45727482678983833,
-          "logloss": 1.0637861725277287,
-          "brier": 0.6417060023662241,
+          "logloss": 1.0637861725276376,
+          "brier": 0.6417060023661609,
           "draw_actual": 121,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3949,28 +3949,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 192,
-              "mean_probability": 0.378324560260749,
+              "mean_probability": 0.3783245602607694,
               "observed_accuracy": 0.4322916666666667
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 207,
-              "mean_probability": 0.435448647241008,
+              "mean_probability": 0.43544864724094035,
               "observed_accuracy": 0.4396135265700483
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 32,
-              "mean_probability": 0.5322092737544735,
+              "mean_probability": 0.5322092737544799,
               "observed_accuracy": 0.6875
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6288209730110502,
+              "mean_probability": 0.628820973011152,
               "observed_accuracy": 1.0
             }
           ]
@@ -3979,8 +3979,8 @@
           "n": 325,
           "hits": 161,
           "accuracy": 0.49538461538461537,
-          "logloss": 1.0365175819669072,
-          "brier": 0.6236422503583718,
+          "logloss": 1.0365175819676793,
+          "brier": 0.6236422503589475,
           "draw_actual": 71,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -3991,21 +3991,21 @@
               "lower": 0,
               "upper": 0.4,
               "n": 134,
-              "mean_probability": 0.3779865033347,
+              "mean_probability": 0.37798650333407197,
               "observed_accuracy": 0.40298507462686567
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 158,
-              "mean_probability": 0.43807588256569613,
+              "mean_probability": 0.4380758825642603,
               "observed_accuracy": 0.5253164556962026
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 33,
-              "mean_probability": 0.5290072198314377,
+              "mean_probability": 0.5290072198275771,
               "observed_accuracy": 0.7272727272727273
             }
           ]
@@ -4014,8 +4014,8 @@
           "n": 196,
           "hits": 92,
           "accuracy": 0.46938775510204084,
-          "logloss": 1.0485155325569302,
-          "brier": 0.6309445347513815,
+          "logloss": 1.04851553255698,
+          "brier": 0.6309445347514198,
           "draw_actual": 52,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -4026,28 +4026,28 @@
               "lower": 0,
               "upper": 0.4,
               "n": 76,
-              "mean_probability": 0.3789148492177874,
+              "mean_probability": 0.3789148492178048,
               "observed_accuracy": 0.39473684210526316
             },
             {
               "lower": 0.4,
               "upper": 0.5,
               "n": 99,
-              "mean_probability": 0.442708792832949,
+              "mean_probability": 0.4427087928329584,
               "observed_accuracy": 0.47474747474747475
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 19,
-              "mean_probability": 0.5345593700442696,
+              "mean_probability": 0.5345593700444512,
               "observed_accuracy": 0.6842105263157895
             },
             {
               "lower": 0.6,
               "upper": 0.7,
               "n": 2,
-              "mean_probability": 0.6103484291671628,
+              "mean_probability": 0.6103484291671599,
               "observed_accuracy": 1.0
             }
           ]
@@ -4057,8 +4057,8 @@
         "n": 290,
         "hits": 145,
         "accuracy": 0.5,
-        "logloss": 1.0349639037808345,
-        "brier": 0.6216554165555506,
+        "logloss": 1.034963903781442,
+        "brier": 0.6216554165559994,
         "draw_actual": 80,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -4069,28 +4069,28 @@
             "lower": 0,
             "upper": 0.4,
             "n": 92,
-            "mean_probability": 0.3803115950607947,
+            "mean_probability": 0.38031159506036216,
             "observed_accuracy": 0.43478260869565216
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 146,
-            "mean_probability": 0.4471169752130988,
+            "mean_probability": 0.44711697521219973,
             "observed_accuracy": 0.4726027397260274
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 48,
-            "mean_probability": 0.5356166740439766,
+            "mean_probability": 0.535616674041671,
             "observed_accuracy": 0.6666666666666666
           },
           {
             "lower": 0.6,
             "upper": 0.7,
             "n": 4,
-            "mean_probability": 0.6195847010891066,
+            "mean_probability": 0.619584701089156,
             "observed_accuracy": 1.0
           }
         ]
@@ -4099,8 +4099,8 @@
         "n": 850,
         "hits": 385,
         "accuracy": 0.45294117647058824,
-        "logloss": 1.0643707798781101,
-        "brier": 0.6423793436678286,
+        "logloss": 1.0643707798781992,
+        "brier": 0.6423793436678941,
         "draw_actual": 222,
         "draw_picks": 0,
         "draw_hits": 0,
@@ -4111,21 +4111,21 @@
             "lower": 0,
             "upper": 0.4,
             "n": 386,
-            "mean_probability": 0.3779103104545974,
+            "mean_probability": 0.3779103104545082,
             "observed_accuracy": 0.40414507772020725
           },
           {
             "lower": 0.4,
             "upper": 0.5,
             "n": 417,
-            "mean_probability": 0.4338868516117367,
+            "mean_probability": 0.43388685161148344,
             "observed_accuracy": 0.4676258992805755
           },
           {
             "lower": 0.5,
             "upper": 0.6,
             "n": 47,
-            "mean_probability": 0.5252819934999812,
+            "mean_probability": 0.5252819934997789,
             "observed_accuracy": 0.723404255319149
           }
         ]
