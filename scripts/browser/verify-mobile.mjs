@@ -4,6 +4,7 @@ import {readFileSync,mkdirSync} from 'node:fs';
 import {resolve,extname} from 'node:path';
 import assert from 'node:assert/strict';
 import {dashboardFiles} from '../../tests/helpers/dashboard-fixture.mjs';
+import {reviewRounds} from '../lib/round-review.mjs';
 const fixtures=dashboardFiles();
 const root=process.cwd(),prediction=fixtures['predictions.json'],out=resolve('work/mobile-verification');mkdirSync(out,{recursive:true});
 const types={'.html':'text/html','.mjs':'text/javascript','.js':'text/javascript','.css':'text/css','.json':'application/json'};
@@ -50,6 +51,23 @@ try{
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`${width}px ticket details overflow`);
   await individual.locator('select').scrollIntoViewIfNeeded();await page.screenshot({path:resolve(out,`purchase-ticket-${width}.png`)});
   await page.locator('.bottom-nav a[href="#forecast"]').click();await page.screenshot({path:resolve(out,`forecast-${width}.png`),fullPage:true});await page.close();
+ }
+ // A completed, synthetic previous round: names, scores and saved explanations
+ // must remain readable when all match details are expanded on a small phone.
+ for(const width of[360,393,412]){
+  const page=await pageFor(width);
+  const rows=prediction.matches.map((m,i)=>({...m,date:'2026-10-24',round_id:'1665',actual:i===8?'0':m.prediction,published_at:'2026-10-23T00:00:00Z',snapshot_id:'a'.repeat(64),review_context:{score:i===8?'0-0':'2-0',saved_reasons:['テスト専用：公開時の根拠'],data_notes:[]}}));
+  await page.route('**/data/evaluation.json?*',route=>route.fulfill({json:{...fixtures['data/evaluation.json'],round_reviews:reviewRounds(rows)}}));
+  await page.goto(base+'/?review-test#performance');
+  await page.locator('.round-review > details').first().waitFor();
+  assert.equal(await page.locator('.round-review > details').count(),13);
+  await page.locator('.round-review > details').evaluateAll(items=>items.forEach(d=>d.open=true));
+  const text=await page.locator('.round-review').textContent();
+  assert.ok(text.includes('ホーム9 ― アウェイ9：0-0 ／ 不的中'));
+  assert.ok(text.includes('テスト専用：公開時の根拠'));
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,`${width}px round review overflows`);
+  await page.locator('.round-review').scrollIntoViewIfNeeded();
+  await page.screenshot({path:resolve(out,`round-review-${width}.png`)});await page.close();
  }
  // Revisit with an HTTP cache containing the old unversioned module graph.
  const cached=await pageFor(393);warmOldUI=true;

@@ -1,6 +1,6 @@
 import{riskEstimate,deadlineText,appendMatchDetails}from'./forecast-details.mjs';
 import{mountPersonal}from'./personal-ui.mjs';
-import{renderPerformance}from'./performance.mjs';
+import{renderPerformance}from'./performance.mjs?v=395c073ffe067c72';
 import{optimizePortfolio}from'../scripts/lib/portfolio.mjs';
 import {renderPurchase} from './purchase.mjs?v=408ba51c8ae09d2c';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};

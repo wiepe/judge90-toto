@@ -19,6 +19,7 @@ export function metricChart(doc,points,key,title){
 }
 export function renderGrowth(doc,root,evaluation,{currentRoundId,now=new Date()}={}){
  const g=growthSummary(evaluation,now),latest=g.rounds.find(r=>r.round_id===String(currentRoundId))||(!currentRoundId?g.rounds.at(-1):null);
+ renderRoundReviews(doc,root,evaluation,now);
  root.append(el(doc,'h3','最新回と直近の成長記録'),el(doc,'p','第'+(currentRoundId||latest?.round_id||'—')+'回：'+(latest?latest.metrics.hits+'的中 / '+latest.metrics.n+'試合確定（対象13試合）':'判定待ち・評価データ不足（対象13試合）')));
  for(const r of[g.recent5,g.recent10])root.append(el(doc,'p','直近'+r.requested+'完了回：'+(r.enough?pct(r.accuracy):'評価データ不足（'+r.round_count+'/'+r.requested+'回）')+' ／ 評価 '+r.n+'試合'));
  root.append(el(doc,'p','13試合すべてに配信証跡と確定結果がある回だけを直近5回・10回とグラフに含めます。部分確定回は上の最新回表示に残します。'));
@@ -29,4 +30,33 @@ export function renderGrowth(doc,root,evaluation,{currentRoundId,now=new Date()}
  if(!history.length)details.append(el(doc,'p','モデル使用履歴の証跡が未取得です。過去の更新日を推測しません。'));
  for(const h of history)details.append(el(doc,'p',h.first_observed_at+'：'+h.name+' v'+h.version+' ／ 第'+h.round_id+'回'));
  root.append(details);return g;
+}
+
+export function renderRoundReviews(doc,root,evaluation,now=new Date()){
+ const today=now.toLocaleDateString('en-CA',{timeZone:'Asia/Tokyo'});
+ const rounds=[...(evaluation?.round_reviews||[])].filter(r=>r.last_match_date<=today).sort((a,b)=>b.last_match_date.localeCompare(a.last_match_date)||Number(b.round_id)-Number(a.round_id));
+ root.append(el(doc,'h3','公開予測の答え合わせ'));
+ if(!rounds.length){root.append(el(doc,'p','評価データ不足：締切前の公開証跡と確定結果がそろうと表示します。'));return;}
+ for(const r of rounds){
+  const details=doc.createElement('details');details.className='round-review';details.open=r===rounds[0];
+  details.append(el(doc,'summary','第'+r.round_id+'回：'+r.metrics.hits+' / '+r.metrics.n+'試合的中'+(r.complete?'':'（部分確定）')));
+  details.append(el(doc,'p','的中率 '+pct(r.metrics.accuracy)+' ／ LogLoss '+r.metrics.logloss.toFixed(4)+' ／ Brier '+r.metrics.brier.toFixed(4)));
+  details.append(el(doc,'p','ホーム勝ち固定：'+r.home_always.hits+' / '+r.home_always.n+'試合的中。1開催回の比較で改善を判断しません。'));
+  details.append(el(doc,'p','引き分け：実際 '+r.metrics.draw_actual+'試合・本命 '+r.metrics.draw_picks+'試合・的中 '+r.metrics.draw_hits+'試合。検出率 '+pct(r.metrics.draw_recall)));
+  for(const m of r.matches){
+   const item=doc.createElement('details');
+   item.append(el(doc,'summary','No.'+m.number+' '+m.home+' ― '+m.away+'：'+(m.score??'得点未取得')+' ／ '+(m.hit?'的中':'不的中')));
+   item.append(el(doc,'p','本命 '+m.prediction+'（'+pct(m.picked_probability)+'） → 結果 '+m.actual+'。結果に付けていた確率 '+pct(m.actual_probability)));
+   item.append(el(doc,'p','1 ホーム '+pct(m.probabilities['1'])+' ／ 0 引き分け '+pct(m.probabilities['0'])+' ／ 2 アウェイ '+pct(m.probabilities['2'])));
+   item.append(el(doc,'p','上位2結果の確率差 '+(100*m.top_two_gap).toFixed(1)+'ポイント ／ LogLoss '+m.logloss.toFixed(4)+' ／ Brier '+m.brier.toFixed(4)));
+   item.append(el(doc,'p','公開時に保存された根拠：'+(m.saved_reasons.length?m.saved_reasons.join('。'):'保存なし。後から補いません。')));
+   for(const note of m.data_notes)item.append(el(doc,'p',note));
+   if(m.data_usage?.weather===false)item.append(el(doc,'p','天気は予測に未使用です。天気が的中・不的中の理由とは判定できません。'));
+   const evidence=doc.createElement('details');evidence.append(el(doc,'summary','公開証跡を確認'));
+   evidence.append(el(doc,'p','公開確認：'+new Date(m.published_at).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'})+' JST ／ 保存予測ID：'+m.snapshot_id));item.append(evidence);
+   details.append(item);
+  }
+  for(const note of r.limitations)details.append(el(doc,'p',note));
+  root.append(details);
+ }
 }
