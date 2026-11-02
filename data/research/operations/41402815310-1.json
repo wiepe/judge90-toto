@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "run_id": "41402815310",
+  "attempt": "1",
+  "checked_at": "2026-11-02T06:54:23.732Z",
+  "state": "success",
+  "failed_stages": [],
+  "stages": {
+    "source": "success",
+    "reconcile": "success",
+    "evaluate": "success",
+    "diagnostics": "success",
+    "proposal": "success",
+    "persist": "success",
+    "propose": "skipped"
+  },
+  "production_model_changed": false,
+  "proposal_note": "条件未達または前段失敗でPR作成を省略"
+}
