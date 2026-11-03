@@ -4,9 +4,9 @@
   "product_id": "01",
   "sales_open_at": "2026-11-03T08:00:00+09:00",
   "sales_close_at": "2026-11-07T12:50:00+09:00",
-  "source_fetched_at": "2026-11-03T06:55:15.065Z",
-  "source_digest": "d42d11d054aad409c85dd42bb3abfc466aebf7b71b95ff86d820105c1f1c61b4",
-  "updated_at": "2026-11-03T06:55:36.994Z",
+  "source_fetched_at": "2026-11-03T12:24:36.975Z",
+  "source_digest": "30fb2b2bb6e2f0a40f04cd2d1e093cc9b44dc68b8a5d197e71182eebce18e50c",
+  "updated_at": "2026-11-03T12:24:59.270Z",
   "model": {
     "data_usage": {
       "season_results": true,
@@ -544,13 +544,13 @@
       "league": "J2",
       "prediction": "2",
       "probabilities": {
-        "0": 0.294,
-        "1": 0.315,
-        "2": 0.391
+        "0": 0.286,
+        "1": 0.298,
+        "2": 0.417
       },
-      "confidence": 14,
+      "confidence": 21,
       "uncertainty": {
-        "level": "HIGH",
+        "level": "MEDIUM",
         "reasons": [
           "アウェイ側の直近フォームが優位"
         ]
@@ -581,13 +581,13 @@
       "league": "J2",
       "prediction": "2",
       "probabilities": {
-        "0": 0.288,
-        "1": 0.302,
-        "2": 0.41
+        "0": 0.274,
+        "1": 0.274,
+        "2": 0.452
       },
-      "confidence": 19,
+      "confidence": 32,
       "uncertainty": {
-        "level": "MEDIUM",
+        "level": "LOW",
         "reasons": [
           "アウェイ側の直近フォームが優位"
         ]
@@ -618,11 +618,11 @@
       "league": "J2",
       "prediction": "2",
       "probabilities": {
-        "0": 0.293,
-        "1": 0.313,
-        "2": 0.393
+        "0": 0.292,
+        "1": 0.311,
+        "2": 0.396
       },
-      "confidence": 14,
+      "confidence": 15,
       "uncertainty": {
         "level": "MEDIUM",
         "reasons": [
@@ -631,7 +631,7 @@
       },
       "signals": {
         "season_strength": "富山",
-        "momentum": "鳥栖",
+        "momentum": "富山",
         "home_advantage": "鳥栖",
         "h2h": {
           "available": true,
@@ -655,5 +655,5 @@
       }
     }
   ],
-  "dataset_id": "0e2bc6b44e1cf6798db73d6bd8712630aa9638c3280891eef75dc23f4090c2df"
+  "dataset_id": "fa9d4560c4f5d1737dcb1ca7ec365f4c6229c1310308de3b641cfdbd53ed83e5"
 }

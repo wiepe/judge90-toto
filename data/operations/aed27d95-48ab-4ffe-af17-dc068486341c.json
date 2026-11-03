@@ -1,0 +1,31 @@
+{
+  "run_id": "aed27d95-48ab-4ffe-af17-dc068486341c",
+  "events": [
+    {
+      "state": "started",
+      "trigger": "schedule",
+      "at": "2026-11-03T12:24:26.105Z"
+    },
+    {
+      "state": "results_success",
+      "attempt": 1,
+      "completed": 26,
+      "at": "2026-11-03T12:24:30.118Z"
+    },
+    {
+      "state": "success",
+      "attempt": 1,
+      "round_id": "1670",
+      "dataset_id": "fa9d4560c4f5d1737dcb1ca7ec365f4c6229c1310308de3b641cfdbd53ed83e5",
+      "publication": {
+        "checked_at": "2026-11-03T12:24:59.410Z",
+        "sales_close_at": "2026-11-07T12:50:00+09:00",
+        "remaining_minutes": 5245.0098333333335,
+        "reserve_minutes": 30,
+        "on_time": true
+      },
+      "result_error": null,
+      "at": "2026-11-03T12:24:59.414Z"
+    }
+  ]
+}
