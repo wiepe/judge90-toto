@@ -1,12 +1,12 @@
 {
   "season": "2026/27",
-  "fetched_at": "2026-11-04T23:44:29.668Z",
+  "fetched_at": "2026-11-05T02:50:43.576Z",
   "leagues": [
     {
       "league": "J1",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026",
-      "fetched_at": "2026-11-04T23:44:27.751Z",
+      "fetched_at": "2026-11-05T02:50:41.805Z",
       "matches": [
         {
           "season": "2026/27",
@@ -4954,7 +4954,7 @@
       "league": "J2",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026",
-      "fetched_at": "2026-11-04T23:44:29.223Z",
+      "fetched_at": "2026-11-05T02:50:43.159Z",
       "matches": [
         {
           "season": "2026/27",
@@ -9902,7 +9902,7 @@
       "league": "J3",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026",
-      "fetched_at": "2026-11-04T23:44:29.668Z",
+      "fetched_at": "2026-11-05T02:50:43.576Z",
       "matches": [
         {
           "season": "2026/27",
@@ -14847,5 +14847,5 @@
       ]
     }
   ],
-  "dataset_id": "be8d3ae18ad0763aaf8464a55c9cc8cb0816523184c5151550f21577a2e875d3"
+  "dataset_id": "df98aa22a543cd73eccbb8a41c1f0736b2fac9e758923a65310866352c16d1ae"
 }
