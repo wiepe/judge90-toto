@@ -4,9 +4,9 @@
   "product_id": "01",
   "sales_open_at": "2026-11-03T08:00:00+09:00",
   "sales_close_at": "2026-11-07T12:50:00+09:00",
-  "source_fetched_at": "2026-11-05T17:27:22.470Z",
-  "source_digest": "785ee9126d723831b2e7bbafb058cc4e9f114d3838c974e4d57494b173ead186",
-  "updated_at": "2026-11-05T17:27:43.375Z",
+  "source_fetched_at": "2026-11-05T20:50:27.842Z",
+  "source_digest": "2e04887afcb143eb8bae34a8faeb33b5cd5ff806f525c7f32896e33b08de21ca",
+  "updated_at": "2026-11-05T20:50:49.948Z",
   "model": {
     "data_usage": {
       "season_results": true,
@@ -655,5 +655,5 @@
       }
     }
   ],
-  "dataset_id": "0023250579f44b69e8ca22786d632472fc3a41b7ef1fc69e6d897ad0dc1b82bf"
+  "dataset_id": "d04a6aa29992a2bae00be84edae24960ec4f838c7c351f74f6c817932539e5dd"
 }
