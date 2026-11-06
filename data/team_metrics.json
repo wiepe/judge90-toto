@@ -1,7 +1,7 @@
 {
   "season": "2026/27",
   "source": "J.League Data Site",
-  "generated_at": "2026-11-06T20:06:43.930Z",
+  "generated_at": "2026-11-06T23:13:55.285Z",
   "teams": [
     {
       "team_id": "j90-b41dbc5583c2",
@@ -5044,5 +5044,5 @@
       }
     }
   ],
-  "dataset_id": "ce7ff4239e79774753df494bff44dbe1bb9589638af38b8badd0801aa108deb4"
+  "dataset_id": "b94e6585da37bf1907a5984a4b3e7c264ec25e55d14edcbd6f6e2f162ad599cb"
 }
