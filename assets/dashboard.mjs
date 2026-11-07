@@ -2,7 +2,7 @@ import{riskEstimate,deadlineText,appendMatchDetails}from'./forecast-details.mjs'
 import{mountPersonal}from'./personal-ui.mjs';
 import{renderPerformance}from'./performance.mjs?v=395c073ffe067c72';
 import{optimizePortfolio}from'../scripts/lib/portfolio.mjs';
-import {renderPurchase} from './purchase.mjs?v=408ba51c8ae09d2c';
+import {renderPurchase} from './purchase.mjs?v=87c4210911c1040d';
 const keys=['1','0','2'],colors={'1':'home','0':'draw','2':'away'};
 export const percent=(x,d=1)=>Number.isFinite(x)?(100*x).toFixed(d)+'%':'未評価';
 export function element(doc,tag,text,className){const e=doc.createElement(tag);if(text!==undefined)e.textContent=text;if(className)e.className=className;return e;}
@@ -11,7 +11,7 @@ export function purchaseState(data,now=new Date()){
  const checked=globalThis.Judge90DataStatus.assess(p,r,w,s,now);
  if(checked.current){try{optimizePortfolio(p.matches,100);}catch{return{current:false,code:'invalid',label:'確率データ不正 · 購入候補を停止',message:'13試合の番号・予測確率を検証できません。'};}}
  let code=checked.current?'ready':s?.state==='error'?'error':s?.state==='idle'?'idle':!p?'missing':now>=new Date(p.sales_close_at)?'closed':now<new Date(p.sales_open_at)?'not_open':'stale';
- return {...checked,code,label:({ready:'購入候補を確認できます',error:'取得失敗 · 購入候補を停止',idle:'販売対象なし · 過去予測',missing:'未更新 · データ未取得',closed:'販売終了 · 過去予測',not_open:'販売開始前',stale:'最新性未確認 · 購入候補を停止'})[code]};
+ return {...checked,code,label:code==='idle'&&s?.reason==='unsupported_competition'?'第'+s.target_round_id+'回は未対応大会を含む · 予測の対応待ち':({ready:'購入候補を確認できます',error:'取得失敗 · 購入候補を停止',idle:'販売対象なし · 過去予測',missing:'未更新 · データ未取得',closed:'販売終了 · 過去予測',not_open:'販売開始前',stale:'最新性未確認 · 購入候補を停止'})[code]};
 }
 export function navigate(doc,hash='#forecast'){
  const target=['forecast','purchase','performance'].includes(hash.slice(1))?hash.slice(1):'forecast';
@@ -21,7 +21,7 @@ export function navigate(doc,hash='#forecast'){
 export function renderDashboard(doc,data,now=new Date()){
  const openNumbers=new Set([...doc.querySelectorAll('.match-card')].filter(c=>c.querySelector('details')?.open).map(c=>c.dataset.number));
  const state=purchaseState(data,now),p=data.predictions,matches=[...(p?.matches||[])].sort((a,b)=>a.number-b.number);
- doc.getElementById('roundTitle').textContent=p?.round_id?'第'+p.round_id+'回 toto':'開催回未取得';
+ doc.getElementById('roundTitle').textContent=p?.round_id?'第'+p.round_id+'回 toto'+(data.status?.reason==='unsupported_competition'?'（保存予測）':''):'開催回未取得';
  const banner=doc.getElementById('purchaseState');banner.textContent=state.label;banner.dataset.state=state.code;banner.title=state.message;
  const date=new Date(p?.updated_at);doc.getElementById('freshness').textContent=Number.isFinite(date.getTime())?'予測更新 '+date.toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'})+' JST ／ 締切 '+new Date(p.sales_close_at).toLocaleString('ja-JP',{timeZone:'Asia/Tokyo'}):'予測更新日時：未取得';
  doc.getElementById('pickNotice').textContent=state.current?'本命13個は100円の1口。予算別のダブル・トリプルは「購入」へ。':'過去・未検証の予測です。最新の購入候補として使わないでください。';
@@ -41,8 +41,8 @@ export function renderDashboard(doc,data,now=new Date()){
   const quality=data.status?.data_quality?.rows?.find(r=>r.number===m.number);details.append(element(doc,'p','天気：'+(quality?.weather?.label||'取得状態不明・利用は確認できません')));card.append(details);cards.append(card);
  }
  doc.getElementById('dataEvidence').textContent=state.message+' 予測使用：成績・フォーム・ホーム／アウェイ成績、取得できたH2H。天気・負傷・スタメンは本番2.1では未使用。';
- const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current},budget);
- for(const b of doc.querySelectorAll('[data-quick-budget]'))b.onclick=()=>renderPurchase(doc,doc.getElementById('purchaseContent'),{current:purchaseState(data,new Date()).current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current},Number(b.dataset.quickBudget));
+ const budget=Number(doc.querySelector('#purchaseContent [aria-pressed=true]')?.dataset.amount)||1000;renderPurchase(doc,doc.getElementById('purchaseContent'),{current:state.current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current,getUnavailableMessage:()=>purchaseState(data,new Date()).message},budget);
+ for(const b of doc.querySelectorAll('[data-quick-budget]'))b.onclick=()=>renderPurchase(doc,doc.getElementById('purchaseContent'),{current:purchaseState(data,new Date()).current,predictions:p,evaluation:data.evaluation,getCurrent:()=>purchaseState(data,new Date()).current,getUnavailableMessage:()=>purchaseState(data,new Date()).message},Number(b.dataset.quickBudget));
  renderPerformance(doc,doc.getElementById('performanceContent'),data.evaluation,now,{currentRoundId:p?.round_id});
  return state;
 }

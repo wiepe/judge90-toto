@@ -6,6 +6,12 @@ test('navigation handles deep links without losing labels or showing multiple sc
 test('errors, expired predictions, closed sales and missing data remain distinct and stop purchases',()=>{const d=bundle(),now=new Date(d.predictions.updated_at);for(const [data,time,code]of [[{...d,status:{state:'error',error:'<img>'}},now,'error'],[d,new Date(+now+7*3600000),'stale'],[d,new Date(d.predictions.sales_close_at),'closed'],[{},now,'missing']]){const dom=new JSDOM(html);assert.equal(renderDashboard(dom.window.document,data,time).code,code);assert.doesNotMatch(dom.window.document.getElementById('purchaseContent').textContent,/まずは100円/);assert.equal(dom.window.document.querySelectorAll('img').length,0);dom.window.close();}});
 test('HTTP errors cannot be mistaken for current forecasts',async()=>{const d=await loadDashboard(undefined,async()=>({ok:false}));assert.equal(purchaseState(d).current,false);});
 test('invalid probabilities cannot advertise that purchase candidates are ready',()=>{const d=bundle();d.predictions.matches[0].probabilities['0']=2;const state=purchaseState(d,new Date(d.predictions.updated_at));assert.equal(state.current,false);assert.equal(state.code,'invalid');});
+test('unsupported competition names the target round while clearly retaining old predictions and stopping purchases',()=>{
+ const d=bundle(),dom=new JSDOM(html);d.status={state:'idle',reason:'unsupported_competition',target_round_id:'1672',message:'第1672回はリーグカップ戦を含むため対応待ちです。'};
+ const s=renderDashboard(dom.window.document,d,new Date(d.predictions.updated_at));
+ assert.equal(s.current,false);assert.match(dom.window.document.getElementById('purchaseState').textContent,/1672.*対応待ち/);assert.match(dom.window.document.getElementById('roundTitle').textContent,/1668.*保存予測/);
+ assert.equal(dom.window.document.querySelectorAll('.purchase-plan').length,0);assert.match(dom.window.document.getElementById('purchaseContent').textContent,/リーグカップ戦/);dom.window.close();
+});
 
 for (const selector of ['[data-amount="500"]', '[data-quick-budget="500"]']) {
  test('purchase clicks recheck the clock after freshness expires: '+selector, t => {

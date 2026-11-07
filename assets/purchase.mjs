@@ -39,10 +39,10 @@ export function comparePlans(matches,budget){
  const shared=individual.tickets.filter(t=>rows.some(r=>r.join('')===t.outcomes.join(''))).length;
  return{individual,rectangular,shared_tickets:shared,combined_cost_yen:null,high_payout_available:false};
 }
-export function renderPurchase(doc,container,{current,predictions,evaluation,getCurrent},budget=1000){
- container.replaceChildren();if(!current||(getCurrent&&!getCurrent())){container.textContent='最新性を確認できないため、購入候補を停止しています。';return;}
+export function renderPurchase(doc,container,{current,predictions,evaluation,getCurrent,getUnavailableMessage},budget=1000){
+ container.replaceChildren();if(!current||(getCurrent&&!getCurrent())){container.textContent=getUnavailableMessage?'購入候補を停止しています。'+getUnavailableMessage():'最新性を確認できないため、購入候補を停止しています。';return;}
  const buttons=el(doc,'div',undefined,'budget-buttons');
- for(const amount of[100,500,1000,3000]){const b=el(doc,'button',amount.toLocaleString('ja-JP')+'円');b.type='button';b.dataset.amount=String(amount);b.setAttribute('aria-pressed',String(amount===budget));b.onclick=()=>renderPurchase(doc,container,{current,predictions,evaluation,getCurrent},amount);buttons.append(b);}container.append(buttons);
+ for(const amount of[100,500,1000,3000]){const b=el(doc,'button',amount.toLocaleString('ja-JP')+'円');b.type='button';b.dataset.amount=String(amount);b.setAttribute('aria-pressed',String(amount===budget));b.onclick=()=>renderPurchase(doc,container,{current,predictions,evaluation,getCurrent,getUnavailableMessage},amount);buttons.append(b);}container.append(buttons);
  try{const plans=comparePlans(predictions.matches,budget),byNumber=new Map(predictions.matches.map(m=>[m.number,m]));
  for(const [kind,plan]of Object.entries(plans).filter(([k])=>['individual','rectangular'].includes(k))){
   const panel=el(doc,'article',undefined,'panel purchase-plan');panel.dataset.kind=kind;

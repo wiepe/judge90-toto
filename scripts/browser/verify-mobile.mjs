@@ -83,14 +83,17 @@ try{
  assert.equal(await cached.evaluate(()=>getComputedStyle(document.querySelector('.selection-grid')).gridTemplateColumns.split(' ').length),1);
  await cached.close();
  // Simulate acquisition failure, stale data, closed sales and generation races.
- for(const mode of['error','stale','closed','mixed','invalid']){
+ for(const mode of['error','stale','closed','mixed','invalid','unsupported']){
   const page=await pageFor(393);await page.route('**/*.json?*',async route=>{const path=new URL(route.request().url()).pathname.slice(1);const d=Object.hasOwn(fixtures,path)?structuredClone(fixtures[path]):JSON.parse(readFileSync(resolve(root,path)));
    if(mode==='error'&&path==='data/update_status.json'){d.state='error';d.error='simulated outage';}
+   if(mode==='unsupported'&&path==='data/update_status.json'){d.state='idle';d.reason='unsupported_competition';d.target_round_id='1672';d.message='第1672回は未対応のリーグカップ戦を含むため予測の対応待ちです。';}
    if(mode==='stale'&&path==='predictions.json')d.updated_at=new Date(Date.parse(prediction.updated_at)-7*3600000).toISOString();
    if(mode==='closed'&&path==='predictions.json')d.sales_close_at=prediction.updated_at;
    if(mode==='mixed'&&path==='recommendation.json')d.dataset_id='different';
    if(mode==='invalid'&&path==='predictions.json')d.matches[0].probabilities['1']=9;
-   await route.fulfill({json:d});});await page.goto(base+'/#purchase');await page.waitForFunction(()=>document.getElementById('purchaseState').textContent!=='読込中 · 購入候補は停止中');assert.equal(await page.locator('.purchase-plan').count(),0,mode+' must stop buying');await page.close();
+   await route.fulfill({json:d});});await page.goto(base+'/#purchase');await page.waitForFunction(()=>document.getElementById('purchaseState').textContent!=='読込中 · 購入候補は停止中');assert.equal(await page.locator('.purchase-plan').count(),0,mode+' must stop buying');
+   if(mode==='unsupported'){assert.match(await page.locator('#purchaseContent').textContent(),/1672.*リーグカップ戦/);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await page.screenshot({path:resolve(out,'unsupported-purchase-393.png')});await page.locator('.bottom-nav a[href="#forecast"]').click();assert.match(await page.locator('#roundTitle').textContent(),/保存予測/);await page.screenshot({path:resolve(out,'unsupported-forecast-393.png')});}
+   await page.close();
  }
  const diagnostic=await pageFor(393);await diagnostic.goto(base+'/research/diagnostics.html');await diagnostic.locator('#diagnostics table').first().waitFor();assert.equal(await diagnostic.locator('#diagnostics>details').count(),8);assert.equal(await diagnostic.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await diagnostic.close();
  const page=await pageFor(393);await page.goto(base+'/#performance');assert.equal(await page.evaluate(()=>localStorage.length),0,'Opening the site must not create purchase records');
@@ -99,5 +102,5 @@ try{
  await page.locator('.bottom-nav a[href="#forecast"]').click();await page.locator('.bottom-nav a[href="#performance"]').click();await page.locator('#performance').waitFor({state:'visible'});await page.locator('input[name=passphrase]').waitFor();await page.locator('input[name=passphrase]').fill('synthetic-test-passphrase');await page.getByRole('button',{name:'開く / 初回作成'}).click();await page.getByText('購入総額 100円',{exact:false}).waitFor();await page.clock.fastForward(301000);await page.locator('input[name=passphrase]').waitFor();
  // Minute revalidation must remove purchase candidates when freshness expires.
  await page.locator('.bottom-nav a[href="#purchase"]').click();await page.clock.fastForward(7*3600000);assert.equal(await page.locator('.purchase-plan').count(),0);await page.close();
- assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);console.log(JSON.stringify({widths:[360,393,412,768],screens:3,budgets:4,failure_states:5,private_encryption:true,auto_lock:true,old_cache_recovery:true,external_writes:writes.length,errors:errors.length}));
+ assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);console.log(JSON.stringify({widths:[360,393,412,768],screens:3,budgets:4,failure_states:6,private_encryption:true,auto_lock:true,old_cache_recovery:true,external_writes:writes.length,errors:errors.length}));
 }finally{await browser.close();await new Promise(r=>server.close(r));}

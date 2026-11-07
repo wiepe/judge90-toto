@@ -8,6 +8,7 @@ import { promisify } from 'node:util';
 import { fetchText } from './lib/http.mjs';
 import { parseToto,parseLotInfo,advertisedRounds } from './lib/toto.mjs';
 import { evaluatePublished } from './lib/evaluation.mjs';
+import { inspectRoundSupport } from './lib/round-support.mjs';
 import { update } from './update.mjs';
 import { readJSON,saveJSON,reconcileHistory,publicationWindow } from './lib/operation.mjs';
 const exec=promisify(execFile);
@@ -26,9 +27,9 @@ export async function discover({fetcher=fetchText,now=new Date()}={}) {
   if(errors.length||!ids.size)throw new Error('Cannot verify advertised toto rounds: '+errors.join('; '));
   return null;
 }
-export async function operate({root=process.cwd(),now=()=>new Date(),discoverRound=discover,updateRun=update,refreshResults,wait=ms=>new Promise(r=>setTimeout(r,ms)),attempts=3}={}) {
+export async function operate({root=process.cwd(),now=()=>new Date(),discoverRound=discover,updateRun=update,refreshResults,checkSupport=inspectRoundSupport,wait=ms=>new Promise(r=>setTimeout(r,ms)),attempts=3}={}) {
   const executionStart=performance.now();
-  const run_id=randomUUID(),events=[];let resultError;
+  const run_id=randomUUID(),events=[];let resultError,verifiedFixtures;
   const record=e=>{events.push({...e,at:now().toISOString()});saveJSON(join(root,'data/operations',run_id+'.json'),{run_id,events});};
   record({state:'started',trigger:process.env.GITHUB_EVENT_NAME||'local'});
   for(let resultAttempt=1;resultAttempt<=attempts;resultAttempt++) {
@@ -39,7 +40,7 @@ export async function operate({root=process.cwd(),now=()=>new Date(),discoverRou
       const scratch=mkdtempSync(join(tmpdir(),'judge90-results-'));
       try {cpSync(join(root,'data'),join(scratch,'data'),{recursive:true});await exec(process.execPath,[fileURLToPath(new URL('./fetch_jleague.mjs',import.meta.url))],{cwd:scratch,timeout:2*60000,maxBuffer:4*1024*1024});fixtures=readJSON(join(scratch,'data/jleague_matches.json'));}finally{rmSync(scratch,{recursive:true,force:true});}
     }
-    const results=reconcileHistory(root,fixtures,now());evaluatePublished(root,fixtures,now());resultError=null;record({state:'results_success',attempt:resultAttempt,completed:results.completed});break;
+    const results=reconcileHistory(root,fixtures,now());evaluatePublished(root,fixtures,now());verifiedFixtures=fixtures;resultError=null;record({state:'results_success',attempt:resultAttempt,completed:results.completed});break;
   } catch(e) {resultError=e.message;record({state:'results_error',attempt:resultAttempt,error:e.message});if(/robots\.txt|HTTP (401|403|429)|Unknown team:|Ambiguous team alias:|Duplicate team ID:/.test(e.message)||resultAttempt===attempts)break;await wait(resultAttempt*30000);}
   }
   let last;
@@ -54,6 +55,15 @@ export async function operate({root=process.cwd(),now=()=>new Date(),discoverRou
       if(performance.now()-executionStart>25*60000)throw new Error('Operation execution budget exhausted');
       const publication=publicationWindow(round,now());
       if(!publication.on_time)throw new Error('Sales close is less than 30 minutes away; retaining last forecast');
+      // Real discovery always supplies 13 parsed games; minimal injected test
+      // doubles may omit matches. Never use stale fixtures for classification.
+      if(verifiedFixtures&&round.matches){
+        const support=await checkSupport(round,verifiedFixtures);
+        if(!support.supported){
+          const status={state:'idle',reason:'unsupported_competition',checked_at:now().toISOString(),target_round_id:round.round_id,target_sales_close_at:round.sales_close_at,unsupported_matches:support.unsupported,previous_data_retained:true,result_error:null,message:`第${round.round_id}回は未対応のリーグカップ戦を${support.unsupported.length}試合含むため、予測・購入候補を作成していません。表示中は前回の保存予測です。結果照合と定期確認は継続します。`};
+          saveJSON(join(root,'data/update_status.json'),status);record(status);return status;
+        }
+      }
       // Scope the requested official round to this update only. The pipeline re-fetches and validates it.
       const old=process.env.JUDGE90_ROUND;process.env.JUDGE90_ROUND=round.round_id;
       let status;try{status=await updateRun({root,now});}finally{if(old===undefined)delete process.env.JUDGE90_ROUND;else process.env.JUDGE90_ROUND=old;}
