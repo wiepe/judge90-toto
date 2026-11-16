@@ -8,12 +8,12 @@
   "metrics": {
     "current": {
       "overall": {
-        "n": 54,
-        "hits": 29,
-        "accuracy": 0.5370370370370371,
-        "logloss": 1.0064008160969722,
-        "brier": 0.6014652445355545,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 37,
+        "accuracy": 0.5,
+        "logloss": 1.034800620201242,
+        "brier": 0.6214545781812532,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -22,23 +22,23 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 26,
-            "mean_probability": 0.3744634066537685,
-            "observed_accuracy": 0.38461538461538464
+            "n": 30,
+            "mean_probability": 0.3736063380238325,
+            "observed_accuracy": 0.4
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 20,
-            "mean_probability": 0.45242716152520135,
-            "observed_accuracy": 0.7
+            "n": 32,
+            "mean_probability": 0.4550956142817911,
+            "observed_accuracy": 0.59375
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 7,
-            "mean_probability": 0.5366315030289592,
-            "observed_accuracy": 0.5714285714285714
+            "n": 11,
+            "mean_probability": 0.5358134346432671,
+            "observed_accuracy": 0.45454545454545453
           },
           {
             "lower": 0.6,
@@ -48,21 +48,21 @@
             "observed_accuracy": 1.0
           }
         ],
-        "draw_brier": 0.14387926919366537,
+        "draw_brier": 0.15009075711640732,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 41,
-            "mean_probability": 0.27473023236925675,
-            "observed_draw_rate": 0.12195121951219512
+            "n": 59,
+            "mean_probability": 0.2730401372638661,
+            "observed_draw_rate": 0.15254237288135594
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 13,
-            "mean_probability": 0.3059333077179231,
-            "observed_draw_rate": 0.23076923076923078
+            "n": 15,
+            "mean_probability": 0.3062168031968032,
+            "observed_draw_rate": 0.2
           }
         ]
       },
@@ -120,12 +120,12 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 15,
-          "accuracy": 0.75,
-          "logloss": 0.8940260826517876,
-          "brier": 0.5211414263847095,
-          "draw_actual": 1,
+          "n": 30,
+          "hits": 19,
+          "accuracy": 0.6333333333333333,
+          "logloss": 0.9616590709248513,
+          "brier": 0.5687507461602564,
+          "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -134,33 +134,33 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 8,
-              "mean_probability": 0.37555977004339336,
-              "observed_accuracy": 0.5
+              "n": 9,
+              "mean_probability": 0.3772545485208897,
+              "observed_accuracy": 0.4444444444444444
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 9,
-              "mean_probability": 0.45251476169427346,
-              "observed_accuracy": 0.8888888888888888
+              "n": 17,
+              "mean_probability": 0.45824093997441406,
+              "observed_accuracy": 0.7058823529411765
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 3,
-              "mean_probability": 0.5247394827517567,
-              "observed_accuracy": 1.0
+              "n": 4,
+              "mean_probability": 0.5213782640603454,
+              "observed_accuracy": 0.75
             }
           ],
-          "draw_brier": 0.0991688167404903,
+          "draw_brier": 0.10533556616477803,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 16,
-              "mean_probability": 0.27497083333333333,
-              "observed_draw_rate": 0.0
+              "n": 26,
+              "mean_probability": 0.2735355311355311,
+              "observed_draw_rate": 0.038461538461538464
             },
             {
               "lower": 0.3,
@@ -172,12 +172,12 @@
           ]
         },
         "J3": {
-          "n": 20,
-          "hits": 10,
-          "accuracy": 0.5,
-          "logloss": 1.0422324800900238,
-          "brier": 0.6254744000075081,
-          "draw_actual": 2,
+          "n": 30,
+          "hits": 14,
+          "accuracy": 0.4666666666666667,
+          "logloss": 1.0701666984248703,
+          "brier": 0.6459436574509818,
+          "draw_actual": 5,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -186,22 +186,22 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 12,
-              "mean_probability": 0.37523967874687764,
-              "observed_accuracy": 0.4166666666666667
+              "n": 15,
+              "mean_probability": 0.37228032908924436,
+              "observed_accuracy": 0.4666666666666667
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 4,
-              "mean_probability": 0.45663617863113687,
-              "observed_accuracy": 0.75
+              "n": 8,
+              "mean_probability": 0.4529497520901575,
+              "observed_accuracy": 0.5
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 3,
-              "mean_probability": 0.5318955897182573,
+              "n": 6,
+              "mean_probability": 0.5369865701736476,
               "observed_accuracy": 0.3333333333333333
             },
             {
@@ -212,20 +212,20 @@
               "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.12205810586217443,
+          "draw_brier": 0.15339023190887216,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 14,
-              "mean_probability": 0.2734135007849293,
-              "observed_draw_rate": 0.14285714285714285
+              "n": 22,
+              "mean_probability": 0.2709466866466867,
+              "observed_draw_rate": 0.22727272727272727
             },
             {
               "lower": 0.3,
               "upper": 0.4,
-              "n": 6,
-              "mean_probability": 0.3059222222222222,
+              "n": 8,
+              "mean_probability": 0.3064565476190476,
               "observed_draw_rate": 0.0
             }
           ]
@@ -234,12 +234,12 @@
     },
     "league_mean": {
       "overall": {
-        "n": 54,
-        "hits": 25,
-        "accuracy": 0.46296296296296297,
-        "logloss": 1.0446678408281818,
-        "brier": 0.632604327895914,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 35,
+        "accuracy": 0.47297297297297297,
+        "logloss": 1.0452826780395128,
+        "brier": 0.6320562088633077,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -248,26 +248,26 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 20,
-            "mean_probability": 0.3884643024546099,
-            "observed_accuracy": 0.55
+            "n": 30,
+            "mean_probability": 0.3889654141498909,
+            "observed_accuracy": 0.5
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 34,
-            "mean_probability": 0.4224182980367252,
-            "observed_accuracy": 0.4117647058823529
+            "n": 44,
+            "mean_probability": 0.4237363716152371,
+            "observed_accuracy": 0.45454545454545453
           }
         ],
-        "draw_brier": 0.13847701499327592,
+        "draw_brier": 0.14599706325116418,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 54,
-            "mean_probability": 0.26162256632328745,
-            "observed_draw_rate": 0.14814814814814814
+            "n": 74,
+            "mean_probability": 0.26011681126374714,
+            "observed_draw_rate": 0.16216216216216217
           }
         ]
       },
@@ -304,12 +304,12 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 11,
-          "accuracy": 0.55,
-          "logloss": 1.0185988617650683,
-          "brier": 0.614809856837455,
-          "draw_actual": 1,
+          "n": 30,
+          "hits": 15,
+          "accuracy": 0.5,
+          "logloss": 1.0283363801576795,
+          "brier": 0.6215722107724154,
+          "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -318,29 +318,29 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 20,
-              "mean_probability": 0.3884643024546099,
-              "observed_accuracy": 0.55
+              "n": 30,
+              "mean_probability": 0.3889654141498909,
+              "observed_accuracy": 0.5
             }
           ],
-          "draw_brier": 0.09741603208432856,
+          "draw_brier": 0.10466435357121193,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 20,
-              "mean_probability": 0.27337397644875555,
-              "observed_draw_rate": 0.05
+              "n": 30,
+              "mean_probability": 0.27250462148004045,
+              "observed_draw_rate": 0.06666666666666667
             }
           ]
         },
         "J3": {
-          "n": 20,
-          "hits": 9,
-          "accuracy": 0.45,
-          "logloss": 1.0237647645291676,
-          "brier": 0.6206453956470286,
-          "draw_actual": 2,
+          "n": 30,
+          "hits": 15,
+          "accuracy": 0.5,
+          "logloss": 1.0312011963785495,
+          "brier": 0.6224488158674207,
+          "draw_actual": 5,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -349,19 +349,19 @@
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 20,
-              "mean_probability": 0.427740418195552,
-              "observed_accuracy": 0.45
+              "n": 30,
+              "mean_probability": 0.42789955272442737,
+              "observed_accuracy": 0.5
             }
           ],
-          "draw_brier": 0.1104971609306907,
+          "draw_brier": 0.14481190413710915,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 20,
-              "mean_probability": 0.24351381290552987,
-              "observed_draw_rate": 0.1
+              "n": 30,
+              "mean_probability": 0.24278808649147543,
+              "observed_draw_rate": 0.16666666666666666
             }
           ]
         }
@@ -369,12 +369,12 @@
     },
     "elo": {
       "overall": {
-        "n": 54,
-        "hits": 25,
-        "accuracy": 0.46296296296296297,
-        "logloss": 1.0262436366668832,
-        "brier": 0.6134559058974295,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 34,
+        "accuracy": 0.4594594594594595,
+        "logloss": 1.0560872620337758,
+        "brier": 0.633216257418446,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -383,40 +383,40 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 17,
-            "mean_probability": 0.37008259696150403,
-            "observed_accuracy": 0.29411764705882354
+            "n": 21,
+            "mean_probability": 0.3725487258364624,
+            "observed_accuracy": 0.38095238095238093
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 24,
-            "mean_probability": 0.44089451874130825,
-            "observed_accuracy": 0.5
+            "n": 34,
+            "mean_probability": 0.44281994454477897,
+            "observed_accuracy": 0.47058823529411764
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 9,
-            "mean_probability": 0.5503039124298562,
-            "observed_accuracy": 0.4444444444444444
+            "n": 14,
+            "mean_probability": 0.539652564471546,
+            "observed_accuracy": 0.42857142857142855
           },
           {
             "lower": 0.6,
             "upper": 0.7,
-            "n": 4,
-            "mean_probability": 0.6271115676840973,
-            "observed_accuracy": 1.0
+            "n": 5,
+            "mean_probability": 0.6231307518022398,
+            "observed_accuracy": 0.8
           }
         ],
-        "draw_brier": 0.14511788016763216,
+        "draw_brier": 0.1511116937673688,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 54,
-            "mean_probability": 0.28739480290585184,
-            "observed_draw_rate": 0.14814814814814814
+            "n": 74,
+            "mean_probability": 0.28750299175680644,
+            "observed_draw_rate": 0.16216216216216217
           }
         ]
       },
@@ -467,63 +467,11 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 13,
-          "accuracy": 0.65,
-          "logloss": 0.9085938889894232,
-          "brier": 0.5315042698559671,
-          "draw_actual": 1,
-          "draw_picks": 0,
-          "draw_hits": 0,
-          "draw_precision": null,
-          "draw_recall": 0.0,
-          "calibration_bins": [
-            {
-              "lower": 0,
-              "upper": 0.4,
-              "n": 5,
-              "mean_probability": 0.37467660344523096,
-              "observed_accuracy": 0.6
-            },
-            {
-              "lower": 0.4,
-              "upper": 0.5,
-              "n": 10,
-              "mean_probability": 0.43834744888993943,
-              "observed_accuracy": 0.5
-            },
-            {
-              "lower": 0.5,
-              "upper": 0.6,
-              "n": 2,
-              "mean_probability": 0.5739586459663326,
-              "observed_accuracy": 1.0
-            },
-            {
-              "lower": 0.6,
-              "upper": 0.7,
-              "n": 3,
-              "mean_probability": 0.6277061198676324,
-              "observed_accuracy": 1.0
-            }
-          ],
-          "draw_brier": 0.10224037803186736,
-          "draw_calibration": [
-            {
-              "lower": 0.2,
-              "upper": 0.3,
-              "n": 20,
-              "mean_probability": 0.28426695275236136,
-              "observed_draw_rate": 0.05
-            }
-          ]
-        },
-        "J3": {
-          "n": 20,
-          "hits": 7,
-          "accuracy": 0.35,
-          "logloss": 1.0815735228835135,
-          "brier": 0.6456962034752703,
+          "n": 30,
+          "hits": 17,
+          "accuracy": 0.5666666666666667,
+          "logloss": 0.9750170699002033,
+          "brier": 0.5765415369670318,
           "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -534,39 +482,91 @@
               "lower": 0,
               "upper": 0.4,
               "n": 6,
-              "mean_probability": 0.3694621044323896,
-              "observed_accuracy": 0.0
+              "mean_probability": 0.3770989351969936,
+              "observed_accuracy": 0.5
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 9,
-              "mean_probability": 0.4364824035449709,
-              "observed_accuracy": 0.4444444444444444
+              "n": 17,
+              "mean_probability": 0.43789032854489923,
+              "observed_accuracy": 0.47058823529411764
             },
             {
               "lower": 0.5,
               "upper": 0.6,
               "n": 4,
-              "mean_probability": 0.5613430300730134,
-              "observed_accuracy": 0.5
+              "mean_probability": 0.5524579784498231,
+              "observed_accuracy": 0.75
             },
             {
               "lower": 0.6,
               "upper": 0.7,
-              "n": 1,
-              "mean_probability": 0.6253279111334918,
+              "n": 3,
+              "mean_probability": 0.6277061198676324,
               "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.12324713587431935,
+          "draw_brier": 0.10972180264076477,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 20,
-              "mean_probability": 0.2873943235779839,
-              "observed_draw_rate": 0.1
+              "n": 30,
+              "mean_probability": 0.2863268870612513,
+              "observed_draw_rate": 0.06666666666666667
+            }
+          ]
+        },
+        "J3": {
+          "n": 30,
+          "hits": 12,
+          "accuracy": 0.4,
+          "logloss": 1.1095379050313454,
+          "brier": 0.6659715829372536,
+          "draw_actual": 5,
+          "draw_picks": 0,
+          "draw_hits": 0,
+          "draw_precision": null,
+          "draw_recall": 0.0,
+          "calibration_bins": [
+            {
+              "lower": 0,
+              "upper": 0.4,
+              "n": 9,
+              "mean_probability": 0.373297902984297,
+              "observed_accuracy": 0.3333333333333333
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "n": 12,
+              "mean_probability": 0.44517418335599457,
+              "observed_accuracy": 0.4166666666666667
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "n": 7,
+              "mean_probability": 0.5408368841654804,
+              "observed_accuracy": 0.42857142857142855
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "n": 2,
+              "mean_probability": 0.616267699704151,
+              "observed_accuracy": 0.5
+            }
+          ],
+          "draw_brier": 0.15213320028779823,
+          "draw_calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "n": 30,
+              "mean_probability": 0.28664403159523466,
+              "observed_draw_rate": 0.16666666666666666
             }
           ]
         }
@@ -574,12 +574,12 @@
     },
     "poisson": {
       "overall": {
-        "n": 54,
-        "hits": 30,
-        "accuracy": 0.5555555555555556,
-        "logloss": 0.998067962411363,
-        "brier": 0.5965333873814814,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 40,
+        "accuracy": 0.5405405405405406,
+        "logloss": 1.01774447465961,
+        "brier": 0.6110412725282468,
+        "draw_actual": 12,
         "draw_picks": 1,
         "draw_hits": 0,
         "draw_precision": 0.0,
@@ -588,53 +588,53 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 15,
-            "mean_probability": 0.3752816536035641,
-            "observed_accuracy": 0.4666666666666667
+            "n": 17,
+            "mean_probability": 0.3741858433426971,
+            "observed_accuracy": 0.5294117647058824
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 20,
-            "mean_probability": 0.435852556762223,
-            "observed_accuracy": 0.55
+            "n": 31,
+            "mean_probability": 0.44171961501104934,
+            "observed_accuracy": 0.5161290322580645
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 14,
-            "mean_probability": 0.5348979233876786,
-            "observed_accuracy": 0.6428571428571429
+            "n": 19,
+            "mean_probability": 0.5324487260472295,
+            "observed_accuracy": 0.5789473684210527
           },
           {
             "lower": 0.6,
             "upper": 0.7,
-            "n": 5,
-            "mean_probability": 0.66312908730648,
-            "observed_accuracy": 0.6
+            "n": 7,
+            "mean_probability": 0.6526693345336143,
+            "observed_accuracy": 0.5714285714285714
           }
         ],
-        "draw_brier": 0.1382278253559439,
+        "draw_brier": 0.1453937961701771,
         "draw_calibration": [
           {
             "lower": 0.1,
             "upper": 0.2,
-            "n": 3,
-            "mean_probability": 0.17587665574783604,
+            "n": 4,
+            "mean_probability": 0.17967927632801206,
             "observed_draw_rate": 0.0
           },
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 44,
-            "mean_probability": 0.25083177358455866,
-            "observed_draw_rate": 0.18181818181818182
+            "n": 62,
+            "mean_probability": 0.25257626894427326,
+            "observed_draw_rate": 0.1935483870967742
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 7,
-            "mean_probability": 0.32105779017397135,
+            "n": 8,
+            "mean_probability": 0.3198978427347492,
             "observed_draw_rate": 0.0
           }
         ]
@@ -700,12 +700,12 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 15,
-          "accuracy": 0.75,
-          "logloss": 0.8570432645261714,
-          "brier": 0.49533505569527314,
-          "draw_actual": 1,
+          "n": 30,
+          "hits": 20,
+          "accuracy": 0.6666666666666666,
+          "logloss": 0.9137857454683905,
+          "brier": 0.536450881287441,
+          "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -721,16 +721,16 @@
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 9,
-              "mean_probability": 0.43239858900082717,
-              "observed_accuracy": 0.6666666666666666
+              "n": 17,
+              "mean_probability": 0.44125655977895234,
+              "observed_accuracy": 0.5882352941176471
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 5,
-              "mean_probability": 0.5447216041640127,
-              "observed_accuracy": 1.0
+              "n": 7,
+              "mean_probability": 0.5409004665125695,
+              "observed_accuracy": 0.8571428571428571
             },
             {
               "lower": 0.6,
@@ -740,31 +740,31 @@
               "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.08991254447551547,
+          "draw_brier": 0.10016383119933074,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 16,
-              "mean_probability": 0.24948258381714533,
-              "observed_draw_rate": 0.0625
+              "n": 25,
+              "mean_probability": 0.25224623036614235,
+              "observed_draw_rate": 0.08
             },
             {
               "lower": 0.3,
               "upper": 0.4,
-              "n": 4,
-              "mean_probability": 0.308557682843152,
+              "n": 5,
+              "mean_probability": 0.30920178840656043,
               "observed_draw_rate": 0.0
             }
           ]
         },
         "J3": {
-          "n": 20,
-          "hits": 11,
-          "accuracy": 0.55,
-          "logloss": 1.039084894717914,
-          "brier": 0.6214929244487665,
-          "draw_actual": 2,
+          "n": 30,
+          "hits": 16,
+          "accuracy": 0.5333333333333333,
+          "logloss": 1.0642137325142513,
+          "brier": 0.6415761470915942,
+          "draw_actual": 5,
           "draw_picks": 1,
           "draw_hits": 0,
           "draw_precision": 0.0,
@@ -773,47 +773,47 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 6,
-              "mean_probability": 0.37577044714605706,
-              "observed_accuracy": 0.6666666666666666
+              "n": 8,
+              "mean_probability": 0.3733196519560914,
+              "observed_accuracy": 0.75
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 7,
-              "mean_probability": 0.4416913167066609,
-              "observed_accuracy": 0.42857142857142855
+              "n": 10,
+              "mean_probability": 0.4458321931809948,
+              "observed_accuracy": 0.4
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 4,
-              "mean_probability": 0.5307463591614565,
-              "observed_accuracy": 0.5
+              "n": 7,
+              "mean_probability": 0.5268921513353946,
+              "observed_accuracy": 0.42857142857142855
             },
             {
               "lower": 0.6,
               "upper": 0.7,
-              "n": 3,
-              "mean_probability": 0.6914138365582144,
-              "observed_accuracy": 0.6666666666666666
+              "n": 5,
+              "mean_probability": 0.6654562829755086,
+              "observed_accuracy": 0.6
             }
           ],
-          "draw_brier": 0.11367798123440329,
+          "draw_brier": 0.14539113085301952,
           "draw_calibration": [
             {
               "lower": 0.1,
               "upper": 0.2,
-              "n": 3,
-              "mean_probability": 0.17587665574783604,
+              "n": 4,
+              "mean_probability": 0.17967927632801206,
               "observed_draw_rate": 0.0
             },
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 15,
-              "mean_probability": 0.2539594689253767,
-              "observed_draw_rate": 0.13333333333333333
+              "n": 24,
+              "mean_probability": 0.2549203438594074,
+              "observed_draw_rate": 0.20833333333333334
             },
             {
               "lower": 0.3,
@@ -828,12 +828,12 @@
     },
     "dixon_coles": {
       "overall": {
-        "n": 54,
-        "hits": 30,
-        "accuracy": 0.5555555555555556,
-        "logloss": 0.9925005093442603,
-        "brier": 0.593797220470755,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 40,
+        "accuracy": 0.5405405405405406,
+        "logloss": 1.013920511036877,
+        "brier": 0.6092378963284962,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -842,30 +842,30 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 15,
-            "mean_probability": 0.37830572566315357,
-            "observed_accuracy": 0.4666666666666667
+            "n": 17,
+            "mean_probability": 0.37834536831641863,
+            "observed_accuracy": 0.5294117647058824
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 20,
-            "mean_probability": 0.4387781459478609,
-            "observed_accuracy": 0.55
+            "n": 30,
+            "mean_probability": 0.4433607183128692,
+            "observed_accuracy": 0.5333333333333333
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 14,
-            "mean_probability": 0.5368993521429367,
-            "observed_accuracy": 0.6428571428571429
+            "n": 20,
+            "mean_probability": 0.534344760456009,
+            "observed_accuracy": 0.55
           },
           {
             "lower": 0.6,
             "upper": 0.7,
-            "n": 4,
-            "mean_probability": 0.655630003835387,
-            "observed_accuracy": 0.75
+            "n": 6,
+            "mean_probability": 0.6488948130691298,
+            "observed_accuracy": 0.6666666666666666
           },
           {
             "lower": 0.7,
@@ -875,27 +875,27 @@
             "observed_accuracy": 0.0
           }
         ],
-        "draw_brier": 0.13651937146220522,
+        "draw_brier": 0.14440430466912957,
         "draw_calibration": [
           {
             "lower": 0.1,
             "upper": 0.2,
-            "n": 3,
-            "mean_probability": 0.16518763117739255,
+            "n": 5,
+            "mean_probability": 0.17358144830831043,
             "observed_draw_rate": 0.0
           },
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 44,
-            "mean_probability": 0.2453783585304907,
-            "observed_draw_rate": 0.18181818181818182
+            "n": 61,
+            "mean_probability": 0.2453588574414046,
+            "observed_draw_rate": 0.19672131147540983
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 7,
-            "mean_probability": 0.31715005463407736,
+            "n": 8,
+            "mean_probability": 0.31586708489974036,
             "observed_draw_rate": 0.0
           }
         ]
@@ -961,12 +961,12 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 15,
-          "accuracy": 0.75,
-          "logloss": 0.858025268233588,
-          "brier": 0.49597815777018156,
-          "draw_actual": 1,
+          "n": 30,
+          "hits": 20,
+          "accuracy": 0.6666666666666666,
+          "logloss": 0.913105060818508,
+          "brier": 0.5360982408176019,
+          "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -982,16 +982,16 @@
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 7,
-              "mean_probability": 0.4410918340510578,
-              "observed_accuracy": 0.7142857142857143
+              "n": 15,
+              "mean_probability": 0.4476615373003531,
+              "observed_accuracy": 0.6
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 5,
-              "mean_probability": 0.5442808263701507,
-              "observed_accuracy": 1.0
+              "n": 7,
+              "mean_probability": 0.541169655840785,
+              "observed_accuracy": 0.8571428571428571
             },
             {
               "lower": 0.6,
@@ -1001,31 +1001,31 @@
               "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.0903424682141243,
+          "draw_brier": 0.0999834013720208,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 16,
-              "mean_probability": 0.2504599487121482,
-              "observed_draw_rate": 0.0625
+              "n": 25,
+              "mean_probability": 0.2513483028455064,
+              "observed_draw_rate": 0.08
             },
             {
               "lower": 0.3,
               "upper": 0.4,
-              "n": 4,
-              "mean_probability": 0.3097090493036844,
+              "n": 5,
+              "mean_probability": 0.3091444987948238,
               "observed_draw_rate": 0.0
             }
           ]
         },
         "J3": {
-          "n": 20,
-          "hits": 11,
-          "accuracy": 0.55,
-          "logloss": 1.0239403117458707,
-          "brier": 0.6139931546258561,
-          "draw_actual": 2,
+          "n": 30,
+          "hits": 16,
+          "accuracy": 0.5333333333333333,
+          "logloss": 1.0560416695724266,
+          "brier": 0.6378344482093541,
+          "draw_actual": 5,
           "draw_picks": 0,
           "draw_hits": 0,
           "draw_precision": null,
@@ -1034,30 +1034,30 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 4,
-              "mean_probability": 0.37653882433728453,
-              "observed_accuracy": 0.75
+              "n": 6,
+              "mean_probability": 0.3772401122968252,
+              "observed_accuracy": 0.8333333333333334
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 9,
-              "mean_probability": 0.43969011084537263,
-              "observed_accuracy": 0.4444444444444444
+              "n": 11,
+              "mean_probability": 0.44138085517175624,
+              "observed_accuracy": 0.45454545454545453
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 4,
-              "mean_probability": 0.5390374542790622,
-              "observed_accuracy": 0.5
+              "n": 8,
+              "mean_probability": 0.532458829650072,
+              "observed_accuracy": 0.375
             },
             {
               "lower": 0.6,
               "upper": 0.7,
-              "n": 2,
-              "mean_probability": 0.6906028578912144,
-              "observed_accuracy": 1.0
+              "n": 4,
+              "mean_probability": 0.6630136447139149,
+              "observed_accuracy": 0.75
             },
             {
               "lower": 0.7,
@@ -1067,21 +1067,21 @@
               "observed_accuracy": 0.0
             }
           ],
-          "draw_brier": 0.10893524036380382,
+          "draw_brier": 0.14333082056514806,
           "draw_calibration": [
             {
               "lower": 0.1,
               "upper": 0.2,
-              "n": 3,
-              "mean_probability": 0.16518763117739255,
+              "n": 5,
+              "mean_probability": 0.17358144830831043,
               "observed_draw_rate": 0.0
             },
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 15,
-              "mean_probability": 0.23588678458534235,
-              "observed_draw_rate": 0.13333333333333333
+              "n": 23,
+              "mean_probability": 0.23618243067917108,
+              "observed_draw_rate": 0.21739130434782608
             },
             {
               "lower": 0.3,
@@ -1096,12 +1096,12 @@
     },
     "ensemble": {
       "overall": {
-        "n": 54,
-        "hits": 30,
-        "accuracy": 0.5555555555555556,
-        "logloss": 1.0030180640876125,
-        "brier": 0.5992900773402664,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 39,
+        "accuracy": 0.527027027027027,
+        "logloss": 1.025896053183466,
+        "brier": 0.6156966457293843,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -1110,33 +1110,33 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 19,
-            "mean_probability": 0.3819573312644821,
-            "observed_accuracy": 0.47368421052631576
+            "n": 22,
+            "mean_probability": 0.3820306635778971,
+            "observed_accuracy": 0.5
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 20,
-            "mean_probability": 0.4461890523950983,
-            "observed_accuracy": 0.55
+            "n": 30,
+            "mean_probability": 0.44858980660164954,
+            "observed_accuracy": 0.5
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 10,
-            "mean_probability": 0.5420292509488791,
-            "observed_accuracy": 0.7
+            "n": 16,
+            "mean_probability": 0.5340237506153415,
+            "observed_accuracy": 0.625
           },
           {
             "lower": 0.6,
             "upper": 0.7,
-            "n": 5,
-            "mean_probability": 0.6426428759861201,
-            "observed_accuracy": 0.6
+            "n": 6,
+            "mean_probability": 0.6421806205212272,
+            "observed_accuracy": 0.5
           }
         ],
-        "draw_brier": 0.13944500116272268,
+        "draw_brier": 0.14646507440018802,
         "draw_calibration": [
           {
             "lower": 0.1,
@@ -1148,15 +1148,15 @@
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 46,
-            "mean_probability": 0.26122541042608816,
-            "observed_draw_rate": 0.17391304347826086
+            "n": 65,
+            "mean_probability": 0.2608447042247259,
+            "observed_draw_rate": 0.18461538461538463
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 6,
-            "mean_probability": 0.3132765764978283,
+            "n": 7,
+            "mean_probability": 0.31213042304443533,
             "observed_draw_rate": 0.0
           }
         ]
@@ -1222,70 +1222,11 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 14,
-          "accuracy": 0.7,
-          "logloss": 0.871935729934998,
-          "brier": 0.5055448661686714,
-          "draw_actual": 1,
-          "draw_picks": 0,
-          "draw_hits": 0,
-          "draw_precision": null,
-          "draw_recall": 0.0,
-          "calibration_bins": [
-            {
-              "lower": 0,
-              "upper": 0.4,
-              "n": 6,
-              "mean_probability": 0.38197346972823,
-              "observed_accuracy": 0.3333333333333333
-            },
-            {
-              "lower": 0.4,
-              "upper": 0.5,
-              "n": 9,
-              "mean_probability": 0.4398446406232982,
-              "observed_accuracy": 0.7777777777777778
-            },
-            {
-              "lower": 0.5,
-              "upper": 0.6,
-              "n": 4,
-              "mean_probability": 0.5600750148589152,
-              "observed_accuracy": 1.0
-            },
-            {
-              "lower": 0.6,
-              "upper": 0.7,
-              "n": 1,
-              "mean_probability": 0.6210200730706626,
-              "observed_accuracy": 1.0
-            }
-          ],
-          "draw_brier": 0.09387836545385848,
-          "draw_calibration": [
-            {
-              "lower": 0.2,
-              "upper": 0.3,
-              "n": 17,
-              "mean_probability": 0.26271625311872304,
-              "observed_draw_rate": 0.058823529411764705
-            },
-            {
-              "lower": 0.3,
-              "upper": 0.4,
-              "n": 3,
-              "mean_probability": 0.30655084389426607,
-              "observed_draw_rate": 0.0
-            }
-          ]
-        },
-        "J3": {
-          "n": 20,
-          "hits": 10,
-          "accuracy": 0.5,
-          "logloss": 1.0458171026049403,
-          "brier": 0.6250047353709953,
+          "n": 30,
+          "hits": 18,
+          "accuracy": 0.6,
+          "logloss": 0.9300341537753167,
+          "brier": 0.5472177787729658,
           "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1296,32 +1237,91 @@
               "lower": 0,
               "upper": 0.4,
               "n": 7,
-              "mean_probability": 0.38279266308152654,
-              "observed_accuracy": 0.5714285714285714
+              "mean_probability": 0.38354956571944376,
+              "observed_accuracy": 0.2857142857142857
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 7,
-              "mean_probability": 0.44541043602494745,
-              "observed_accuracy": 0.2857142857142857
+              "n": 17,
+              "mean_probability": 0.4472518794964291,
+              "observed_accuracy": 0.5882352941176471
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 3,
-              "mean_probability": 0.5303682250261098,
-              "observed_accuracy": 0.6666666666666666
+              "n": 5,
+              "mean_probability": 0.5528804147202019,
+              "observed_accuracy": 1.0
             },
             {
               "lower": 0.6,
               "upper": 0.7,
-              "n": 3,
-              "mean_probability": 0.6629098844418922,
-              "observed_accuracy": 0.6666666666666666
+              "n": 1,
+              "mean_probability": 0.6210200730706626,
+              "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.11451477439307878,
+          "draw_brier": 0.10299754266922642,
+          "draw_calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "n": 26,
+              "mean_probability": 0.26406004200147504,
+              "observed_draw_rate": 0.07692307692307693
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "n": 4,
+              "mean_probability": 0.3062265085017189,
+              "observed_draw_rate": 0.0
+            }
+          ]
+        },
+        "J3": {
+          "n": 30,
+          "hits": 15,
+          "accuracy": 0.5,
+          "logloss": 1.073578817079489,
+          "brier": 0.6464782091734803,
+          "draw_actual": 5,
+          "draw_picks": 0,
+          "draw_hits": 0,
+          "draw_precision": null,
+          "draw_recall": 0.0,
+          "calibration_bins": [
+            {
+              "lower": 0,
+              "upper": 0.4,
+              "n": 9,
+              "mean_probability": 0.38155864495472613,
+              "observed_accuracy": 0.6666666666666666
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "n": 9,
+              "mean_probability": 0.44523400183250456,
+              "observed_accuracy": 0.3333333333333333
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "n": 8,
+              "mean_probability": 0.5238862701587067,
+              "observed_accuracy": 0.5
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "n": 4,
+              "mean_probability": 0.6571497491306098,
+              "observed_accuracy": 0.5
+            }
+          ],
+          "draw_brier": 0.1462107319896281,
           "draw_calibration": [
             {
               "lower": 0.1,
@@ -1333,9 +1333,9 @@
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 16,
-              "mean_probability": 0.2578565990792388,
-              "observed_draw_rate": 0.125
+              "n": 26,
+              "mean_probability": 0.2563406804328803,
+              "observed_draw_rate": 0.19230769230769232
             },
             {
               "lower": 0.3,
@@ -1350,12 +1350,12 @@
     },
     "calibrated_ensemble": {
       "overall": {
-        "n": 54,
-        "hits": 30,
-        "accuracy": 0.5555555555555556,
-        "logloss": 1.0079480534689043,
-        "brier": 0.6040157121214529,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 39,
+        "accuracy": 0.527027027027027,
+        "logloss": 1.0255008314424472,
+        "brier": 0.616576649752932,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -1364,33 +1364,33 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 19,
-            "mean_probability": 0.3782607299367545,
-            "observed_accuracy": 0.47368421052631576
+            "n": 24,
+            "mean_probability": 0.3796148739531889,
+            "observed_accuracy": 0.5
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 27,
-            "mean_probability": 0.43770493240782354,
-            "observed_accuracy": 0.5925925925925926
+            "n": 40,
+            "mean_probability": 0.44143686867761833,
+            "observed_accuracy": 0.525
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 8,
-            "mean_probability": 0.5494867033854578,
-            "observed_accuracy": 0.625
+            "n": 10,
+            "mean_probability": 0.5473380108170873,
+            "observed_accuracy": 0.6
           }
         ],
-        "draw_brier": 0.13951177056409117,
+        "draw_brier": 0.14635131386277445,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 52,
-            "mean_probability": 0.26423494419301585,
-            "observed_draw_rate": 0.15384615384615385
+            "n": 72,
+            "mean_probability": 0.2642953849533958,
+            "observed_draw_rate": 0.16666666666666666
           },
           {
             "lower": 0.3,
@@ -1448,56 +1448,11 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 14,
-          "accuracy": 0.7,
-          "logloss": 0.9065772343811112,
-          "brier": 0.5317381998499829,
-          "draw_actual": 1,
-          "draw_picks": 0,
-          "draw_hits": 0,
-          "draw_precision": null,
-          "draw_recall": 0.0,
-          "calibration_bins": [
-            {
-              "lower": 0,
-              "upper": 0.4,
-              "n": 6,
-              "mean_probability": 0.3782945980906623,
-              "observed_accuracy": 0.3333333333333333
-            },
-            {
-              "lower": 0.4,
-              "upper": 0.5,
-              "n": 11,
-              "mean_probability": 0.43037637866953565,
-              "observed_accuracy": 0.8181818181818182
-            },
-            {
-              "lower": 0.5,
-              "upper": 0.6,
-              "n": 3,
-              "mean_probability": 0.5353899783315738,
-              "observed_accuracy": 1.0
-            }
-          ],
-          "draw_brier": 0.09424071557080091,
-          "draw_calibration": [
-            {
-              "lower": 0.2,
-              "upper": 0.3,
-              "n": 20,
-              "mean_probability": 0.26921874673175583,
-              "observed_draw_rate": 0.05
-            }
-          ]
-        },
-        "J3": {
-          "n": 20,
-          "hits": 10,
-          "accuracy": 0.5,
-          "logloss": 1.03160826305758,
-          "brier": 0.6194900628949065,
+          "n": 30,
+          "hits": 18,
+          "accuracy": 0.6,
+          "logloss": 0.9498165005912044,
+          "brier": 0.5629017137798656,
           "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1507,33 +1462,78 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 7,
-              "mean_probability": 0.3789416005499869,
-              "observed_accuracy": 0.5714285714285714
+              "n": 8,
+              "mean_probability": 0.38129394307391534,
+              "observed_accuracy": 0.25
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 9,
-              "mean_probability": 0.43318443605299256,
-              "observed_accuracy": 0.4444444444444444
+              "n": 19,
+              "mean_probability": 0.4346878365231564,
+              "observed_accuracy": 0.6842105263157895
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 4,
-              "mean_probability": 0.5632291150600073,
-              "observed_accuracy": 0.5
+              "n": 3,
+              "mean_probability": 0.5353899783315738,
+              "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.11571793749898693,
+          "draw_brier": 0.10286540278771743,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 18,
-              "mean_probability": 0.25651607789936837,
-              "observed_draw_rate": 0.1111111111111111
+              "n": 30,
+              "mean_probability": 0.2694211260371558,
+              "observed_draw_rate": 0.06666666666666667
+            }
+          ]
+        },
+        "J3": {
+          "n": 30,
+          "hits": 15,
+          "accuracy": 0.5,
+          "logloss": 1.057569385681932,
+          "brier": 0.6382445822886772,
+          "draw_actual": 5,
+          "draw_picks": 0,
+          "draw_hits": 0,
+          "draw_precision": null,
+          "draw_recall": 0.0,
+          "calibration_bins": [
+            {
+              "lower": 0,
+              "upper": 0.4,
+              "n": 10,
+              "mean_probability": 0.3795810353880754,
+              "observed_accuracy": 0.7
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "n": 14,
+              "mean_probability": 0.4437980548568106,
+              "observed_accuracy": 0.35714285714285715
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "n": 6,
+              "mean_probability": 0.5550671568878734,
+              "observed_accuracy": 0.5
+            }
+          ],
+          "draw_brier": 0.14698575310495393,
+          "draw_calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "n": 28,
+              "mean_probability": 0.25743147051131243,
+              "observed_draw_rate": 0.17857142857142858
             },
             {
               "lower": 0.3,
@@ -1548,12 +1548,12 @@
     },
     "calibrated_dc": {
       "overall": {
-        "n": 54,
-        "hits": 30,
-        "accuracy": 0.5555555555555556,
-        "logloss": 1.00767608362141,
-        "brier": 0.6046777104942103,
-        "draw_actual": 8,
+        "n": 74,
+        "hits": 40,
+        "accuracy": 0.5405405405405406,
+        "logloss": 1.0223014187595592,
+        "brier": 0.6150792405585909,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
@@ -1562,39 +1562,39 @@
           {
             "lower": 0,
             "upper": 0.4,
-            "n": 22,
-            "mean_probability": 0.3774262990662464,
-            "observed_accuracy": 0.45454545454545453
+            "n": 26,
+            "mean_probability": 0.37794915026245407,
+            "observed_accuracy": 0.46153846153846156
           },
           {
             "lower": 0.4,
             "upper": 0.5,
-            "n": 26,
-            "mean_probability": 0.442555332498901,
-            "observed_accuracy": 0.6153846153846154
+            "n": 40,
+            "mean_probability": 0.4420972655714491,
+            "observed_accuracy": 0.575
           },
           {
             "lower": 0.5,
             "upper": 0.6,
-            "n": 6,
-            "mean_probability": 0.5480667882040995,
-            "observed_accuracy": 0.6666666666666666
+            "n": 8,
+            "mean_probability": 0.5449426739653067,
+            "observed_accuracy": 0.625
           }
         ],
-        "draw_brier": 0.1391436342398165,
+        "draw_brier": 0.146244071319515,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 48,
-            "mean_probability": 0.25976632608339006,
-            "observed_draw_rate": 0.16666666666666666
+            "n": 67,
+            "mean_probability": 0.259335915705766,
+            "observed_draw_rate": 0.1791044776119403
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 6,
-            "mean_probability": 0.30836628620664275,
+            "n": 7,
+            "mean_probability": 0.3072641710514672,
             "observed_draw_rate": 0.0
           }
         ]
@@ -1653,63 +1653,11 @@
           ]
         },
         "J2": {
-          "n": 20,
-          "hits": 15,
-          "accuracy": 0.75,
-          "logloss": 0.9170074062658357,
-          "brier": 0.539623488740278,
-          "draw_actual": 1,
-          "draw_picks": 0,
-          "draw_hits": 0,
-          "draw_precision": null,
-          "draw_recall": 0.0,
-          "calibration_bins": [
-            {
-              "lower": 0,
-              "upper": 0.4,
-              "n": 10,
-              "mean_probability": 0.37695477574843633,
-              "observed_accuracy": 0.5
-            },
-            {
-              "lower": 0.4,
-              "upper": 0.5,
-              "n": 8,
-              "mean_probability": 0.44451559293080145,
-              "observed_accuracy": 1.0
-            },
-            {
-              "lower": 0.5,
-              "upper": 0.6,
-              "n": 2,
-              "mean_probability": 0.5073336974320228,
-              "observed_accuracy": 1.0
-            }
-          ],
-          "draw_brier": 0.09557401561061551,
-          "draw_calibration": [
-            {
-              "lower": 0.2,
-              "upper": 0.3,
-              "n": 17,
-              "mean_probability": 0.2675099098155243,
-              "observed_draw_rate": 0.058823529411764705
-            },
-            {
-              "lower": 0.3,
-              "upper": 0.4,
-              "n": 3,
-              "mean_probability": 0.303822911319674,
-              "observed_draw_rate": 0.0
-            }
-          ]
-        },
-        "J3": {
-          "n": 20,
-          "hits": 11,
-          "accuracy": 0.55,
-          "logloss": 1.020703393989546,
-          "brier": 0.6136819651009703,
+          "n": 30,
+          "hits": 20,
+          "accuracy": 0.6666666666666666,
+          "logloss": 0.9535238448792006,
+          "brier": 0.5660324534509709,
           "draw_actual": 2,
           "draw_picks": 0,
           "draw_hits": 0,
@@ -1719,33 +1667,85 @@
             {
               "lower": 0,
               "upper": 0.4,
-              "n": 6,
-              "mean_probability": 0.37453993474129055,
-              "observed_accuracy": 0.6666666666666666
+              "n": 12,
+              "mean_probability": 0.3793402266260723,
+              "observed_accuracy": 0.4166666666666667
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 11,
-              "mean_probability": 0.4360229636368203,
-              "observed_accuracy": 0.45454545454545453
+              "n": 16,
+              "mean_probability": 0.440694921395415,
+              "observed_accuracy": 0.8125
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 3,
-              "mean_probability": 0.5780264665986546,
-              "observed_accuracy": 0.6666666666666666
+              "n": 2,
+              "mean_probability": 0.5073336974320228,
+              "observed_accuracy": 1.0
             }
           ],
-          "draw_brier": 0.11415139101985303,
+          "draw_brier": 0.10409260622094085,
           "draw_calibration": [
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 18,
-              "mean_probability": 0.2482852437877668,
-              "observed_draw_rate": 0.1111111111111111
+              "n": 26,
+              "mean_probability": 0.26742704883221,
+              "observed_draw_rate": 0.07692307692307693
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "n": 4,
+              "mean_probability": 0.3030300535198589,
+              "observed_draw_rate": 0.0
+            }
+          ]
+        },
+        "J3": {
+          "n": 30,
+          "hits": 16,
+          "accuracy": 0.5333333333333333,
+          "logloss": 1.046143237712762,
+          "brier": 0.6316134302648067,
+          "draw_actual": 5,
+          "draw_picks": 0,
+          "draw_hits": 0,
+          "draw_precision": null,
+          "draw_recall": 0.0,
+          "calibration_bins": [
+            {
+              "lower": 0,
+              "upper": 0.4,
+              "n": 8,
+              "mean_probability": 0.373500496723203,
+              "observed_accuracy": 0.75
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "n": 17,
+              "mean_probability": 0.439924151706549,
+              "observed_accuracy": 0.4117647058823529
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "n": 5,
+              "mean_probability": 0.5610440124587642,
+              "observed_accuracy": 0.6
+            }
+          ],
+          "draw_brier": 0.14600116582250555,
+          "draw_calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "n": 28,
+              "mean_probability": 0.2489436530603517,
+              "observed_draw_rate": 0.17857142857142858
             },
             {
               "lower": 0.3,
@@ -1762,1029 +1762,1539 @@
   "limitations": [
     "2025 remains an exposed historical audit, never a new candidate selection or confirmation set. Research current uses league-only H2H from 2022, unlike production's longer cup-inclusive H2H. No production promotion is automatic."
   ],
-  "checked_at": "2026-11-09T07:14:45.459038+00:00",
+  "checked_at": "2026-11-16T07:20:29.136327+00:00",
   "shadow_only": true,
-  "pending_forecasts": 100,
-  "source_id": "910c3f530bb253b1654b3f2bf9b8d300d0c74c02eff9d4d31c63368377995e98",
-  "training_cutoff": "2026-11-09",
+  "pending_forecasts": 130,
+  "source_id": "4cee2bf0a8ee1cbd9b564031c8b6c954c150b14eedd3cf44284e7b3849bb4051",
+  "training_cutoff": "2026-11-16",
   "upcoming": [
     {
-      "id": "J2|2026-11-14|j90-4c5f3901d634|j90-9c204ad92d5d",
-      "date": "2026-11-14",
+      "id": "J1|2026-11-20|j90-9f1667f3fd94|j90-c8ae978f0f5a",
+      "date": "2026-11-20",
+      "league": "J1",
+      "home": "鹿島",
+      "away": "清水",
+      "home_team_id": "j90-9f1667f3fd94",
+      "away_team_id": "j90-c8ae978f0f5a",
+      "models": {
+        "current": {
+          "1": 0.5265458630487327,
+          "0": 0.2506952380952381,
+          "2": 0.22275889885602912
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.6526683489973903,
+          "0": 0.23356479023764665,
+          "2": 0.113766860764963
+        },
+        "poisson": {
+          "1": 0.6593130316826844,
+          "0": 0.20277757807309857,
+          "2": 0.13790939024421708
+        },
+        "dixon_coles": {
+          "1": 0.6581278771957875,
+          "0": 0.2052616613444941,
+          "2": 0.1366104614597185
+        },
+        "ensemble": {
+          "1": 0.6567030859586208,
+          "0": 0.21386800988507979,
+          "2": 0.1294289041562995
+        },
+        "calibrated_ensemble": {
+          "1": 0.5783418184839431,
+          "0": 0.23755697021240063,
+          "2": 0.18410121130365645
+        },
+        "calibrated_dc": {
+          "1": 0.5533411039014823,
+          "0": 0.24371501691215172,
+          "2": 0.2029438791863659
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-20|j90-b5e1e720fe06|j90-40ab7fc1a5a5",
+      "date": "2026-11-20",
+      "league": "J1",
+      "home": "柏",
+      "away": "千葉",
+      "home_team_id": "j90-b5e1e720fe06",
+      "away_team_id": "j90-40ab7fc1a5a5",
+      "models": {
+        "current": {
+          "1": 0.564116560485543,
+          "0": 0.2365142857142857,
+          "2": 0.19936915380017126
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.6146160112408718,
+          "0": 0.24856150812259295,
+          "2": 0.13682248063653527
+        },
+        "poisson": {
+          "1": 0.6453934632000466,
+          "0": 0.19588312773501404,
+          "2": 0.15872340906493967
+        },
+        "dixon_coles": {
+          "1": 0.6444346243825109,
+          "0": 0.1980230331412263,
+          "2": 0.15754234247626284
+        },
+        "ensemble": {
+          "1": 0.6348146996078098,
+          "0": 0.21415588966627777,
+          "2": 0.15102941072591258
+        },
+        "calibrated_ensemble": {
+          "1": 0.5603572624408506,
+          "0": 0.23595879959088617,
+          "2": 0.20368393796826323
+        },
+        "calibrated_dc": {
+          "1": 0.5424794586240488,
+          "0": 0.23667422870175484,
+          "2": 0.22084631267419624
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-20|j90-42c6e6a171ae|j90-2b14bdc566b9",
+      "date": "2026-11-20",
+      "league": "J1",
+      "home": "神戸",
+      "away": "水戸",
+      "home_team_id": "j90-42c6e6a171ae",
+      "away_team_id": "j90-2b14bdc566b9",
+      "models": {
+        "current": {
+          "1": 0.594828945294025,
+          "0": 0.23,
+          "2": 0.1751710547059751
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.6350964631422588,
+          "0": 0.24071800016506428,
+          "2": 0.12418553669267705
+        },
+        "poisson": {
+          "1": 0.7038221417744199,
+          "0": 0.1913931541733368,
+          "2": 0.10478470405224324
+        },
+        "dixon_coles": {
+          "1": 0.7030001833824265,
+          "0": 0.19362250222993097,
+          "2": 0.10337731438764262
+        },
+        "ensemble": {
+          "1": 0.6806395960997017,
+          "0": 0.20857788552277734,
+          "2": 0.11078251837752097
+        },
+        "calibrated_ensemble": {
+          "1": 0.5982029685000363,
+          "0": 0.235400118269224,
+          "2": 0.16639691323073966
+        },
+        "calibrated_dc": {
+          "1": 0.5878149204737306,
+          "0": 0.23915631178868474,
+          "2": 0.17302876773758463
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-8090a2dd36c6|j90-7bb283a4ef4d",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "東京Ｖ",
+      "away": "名古屋",
+      "home_team_id": "j90-8090a2dd36c6",
+      "away_team_id": "j90-7bb283a4ef4d",
+      "models": {
+        "current": {
+          "1": 0.38122429209183667,
+          "0": 0.2975714285714286,
+          "2": 0.32120427933673473
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.4294157983244884,
+          "0": 0.2949103464626014,
+          "2": 0.27567385521291027
+        },
+        "poisson": {
+          "1": 0.35338923409723566,
+          "0": 0.30219056468826005,
+          "2": 0.3444202012145046
+        },
+        "dixon_coles": {
+          "1": 0.3520752319265427,
+          "0": 0.3055165835456665,
+          "2": 0.3424081845277908
+        },
+        "ensemble": {
+          "1": 0.37829342144942224,
+          "0": 0.300872498232176,
+          "2": 0.32083408031840194
+        },
+        "calibrated_ensemble": {
+          "1": 0.37578664654165705,
+          "0": 0.2896229280151958,
+          "2": 0.33459042544314715
+        },
+        "calibrated_dc": {
+          "1": 0.35355002604006064,
+          "0": 0.29912415781883017,
+          "2": 0.34732581614110913
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-4529f8c8c42d|j90-2c90fecc4a9d",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "町田",
+      "away": "長崎",
+      "home_team_id": "j90-4529f8c8c42d",
+      "away_team_id": "j90-2c90fecc4a9d",
+      "models": {
+        "current": {
+          "1": 0.5693519900812226,
+          "0": 0.23464761904761905,
+          "2": 0.1960003908711583
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.5778177488932076,
+          "0": 0.26132101958469295,
+          "2": 0.1608612315220995
+        },
+        "poisson": {
+          "1": 0.6562585762004636,
+          "0": 0.20430025088090145,
+          "2": 0.13944117291863498
+        },
+        "dixon_coles": {
+          "1": 0.65521049219231,
+          "0": 0.2066580798400174,
+          "2": 0.1381314279676726
+        },
+        "ensemble": {
+          "1": 0.6297622724286603,
+          "0": 0.22409311676853727,
+          "2": 0.14614461080280236
+        },
+        "calibrated_ensemble": {
+          "1": 0.5572924848525425,
+          "0": 0.24365983389546067,
+          "2": 0.19904768125199676
+        },
+        "calibrated_dc": {
+          "1": 0.5512629148503011,
+          "0": 0.24454430636022623,
+          "2": 0.20419277878947265
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-58d07b8a6951|j90-b1da38d84f72",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "京都",
+      "away": "浦和",
+      "home_team_id": "j90-58d07b8a6951",
+      "away_team_id": "j90-b1da38d84f72",
+      "models": {
+        "current": {
+          "1": 0.33116128072562356,
+          "0": 0.3027047619047619,
+          "2": 0.3661339573696145
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.4055929512552918,
+          "0": 0.2974642636702508,
+          "2": 0.29694278507445737
+        },
+        "poisson": {
+          "1": 0.45153010924843995,
+          "0": 0.25047517776603984,
+          "2": 0.29799471298551994
+        },
+        "dixon_coles": {
+          "1": 0.44957964149600477,
+          "0": 0.2535677337804575,
+          "2": 0.2968526247235379
+        },
+        "ensemble": {
+          "1": 0.43556756733324553,
+          "0": 0.26716905840558275,
+          "2": 0.2972633742611717
+        },
+        "calibrated_ensemble": {
+          "1": 0.4156784117695493,
+          "0": 0.26676596538764946,
+          "2": 0.3175556228428013
+        },
+        "calibrated_dc": {
+          "1": 0.4149223472852884,
+          "0": 0.26668414417597436,
+          "2": 0.31839350853873727
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-c735c704d4d5|j90-b41dbc5583c2",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "広島",
+      "away": "横浜FM",
+      "home_team_id": "j90-c735c704d4d5",
+      "away_team_id": "j90-b41dbc5583c2",
+      "models": {
+        "current": {
+          "1": 0.48869784648526077,
+          "0": 0.2626476190476191,
+          "2": 0.24865453446712021
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.553118648842383,
+          "0": 0.26892074269652394,
+          "2": 0.17796060846109296
+        },
+        "poisson": {
+          "1": 0.5557985904375631,
+          "0": 0.24130706626319542,
+          "2": 0.20289434329924155
+        },
+        "dixon_coles": {
+          "1": 0.5545402031976706,
+          "0": 0.24401838826684774,
+          "2": 0.20144140853548156
+        },
+        "ensemble": {
+          "1": 0.5544858141592056,
+          "0": 0.25141539907552235,
+          "2": 0.19409878676527204
+        },
+        "calibrated_ensemble": {
+          "1": 0.5010374430712528,
+          "0": 0.2598673424548795,
+          "2": 0.23909521447386775
+        },
+        "calibrated_dc": {
+          "1": 0.4824556869411581,
+          "0": 0.26467743668886956,
+          "2": 0.25286687636997235
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-2a7000ee7b92|j90-3cbf98a10e3e",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "川崎Ｆ",
+      "away": "福岡",
+      "home_team_id": "j90-2a7000ee7b92",
+      "away_team_id": "j90-3cbf98a10e3e",
+      "models": {
+        "current": {
+          "1": 0.5720507319054935,
+          "0": 0.2336952380952381,
+          "2": 0.1942540299992685
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.5709681692345109,
+          "0": 0.2635065198565672,
+          "2": 0.16552531090892192
+        },
+        "poisson": {
+          "1": 0.5847596188951717,
+          "0": 0.21744027084488318,
+          "2": 0.1978001102599451
+        },
+        "dixon_coles": {
+          "1": 0.583259275309577,
+          "0": 0.220114342157272,
+          "2": 0.196626382533151
+        },
+        "ensemble": {
+          "1": 0.5796623544797531,
+          "0": 0.2336870442862408,
+          "2": 0.186650601234006
+        },
+        "calibrated_ensemble": {
+          "1": 0.5188490207732684,
+          "0": 0.2477124133707308,
+          "2": 0.23343856585600076
+        },
+        "calibrated_dc": {
+          "1": 0.5007167120397282,
+          "0": 0.24905641528954311,
+          "2": 0.25022687267072874
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-30bb774d0ae0|j90-3700e53a6baa",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "Ｃ大阪",
+      "away": "FC東京",
+      "home_team_id": "j90-30bb774d0ae0",
+      "away_team_id": "j90-3700e53a6baa",
+      "models": {
+        "current": {
+          "1": 0.22280231255448502,
+          "0": 0.2507238095238095,
+          "2": 0.5264738779217054
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.30218495162252557,
+          "0": 0.29795147932860616,
+          "2": 0.39986356904886816
+        },
+        "poisson": {
+          "1": 0.284512720419214,
+          "0": 0.24944283686223717,
+          "2": 0.4660444427185487
+        },
+        "dixon_coles": {
+          "1": 0.283028673425379,
+          "0": 0.2523583538509612,
+          "2": 0.46461297272365976
+        },
+        "ensemble": {
+          "1": 0.28990878182237284,
+          "0": 0.26658422334726817,
+          "2": 0.4435069948303589
+        },
+        "calibrated_ensemble": {
+          "1": 0.3121986782457502,
+          "0": 0.2665257864898858,
+          "2": 0.42127553526436406
+        },
+        "calibrated_dc": {
+          "1": 0.30933368192892585,
+          "0": 0.2662858419185174,
+          "2": 0.42438047615255675
+        }
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-90d45e374e9d|j90-2695cb203ac6",
+      "date": "2026-11-21",
+      "league": "J1",
+      "home": "Ｇ大阪",
+      "away": "岡山",
+      "home_team_id": "j90-90d45e374e9d",
+      "away_team_id": "j90-2695cb203ac6",
+      "models": {
+        "current": {
+          "1": 0.33760219433106575,
+          "0": 0.3060761904761905,
+          "2": 0.35632161519274375
+        },
+        "league_mean": {
+          "1": 0.41458607095926414,
+          "0": 0.27135348226018396,
+          "2": 0.3140604467805519
+        },
+        "elo": {
+          "1": 0.46888605083437646,
+          "0": 0.28887453964536136,
+          "2": 0.2422394095202622
+        },
+        "poisson": {
+          "1": 0.470479873673516,
+          "0": 0.26189329722388177,
+          "2": 0.26762682910260205
+        },
+        "dixon_coles": {
+          "1": 0.4687662544535275,
+          "0": 0.2650577559966407,
+          "2": 0.26617598954983196
+        },
+        "ensemble": {
+          "1": 0.46937739298714004,
+          "0": 0.27194186428862793,
+          "2": 0.2586807427242321
+        },
+        "calibrated_ensemble": {
+          "1": 0.4398392606010644,
+          "0": 0.27114656166910056,
+          "2": 0.28901417772983506
+        },
+        "calibrated_dc": {
+          "1": 0.42722048959154607,
+          "0": 0.2750313333328357,
+          "2": 0.2977481770756182
+        }
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-0f8729f23062|j90-9c204ad92d5d",
+      "date": "2026-11-21",
       "league": "J2",
-      "home": "大宮",
+      "home": "秋田",
       "away": "山形",
-      "home_team_id": "j90-4c5f3901d634",
+      "home_team_id": "j90-0f8729f23062",
       "away_team_id": "j90-9c204ad92d5d",
       "models": {
         "current": {
-          "1": 0.49185293162556687,
-          "0": 0.26166190476190476,
-          "2": 0.24648516361252837
+          "1": 0.4072551486265966,
+          "0": 0.2888575163398693,
+          "2": 0.30388733503353416
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.46015895436728704,
-          "0": 0.29039767387009463,
-          "2": 0.24944337176261838
+          "1": 0.3601284166432968,
+          "0": 0.2999128181528647,
+          "2": 0.33995876520383844
         },
         "poisson": {
-          "1": 0.46988797688924744,
-          "0": 0.25040711447081115,
-          "2": 0.27970490863994146
+          "1": 0.32099848590868074,
+          "0": 0.2854034693397949,
+          "2": 0.3935980447515243
         },
         "dixon_coles": {
-          "1": 0.4716922631993364,
-          "0": 0.24630537385645085,
-          "2": 0.2820023629442129
+          "1": 0.3233864234735773,
+          "0": 0.2800747025811677,
+          "2": 0.396538873945255
         },
         "ensemble": {
-          "1": 0.46724639815195695,
-          "0": 0.26237005406578556,
-          "2": 0.2703835477822576
+          "1": 0.3348377753418516,
+          "0": 0.28846366335794243,
+          "2": 0.3766985613002059
         },
         "calibrated_ensemble": {
-          "1": 0.4379996108120281,
-          "0": 0.2641244404767264,
-          "2": 0.2978759487112456
+          "1": 0.3445980149839527,
+          "0": 0.2809721701047356,
+          "2": 0.3744298149113117
         },
         "calibrated_dc": {
-          "1": 0.42879229472927805,
-          "0": 0.26237554401820484,
-          "2": 0.30883216125251717
+          "1": 0.3351267603671175,
+          "0": 0.2831843399023048,
+          "2": 0.38168889973057774
         }
       }
     },
     {
-      "id": "J2|2026-11-14|j90-aad1b197486c|j90-e6afea9e4f73",
-      "date": "2026-11-14",
+      "id": "J2|2026-11-21|j90-fa3fa5c01cc5|j90-868735a6181c",
+      "date": "2026-11-21",
       "league": "J2",
-      "home": "湘南",
-      "away": "横浜FC",
-      "home_team_id": "j90-aad1b197486c",
-      "away_team_id": "j90-e6afea9e4f73",
+      "home": "栃木Ｃ",
+      "away": "新潟",
+      "home_team_id": "j90-fa3fa5c01cc5",
+      "away_team_id": "j90-868735a6181c",
       "models": {
         "current": {
-          "1": 0.2869495469135802,
-          "0": 0.28057777777777776,
-          "2": 0.432472675308642
+          "1": 0.2814065323909956,
+          "0": 0.27791708683473393,
+          "2": 0.4406763807742705
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.25475279517426874,
-          "0": 0.2914396060125116,
-          "2": 0.4538075988132197
+          "1": 0.2233213638672029,
+          "0": 0.2842446786021869,
+          "2": 0.4924339575306102
         },
         "poisson": {
-          "1": 0.26213045988709655,
-          "0": 0.2853501475278182,
-          "2": 0.452519392585085
+          "1": 0.40142123624079235,
+          "0": 0.21212747165980958,
+          "2": 0.38645129209939816
         },
         "dixon_coles": {
-          "1": 0.2646164094371586,
-          "0": 0.2806489908374055,
-          "2": 0.4547345997254361
+          "1": 0.4037271956114131,
+          "0": 0.20892336288844346,
+          "2": 0.3873494415001434
         },
         "ensemble": {
-          "1": 0.26049988816617464,
-          "0": 0.2858129147925785,
-          "2": 0.453687197041247
+          "1": 0.34282326523980283,
+          "0": 0.23509850438347998,
+          "2": 0.4220782303767172
         },
         "calibrated_ensemble": {
-          "1": 0.29024419769079735,
-          "0": 0.28062825118633106,
-          "2": 0.4291275511228717
+          "1": 0.35061542074260077,
+          "0": 0.2434171595588716,
+          "2": 0.40596741969852757
         },
         "calibrated_dc": {
-          "1": 0.2963683135013544,
-          "0": 0.28498964288526846,
-          "2": 0.41864204361337704
+          "1": 0.3872500359788278,
+          "0": 0.23559686360992307,
+          "2": 0.37715310041124905
         }
       }
     },
     {
-      "id": "J2|2026-11-14|j90-868735a6181c|j90-df37fe02bc9e",
-      "date": "2026-11-14",
+      "id": "J2|2026-11-21|j90-e6afea9e4f73|j90-3bf2c28a7895",
+      "date": "2026-11-21",
       "league": "J2",
-      "home": "新潟",
-      "away": "宮崎",
-      "home_team_id": "j90-868735a6181c",
-      "away_team_id": "j90-df37fe02bc9e",
+      "home": "横浜FC",
+      "away": "札幌",
+      "home_team_id": "j90-e6afea9e4f73",
+      "away_team_id": "j90-3bf2c28a7895",
       "models": {
         "current": {
-          "1": 0.3908127763408604,
-          "0": 0.29434126984126985,
-          "2": 0.31484595381786973
+          "1": 0.41142778919175516,
+          "0": 0.2874767507002801,
+          "2": 0.30109546010796473
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.513774511014215,
-          "0": 0.27940580418844146,
-          "2": 0.20681968479734364
+          "1": 0.5615982485414707,
+          "0": 0.26639941122448896,
+          "2": 0.17200234023404037
         },
         "poisson": {
-          "1": 0.33212501779206777,
-          "0": 0.24033620081824772,
-          "2": 0.42753878138968465
+          "1": 0.5979455155622033,
+          "0": 0.21169682017757027,
+          "2": 0.19035766426022657
         },
         "dixon_coles": {
-          "1": 0.33311889619389723,
-          "0": 0.23622154382324595,
-          "2": 0.43065955998285693
+          "1": 0.6004573744322148,
+          "0": 0.20735898341498388,
+          "2": 0.1921836421528013
         },
         "ensemble": {
-          "1": 0.3930061416667267,
-          "0": 0.2519878496099784,
-          "2": 0.3550060087232951
+          "1": 0.5866670461786296,
+          "0": 0.22848507160568102,
+          "2": 0.1848478822156894
         },
         "calibrated_ensemble": {
-          "1": 0.3856594441455855,
-          "0": 0.2553549179825312,
-          "2": 0.3589856378718833
+          "1": 0.5238256690580352,
+          "0": 0.24407655788917745,
+          "2": 0.2320977730527874
         },
         "calibrated_dc": {
-          "1": 0.34224999402125855,
-          "0": 0.2545705604186454,
-          "2": 0.403179445560096
+          "1": 0.5119080145681907,
+          "0": 0.24060613559088934,
+          "2": 0.2474858498409201
         }
       }
     },
     {
-      "id": "J2|2026-11-14|j90-efe4e4220444|j90-a9b9e23c515e",
-      "date": "2026-11-14",
+      "id": "J2|2026-11-21|j90-a9b9e23c515e|j90-ba6d5fee6d06",
+      "date": "2026-11-21",
+      "league": "J2",
+      "home": "甲府",
+      "away": "八戸",
+      "home_team_id": "j90-a9b9e23c515e",
+      "away_team_id": "j90-ba6d5fee6d06",
+      "models": {
+        "current": {
+          "1": 0.34845120000000007,
+          "0": 0.3088,
+          "2": 0.3427488
+        },
+        "league_mean": {
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
+        },
+        "elo": {
+          "1": 0.34972246461859907,
+          "0": 0.2999999339620957,
+          "2": 0.35027760141930525
+        },
+        "poisson": {
+          "1": 0.44198118477474935,
+          "0": 0.2753622423276865,
+          "2": 0.282656572897564
+        },
+        "dixon_coles": {
+          "1": 0.4446495975846348,
+          "0": 0.26996579057390696,
+          "2": 0.28538461184145814
+        },
+        "ensemble": {
+          "1": 0.41211774899266107,
+          "0": 0.2817759889545631,
+          "2": 0.3061062620527758
+        },
+        "calibrated_ensemble": {
+          "1": 0.3994071431127664,
+          "0": 0.27670813535243644,
+          "2": 0.3238847215347972
+        },
+        "calibrated_dc": {
+          "1": 0.4119866857440642,
+          "0": 0.2775431676238191,
+          "2": 0.3104701466321166
+        }
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-eead0dafb362|j90-0096a9a6fd55",
+      "date": "2026-11-21",
+      "league": "J2",
+      "home": "富山",
+      "away": "大分",
+      "home_team_id": "j90-eead0dafb362",
+      "away_team_id": "j90-0096a9a6fd55",
+      "models": {
+        "current": {
+          "1": 0.462005828634286,
+          "0": 0.2710718954248366,
+          "2": 0.2669222759408774
+        },
+        "league_mean": {
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
+        },
+        "elo": {
+          "1": 0.4831575448618729,
+          "0": 0.28615835240150506,
+          "2": 0.23068410273662204
+        },
+        "poisson": {
+          "1": 0.48891592414607127,
+          "0": 0.27379417415534696,
+          "2": 0.2372899016985817
+        },
+        "dixon_coles": {
+          "1": 0.49127098606828074,
+          "0": 0.2690273314030014,
+          "2": 0.2397016825287178
+        },
+        "ensemble": {
+          "1": 0.4877814850254083,
+          "0": 0.2763266193199511,
+          "2": 0.23589189565464053
+        },
+        "calibrated_ensemble": {
+          "1": 0.4532976929585131,
+          "0": 0.27505349173079235,
+          "2": 0.2716488153106946
+        },
+        "calibrated_dc": {
+          "1": 0.4418088675319929,
+          "0": 0.27867062537144194,
+          "2": 0.27952050709656506
+        }
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-11c847315297|j90-4c5f3901d634",
+      "date": "2026-11-21",
+      "league": "J2",
+      "home": "磐田",
+      "away": "大宮",
+      "home_team_id": "j90-11c847315297",
+      "away_team_id": "j90-4c5f3901d634",
+      "models": {
+        "current": {
+          "1": 0.32186619507400993,
+          "0": 0.29790980392156863,
+          "2": 0.3802240010044214
+        },
+        "league_mean": {
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
+        },
+        "elo": {
+          "1": 0.43887256090610477,
+          "0": 0.29366571429454114,
+          "2": 0.26746172479935415
+        },
+        "poisson": {
+          "1": 0.39440949651929297,
+          "0": 0.2536278195711412,
+          "2": 0.35196268390956575
+        },
+        "dixon_coles": {
+          "1": 0.39624980122569947,
+          "0": 0.2488386151557968,
+          "2": 0.3549115836185036
+        },
+        "ensemble": {
+          "1": 0.40984395288369907,
+          "0": 0.26537738300715974,
+          "2": 0.3247786641091412
+        },
+        "calibrated_ensemble": {
+          "1": 0.39753540831726886,
+          "0": 0.26504655236828445,
+          "2": 0.3374180393144467
+        },
+        "calibrated_dc": {
+          "1": 0.3816126649501139,
+          "0": 0.2626765527796706,
+          "2": 0.3557107822702155
+        }
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-efe4e4220444|j90-0a86729d816d",
+      "date": "2026-11-21",
       "league": "J2",
       "home": "藤枝",
-      "away": "甲府",
+      "away": "今治",
       "home_team_id": "j90-efe4e4220444",
-      "away_team_id": "j90-a9b9e23c515e",
+      "away_team_id": "j90-0a86729d816d",
       "models": {
         "current": {
-          "1": 0.42912934027777777,
-          "0": 0.2816666666666667,
-          "2": 0.2892039930555555
+          "1": 0.44947839808193424,
+          "0": 0.2750797385620915,
+          "2": 0.27544186335597415
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.42549474147439414,
-          "0": 0.2953883585294168,
-          "2": 0.27911689999618905
+          "1": 0.38886527561529993,
+          "0": 0.2987452405382771,
+          "2": 0.3123894838464229
         },
         "poisson": {
-          "1": 0.4636034190066395,
-          "0": 0.2617345739672433,
-          "2": 0.27466200702611737
+          "1": 0.46469519050968594,
+          "0": 0.2598878559384131,
+          "2": 0.2754169535519011
         },
         "dixon_coles": {
-          "1": 0.4661214038368206,
-          "0": 0.25741588974863866,
-          "2": 0.2764627064145407
+          "1": 0.4673676676737482,
+          "0": 0.2549818963305881,
+          "2": 0.27765043599566375
         },
         "ensemble": {
-          "1": 0.4517398547726181,
-          "0": 0.2715129407484329,
-          "2": 0.276747204478949
+          "1": 0.4403093779329114,
+          "0": 0.2712049976024261,
+          "2": 0.2884856244646626
         },
         "calibrated_ensemble": {
-          "1": 0.4272411831050481,
-          "0": 0.270286067290883,
-          "2": 0.30247274960406895
+          "1": 0.4191225391646169,
+          "0": 0.26976714456331674,
+          "2": 0.3111103162720663
         },
         "calibrated_dc": {
-          "1": 0.4253979552848677,
-          "0": 0.2697663344442071,
-          "2": 0.3048357102709252
+          "1": 0.42615303933194126,
+          "0": 0.2681550115668227,
+          "2": 0.305691949101236
         }
       }
     },
     {
-      "id": "J2|2026-11-14|j90-0096a9a6fd55|j90-fa3fa5c01cc5",
-      "date": "2026-11-14",
+      "id": "J2|2026-11-21|j90-5ace5535c774|j90-984ca7cc85ad",
+      "date": "2026-11-21",
       "league": "J2",
-      "home": "大分",
-      "away": "栃木Ｃ",
-      "home_team_id": "j90-0096a9a6fd55",
-      "away_team_id": "j90-fa3fa5c01cc5",
+      "home": "鳥栖",
+      "away": "仙台",
+      "home_team_id": "j90-5ace5535c774",
+      "away_team_id": "j90-984ca7cc85ad",
       "models": {
         "current": {
-          "1": 0.4902364496527778,
-          "0": 0.26216666666666666,
-          "2": 0.24759688368055555
+          "1": 0.320415310342176,
+          "0": 0.2971686274509804,
+          "2": 0.3824160622068436
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.4351168363522886,
-          "0": 0.29417546905980396,
-          "2": 0.2707076945879075
+          "1": 0.3271626090621135,
+          "0": 0.2995437870630608,
+          "2": 0.3732936038748258
         },
         "poisson": {
-          "1": 0.48914546400912934,
-          "0": 0.25326411262669074,
-          "2": 0.25759042336417987
+          "1": 0.3046696880370714,
+          "0": 0.2829762319880374,
+          "2": 0.41235407997489126
         },
         "dixon_coles": {
-          "1": 0.49082568965293183,
-          "0": 0.2495433170956249,
-          "2": 0.2596309932514432
+          "1": 0.3071279176462406,
+          "0": 0.2777719085831906,
+          "2": 0.41510017377056885
         },
         "ensemble": {
-          "1": 0.47169599667144996,
-          "0": 0.2656609662607065,
-          "2": 0.2626430370678435
+          "1": 0.31298673824847517,
+          "0": 0.28676397587809627,
+          "2": 0.4002492858734286
         },
         "calibrated_ensemble": {
-          "1": 0.44127493118740924,
-          "0": 0.2666603455044866,
-          "2": 0.2920647233081041
+          "1": 0.32886221866320786,
+          "0": 0.2800351158504445,
+          "2": 0.39110266548634753
         },
         "calibrated_dc": {
-          "1": 0.44097771711588346,
-          "0": 0.2652741415896134,
-          "2": 0.2937481412945031
+          "1": 0.32461317704961884,
+          "0": 0.2819880778426664,
+          "2": 0.39339874510771483
         }
       }
     },
     {
-      "id": "J2|2026-11-15|j90-3bf2c28a7895|j90-5ace5535c774",
-      "date": "2026-11-15",
+      "id": "J2|2026-11-21|j90-df37fe02bc9e|j90-9b1ebad8c178",
+      "date": "2026-11-21",
       "league": "J2",
-      "home": "札幌",
-      "away": "鳥栖",
-      "home_team_id": "j90-3bf2c28a7895",
-      "away_team_id": "j90-5ace5535c774",
-      "models": {
-        "current": {
-          "1": 0.4900383224489795,
-          "0": 0.2622285714285715,
-          "2": 0.247733106122449
-        },
-        "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
-        },
-        "elo": {
-          "1": 0.44191051166976425,
-          "0": 0.2932385808907952,
-          "2": 0.2648509074394405
-        },
-        "poisson": {
-          "1": 0.41695603695665723,
-          "0": 0.2683710704584248,
-          "2": 0.31467289258491815
-        },
-        "dixon_coles": {
-          "1": 0.4190365747585701,
-          "0": 0.2635869854053968,
-          "2": 0.3173764398360329
-        },
-        "ensemble": {
-          "1": 0.4259677077949972,
-          "0": 0.2750655455848723,
-          "2": 0.2989667466201305
-        },
-        "calibrated_ensemble": {
-          "1": 0.40906253758664524,
-          "0": 0.2722076009383322,
-          "2": 0.31872986147502264
-        },
-        "calibrated_dc": {
-          "1": 0.3957859649424335,
-          "0": 0.2727221201616506,
-          "2": 0.3314919148959159
-        }
-      }
-    },
-    {
-      "id": "J2|2026-11-15|j90-ba6d5fee6d06|j90-9b1ebad8c178",
-      "date": "2026-11-15",
-      "league": "J2",
-      "home": "八戸",
+      "home": "宮崎",
       "away": "いわき",
-      "home_team_id": "j90-ba6d5fee6d06",
+      "home_team_id": "j90-df37fe02bc9e",
       "away_team_id": "j90-9b1ebad8c178",
       "models": {
         "current": {
-          "1": 0.2861654875,
-          "0": 0.2802,
-          "2": 0.43363451249999996
+          "1": 0.47858194197530873,
+          "0": 0.2658222222222222,
+          "2": 0.2555958358024691
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.31206622725188804,
-          "0": 0.29872317879230487,
-          "2": 0.38921059395580704
+          "1": 0.45102579919663893,
+          "0": 0.2918781588378111,
+          "2": 0.25709604196555
         },
         "poisson": {
-          "1": 0.20478067976950867,
-          "0": 0.24371422868913856,
-          "2": 0.5515050915413527
+          "1": 0.5128706821568849,
+          "0": 0.23326311711952916,
+          "2": 0.2538662007235859
         },
         "dixon_coles": {
-          "1": 0.20672380735020263,
-          "0": 0.23946851203211963,
-          "2": 0.5538076806176777
+          "1": 0.5150214827952898,
+          "0": 0.22896110337779982,
+          "2": 0.25601741382691046
         },
         "ensemble": {
-          "1": 0.24119023812386645,
-          "0": 0.260635306504521,
-          "2": 0.49817445537161253
+          "1": 0.4929726547162712,
+          "0": 0.25136745977838,
+          "2": 0.2556598855053488
         },
         "calibrated_ensemble": {
-          "1": 0.27594355735820286,
-          "0": 0.26395859732488847,
-          "2": 0.4600978453169087
+          "1": 0.4560110504536788,
+          "0": 0.25691614464334583,
+          "2": 0.2870728049029754
         },
         "calibrated_dc": {
-          "1": 0.25691169012277154,
-          "0": 0.26134984924488586,
-          "2": 0.4817384606323426
+          "1": 0.4561127524620862,
+          "0": 0.2518654651055526,
+          "2": 0.29202178243236127
         }
       }
     },
     {
-      "id": "J2|2026-11-15|j90-984ca7cc85ad|j90-0f8729f23062",
-      "date": "2026-11-15",
+      "id": "J2|2026-11-22|j90-4a3dc75d3442|j90-aad1b197486c",
+      "date": "2026-11-22",
       "league": "J2",
-      "home": "仙台",
-      "away": "秋田",
-      "home_team_id": "j90-984ca7cc85ad",
-      "away_team_id": "j90-0f8729f23062",
+      "home": "徳島",
+      "away": "湘南",
+      "home_team_id": "j90-4a3dc75d3442",
+      "away_team_id": "j90-aad1b197486c",
       "models": {
         "current": {
-          "1": 0.4890480816255669,
-          "0": 0.26253809523809524,
-          "2": 0.24841382313633784
+          "1": 0.331429687654321,
+          "0": 0.30284444444444447,
+          "2": 0.3657258679012345
         },
         "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
+          "1": 0.39002145922746784,
+          "0": 0.2698497854077253,
+          "2": 0.34012875536480686
         },
         "elo": {
-          "1": 0.5481401108524123,
-          "0": 0.2703581255275867,
-          "2": 0.181501763620001
+          "1": 0.4117925664505095,
+          "0": 0.2968810016160449,
+          "2": 0.29132643193344565
         },
         "poisson": {
-          "1": 0.5111901532265705,
-          "0": 0.26653107594681763,
-          "2": 0.22227877082661204
+          "1": 0.344065301417253,
+          "0": 0.34975022382622456,
+          "2": 0.30618447475652266
         },
         "dixon_coles": {
-          "1": 0.5129757784170634,
-          "0": 0.26248166436086673,
-          "2": 0.22454255722206976
+          "1": 0.3468956523561621,
+          "0": 0.3441625407698107,
+          "2": 0.3089418068740272
         },
         "ensemble": {
-          "1": 0.5241020141653487,
-          "0": 0.26645695527842367,
-          "2": 0.20944103055622762
+          "1": 0.3675845067413082,
+          "0": 0.33026458873736003,
+          "2": 0.3021509045213318
         },
         "calibrated_ensemble": {
-          "1": 0.47935873711406957,
-          "0": 0.2695119647160399,
-          "2": 0.25112929816989044
+          "1": 0.36889096932514187,
+          "0": 0.3098203950104308,
+          "2": 0.32128863566442734
         },
         "calibrated_dc": {
-          "1": 0.455713435972583,
-          "0": 0.27526173495142486,
-          "2": 0.26902482907599223
+          "1": 0.3508437727573621,
+          "0": 0.3233119052114366,
+          "2": 0.32584432203120134
         }
       }
     },
     {
-      "id": "J2|2026-11-15|j90-eead0dafb362|j90-4a3dc75d3442",
-      "date": "2026-11-15",
-      "league": "J2",
-      "home": "富山",
-      "away": "徳島",
-      "home_team_id": "j90-eead0dafb362",
-      "away_team_id": "j90-4a3dc75d3442",
-      "models": {
-        "current": {
-          "1": 0.5112946079861111,
-          "0": 0.2556333333333334,
-          "2": 0.23307205868055555
-        },
-        "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
-        },
-        "elo": {
-          "1": 0.4095779864863887,
-          "0": 0.2970959995526568,
-          "2": 0.29332601396095453
-        },
-        "poisson": {
-          "1": 0.40137561954015577,
-          "0": 0.3117782106601942,
-          "2": 0.2868461697996496
-        },
-        "dixon_coles": {
-          "1": 0.40384000555468114,
-          "0": 0.30688629675938134,
-          "2": 0.2892736976859375
-        },
-        "ensemble": {
-          "1": 0.40493120386040854,
-          "0": 0.30525350232407744,
-          "2": 0.2898152938155139
-        },
-        "calibrated_ensemble": {
-          "1": 0.3949245119017633,
-          "0": 0.2930905197849986,
-          "2": 0.3119849683132382
-        },
-        "calibrated_dc": {
-          "1": 0.38674899708607063,
-          "0": 0.30065148012041365,
-          "2": 0.3125995227935156
-        }
-      }
-    },
-    {
-      "id": "J2|2026-11-15|j90-0a86729d816d|j90-11c847315297",
-      "date": "2026-11-15",
-      "league": "J2",
-      "home": "今治",
-      "away": "磐田",
-      "home_team_id": "j90-0a86729d816d",
-      "away_team_id": "j90-11c847315297",
-      "models": {
-        "current": {
-          "1": 0.26757299864654194,
-          "0": 0.2713761904761905,
-          "2": 0.4610508108772676
-        },
-        "league_mean": {
-          "1": 0.38996763754045305,
-          "0": 0.2707659115426106,
-          "2": 0.33926645091693636
-        },
-        "elo": {
-          "1": 0.27116077243274966,
-          "0": 0.29424476036670105,
-          "2": 0.43459446720054923
-        },
-        "poisson": {
-          "1": 0.2665265815678121,
-          "0": 0.24472589357404134,
-          "2": 0.48874752485814665
-        },
-        "dixon_coles": {
-          "1": 0.2689537609792002,
-          "0": 0.24067611458353963,
-          "2": 0.4903701244372603
-        },
-        "ensemble": {
-          "1": 0.2688803716599207,
-          "0": 0.2598822561747607,
-          "2": 0.47123737216531875
-        },
-        "calibrated_ensemble": {
-          "1": 0.29679752639556184,
-          "0": 0.26243614127433906,
-          "2": 0.440766332330099
-        },
-        "calibrated_dc": {
-          "1": 0.3003224789685532,
-          "0": 0.25912487505964643,
-          "2": 0.4405526459718004
-        }
-      }
-    },
-    {
-      "id": "J3|2026-11-14|j90-3efbac1064ae|j90-95bedd0573c6",
-      "date": "2026-11-14",
+      "id": "J3|2026-11-21|j90-5ce53ddb31fc|j90-8bbce0db37b2",
+      "date": "2026-11-21",
       "league": "J3",
-      "home": "福島",
+      "home": "群馬",
+      "away": "栃木SC",
+      "home_team_id": "j90-5ce53ddb31fc",
+      "away_team_id": "j90-8bbce0db37b2",
+      "models": {
+        "current": {
+          "1": 0.2920905888888889,
+          "0": 0.2830666666666667,
+          "2": 0.4248427444444444
+        },
+        "league_mean": {
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
+        },
+        "elo": {
+          "1": 0.2802249403234702,
+          "0": 0.29553677614564394,
+          "2": 0.42423828353088594
+        },
+        "poisson": {
+          "1": 0.2880573994204031,
+          "0": 0.28197528207569567,
+          "2": 0.42996731850390124
+        },
+        "dixon_coles": {
+          "1": 0.302445153463676,
+          "0": 0.2557870176861115,
+          "2": 0.4417678288502124
+        },
+        "ensemble": {
+          "1": 0.29024249773584976,
+          "0": 0.27776635863581706,
+          "2": 0.4319911436283332
+        },
+        "calibrated_ensemble": {
+          "1": 0.3123440534645781,
+          "0": 0.27426268147894095,
+          "2": 0.41339326505648094
+        },
+        "calibrated_dc": {
+          "1": 0.3219862589081334,
+          "0": 0.2679868918618094,
+          "2": 0.4100268492300573
+        }
+      }
+    },
+    {
+      "id": "J3|2026-11-21|j90-64627adc4e5e|j90-c0cf4d6ddb8a",
+      "date": "2026-11-21",
+      "league": "J3",
+      "home": "松本",
+      "away": "琉球",
+      "home_team_id": "j90-64627adc4e5e",
+      "away_team_id": "j90-c0cf4d6ddb8a",
+      "models": {
+        "current": {
+          "1": 0.32395524990388314,
+          "0": 0.2989803921568628,
+          "2": 0.3770643579392541
+        },
+        "league_mean": {
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
+        },
+        "elo": {
+          "1": 0.4132969630673589,
+          "0": 0.29673075451527664,
+          "2": 0.2899722824173645
+        },
+        "poisson": {
+          "1": 0.4477204048793799,
+          "0": 0.2703735243665798,
+          "2": 0.28190607075404034
+        },
+        "dixon_coles": {
+          "1": 0.4632271941171485,
+          "0": 0.24376332485653796,
+          "2": 0.29300948102631363
+        },
+        "ensemble": {
+          "1": 0.4414148540212958,
+          "0": 0.2702892012461315,
+          "2": 0.2882959447325728
+        },
+        "calibrated_ensemble": {
+          "1": 0.41988288527479123,
+          "0": 0.2691369401857644,
+          "2": 0.3109801745394444
+        },
+        "calibrated_dc": {
+          "1": 0.42345169860157766,
+          "0": 0.2603893927436968,
+          "2": 0.3161589086547255
+        }
+      }
+    },
+    {
+      "id": "J3|2026-11-21|j90-3120f29a8a60|j90-ac1c1ab4d3ed",
+      "date": "2026-11-21",
+      "league": "J3",
+      "home": "金沢",
+      "away": "鹿児島",
+      "home_team_id": "j90-3120f29a8a60",
+      "away_team_id": "j90-ac1c1ab4d3ed",
+      "models": {
+        "current": {
+          "1": 0.40944197777777774,
+          "0": 0.28813333333333335,
+          "2": 0.3024246888888889
+        },
+        "league_mean": {
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
+        },
+        "elo": {
+          "1": 0.3254822823354752,
+          "0": 0.2994733646806428,
+          "2": 0.375044352983882
+        },
+        "poisson": {
+          "1": 0.3984571139562779,
+          "0": 0.2392215148117112,
+          "2": 0.3623213712320109
+        },
+        "dixon_coles": {
+          "1": 0.4082748024857464,
+          "0": 0.21654980535992158,
+          "2": 0.37517539215433204
+        },
+        "ensemble": {
+          "1": 0.3774047329258332,
+          "0": 0.2517482282840919,
+          "2": 0.370847038790075
+        },
+        "calibrated_ensemble": {
+          "1": 0.37473303678184583,
+          "0": 0.2551349833874966,
+          "2": 0.37013197983065765
+        },
+        "calibrated_dc": {
+          "1": 0.38978464191175294,
+          "0": 0.2408978460237932,
+          "2": 0.3693175120644539
+        }
+      }
+    },
+    {
+      "id": "J3|2026-11-21|j90-88a6e3a06ff0|j90-95bedd0573c6",
+      "date": "2026-11-21",
+      "league": "J3",
+      "home": "奈良",
       "away": "相模原",
-      "home_team_id": "j90-3efbac1064ae",
+      "home_team_id": "j90-88a6e3a06ff0",
       "away_team_id": "j90-95bedd0573c6",
       "models": {
         "current": {
-          "1": 0.2994513888888889,
-          "0": 0.2866666666666667,
-          "2": 0.41388194444444454
+          "1": 0.3953584799094366,
+          "0": 0.29281830065359477,
+          "2": 0.31182321943696867
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.3686909204029893,
-          "0": 0.29970517857509404,
-          "2": 0.3316039010219167
+          "1": 0.43411907293766117,
+          "0": 0.29430747829597254,
+          "2": 0.27157344876636635
         },
         "poisson": {
-          "1": 0.41466170838176003,
-          "0": 0.2407514209044688,
-          "2": 0.3445868707137711
+          "1": 0.45127863599279766,
+          "0": 0.26711765747921196,
+          "2": 0.28160370652799027
         },
         "dixon_coles": {
-          "1": 0.42951600297048037,
-          "0": 0.21837268542477511,
-          "2": 0.3521113116047445
+          "1": 0.46511778621163724,
+          "0": 0.24084552253900782,
+          "2": 0.29403669124935516
         },
         "ensemble": {
-          "1": 0.40428954391840993,
-          "0": 0.2529430949681127,
-          "2": 0.34276736111347744
+          "1": 0.450171831714032,
+          "0": 0.26742355277139745,
+          "2": 0.2824046155145706
         },
         "calibrated_ensemble": {
-          "1": 0.393554510793981,
-          "0": 0.25611733876335163,
-          "2": 0.3503281504426673
+          "1": 0.4260149560870781,
+          "0": 0.2672972030851588,
+          "2": 0.30668784082776296
         },
         "calibrated_dc": {
-          "1": 0.40282050979627215,
-          "0": 0.2423204370946681,
-          "2": 0.3548590531090598
+          "1": 0.424631724443372,
+          "0": 0.2584442966205738,
+          "2": 0.31692397893605434
         }
       }
     },
     {
-      "id": "J3|2026-11-14|j90-b934ae7375be|j90-64627adc4e5e",
-      "date": "2026-11-14",
+      "id": "J3|2026-11-21|j90-bfc24e2e1f4e|j90-596b06d05ef1",
+      "date": "2026-11-21",
       "league": "J3",
-      "home": "岐阜",
-      "away": "松本",
-      "home_team_id": "j90-b934ae7375be",
-      "away_team_id": "j90-64627adc4e5e",
+      "home": "鳥取",
+      "away": "長野",
+      "home_team_id": "j90-bfc24e2e1f4e",
+      "away_team_id": "j90-596b06d05ef1",
       "models": {
         "current": {
-          "1": 0.5223695413194446,
-          "0": 0.2522333333333333,
-          "2": 0.22539712534722214
+          "1": 0.30130282725447477,
+          "0": 0.28757908496732026,
+          "2": 0.4111180877782049
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.5059522293078779,
-          "0": 0.28124959959035073,
-          "2": 0.21279817110177143
+          "1": 0.4612391346767217,
+          "0": 0.2902148736736745,
+          "2": 0.24854599164960386
         },
         "poisson": {
-          "1": 0.4919360670116231,
-          "0": 0.25316802084218654,
-          "2": 0.2548959121461904
+          "1": 0.4320429880106204,
+          "0": 0.2601766265867911,
+          "2": 0.30778038540258834
         },
         "dixon_coles": {
-          "1": 0.502458903907171,
-          "0": 0.22893273694370134,
-          "2": 0.26860835914912756
+          "1": 0.4455582069034059,
+          "0": 0.23386285303033605,
+          "2": 0.3205789400662582
         },
         "ensemble": {
-          "1": 0.5001157334088907,
-          "0": 0.2544501191254129,
-          "2": 0.24543414746569647
+          "1": 0.4462801098635827,
+          "0": 0.2614181177636005,
+          "2": 0.2923017723728168
         },
         "calibrated_ensemble": {
-          "1": 0.4612474601008234,
-          "0": 0.25946427500517405,
-          "2": 0.27928826489400244
+          "1": 0.42312271512179317,
+          "0": 0.2628702155559377,
+          "2": 0.3140070693222692
         },
         "calibrated_dc": {
-          "1": 0.448117091172556,
-          "0": 0.2513596699416607,
-          "2": 0.3005232388857832
+          "1": 0.41245901149213593,
+          "0": 0.25321374131179897,
+          "2": 0.33432724719606516
         }
       }
     },
     {
-      "id": "J3|2026-11-14|j90-c37318b2e460|j90-5ce53ddb31fc",
-      "date": "2026-11-14",
+      "id": "J3|2026-11-21|j90-809c7d83805f|j90-b934ae7375be",
+      "date": "2026-11-21",
       "league": "J3",
-      "home": "北九州",
-      "away": "群馬",
-      "home_team_id": "j90-c37318b2e460",
-      "away_team_id": "j90-5ce53ddb31fc",
+      "home": "愛媛",
+      "away": "岐阜",
+      "home_team_id": "j90-809c7d83805f",
+      "away_team_id": "j90-b934ae7375be",
       "models": {
         "current": {
-          "1": 0.47833497187499996,
-          "0": 0.2659,
-          "2": 0.25576502812499996
+          "1": 0.34186327404844286,
+          "0": 0.30832941176470585,
+          "2": 0.34980731418685124
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.47393517889552966,
-          "0": 0.2879453783603636,
-          "2": 0.23811944274410676
+          "1": 0.4886266277944756,
+          "0": 0.2850441333326946,
+          "2": 0.22632923887282982
         },
         "poisson": {
-          "1": 0.5282533622004132,
-          "0": 0.242788430179144,
-          "2": 0.22895820762044256
+          "1": 0.42725075258521794,
+          "0": 0.22971041458607558,
+          "2": 0.34303883282870656
         },
         "dixon_coles": {
-          "1": 0.5422769846821006,
-          "0": 0.21838641015490678,
-          "2": 0.23933660516299243
+          "1": 0.435923056522982,
+          "0": 0.20882313309160244,
+          "2": 0.3552538103854154
         },
         "ensemble": {
-          "1": 0.5148218419260145,
-          "0": 0.2497067395648048,
-          "2": 0.2354714185091806
+          "1": 0.4506001456342252,
+          "0": 0.2411925603367909,
+          "2": 0.30820729402898395
         },
         "calibrated_ensemble": {
-          "1": 0.4716805839587591,
-          "0": 0.25654324094056935,
-          "2": 0.27177617510067154
+          "1": 0.42586605547086315,
+          "0": 0.24828523394150115,
+          "2": 0.3258487105876357
         },
         "calibrated_dc": {
-          "1": 0.4735058120914934,
-          "0": 0.2454894319541871,
-          "2": 0.28100475595431934
+          "1": 0.40704035598767074,
+          "0": 0.23573523724180157,
+          "2": 0.3572244067705276
         }
       }
     },
     {
-      "id": "J3|2026-11-15|j90-ac1c1ab4d3ed|j90-bfc24e2e1f4e",
-      "date": "2026-11-15",
+      "id": "J3|2026-11-21|j90-3c437a9c2dcf|j90-3efbac1064ae",
+      "date": "2026-11-21",
       "league": "J3",
-      "home": "鹿児島",
-      "away": "鳥取",
-      "home_team_id": "j90-ac1c1ab4d3ed",
-      "away_team_id": "j90-bfc24e2e1f4e",
+      "home": "高知",
+      "away": "福島",
+      "home_team_id": "j90-3c437a9c2dcf",
+      "away_team_id": "j90-3efbac1064ae",
       "models": {
         "current": {
-          "1": 0.542021409186393,
-          "0": 0.2446809523809524,
-          "2": 0.21329763843265465
+          "1": 0.298142924567474,
+          "0": 0.28602352941176473,
+          "2": 0.41583354602076117
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.60720748827481,
-          "0": 0.251268128544024,
-          "2": 0.14152438318116603
+          "1": 0.24377079582487635,
+          "0": 0.2892090400827646,
+          "2": 0.4670201640923591
         },
         "poisson": {
-          "1": 0.6516750893984361,
-          "0": 0.19108713806854016,
-          "2": 0.15723777253302368
+          "1": 0.2172751227702604,
+          "0": 0.21354948880858923,
+          "2": 0.5691753884211501
         },
         "dixon_coles": {
-          "1": 0.6607254519170401,
-          "0": 0.1736218498236278,
-          "2": 0.16565269825933218
+          "1": 0.22722934808680917,
+          "0": 0.1936770557434267,
+          "2": 0.579093596169764
         },
         "ensemble": {
-          "1": 0.639869343196762,
-          "0": 0.20532570547873066,
-          "2": 0.1548049513245073
+          "1": 0.22942508889398197,
+          "0": 0.23214519487826016,
+          "2": 0.5384297162277577
         },
         "calibrated_ensemble": {
-          "1": 0.5636014250065261,
-          "0": 0.2291010323758123,
-          "2": 0.20729754261766167
+          "1": 0.2675468353150786,
+          "0": 0.24433729390606873,
+          "2": 0.4881158707788527
         },
         "calibrated_dc": {
-          "1": 0.5529299200060993,
-          "0": 0.21831623868087666,
-          "2": 0.2287538413130241
+          "1": 0.27376529350064804,
+          "0": 0.22898767886745183,
+          "2": 0.49724702763190015
         }
       }
     },
     {
-      "id": "J3|2026-11-15|j90-8bbce0db37b2|j90-88a6e3a06ff0",
-      "date": "2026-11-15",
+      "id": "J3|2026-11-22|j90-a175f82fb520|j90-c37318b2e460",
+      "date": "2026-11-22",
       "league": "J3",
-      "home": "栃木SC",
-      "away": "奈良",
-      "home_team_id": "j90-8bbce0db37b2",
-      "away_team_id": "j90-88a6e3a06ff0",
+      "home": "熊本",
+      "away": "北九州",
+      "home_team_id": "j90-a175f82fb520",
+      "away_team_id": "j90-c37318b2e460",
       "models": {
         "current": {
-          "1": 0.32191219305555546,
-          "0": 0.29793333333333333,
-          "2": 0.38015447361111115
+          "1": 0.37542399588619757,
+          "0": 0.2995372549019608,
+          "2": 0.3250387492118416
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.3771650381620154,
-          "0": 0.29938143702844033,
-          "2": 0.32345352480954426
+          "1": 0.44735707683447234,
+          "0": 0.29243986062183186,
+          "2": 0.2602030625436958
         },
         "poisson": {
-          "1": 0.3653646340787012,
-          "0": 0.2980265688292079,
-          "2": 0.33660879709209085
+          "1": 0.46489510964416714,
+          "0": 0.28628200525510505,
+          "2": 0.2488228851007276
         },
         "dixon_coles": {
-          "1": 0.37852934916906317,
-          "0": 0.2709951278542677,
-          "2": 0.3504755229766693
+          "1": 0.4761346315863589,
+          "0": 0.2613109817178737,
+          "2": 0.2625543866957674
         },
         "ensemble": {
-          "1": 0.3736863404699266,
-          "0": 0.28946771123730536,
-          "2": 0.33684594829276815
+          "1": 0.4627956060216661,
+          "0": 0.28001094919827024,
+          "2": 0.2571934447800636
         },
         "calibrated_ensemble": {
-          "1": 0.37230532632322016,
-          "0": 0.2816522201677012,
-          "2": 0.3460424535090786
+          "1": 0.43543194237284155,
+          "0": 0.2767599627405594,
+          "2": 0.287808094886599
         },
         "calibrated_dc": {
-          "1": 0.3703132991259007,
-          "0": 0.27712536483164985,
-          "2": 0.3525613360424495
+          "1": 0.4318403607118688,
+          "0": 0.2727644190688875,
+          "2": 0.29539522021924375
         }
       }
     },
     {
-      "id": "J3|2026-11-15|j90-596b06d05ef1|j90-809c7d83805f",
-      "date": "2026-11-15",
+      "id": "J3|2026-11-22|j90-31e9bf970d19|j90-d3658c904709",
+      "date": "2026-11-22",
       "league": "J3",
-      "home": "長野",
-      "away": "愛媛",
-      "home_team_id": "j90-596b06d05ef1",
-      "away_team_id": "j90-809c7d83805f",
+      "home": "山口",
+      "away": "滋賀",
+      "home_team_id": "j90-31e9bf970d19",
+      "away_team_id": "j90-d3658c904709",
       "models": {
         "current": {
-          "1": 0.348739246875,
-          "0": 0.30870000000000003,
-          "2": 0.342560753125
+          "1": 0.4868289331811155,
+          "0": 0.2632324929971989,
+          "2": 0.24993857382168555
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.19727816694301137,
-          "0": 0.27623891763891495,
-          "2": 0.5264829154180737
+          "1": 0.5090449041199133,
+          "0": 0.28053027620716814,
+          "2": 0.21042481967291854
         },
         "poisson": {
-          "1": 0.30463682506380796,
-          "0": 0.2354782354662537,
-          "2": 0.45988493946993836
+          "1": 0.6168699739501714,
+          "0": 0.2262149017179162,
+          "2": 0.15691512433191263
         },
         "dixon_coles": {
-          "1": 0.31822014573216484,
-          "0": 0.2133174479573506,
-          "2": 0.46846240631048447
+          "1": 0.6257913453975522,
+          "0": 0.20453819672685833,
+          "2": 0.16967045787558957
         },
         "ensemble": {
-          "1": 0.2733783792463281,
-          "0": 0.2416782003541731,
-          "2": 0.48494342039949884
+          "1": 0.5839020744892123,
+          "0": 0.23709445821731423,
+          "2": 0.17900346729347358
         },
         "calibrated_ensemble": {
-          "1": 0.30047061324835905,
-          "0": 0.249492861551024,
-          "2": 0.45003652520061704
+          "1": 0.5223410382020462,
+          "0": 0.25064625492309534,
+          "2": 0.22701270687485842
         },
         "calibrated_dc": {
-          "1": 0.3336214987442222,
-          "0": 0.2394080575116692,
-          "2": 0.4269704437441087
+          "1": 0.5294633070725197,
+          "0": 0.24027358749895483,
+          "2": 0.2302631054285256
         }
       }
     },
     {
-      "id": "J3|2026-11-15|j90-3120f29a8a60|j90-a175f82fb520",
-      "date": "2026-11-15",
+      "id": "J3|2026-11-22|j90-57b0555d7e11|j90-ee8564af5f03",
+      "date": "2026-11-22",
       "league": "J3",
-      "home": "金沢",
-      "away": "熊本",
-      "home_team_id": "j90-3120f29a8a60",
-      "away_team_id": "j90-a175f82fb520",
+      "home": "FC大阪",
+      "away": "讃岐",
+      "home_team_id": "j90-57b0555d7e11",
+      "away_team_id": "j90-ee8564af5f03",
       "models": {
         "current": {
-          "1": 0.3524350708900227,
-          "0": 0.3074190476190476,
-          "2": 0.34014588149092967
+          "1": 0.5343686538992384,
+          "0": 0.24762352941176471,
+          "2": 0.21800781668899696
         },
         "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
+          "1": 0.42927429274292744,
+          "0": 0.24169741697416974,
+          "2": 0.3290282902829028
         },
         "elo": {
-          "1": 0.39705254169933074,
-          "0": 0.298172156166682,
-          "2": 0.30477530213398735
+          "1": 0.6558066685799768,
+          "0": 0.23224593555661674,
+          "2": 0.11194739586340643
         },
         "poisson": {
-          "1": 0.36656989869368717,
-          "0": 0.2991639448346318,
-          "2": 0.334266156471681
+          "1": 0.6079130909424642,
+          "0": 0.23480050953032514,
+          "2": 0.15728639952721082
         },
         "dixon_coles": {
-          "1": 0.37875602726274993,
-          "0": 0.27249438195046616,
-          "2": 0.34874959078678397
+          "1": 0.6173134976638472,
+          "0": 0.21347215605975572,
+          "2": 0.16921434627639684
         },
         "ensemble": {
-          "1": 0.3807928225519226,
-          "0": 0.28994349431726,
-          "2": 0.32926368313081744
+          "1": 0.6270110857287627,
+          "0": 0.22683953371556587,
+          "2": 0.14614938055567137
         },
         "calibrated_ensemble": {
-          "1": 0.3773593129136451,
-          "0": 0.2820364823715771,
-          "2": 0.3406042047147778
+          "1": 0.5553597112540252,
+          "0": 0.24566532538731323,
+          "2": 0.19897496335866155
         },
         "calibrated_dc": {
-          "1": 0.37045106621198043,
-          "0": 0.27809972009793904,
-          "2": 0.3514492136900804
-        }
-      }
-    },
-    {
-      "id": "J3|2026-11-15|j90-ee8564af5f03|j90-31e9bf970d19",
-      "date": "2026-11-15",
-      "league": "J3",
-      "home": "讃岐",
-      "away": "山口",
-      "home_team_id": "j90-ee8564af5f03",
-      "away_team_id": "j90-31e9bf970d19",
-      "models": {
-        "current": {
-          "1": 0.2795546420138889,
-          "0": 0.27703333333333335,
-          "2": 0.4434120246527778
-        },
-        "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
-        },
-        "elo": {
-          "1": 0.22370241990024486,
-          "0": 0.28434732474417007,
-          "2": 0.491950255355585
-        },
-        "poisson": {
-          "1": 0.21839811797915762,
-          "0": 0.26937316949582313,
-          "2": 0.5122287125250193
-        },
-        "dixon_coles": {
-          "1": 0.23208413564358063,
-          "0": 0.24431971581979672,
-          "2": 0.5235961485366226
-        },
-        "ensemble": {
-          "1": 0.22472822450766103,
-          "0": 0.2660134033532633,
-          "2": 0.5092583721390757
-        },
-        "calibrated_ensemble": {
-          "1": 0.2631612098582815,
-          "0": 0.2684283427280389,
-          "2": 0.4684104474136796
-        },
-        "calibrated_dc": {
-          "1": 0.27491449456786976,
-          "0": 0.26310675609789197,
-          "2": 0.4619787493342384
-        }
-      }
-    },
-    {
-      "id": "J3|2026-11-15|j90-c0cf4d6ddb8a|j90-3c437a9c2dcf",
-      "date": "2026-11-15",
-      "league": "J3",
-      "home": "琉球",
-      "away": "高知",
-      "home_team_id": "j90-c0cf4d6ddb8a",
-      "away_team_id": "j90-3c437a9c2dcf",
-      "models": {
-        "current": {
-          "1": 0.561841701381276,
-          "0": 0.23733333333333334,
-          "2": 0.2008249652853906
-        },
-        "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
-        },
-        "elo": {
-          "1": 0.5080509241403578,
-          "0": 0.2807628443374105,
-          "2": 0.21118623152223168
-        },
-        "poisson": {
-          "1": 0.6013648158044635,
-          "0": 0.2191899383213406,
-          "2": 0.17944524587419586
-        },
-        "dixon_coles": {
-          "1": 0.6101234111561905,
-          "0": 0.19872249818574675,
-          "2": 0.19115409065806274
-        },
-        "ensemble": {
-          "1": 0.5731797170336707,
-          "0": 0.23289176028149927,
-          "2": 0.1939285226848301
-        },
-        "calibrated_ensemble": {
-          "1": 0.5138850560806851,
-          "0": 0.24670148488226243,
-          "2": 0.23941345903705236
-        },
-        "calibrated_dc": {
-          "1": 0.5182107424917575,
-          "0": 0.23464415041376635,
-          "2": 0.24714510709447615
-        }
-      }
-    },
-    {
-      "id": "J3|2026-11-15|j90-d3658c904709|j90-57b0555d7e11",
-      "date": "2026-11-15",
-      "league": "J3",
-      "home": "滋賀",
-      "away": "FC大阪",
-      "home_team_id": "j90-d3658c904709",
-      "away_team_id": "j90-57b0555d7e11",
-      "models": {
-        "current": {
-          "1": 0.26731849591836737,
-          "0": 0.27125714285714286,
-          "2": 0.46142436122448977
-        },
-        "league_mean": {
-          "1": 0.4282178217821782,
-          "0": 0.24133663366336633,
-          "2": 0.33044554455445546
-        },
-        "elo": {
-          "1": 0.2597733545720081,
-          "0": 0.2923635113119101,
-          "2": 0.44786313411608175
-        },
-        "poisson": {
-          "1": 0.22446596215142622,
-          "0": 0.25075648987207033,
-          "2": 0.5247775479765034
-        },
-        "dixon_coles": {
-          "1": 0.23773558630603223,
-          "0": 0.22707563073553538,
-          "2": 0.5351887829584324
-        },
-        "ensemble": {
-          "1": 0.2406583010098222,
-          "0": 0.25673187730650526,
-          "2": 0.5026098216836725
-        },
-        "calibrated_ensemble": {
-          "1": 0.2756076798128566,
-          "0": 0.26125449334260664,
-          "2": 0.46313782684453675
-        },
-        "calibrated_dc": {
-          "1": 0.27951655624662164,
-          "0": 0.2514180708857361,
-          "2": 0.4690653728676423
+          "1": 0.524005636717486,
+          "0": 0.24650752517999003,
+          "2": 0.229486838102524
         }
       }
     }
