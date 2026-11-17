@@ -1,6 +1,6 @@
 {
   "state": "error",
-  "checked_at": "2026-11-17T16:09:10.604Z",
+  "checked_at": "2026-11-17T17:08:26.147Z",
   "failed_step": "automatic_operation",
   "error": "HTTP 302: store.toto-dream.com",
   "previous_data_retained": true
