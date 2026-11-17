@@ -1,0 +1,42 @@
+{
+  "run_id": "753e0682-5037-472a-b15a-630ec9cd4db6",
+  "events": [
+    {
+      "state": "started",
+      "trigger": "schedule",
+      "at": "2026-11-17T16:07:35.222Z"
+    },
+    {
+      "state": "results_success",
+      "attempt": 1,
+      "completed": 52,
+      "at": "2026-11-17T16:07:38.862Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 1,
+      "error": "HTTP 302: store.toto-dream.com",
+      "at": "2026-11-17T16:07:39.417Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 2,
+      "error": "HTTP 302: store.toto-dream.com",
+      "at": "2026-11-17T16:08:09.944Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 3,
+      "error": "HTTP 302: store.toto-dream.com",
+      "at": "2026-11-17T16:09:10.603Z"
+    },
+    {
+      "state": "error",
+      "checked_at": "2026-11-17T16:09:10.604Z",
+      "failed_step": "automatic_operation",
+      "error": "HTTP 302: store.toto-dream.com",
+      "previous_data_retained": true,
+      "at": "2026-11-17T16:09:10.604Z"
+    }
+  ]
+}
