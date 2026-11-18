@@ -1442,8 +1442,8 @@
   "product_id": "01",
   "sales_open_at": "2026-11-14T08:00:00+09:00",
   "sales_close_at": "2026-11-21T13:50:00+09:00",
-  "source_digest": "4d51eee5c127a6f3aa0a3e3d06a9cc6823a656fd9379d8de2d40d00b06af8741",
-  "generated_at": "2026-11-17T03:57:31.562Z",
+  "source_digest": "2299ddf207f066bc15408c4b2d0258ce42e75f025331447de4fdd134d18b5ee8",
+  "generated_at": "2026-11-18T01:00:04.913Z",
   "engine": "JUDGE 90 Betting Strategy Engine",
   "version": "2.0",
   "budget": 1000,
@@ -1729,5 +1729,5 @@
       "uncertainty_score": 0.912
     }
   ],
-  "dataset_id": "3bb7562e26e7b782c2a2b932bd9c074212db82f6eca33a3eb57443b954158f98"
+  "dataset_id": "62ef2ce410e27867c1ecc5a053a82ae5f8d940ca7be311da6e691e10a16d5987"
 }
