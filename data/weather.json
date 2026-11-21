@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-21T19:23:02.910Z",
+  "fetched_at": "2026-11-21T23:58:18.482Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
   "available": "0/13",
@@ -17,7 +17,7 @@
       "weather_location": "千葉 ホームタウン",
       "latitude": 35.6073,
       "longitude": 140.1063,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: fetch failed"
     },
     {
       "number": 2,
@@ -195,7 +195,7 @@
       "reason": "fetch_error: robots.txt disallows /v1/forecast"
     }
   ],
-  "dataset_id": "636f548928ef28978ec9010b0f799e40b9430cbabacacdcf179c0362862aa507",
+  "dataset_id": "9a1e61392720bed121b367b3216f6cf5410303900cc7d43f8bfac43939b25749",
   "round_id": "1674",
   "product": "toto",
   "product_id": "01",
