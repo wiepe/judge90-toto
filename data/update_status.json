@@ -1,15 +1,15 @@
 {
   "publication": {
-    "checked_at": "2026-11-21T17:48:51.894Z",
+    "checked_at": "2026-11-21T19:23:03.084Z",
     "sales_close_at": "2026-11-25T18:50:00+09:00",
-    "remaining_minutes": 5281.1351,
+    "remaining_minutes": 5186.9486,
     "reserve_minutes": 30,
     "on_time": true
   },
   "state": "success",
-  "started_at": "2026-11-21T17:47:28.323Z",
-  "checked_at": "2026-11-21T17:48:51.898Z",
-  "dataset_id": "3f25b9b00e9042af26a5283a5f8e60619928f4b179db0bf8d9fd835e44607228",
+  "started_at": "2026-11-21T19:22:38.075Z",
+  "checked_at": "2026-11-21T19:23:03.087Z",
+  "dataset_id": "636f548928ef28978ec9010b0f799e40b9430cbabacacdcf179c0362862aa507",
   "round_id": "1674",
   "product": "toto",
   "product_id": "01",
@@ -21,7 +21,7 @@
     "venue": 13,
     "h2h_used": 13,
     "weather": 0,
-    "weather_policy_blocked": 11,
+    "weather_policy_blocked": 12,
     "weather_used": false,
     "rows": [
       {
@@ -44,8 +44,8 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "unavailable",
-          "label": "未取得（予測に未使用）",
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
           "used": false
         }
       },
@@ -355,10 +355,10 @@
     {
       "source": "weather",
       "number": 1,
-      "reason": "fetch_error: fetch failed",
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "unavailable"
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
