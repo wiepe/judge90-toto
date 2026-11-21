@@ -1,41 +1,41 @@
 {
   "publication": {
-    "checked_at": "2026-11-21T02:23:48.937Z",
-    "sales_close_at": "2026-11-21T13:50:00+09:00",
-    "remaining_minutes": 146.18438333333333,
+    "checked_at": "2026-11-21T08:49:19.775Z",
+    "sales_close_at": "2026-11-25T18:50:00+09:00",
+    "remaining_minutes": 5820.670416666667,
     "reserve_minutes": 30,
     "on_time": true
   },
   "state": "success",
-  "started_at": "2026-11-21T02:23:23.705Z",
-  "checked_at": "2026-11-21T02:23:48.941Z",
-  "dataset_id": "65d4ad9fd889e136a9a40b1759194c479974991a090853cc0e5e719ba4d2cc0a",
-  "round_id": "1673",
+  "started_at": "2026-11-21T08:48:09.208Z",
+  "checked_at": "2026-11-21T08:49:19.780Z",
+  "dataset_id": "ab2bf1818226adfb456cfb26b34fb6d42e907b242801f71814631275e629878d",
+  "round_id": "1674",
   "product": "toto",
   "product_id": "01",
-  "sales_open_at": "2026-11-14T08:00:00+09:00",
-  "sales_close_at": "2026-11-21T13:50:00+09:00",
+  "sales_open_at": "2026-11-21T08:00:00+09:00",
+  "sales_close_at": "2026-11-25T18:50:00+09:00",
   "weather_available": "0/13",
   "data_quality": {
     "prediction": 13,
     "venue": 13,
-    "h2h_used": 12,
+    "h2h_used": 13,
     "weather": 0,
-    "weather_policy_blocked": 12,
+    "weather_policy_blocked": 11,
     "weather_used": false,
     "rows": [
       {
         "number": 1,
-        "home": "町田",
-        "away": "長崎",
+        "home": "千葉",
+        "away": "名古屋",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "Ｇスタ",
-          "kickoff": "14:00",
+          "stadium": "フクアリ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -44,23 +44,23 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "policy_blocked",
-          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "state": "unavailable",
+          "label": "未取得（予測に未使用）",
           "used": false
         }
       },
       {
         "number": 2,
-        "home": "広島",
-        "away": "横浜FM",
+        "home": "岡山",
+        "away": "清水",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "Ｅピース",
-          "kickoff": "14:00",
+          "stadium": "ＪＦＥス",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -76,16 +76,16 @@
       },
       {
         "number": 3,
-        "home": "京都",
-        "away": "浦和",
+        "home": "長崎",
+        "away": "川崎Ｆ",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "サンガＳ",
-          "kickoff": "14:00",
+          "stadium": "ピースタ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -101,16 +101,16 @@
       },
       {
         "number": 4,
-        "home": "川崎Ｆ",
-        "away": "福岡",
+        "home": "水戸",
+        "away": "東京Ｖ",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "Ｕ等々力",
-          "kickoff": "15:00",
+          "stadium": "水戸信ス",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -126,16 +126,16 @@
       },
       {
         "number": 5,
-        "home": "Ｇ大阪",
-        "away": "岡山",
+        "home": "福岡",
+        "away": "横浜FM",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "パナスタ",
-          "kickoff": "16:00",
+          "stadium": "ベススタ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -151,8 +151,8 @@
       },
       {
         "number": 6,
-        "home": "東京Ｖ",
-        "away": "名古屋",
+        "home": "FC東京",
+        "away": "広島",
         "prediction": {
           "state": "available",
           "used": true
@@ -160,7 +160,7 @@
         "venue": {
           "state": "available",
           "stadium": "味スタ",
-          "kickoff": "14:00",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -176,16 +176,16 @@
       },
       {
         "number": 7,
-        "home": "Ｃ大阪",
-        "away": "FC東京",
+        "home": "浦和",
+        "away": "Ｃ大阪",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "ハナサカ",
-          "kickoff": "15:00",
+          "stadium": "埼玉",
+          "kickoff": "19:30",
           "used": false
         },
         "h2h": {
@@ -201,41 +201,16 @@
       },
       {
         "number": 8,
-        "home": "秋田",
-        "away": "山形",
+        "home": "札幌",
+        "away": "藤枝",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "ソユスタ",
-          "kickoff": "14:00",
-          "used": false
-        },
-        "h2h": {
-          "state": "available",
-          "used": true,
-          "label": "対戦履歴を補正に使用"
-        },
-        "weather": {
-          "state": "policy_blocked",
-          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
-          "used": false
-        }
-      },
-      {
-        "number": 9,
-        "home": "宮崎",
-        "away": "いわき",
-        "prediction": {
-          "state": "available",
-          "used": true
-        },
-        "venue": {
-          "state": "available",
-          "stadium": "いちご",
-          "kickoff": "14:00",
+          "stadium": "プレド",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -250,23 +225,48 @@
         }
       },
       {
-        "number": 10,
-        "home": "甲府",
-        "away": "八戸",
+        "number": 9,
+        "home": "山形",
+        "away": "磐田",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "ＪＩＴス",
-          "kickoff": "14:00",
+          "stadium": "ＮＤスタ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
-          "state": "no_usable_history",
-          "used": false,
-          "label": "利用可能な対戦履歴なし・補正0（未対戦とは断定しません）"
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
+        },
+        "weather": {
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
+          "used": false
+        }
+      },
+      {
+        "number": 10,
+        "home": "鳥栖",
+        "away": "大分",
+        "prediction": {
+          "state": "available",
+          "used": true
+        },
+        "venue": {
+          "state": "available",
+          "stadium": "駅スタ",
+          "kickoff": "19:00",
+          "used": false
+        },
+        "h2h": {
+          "state": "available",
+          "used": true,
+          "label": "対戦履歴を補正に使用"
         },
         "weather": {
           "state": "policy_blocked",
@@ -276,16 +276,16 @@
       },
       {
         "number": 11,
-        "home": "富山",
-        "away": "大分",
+        "home": "いわき",
+        "away": "富山",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "富山",
-          "kickoff": "14:00",
+          "stadium": "ハワスタ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -301,7 +301,7 @@
       },
       {
         "number": 12,
-        "home": "鳥栖",
+        "home": "横浜FC",
         "away": "仙台",
         "prediction": {
           "state": "available",
@@ -309,8 +309,8 @@
         },
         "venue": {
           "state": "available",
-          "stadium": "駅スタ",
-          "kickoff": "14:00",
+          "stadium": "ニッパツ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -326,16 +326,16 @@
       },
       {
         "number": 13,
-        "home": "磐田",
-        "away": "大宮",
+        "home": "大宮",
+        "away": "徳島",
         "prediction": {
           "state": "available",
           "used": true
         },
         "venue": {
           "state": "available",
-          "stadium": "ヤマハ",
-          "kickoff": "14:00",
+          "stadium": "ＮＡＣＫ",
+          "kickoff": "19:00",
           "used": false
         },
         "h2h": {
@@ -355,10 +355,10 @@
     {
       "source": "weather",
       "number": 1,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "reason": "fetch_error: fetch failed",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "policy_blocked"
+      "state": "unavailable"
     },
     {
       "source": "weather",
@@ -411,18 +411,18 @@
     {
       "source": "weather",
       "number": 8,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast",
-      "used_in_prediction": false,
-      "severity": "reference_only",
-      "state": "policy_blocked"
-    },
-    {
-      "source": "weather",
-      "number": 9,
       "reason": "coordinates_not_found",
       "used_in_prediction": false,
       "severity": "reference_only",
       "state": "coordinates_missing"
+    },
+    {
+      "source": "weather",
+      "number": 9,
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
+      "used_in_prediction": false,
+      "severity": "reference_only",
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
