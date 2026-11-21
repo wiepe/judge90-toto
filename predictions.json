@@ -4,9 +4,9 @@
   "product_id": "01",
   "sales_open_at": "2026-11-21T08:00:00+09:00",
   "sales_close_at": "2026-11-25T18:50:00+09:00",
-  "source_fetched_at": "2026-11-21T08:48:13.270Z",
-  "source_digest": "370a28d84c4438c19ff738e38107a6f92c53feccfc56ad5cb614ecee241b8032",
-  "updated_at": "2026-11-21T08:49:19.536Z",
+  "source_fetched_at": "2026-11-21T11:14:57.078Z",
+  "source_digest": "a68b792e8c8e962ba390d8dd7b84980fbadf9a5e2355c7df812dde43080813cc",
+  "updated_at": "2026-11-21T11:15:19.579Z",
   "model": {
     "data_usage": {
       "season_results": true,
@@ -87,13 +87,13 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.284,
-        "1": 0.421,
-        "2": 0.294
+        "0": 0.276,
+        "1": 0.448,
+        "2": 0.277
       },
-      "confidence": 23,
+      "confidence": 31,
       "uncertainty": {
-        "level": "MEDIUM",
+        "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
           "ホーム側の直近フォームが優位",
@@ -680,5 +680,5 @@
       }
     }
   ],
-  "dataset_id": "ab2bf1818226adfb456cfb26b34fb6d42e907b242801f71814631275e629878d"
+  "dataset_id": "2852eacd27a50e78b2bb27d82c5654177e79d4ac25817720ddad06a7ed543b81"
 }

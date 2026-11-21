@@ -6,20 +6,20 @@
         "budget_limit_yen": 100,
         "cost_yen": 100,
         "combinations": 1,
-        "estimated_all_13_covered_probability": 0.000015606415037970005,
+        "estimated_all_13_covered_probability": 0.000016574120091484646,
         "prizes": {
           "highest_prize": {
-            "1": 0.000015606415037970005,
-            "2": 0.00027435954217796545,
-            "3": 0.002221613549762329,
-            "none": 0.9974884204930218
+            "1": 0.000016574120091484646,
+            "2": 0.0002890754322518887,
+            "3": 0.002322152925410425,
+            "none": 0.9973721975222463
           },
           "any_ticket_exact_prize": {
-            "1": 0.000015606415037970005,
-            "2": 0.00027435954217796545,
-            "3": 0.002221613549762329
+            "1": 0.000016574120091484646,
+            "2": 0.0002890754322518887,
+            "3": 0.002322152925410425
           },
-          "estimated_at_least_third_probability": 0.0025115795069782644,
+          "estimated_at_least_third_probability": 0.0026278024777537986,
           "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
           "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
           "expected_return": null,
@@ -42,7 +42,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000015606415037970015
+            "probability": 0.00001657412009148464
           }
         ],
         "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
@@ -55,7 +55,7 @@
         "unit_price_yen": 100,
         "combinations": 1,
         "cost_yen": 100,
-        "estimated_all_13_covered_probability": 0.000015606415037970015,
+        "estimated_all_13_covered_probability": 0.00001657412009148464,
         "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
         "expected_return": null,
         "payout_estimate": null,
@@ -74,7 +74,7 @@
             "outcomes": [
               "1"
             ],
-            "coverage": 0.42142142142142147
+            "coverage": 0.4475524475524476
           },
           {
             "number": 3,
@@ -173,20 +173,20 @@
         "budget_limit_yen": 500,
         "cost_yen": 500,
         "combinations": 5,
-        "estimated_all_13_covered_probability": 0.00006876799320384045,
+        "estimated_all_13_covered_probability": 0.00007303208168165608,
         "prizes": {
           "highest_prize": {
-            "1": 0.00006876799320384045,
-            "2": 0.0010199365699579117,
-            "3": 0.006911118848998245,
-            "none": 0.99200017658784
+            "1": 0.00007303208168165608,
+            "2": 0.00107306130340936,
+            "3": 0.007203476567533226,
+            "none": 0.9916504300473759
           },
           "any_ticket_exact_prize": {
-            "1": 0.00006876799320384045,
-            "2": 0.0010887045631617518,
-            "3": 0.007984216997122016
+            "1": 0.00007303208168165608,
+            "2": 0.0011460933850910165,
+            "3": 0.00833299583253275
           },
-          "estimated_at_least_third_probability": 0.007999823412159997,
+          "estimated_at_least_third_probability": 0.008349569952624241,
           "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
           "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
           "expected_return": null,
@@ -209,7 +209,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000015606415037970015
+            "probability": 0.00001657412009148464
           },
           {
             "outcomes": [
@@ -227,7 +227,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000014195424089331649
+            "probability": 0.000015075638001021665
           },
           {
             "outcomes": [
@@ -245,7 +245,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000013525559699574
+            "probability": 0.000014364237412620006
           },
           {
             "outcomes": [
@@ -263,7 +263,7 @@
               "0",
               "1"
             ],
-            "probability": 0.000012955462346588825
+            "probability": 0.000013758790103342062
           },
           {
             "outcomes": [
@@ -281,7 +281,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000012485132030376
+            "probability": 0.0000132592960731877
           }
         ],
         "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
@@ -294,7 +294,7 @@
         "unit_price_yen": 100,
         "combinations": 4,
         "cost_yen": 400,
-        "estimated_all_13_covered_probability": 0.00005563009970429636,
+        "estimated_all_13_covered_probability": 0.00005907954843934501,
         "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
         "expected_return": null,
         "payout_estimate": null,
@@ -313,7 +313,7 @@
             "outcomes": [
               "1"
             ],
-            "coverage": 0.42142142142142147
+            "coverage": 0.4475524475524476
           },
           {
             "number": 3,
@@ -414,20 +414,20 @@
         "budget_limit_yen": 1000,
         "cost_yen": 1000,
         "combinations": 10,
-        "estimated_all_13_covered_probability": 0.0001275600595568803,
+        "estimated_all_13_covered_probability": 0.00013546966044596944,
         "prizes": {
           "highest_prize": {
-            "1": 0.0001275600595568803,
-            "2": 0.0017245165507626776,
-            "3": 0.01064713313162619,
-            "none": 0.9875007902580543
+            "1": 0.00013546966044596944,
+            "2": 0.0018126795730337335,
+            "3": 0.011079355799160527,
+            "none": 0.9869724949673597
           },
           "any_ticket_exact_prize": {
-            "1": 0.0001275600595568803,
-            "2": 0.0018520766103195573,
-            "3": 0.01249920974194576
+            "1": 0.00013546966044596944,
+            "2": 0.001948149233479703,
+            "3": 0.013027505032640226
           },
-          "estimated_at_least_third_probability": 0.012499209741945749,
+          "estimated_at_least_third_probability": 0.013027505032640229,
           "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
           "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
           "expected_return": null,
@@ -450,7 +450,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000015606415037970015
+            "probability": 0.00001657412009148464
           },
           {
             "outcomes": [
@@ -468,7 +468,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000014195424089331649
+            "probability": 0.000015075638001021665
           },
           {
             "outcomes": [
@@ -486,7 +486,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000013525559699574
+            "probability": 0.000014364237412620006
           },
           {
             "outcomes": [
@@ -504,7 +504,7 @@
               "0",
               "1"
             ],
-            "probability": 0.000012955462346588825
+            "probability": 0.000013758790103342062
           },
           {
             "outcomes": [
@@ -522,7 +522,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000012485132030376
+            "probability": 0.0000132592960731877
           },
           {
             "outcomes": [
@@ -540,7 +540,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000012302700877420752
+            "probability": 0.000013065552934218765
           },
           {
             "outcomes": [
@@ -558,7 +558,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011986972148864752
+            "probability": 0.0000127302468533099
           },
           {
             "outcomes": [
@@ -576,7 +576,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011820700499056458
+            "probability": 0.000012553665217807677
           },
           {
             "outcomes": [
@@ -594,7 +594,7 @@
               "2",
               "1"
             ],
-            "probability": 0.00001135633927146531
+            "probability": 0.000012060510400817322
           },
           {
             "outcomes": [
@@ -612,7 +612,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011325353556232575
+            "probability": 0.000012027603358159687
           }
         ],
         "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
@@ -625,7 +625,7 @@
         "unit_price_yen": 100,
         "combinations": 9,
         "cost_yen": 900,
-        "estimated_all_13_covered_probability": 0.00011401947059704117,
+        "estimated_all_13_covered_probability": 0.0001210894618555955,
         "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
         "expected_return": null,
         "payout_estimate": null,
@@ -644,7 +644,7 @@
             "outcomes": [
               "1"
             ],
-            "coverage": 0.42142142142142147
+            "coverage": 0.4475524475524476
           },
           {
             "number": 3,
@@ -747,20 +747,20 @@
         "budget_limit_yen": 3000,
         "cost_yen": 3000,
         "combinations": 30,
-        "estimated_all_13_covered_probability": 0.00033923029840463774,
+        "estimated_all_13_covered_probability": 0.0003585734749825614,
         "prizes": {
           "highest_prize": {
-            "1": 0.00033923029840463774,
-            "2": 0.003604872545855962,
-            "3": 0.01840328804799891,
-            "none": 0.9776526091077404
+            "1": 0.0003585734749825614,
+            "2": 0.003859968439934547,
+            "3": 0.019664321694021856,
+            "none": 0.976117136391061
           },
           "any_ticket_exact_prize": {
-            "1": 0.00033923029840463774,
-            "2": 0.003944102844260599,
-            "3": 0.022347390892259563
+            "1": 0.0003585734749825614,
+            "2": 0.004218541914917111,
+            "3": 0.02388286360893894
           },
-          "estimated_at_least_third_probability": 0.02234739089225951,
+          "estimated_at_least_third_probability": 0.023882863608938966,
           "assumption": "各試合が独立で、通常どおり13試合が成立する仮定。モデル確率に基づく計算で実証済み当選確率ではありません。賞金・期待収益は不明。",
           "warning": "最高等級の1・2・3は排他的。各等級に少なくとも1口は重複し得るため合計しない。公式の中止・みなし的中裁定は未反映。",
           "expected_return": null,
@@ -783,7 +783,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000015606415037970015
+            "probability": 0.00001657412009148464
           },
           {
             "outcomes": [
@@ -801,7 +801,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000014195424089331649
+            "probability": 0.000015075638001021665
           },
           {
             "outcomes": [
@@ -819,7 +819,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000013525559699574
+            "probability": 0.000014364237412620006
           },
           {
             "outcomes": [
@@ -837,7 +837,7 @@
               "0",
               "1"
             ],
-            "probability": 0.000012955462346588825
+            "probability": 0.000013758790103342062
           },
           {
             "outcomes": [
@@ -855,7 +855,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000012485132030376
+            "probability": 0.0000132592960731877
           },
           {
             "outcomes": [
@@ -873,7 +873,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000012302700877420752
+            "probability": 0.000013065552934218765
           },
           {
             "outcomes": [
@@ -891,7 +891,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011986972148864752
+            "probability": 0.0000127302468533099
           },
           {
             "outcomes": [
@@ -909,7 +909,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011820700499056458
+            "probability": 0.000012553665217807677
           },
           {
             "outcomes": [
@@ -927,7 +927,7 @@
               "2",
               "1"
             ],
-            "probability": 0.00001135633927146531
+            "probability": 0.000012060510400817322
           },
           {
             "outcomes": [
@@ -945,7 +945,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011325353556232575
+            "probability": 0.000012027603358159687
           },
           {
             "outcomes": [
@@ -963,7 +963,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011271299749644998
+            "probability": 0.000011970197843850002
           },
           {
             "outcomes": [
@@ -981,7 +981,7 @@
               "0",
               "1"
             ],
-            "probability": 0.000011228067367043638
+            "probability": 0.000011924284756229777
           },
           {
             "outcomes": [
@@ -999,7 +999,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011202624655968558
+            "probability": 0.000011897264422105293
           },
           {
             "outcomes": [
@@ -1017,7 +1017,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000011179595387776588
+            "probability": 0.000011872807180919275
           },
           {
             "outcomes": [
@@ -1035,25 +1035,7 @@
               "2",
               "1"
             ],
-            "probability": 0.00001090321850252905
-          },
-          {
-            "outcomes": [
-              "1",
-              "2",
-              "2",
-              "2",
-              "2",
-              "1",
-              "1",
-              "1",
-              "2",
-              "1",
-              "2",
-              "1",
-              "1"
-            ],
-            "probability": 0.000010898541617964789
+            "probability": 0.000011579293028216145
           },
           {
             "outcomes": [
@@ -1071,7 +1053,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000010818939893471951
+            "probability": 0.000011489788565835954
           },
           {
             "outcomes": [
@@ -1089,7 +1071,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000010751979632018493
+            "probability": 0.000011418676307704533
           },
           {
             "outcomes": [
@@ -1107,25 +1089,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000010729410338604363
-          },
-          {
-            "outcomes": [
-              "1",
-              "0",
-              "2",
-              "2",
-              "2",
-              "1",
-              "1",
-              "1",
-              "2",
-              "1",
-              "2",
-              "1",
-              "1"
-            ],
-            "probability": 0.000010527842923476186
+            "probability": 0.000011394707562895666
           },
           {
             "outcomes": [
@@ -1143,7 +1107,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000010388709195682777
+            "probability": 0.000011032880606201903
           },
           {
             "outcomes": [
@@ -1161,7 +1125,7 @@
               "0",
               "1"
             ],
-            "probability": 0.000010364369877271033
+            "probability": 0.000011007032082673622
           },
           {
             "outcomes": [
@@ -1179,7 +1143,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000010301417481285536
+            "probability": 0.000010940176205230196
           },
           {
             "outcomes": [
@@ -1197,7 +1161,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000010252250731183958
+            "probability": 0.000010887960778515634
           },
           {
             "outcomes": [
@@ -1215,7 +1179,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000010244607099182274
+            "probability": 0.000010879843188766644
           },
           {
             "outcomes": [
@@ -1233,7 +1197,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000010201441022526274
+            "probability": 0.000010834000518516338
           },
           {
             "outcomes": [
@@ -1251,7 +1215,7 @@
               "2",
               "1"
             ],
-            "probability": 0.000010189784618579635
+            "probability": 0.000010821621337367022
           },
           {
             "outcomes": [
@@ -1269,7 +1233,7 @@
               "2",
               "1"
             ],
-            "probability": 0.00001016883744860776
+            "probability": 0.00001079937529880878
           },
           {
             "outcomes": [
@@ -1287,7 +1251,7 @@
               "1",
               "1"
             ],
-            "probability": 0.000010060627461834866
+            "probability": 0.0000106844555487247
           },
           {
             "outcomes": [
@@ -1305,7 +1269,43 @@
               "1",
               "1"
             ],
-            "probability": 0.000009986673843104662
+            "probability": 0.000010605916297073884
+          },
+          {
+            "outcomes": [
+              "1",
+              "1",
+              "1",
+              "2",
+              "2",
+              "1",
+              "1",
+              "1",
+              "2",
+              "1",
+              "2",
+              "0",
+              "1"
+            ],
+            "probability": 0.000010567848757679193
+          },
+          {
+            "outcomes": [
+              "1",
+              "1",
+              "2",
+              "2",
+              "2",
+              "0",
+              "1",
+              "1",
+              "2",
+              "1",
+              "2",
+              "1",
+              "1"
+            ],
+            "probability": 0.000010495684249277285
           }
         ],
         "objective": "同じ13試合の個別買い目から、独立仮定の全13試合的中確率を最大化。1〜3等合計や期待収益の最適化ではありません。",
@@ -1318,7 +1318,7 @@
         "unit_price_yen": 100,
         "combinations": 27,
         "cost_yen": 2700,
-        "estimated_all_13_covered_probability": 0.00028433783191282076,
+        "estimated_all_13_covered_probability": 0.00030196873280697174,
         "assumption": "Product of modeled per-match coverage probabilities, assuming independent outcomes; not a validated actual winning probability.",
         "expected_return": null,
         "payout_estimate": null,
@@ -1337,7 +1337,7 @@
             "outcomes": [
               "1"
             ],
-            "coverage": 0.42142142142142147
+            "coverage": 0.4475524475524476
           },
           {
             "number": 3,
@@ -1442,8 +1442,8 @@
   "product_id": "01",
   "sales_open_at": "2026-11-21T08:00:00+09:00",
   "sales_close_at": "2026-11-25T18:50:00+09:00",
-  "source_digest": "370a28d84c4438c19ff738e38107a6f92c53feccfc56ad5cb614ecee241b8032",
-  "generated_at": "2026-11-21T08:49:19.730Z",
+  "source_digest": "a68b792e8c8e962ba390d8dd7b84980fbadf9a5e2355c7df812dde43080813cc",
+  "generated_at": "2026-11-21T11:15:19.739Z",
   "engine": "JUDGE 90 Betting Strategy Engine",
   "version": "2.0",
   "budget": 1000,
@@ -1492,17 +1492,17 @@
         "1"
       ],
       "type": "single",
-      "probability_coverage": 0.421,
-      "confidence": 23,
+      "probability_coverage": 0.448,
+      "confidence": 31,
       "uncertainty": {
-        "level": "MEDIUM",
+        "level": "LOW",
         "reasons": [
           "ホーム側の開催地成績が優位",
           "ホーム側の直近フォームが優位",
           "H2H直近5戦はアウェイ側が優勢（1-1-3）"
         ]
       },
-      "uncertainty_score": 0.802
+      "uncertainty_score": 0.736
     },
     {
       "number": 3,
@@ -1733,5 +1733,5 @@
       "uncertainty_score": 0.644
     }
   ],
-  "dataset_id": "ab2bf1818226adfb456cfb26b34fb6d42e907b242801f71814631275e629878d"
+  "dataset_id": "2852eacd27a50e78b2bb27d82c5654177e79d4ac25817720ddad06a7ed543b81"
 }
