@@ -9,7 +9,7 @@
       "snapshot_id": "d11e190e4a9b4865ce47b9fc77e26745ee7b4cd48190bcf084cd92e9cd0b3e16"
     }
   ],
-  "checked_at": "2026-11-21T11:14:49.446Z",
+  "checked_at": "2026-11-21T17:47:26.184Z",
   "scope": "Verified Pages delivery before sales close and kickoff; unique fixtures, latest eligible round snapshot",
   "logloss_floor": 1e-15,
   "overall": {
@@ -20,19 +20,19 @@
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 31,
-              "mean_probability": 0.27488077394529015,
-              "observed_rate": 0.0967741935483871
+              "n": 40,
+              "mean_probability": 0.273169388019388,
+              "observed_rate": 0.2
             },
             {
               "lower": 0.3,
               "upper": 0.4,
-              "n": 8,
-              "mean_probability": 0.3047499034999035,
-              "observed_rate": 0.375
+              "n": 12,
+              "mean_probability": 0.304916602333269,
+              "observed_rate": 0.3333333333333333
             }
           ],
-          "ece": 0.15598217344371196
+          "ece": 0.06284185178415945
         },
         "1": {
           "bins": [
@@ -46,56 +46,56 @@
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 5,
-              "mean_probability": 0.27699611519611517,
-              "observed_rate": 0.2
+              "n": 6,
+              "mean_probability": 0.2679967626634293,
+              "observed_rate": 0.16666666666666666
             },
             {
               "lower": 0.3,
               "upper": 0.4,
-              "n": 15,
-              "mean_probability": 0.35511327197993864,
-              "observed_rate": 0.4
+              "n": 21,
+              "mean_probability": 0.35131900379519426,
+              "observed_rate": 0.38095238095238093
             },
             {
               "lower": 0.4,
               "upper": 0.5,
-              "n": 13,
-              "mean_probability": 0.44504140665679126,
-              "observed_rate": 0.5384615384615384
+              "n": 17,
+              "mean_probability": 0.4485041913865443,
+              "observed_rate": 0.47058823529411764
             },
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 5,
-              "mean_probability": 0.5267999999999999,
-              "observed_rate": 0.8
+              "n": 7,
+              "mean_probability": 0.5392857142857143,
+              "observed_rate": 0.7142857142857143
             }
           ],
-          "ece": 0.0983267489677746
+          "ece": 0.05820596620596622
         },
         "2": {
           "bins": [
             {
               "lower": 0.1,
               "upper": 0.2,
-              "n": 1,
-              "mean_probability": 0.183,
+              "n": 3,
+              "mean_probability": 0.19099999999999998,
               "observed_rate": 0
             },
             {
               "lower": 0.2,
               "upper": 0.3,
-              "n": 14,
-              "mean_probability": 0.25962430426716143,
-              "observed_rate": 0.21428571428571427
+              "n": 17,
+              "mean_probability": 0.2590726920138685,
+              "observed_rate": 0.17647058823529413
             },
             {
               "lower": 0.3,
               "upper": 0.4,
-              "n": 17,
-              "mean_probability": 0.3343358656299833,
-              "observed_rate": 0.35294117647058826
+              "n": 24,
+              "mean_probability": 0.3382379048212382,
+              "observed_rate": 0.3333333333333333
             },
             {
               "lower": 0.4,
@@ -107,65 +107,65 @@
             {
               "lower": 0.5,
               "upper": 0.6,
-              "n": 1,
-              "mean_probability": 0.569,
+              "n": 2,
+              "mean_probability": 0.5475,
               "observed_rate": 1
             }
           ],
-          "ece": 0.10056414569235084
+          "ece": 0.10301762726762732
         }
       },
-      "macro_ece": 0.11829102270127913,
+      "macro_ece": 0.07468848175258434,
       "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
     },
     "by_outcome": {
       "0": {
-        "actual": 6,
+        "actual": 12,
         "picks": 0,
         "hits": 0,
         "precision": null,
         "recall": 0
       },
       "1": {
-        "actual": 18,
-        "picks": 27,
-        "hits": 14,
-        "precision": 0.5185185185185185,
-        "recall": 0.7777777777777778
+        "actual": 22,
+        "picks": 35,
+        "hits": 16,
+        "precision": 0.45714285714285713,
+        "recall": 0.7272727272727273
       },
       "2": {
-        "actual": 15,
-        "picks": 12,
-        "hits": 8,
-        "precision": 0.6666666666666666,
-        "recall": 0.5333333333333333
+        "actual": 18,
+        "picks": 17,
+        "hits": 10,
+        "precision": 0.5882352941176471,
+        "recall": 0.5555555555555556
       }
     },
-    "n": 39,
-    "hits": 22,
-    "accuracy": 0.5641025641025641,
-    "logloss": 0.9886913955695149,
-    "brier": 0.5896411908986654,
-    "draw_actual": 6,
+    "n": 52,
+    "hits": 26,
+    "accuracy": 0.5,
+    "logloss": 1.0163048074005043,
+    "brier": 0.6096905681776246,
+    "draw_actual": 12,
     "draw_picks": 0,
     "draw_hits": 0,
     "draw_precision": null,
     "draw_recall": 0,
-    "draw_brier": 0.146371377218249,
+    "draw_brier": 0.18200311968816638,
     "draw_calibration": [
       {
         "lower": 0.2,
         "upper": 0.3,
-        "n": 31,
-        "mean_probability": 0.27488077394529015,
-        "observed_draw_rate": 0.0967741935483871
+        "n": 40,
+        "mean_probability": 0.273169388019388,
+        "observed_draw_rate": 0.2
       },
       {
         "lower": 0.3,
         "upper": 0.4,
-        "n": 8,
-        "mean_probability": 0.3047499034999035,
-        "observed_draw_rate": 0.375
+        "n": 12,
+        "mean_probability": 0.304916602333269,
+        "observed_draw_rate": 0.3333333333333333
       }
     ]
   },
@@ -178,19 +178,19 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 16,
-                "mean_probability": 0.2715455528580528,
-                "observed_rate": 0.1875
+                "n": 21,
+                "mean_probability": 0.26792695754600515,
+                "observed_rate": 0.2857142857142857
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 4,
-                "mean_probability": 0.30600040425040426,
-                "observed_rate": 0.5
+                "n": 6,
+                "mean_probability": 0.3060002695002695,
+                "observed_rate": 0.3333333333333333
               }
             ],
-            "ece": 0.1060363614363614
+            "ece": 0.01990860276045461
           },
           "1": {
             "bins": [
@@ -204,55 +204,55 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 1,
-                "mean_probability": 0.245,
+                "n": 2,
+                "mean_probability": 0.23399999999999999,
                 "observed_rate": 0
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 6,
-                "mean_probability": 0.35649928316594987,
+                "n": 9,
+                "mean_probability": 0.35455507766618877,
                 "observed_rate": 0.3333333333333333
               },
               {
                 "lower": 0.4,
                 "upper": 0.5,
-                "n": 10,
-                "mean_probability": 0.44385382865382866,
-                "observed_rate": 0.6
+                "n": 11,
+                "mean_probability": 0.44791361591361595,
+                "observed_rate": 0.5454545454545454
               },
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 2,
-                "mean_probability": 0.5455,
+                "n": 4,
+                "mean_probability": 0.5579999999999999,
                 "observed_rate": 0.5
               }
             ],
-            "ece": 0.11162287062287063
+            "ece": 0.07999799718318233
           },
           "2": {
             "bins": [
               {
                 "lower": 0.1,
                 "upper": 0.2,
-                "n": 1,
-                "mean_probability": 0.183,
+                "n": 3,
+                "mean_probability": 0.19099999999999998,
                 "observed_rate": 0
               },
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 8,
-                "mean_probability": 0.2643425324675325,
-                "observed_rate": 0.125
+                "n": 9,
+                "mean_probability": 0.26261016761016764,
+                "observed_rate": 0.1111111111111111
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 9,
-                "mean_probability": 0.32899947688836584,
+                "n": 12,
+                "mean_probability": 0.33316627433294105,
                 "observed_rate": 0.3333333333333333
               },
               {
@@ -265,65 +265,65 @@
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 1,
-                "mean_probability": 0.569,
+                "n": 2,
+                "mean_probability": 0.5475,
                 "observed_rate": 1
               }
             ],
-            "ece": 0.11368724838724836
+            "ece": 0.12405541542578577
           }
         },
-        "macro_ece": 0.11044882681549346,
+        "macro_ece": 0.07465400512314091,
         "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
       },
       "by_outcome": {
         "0": {
-          "actual": 5,
+          "actual": 8,
           "picks": 0,
           "hits": 0,
           "precision": null,
           "recall": 0
         },
         "1": {
-          "actual": 9,
-          "picks": 16,
-          "hits": 7,
-          "precision": 0.4375,
-          "recall": 0.7777777777777778
+          "actual": 11,
+          "picks": 20,
+          "hits": 8,
+          "precision": 0.4,
+          "recall": 0.7272727272727273
         },
         "2": {
-          "actual": 6,
-          "picks": 4,
-          "hits": 2,
-          "precision": 0.5,
-          "recall": 0.3333333333333333
+          "actual": 8,
+          "picks": 7,
+          "hits": 4,
+          "precision": 0.5714285714285714,
+          "recall": 0.5
         }
       },
-      "n": 20,
-      "hits": 9,
-      "accuracy": 0.45,
-      "logloss": 1.011059596990788,
-      "brier": 0.6060586563147577,
-      "draw_actual": 5,
+      "n": 27,
+      "hits": 12,
+      "accuracy": 0.4444444444444444,
+      "logloss": 1.0213160820015612,
+      "brier": 0.6139188195634931,
+      "draw_actual": 8,
       "draw_picks": 0,
       "draw_hits": 0,
       "draw_precision": null,
       "draw_recall": 0,
-      "draw_brier": 0.1888035007680918,
+      "draw_brier": 0.21115923552288812,
       "draw_calibration": [
         {
           "lower": 0.2,
           "upper": 0.3,
-          "n": 16,
-          "mean_probability": 0.2715455528580528,
-          "observed_draw_rate": 0.1875
+          "n": 21,
+          "mean_probability": 0.26792695754600515,
+          "observed_draw_rate": 0.2857142857142857
         },
         {
           "lower": 0.3,
           "upper": 0.4,
-          "n": 4,
-          "mean_probability": 0.30600040425040426,
-          "observed_draw_rate": 0.5
+          "n": 6,
+          "mean_probability": 0.3060002695002695,
+          "observed_draw_rate": 0.3333333333333333
         }
       ]
     },
@@ -335,19 +335,19 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 13,
-                "mean_probability": 0.28056145156145157,
-                "observed_rate": 0
+                "n": 17,
+                "mean_probability": 0.2806490080019492,
+                "observed_rate": 0.11764705882352941
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 3,
-                "mean_probability": 0.30433253699920365,
-                "observed_rate": 0
+                "n": 5,
+                "mean_probability": 0.3043995221995222,
+                "observed_rate": 0.2
               }
             ],
-            "ece": 0.28501853008103006
+            "ece": 0.14968321577412486
           },
           "1": {
             "bins": [
@@ -361,15 +361,15 @@
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 8,
-                "mean_probability": 0.3520879225879226,
-                "observed_rate": 0.5
+                "n": 11,
+                "mean_probability": 0.3468821255184891,
+                "observed_rate": 0.45454545454545453
               },
               {
                 "lower": 0.4,
                 "upper": 0.5,
-                "n": 3,
-                "mean_probability": 0.449,
+                "n": 6,
+                "mean_probability": 0.44958691308691306,
                 "observed_rate": 0.3333333333333333
               },
               {
@@ -380,23 +380,23 @@
                 "observed_rate": 1
               }
             ],
-            "ece": 0.2106249323124323
+            "ece": 0.1691600179781998
           },
           "2": {
             "bins": [
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 5,
-                "mean_probability": 0.25880000000000003,
-                "observed_rate": 0.4
+                "n": 7,
+                "mean_probability": 0.25924917939203657,
+                "observed_rate": 0.2857142857142857
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 7,
-                "mean_probability": 0.342102060530632,
-                "observed_rate": 0.42857142857142855
+                "n": 11,
+                "mean_probability": 0.34470131124676584,
+                "observed_rate": 0.36363636363636365
               },
               {
                 "lower": 0.4,
@@ -406,60 +406,60 @@
                 "observed_rate": 1
               }
             ],
-            "ece": 0.22548138498138492
+            "ece": 0.12227081381626834
           }
         },
-        "macro_ece": 0.24037494912494908,
+        "macro_ece": 0.14703801585619766,
         "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
       },
       "by_outcome": {
         "0": {
-          "actual": 0,
+          "actual": 3,
           "picks": 0,
           "hits": 0,
           "precision": null,
-          "recall": null
+          "recall": 0
         },
         "1": {
-          "actual": 7,
+          "actual": 9,
+          "picks": 13,
+          "hits": 7,
+          "precision": 0.5384615384615384,
+          "recall": 0.7777777777777778
+        },
+        "2": {
+          "actual": 10,
           "picks": 9,
           "hits": 6,
           "precision": 0.6666666666666666,
-          "recall": 0.8571428571428571
-        },
-        "2": {
-          "actual": 9,
-          "picks": 7,
-          "hits": 6,
-          "precision": 0.8571428571428571,
-          "recall": 0.6666666666666666
+          "recall": 0.6
         }
       },
-      "n": 16,
-      "hits": 12,
-      "accuracy": 0.75,
-      "logloss": 0.9503742856859609,
-      "brier": 0.562553053090416,
-      "draw_actual": 0,
+      "n": 22,
+      "hits": 13,
+      "accuracy": 0.5909090909090909,
+      "logloss": 1.0063878115620062,
+      "brier": 0.6024598612598191,
+      "draw_actual": 3,
       "draw_picks": 0,
       "draw_hits": 0,
       "draw_precision": null,
-      "draw_recall": null,
-      "draw_brier": 0.08146719470729948,
+      "draw_recall": 0,
+      "draw_brier": 0.14245110381061768,
       "draw_calibration": [
         {
           "lower": 0.2,
           "upper": 0.3,
-          "n": 13,
-          "mean_probability": 0.28056145156145157,
-          "observed_draw_rate": 0
+          "n": 17,
+          "mean_probability": 0.2806490080019492,
+          "observed_draw_rate": 0.11764705882352941
         },
         {
           "lower": 0.3,
           "upper": 0.4,
-          "n": 3,
-          "mean_probability": 0.30433253699920365,
-          "observed_draw_rate": 0
+          "n": 5,
+          "mean_probability": 0.3043995221995222,
+          "observed_draw_rate": 0.2
         }
       ]
     },
@@ -1374,6 +1374,164 @@
           "n": 8,
           "mean_probability": 0.3047499034999035,
           "observed_draw_rate": 0.375
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "calibration": {
+        "by_outcome": {
+          "0": {
+            "bins": [
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "n": 40,
+                "mean_probability": 0.273169388019388,
+                "observed_rate": 0.2
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "n": 12,
+                "mean_probability": 0.304916602333269,
+                "observed_rate": 0.3333333333333333
+              }
+            ],
+            "ece": 0.06284185178415945
+          },
+          "1": {
+            "bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "n": 1,
+                "mean_probability": 0.196,
+                "observed_rate": 0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "n": 6,
+                "mean_probability": 0.2679967626634293,
+                "observed_rate": 0.16666666666666666
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "n": 21,
+                "mean_probability": 0.35131900379519426,
+                "observed_rate": 0.38095238095238093
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "n": 17,
+                "mean_probability": 0.4485041913865443,
+                "observed_rate": 0.47058823529411764
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "n": 7,
+                "mean_probability": 0.5392857142857143,
+                "observed_rate": 0.7142857142857143
+              }
+            ],
+            "ece": 0.05820596620596622
+          },
+          "2": {
+            "bins": [
+              {
+                "lower": 0.1,
+                "upper": 0.2,
+                "n": 3,
+                "mean_probability": 0.19099999999999998,
+                "observed_rate": 0
+              },
+              {
+                "lower": 0.2,
+                "upper": 0.3,
+                "n": 17,
+                "mean_probability": 0.2590726920138685,
+                "observed_rate": 0.17647058823529413
+              },
+              {
+                "lower": 0.3,
+                "upper": 0.4,
+                "n": 24,
+                "mean_probability": 0.3382379048212382,
+                "observed_rate": 0.3333333333333333
+              },
+              {
+                "lower": 0.4,
+                "upper": 0.5,
+                "n": 6,
+                "mean_probability": 0.4405048103381437,
+                "observed_rate": 0.8333333333333334
+              },
+              {
+                "lower": 0.5,
+                "upper": 0.6,
+                "n": 2,
+                "mean_probability": 0.5475,
+                "observed_rate": 1
+              }
+            ],
+            "ece": 0.10301762726762732
+          }
+        },
+        "macro_ece": 0.07468848175258434,
+        "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
+      },
+      "by_outcome": {
+        "0": {
+          "actual": 12,
+          "picks": 0,
+          "hits": 0,
+          "precision": null,
+          "recall": 0
+        },
+        "1": {
+          "actual": 22,
+          "picks": 35,
+          "hits": 16,
+          "precision": 0.45714285714285713,
+          "recall": 0.7272727272727273
+        },
+        "2": {
+          "actual": 18,
+          "picks": 17,
+          "hits": 10,
+          "precision": 0.5882352941176471,
+          "recall": 0.5555555555555556
+        }
+      },
+      "n": 52,
+      "hits": 26,
+      "accuracy": 0.5,
+      "logloss": 1.0163048074005043,
+      "brier": 0.6096905681776246,
+      "draw_actual": 12,
+      "draw_picks": 0,
+      "draw_hits": 0,
+      "draw_precision": null,
+      "draw_recall": 0,
+      "draw_brier": 0.18200311968816638,
+      "draw_calibration": [
+        {
+          "lower": 0.2,
+          "upper": 0.3,
+          "n": 40,
+          "mean_probability": 0.273169388019388,
+          "observed_draw_rate": 0.2
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 12,
+          "mean_probability": 0.304916602333269,
+          "observed_draw_rate": 0.3333333333333333
         }
       ]
     }
@@ -3066,10 +3224,571 @@
           "公開時の対戦履歴が不足しています。"
         ]
       }
+    },
+    {
+      "id": "J1|2026-11-21|j90-2a7000ee7b92|j90-3cbf98a10e3e",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 4,
+      "home": "川崎Ｆ",
+      "away": "福岡",
+      "actual": "1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.234,
+        "1": 0.572,
+        "2": 0.194
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "1-0",
+        "saved_reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-30bb774d0ae0|j90-3700e53a6baa",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 7,
+      "home": "Ｃ大阪",
+      "away": "FC東京",
+      "actual": "2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.251,
+        "1": 0.223,
+        "2": 0.526
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "0-3",
+        "saved_reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（0-3-2）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-4529f8c8c42d|j90-2c90fecc4a9d",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 1,
+      "home": "町田",
+      "away": "長崎",
+      "actual": "0",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.235,
+        "1": 0.569,
+        "2": 0.196
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "0-0",
+        "saved_reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-58d07b8a6951|j90-b1da38d84f72",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 3,
+      "home": "京都",
+      "away": "浦和",
+      "actual": "1",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.303,
+        "1": 0.331,
+        "2": 0.366
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "2-1",
+        "saved_reasons": [
+          "H2H直近5戦はアウェイ側が優勢（0-3-2）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-8090a2dd36c6|j90-7bb283a4ef4d",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 6,
+      "home": "東京Ｖ",
+      "away": "名古屋",
+      "actual": "0",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.299,
+        "1": 0.378,
+        "2": 0.323
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "0-0",
+        "saved_reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-90d45e374e9d|j90-2695cb203ac6",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 5,
+      "home": "Ｇ大阪",
+      "away": "岡山",
+      "actual": "2",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.309,
+        "1": 0.343,
+        "2": 0.348
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "0-1",
+        "saved_reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の直近フォームが優位",
+          "H2H直近4戦はアウェイ側が優勢（1-1-2）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J1|2026-11-21|j90-c735c704d4d5|j90-b41dbc5583c2",
+      "date": "2026-11-21",
+      "league": "J1",
+      "round_id": "1673",
+      "number": 2,
+      "home": "広島",
+      "away": "横浜FM",
+      "actual": "0",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.263,
+        "1": 0.489,
+        "2": 0.249
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "2-2",
+        "saved_reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はアウェイ側が優勢（2-0-3）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-0f8729f23062|j90-9c204ad92d5d",
+      "date": "2026-11-21",
+      "league": "J2",
+      "round_id": "1673",
+      "number": 8,
+      "home": "秋田",
+      "away": "山形",
+      "actual": "1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.289,
+        "1": 0.407,
+        "2": 0.304
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "3-1",
+        "saved_reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はアウェイ側が優勢（1-1-3）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-11c847315297|j90-4c5f3901d634",
+      "date": "2026-11-21",
+      "league": "J2",
+      "round_id": "1673",
+      "number": 13,
+      "home": "磐田",
+      "away": "大宮",
+      "actual": "1",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.299,
+        "1": 0.324,
+        "2": 0.377
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "2-0",
+        "saved_reasons": [
+          "H2H直近5戦は拮抗（2-1-2）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-5ace5535c774|j90-984ca7cc85ad",
+      "date": "2026-11-21",
+      "league": "J2",
+      "round_id": "1673",
+      "number": 12,
+      "home": "鳥栖",
+      "away": "仙台",
+      "actual": "0",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.3,
+        "1": 0.327,
+        "2": 0.373
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "1-1",
+        "saved_reasons": [
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（2-0-3）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-a9b9e23c515e|j90-ba6d5fee6d06",
+      "date": "2026-11-21",
+      "league": "J2",
+      "round_id": "1673",
+      "number": 10,
+      "home": "甲府",
+      "away": "八戸",
+      "actual": "2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.309,
+        "1": 0.348,
+        "2": 0.343
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "0-2",
+        "saved_reasons": [
+          "両チームの総合評価が近い"
+        ],
+        "data_notes": [
+          "公開時の対戦履歴が不足しています。"
+        ]
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-df37fe02bc9e|j90-9b1ebad8c178",
+      "date": "2026-11-21",
+      "league": "J2",
+      "round_id": "1673",
+      "number": 9,
+      "home": "宮崎",
+      "away": "いわき",
+      "actual": "0",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.266,
+        "1": 0.479,
+        "2": 0.256
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "1-1",
+        "saved_reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近2戦は拮抗（1-0-1）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
+    },
+    {
+      "id": "J2|2026-11-21|j90-eead0dafb362|j90-0096a9a6fd55",
+      "date": "2026-11-21",
+      "league": "J2",
+      "round_id": "1673",
+      "number": 11,
+      "home": "富山",
+      "away": "大分",
+      "actual": "0",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.27,
+        "1": 0.465,
+        "2": 0.265
+      },
+      "published_at": "2026-11-21T02:24:24.250Z",
+      "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a",
+      "model": {
+        "data_usage": {
+          "season_results": true,
+          "recent_form": true,
+          "venue_results": true,
+          "h2h": "when_available",
+          "weather": false,
+          "stadium_information": "display_only",
+          "injuries": false,
+          "lineups": false
+        },
+        "name": "JUDGE SCORE",
+        "version": "2.1",
+        "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+      },
+      "review_context": {
+        "score": "1-1",
+        "saved_reasons": [
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はホーム側が優勢（1-4-0）"
+        ],
+        "data_notes": [
+          "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+        ]
+      }
     }
   ],
   "diagnostics": {
-    "as_of": "2026-11-21",
+    "as_of": "2026-11-22",
     "long_term": {
       "calibration": {
         "by_outcome": {
@@ -3078,19 +3797,19 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 31,
-                "mean_probability": 0.27488077394529015,
-                "observed_rate": 0.0967741935483871
+                "n": 40,
+                "mean_probability": 0.273169388019388,
+                "observed_rate": 0.2
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 8,
-                "mean_probability": 0.3047499034999035,
-                "observed_rate": 0.375
+                "n": 12,
+                "mean_probability": 0.304916602333269,
+                "observed_rate": 0.3333333333333333
               }
             ],
-            "ece": 0.15598217344371196
+            "ece": 0.06284185178415945
           },
           "1": {
             "bins": [
@@ -3104,56 +3823,56 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 5,
-                "mean_probability": 0.27699611519611517,
-                "observed_rate": 0.2
+                "n": 6,
+                "mean_probability": 0.2679967626634293,
+                "observed_rate": 0.16666666666666666
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 15,
-                "mean_probability": 0.35511327197993864,
-                "observed_rate": 0.4
+                "n": 21,
+                "mean_probability": 0.35131900379519426,
+                "observed_rate": 0.38095238095238093
               },
               {
                 "lower": 0.4,
                 "upper": 0.5,
-                "n": 13,
-                "mean_probability": 0.44504140665679126,
-                "observed_rate": 0.5384615384615384
+                "n": 17,
+                "mean_probability": 0.4485041913865443,
+                "observed_rate": 0.47058823529411764
               },
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 5,
-                "mean_probability": 0.5267999999999999,
-                "observed_rate": 0.8
+                "n": 7,
+                "mean_probability": 0.5392857142857143,
+                "observed_rate": 0.7142857142857143
               }
             ],
-            "ece": 0.0983267489677746
+            "ece": 0.05820596620596622
           },
           "2": {
             "bins": [
               {
                 "lower": 0.1,
                 "upper": 0.2,
-                "n": 1,
-                "mean_probability": 0.183,
+                "n": 3,
+                "mean_probability": 0.19099999999999998,
                 "observed_rate": 0
               },
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 14,
-                "mean_probability": 0.25962430426716143,
-                "observed_rate": 0.21428571428571427
+                "n": 17,
+                "mean_probability": 0.2590726920138685,
+                "observed_rate": 0.17647058823529413
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 17,
-                "mean_probability": 0.3343358656299833,
-                "observed_rate": 0.35294117647058826
+                "n": 24,
+                "mean_probability": 0.3382379048212382,
+                "observed_rate": 0.3333333333333333
               },
               {
                 "lower": 0.4,
@@ -3165,65 +3884,65 @@
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 1,
-                "mean_probability": 0.569,
+                "n": 2,
+                "mean_probability": 0.5475,
                 "observed_rate": 1
               }
             ],
-            "ece": 0.10056414569235084
+            "ece": 0.10301762726762732
           }
         },
-        "macro_ece": 0.11829102270127913,
+        "macro_ece": 0.07468848175258434,
         "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
       },
       "by_outcome": {
         "0": {
-          "actual": 6,
+          "actual": 12,
           "picks": 0,
           "hits": 0,
           "precision": null,
           "recall": 0
         },
         "1": {
-          "actual": 18,
-          "picks": 27,
-          "hits": 14,
-          "precision": 0.5185185185185185,
-          "recall": 0.7777777777777778
+          "actual": 22,
+          "picks": 35,
+          "hits": 16,
+          "precision": 0.45714285714285713,
+          "recall": 0.7272727272727273
         },
         "2": {
-          "actual": 15,
-          "picks": 12,
-          "hits": 8,
-          "precision": 0.6666666666666666,
-          "recall": 0.5333333333333333
+          "actual": 18,
+          "picks": 17,
+          "hits": 10,
+          "precision": 0.5882352941176471,
+          "recall": 0.5555555555555556
         }
       },
-      "n": 39,
-      "hits": 22,
-      "accuracy": 0.5641025641025641,
-      "logloss": 0.9886913955695149,
-      "brier": 0.5896411908986654,
-      "draw_actual": 6,
+      "n": 52,
+      "hits": 26,
+      "accuracy": 0.5,
+      "logloss": 1.0163048074005043,
+      "brier": 0.6096905681776246,
+      "draw_actual": 12,
       "draw_picks": 0,
       "draw_hits": 0,
       "draw_precision": null,
       "draw_recall": 0,
-      "draw_brier": 0.146371377218249,
+      "draw_brier": 0.18200311968816638,
       "draw_calibration": [
         {
           "lower": 0.2,
           "upper": 0.3,
-          "n": 31,
-          "mean_probability": 0.27488077394529015,
-          "observed_draw_rate": 0.0967741935483871
+          "n": 40,
+          "mean_probability": 0.273169388019388,
+          "observed_draw_rate": 0.2
         },
         {
           "lower": 0.3,
           "upper": 0.4,
-          "n": 8,
-          "mean_probability": 0.3047499034999035,
-          "observed_draw_rate": 0.375
+          "n": 12,
+          "mean_probability": 0.304916602333269,
+          "observed_draw_rate": 0.3333333333333333
         }
       ]
     },
@@ -3235,19 +3954,19 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 31,
-                "mean_probability": 0.27488077394529015,
-                "observed_rate": 0.0967741935483871
+                "n": 40,
+                "mean_probability": 0.273169388019388,
+                "observed_rate": 0.2
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 8,
-                "mean_probability": 0.3047499034999035,
-                "observed_rate": 0.375
+                "n": 12,
+                "mean_probability": 0.304916602333269,
+                "observed_rate": 0.3333333333333333
               }
             ],
-            "ece": 0.15598217344371196
+            "ece": 0.06284185178415945
           },
           "1": {
             "bins": [
@@ -3261,56 +3980,56 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 5,
-                "mean_probability": 0.27699611519611517,
-                "observed_rate": 0.2
+                "n": 6,
+                "mean_probability": 0.2679967626634293,
+                "observed_rate": 0.16666666666666666
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 15,
-                "mean_probability": 0.35511327197993864,
-                "observed_rate": 0.4
+                "n": 21,
+                "mean_probability": 0.35131900379519426,
+                "observed_rate": 0.38095238095238093
               },
               {
                 "lower": 0.4,
                 "upper": 0.5,
-                "n": 13,
-                "mean_probability": 0.44504140665679126,
-                "observed_rate": 0.5384615384615384
+                "n": 17,
+                "mean_probability": 0.4485041913865443,
+                "observed_rate": 0.47058823529411764
               },
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 5,
-                "mean_probability": 0.5267999999999999,
-                "observed_rate": 0.8
+                "n": 7,
+                "mean_probability": 0.5392857142857143,
+                "observed_rate": 0.7142857142857143
               }
             ],
-            "ece": 0.0983267489677746
+            "ece": 0.05820596620596622
           },
           "2": {
             "bins": [
               {
                 "lower": 0.1,
                 "upper": 0.2,
-                "n": 1,
-                "mean_probability": 0.183,
+                "n": 3,
+                "mean_probability": 0.19099999999999998,
                 "observed_rate": 0
               },
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 14,
-                "mean_probability": 0.25962430426716143,
-                "observed_rate": 0.21428571428571427
+                "n": 17,
+                "mean_probability": 0.2590726920138685,
+                "observed_rate": 0.17647058823529413
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 17,
-                "mean_probability": 0.3343358656299833,
-                "observed_rate": 0.35294117647058826
+                "n": 24,
+                "mean_probability": 0.3382379048212382,
+                "observed_rate": 0.3333333333333333
               },
               {
                 "lower": 0.4,
@@ -3322,65 +4041,65 @@
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 1,
-                "mean_probability": 0.569,
+                "n": 2,
+                "mean_probability": 0.5475,
                 "observed_rate": 1
               }
             ],
-            "ece": 0.10056414569235084
+            "ece": 0.10301762726762732
           }
         },
-        "macro_ece": 0.11829102270127913,
+        "macro_ece": 0.07468848175258434,
         "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
       },
       "by_outcome": {
         "0": {
-          "actual": 6,
+          "actual": 12,
           "picks": 0,
           "hits": 0,
           "precision": null,
           "recall": 0
         },
         "1": {
-          "actual": 18,
-          "picks": 27,
-          "hits": 14,
-          "precision": 0.5185185185185185,
-          "recall": 0.7777777777777778
+          "actual": 22,
+          "picks": 35,
+          "hits": 16,
+          "precision": 0.45714285714285713,
+          "recall": 0.7272727272727273
         },
         "2": {
-          "actual": 15,
-          "picks": 12,
-          "hits": 8,
-          "precision": 0.6666666666666666,
-          "recall": 0.5333333333333333
+          "actual": 18,
+          "picks": 17,
+          "hits": 10,
+          "precision": 0.5882352941176471,
+          "recall": 0.5555555555555556
         }
       },
-      "n": 39,
-      "hits": 22,
-      "accuracy": 0.5641025641025641,
-      "logloss": 0.9886913955695149,
-      "brier": 0.5896411908986654,
-      "draw_actual": 6,
+      "n": 52,
+      "hits": 26,
+      "accuracy": 0.5,
+      "logloss": 1.0163048074005043,
+      "brier": 0.6096905681776246,
+      "draw_actual": 12,
       "draw_picks": 0,
       "draw_hits": 0,
       "draw_precision": null,
       "draw_recall": 0,
-      "draw_brier": 0.146371377218249,
+      "draw_brier": 0.18200311968816638,
       "draw_calibration": [
         {
           "lower": 0.2,
           "upper": 0.3,
-          "n": 31,
-          "mean_probability": 0.27488077394529015,
-          "observed_draw_rate": 0.0967741935483871
+          "n": 40,
+          "mean_probability": 0.273169388019388,
+          "observed_draw_rate": 0.2
         },
         {
           "lower": 0.3,
           "upper": 0.4,
-          "n": 8,
-          "mean_probability": 0.3047499034999035,
-          "observed_draw_rate": 0.375
+          "n": 12,
+          "mean_probability": 0.304916602333269,
+          "observed_draw_rate": 0.3333333333333333
         }
       ]
     },
@@ -3392,19 +4111,19 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 31,
-                "mean_probability": 0.27488077394529015,
-                "observed_rate": 0.0967741935483871
+                "n": 40,
+                "mean_probability": 0.273169388019388,
+                "observed_rate": 0.2
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 8,
-                "mean_probability": 0.3047499034999035,
-                "observed_rate": 0.375
+                "n": 12,
+                "mean_probability": 0.304916602333269,
+                "observed_rate": 0.3333333333333333
               }
             ],
-            "ece": 0.15598217344371196
+            "ece": 0.06284185178415945
           },
           "1": {
             "bins": [
@@ -3418,56 +4137,56 @@
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 5,
-                "mean_probability": 0.27699611519611517,
-                "observed_rate": 0.2
+                "n": 6,
+                "mean_probability": 0.2679967626634293,
+                "observed_rate": 0.16666666666666666
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 15,
-                "mean_probability": 0.35511327197993864,
-                "observed_rate": 0.4
+                "n": 21,
+                "mean_probability": 0.35131900379519426,
+                "observed_rate": 0.38095238095238093
               },
               {
                 "lower": 0.4,
                 "upper": 0.5,
-                "n": 13,
-                "mean_probability": 0.44504140665679126,
-                "observed_rate": 0.5384615384615384
+                "n": 17,
+                "mean_probability": 0.4485041913865443,
+                "observed_rate": 0.47058823529411764
               },
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 5,
-                "mean_probability": 0.5267999999999999,
-                "observed_rate": 0.8
+                "n": 7,
+                "mean_probability": 0.5392857142857143,
+                "observed_rate": 0.7142857142857143
               }
             ],
-            "ece": 0.0983267489677746
+            "ece": 0.05820596620596622
           },
           "2": {
             "bins": [
               {
                 "lower": 0.1,
                 "upper": 0.2,
-                "n": 1,
-                "mean_probability": 0.183,
+                "n": 3,
+                "mean_probability": 0.19099999999999998,
                 "observed_rate": 0
               },
               {
                 "lower": 0.2,
                 "upper": 0.3,
-                "n": 14,
-                "mean_probability": 0.25962430426716143,
-                "observed_rate": 0.21428571428571427
+                "n": 17,
+                "mean_probability": 0.2590726920138685,
+                "observed_rate": 0.17647058823529413
               },
               {
                 "lower": 0.3,
                 "upper": 0.4,
-                "n": 17,
-                "mean_probability": 0.3343358656299833,
-                "observed_rate": 0.35294117647058826
+                "n": 24,
+                "mean_probability": 0.3382379048212382,
+                "observed_rate": 0.3333333333333333
               },
               {
                 "lower": 0.4,
@@ -3479,65 +4198,65 @@
               {
                 "lower": 0.5,
                 "upper": 0.6,
-                "n": 1,
-                "mean_probability": 0.569,
+                "n": 2,
+                "mean_probability": 0.5475,
                 "observed_rate": 1
               }
             ],
-            "ece": 0.10056414569235084
+            "ece": 0.10301762726762732
           }
         },
-        "macro_ece": 0.11829102270127913,
+        "macro_ece": 0.07468848175258434,
         "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
       },
       "by_outcome": {
         "0": {
-          "actual": 6,
+          "actual": 12,
           "picks": 0,
           "hits": 0,
           "precision": null,
           "recall": 0
         },
         "1": {
-          "actual": 18,
-          "picks": 27,
-          "hits": 14,
-          "precision": 0.5185185185185185,
-          "recall": 0.7777777777777778
+          "actual": 22,
+          "picks": 35,
+          "hits": 16,
+          "precision": 0.45714285714285713,
+          "recall": 0.7272727272727273
         },
         "2": {
-          "actual": 15,
-          "picks": 12,
-          "hits": 8,
-          "precision": 0.6666666666666666,
-          "recall": 0.5333333333333333
+          "actual": 18,
+          "picks": 17,
+          "hits": 10,
+          "precision": 0.5882352941176471,
+          "recall": 0.5555555555555556
         }
       },
-      "n": 39,
-      "hits": 22,
-      "accuracy": 0.5641025641025641,
-      "logloss": 0.9886913955695149,
-      "brier": 0.5896411908986654,
-      "draw_actual": 6,
+      "n": 52,
+      "hits": 26,
+      "accuracy": 0.5,
+      "logloss": 1.0163048074005043,
+      "brier": 0.6096905681776246,
+      "draw_actual": 12,
       "draw_picks": 0,
       "draw_hits": 0,
       "draw_precision": null,
       "draw_recall": 0,
-      "draw_brier": 0.146371377218249,
+      "draw_brier": 0.18200311968816638,
       "draw_calibration": [
         {
           "lower": 0.2,
           "upper": 0.3,
-          "n": 31,
-          "mean_probability": 0.27488077394529015,
-          "observed_draw_rate": 0.0967741935483871
+          "n": 40,
+          "mean_probability": 0.273169388019388,
+          "observed_draw_rate": 0.2
         },
         {
           "lower": 0.3,
           "upper": 0.4,
-          "n": 8,
-          "mean_probability": 0.3047499034999035,
-          "observed_draw_rate": 0.375
+          "n": 12,
+          "mean_probability": 0.304916602333269,
+          "observed_draw_rate": 0.3333333333333333
         }
       ]
     },
@@ -3963,6 +4682,149 @@
             "observed_draw_rate": 1
           }
         ]
+      },
+      "1673": {
+        "calibration": {
+          "by_outcome": {
+            "0": {
+              "bins": [
+                {
+                  "lower": 0.2,
+                  "upper": 0.3,
+                  "n": 9,
+                  "mean_probability": 0.26727461427461424,
+                  "observed_rate": 0.5555555555555556
+                },
+                {
+                  "lower": 0.3,
+                  "upper": 0.4,
+                  "n": 4,
+                  "mean_probability": 0.30524999999999997,
+                  "observed_rate": 0.25
+                }
+              ],
+              "ece": 0.21657911319449782
+            },
+            "1": {
+              "bins": [
+                {
+                  "lower": 0.2,
+                  "upper": 0.3,
+                  "n": 1,
+                  "mean_probability": 0.223,
+                  "observed_rate": 0
+                },
+                {
+                  "lower": 0.3,
+                  "upper": 0.4,
+                  "n": 6,
+                  "mean_probability": 0.3418333333333334,
+                  "observed_rate": 0.3333333333333333
+                },
+                {
+                  "lower": 0.4,
+                  "upper": 0.5,
+                  "n": 4,
+                  "mean_probability": 0.4597582417582418,
+                  "observed_rate": 0.25
+                },
+                {
+                  "lower": 0.5,
+                  "upper": 0.6,
+                  "n": 2,
+                  "mean_probability": 0.5705,
+                  "observed_rate": 0.5
+                }
+              ],
+              "ece": 0.09646407438715136
+            },
+            "2": {
+              "bins": [
+                {
+                  "lower": 0.1,
+                  "upper": 0.2,
+                  "n": 2,
+                  "mean_probability": 0.195,
+                  "observed_rate": 0
+                },
+                {
+                  "lower": 0.2,
+                  "upper": 0.3,
+                  "n": 3,
+                  "mean_probability": 0.25649850149850156,
+                  "observed_rate": 0
+                },
+                {
+                  "lower": 0.3,
+                  "upper": 0.4,
+                  "n": 7,
+                  "mean_probability": 0.34771428571428575,
+                  "observed_rate": 0.2857142857142857
+                },
+                {
+                  "lower": 0.5,
+                  "upper": 0.6,
+                  "n": 1,
+                  "mean_probability": 0.526,
+                  "observed_rate": 1
+                }
+              ],
+              "ece": 0.15903811573042348
+            }
+          },
+          "macro_ece": 0.15736043443735756,
+          "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
+        },
+        "by_outcome": {
+          "0": {
+            "actual": 6,
+            "picks": 0,
+            "hits": 0,
+            "precision": null,
+            "recall": 0
+          },
+          "1": {
+            "actual": 4,
+            "picks": 8,
+            "hits": 2,
+            "precision": 0.25,
+            "recall": 0.5
+          },
+          "2": {
+            "actual": 3,
+            "picks": 5,
+            "hits": 2,
+            "precision": 0.4,
+            "recall": 0.6666666666666666
+          }
+        },
+        "n": 13,
+        "hits": 4,
+        "accuracy": 0.3076923076923077,
+        "logloss": 1.0991450428934733,
+        "brier": 0.6698387000145017,
+        "draw_actual": 6,
+        "draw_picks": 0,
+        "draw_hits": 0,
+        "draw_precision": null,
+        "draw_recall": 0,
+        "draw_brier": 0.28889834709791856,
+        "draw_calibration": [
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 9,
+            "mean_probability": 0.26727461427461424,
+            "observed_draw_rate": 0.5555555555555556
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 4,
+            "mean_probability": 0.30524999999999997,
+            "observed_draw_rate": 0.25
+          }
+        ]
       }
     },
     "by_month_model": {
@@ -4124,75 +4986,75 @@
                 {
                   "lower": 0.2,
                   "upper": 0.3,
-                  "n": 23,
-                  "mean_probability": 0.2762923657706266,
-                  "observed_rate": 0.13043478260869565
+                  "n": 32,
+                  "mean_probability": 0.27375612316237313,
+                  "observed_rate": 0.25
                 },
                 {
                   "lower": 0.3,
                   "upper": 0.4,
-                  "n": 7,
-                  "mean_probability": 0.3049998897141754,
-                  "observed_rate": 0.42857142857142855
+                  "n": 11,
+                  "mean_probability": 0.3050908389090207,
+                  "observed_rate": 0.36363636363636365
                 }
               ],
-              "ece": 0.14065750615750613
+              "ece": 0.03265573751620261
             },
             "1": {
               "bins": [
                 {
                   "lower": 0.2,
                   "upper": 0.3,
-                  "n": 4,
-                  "mean_probability": 0.28499514399514403,
-                  "observed_rate": 0.25
+                  "n": 5,
+                  "mean_probability": 0.27259611519611526,
+                  "observed_rate": 0.2
                 },
                 {
                   "lower": 0.3,
                   "upper": 0.4,
-                  "n": 12,
-                  "mean_probability": 0.3515252236085569,
+                  "n": 18,
+                  "mean_probability": 0.34829459351681574,
                   "observed_rate": 0.3333333333333333
                 },
                 {
                   "lower": 0.4,
                   "upper": 0.5,
-                  "n": 10,
-                  "mean_probability": 0.4427125874125874,
-                  "observed_rate": 0.5
+                  "n": 14,
+                  "mean_probability": 0.44758277436848865,
+                  "observed_rate": 0.42857142857142855
                 },
                 {
                   "lower": 0.5,
                   "upper": 0.6,
-                  "n": 4,
-                  "mean_probability": 0.5325,
-                  "observed_rate": 0.75
+                  "n": 6,
+                  "mean_probability": 0.5451666666666667,
+                  "observed_rate": 0.6666666666666666
                 }
               ],
-              "ece": 0.06003857950524619
+              "ece": 0.03784749070795584
             },
             "2": {
               "bins": [
                 {
                   "lower": 0.1,
                   "upper": 0.2,
-                  "n": 1,
-                  "mean_probability": 0.183,
+                  "n": 3,
+                  "mean_probability": 0.19099999999999998,
                   "observed_rate": 0
                 },
                 {
                   "lower": 0.2,
                   "upper": 0.3,
-                  "n": 11,
-                  "mean_probability": 0.26161275088547825,
-                  "observed_rate": 0.18181818181818182
+                  "n": 14,
+                  "mean_probability": 0.2605168403025547,
+                  "observed_rate": 0.14285714285714285
                 },
                 {
                   "lower": 0.3,
                   "upper": 0.4,
-                  "n": 13,
-                  "mean_probability": 0.3373152387767772,
-                  "observed_rate": 0.38461538461538464
+                  "n": 20,
+                  "mean_probability": 0.3409549052049052,
+                  "observed_rate": 0.35
                 },
                 {
                   "lower": 0.4,
@@ -4200,62 +5062,69 @@
                   "n": 5,
                   "mean_probability": 0.4298057724057724,
                   "observed_rate": 0.8
+                },
+                {
+                  "lower": 0.5,
+                  "upper": 0.6,
+                  "n": 1,
+                  "mean_probability": 0.526,
+                  "observed_rate": 1
                 }
               ],
-              "ece": 0.11755377645377652
+              "ece": 0.10990950693276279
             }
           },
-          "macro_ece": 0.10608328737217627,
+          "macro_ece": 0.06013757838564041,
           "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
         },
         "by_outcome": {
           "0": {
-            "actual": 6,
+            "actual": 12,
             "picks": 0,
             "hits": 0,
             "precision": null,
             "recall": 0
           },
           "1": {
-            "actual": 13,
-            "picks": 21,
-            "hits": 10,
-            "precision": 0.47619047619047616,
-            "recall": 0.7692307692307693
+            "actual": 17,
+            "picks": 29,
+            "hits": 12,
+            "precision": 0.41379310344827586,
+            "recall": 0.7058823529411765
           },
           "2": {
-            "actual": 11,
-            "picks": 9,
-            "hits": 6,
-            "precision": 0.6666666666666666,
-            "recall": 0.5454545454545454
+            "actual": 14,
+            "picks": 14,
+            "hits": 8,
+            "precision": 0.5714285714285714,
+            "recall": 0.5714285714285714
           }
         },
-        "n": 30,
-        "hits": 16,
-        "accuracy": 0.5333333333333333,
-        "logloss": 1.0160648747722105,
-        "brier": 0.6096528006342113,
-        "draw_actual": 6,
+        "n": 43,
+        "hits": 20,
+        "accuracy": 0.46511627906976744,
+        "logloss": 1.0411821349018944,
+        "brier": 0.6278485376561597,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
         "draw_recall": 0,
-        "draw_brier": 0.16755983139804473,
+        "draw_brier": 0.20424356870265775,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 23,
-            "mean_probability": 0.2762923657706266,
-            "observed_draw_rate": 0.13043478260869565
+            "n": 32,
+            "mean_probability": 0.27375612316237313,
+            "observed_draw_rate": 0.25
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 7,
-            "mean_probability": 0.3049998897141754,
-            "observed_draw_rate": 0.42857142857142855
+            "n": 11,
+            "mean_probability": 0.3050908389090207,
+            "observed_draw_rate": 0.36363636363636365
           }
         ]
       }
@@ -4269,19 +5138,19 @@
                 {
                   "lower": 0.2,
                   "upper": 0.3,
-                  "n": 31,
-                  "mean_probability": 0.27488077394529015,
-                  "observed_rate": 0.0967741935483871
+                  "n": 40,
+                  "mean_probability": 0.273169388019388,
+                  "observed_rate": 0.2
                 },
                 {
                   "lower": 0.3,
                   "upper": 0.4,
-                  "n": 8,
-                  "mean_probability": 0.3047499034999035,
-                  "observed_rate": 0.375
+                  "n": 12,
+                  "mean_probability": 0.304916602333269,
+                  "observed_rate": 0.3333333333333333
                 }
               ],
-              "ece": 0.15598217344371196
+              "ece": 0.06284185178415945
             },
             "1": {
               "bins": [
@@ -4295,56 +5164,56 @@
                 {
                   "lower": 0.2,
                   "upper": 0.3,
-                  "n": 5,
-                  "mean_probability": 0.27699611519611517,
-                  "observed_rate": 0.2
+                  "n": 6,
+                  "mean_probability": 0.2679967626634293,
+                  "observed_rate": 0.16666666666666666
                 },
                 {
                   "lower": 0.3,
                   "upper": 0.4,
-                  "n": 15,
-                  "mean_probability": 0.35511327197993864,
-                  "observed_rate": 0.4
+                  "n": 21,
+                  "mean_probability": 0.35131900379519426,
+                  "observed_rate": 0.38095238095238093
                 },
                 {
                   "lower": 0.4,
                   "upper": 0.5,
-                  "n": 13,
-                  "mean_probability": 0.44504140665679126,
-                  "observed_rate": 0.5384615384615384
+                  "n": 17,
+                  "mean_probability": 0.4485041913865443,
+                  "observed_rate": 0.47058823529411764
                 },
                 {
                   "lower": 0.5,
                   "upper": 0.6,
-                  "n": 5,
-                  "mean_probability": 0.5267999999999999,
-                  "observed_rate": 0.8
+                  "n": 7,
+                  "mean_probability": 0.5392857142857143,
+                  "observed_rate": 0.7142857142857143
                 }
               ],
-              "ece": 0.0983267489677746
+              "ece": 0.05820596620596622
             },
             "2": {
               "bins": [
                 {
                   "lower": 0.1,
                   "upper": 0.2,
-                  "n": 1,
-                  "mean_probability": 0.183,
+                  "n": 3,
+                  "mean_probability": 0.19099999999999998,
                   "observed_rate": 0
                 },
                 {
                   "lower": 0.2,
                   "upper": 0.3,
-                  "n": 14,
-                  "mean_probability": 0.25962430426716143,
-                  "observed_rate": 0.21428571428571427
+                  "n": 17,
+                  "mean_probability": 0.2590726920138685,
+                  "observed_rate": 0.17647058823529413
                 },
                 {
                   "lower": 0.3,
                   "upper": 0.4,
-                  "n": 17,
-                  "mean_probability": 0.3343358656299833,
-                  "observed_rate": 0.35294117647058826
+                  "n": 24,
+                  "mean_probability": 0.3382379048212382,
+                  "observed_rate": 0.3333333333333333
                 },
                 {
                   "lower": 0.4,
@@ -4356,65 +5225,65 @@
                 {
                   "lower": 0.5,
                   "upper": 0.6,
-                  "n": 1,
-                  "mean_probability": 0.569,
+                  "n": 2,
+                  "mean_probability": 0.5475,
                   "observed_rate": 1
                 }
               ],
-              "ece": 0.10056414569235084
+              "ece": 0.10301762726762732
             }
           },
-          "macro_ece": 0.11829102270127913,
+          "macro_ece": 0.07468848175258434,
           "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
         },
         "by_outcome": {
           "0": {
-            "actual": 6,
+            "actual": 12,
             "picks": 0,
             "hits": 0,
             "precision": null,
             "recall": 0
           },
           "1": {
-            "actual": 18,
-            "picks": 27,
-            "hits": 14,
-            "precision": 0.5185185185185185,
-            "recall": 0.7777777777777778
+            "actual": 22,
+            "picks": 35,
+            "hits": 16,
+            "precision": 0.45714285714285713,
+            "recall": 0.7272727272727273
           },
           "2": {
-            "actual": 15,
-            "picks": 12,
-            "hits": 8,
-            "precision": 0.6666666666666666,
-            "recall": 0.5333333333333333
+            "actual": 18,
+            "picks": 17,
+            "hits": 10,
+            "precision": 0.5882352941176471,
+            "recall": 0.5555555555555556
           }
         },
-        "n": 39,
-        "hits": 22,
-        "accuracy": 0.5641025641025641,
-        "logloss": 0.9886913955695149,
-        "brier": 0.5896411908986654,
-        "draw_actual": 6,
+        "n": 52,
+        "hits": 26,
+        "accuracy": 0.5,
+        "logloss": 1.0163048074005043,
+        "brier": 0.6096905681776246,
+        "draw_actual": 12,
         "draw_picks": 0,
         "draw_hits": 0,
         "draw_precision": null,
         "draw_recall": 0,
-        "draw_brier": 0.146371377218249,
+        "draw_brier": 0.18200311968816638,
         "draw_calibration": [
           {
             "lower": 0.2,
             "upper": 0.3,
-            "n": 31,
-            "mean_probability": 0.27488077394529015,
-            "observed_draw_rate": 0.0967741935483871
+            "n": 40,
+            "mean_probability": 0.273169388019388,
+            "observed_draw_rate": 0.2
           },
           {
             "lower": 0.3,
             "upper": 0.4,
-            "n": 8,
-            "mean_probability": 0.3047499034999035,
-            "observed_draw_rate": 0.375
+            "n": 12,
+            "mean_probability": 0.304916602333269,
+            "observed_draw_rate": 0.3333333333333333
           }
         ]
       }
@@ -4476,6 +5345,66 @@
         "home": "町田",
         "away": "広島",
         "date": "2026-11-08",
+        "prediction": "1",
+        "actual": "0",
+        "hit": false
+      },
+      {
+        "round_id": "1673",
+        "number": 1,
+        "home": "町田",
+        "away": "長崎",
+        "date": "2026-11-21",
+        "prediction": "1",
+        "actual": "0",
+        "hit": false
+      },
+      {
+        "round_id": "1673",
+        "number": 6,
+        "home": "東京Ｖ",
+        "away": "名古屋",
+        "date": "2026-11-21",
+        "prediction": "1",
+        "actual": "0",
+        "hit": false
+      },
+      {
+        "round_id": "1673",
+        "number": 2,
+        "home": "広島",
+        "away": "横浜FM",
+        "date": "2026-11-21",
+        "prediction": "1",
+        "actual": "0",
+        "hit": false
+      },
+      {
+        "round_id": "1673",
+        "number": 12,
+        "home": "鳥栖",
+        "away": "仙台",
+        "date": "2026-11-21",
+        "prediction": "2",
+        "actual": "0",
+        "hit": false
+      },
+      {
+        "round_id": "1673",
+        "number": 9,
+        "home": "宮崎",
+        "away": "いわき",
+        "date": "2026-11-21",
+        "prediction": "1",
+        "actual": "0",
+        "hit": false
+      },
+      {
+        "round_id": "1673",
+        "number": 11,
+        "home": "富山",
+        "away": "大分",
+        "date": "2026-11-21",
         "prediction": "1",
         "actual": "0",
         "hit": false
@@ -7315,6 +8244,963 @@
           },
           "published_at": "2026-11-07T02:25:58.089Z",
           "snapshot_id": "f90c0436d36b6b5cb20d9d0995a36149c0281aded9bb32325f7473c810c6a8e7"
+        }
+      ],
+      "limitations": [
+        "公開時の予測根拠と結果の記録です。戦術・負傷・退場など試合結果の原因を特定したものではありません。",
+        "期待的中数・期待引き分け数はモデル確率の合計です。実績や保証ではありません。",
+        "少数試合の一致・不一致から精度向上や確率校正の成功を判定せず、本番モデルを維持します。",
+        "Jリーグの得点との照合です。totoの中止・払戻裁定や実購入の当選判定とは区別します。"
+      ]
+    },
+    {
+      "round_id": "1673",
+      "last_match_date": "2026-11-21",
+      "complete": true,
+      "metrics": {
+        "calibration": {
+          "by_outcome": {
+            "0": {
+              "bins": [
+                {
+                  "lower": 0.2,
+                  "upper": 0.3,
+                  "n": 9,
+                  "mean_probability": 0.26727461427461424,
+                  "observed_rate": 0.5555555555555556
+                },
+                {
+                  "lower": 0.3,
+                  "upper": 0.4,
+                  "n": 4,
+                  "mean_probability": 0.30524999999999997,
+                  "observed_rate": 0.25
+                }
+              ],
+              "ece": 0.21657911319449782
+            },
+            "1": {
+              "bins": [
+                {
+                  "lower": 0.2,
+                  "upper": 0.3,
+                  "n": 1,
+                  "mean_probability": 0.223,
+                  "observed_rate": 0
+                },
+                {
+                  "lower": 0.3,
+                  "upper": 0.4,
+                  "n": 6,
+                  "mean_probability": 0.3418333333333334,
+                  "observed_rate": 0.3333333333333333
+                },
+                {
+                  "lower": 0.4,
+                  "upper": 0.5,
+                  "n": 4,
+                  "mean_probability": 0.4597582417582418,
+                  "observed_rate": 0.25
+                },
+                {
+                  "lower": 0.5,
+                  "upper": 0.6,
+                  "n": 2,
+                  "mean_probability": 0.5705,
+                  "observed_rate": 0.5
+                }
+              ],
+              "ece": 0.09646407438715136
+            },
+            "2": {
+              "bins": [
+                {
+                  "lower": 0.1,
+                  "upper": 0.2,
+                  "n": 2,
+                  "mean_probability": 0.195,
+                  "observed_rate": 0
+                },
+                {
+                  "lower": 0.2,
+                  "upper": 0.3,
+                  "n": 3,
+                  "mean_probability": 0.25649850149850156,
+                  "observed_rate": 0
+                },
+                {
+                  "lower": 0.3,
+                  "upper": 0.4,
+                  "n": 7,
+                  "mean_probability": 0.34771428571428575,
+                  "observed_rate": 0.2857142857142857
+                },
+                {
+                  "lower": 0.5,
+                  "upper": 0.6,
+                  "n": 1,
+                  "mean_probability": 0.526,
+                  "observed_rate": 1
+                }
+              ],
+              "ece": 0.15903811573042348
+            }
+          },
+          "macro_ece": 0.15736043443735756,
+          "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
+        },
+        "by_outcome": {
+          "0": {
+            "actual": 6,
+            "picks": 0,
+            "hits": 0,
+            "precision": null,
+            "recall": 0
+          },
+          "1": {
+            "actual": 4,
+            "picks": 8,
+            "hits": 2,
+            "precision": 0.25,
+            "recall": 0.5
+          },
+          "2": {
+            "actual": 3,
+            "picks": 5,
+            "hits": 2,
+            "precision": 0.4,
+            "recall": 0.6666666666666666
+          }
+        },
+        "n": 13,
+        "hits": 4,
+        "accuracy": 0.3076923076923077,
+        "logloss": 1.0991450428934733,
+        "brier": 0.6698387000145017,
+        "draw_actual": 6,
+        "draw_picks": 0,
+        "draw_hits": 0,
+        "draw_precision": null,
+        "draw_recall": 0,
+        "draw_brier": 0.28889834709791856,
+        "draw_calibration": [
+          {
+            "lower": 0.2,
+            "upper": 0.3,
+            "n": 9,
+            "mean_probability": 0.26727461427461424,
+            "observed_draw_rate": 0.5555555555555556
+          },
+          {
+            "lower": 0.3,
+            "upper": 0.4,
+            "n": 4,
+            "mean_probability": 0.30524999999999997,
+            "observed_draw_rate": 0.25
+          }
+        ]
+      },
+      "by_league": {
+        "J1": {
+          "calibration": {
+            "by_outcome": {
+              "0": {
+                "bins": [
+                  {
+                    "lower": 0.2,
+                    "upper": 0.3,
+                    "n": 5,
+                    "mean_probability": 0.25634745254745256,
+                    "observed_rate": 0.6
+                  },
+                  {
+                    "lower": 0.3,
+                    "upper": 0.4,
+                    "n": 2,
+                    "mean_probability": 0.306,
+                    "observed_rate": 0
+                  }
+                ],
+                "ece": 0.3328946767518196
+              },
+              "1": {
+                "bins": [
+                  {
+                    "lower": 0.2,
+                    "upper": 0.3,
+                    "n": 1,
+                    "mean_probability": 0.223,
+                    "observed_rate": 0
+                  },
+                  {
+                    "lower": 0.3,
+                    "upper": 0.4,
+                    "n": 3,
+                    "mean_probability": 0.3506666666666667,
+                    "observed_rate": 0.3333333333333333
+                  },
+                  {
+                    "lower": 0.4,
+                    "upper": 0.5,
+                    "n": 1,
+                    "mean_probability": 0.48851148851148857,
+                    "observed_rate": 0
+                  },
+                  {
+                    "lower": 0.5,
+                    "upper": 0.6,
+                    "n": 2,
+                    "mean_probability": 0.5705,
+                    "observed_rate": 0.5
+                  }
+                ],
+                "ece": 0.12921592693021267
+              },
+              "2": {
+                "bins": [
+                  {
+                    "lower": 0.1,
+                    "upper": 0.2,
+                    "n": 2,
+                    "mean_probability": 0.195,
+                    "observed_rate": 0
+                  },
+                  {
+                    "lower": 0.2,
+                    "upper": 0.3,
+                    "n": 1,
+                    "mean_probability": 0.24875124875124877,
+                    "observed_rate": 0
+                  },
+                  {
+                    "lower": 0.3,
+                    "upper": 0.4,
+                    "n": 3,
+                    "mean_probability": 0.3456666666666666,
+                    "observed_rate": 0.3333333333333333
+                  },
+                  {
+                    "lower": 0.5,
+                    "upper": 0.6,
+                    "n": 1,
+                    "mean_probability": 0.526,
+                    "observed_rate": 1
+                  }
+                ],
+                "ece": 0.16425017839303552
+              }
+            },
+            "macro_ece": 0.20878692735835594,
+            "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
+          },
+          "by_outcome": {
+            "0": {
+              "actual": 3,
+              "picks": 0,
+              "hits": 0,
+              "precision": null,
+              "recall": 0
+            },
+            "1": {
+              "actual": 2,
+              "picks": 4,
+              "hits": 1,
+              "precision": 0.25,
+              "recall": 0.5
+            },
+            "2": {
+              "actual": 2,
+              "picks": 3,
+              "hits": 2,
+              "precision": 0.6666666666666666,
+              "recall": 1
+            }
+          },
+          "n": 7,
+          "hits": 3,
+          "accuracy": 0.42857142857142855,
+          "logloss": 1.0506203248894839,
+          "brier": 0.6363764288455942,
+          "draw_actual": 3,
+          "draw_picks": 0,
+          "draw_hits": 0,
+          "draw_precision": null,
+          "draw_recall": 0,
+          "draw_brier": 0.27503276339373484,
+          "draw_calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "n": 5,
+              "mean_probability": 0.25634745254745256,
+              "observed_draw_rate": 0.6
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "n": 2,
+              "mean_probability": 0.306,
+              "observed_draw_rate": 0
+            }
+          ]
+        },
+        "J2": {
+          "calibration": {
+            "by_outcome": {
+              "0": {
+                "bins": [
+                  {
+                    "lower": 0.2,
+                    "upper": 0.3,
+                    "n": 4,
+                    "mean_probability": 0.28093356643356643,
+                    "observed_rate": 0.5
+                  },
+                  {
+                    "lower": 0.3,
+                    "upper": 0.4,
+                    "n": 2,
+                    "mean_probability": 0.3045,
+                    "observed_rate": 0.5
+                  }
+                ],
+                "ece": 0.21121095571095572
+              },
+              "1": {
+                "bins": [
+                  {
+                    "lower": 0.3,
+                    "upper": 0.4,
+                    "n": 3,
+                    "mean_probability": 0.333,
+                    "observed_rate": 0.3333333333333333
+                  },
+                  {
+                    "lower": 0.4,
+                    "upper": 0.5,
+                    "n": 3,
+                    "mean_probability": 0.4501738261738262,
+                    "observed_rate": 0.3333333333333333
+                  }
+                ],
+                "ece": 0.05858691308691308
+              },
+              "2": {
+                "bins": [
+                  {
+                    "lower": 0.2,
+                    "upper": 0.3,
+                    "n": 2,
+                    "mean_probability": 0.26037212787212793,
+                    "observed_rate": 0
+                  },
+                  {
+                    "lower": 0.3,
+                    "upper": 0.4,
+                    "n": 4,
+                    "mean_probability": 0.34925,
+                    "observed_rate": 0.25
+                  }
+                ],
+                "ece": 0.15295737595737596
+              }
+            },
+            "macro_ece": 0.14091841491841492,
+            "warning": "等幅10ビンの記述統計。少数例のECEだけで校正成功や改善を判定しない。"
+          },
+          "by_outcome": {
+            "0": {
+              "actual": 3,
+              "picks": 0,
+              "hits": 0,
+              "precision": null,
+              "recall": 0
+            },
+            "1": {
+              "actual": 2,
+              "picks": 4,
+              "hits": 1,
+              "precision": 0.25,
+              "recall": 0.5
+            },
+            "2": {
+              "actual": 1,
+              "picks": 2,
+              "hits": 0,
+              "precision": 0,
+              "recall": 0
+            }
+          },
+          "n": 6,
+          "hits": 1,
+          "accuracy": 0.16666666666666666,
+          "logloss": 1.1557572138981278,
+          "brier": 0.7088780163782271,
+          "draw_actual": 3,
+          "draw_picks": 0,
+          "draw_hits": 0,
+          "draw_precision": null,
+          "draw_recall": 0,
+          "draw_brier": 0.30507486141946627,
+          "draw_calibration": [
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "n": 4,
+              "mean_probability": 0.28093356643356643,
+              "observed_draw_rate": 0.5
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "n": 2,
+              "mean_probability": 0.3045,
+              "observed_draw_rate": 0.5
+            }
+          ]
+        },
+        "J3": {
+          "n": 0,
+          "accuracy": null,
+          "logloss": null,
+          "brier": null,
+          "draw_precision": null,
+          "draw_recall": null,
+          "draw_brier": null,
+          "draw_calibration": [],
+          "calibration": null,
+          "by_outcome": {}
+        }
+      },
+      "home_always": {
+        "n": 13,
+        "hits": 4,
+        "accuracy": 0.3076923076923077
+      },
+      "expected_hits": 5.696032967032966,
+      "expected_draws": 3.6264715284715288,
+      "matches": [
+        {
+          "number": 1,
+          "home": "町田",
+          "away": "長崎",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "0-0",
+          "prediction": "1",
+          "actual": "0",
+          "hit": false,
+          "probabilities": {
+            "0": 0.235,
+            "1": 0.569,
+            "2": 0.196
+          },
+          "picked_probability": 0.569,
+          "actual_probability": 0.235,
+          "top_two_gap": 0.33399999999999996,
+          "logloss": 1.448169764837978,
+          "brier": 0.947402,
+          "saved_reasons": [
+            "ホーム側の開催地成績が優位",
+            "ホーム側の直近フォームが優位",
+            "H2H直近5戦は拮抗（2-1-2）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 2,
+          "home": "広島",
+          "away": "横浜FM",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "2-2",
+          "prediction": "1",
+          "actual": "0",
+          "hit": false,
+          "probabilities": {
+            "0": 0.2627372627372628,
+            "1": 0.48851148851148857,
+            "2": 0.24875124875124877
+          },
+          "picked_probability": 0.48851148851148857,
+          "actual_probability": 0.2627372627372628,
+          "top_two_gap": 0.2257742257742258,
+          "logloss": 1.336600747137456,
+          "brier": 0.8440770019191597,
+          "saved_reasons": [
+            "ホーム側の開催地成績が優位",
+            "H2H直近5戦はアウェイ側が優勢（2-0-3）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 3,
+          "home": "京都",
+          "away": "浦和",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "2-1",
+          "prediction": "2",
+          "actual": "1",
+          "hit": false,
+          "probabilities": {
+            "0": 0.303,
+            "1": 0.331,
+            "2": 0.366
+          },
+          "picked_probability": 0.366,
+          "actual_probability": 0.331,
+          "top_two_gap": 0.034999999999999976,
+          "logloss": 1.1056369036050742,
+          "brier": 0.673326,
+          "saved_reasons": [
+            "H2H直近5戦はアウェイ側が優勢（0-3-2）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 4,
+          "home": "川崎Ｆ",
+          "away": "福岡",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "1-0",
+          "prediction": "1",
+          "actual": "1",
+          "hit": true,
+          "probabilities": {
+            "0": 0.234,
+            "1": 0.572,
+            "2": 0.194
+          },
+          "picked_probability": 0.572,
+          "actual_probability": 0.572,
+          "top_two_gap": 0.33799999999999997,
+          "logloss": 0.5586162876023393,
+          "brier": 0.27557600000000004,
+          "saved_reasons": [
+            "ホーム側の開催地成績が優位",
+            "ホーム側の直近フォームが優位",
+            "H2H直近5戦はホーム側が優勢（3-1-1）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 5,
+          "home": "Ｇ大阪",
+          "away": "岡山",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "0-1",
+          "prediction": "2",
+          "actual": "2",
+          "hit": true,
+          "probabilities": {
+            "0": 0.309,
+            "1": 0.343,
+            "2": 0.348
+          },
+          "picked_probability": 0.348,
+          "actual_probability": 0.348,
+          "top_two_gap": 0.004999999999999949,
+          "logloss": 1.0555527992076628,
+          "brier": 0.6382340000000001,
+          "saved_reasons": [
+            "両チームの総合評価が近い",
+            "ホーム側の直近フォームが優位",
+            "H2H直近4戦はアウェイ側が優勢（1-1-2）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 6,
+          "home": "東京Ｖ",
+          "away": "名古屋",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "0-0",
+          "prediction": "1",
+          "actual": "0",
+          "hit": false,
+          "probabilities": {
+            "0": 0.299,
+            "1": 0.378,
+            "2": 0.323
+          },
+          "picked_probability": 0.378,
+          "actual_probability": 0.299,
+          "top_two_gap": 0.05499999999999999,
+          "logloss": 1.2073117055914506,
+          "brier": 0.7386140000000001,
+          "saved_reasons": [
+            "両チームの総合評価が近い",
+            "ホーム側の直近フォームが優位",
+            "H2H直近5戦は拮抗（2-1-2）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 7,
+          "home": "Ｃ大阪",
+          "away": "FC東京",
+          "league": "J1",
+          "date": "2026-11-21",
+          "score": "0-3",
+          "prediction": "2",
+          "actual": "2",
+          "hit": true,
+          "probabilities": {
+            "0": 0.251,
+            "1": 0.223,
+            "2": 0.526
+          },
+          "picked_probability": 0.526,
+          "actual_probability": 0.526,
+          "top_two_gap": 0.275,
+          "logloss": 0.6424540662444271,
+          "brier": 0.337406,
+          "saved_reasons": [
+            "アウェイ側の直近フォームが優位",
+            "H2H直近5戦はアウェイ側が優勢（0-3-2）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 8,
+          "home": "秋田",
+          "away": "山形",
+          "league": "J2",
+          "date": "2026-11-21",
+          "score": "3-1",
+          "prediction": "1",
+          "actual": "1",
+          "hit": true,
+          "probabilities": {
+            "0": 0.289,
+            "1": 0.407,
+            "2": 0.304
+          },
+          "picked_probability": 0.407,
+          "actual_probability": 0.407,
+          "top_two_gap": 0.10299999999999998,
+          "logloss": 0.8989420935395421,
+          "brier": 0.5275859999999999,
+          "saved_reasons": [
+            "ホーム側の開催地成績が優位",
+            "H2H直近5戦はアウェイ側が優勢（1-1-3）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 9,
+          "home": "宮崎",
+          "away": "いわき",
+          "league": "J2",
+          "date": "2026-11-21",
+          "score": "1-1",
+          "prediction": "1",
+          "actual": "0",
+          "hit": false,
+          "probabilities": {
+            "0": 0.2657342657342658,
+            "1": 0.4785214785214786,
+            "2": 0.2557442557442558
+          },
+          "picked_probability": 0.4785214785214786,
+          "actual_probability": 0.2657342657342658,
+          "top_two_gap": 0.2127872127872128,
+          "logloss": 1.3252584705335213,
+          "brier": 0.8335340982693629,
+          "saved_reasons": [
+            "ホーム側の開催地成績が優位",
+            "ホーム側の直近フォームが優位",
+            "H2H直近2戦は拮抗（1-0-1）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 10,
+          "home": "甲府",
+          "away": "八戸",
+          "league": "J2",
+          "date": "2026-11-21",
+          "score": "0-2",
+          "prediction": "1",
+          "actual": "2",
+          "hit": false,
+          "probabilities": {
+            "0": 0.309,
+            "1": 0.348,
+            "2": 0.343
+          },
+          "picked_probability": 0.348,
+          "actual_probability": 0.343,
+          "top_two_gap": 0.004999999999999949,
+          "logloss": 1.0700248318161971,
+          "brier": 0.648234,
+          "saved_reasons": [
+            "両チームの総合評価が近い"
+          ],
+          "data_notes": [
+            "公開時の対戦履歴が不足しています。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 11,
+          "home": "富山",
+          "away": "大分",
+          "league": "J2",
+          "date": "2026-11-21",
+          "score": "1-1",
+          "prediction": "1",
+          "actual": "0",
+          "hit": false,
+          "probabilities": {
+            "0": 0.27,
+            "1": 0.465,
+            "2": 0.265
+          },
+          "picked_probability": 0.465,
+          "actual_probability": 0.27,
+          "top_two_gap": 0.195,
+          "logloss": 1.3093333199837622,
+          "brier": 0.8193499999999999,
+          "saved_reasons": [
+            "ホーム側の直近フォームが優位",
+            "H2H直近5戦はホーム側が優勢（1-4-0）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 12,
+          "home": "鳥栖",
+          "away": "仙台",
+          "league": "J2",
+          "date": "2026-11-21",
+          "score": "1-1",
+          "prediction": "2",
+          "actual": "0",
+          "hit": false,
+          "probabilities": {
+            "0": 0.3,
+            "1": 0.327,
+            "2": 0.373
+          },
+          "picked_probability": 0.373,
+          "actual_probability": 0.3,
+          "top_two_gap": 0.045999999999999985,
+          "logloss": 1.2039728043259361,
+          "brier": 0.7360579999999999,
+          "saved_reasons": [
+            "ホーム側の直近フォームが優位",
+            "H2H直近5戦はアウェイ側が優勢（2-0-3）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
+        },
+        {
+          "number": 13,
+          "home": "磐田",
+          "away": "大宮",
+          "league": "J2",
+          "date": "2026-11-21",
+          "score": "2-0",
+          "prediction": "2",
+          "actual": "1",
+          "hit": false,
+          "probabilities": {
+            "0": 0.299,
+            "1": 0.324,
+            "2": 0.377
+          },
+          "picked_probability": 0.377,
+          "actual_probability": 0.324,
+          "top_two_gap": 0.05299999999999999,
+          "logloss": 1.1270117631898076,
+          "brier": 0.6885059999999998,
+          "saved_reasons": [
+            "H2H直近5戦は拮抗（2-1-2）"
+          ],
+          "data_notes": [
+            "通算対戦の勝敗内訳に欠損・不整合があります。0勝という実績として扱いません。"
+          ],
+          "data_usage": {
+            "season_results": true,
+            "recent_form": true,
+            "venue_results": true,
+            "h2h": "when_available",
+            "weather": false,
+            "stadium_information": "display_only",
+            "injuries": false,
+            "lineups": false
+          },
+          "published_at": "2026-11-21T02:24:24.250Z",
+          "snapshot_id": "6c5236ac27e306d421b2d701f1c1a1dee34a3407b4ebffa68cb548988fc7622a"
         }
       ],
       "limitations": [
