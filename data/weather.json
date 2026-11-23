@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-23T01:47:59.037Z",
+  "fetched_at": "2026-11-23T09:56:11.492Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
   "available": "0/13",
@@ -17,7 +17,7 @@
       "weather_location": "千葉 ホームタウン",
       "latitude": 35.6073,
       "longitude": 140.1063,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: fetch failed"
     },
     {
       "number": 2,
@@ -32,7 +32,7 @@
       "weather_location": "JFE晴れの国スタジアム",
       "latitude": 34.6583,
       "longitude": 133.9195,
-      "reason": "fetch_error: robots.txt disallows /v1/forecast"
+      "reason": "fetch_error: fetch failed"
     },
     {
       "number": 3,
@@ -195,7 +195,7 @@
       "reason": "fetch_error: robots.txt disallows /v1/forecast"
     }
   ],
-  "dataset_id": "c93c85aa99500f092665b4f741396de991885c09bf6775ce74b22fbc7555efbb",
+  "dataset_id": "06cc27da4895264870b9940b656568cf4fa47722b2b451ee84f889dbb2d1bdce",
   "round_id": "1674",
   "product": "toto",
   "product_id": "01",
