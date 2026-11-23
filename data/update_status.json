@@ -1,15 +1,15 @@
 {
   "publication": {
-    "checked_at": "2026-11-23T09:56:11.761Z",
+    "checked_at": "2026-11-23T12:58:11.326Z",
     "sales_close_at": "2026-11-25T18:50:00+09:00",
-    "remaining_minutes": 2873.8039833333332,
+    "remaining_minutes": 2691.8112333333333,
     "reserve_minutes": 30,
     "on_time": true
   },
   "state": "success",
-  "started_at": "2026-11-23T09:54:25.840Z",
-  "checked_at": "2026-11-23T09:56:11.765Z",
-  "dataset_id": "06cc27da4895264870b9940b656568cf4fa47722b2b451ee84f889dbb2d1bdce",
+  "started_at": "2026-11-23T12:57:47.122Z",
+  "checked_at": "2026-11-23T12:58:11.329Z",
+  "dataset_id": "fbb8a604128c0e3c08a4b071477319a4e92e99af643f28dcf659393c7c62b380",
   "round_id": "1674",
   "product": "toto",
   "product_id": "01",
@@ -21,7 +21,7 @@
     "venue": 13,
     "h2h_used": 13,
     "weather": 0,
-    "weather_policy_blocked": 10,
+    "weather_policy_blocked": 12,
     "weather_used": false,
     "rows": [
       {
@@ -44,8 +44,8 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "unavailable",
-          "label": "未取得（予測に未使用）",
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
           "used": false
         }
       },
@@ -69,8 +69,8 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "unavailable",
-          "label": "未取得（予測に未使用）",
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
           "used": false
         }
       },
@@ -355,18 +355,18 @@
     {
       "source": "weather",
       "number": 1,
-      "reason": "fetch_error: fetch failed",
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "unavailable"
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 2,
-      "reason": "fetch_error: fetch failed",
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "unavailable"
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
