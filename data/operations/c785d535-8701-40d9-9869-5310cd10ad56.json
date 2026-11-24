@@ -1,0 +1,37 @@
+{
+  "run_id": "c785d535-8701-40d9-9869-5310cd10ad56",
+  "events": [
+    {
+      "state": "started",
+      "trigger": "schedule",
+      "at": "2026-11-24T13:51:18.067Z"
+    },
+    {
+      "state": "results_success",
+      "attempt": 1,
+      "completed": 65,
+      "at": "2026-11-24T13:51:21.983Z"
+    },
+    {
+      "state": "attempt_error",
+      "attempt": 1,
+      "error": "Command failed: /opt/hostedtoolcache/node/22.23.5/x64/bin/node /home/runner/work/judge90-toto/judge90-toto/scripts/fetch_weather.mjs\n",
+      "at": "2026-11-24T13:53:49.628Z"
+    },
+    {
+      "state": "success",
+      "attempt": 2,
+      "round_id": "1674",
+      "dataset_id": "09b09570f162a35f8d127689edc7e65f5d8485c820da15d7d5b8878dde9de90e",
+      "publication": {
+        "checked_at": "2026-11-24T13:54:46.571Z",
+        "sales_close_at": "2026-11-25T18:50:00+09:00",
+        "remaining_minutes": 1195.2238166666666,
+        "reserve_minutes": 30,
+        "on_time": true
+      },
+      "result_error": null,
+      "at": "2026-11-24T13:54:46.576Z"
+    }
+  ]
+}
