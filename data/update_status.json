@@ -1,15 +1,15 @@
 {
   "publication": {
-    "checked_at": "2026-11-25T03:13:27.390Z",
+    "checked_at": "2026-11-25T08:44:39.425Z",
     "sales_close_at": "2026-11-25T18:50:00+09:00",
-    "remaining_minutes": 396.5435,
+    "remaining_minutes": 65.34291666666667,
     "reserve_minutes": 30,
     "on_time": true
   },
   "state": "success",
-  "started_at": "2026-11-25T03:11:07.003Z",
-  "checked_at": "2026-11-25T03:13:27.394Z",
-  "dataset_id": "f31c17112526aa14974cc25dda316e9dbd3757822b411ce4aa7e895e44e511b7",
+  "started_at": "2026-11-25T08:44:14.681Z",
+  "checked_at": "2026-11-25T08:44:39.428Z",
+  "dataset_id": "cc5da5de807827b34f7fa2cefbd92c42a6c5499aee93e9138302529db2af951f",
   "round_id": "1674",
   "product": "toto",
   "product_id": "01",
@@ -21,7 +21,7 @@
     "venue": 13,
     "h2h_used": 13,
     "weather": 0,
-    "weather_policy_blocked": 9,
+    "weather_policy_blocked": 12,
     "weather_used": false,
     "rows": [
       {
@@ -44,8 +44,8 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "unavailable",
-          "label": "未取得（予測に未使用）",
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
           "used": false
         }
       },
@@ -69,8 +69,8 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "unavailable",
-          "label": "未取得（予測に未使用）",
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
           "used": false
         }
       },
@@ -94,8 +94,8 @@
           "label": "対戦履歴を補正に使用"
         },
         "weather": {
-          "state": "unavailable",
-          "label": "未取得（予測に未使用）",
+          "state": "policy_blocked",
+          "label": "提供元のアクセス条件により取得停止（予測に未使用）",
           "used": false
         }
       },
@@ -355,26 +355,26 @@
     {
       "source": "weather",
       "number": 1,
-      "reason": "fetch_error: fetch failed",
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "unavailable"
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 2,
-      "reason": "fetch_error: fetch failed",
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "unavailable"
+      "state": "policy_blocked"
     },
     {
       "source": "weather",
       "number": 3,
-      "reason": "fetch_error: fetch failed",
+      "reason": "fetch_error: robots.txt disallows /v1/forecast",
       "used_in_prediction": false,
       "severity": "reference_only",
-      "state": "unavailable"
+      "state": "policy_blocked"
     },
     {
       "source": "weather",

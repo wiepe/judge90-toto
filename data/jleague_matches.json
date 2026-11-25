@@ -1,12 +1,12 @@
 {
   "season": "2026/27",
-  "fetched_at": "2026-11-25T03:11:09.990Z",
+  "fetched_at": "2026-11-25T08:44:17.495Z",
   "leagues": [
     {
       "league": "J1",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026",
-      "fetched_at": "2026-11-25T03:11:08.684Z",
+      "fetched_at": "2026-11-25T08:44:16.197Z",
       "matches": [
         {
           "season": "2026/27",
@@ -4954,7 +4954,7 @@
       "league": "J2",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026",
-      "fetched_at": "2026-11-25T03:11:09.746Z",
+      "fetched_at": "2026-11-25T08:44:17.121Z",
       "matches": [
         {
           "season": "2026/27",
@@ -9902,7 +9902,7 @@
       "league": "J3",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026",
-      "fetched_at": "2026-11-25T03:11:09.990Z",
+      "fetched_at": "2026-11-25T08:44:17.495Z",
       "matches": [
         {
           "season": "2026/27",
@@ -12249,9 +12249,9 @@
           "competition": "Ｊ３",
           "section": "第１９節第１日",
           "date": "2026-11-25",
-          "kickoff": "12:00",
+          "kickoff": "12:03",
           "home": "琉球",
-          "score": null,
+          "score": "1-1",
           "away": "熊本",
           "stadium": "沖縄県陸",
           "home_team_id": "j90-c0cf4d6ddb8a",
@@ -12262,9 +12262,9 @@
           "competition": "Ｊ３",
           "section": "第１９節第１日",
           "date": "2026-11-25",
-          "kickoff": "14:00",
+          "kickoff": "14:03",
           "home": "北九州",
-          "score": null,
+          "score": "1-1",
           "away": "金沢",
           "stadium": "ミクスタ",
           "home_team_id": "j90-c37318b2e460",
@@ -14847,5 +14847,5 @@
       ]
     }
   ],
-  "dataset_id": "f31c17112526aa14974cc25dda316e9dbd3757822b411ce4aa7e895e44e511b7"
+  "dataset_id": "cc5da5de807827b34f7fa2cefbd92c42a6c5499aee93e9138302529db2af951f"
 }

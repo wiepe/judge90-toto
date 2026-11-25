@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-25T03:13:27.121Z",
+  "fetched_at": "2026-11-25T08:44:39.227Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
   "available": "0/13",
@@ -17,7 +17,7 @@
       "weather_location": "千葉 ホームタウン",
       "latitude": 35.6073,
       "longitude": 140.1063,
-      "reason": "fetch_error: fetch failed"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast"
     },
     {
       "number": 2,
@@ -32,7 +32,7 @@
       "weather_location": "JFE晴れの国スタジアム",
       "latitude": 34.6583,
       "longitude": 133.9195,
-      "reason": "fetch_error: fetch failed"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast"
     },
     {
       "number": 3,
@@ -47,7 +47,7 @@
       "weather_location": "PEACE STADIUM Connected by SoftBank",
       "latitude": 32.7447,
       "longitude": 129.8688,
-      "reason": "fetch_error: fetch failed"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast"
     },
     {
       "number": 4,
@@ -195,7 +195,7 @@
       "reason": "fetch_error: robots.txt disallows /v1/forecast"
     }
   ],
-  "dataset_id": "f31c17112526aa14974cc25dda316e9dbd3757822b411ce4aa7e895e44e511b7",
+  "dataset_id": "cc5da5de807827b34f7fa2cefbd92c42a6c5499aee93e9138302529db2af951f",
   "round_id": "1674",
   "product": "toto",
   "product_id": "01",
