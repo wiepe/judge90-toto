@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-27T12:34:55.911Z",
+  "fetched_at": "2026-11-27T23:30:27.048Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
   "available": "0/13",
@@ -190,7 +190,7 @@
       "reason": "coordinates_not_found"
     }
   ],
-  "dataset_id": "b14758c00cd5b2aead253d8d4acf26c1356251d1d7e9a346af7ea0f75dc4ece5",
+  "dataset_id": "ce3ee754268394c46e262b7914474bb0f55bab5427f149b4397a21c0181eef56",
   "round_id": "1675",
   "product": "toto",
   "product_id": "01",
