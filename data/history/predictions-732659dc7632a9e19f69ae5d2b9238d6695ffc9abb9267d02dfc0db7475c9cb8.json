@@ -1,0 +1,684 @@
+{
+  "round_id": "1675",
+  "product": "toto",
+  "product_id": "01",
+  "sales_open_at": "2026-11-25T08:00:00+09:00",
+  "sales_close_at": "2026-11-28T13:50:00+09:00",
+  "source_fetched_at": "2026-11-27T01:46:22.490Z",
+  "source_digest": "3028ec10b8a4353ea915414a0eb1a9eee371c26ef0e6c5f5c0ee678e62e55bd9",
+  "updated_at": "2026-11-27T01:46:42.555Z",
+  "model": {
+    "data_usage": {
+      "season_results": true,
+      "recent_form": true,
+      "venue_results": true,
+      "h2h": "when_available",
+      "weather": false,
+      "stadium_information": "display_only",
+      "injuries": false,
+      "lineups": false
+    },
+    "name": "JUDGE SCORE",
+    "version": "2.1",
+    "description": "今季成績・得失点・ホーム/アウェイ成績・直近5試合・ホームアドバンテージ・H2Hを統合"
+  },
+  "matches": [
+    {
+      "home_team_id": "j90-58d07b8a6951",
+      "away_team_id": "j90-30bb774d0ae0",
+      "match_date": "2026-11-28",
+      "official_game_id": "55830",
+      "stadium": "サンガＳ",
+      "kickoff": "14:00",
+      "number": 1,
+      "home": "京都",
+      "away": "Ｃ大阪",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.275,
+        "1": 0.45,
+        "2": 0.275
+      },
+      "confidence": 31,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
+        ]
+      },
+      "signals": {
+        "season_strength": "京都",
+        "momentum": "京都",
+        "home_advantage": "京都",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 3,
+            "draws": 1,
+            "away_wins": 1,
+            "home_goals": 11,
+            "away_goals": 8
+          },
+          "all_time": {
+            "matches": 20,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "HOME_ADVANTAGE",
+          "effect": 0.01
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-b5e1e720fe06",
+      "away_team_id": "j90-c735c704d4d5",
+      "match_date": "2026-11-28",
+      "official_game_id": "55829",
+      "stadium": "三協Ｆ柏",
+      "kickoff": "16:00",
+      "number": 2,
+      "home": "柏",
+      "away": "広島",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.304,
+        "1": 0.363,
+        "2": 0.333
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "H2H直近5戦はアウェイ側が優勢（0-3-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "広島",
+        "momentum": "柏",
+        "home_advantage": "柏",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 0,
+            "draws": 3,
+            "away_wins": 2,
+            "home_goals": 1,
+            "away_goals": 4
+          },
+          "all_time": {
+            "matches": 36,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.01
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-b41dbc5583c2",
+      "away_team_id": "j90-3700e53a6baa",
+      "match_date": "2026-11-29",
+      "official_game_id": "55837",
+      "stadium": "日産ス",
+      "kickoff": "14:00",
+      "number": 3,
+      "home": "横浜FM",
+      "away": "FC東京",
+      "league": "J1",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.277,
+        "1": 0.28,
+        "2": 0.442
+      },
+      "confidence": 29,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "FC東京",
+        "momentum": "FC東京",
+        "home_advantage": "横浜FM",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 2,
+            "draws": 1,
+            "away_wins": 2,
+            "home_goals": 7,
+            "away_goals": 10
+          },
+          "all_time": {
+            "matches": 22,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "BALANCED",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-2b14bdc566b9",
+      "away_team_id": "j90-2c90fecc4a9d",
+      "match_date": "2026-11-29",
+      "official_game_id": "55836",
+      "stadium": "水戸信ス",
+      "kickoff": "14:00",
+      "number": 4,
+      "home": "水戸",
+      "away": "長崎",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.291,
+        "1": 0.402,
+        "2": 0.307
+      },
+      "confidence": 17,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "水戸",
+        "momentum": "水戸",
+        "home_advantage": "水戸",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 2,
+            "draws": 1,
+            "away_wins": 2,
+            "home_goals": 11,
+            "away_goals": 9
+          },
+          "all_time": {
+            "matches": 24,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "BALANCED",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-7bb283a4ef4d",
+      "away_team_id": "j90-3cbf98a10e3e",
+      "match_date": "2026-11-29",
+      "official_game_id": "55838",
+      "stadium": "豊田ス",
+      "kickoff": "15:00",
+      "number": 5,
+      "home": "名古屋",
+      "away": "福岡",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.264,
+        "1": 0.485,
+        "2": 0.251
+      },
+      "confidence": 40,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（1-2-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "名古屋",
+        "momentum": "名古屋",
+        "home_advantage": "名古屋",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 1,
+            "draws": 2,
+            "away_wins": 2,
+            "home_goals": 2,
+            "away_goals": 3
+          },
+          "all_time": {
+            "matches": 18,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.005
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-c8ae978f0f5a",
+      "away_team_id": "j90-b1da38d84f72",
+      "match_date": "2026-11-28",
+      "official_game_id": "55833",
+      "stadium": "アイスタ",
+      "kickoff": "14:00",
+      "number": 6,
+      "home": "清水",
+      "away": "浦和",
+      "league": "J1",
+      "prediction": "2",
+      "probabilities": {
+        "0": 0.294,
+        "1": 0.314,
+        "2": 0.393
+      },
+      "confidence": 14,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（1-2-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "浦和",
+        "momentum": "浦和",
+        "home_advantage": "清水",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 1,
+            "draws": 2,
+            "away_wins": 2,
+            "home_goals": 4,
+            "away_goals": 5
+          },
+          "all_time": {
+            "matches": 38,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.005
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-9f1667f3fd94",
+      "away_team_id": "j90-2695cb203ac6",
+      "match_date": "2026-11-28",
+      "official_game_id": "55834",
+      "stadium": "メルスタ",
+      "kickoff": "15:00",
+      "number": 7,
+      "home": "鹿島",
+      "away": "岡山",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.288,
+        "1": 0.409,
+        "2": 0.303
+      },
+      "confidence": 19,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近2戦は拮抗（1-0-1）"
+        ]
+      },
+      "signals": {
+        "season_strength": "鹿島",
+        "momentum": "岡山",
+        "home_advantage": "鹿島",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 2,
+            "home_wins": 1,
+            "draws": 0,
+            "away_wins": 1,
+            "home_goals": 3,
+            "away_goals": 3
+          },
+          "all_time": {
+            "matches": 2,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "BALANCED",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-42c6e6a171ae",
+      "away_team_id": "j90-40ab7fc1a5a5",
+      "match_date": "2026-11-28",
+      "official_game_id": "55831",
+      "stadium": "ノエスタ",
+      "kickoff": "15:00",
+      "number": 8,
+      "home": "神戸",
+      "away": "千葉",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.268,
+        "1": 0.472,
+        "2": 0.26
+      },
+      "confidence": 37,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "アウェイ側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（0-3-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "神戸",
+        "momentum": "千葉",
+        "home_advantage": "神戸",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 0,
+            "draws": 3,
+            "away_wins": 2,
+            "home_goals": 6,
+            "away_goals": 8
+          },
+          "all_time": {
+            "matches": 10,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.01
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-4529f8c8c42d",
+      "away_team_id": "j90-8090a2dd36c6",
+      "match_date": "2026-11-29",
+      "official_game_id": "55832",
+      "stadium": "Ｇスタ",
+      "kickoff": "16:00",
+      "number": 9,
+      "home": "町田",
+      "away": "東京Ｖ",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.257,
+        "1": 0.508,
+        "2": 0.235
+      },
+      "confidence": 45,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（3-1-1）"
+        ]
+      },
+      "signals": {
+        "season_strength": "町田",
+        "momentum": "東京Ｖ",
+        "home_advantage": "町田",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 3,
+            "draws": 1,
+            "away_wins": 1,
+            "home_goals": 9,
+            "away_goals": 3
+          },
+          "all_time": {
+            "matches": 22,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "HOME_ADVANTAGE",
+          "effect": 0.01
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-2a7000ee7b92",
+      "away_team_id": "j90-90d45e374e9d",
+      "match_date": "2026-11-29",
+      "official_game_id": "55835",
+      "stadium": "Ｕ等々力",
+      "kickoff": "15:00",
+      "number": 10,
+      "home": "川崎Ｆ",
+      "away": "Ｇ大阪",
+      "league": "J1",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.255,
+        "1": 0.515,
+        "2": 0.231
+      },
+      "confidence": 47,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "ホーム側の直近フォームが優位",
+          "H2H直近5戦はアウェイ側が優勢（0-2-3）"
+        ]
+      },
+      "signals": {
+        "season_strength": "川崎Ｆ",
+        "momentum": "川崎Ｆ",
+        "home_advantage": "川崎Ｆ",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 0,
+            "draws": 2,
+            "away_wins": 3,
+            "home_goals": 8,
+            "away_goals": 12
+          },
+          "all_time": {
+            "matches": 40,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.015
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-ba6d5fee6d06",
+      "away_team_id": "j90-efe4e4220444",
+      "match_date": "2026-11-29",
+      "official_game_id": "56239",
+      "stadium": "プラスタ",
+      "kickoff": "13:00",
+      "number": 11,
+      "home": "八戸",
+      "away": "藤枝",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.302,
+        "1": 0.367,
+        "2": 0.331
+      },
+      "confidence": 10,
+      "uncertainty": {
+        "level": "HIGH",
+        "reasons": [
+          "両チームの総合評価が近い",
+          "H2H直近5戦は拮抗（2-1-2）"
+        ]
+      },
+      "signals": {
+        "season_strength": "藤枝",
+        "momentum": "八戸",
+        "home_advantage": "八戸",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 2,
+            "draws": 1,
+            "away_wins": 2,
+            "home_goals": 2,
+            "away_goals": 4
+          },
+          "all_time": {
+            "matches": 9,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "BALANCED",
+          "effect": 0
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-df37fe02bc9e",
+      "away_team_id": "j90-5ace5535c774",
+      "match_date": "2026-11-29",
+      "official_game_id": "56246",
+      "stadium": "クロスタ",
+      "kickoff": "14:00",
+      "number": 12,
+      "home": "宮崎",
+      "away": "鳥栖",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.284,
+        "1": 0.421,
+        "2": 0.294
+      },
+      "confidence": 23,
+      "uncertainty": {
+        "level": "MEDIUM",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近1戦はアウェイ側が優勢（0-0-1）"
+        ]
+      },
+      "signals": {
+        "season_strength": "宮崎",
+        "momentum": "宮崎",
+        "home_advantage": "宮崎",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 1,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 1,
+            "home_goals": 0,
+            "away_goals": 2
+          },
+          "all_time": {
+            "matches": 1,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "AWAY_ADVANTAGE",
+          "effect": -0.025
+        }
+      }
+    },
+    {
+      "home_team_id": "j90-984ca7cc85ad",
+      "away_team_id": "j90-9c204ad92d5d",
+      "match_date": "2026-11-29",
+      "official_game_id": "56240",
+      "stadium": "ユアスタ",
+      "kickoff": "14:00",
+      "number": 13,
+      "home": "仙台",
+      "away": "山形",
+      "league": "J2",
+      "prediction": "1",
+      "probabilities": {
+        "0": 0.259,
+        "1": 0.499,
+        "2": 0.242
+      },
+      "confidence": 43,
+      "uncertainty": {
+        "level": "LOW",
+        "reasons": [
+          "ホーム側の開催地成績が優位",
+          "H2H直近5戦はホーム側が優勢（4-1-0）"
+        ]
+      },
+      "signals": {
+        "season_strength": "仙台",
+        "momentum": "仙台",
+        "home_advantage": "仙台",
+        "h2h": {
+          "available": true,
+          "recent5": {
+            "matches": 5,
+            "home_wins": 4,
+            "draws": 1,
+            "away_wins": 0,
+            "home_goals": 11,
+            "away_goals": 5
+          },
+          "all_time": {
+            "matches": 34,
+            "home_wins": 0,
+            "draws": 0,
+            "away_wins": 0
+          },
+          "advantage": "HOME_ADVANTAGE",
+          "effect": 0.02
+        }
+      }
+    }
+  ],
+  "dataset_id": "ba0a4e4cc4c3d6c226a4894409463a59f5b9abfc48b36749fb101b5c5cd7c017"
+}
