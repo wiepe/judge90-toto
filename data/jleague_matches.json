@@ -1,12 +1,12 @@
 {
   "season": "2026/27",
-  "fetched_at": "2026-11-27T23:30:05.148Z",
+  "fetched_at": "2026-11-28T07:56:26.334Z",
   "leagues": [
     {
       "league": "J1",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=1&competition_ids=725&competition_years=2026",
-      "fetched_at": "2026-11-27T23:30:03.839Z",
+      "fetched_at": "2026-11-28T07:56:25.020Z",
       "matches": [
         {
           "season": "2026/27",
@@ -2054,26 +2054,26 @@
           "competition": "Ｊ１",
           "section": "第１７節第１日",
           "date": "2026-11-28",
-          "kickoff": "14:00",
-          "home": "清水",
-          "score": null,
-          "away": "浦和",
-          "stadium": "アイスタ",
-          "home_team_id": "j90-c8ae978f0f5a",
-          "away_team_id": "j90-b1da38d84f72"
+          "kickoff": "14:03",
+          "home": "京都",
+          "score": "4-1",
+          "away": "Ｃ大阪",
+          "stadium": "サンガＳ",
+          "home_team_id": "j90-58d07b8a6951",
+          "away_team_id": "j90-30bb774d0ae0"
         },
         {
           "season": "2026/27",
           "competition": "Ｊ１",
           "section": "第１７節第１日",
           "date": "2026-11-28",
-          "kickoff": "14:00",
-          "home": "京都",
-          "score": null,
-          "away": "Ｃ大阪",
-          "stadium": "サンガＳ",
-          "home_team_id": "j90-58d07b8a6951",
-          "away_team_id": "j90-30bb774d0ae0"
+          "kickoff": "14:03",
+          "home": "清水",
+          "score": "1-0",
+          "away": "浦和",
+          "stadium": "アイスタ",
+          "home_team_id": "j90-c8ae978f0f5a",
+          "away_team_id": "j90-b1da38d84f72"
         },
         {
           "season": "2026/27",
@@ -4954,7 +4954,7 @@
       "league": "J2",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=2&competition_ids=727&competition_years=2026",
-      "fetched_at": "2026-11-27T23:30:04.904Z",
+      "fetched_at": "2026-11-28T07:56:26.058Z",
       "matches": [
         {
           "season": "2026/27",
@@ -7431,9 +7431,9 @@
           "competition": "Ｊ２",
           "section": "第２０節第１日",
           "date": "2026-11-28",
-          "kickoff": "14:00",
+          "kickoff": "14:08",
           "home": "大宮",
-          "score": null,
+          "score": "3-2",
           "away": "今治",
           "stadium": "ＮＡＣＫ",
           "home_team_id": "j90-4c5f3901d634",
@@ -9902,7 +9902,7 @@
       "league": "J3",
       "source": "J.League Data Site",
       "source_url": "https://data.j-league.or.jp/SFMS01/search?competition_frame_ids=3&competition_ids=730&competition_years=2026",
-      "fetched_at": "2026-11-27T23:30:05.148Z",
+      "fetched_at": "2026-11-28T07:56:26.334Z",
       "matches": [
         {
           "season": "2026/27",
@@ -12379,9 +12379,9 @@
           "competition": "Ｊ３",
           "section": "第２０節第１日",
           "date": "2026-11-28",
-          "kickoff": "14:00",
+          "kickoff": "14:03",
           "home": "高知",
-          "score": null,
+          "score": "1-0",
           "away": "奈良",
           "stadium": "ギケンス",
           "home_team_id": "j90-3c437a9c2dcf",
@@ -14847,5 +14847,5 @@
       ]
     }
   ],
-  "dataset_id": "ce3ee754268394c46e262b7914474bb0f55bab5427f149b4397a21c0181eef56"
+  "dataset_id": "96d0922b1620d85de92731e5a023a81fea1965c0f0ad87262ceacd76d06d7a84"
 }
