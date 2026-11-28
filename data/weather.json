@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-28T07:58:31.490Z",
+  "fetched_at": "2026-11-28T17:37:32.200Z",
   "source": "Open-Meteo",
   "note": "Weather is currently recorded as an environment signal. It does not directly modify prediction probabilities yet.",
   "available": "0/13",
@@ -17,7 +17,7 @@
       "weather_location": "千葉 ホームタウン",
       "latitude": 35.6073,
       "longitude": 140.1063,
-      "reason": "fetch_error: fetch failed"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast"
     },
     {
       "number": 2,
@@ -32,7 +32,7 @@
       "weather_location": "埼玉スタジアム2002",
       "latitude": 35.903,
       "longitude": 139.7167,
-      "reason": "fetch_error: fetch failed"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast"
     },
     {
       "number": 3,
@@ -47,7 +47,7 @@
       "weather_location": "味の素スタジアム",
       "latitude": 35.6644,
       "longitude": 139.5272,
-      "reason": "fetch_error: fetch failed"
+      "reason": "fetch_error: robots.txt disallows /v1/forecast"
     },
     {
       "number": 4,
@@ -190,7 +190,7 @@
       "reason": "coordinates_not_found"
     }
   ],
-  "dataset_id": "96d0922b1620d85de92731e5a023a81fea1965c0f0ad87262ceacd76d06d7a84",
+  "dataset_id": "64771fa72d6b002a2004d2718d4568a59d8b7e55c3f380955d82ecb9ea93ae2a",
   "round_id": "1676",
   "product": "toto",
   "product_id": "01",

@@ -4,9 +4,9 @@
   "product_id": "01",
   "sales_open_at": "2026-11-28T08:00:00+09:00",
   "sales_close_at": "2026-12-05T12:50:00+09:00",
-  "source_fetched_at": "2026-11-28T07:56:27.801Z",
-  "source_digest": "0f1db67eedd96eddc107c6f589218d5df24a2104f20c36f4b12ff39f41bcef73",
-  "updated_at": "2026-11-28T07:58:31.533Z",
+  "source_fetched_at": "2026-11-28T17:37:10.525Z",
+  "source_digest": "b316581c39982aebeb1a53fe308091d44df6dbcb3666442a5678d3e764728191",
+  "updated_at": "2026-11-28T17:37:32.238Z",
   "model": {
     "data_usage": {
       "season_results": true,
@@ -36,15 +36,14 @@
       "league": "J1",
       "prediction": "2",
       "probabilities": {
-        "0": 0.304,
-        "1": 0.334,
-        "2": 0.362
+        "0": 0.302,
+        "1": 0.329,
+        "2": 0.37
       },
       "confidence": 10,
       "uncertainty": {
         "level": "HIGH",
         "reasons": [
-          "両チームの総合評価が近い",
           "ホーム側の直近フォームが優位",
           "H2H直近5戦はアウェイ側が優勢（1-0-4）"
         ]
@@ -291,22 +290,22 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.276,
-        "1": 0.446,
-        "2": 0.278
+        "0": 0.293,
+        "1": 0.396,
+        "2": 0.311
       },
-      "confidence": 30,
+      "confidence": 15,
       "uncertainty": {
-        "level": "LOW",
+        "level": "MEDIUM",
         "reasons": [
+          "両チームの総合評価が近い",
           "ホーム側の開催地成績が優位",
-          "ホーム側の直近フォームが優位",
           "H2H直近5戦はアウェイ側が優勢（1-1-3）"
         ]
       },
       "signals": {
         "season_strength": "広島",
-        "momentum": "広島",
+        "momentum": "神戸",
         "home_advantage": "広島",
         "h2h": {
           "available": true,
@@ -393,10 +392,10 @@
       "prediction": "1",
       "probabilities": {
         "0": 0.23,
-        "1": 0.611,
-        "2": 0.159
+        "1": 0.625,
+        "2": 0.145
       },
-      "confidence": 69,
+      "confidence": 71,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
@@ -443,11 +442,11 @@
       "league": "J1",
       "prediction": "1",
       "probabilities": {
-        "0": 0.269,
-        "1": 0.468,
-        "2": 0.263
+        "0": 0.271,
+        "1": 0.463,
+        "2": 0.266
       },
-      "confidence": 36,
+      "confidence": 35,
       "uncertainty": {
         "level": "LOW",
         "reasons": [
@@ -684,5 +683,5 @@
       }
     }
   ],
-  "dataset_id": "96d0922b1620d85de92731e5a023a81fea1965c0f0ad87262ceacd76d06d7a84"
+  "dataset_id": "64771fa72d6b002a2004d2718d4568a59d8b7e55c3f380955d82ecb9ea93ae2a"
 }
